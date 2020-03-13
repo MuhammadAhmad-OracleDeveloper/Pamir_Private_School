@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Notice_SetupPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.General_Setup">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblNoticesView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblNoticesView1Iterator"/>
+    <searchRegion Binds="TblNoticesView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblNoticesView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblNoticesView1Iterator" id="TblNoticesView1">
+      <nodeDefinition DefName="model.ERP.VO.TblNoticesView" Name="TblNoticesView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="AcadYearId"/>
+          <Item Value="Dated"/>
+          <Item Value="NoticeDesc"/>
+          <Item Value="StartDate"/>
+          <Item Value="EndDate"/>
+          <Item Value="NoticeType"/>
+          <Item Value="NoticeTeacher"/>
+          <Item Value="NoticeAll"/>
+          <Item Value="NoticeParent"/>
+          <Item Value="NoticeStudent"/>
+          <Item Value="NoticeImage"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblNoticesView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblNoticesView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblNoticesView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+  </bindings>
+</pageDefinition>

@@ -52,6 +52,10 @@
           usageId="view_Department_TaskFlow_Department_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/TaskFlows/Group/Company/SBU/Modules/General_Setup/Academic_Year_TaskFlow.xml#Academic_Year_TaskFlow@ExecuteWithParams"
           usageId="view_Academic_Year_TaskFlow_Academic_Year_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Group/Company/SBU/Modules/General_Setup/Academic_Year.jsff"
+          usageId="view_Academic_YearPageDef"/>
+    <page path="/WEB-INF/Fragments/Group/Company/SBU/Modules/General_Setup/Notice_Setup.jsff"
+          usageId="view_Notice_SetupPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_GroupPageDef" path="Main_Pages.Group.GroupPageDef"/>
@@ -99,9 +103,16 @@
           path="TaskFlows.Group.Company.SBU.Modules.General_Setup.Department_TaskFlow_Department_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Academic_Year_TaskFlow_Academic_Year_TaskFlow_ExecuteWithParamsPageDef"
           path="TaskFlows.Group.Company.SBU.Modules.General_Setup.Academic_Year_TaskFlow_Academic_Year_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Academic_YearPageDef" path="Fragments.Group.Company.SBU.Modules.General_Setup.Academic_YearPageDef"/>
+    <page id="view_Notice_SetupPageDef" path="Fragments.Group.Company.SBU.Modules.General_Setup.Notice_SetupPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRoles"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="AppModuleDataControl1" Package="model.ERP"
                      FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
                      SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
                      SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
