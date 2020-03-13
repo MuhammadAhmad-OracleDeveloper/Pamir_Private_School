@@ -8,6 +8,9 @@
                 <af:gridRow height="160px" id="gr1">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
                         <!-- Header -->
+                         <af:pageTemplate viewId="../../../../../Header.jsf" id="pt1">
+                            <?audit suppress oracle.adf.faces.pt-type-not-found?>
+                        </af:pageTemplate>
                     </af:gridCell>
                 </af:gridRow>
                 <af:gridRow height="100%" id="gr2">
@@ -25,7 +28,7 @@
                                                 <af:button text="#{item.bindings.Name.inputValue}" id="b1"
                                                            inlineStyle="width:190px;"
                                                            icon="/ViewController/faces/javax.faces.resource/#{item.bindings.PageIcon.inputValue}?ln=images"
-                                                           actionListener="#{viewScope.UserManagementSidebarBean.fragmentCall}">
+                                                           actionListener="#{viewScope.StudentRegistrationSidebarBean.fragmentCall}">
                                                     <f:attribute name="link" value="#{item.bindings.PageLink.inputValue}"/>
                                                 </af:button>
                                             </af:panelGroupLayout>

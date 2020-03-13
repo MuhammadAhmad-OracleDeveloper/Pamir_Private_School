@@ -2,9 +2,27 @@
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="ModuleBoard.jsf" id="d1">
+        <af:messages id="m1"/>
         <af:form id="f1">
-            <af:button text="module board main" id="b1"/>
-            <af:region value="#{bindings.ModuleBoard_TaskFlow1.regionModel}" id="r1"/>
+
+    <af:panelGridLayout id="pgl1">
+                <af:gridRow height="160px" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Header -->
+                        <af:pageTemplate viewId="../../../../Header.jsf" id="pt1">
+                            <?audit suppress oracle.adf.faces.pt-type-not-found?>
+                        </af:pageTemplate>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="100%" id="gr2">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                        <af:panelGroupLayout layout="scroll" id="pgl2" styleClass="backColor">
+                                   <af:region value="#{bindings.ModuleBoard_TaskFlow1.regionModel}" id="r1"/>
+                                </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+                       
         </af:form>
     </af:document>
 </f:view>

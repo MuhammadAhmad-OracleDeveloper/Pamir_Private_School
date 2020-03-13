@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
-  <af:button text="Comapny Frag" id="b1"/>
-  <af:table value="#{bindings.Role_Company1.collectionModel}" var="row" rows="#{bindings.Role_Company1.rangeSize}"
+  <!--<af:button text="Comapny Frag" id="b1"/>-->
+  <!--<af:table value="#{bindings.Role_Company1.collectionModel}" var="row" rows="#{bindings.Role_Company1.rangeSize}"
             emptyText="#{bindings.Role_Company1.viewable ? 'No data to display.' : 'Access Denied.'}"
             rowBandingInterval="0" fetchSize="#{bindings.Role_Company1.rangeSize}" id="t1">
     <af:column headerText="#{bindings.Role_Company1.hints.Rolcmpnyid.label}" id="c1">
@@ -90,11 +90,11 @@
         <f:validator binding="#{row.bindings.Grpcmpnyname.validator}"/>
       </af:inputText>
     </af:column>
-  </af:table>
+  </af:table>-->
   
   <af:spacer width="10" height="100" id="sdf3"/>
         
-  <af:outputLabel value="listing for the listing..... to the listing.....by the listing" id="ol12"/>
+  <!--<af:outputLabel value="listing for the listing..... to the listing.....by the listing" id="ol12"/>-->
   
    <af:panelFormLayout id="pfl3" maxColumns="3" rows="1" fieldWidth="500px;" inlineStyle=" padding-left: 2%;">
         <af:iterator id="i2" value="#{bindings.Role_Company1.collectionModel}" var="item" varStatus="status">

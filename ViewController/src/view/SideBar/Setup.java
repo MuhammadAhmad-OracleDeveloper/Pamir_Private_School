@@ -17,7 +17,7 @@ public class Setup implements Serializable {
         // Add event code here...
         String action = (String)actionEvent.getComponent().getAttributes().get("link");
         StringBuilder link = new StringBuilder();
-        link.append("/WEB-INF/TaskFlows/Group/Company/SBU/Modules/Setup/");
+        link.append("/WEB-INF/TaskFlows/Group/Company/SBU/Modules/General_Setup/");
         link.append(action);
         link.append(".xml#");
         link.append(action);

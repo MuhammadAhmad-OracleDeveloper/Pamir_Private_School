@@ -4,8 +4,8 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="Student_Registration_Pages1" RangeSize="25" DataControl="AppModuleDataControl"
-              id="Student_Registration_Pages1Iterator"/>
+    <iterator Binds="Student_Registration_Pages1" DataControl="AppModuleDataControl"
+              id="Student_Registration_Pages1Iterator" CacheResults="false" Refresh="always"/>
     <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.StudentRegistrationSidebarBean.dynamicTaskFlowId}"
               activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
