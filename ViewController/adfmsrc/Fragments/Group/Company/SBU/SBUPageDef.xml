@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="SBUPageDef"
+                Package="Fragments.Group.Company.SBU">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Role_SBU1" DataControl="AppModuleDataControl" id="Role_SBU1Iterator" Refresh="always"
+              CacheResults="false"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Role_SBU1Iterator" id="Role_SBU1">
+      <nodeDefinition DefName="model.UserRoles.VO.Role_SBU" Name="Role_SBU10">
+        <AttrNames>
+          <Item Value="Rolsbid"/>
+          <Item Value="Rolsbcmpnysbid"/>
+          <Item Value="Rolsbrolcmpnyid"/>
+          <Item Value="Rolsbrolid"/>
+          <Item Value="Rolsbrview"/>
+          <Item Value="Cmpnysbid"/>
+          <Item Value="Cmpnysbgrpcmpnyid"/>
+          <Item Value="Cmpnysbast"/>
+          <Item Value="Cmpnysbname"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

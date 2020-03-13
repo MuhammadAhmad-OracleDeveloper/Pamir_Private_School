@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkStaffExprStaffAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblStaff"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.EO.TblStaff">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblStaff"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblStaff.PkStaff"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblStaff.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblStaffExpr"
+    Cardinality="-1"
+    Owner="model.ERP.EO.TblStaffExpr">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblStaffExpr"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblStaffExpr.FkStaffExprStaff"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblStaffExpr.StaffId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

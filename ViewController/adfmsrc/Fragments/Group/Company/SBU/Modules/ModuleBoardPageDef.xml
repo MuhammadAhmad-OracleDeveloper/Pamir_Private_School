@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="ModuleBoardPageDef"
+                Package="Fragments.Group.Company.SBU.Modules">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="User_Modules1" DataControl="AppModuleDataControl" id="User_Modules1Iterator" Refresh="always"
+              CacheResults="false"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="User_Modules1Iterator" id="User_Modules1">
+      <nodeDefinition DefName="model.UserRoles.VO.User_Modules" Name="User_Modules10">
+        <AttrNames>
+          <Item Value="Rmid"/>
+          <Item Value="RoleId"/>
+          <Item Value="CompanyModuleId"/>
+          <Item Value="RView"/>
+          <Item Value="Cmid"/>
+          <Item Value="GroupCompanyId"/>
+          <Item Value="ModuleId"/>
+          <Item Value="Cmast"/>
+          <Item Value="Gcid"/>
+          <Item Value="Gcast"/>
+          <Item Value="Tmid"/>
+          <Item Value="Modulename"/>
+          <Item Value="Icon"/>
+          <Item Value="Description"/>
+          <Item Value="Link"/>
+          <Item Value="SrNo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

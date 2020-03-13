@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkTblRoleModulesFkLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.UserRoles.EO.FkTblRoleModulesFkAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.UserRoles.VO.FkTblRoleModulesFkLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="TblRoleView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.UserRoles.VO.TblRoleView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblRoleView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.UserRoles.VO.TblRoleView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblRoleModulesView"
+    Cardinality="-1"
+    Owner="model.UserRoles.VO.TblRoleModulesView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblRoleModulesView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.UserRoles.VO.TblRoleModulesView.RoleId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

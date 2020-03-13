@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:button text="group fargment aya hy" id="b1"/>
+  <af:outputLabel value="${sessionScope.goolaa}" id="pt_ol1"
+  inlineStyle="font-variant-caps:all-petite-caps; font-size:x-large; font-weight:bolder;"/>
+    <af:table value="#{bindings.Role_Group1.collectionModel}" var="row" rows="#{bindings.Role_Group1.rangeSize}"
+              emptyText="#{bindings.Role_Group1.viewable ? 'No data to display.' : 'Access Denied.'}"
+              rowBandingInterval="0" fetchSize="#{bindings.Role_Group1.rangeSize}" id="t1">
+        <af:column headerText="#{bindings.Role_Group1.hints.Rolgrpid.label}" id="c1">
+            <af:inputText value="#{row.bindings.Rolgrpid.inputValue}"
+                          label="#{bindings.Role_Group1.hints.Rolgrpid.label}"
+                          required="#{bindings.Role_Group1.hints.Rolgrpid.mandatory}"
+                          columns="#{bindings.Role_Group1.hints.Rolgrpid.displayWidth}"
+                          maximumLength="#{bindings.Role_Group1.hints.Rolgrpid.precision}"
+                          shortDesc="#{bindings.Role_Group1.hints.Rolgrpid.tooltip}" id="it1">
+                <f:validator binding="#{row.bindings.Rolgrpid.validator}"/>
+                <af:convertNumber groupingUsed="false" pattern="#{bindings.Role_Group1.hints.Rolgrpid.format}"/>
+            </af:inputText>
+        </af:column>
+        <af:column headerText="#{bindings.Role_Group1.hints.Rolgrpgrpid.label}" id="c2">
+            <af:inputText value="#{row.bindings.Rolgrpgrpid.inputValue}"
+                          label="#{bindings.Role_Group1.hints.Rolgrpgrpid.label}"
+                          required="#{bindings.Role_Group1.hints.Rolgrpgrpid.mandatory}"
+                          columns="#{bindings.Role_Group1.hints.Rolgrpgrpid.displayWidth}"
+                          maximumLength="#{bindings.Role_Group1.hints.Rolgrpgrpid.precision}"
+                          shortDesc="#{bindings.Role_Group1.hints.Rolgrpgrpid.tooltip}" id="it2">
+                <f:validator binding="#{row.bindings.Rolgrpgrpid.validator}"/>
+                <af:convertNumber groupingUsed="false" pattern="#{bindings.Role_Group1.hints.Rolgrpgrpid.format}"/>
+            </af:inputText>
+        </af:column>
+        <af:column headerText="#{bindings.Role_Group1.hints.Rolgrprolid.label}" id="c3">
+            <af:inputText value="#{row.bindings.Rolgrprolid.inputValue}"
+                          label="#{bindings.Role_Group1.hints.Rolgrprolid.label}"
+                          required="#{bindings.Role_Group1.hints.Rolgrprolid.mandatory}"
+                          columns="#{bindings.Role_Group1.hints.Rolgrprolid.displayWidth}"
+                          maximumLength="#{bindings.Role_Group1.hints.Rolgrprolid.precision}"
+                          shortDesc="#{bindings.Role_Group1.hints.Rolgrprolid.tooltip}" id="it3">
+                <f:validator binding="#{row.bindings.Rolgrprolid.validator}"/>
+                <af:convertNumber groupingUsed="false" pattern="#{bindings.Role_Group1.hints.Rolgrprolid.format}"/>
+            </af:inputText>
+        </af:column>
+        <af:column headerText="#{bindings.Role_Group1.hints.Rolgrprview.label}" id="c4">
+            <af:inputText value="#{row.bindings.Rolgrprview.inputValue}"
+                          label="#{bindings.Role_Group1.hints.Rolgrprview.label}"
+                          required="#{bindings.Role_Group1.hints.Rolgrprview.mandatory}"
+                          columns="#{bindings.Role_Group1.hints.Rolgrprview.displayWidth}"
+                          maximumLength="#{bindings.Role_Group1.hints.Rolgrprview.precision}"
+                          shortDesc="#{bindings.Role_Group1.hints.Rolgrprview.tooltip}" id="it4">
+                <f:validator binding="#{row.bindings.Rolgrprview.validator}"/>
+            </af:inputText>
+        </af:column>
+        <af:column headerText="#{bindings.Role_Group1.hints.Grpid.label}" id="c5">
+            <af:inputText value="#{row.bindings.Grpid.inputValue}" label="#{bindings.Role_Group1.hints.Grpid.label}"
+                          required="#{bindings.Role_Group1.hints.Grpid.mandatory}"
+                          columns="#{bindings.Role_Group1.hints.Grpid.displayWidth}"
+                          maximumLength="#{bindings.Role_Group1.hints.Grpid.precision}"
+                          shortDesc="#{bindings.Role_Group1.hints.Grpid.tooltip}" id="it5">
+                <f:validator binding="#{row.bindings.Grpid.validator}"/>
+                <af:convertNumber groupingUsed="false" pattern="#{bindings.Role_Group1.hints.Grpid.format}"/>
+            </af:inputText>
+        </af:column>
+        <af:column headerText="#{bindings.Role_Group1.hints.Grpname.label}" id="c6">
+            <af:inputText value="#{row.bindings.Grpname.inputValue}" label="#{bindings.Role_Group1.hints.Grpname.label}"
+                          required="#{bindings.Role_Group1.hints.Grpname.mandatory}"
+                          columns="#{bindings.Role_Group1.hints.Grpname.displayWidth}"
+                          maximumLength="#{bindings.Role_Group1.hints.Grpname.precision}"
+                          shortDesc="#{bindings.Role_Group1.hints.Grpname.tooltip}" id="it6">
+                <f:validator binding="#{row.bindings.Grpname.validator}"/>
+            </af:inputText>
+        </af:column>
+        <af:column headerText="#{bindings.Role_Group1.hints.Grpast.label}" id="c7">
+            <af:inputText value="#{row.bindings.Grpast.inputValue}" label="#{bindings.Role_Group1.hints.Grpast.label}"
+                          required="#{bindings.Role_Group1.hints.Grpast.mandatory}"
+                          columns="#{bindings.Role_Group1.hints.Grpast.displayWidth}"
+                          maximumLength="#{bindings.Role_Group1.hints.Grpast.precision}"
+                          shortDesc="#{bindings.Role_Group1.hints.Grpast.tooltip}" id="it7">
+                <f:validator binding="#{row.bindings.Grpast.validator}"/>
+            </af:inputText>
+        </af:column>
+    </af:table>
+    <af:spacer width="10" height="100" id="sdf3"/>
+        
+  <af:outputLabel value="listing for the listing..... to the listing.....by the listing" id="ol12"/>
+  
+  
+  <af:panelFormLayout id="pfl3" maxColumns="3" rows="1" fieldWidth="500px;" inlineStyle=" padding-left: 2%;">
+        <af:iterator id="i2" value="#{bindings.Role_Group1.collectionModel}" var="item" varStatus="status">
+            <af:panelGroupLayout id="pgl3" layout="horizontal" inlineStyle="padding: 4%;">
+                <af:link id="l6" action="/Company/Company.jsf"/>
+                                        <af:spacer width="10" height="10" id="s1"/>
+                <af:panelGroupLayout id="pgl4" layout="vertical" inlineStyle="margin-top: -15%; width:75%;">
+                    <af:link text="#{item.bindings.Grpname.inputValue}" id="l17" 
+                             inlineStyle="font-size:x-large; color: Black;font-weight: bold;"
+                             action="#{LoginsBean.getGroupID(item.bindings.Grpid.inputValue)}"/>
+                    <af:spacer width="10" height="1" id="s3"/>
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>
+        </af:iterator>
+    </af:panelFormLayout>
+  
+</ui:composition>

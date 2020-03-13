@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.11.57" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/Main_Pages/Group/Group.jsf" usageId="view_GroupPageDef"/>
+    <page path="/WEB-INF/Fragments/Group/Group.jsff" usageId="view_GroupPageDef1"/>
+    <page path="/WEB-INF/Fragments/Group/Company/Company.jsff" usageId="view_CompanyPageDef"/>
+    <page path="/Main_Pages/Group/Company/Company.jsf" usageId="view_CompanyPageDef1"/>
+    <page path="/Main_Pages/Group/Company/SBU/Sbu.jsf" usageId="view_SbuPageDef"/>
+    <page path="/WEB-INF/Fragments/Group/Company/SBU/SBU.jsff" usageId="view_SBUPageDef"/>
+    <page path="/Main_Pages/Group/Company/SBU/Modules/User_Management/User_Management.jsf"
+          usageId="view_User_ManagementPageDef"/>
+    <page path="/Main_Pages/Group/Company/SBU/Modules/ModuleBoard.jsf" usageId="view_ModuleBoardPageDef"/>
+    <page path="/WEB-INF/Fragments/Group/Company/SBU/Modules/ModuleBoard.jsff" usageId="view_ModuleBoardPageDef1"/>
+    <page path="/WEB-INF/TaskFlows/Group/Company/SBU/Modules/User_Management/Manage_Users_TaskFlow.xml#Manage_Users_TaskFlow@ExecuteWithParams"
+          usageId="view_Manage_Users_TaskFlow_Manage_Users_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/Main_Pages/Group/Company/SBU/Modules/General_Setup/General_Setup.jsf" usageId="view_SetupPageDef"/>
+    <page path="/Main_Pages/Group/Company/SBU/Modules/Student_Registration/Student_Registration.jsf"
+          usageId="view_Student_RegistrationPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_GroupPageDef" path="Main_Pages.Group.GroupPageDef"/>
+    <page id="view_GroupPageDef1" path="Fragments.Group.GroupPageDef"/>
+    <page id="view_CompanyPageDef" path="Fragments.Group.Company.CompanyPageDef"/>
+    <page id="view_CompanyPageDef1" path="Main_Pages.Group.Company.CompanyPageDef"/>
+    <page id="view_SbuPageDef" path="Main_Pages.Group.Company.SBU.SbuPageDef"/>
+    <page id="view_SBUPageDef" path="Fragments.Group.Company.SBU.SBUPageDef"/>
+    <page id="view_User_ManagementPageDef"
+          path="Main_Pages.Group.Company.SBU.Modules.User_Management.User_ManagementPageDef"/>
+    <page id="view_ModuleBoardPageDef" path="Main_Pages.Group.Company.SBU.Modules.ModuleBoardPageDef"/>
+    <page id="view_ModuleBoardPageDef1" path="Fragments.Group.Company.SBU.Modules.ModuleBoardPageDef"/>
+    <page id="view_Manage_Users_TaskFlow_Manage_Users_TaskFlow_ExecuteWithParamsPageDef"
+          path="TaskFlows.Group.Company.SBU.Modules.User_Management.Manage_Users_TaskFlow_Manage_Users_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_SetupPageDef" path="Main_Pages.Group.Company.SBU.Modules.Setup.SetupPageDef"/>
+    <page id="view_Student_RegistrationPageDef"
+          path="Main_Pages.Group.Company.SBU.Modules.Student_Registration.Student_RegistrationPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="model.UserRoles"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

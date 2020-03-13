@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Student_RegistrationPageDef"
+                Package="Main_Pages.Group.Company.SBU.Modules.Student_Registration">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Student_Registration_Pages1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Student_Registration_Pages1Iterator"/>
+    <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.StudentRegistrationSidebarBean.dynamicTaskFlowId}"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Student_Registration_Pages1Iterator" id="Student_Registration_Pages1">
+      <nodeDefinition DefName="model.UserRoles.VO.Student_Registration_Pages" Name="Student_Registration_Pages10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+          <Item Value="SrNo"/>
+          <Item Value="RoleId"/>
+          <Item Value="CompanyPagesId"/>
+          <Item Value="RoleId1"/>
+          <Item Value="RView"/>
+          <Item Value="RAdd"/>
+          <Item Value="REdit"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

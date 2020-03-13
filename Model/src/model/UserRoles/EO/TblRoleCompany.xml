@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblRoleCompany"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_ROLE_COMPANY"
+  AliasName="TblRoleCompany"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ROLE_COMPANY"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="GroupCompanyId"
+    ColumnName="GROUP_COMPANY_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ROLE_COMPANY"/>
+  <Attribute
+    Name="RoleId"
+    ColumnName="ROLE_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ROLE_COMPANY"/>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_ROLE_COMPANY"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ROLE_COMPANY"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_ROLE_COMPANY"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ROLE_COMPANY"/>
+  <Attribute
+    Name="RView"
+    Precision="1"
+    ColumnName="R_VIEW"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_ROLE_COMPANY"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="TblGroupCompany"
+    Association="model.UserRoles.EO.FkRoleCompanyCoCompanyAssoc"
+    AssociationEnd="model.UserRoles.EO.FkRoleCompanyCoCompanyAssoc.TblGroupCompany"
+    AssociationOtherEnd="model.UserRoles.EO.FkRoleCompanyCoCompanyAssoc.TblRoleCompany"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblRole"
+    Association="model.UserRoles.EO.FkRoleCompanyUserAssoc"
+    AssociationEnd="model.UserRoles.EO.FkRoleCompanyUserAssoc.TblRole"
+    AssociationOtherEnd="model.UserRoles.EO.FkRoleCompanyUserAssoc.TblRoleCompany"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblRoleSbu"
+    Association="model.UserRoles.EO.FkRoleSbuUserCompanyAssoc"
+    AssociationEnd="model.UserRoles.EO.FkRoleSbuUserCompanyAssoc.TblRoleSbu"
+    AssociationOtherEnd="model.UserRoles.EO.FkRoleSbuUserCompanyAssoc.TblRoleCompany"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="PkRoleCompany"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_ROLE_COMPANY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.UserRoles.EO.TblRoleCompany.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkRoleCompanyCoCompany">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_GROUP_COMPANY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_ROLE_COMPANY_CO_COMPANY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.UserRoles.EO.TblRoleCompany.GroupCompanyId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkRoleCompanyUser">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_ROLE"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_ROLE_COMPANY_USER"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.UserRoles.EO.TblRoleCompany.RoleId"/>
+    </AttrArray>
+  </Key>
+</Entity>

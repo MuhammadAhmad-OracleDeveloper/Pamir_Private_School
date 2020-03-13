@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblRoleModulesView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="TblRoleModules.ID, 
+       TblRoleModules.ROLE_ID, 
+       TblRoleModules.R_VIEW, 
+       TblRoleModules.CREATED_DATE, 
+       TblRoleModules.CREATED_BY, 
+       TblRoleModules.UPDATED_DATE, 
+       TblRoleModules.UPDATED_BY, 
+       TblRoleModules.COMPANY_MODULE_ID"
+  FromList="TBL_ROLE_MODULES TblRoleModules">
+  <EntityUsage
+    Name="TblRoleModules"
+    Entity="model.UserRoles.EO.TblRoleModules"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblRoleModules"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="RoleId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="RoleId"
+    EntityUsage="TblRoleModules"
+    AliasName="ROLE_ID"/>
+  <ViewAttribute
+    Name="RView"
+    PrecisionRule="true"
+    EntityAttrName="RView"
+    EntityUsage="TblRoleModules"
+    AliasName="R_VIEW"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="TblRoleModules"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="TblRoleModules"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="TblRoleModules"
+    AliasName="UPDATED_DATE"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="TblRoleModules"
+    AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CompanyModuleId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyModuleId"
+    EntityUsage="TblRoleModules"
+    AliasName="COMPANY_MODULE_ID"/>
+</ViewObject>

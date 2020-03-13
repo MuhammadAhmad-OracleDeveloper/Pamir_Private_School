@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblRolePages"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_ROLE_PAGES"
+  AliasName="TblRolePages"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ROLE_PAGES"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="RoleId"
+    IsNotNull="true"
+    ColumnName="ROLE_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ROLE_PAGES"/>
+  <Attribute
+    Name="RView"
+    Precision="1"
+    ColumnName="R_VIEW"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_ROLE_PAGES"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RAdd"
+    Precision="1"
+    ColumnName="R_ADD"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_ROLE_PAGES"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="REdit"
+    Precision="1"
+    ColumnName="R_EDIT"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_ROLE_PAGES"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RDelete"
+    Precision="1"
+    ColumnName="R_DELETE"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_ROLE_PAGES"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RPrint"
+    Precision="1"
+    ColumnName="R_PRINT"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_ROLE_PAGES"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RPost"
+    Precision="1"
+    ColumnName="R_POST"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_ROLE_PAGES"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CompanyModuleId"
+    ColumnName="COMPANY_MODULE_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ROLE_PAGES"/>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_ROLE_PAGES"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ROLE_PAGES"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_ROLE_PAGES"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ROLE_PAGES"/>
+  <Attribute
+    Name="CompanyPagesId"
+    ColumnName="COMPANY_PAGES_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ROLE_PAGES"/>
+  <AccessorAttribute
+    Name="TblRole"
+    Association="model.UserRoles.EO.FkRolePagesAssoc"
+    AssociationEnd="model.UserRoles.EO.FkRolePagesAssoc.TblRole"
+    AssociationOtherEnd="model.UserRoles.EO.FkRolePagesAssoc.TblRolePages"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblRolePagesCrud"
+    Association="model.UserRoles.EO.FkRolePagesCrudPageAssoc"
+    AssociationEnd="model.UserRoles.EO.FkRolePagesCrudPageAssoc.TblRolePagesCrud"
+    AssociationOtherEnd="model.UserRoles.EO.FkRolePagesCrudPageAssoc.TblRolePages"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblGroupPages"
+    Association="model.UserRoles.EO.Fk2RolePagesAssoc"
+    AssociationEnd="model.UserRoles.EO.Fk2RolePagesAssoc.TblGroupPages"
+    AssociationOtherEnd="model.UserRoles.EO.Fk2RolePagesAssoc.TblRolePages"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkRolePages"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_ROLE_PAGES"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.UserRoles.EO.TblRolePages.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkRolePages">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_ROLE"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_ROLE_PAGES"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.UserRoles.EO.TblRolePages.RoleId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_TblRolePages">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_GROUP_PAGES"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_TBL_ROLE_PAGES"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.UserRoles.EO.TblRolePages.CompanyPagesId"/>
+    </AttrArray>
+  </Key>
+</Entity>

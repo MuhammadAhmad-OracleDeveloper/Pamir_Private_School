@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkLookupDetailDDetailAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblLookupDetail"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.EO.TblLookupDetail">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblLookupDetail"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblLookupDetail.PkLookupDetail"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblLookupDetail.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblLookupDetailD"
+    Cardinality="-1"
+    Owner="model.ERP.EO.TblLookupDetailD">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblLookupDetailD"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblLookupDetailD.FkLookupDetailDDetail"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblLookupDetailD.LookupDetailId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

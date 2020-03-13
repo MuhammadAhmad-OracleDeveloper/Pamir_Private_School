@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblStaffSalary"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_STAFF_SALARY"
+  AliasName="TblStaffSalary"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_STAFF_SALARY"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="StaffId"
+    ColumnName="STAFF_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_STAFF_SALARY"/>
+  <Attribute
+    Name="Dated"
+    ColumnName="DATED"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_STAFF_SALARY"/>
+  <Attribute
+    Name="PaymentMode"
+    Precision="3"
+    ColumnName="PAYMENT_MODE"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_STAFF_SALARY"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Bank"
+    Precision="100"
+    ColumnName="BANK"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_STAFF_SALARY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="BankAc"
+    Precision="50"
+    ColumnName="BANK_AC"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_STAFF_SALARY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="NetSalary"
+    ColumnName="NET_SALARY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_STAFF_SALARY"/>
+  <Attribute
+    Name="Remarks"
+    Precision="150"
+    ColumnName="REMARKS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_STAFF_SALARY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Ast"
+    Precision="1"
+    ColumnName="AST"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_STAFF_SALARY"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_STAFF_SALARY"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_STAFF_SALARY"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_STAFF_SALARY"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_STAFF_SALARY"/>
+  <AccessorAttribute
+    Name="TblStaff"
+    Association="model.ERP.EO.FkStaffSalaryStaffAssoc"
+    AssociationEnd="model.ERP.EO.FkStaffSalaryStaffAssoc.TblStaff"
+    AssociationOtherEnd="model.ERP.EO.FkStaffSalaryStaffAssoc.TblStaffSalary"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblStaffSalElem"
+    Association="model.ERP.EO.FkStaffSalElemStaffSalAssoc"
+    AssociationEnd="model.ERP.EO.FkStaffSalElemStaffSalAssoc.TblStaffSalElem"
+    AssociationOtherEnd="model.ERP.EO.FkStaffSalElemStaffSalAssoc.TblStaffSalary"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="PkStaffSalary"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_STAFF_SALARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblStaffSalary.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkStaffSalaryStaff">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_STAFF"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_STAFF_SALARY_STAFF"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblStaffSalary.StaffId"/>
+    </AttrArray>
+  </Key>
+</Entity>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkEnqFollowUpEnqAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblStdEnq"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.EO.TblStdEnq">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblStdEnq"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblStdEnq.PkStdEnq"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblStdEnq.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblEnqFollowUp"
+    Cardinality="-1"
+    Owner="model.ERP.EO.TblEnqFollowUp">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblEnqFollowUp"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblEnqFollowUp.FkEnqFollowUpEnq"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblEnqFollowUp.StdEnqId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblSchoolTime"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_SCHOOL_TIME"
+  AliasName="TblSchoolTime"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_SCHOOL_TIME"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="GroupCompanyId"
+    ColumnName="GROUP_COMPANY_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_SCHOOL_TIME"/>
+  <Attribute
+    Name="GradeId"
+    ColumnName="GRADE_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_SCHOOL_TIME"/>
+  <Attribute
+    Name="FrDate"
+    ColumnName="FR_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_SCHOOL_TIME"/>
+  <Attribute
+    Name="ToDate"
+    ColumnName="TO_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_SCHOOL_TIME"/>
+  <Attribute
+    Name="StartTime"
+    ColumnName="START_TIME"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_SCHOOL_TIME"/>
+  <Attribute
+    Name="EndTime"
+    ColumnName="END_TIME"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_SCHOOL_TIME"/>
+  <Attribute
+    Name="ZeroPrdStartTime"
+    ColumnName="ZERO_PRD_START_TIME"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_SCHOOL_TIME"/>
+  <Attribute
+    Name="ZeroPrdEndTime"
+    ColumnName="ZERO_PRD_END_TIME"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_SCHOOL_TIME"/>
+  <Attribute
+    Name="ZeroPrdDuration"
+    ColumnName="ZERO_PRD_DURATION"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_SCHOOL_TIME"/>
+  <Attribute
+    Name="BreakStartTime"
+    ColumnName="BREAK_START_TIME"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_SCHOOL_TIME"/>
+  <Attribute
+    Name="BreakEndTime"
+    ColumnName="BREAK_END_TIME"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_SCHOOL_TIME"/>
+  <Attribute
+    Name="NoOfPerDay"
+    ColumnName="NO_OF_PER_DAY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_SCHOOL_TIME"/>
+  <Attribute
+    Name="PrayStartTime"
+    ColumnName="PRAY_START_TIME"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_SCHOOL_TIME"/>
+  <Attribute
+    Name="PrayEndTime"
+    ColumnName="PRAY_END_TIME"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_SCHOOL_TIME"/>
+  <Attribute
+    Name="WeeklyOff"
+    Precision="100"
+    ColumnName="WEEKLY_OFF"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_SCHOOL_TIME">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Ast"
+    Precision="1"
+    ColumnName="AST"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_SCHOOL_TIME"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_SCHOOL_TIME"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_SCHOOL_TIME"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_SCHOOL_TIME"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_SCHOOL_TIME"/>
+  <AccessorAttribute
+    Name="TblGrade"
+    Association="model.ERP.EO.FkSchoolTimeGradeAssoc"
+    AssociationEnd="model.ERP.EO.FkSchoolTimeGradeAssoc.TblGrade"
+    AssociationOtherEnd="model.ERP.EO.FkSchoolTimeGradeAssoc.TblSchoolTime"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkSchoolTime"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_SCHOOL_TIME"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblSchoolTime.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkSchoolTimeCompany">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_GROUP_COMPANY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_SCHOOL_TIME_COMPANY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblSchoolTime.GroupCompanyId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkSchoolTimeGrade">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_GRADE"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_SCHOOL_TIME_GRADE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblSchoolTime.GradeId"/>
+    </AttrArray>
+  </Key>
+</Entity>

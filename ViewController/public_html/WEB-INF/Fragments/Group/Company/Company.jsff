@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:button text="Comapny Frag" id="b1"/>
+  <af:table value="#{bindings.Role_Company1.collectionModel}" var="row" rows="#{bindings.Role_Company1.rangeSize}"
+            emptyText="#{bindings.Role_Company1.viewable ? 'No data to display.' : 'Access Denied.'}"
+            rowBandingInterval="0" fetchSize="#{bindings.Role_Company1.rangeSize}" id="t1">
+    <af:column headerText="#{bindings.Role_Company1.hints.Rolcmpnyid.label}" id="c1">
+      <af:inputText value="#{row.bindings.Rolcmpnyid.inputValue}"
+                    label="#{bindings.Role_Company1.hints.Rolcmpnyid.label}"
+                    required="#{bindings.Role_Company1.hints.Rolcmpnyid.mandatory}"
+                    columns="#{bindings.Role_Company1.hints.Rolcmpnyid.displayWidth}"
+                    maximumLength="#{bindings.Role_Company1.hints.Rolcmpnyid.precision}"
+                    shortDesc="#{bindings.Role_Company1.hints.Rolcmpnyid.tooltip}" id="it1">
+        <f:validator binding="#{row.bindings.Rolcmpnyid.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.Role_Company1.hints.Rolcmpnyid.format}"/>
+      </af:inputText>
+    </af:column>
+    <af:column headerText="#{bindings.Role_Company1.hints.Rolcmpnygrpcmpnyid.label}" id="c2">
+      <af:inputText value="#{row.bindings.Rolcmpnygrpcmpnyid.inputValue}"
+                    label="#{bindings.Role_Company1.hints.Rolcmpnygrpcmpnyid.label}"
+                    required="#{bindings.Role_Company1.hints.Rolcmpnygrpcmpnyid.mandatory}"
+                    columns="#{bindings.Role_Company1.hints.Rolcmpnygrpcmpnyid.displayWidth}"
+                    maximumLength="#{bindings.Role_Company1.hints.Rolcmpnygrpcmpnyid.precision}"
+                    shortDesc="#{bindings.Role_Company1.hints.Rolcmpnygrpcmpnyid.tooltip}" id="it2">
+        <f:validator binding="#{row.bindings.Rolcmpnygrpcmpnyid.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.Role_Company1.hints.Rolcmpnygrpcmpnyid.format}"/>
+      </af:inputText>
+    </af:column>
+    <af:column headerText="#{bindings.Role_Company1.hints.Rolcmpnyrolid.label}" id="c3">
+      <af:inputText value="#{row.bindings.Rolcmpnyrolid.inputValue}"
+                    label="#{bindings.Role_Company1.hints.Rolcmpnyrolid.label}"
+                    required="#{bindings.Role_Company1.hints.Rolcmpnyrolid.mandatory}"
+                    columns="#{bindings.Role_Company1.hints.Rolcmpnyrolid.displayWidth}"
+                    maximumLength="#{bindings.Role_Company1.hints.Rolcmpnyrolid.precision}"
+                    shortDesc="#{bindings.Role_Company1.hints.Rolcmpnyrolid.tooltip}" id="it3">
+        <f:validator binding="#{row.bindings.Rolcmpnyrolid.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.Role_Company1.hints.Rolcmpnyrolid.format}"/>
+      </af:inputText>
+    </af:column>
+    <af:column headerText="#{bindings.Role_Company1.hints.Rolcmpnyrview.label}" id="c4">
+      <af:inputText value="#{row.bindings.Rolcmpnyrview.inputValue}"
+                    label="#{bindings.Role_Company1.hints.Rolcmpnyrview.label}"
+                    required="#{bindings.Role_Company1.hints.Rolcmpnyrview.mandatory}"
+                    columns="#{bindings.Role_Company1.hints.Rolcmpnyrview.displayWidth}"
+                    maximumLength="#{bindings.Role_Company1.hints.Rolcmpnyrview.precision}"
+                    shortDesc="#{bindings.Role_Company1.hints.Rolcmpnyrview.tooltip}" id="it4">
+        <f:validator binding="#{row.bindings.Rolcmpnyrview.validator}"/>
+      </af:inputText>
+    </af:column>
+    <af:column headerText="#{bindings.Role_Company1.hints.Grpcmpnyid.label}" id="c5">
+      <af:inputText value="#{row.bindings.Grpcmpnyid.inputValue}"
+                    label="#{bindings.Role_Company1.hints.Grpcmpnyid.label}"
+                    required="#{bindings.Role_Company1.hints.Grpcmpnyid.mandatory}"
+                    columns="#{bindings.Role_Company1.hints.Grpcmpnyid.displayWidth}"
+                    maximumLength="#{bindings.Role_Company1.hints.Grpcmpnyid.precision}"
+                    shortDesc="#{bindings.Role_Company1.hints.Grpcmpnyid.tooltip}" id="it5">
+        <f:validator binding="#{row.bindings.Grpcmpnyid.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.Role_Company1.hints.Grpcmpnyid.format}"/>
+      </af:inputText>
+    </af:column>
+    <af:column headerText="#{bindings.Role_Company1.hints.Grpcmpnygrpid.label}" id="c6">
+      <af:inputText value="#{row.bindings.Grpcmpnygrpid.inputValue}"
+                    label="#{bindings.Role_Company1.hints.Grpcmpnygrpid.label}"
+                    required="#{bindings.Role_Company1.hints.Grpcmpnygrpid.mandatory}"
+                    columns="#{bindings.Role_Company1.hints.Grpcmpnygrpid.displayWidth}"
+                    maximumLength="#{bindings.Role_Company1.hints.Grpcmpnygrpid.precision}"
+                    shortDesc="#{bindings.Role_Company1.hints.Grpcmpnygrpid.tooltip}" id="it6">
+        <f:validator binding="#{row.bindings.Grpcmpnygrpid.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.Role_Company1.hints.Grpcmpnygrpid.format}"/>
+      </af:inputText>
+    </af:column>
+    <af:column headerText="#{bindings.Role_Company1.hints.Grpcmpnyast.label}" id="c7">
+      <af:inputText value="#{row.bindings.Grpcmpnyast.inputValue}"
+                    label="#{bindings.Role_Company1.hints.Grpcmpnyast.label}"
+                    required="#{bindings.Role_Company1.hints.Grpcmpnyast.mandatory}"
+                    columns="#{bindings.Role_Company1.hints.Grpcmpnyast.displayWidth}"
+                    maximumLength="#{bindings.Role_Company1.hints.Grpcmpnyast.precision}"
+                    shortDesc="#{bindings.Role_Company1.hints.Grpcmpnyast.tooltip}" id="it7">
+        <f:validator binding="#{row.bindings.Grpcmpnyast.validator}"/>
+      </af:inputText>
+    </af:column>
+    <af:column headerText="#{bindings.Role_Company1.hints.Grpcmpnyname.label}" id="c8">
+      <af:inputText value="#{row.bindings.Grpcmpnyname.inputValue}"
+                    label="#{bindings.Role_Company1.hints.Grpcmpnyname.label}"
+                    required="#{bindings.Role_Company1.hints.Grpcmpnyname.mandatory}"
+                    columns="#{bindings.Role_Company1.hints.Grpcmpnyname.displayWidth}"
+                    maximumLength="#{bindings.Role_Company1.hints.Grpcmpnyname.precision}"
+                    shortDesc="#{bindings.Role_Company1.hints.Grpcmpnyname.tooltip}" id="it8">
+        <f:validator binding="#{row.bindings.Grpcmpnyname.validator}"/>
+      </af:inputText>
+    </af:column>
+  </af:table>
+  
+  <af:spacer width="10" height="100" id="sdf3"/>
+        
+  <af:outputLabel value="listing for the listing..... to the listing.....by the listing" id="ol12"/>
+  
+   <af:panelFormLayout id="pfl3" maxColumns="3" rows="1" fieldWidth="500px;" inlineStyle=" padding-left: 2%;">
+        <af:iterator id="i2" value="#{bindings.Role_Company1.collectionModel}" var="item" varStatus="status">
+            <af:panelGroupLayout id="pgl3" layout="horizontal" inlineStyle="padding: 4%;">
+                <af:link id="l6" action="/Company/Company.jsf"/>
+                                        <af:spacer width="10" height="10" id="s1"/>
+                <af:panelGroupLayout id="pgl4" layout="vertical" inlineStyle="margin-top: -15%; width:75%;">
+                    <af:link text="#{item.bindings.Grpcmpnyname.inputValue}" id="l17" 
+                             inlineStyle="font-size:x-large; color: Black;font-weight: bold;"
+                             action="#{LoginsBean.getCompanyID(item.bindings.Rolcmpnygrpcmpnyid.inputValue)}"/>
+                    <af:spacer width="10" height="1" id="s3"/>
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>
+        </af:iterator>
+    </af:panelFormLayout>
+  
+</ui:composition>

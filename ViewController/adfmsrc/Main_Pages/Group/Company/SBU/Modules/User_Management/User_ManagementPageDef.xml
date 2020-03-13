@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="User_ManagementPageDef"
+                Package="Main_Pages.Group.Company.SBU.Modules.User_Management">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.UserManagementSidebarBean.dynamicTaskFlowId}"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <iterator Binds="User_Management_Pages1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="User_Management_Pages1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="User_Management_Pages1Iterator" id="User_Management_Pages1">
+      <nodeDefinition DefName="model.UserRoles.VO.User_Management_Pages" Name="User_Management_Pages10">
+        <AttrNames>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+          <Item Value="SrNo"/>
+          <Item Value="RoleId"/>
+          <Item Value="CompanyPagesId"/>
+          <Item Value="RoleId1"/>
+          <Item Value="RView"/>
+          <Item Value="RAdd"/>
+          <Item Value="REdit"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

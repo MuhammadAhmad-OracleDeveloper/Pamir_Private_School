@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:button text="SBU Frag" id="b1"/>
+  <af:table value="#{bindings.Role_SBU1.collectionModel}" var="row" rows="#{bindings.Role_SBU1.rangeSize}"
+            emptyText="#{bindings.Role_SBU1.viewable ? 'No data to display.' : 'Access Denied.'}" rowBandingInterval="0"
+            fetchSize="#{bindings.Role_SBU1.rangeSize}" id="t1">
+    <af:column headerText="#{bindings.Role_SBU1.hints.Rolsbid.label}" id="c1">
+      <af:inputText value="#{row.bindings.Rolsbid.inputValue}" label="#{bindings.Role_SBU1.hints.Rolsbid.label}"
+                    required="#{bindings.Role_SBU1.hints.Rolsbid.mandatory}"
+                    columns="#{bindings.Role_SBU1.hints.Rolsbid.displayWidth}"
+                    maximumLength="#{bindings.Role_SBU1.hints.Rolsbid.precision}"
+                    shortDesc="#{bindings.Role_SBU1.hints.Rolsbid.tooltip}" id="it1">
+        <f:validator binding="#{row.bindings.Rolsbid.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.Role_SBU1.hints.Rolsbid.format}"/>
+      </af:inputText>
+    </af:column>
+    <af:column headerText="#{bindings.Role_SBU1.hints.Rolsbcmpnysbid.label}" id="c2">
+      <af:inputText value="#{row.bindings.Rolsbcmpnysbid.inputValue}"
+                    label="#{bindings.Role_SBU1.hints.Rolsbcmpnysbid.label}"
+                    required="#{bindings.Role_SBU1.hints.Rolsbcmpnysbid.mandatory}"
+                    columns="#{bindings.Role_SBU1.hints.Rolsbcmpnysbid.displayWidth}"
+                    maximumLength="#{bindings.Role_SBU1.hints.Rolsbcmpnysbid.precision}"
+                    shortDesc="#{bindings.Role_SBU1.hints.Rolsbcmpnysbid.tooltip}" id="it2">
+        <f:validator binding="#{row.bindings.Rolsbcmpnysbid.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.Role_SBU1.hints.Rolsbcmpnysbid.format}"/>
+      </af:inputText>
+    </af:column>
+    <af:column headerText="#{bindings.Role_SBU1.hints.Rolsbrolcmpnyid.label}" id="c3">
+      <af:inputText value="#{row.bindings.Rolsbrolcmpnyid.inputValue}"
+                    label="#{bindings.Role_SBU1.hints.Rolsbrolcmpnyid.label}"
+                    required="#{bindings.Role_SBU1.hints.Rolsbrolcmpnyid.mandatory}"
+                    columns="#{bindings.Role_SBU1.hints.Rolsbrolcmpnyid.displayWidth}"
+                    maximumLength="#{bindings.Role_SBU1.hints.Rolsbrolcmpnyid.precision}"
+                    shortDesc="#{bindings.Role_SBU1.hints.Rolsbrolcmpnyid.tooltip}" id="it3">
+        <f:validator binding="#{row.bindings.Rolsbrolcmpnyid.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.Role_SBU1.hints.Rolsbrolcmpnyid.format}"/>
+      </af:inputText>
+    </af:column>
+    <af:column headerText="#{bindings.Role_SBU1.hints.Rolsbrolid.label}" id="c4">
+      <af:inputText value="#{row.bindings.Rolsbrolid.inputValue}" label="#{bindings.Role_SBU1.hints.Rolsbrolid.label}"
+                    required="#{bindings.Role_SBU1.hints.Rolsbrolid.mandatory}"
+                    columns="#{bindings.Role_SBU1.hints.Rolsbrolid.displayWidth}"
+                    maximumLength="#{bindings.Role_SBU1.hints.Rolsbrolid.precision}"
+                    shortDesc="#{bindings.Role_SBU1.hints.Rolsbrolid.tooltip}" id="it4">
+        <f:validator binding="#{row.bindings.Rolsbrolid.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.Role_SBU1.hints.Rolsbrolid.format}"/>
+      </af:inputText>
+    </af:column>
+    <af:column headerText="#{bindings.Role_SBU1.hints.Rolsbrview.label}" id="c5">
+      <af:inputText value="#{row.bindings.Rolsbrview.inputValue}" label="#{bindings.Role_SBU1.hints.Rolsbrview.label}"
+                    required="#{bindings.Role_SBU1.hints.Rolsbrview.mandatory}"
+                    columns="#{bindings.Role_SBU1.hints.Rolsbrview.displayWidth}"
+                    maximumLength="#{bindings.Role_SBU1.hints.Rolsbrview.precision}"
+                    shortDesc="#{bindings.Role_SBU1.hints.Rolsbrview.tooltip}" id="it5">
+        <f:validator binding="#{row.bindings.Rolsbrview.validator}"/>
+      </af:inputText>
+    </af:column>
+    <af:column headerText="#{bindings.Role_SBU1.hints.Cmpnysbid.label}" id="c6">
+      <af:inputText value="#{row.bindings.Cmpnysbid.inputValue}" label="#{bindings.Role_SBU1.hints.Cmpnysbid.label}"
+                    required="#{bindings.Role_SBU1.hints.Cmpnysbid.mandatory}"
+                    columns="#{bindings.Role_SBU1.hints.Cmpnysbid.displayWidth}"
+                    maximumLength="#{bindings.Role_SBU1.hints.Cmpnysbid.precision}"
+                    shortDesc="#{bindings.Role_SBU1.hints.Cmpnysbid.tooltip}" id="it6">
+        <f:validator binding="#{row.bindings.Cmpnysbid.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.Role_SBU1.hints.Cmpnysbid.format}"/>
+      </af:inputText>
+    </af:column>
+    <af:column headerText="#{bindings.Role_SBU1.hints.Cmpnysbgrpcmpnyid.label}" id="c7">
+      <af:inputText value="#{row.bindings.Cmpnysbgrpcmpnyid.inputValue}"
+                    label="#{bindings.Role_SBU1.hints.Cmpnysbgrpcmpnyid.label}"
+                    required="#{bindings.Role_SBU1.hints.Cmpnysbgrpcmpnyid.mandatory}"
+                    columns="#{bindings.Role_SBU1.hints.Cmpnysbgrpcmpnyid.displayWidth}"
+                    maximumLength="#{bindings.Role_SBU1.hints.Cmpnysbgrpcmpnyid.precision}"
+                    shortDesc="#{bindings.Role_SBU1.hints.Cmpnysbgrpcmpnyid.tooltip}" id="it7">
+        <f:validator binding="#{row.bindings.Cmpnysbgrpcmpnyid.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.Role_SBU1.hints.Cmpnysbgrpcmpnyid.format}"/>
+      </af:inputText>
+    </af:column>
+    <af:column headerText="#{bindings.Role_SBU1.hints.Cmpnysbast.label}" id="c8">
+      <af:inputText value="#{row.bindings.Cmpnysbast.inputValue}" label="#{bindings.Role_SBU1.hints.Cmpnysbast.label}"
+                    required="#{bindings.Role_SBU1.hints.Cmpnysbast.mandatory}"
+                    columns="#{bindings.Role_SBU1.hints.Cmpnysbast.displayWidth}"
+                    maximumLength="#{bindings.Role_SBU1.hints.Cmpnysbast.precision}"
+                    shortDesc="#{bindings.Role_SBU1.hints.Cmpnysbast.tooltip}" id="it8">
+        <f:validator binding="#{row.bindings.Cmpnysbast.validator}"/>
+      </af:inputText>
+    </af:column>
+    <af:column headerText="#{bindings.Role_SBU1.hints.Cmpnysbname.label}" id="c9">
+      <af:inputText value="#{row.bindings.Cmpnysbname.inputValue}" label="#{bindings.Role_SBU1.hints.Cmpnysbname.label}"
+                    required="#{bindings.Role_SBU1.hints.Cmpnysbname.mandatory}"
+                    columns="#{bindings.Role_SBU1.hints.Cmpnysbname.displayWidth}"
+                    maximumLength="#{bindings.Role_SBU1.hints.Cmpnysbname.precision}"
+                    shortDesc="#{bindings.Role_SBU1.hints.Cmpnysbname.tooltip}" id="it9">
+        <f:validator binding="#{row.bindings.Cmpnysbname.validator}"/>
+      </af:inputText>
+    </af:column>
+  </af:table>
+  
+   <af:spacer width="10" height="100" id="sdf3"/>
+        
+  <af:outputLabel value="listing for the listing..... to the listing.....by the listing" id="ol12"/>
+  
+   <af:panelFormLayout id="pfl3" maxColumns="3" rows="1" fieldWidth="500px;" inlineStyle=" padding-left: 2%;">
+        <af:iterator id="i2" value="#{bindings.Role_SBU1.collectionModel}" var="item" varStatus="status">
+            <af:panelGroupLayout id="pgl3" layout="horizontal" inlineStyle="padding: 4%;">
+                <af:link id="l6" action="/Company/Company.jsf"/>
+                                        <af:spacer width="10" height="10" id="s1"/>
+                <af:panelGroupLayout id="pgl4" layout="vertical" inlineStyle="margin-top: -15%; width:75%;">
+                    <af:link text="#{item.bindings.Cmpnysbname.inputValue}" id="l17" 
+                             inlineStyle="font-size:x-large; color: Black;font-weight: bold;"
+                             action="#{LoginsBean.getSBUID(item.bindings.Rolsbcmpnysbid.inputValue)}"/>
+                    <af:spacer width="10" height="1" id="s3"/>
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>
+        </af:iterator>
+    </af:panelFormLayout>
+  
+  
+  
+</ui:composition>

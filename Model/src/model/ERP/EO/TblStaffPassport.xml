@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblStaffPassport"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_STAFF_PASSPORT"
+  AliasName="TblStaffPassport"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_STAFF_PASSPORT"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="StaffId"
+    ColumnName="STAFF_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_STAFF_PASSPORT"/>
+  <Attribute
+    Name="Dated"
+    ColumnName="DATED"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_STAFF_PASSPORT"/>
+  <Attribute
+    Name="LookupIssCountry"
+    ColumnName="LOOKUP_ISS_COUNTRY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_STAFF_PASSPORT"/>
+  <Attribute
+    Name="PassportNo"
+    Precision="25"
+    ColumnName="PASSPORT_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_STAFF_PASSPORT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PassportIssDate"
+    ColumnName="PASSPORT_ISS_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_STAFF_PASSPORT"/>
+  <Attribute
+    Name="PassportExpDate"
+    ColumnName="PASSPORT_EXP_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_STAFF_PASSPORT"/>
+  <Attribute
+    Name="Ast"
+    Precision="1"
+    ColumnName="AST"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_STAFF_PASSPORT"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_STAFF_PASSPORT"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_STAFF_PASSPORT"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_STAFF_PASSPORT"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_STAFF_PASSPORT"/>
+  <AccessorAttribute
+    Name="TblLookupDetail"
+    Association="model.ERP.EO.FkStaffPassportCountryAssoc"
+    AssociationEnd="model.ERP.EO.FkStaffPassportCountryAssoc.TblLookupDetail"
+    AssociationOtherEnd="model.ERP.EO.FkStaffPassportCountryAssoc.TblStaffPassport"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblStaff"
+    Association="model.ERP.EO.FkStaffPassportStaffAssoc"
+    AssociationEnd="model.ERP.EO.FkStaffPassportStaffAssoc.TblStaff"
+    AssociationOtherEnd="model.ERP.EO.FkStaffPassportStaffAssoc.TblStaffPassport"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkStaffPassport"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_STAFF_PASSPORT"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblStaffPassport.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkStaffPassportCountry">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_LOOKUP_DETAIL"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_STAFF_PASSPORT_COUNTRY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblStaffPassport.LookupIssCountry"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkStaffPassportStaff">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_STAFF"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_STAFF_PASSPORT_STAFF"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblStaffPassport.StaffId"/>
+    </AttrArray>
+  </Key>
+</Entity>

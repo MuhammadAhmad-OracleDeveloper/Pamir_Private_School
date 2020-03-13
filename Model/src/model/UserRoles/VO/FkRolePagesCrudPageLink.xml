@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkRolePagesCrudPageLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.UserRoles.EO.FkRolePagesCrudPageAssoc">
+  <ViewLinkDefEnd
+    Name="TblRolePagesView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.UserRoles.VO.TblRolePagesView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblRolePagesView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.UserRoles.VO.TblRolePagesView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblRolePagesCrudView"
+    Cardinality="-1"
+    Owner="model.UserRoles.VO.TblRolePagesCrudView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblRolePagesCrudView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.UserRoles.VO.TblRolePagesCrudView.RolePagesId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

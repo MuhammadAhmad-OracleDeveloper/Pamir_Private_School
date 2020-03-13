@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+  
+   <af:spacer width="10" height="100" id="sdf3"/>
+        
+  <af:outputLabel value="listing for the listing..... to the listing.....by the listing" id="ol12"/>
+    <af:table value="#{bindings.User_Modules1.collectionModel}" var="row" rows="#{bindings.User_Modules1.rangeSize}"
+              emptyText="#{bindings.User_Modules1.viewable ? 'No data to display.' : 'Access Denied.'}"
+              rowBandingInterval="0" fetchSize="#{bindings.User_Modules1.rangeSize}" id="t1">
+        <af:column headerText="#{bindings.User_Modules1.hints.Rmid.label}" id="c1">
+            <af:inputText value="#{row.bindings.Rmid.inputValue}" label="#{bindings.User_Modules1.hints.Rmid.label}"
+                          required="#{bindings.User_Modules1.hints.Rmid.mandatory}"
+                          columns="#{bindings.User_Modules1.hints.Rmid.displayWidth}"
+                          maximumLength="#{bindings.User_Modules1.hints.Rmid.precision}"
+                          shortDesc="#{bindings.User_Modules1.hints.Rmid.tooltip}" id="it1">
+                <f:validator binding="#{row.bindings.Rmid.validator}"/>
+                <af:convertNumber groupingUsed="false" pattern="#{bindings.User_Modules1.hints.Rmid.format}"/>
+            </af:inputText>
+        </af:column>
+        <af:column headerText="#{bindings.User_Modules1.hints.RoleId.label}" id="c2">
+            <af:inputText value="#{row.bindings.RoleId.inputValue}" label="#{bindings.User_Modules1.hints.RoleId.label}"
+                          required="#{bindings.User_Modules1.hints.RoleId.mandatory}"
+                          columns="#{bindings.User_Modules1.hints.RoleId.displayWidth}"
+                          maximumLength="#{bindings.User_Modules1.hints.RoleId.precision}"
+                          shortDesc="#{bindings.User_Modules1.hints.RoleId.tooltip}" id="it2">
+                <f:validator binding="#{row.bindings.RoleId.validator}"/>
+                <af:convertNumber groupingUsed="false" pattern="#{bindings.User_Modules1.hints.RoleId.format}"/>
+            </af:inputText>
+        </af:column>
+        <af:column headerText="#{bindings.User_Modules1.hints.CompanyModuleId.label}" id="c3">
+            <af:inputText value="#{row.bindings.CompanyModuleId.inputValue}"
+                          label="#{bindings.User_Modules1.hints.CompanyModuleId.label}"
+                          required="#{bindings.User_Modules1.hints.CompanyModuleId.mandatory}"
+                          columns="#{bindings.User_Modules1.hints.CompanyModuleId.displayWidth}"
+                          maximumLength="#{bindings.User_Modules1.hints.CompanyModuleId.precision}"
+                          shortDesc="#{bindings.User_Modules1.hints.CompanyModuleId.tooltip}" id="it3">
+                <f:validator binding="#{row.bindings.CompanyModuleId.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.User_Modules1.hints.CompanyModuleId.format}"/>
+            </af:inputText>
+        </af:column>
+        <af:column headerText="#{bindings.User_Modules1.hints.RView.label}" id="c4">
+            <af:inputText value="#{row.bindings.RView.inputValue}" label="#{bindings.User_Modules1.hints.RView.label}"
+                          required="#{bindings.User_Modules1.hints.RView.mandatory}"
+                          columns="#{bindings.User_Modules1.hints.RView.displayWidth}"
+                          maximumLength="#{bindings.User_Modules1.hints.RView.precision}"
+                          shortDesc="#{bindings.User_Modules1.hints.RView.tooltip}" id="it4">
+                <f:validator binding="#{row.bindings.RView.validator}"/>
+            </af:inputText>
+        </af:column>
+        <af:column headerText="#{bindings.User_Modules1.hints.Cmid.label}" id="c5">
+            <af:inputText value="#{row.bindings.Cmid.inputValue}" label="#{bindings.User_Modules1.hints.Cmid.label}"
+                          required="#{bindings.User_Modules1.hints.Cmid.mandatory}"
+                          columns="#{bindings.User_Modules1.hints.Cmid.displayWidth}"
+                          maximumLength="#{bindings.User_Modules1.hints.Cmid.precision}"
+                          shortDesc="#{bindings.User_Modules1.hints.Cmid.tooltip}" id="it5">
+                <f:validator binding="#{row.bindings.Cmid.validator}"/>
+                <af:convertNumber groupingUsed="false" pattern="#{bindings.User_Modules1.hints.Cmid.format}"/>
+            </af:inputText>
+        </af:column>
+        <af:column headerText="#{bindings.User_Modules1.hints.GroupCompanyId.label}" id="c6">
+            <af:inputText value="#{row.bindings.GroupCompanyId.inputValue}"
+                          label="#{bindings.User_Modules1.hints.GroupCompanyId.label}"
+                          required="#{bindings.User_Modules1.hints.GroupCompanyId.mandatory}"
+                          columns="#{bindings.User_Modules1.hints.GroupCompanyId.displayWidth}"
+                          maximumLength="#{bindings.User_Modules1.hints.GroupCompanyId.precision}"
+                          shortDesc="#{bindings.User_Modules1.hints.GroupCompanyId.tooltip}" id="it6">
+                <f:validator binding="#{row.bindings.GroupCompanyId.validator}"/>
+                <af:convertNumber groupingUsed="false" pattern="#{bindings.User_Modules1.hints.GroupCompanyId.format}"/>
+            </af:inputText>
+        </af:column>
+        <af:column headerText="#{bindings.User_Modules1.hints.ModuleId.label}" id="c7">
+            <af:inputText value="#{row.bindings.ModuleId.inputValue}"
+                          label="#{bindings.User_Modules1.hints.ModuleId.label}"
+                          required="#{bindings.User_Modules1.hints.ModuleId.mandatory}"
+                          columns="#{bindings.User_Modules1.hints.ModuleId.displayWidth}"
+                          maximumLength="#{bindings.User_Modules1.hints.ModuleId.precision}"
+                          shortDesc="#{bindings.User_Modules1.hints.ModuleId.tooltip}" id="it7">
+                <f:validator binding="#{row.bindings.ModuleId.validator}"/>
+                <af:convertNumber groupingUsed="false" pattern="#{bindings.User_Modules1.hints.ModuleId.format}"/>
+            </af:inputText>
+        </af:column>
+        <af:column headerText="#{bindings.User_Modules1.hints.Cmast.label}" id="c8">
+            <af:inputText value="#{row.bindings.Cmast.inputValue}" label="#{bindings.User_Modules1.hints.Cmast.label}"
+                          required="#{bindings.User_Modules1.hints.Cmast.mandatory}"
+                          columns="#{bindings.User_Modules1.hints.Cmast.displayWidth}"
+                          maximumLength="#{bindings.User_Modules1.hints.Cmast.precision}"
+                          shortDesc="#{bindings.User_Modules1.hints.Cmast.tooltip}" id="it8">
+                <f:validator binding="#{row.bindings.Cmast.validator}"/>
+            </af:inputText>
+        </af:column>
+        <af:column headerText="#{bindings.User_Modules1.hints.Gcid.label}" id="c9">
+            <af:inputText value="#{row.bindings.Gcid.inputValue}" label="#{bindings.User_Modules1.hints.Gcid.label}"
+                          required="#{bindings.User_Modules1.hints.Gcid.mandatory}"
+                          columns="#{bindings.User_Modules1.hints.Gcid.displayWidth}"
+                          maximumLength="#{bindings.User_Modules1.hints.Gcid.precision}"
+                          shortDesc="#{bindings.User_Modules1.hints.Gcid.tooltip}" id="it9">
+                <f:validator binding="#{row.bindings.Gcid.validator}"/>
+                <af:convertNumber groupingUsed="false" pattern="#{bindings.User_Modules1.hints.Gcid.format}"/>
+            </af:inputText>
+        </af:column>
+        <af:column headerText="#{bindings.User_Modules1.hints.Gcast.label}" id="c10">
+            <af:inputText value="#{row.bindings.Gcast.inputValue}" label="#{bindings.User_Modules1.hints.Gcast.label}"
+                          required="#{bindings.User_Modules1.hints.Gcast.mandatory}"
+                          columns="#{bindings.User_Modules1.hints.Gcast.displayWidth}"
+                          maximumLength="#{bindings.User_Modules1.hints.Gcast.precision}"
+                          shortDesc="#{bindings.User_Modules1.hints.Gcast.tooltip}" id="it10">
+                <f:validator binding="#{row.bindings.Gcast.validator}"/>
+            </af:inputText>
+        </af:column>
+        <af:column headerText="#{bindings.User_Modules1.hints.Tmid.label}" id="c11">
+            <af:inputText value="#{row.bindings.Tmid.inputValue}" label="#{bindings.User_Modules1.hints.Tmid.label}"
+                          required="#{bindings.User_Modules1.hints.Tmid.mandatory}"
+                          columns="#{bindings.User_Modules1.hints.Tmid.displayWidth}"
+                          maximumLength="#{bindings.User_Modules1.hints.Tmid.precision}"
+                          shortDesc="#{bindings.User_Modules1.hints.Tmid.tooltip}" id="it11">
+                <f:validator binding="#{row.bindings.Tmid.validator}"/>
+                <af:convertNumber groupingUsed="false" pattern="#{bindings.User_Modules1.hints.Tmid.format}"/>
+            </af:inputText>
+        </af:column>
+        <af:column headerText="#{bindings.User_Modules1.hints.Modulename.label}" id="c12">
+            <af:inputText value="#{row.bindings.Modulename.inputValue}"
+                          label="#{bindings.User_Modules1.hints.Modulename.label}"
+                          required="#{bindings.User_Modules1.hints.Modulename.mandatory}"
+                          columns="#{bindings.User_Modules1.hints.Modulename.displayWidth}"
+                          maximumLength="#{bindings.User_Modules1.hints.Modulename.precision}"
+                          shortDesc="#{bindings.User_Modules1.hints.Modulename.tooltip}" id="it12">
+                <f:validator binding="#{row.bindings.Modulename.validator}"/>
+            </af:inputText>
+        </af:column>
+        <af:column headerText="#{bindings.User_Modules1.hints.Icon.label}" id="c13">
+            <af:inputText value="#{row.bindings.Icon.inputValue}" label="#{bindings.User_Modules1.hints.Icon.label}"
+                          required="#{bindings.User_Modules1.hints.Icon.mandatory}"
+                          columns="#{bindings.User_Modules1.hints.Icon.displayWidth}"
+                          maximumLength="#{bindings.User_Modules1.hints.Icon.precision}"
+                          shortDesc="#{bindings.User_Modules1.hints.Icon.tooltip}" id="it13">
+                <f:validator binding="#{row.bindings.Icon.validator}"/>
+            </af:inputText>
+        </af:column>
+        <af:column headerText="#{bindings.User_Modules1.hints.Description.label}" id="c14">
+            <af:inputText value="#{row.bindings.Description.inputValue}"
+                          label="#{bindings.User_Modules1.hints.Description.label}"
+                          required="#{bindings.User_Modules1.hints.Description.mandatory}"
+                          columns="#{bindings.User_Modules1.hints.Description.displayWidth}"
+                          maximumLength="#{bindings.User_Modules1.hints.Description.precision}"
+                          shortDesc="#{bindings.User_Modules1.hints.Description.tooltip}" id="it14">
+                <f:validator binding="#{row.bindings.Description.validator}"/>
+            </af:inputText>
+        </af:column>
+        <af:column headerText="#{bindings.User_Modules1.hints.Link.label}" id="c15">
+            <af:inputText value="#{row.bindings.Link.inputValue}" label="#{bindings.User_Modules1.hints.Link.label}"
+                          required="#{bindings.User_Modules1.hints.Link.mandatory}"
+                          columns="#{bindings.User_Modules1.hints.Link.displayWidth}"
+                          maximumLength="#{bindings.User_Modules1.hints.Link.precision}"
+                          shortDesc="#{bindings.User_Modules1.hints.Link.tooltip}" id="it15">
+                <f:validator binding="#{row.bindings.Link.validator}"/>
+            </af:inputText>
+        </af:column>
+        <af:column headerText="#{bindings.User_Modules1.hints.SrNo.label}" id="c16">
+            <af:inputText value="#{row.bindings.SrNo.inputValue}" label="#{bindings.User_Modules1.hints.SrNo.label}"
+                          required="#{bindings.User_Modules1.hints.SrNo.mandatory}"
+                          columns="#{bindings.User_Modules1.hints.SrNo.displayWidth}"
+                          maximumLength="#{bindings.User_Modules1.hints.SrNo.precision}"
+                          shortDesc="#{bindings.User_Modules1.hints.SrNo.tooltip}" id="it16">
+                <f:validator binding="#{row.bindings.SrNo.validator}"/>
+                <af:convertNumber groupingUsed="false" pattern="#{bindings.User_Modules1.hints.SrNo.format}"/>
+            </af:inputText>
+        </af:column>
+    </af:table>
+    <af:panelGroupLayout layout="scroll" id="pgl2" styleClass="backColor">
+                            <!-- Content -->
+                           <af:panelFormLayout id="pfl3" maxColumns="3" rows="1" fieldWidth="500px;" inlineStyle=" padding-left: 2%;">
+        <af:iterator id="i2" value="#{bindings.User_Modules1.collectionModel}" var="item" varStatus="status">
+            <af:panelGroupLayout id="pgl3" layout="horizontal" inlineStyle="padding: 4%;">
+                <af:link id="l6" destination="/faces/#{item.bindings.Link.inputValue}"
+                         icon="/AtlasHonda_FuelManagement-ViewController-context-root/faces/javax.faces.resource/#{item.bindings.Icon.inputValue}?ln=images"/>
+                                        <af:spacer width="10" height="10" id="s1"/>
+                <af:panelGroupLayout id="pgl4" layout="vertical" inlineStyle="margin-top: -15%; width:75%;">
+                    <af:link text="#{item.bindings.Modulename.inputValue}" id="l17"
+                             destination="/faces/#{item.bindings.Link.inputValue}"
+                             inlineStyle="font-size:x-large; color: Black;font-weight: bold;"/>
+                    <af:spacer width="10" height="1" id="s3"/>
+                    <af:outputLabel value="#{item.bindings.Description.inputValue}" id="ol1"/>
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>
+        </af:iterator>
+    </af:panelFormLayout>
+    
+                        </af:panelGroupLayout>
+                        
+</ui:composition>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Role_SBU"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.UserRoles.VO.Role_SBU_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="get_Role_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      CodeSourceName="Role_SBU"/>
+  </Variable>
+  <Variable
+    Name="get_cmpny_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      CodeSourceName="Role_SBU"/>
+  </Variable>
+  <SQLQuery><![CDATA[SELECT TRSB.ID rolsbID, TRSB.COMPANY_SBU_ID rolsbcmpnysbID, TRSB.ROLE_COMPANY_ID rolsbrolcmpnyid, TRSB.ROLE_ID rolsbrolID, TRSB.R_View rolsbrView,        
+TCSB.ID cmpnysbID, TCSB.GROUP_COMPANY_ID cmpnysbgrpCmpnyID, TCSB.AST cmpnysbAst, TCSB.NAME cmpnysbName     
+FROM                            
+TBL_ROLE_SBU TRSB , TBL_COMPANY_SBU TCSB          
+Where                            
+TRSB.COMPANY_SBU_ID = TCSB.ID                         
+AND                           
+TRSB.R_VIEW = 'Y'                           
+AND                          
+TCSB.AST = 'Y'                           
+AND                           
+TRSB.ROLE_ID = :get_Role_ID    
+AND     
+TCSB.GROUP_COMPANY_ID = :get_cmpny_ID]]></SQLQuery>
+  <ViewAttribute
+    Name="Rolsbid"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ROLSBID"
+    Expression="ROLSBID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Rolsbcmpnysbid"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ROLSBCMPNYSBID"
+    Expression="ROLSBCMPNYSBID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Rolsbrolcmpnyid"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ROLSBROLCMPNYID"
+    Expression="ROLSBROLCMPNYID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Rolsbrolid"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ROLSBROLID"
+    Expression="ROLSBROLID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Rolsbrview"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="ROLSBRVIEW"
+    Expression="ROLSBRVIEW"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Cmpnysbid"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="CMPNYSBID"
+    Expression="CMPNYSBID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Cmpnysbgrpcmpnyid"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="CMPNYSBGRPCMPNYID"
+    Expression="CMPNYSBGRPCMPNYID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Cmpnysbast"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="CMPNYSBAST"
+    Expression="CMPNYSBAST"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Cmpnysbname"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CMPNYSBNAME"
+    Expression="CMPNYSBNAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Rolsbid"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

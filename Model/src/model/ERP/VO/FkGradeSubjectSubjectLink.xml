@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkGradeSubjectSubjectLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.ERP.EO.FkGradeSubjectSubjectAssoc">
+  <ViewLinkDefEnd
+    Name="TblSubjectView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.VO.TblSubjectView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblSubjectView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblSubjectView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblGradeSubjectView"
+    Cardinality="-1"
+    Owner="model.ERP.VO.TblGradeSubjectView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblGradeSubjectView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblGradeSubjectView.SubjectId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

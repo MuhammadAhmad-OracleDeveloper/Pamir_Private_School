@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Role_Group"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.UserRoles.VO.Role_Group_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="get_role_id"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      CodeSourceName="Role_Group"/>
+  </Variable>
+  <SQLQuery><![CDATA[SELECT TRG.ID rolGrpID, TRG.GROUP_ID rolGrpGrpID, TRG.ROLE_ID rolGrprolID, TRG.R_View rolGrprView,    
+TG.ID grpID, TG.NAME grpName, TG.AST grpAst   
+FROM                        
+Tbl_ROLE_GROUP TRG , TBL_GROUP TG      
+Where                        
+TRG.GROUP_ID = TG.ID                     
+AND                       
+TRG.R_VIEW = 'Y'                       
+AND                      
+TG.AST = 'Y'                       
+AND                       
+TRG.ROLE_ID = :get_role_id]]></SQLQuery>
+  <ViewAttribute
+    Name="Rolgrpid"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ROLGRPID"
+    Expression="ROLGRPID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Rolgrpgrpid"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ROLGRPGRPID"
+    Expression="ROLGRPGRPID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Rolgrprolid"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ROLGRPROLID"
+    Expression="ROLGRPROLID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Rolgrprview"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="ROLGRPRVIEW"
+    Expression="ROLGRPRVIEW"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Grpid"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="GRPID"
+    Expression="GRPID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Grpname"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="GRPNAME"
+    Expression="GRPNAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Grpast"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="GRPAST"
+    Expression="GRPAST"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Rolgrpid"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

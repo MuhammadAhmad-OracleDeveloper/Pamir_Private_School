@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkStaffSalElemSalElemLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.ERP.EO.FkStaffSalElemSalElemAssoc">
+  <ViewLinkDefEnd
+    Name="TblSalaryElementView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.VO.TblSalaryElementView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblSalaryElementView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblSalaryElementView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblStaffSalElemView"
+    Cardinality="-1"
+    Owner="model.ERP.VO.TblStaffSalElemView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblStaffSalElemView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblStaffSalElemView.SalaryElementId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblEvalWeightage"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_EVAL_WEIGHTAGE"
+  AliasName="TblEvalWeightage"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EVAL_WEIGHTAGE"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="GroupCompanyId"
+    ColumnName="GROUP_COMPANY_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EVAL_WEIGHTAGE"/>
+  <Attribute
+    Name="GradeId"
+    ColumnName="GRADE_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EVAL_WEIGHTAGE"/>
+  <Attribute
+    Name="TermId"
+    ColumnName="TERM_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EVAL_WEIGHTAGE"/>
+  <Attribute
+    Name="LookupEvaluation"
+    ColumnName="LOOKUP_EVALUATION"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EVAL_WEIGHTAGE"/>
+  <Attribute
+    Name="LookupDTopic1"
+    ColumnName="LOOKUP_D_TOPIC1"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EVAL_WEIGHTAGE"/>
+  <Attribute
+    Name="Topic1Marks"
+    ColumnName="TOPIC1_MARKS"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EVAL_WEIGHTAGE"/>
+  <Attribute
+    Name="LookupDTopic2"
+    ColumnName="LOOKUP_D_TOPIC2"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EVAL_WEIGHTAGE"/>
+  <Attribute
+    Name="Topic2Marks"
+    ColumnName="TOPIC2_MARKS"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EVAL_WEIGHTAGE"/>
+  <Attribute
+    Name="EvaType"
+    Precision="3"
+    ColumnName="EVA_TYPE"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_EVAL_WEIGHTAGE"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TotalMarks"
+    ColumnName="TOTAL_MARKS"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EVAL_WEIGHTAGE"/>
+  <Attribute
+    Name="Ast"
+    Precision="1"
+    ColumnName="AST"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_EVAL_WEIGHTAGE"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_EVAL_WEIGHTAGE"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EVAL_WEIGHTAGE"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_EVAL_WEIGHTAGE"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EVAL_WEIGHTAGE"/>
+  <AccessorAttribute
+    Name="TblGrade"
+    Association="model.ERP.EO.FkEvalWeightageGradeAssoc"
+    AssociationEnd="model.ERP.EO.FkEvalWeightageGradeAssoc.TblGrade"
+    AssociationOtherEnd="model.ERP.EO.FkEvalWeightageGradeAssoc.TblEvalWeightage"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblLookupDetail"
+    Association="model.ERP.EO.FkEvalWeightageLookupEvaAssoc"
+    AssociationEnd="model.ERP.EO.FkEvalWeightageLookupEvaAssoc.TblLookupDetail"
+    AssociationOtherEnd="model.ERP.EO.FkEvalWeightageLookupEvaAssoc.TblEvalWeightage"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblLookupDetailD"
+    Association="model.ERP.EO.FkEvalWeightageLookupDTopic2Assoc"
+    AssociationEnd="model.ERP.EO.FkEvalWeightageLookupDTopic2Assoc.TblLookupDetailD"
+    AssociationOtherEnd="model.ERP.EO.FkEvalWeightageLookupDTopic2Assoc.TblEvalWeightage"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblLookupDetailD1"
+    Association="model.ERP.EO.FkEvalWeightageLookupDTopic1Assoc"
+    AssociationEnd="model.ERP.EO.FkEvalWeightageLookupDTopic1Assoc.TblLookupDetailD1"
+    AssociationOtherEnd="model.ERP.EO.FkEvalWeightageLookupDTopic1Assoc.TblEvalWeightage1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblTerms"
+    Association="model.ERP.EO.FkEvalWeightageTermAssoc"
+    AssociationEnd="model.ERP.EO.FkEvalWeightageTermAssoc.TblTerms"
+    AssociationOtherEnd="model.ERP.EO.FkEvalWeightageTermAssoc.TblEvalWeightage"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkEvalWeightage"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_EVAL_WEIGHTAGE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblEvalWeightage.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkEvalWeightageCompany">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_GROUP_COMPANY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_EVAL_WEIGHTAGE_COMPANY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblEvalWeightage.GroupCompanyId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkEvalWeightageGrade">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_GRADE"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_EVAL_WEIGHTAGE_GRADE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblEvalWeightage.GradeId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkEvalWeightageLookupDTopic1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_LOOKUP_DETAIL_D"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_EVAL_WEIGHTAGE_LOOKUP_D_TOPIC1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblEvalWeightage.LookupDTopic1"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkEvalWeightageLookupDTopic2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_LOOKUP_DETAIL_D"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_EVAL_WEIGHTAGE_LOOKUP_D_TOPIC2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblEvalWeightage.LookupDTopic2"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkEvalWeightageLookupEva">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_LOOKUP_DETAIL"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_EVAL_WEIGHTAGE_LOOKUP_EVA"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblEvalWeightage.LookupEvaluation"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkEvalWeightageTerm">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_TERMS"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_EVAL_WEIGHTAGE_TERM"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblEvalWeightage.TermId"/>
+    </AttrArray>
+  </Key>
+</Entity>

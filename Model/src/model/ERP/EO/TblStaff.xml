@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblStaff"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_STAFF"
+  AliasName="TblStaff"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_STAFF"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="GroupCompanyId"
+    ColumnName="GROUP_COMPANY_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_STAFF"/>
+  <Attribute
+    Name="Dated"
+    ColumnName="DATED"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_STAFF"/>
+  <Attribute
+    Name="JobStatus"
+    Precision="3"
+    ColumnName="JOB_STATUS"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_STAFF"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LookupSalutation"
+    ColumnName="LOOKUP_SALUTATION"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_STAFF"/>
+  <Attribute
+    Name="FirstName"
+    Precision="150"
+    ColumnName="FIRST_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_STAFF">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastName"
+    Precision="150"
+    ColumnName="LAST_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_STAFF">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Gender"
+    Precision="1"
+    ColumnName="GENDER"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_STAFF"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Dob"
+    ColumnName="DOB"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_STAFF"/>
+  <Attribute
+    Name="Doj"
+    ColumnName="DOJ"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_STAFF"/>
+  <Attribute
+    Name="LookupNationality"
+    ColumnName="LOOKUP_NATIONALITY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_STAFF"/>
+  <Attribute
+    Name="LookupReligion"
+    ColumnName="LOOKUP_RELIGION"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_STAFF"/>
+  <Attribute
+    Name="LookupStaffType"
+    ColumnName="LOOKUP_STAFF_TYPE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_STAFF"/>
+  <Attribute
+    Name="CurrAddress"
+    Precision="300"
+    ColumnName="CURR_ADDRESS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_STAFF">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PerAddress"
+    Precision="300"
+    ColumnName="PER_ADDRESS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_STAFF">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PersonalMobile"
+    Precision="15"
+    ColumnName="PERSONAL_MOBILE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_STAFF">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ResPhone"
+    Precision="15"
+    ColumnName="RES_PHONE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_STAFF">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PersonalEmail"
+    Precision="50"
+    ColumnName="PERSONAL_EMAIL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_STAFF">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="OtherContact"
+    Precision="15"
+    ColumnName="OTHER_CONTACT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_STAFF">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Image"
+    Precision="100"
+    ColumnName="IMAGE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_STAFF">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EmirId"
+    Precision="150"
+    ColumnName="EMIR_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_STAFF">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LookupRefBy"
+    ColumnName="LOOKUP_REF_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_STAFF"/>
+  <Attribute
+    Name="Ast"
+    Precision="1"
+    ColumnName="AST"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_STAFF"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_STAFF"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_STAFF"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_STAFF"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_STAFF"/>
+  <AccessorAttribute
+    Name="TblLookupDetail"
+    Association="model.ERP.EO.FkStaffLookupNationalityAssoc"
+    AssociationEnd="model.ERP.EO.FkStaffLookupNationalityAssoc.TblLookupDetail"
+    AssociationOtherEnd="model.ERP.EO.FkStaffLookupNationalityAssoc.TblStaff"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblLookupDetail1"
+    Association="model.ERP.EO.FkStaffLookupRefByAssoc"
+    AssociationEnd="model.ERP.EO.FkStaffLookupRefByAssoc.TblLookupDetail1"
+    AssociationOtherEnd="model.ERP.EO.FkStaffLookupRefByAssoc.TblStaff1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblLookupDetail2"
+    Association="model.ERP.EO.FkStaffLookupReligionAssoc"
+    AssociationEnd="model.ERP.EO.FkStaffLookupReligionAssoc.TblLookupDetail2"
+    AssociationOtherEnd="model.ERP.EO.FkStaffLookupReligionAssoc.TblStaff2"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblLookupDetail3"
+    Association="model.ERP.EO.FkStaffLookupSalutationAssoc"
+    AssociationEnd="model.ERP.EO.FkStaffLookupSalutationAssoc.TblLookupDetail3"
+    AssociationOtherEnd="model.ERP.EO.FkStaffLookupSalutationAssoc.TblStaff3"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblLookupDetail4"
+    Association="model.ERP.EO.FkStaffStaffTypeAssoc"
+    AssociationEnd="model.ERP.EO.FkStaffStaffTypeAssoc.TblLookupDetail4"
+    AssociationOtherEnd="model.ERP.EO.FkStaffStaffTypeAssoc.TblStaff4"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblStaffBenefit"
+    Association="model.ERP.EO.FkStaffBenefitStaffAssoc"
+    AssociationEnd="model.ERP.EO.FkStaffBenefitStaffAssoc.TblStaffBenefit"
+    AssociationOtherEnd="model.ERP.EO.FkStaffBenefitStaffAssoc.TblStaff"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblStaffDepartment"
+    Association="model.ERP.EO.FkStaffDepartmentStaffAssoc"
+    AssociationEnd="model.ERP.EO.FkStaffDepartmentStaffAssoc.TblStaffDepartment"
+    AssociationOtherEnd="model.ERP.EO.FkStaffDepartmentStaffAssoc.TblStaff"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblStaffDesignation"
+    Association="model.ERP.EO.FkStaffDesignationStaffAssoc"
+    AssociationEnd="model.ERP.EO.FkStaffDesignationStaffAssoc.TblStaffDesignation"
+    AssociationOtherEnd="model.ERP.EO.FkStaffDesignationStaffAssoc.TblStaff"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblStaffExpr"
+    Association="model.ERP.EO.FkStaffExprStaffAssoc"
+    AssociationEnd="model.ERP.EO.FkStaffExprStaffAssoc.TblStaffExpr"
+    AssociationOtherEnd="model.ERP.EO.FkStaffExprStaffAssoc.TblStaff"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblStaffKin"
+    Association="model.ERP.EO.FkStaffKinStaffAssoc"
+    AssociationEnd="model.ERP.EO.FkStaffKinStaffAssoc.TblStaffKin"
+    AssociationOtherEnd="model.ERP.EO.FkStaffKinStaffAssoc.TblStaff"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblStaffPassport"
+    Association="model.ERP.EO.FkStaffPassportStaffAssoc"
+    AssociationEnd="model.ERP.EO.FkStaffPassportStaffAssoc.TblStaffPassport"
+    AssociationOtherEnd="model.ERP.EO.FkStaffPassportStaffAssoc.TblStaff"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblStaffRole"
+    Association="model.ERP.EO.FkStaffRoleStaffAssoc"
+    AssociationEnd="model.ERP.EO.FkStaffRoleStaffAssoc.TblStaffRole"
+    AssociationOtherEnd="model.ERP.EO.FkStaffRoleStaffAssoc.TblStaff"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblStaffSalary"
+    Association="model.ERP.EO.FkStaffSalaryStaffAssoc"
+    AssociationEnd="model.ERP.EO.FkStaffSalaryStaffAssoc.TblStaffSalary"
+    AssociationOtherEnd="model.ERP.EO.FkStaffSalaryStaffAssoc.TblStaff"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblStaffVisa"
+    Association="model.ERP.EO.FkStaffVisaStaffAssoc"
+    AssociationEnd="model.ERP.EO.FkStaffVisaStaffAssoc.TblStaffVisa"
+    AssociationOtherEnd="model.ERP.EO.FkStaffVisaStaffAssoc.TblStaff"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="PkStaff"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_STAFF"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblStaff.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkStaffCoCompany">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_GROUP_COMPANY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_STAFF_CO_COMPANY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblStaff.GroupCompanyId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkStaffLookupNationality">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_LOOKUP_DETAIL"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_STAFF_LOOKUP_NATIONALITY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblStaff.LookupNationality"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkStaffLookupRefBy">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_LOOKUP_DETAIL"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_STAFF_LOOKUP_REF_BY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblStaff.LookupRefBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkStaffLookupReligion">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_LOOKUP_DETAIL"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_STAFF_LOOKUP_RELIGION"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblStaff.LookupReligion"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkStaffLookupSalutation">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_LOOKUP_DETAIL"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_STAFF_LOOKUP_SALUTATION"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblStaff.LookupSalutation"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkStaffStaffType">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_LOOKUP_DETAIL"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_STAFF_STAFF_TYPE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblStaff.LookupStaffType"/>
+    </AttrArray>
+  </Key>
+</Entity>

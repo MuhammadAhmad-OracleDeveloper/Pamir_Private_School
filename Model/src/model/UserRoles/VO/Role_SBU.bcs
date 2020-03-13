@@ -1,0 +1,19 @@
+//Groovy Scripts for model.UserRoles.VO.Role_SBU
+
+package model.UserRoles.VO
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="get_Role_ID")
+def get_Role_ID_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('sessRMID')
+}
+
+
+@VariableExpression(path="get_cmpny_ID")
+def get_cmpny_ID_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('sessCmpnyID')
+}
+

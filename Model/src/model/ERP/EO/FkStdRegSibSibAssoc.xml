@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkStdRegSibSibAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblStdReg1"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.EO.TblStdReg">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblStdReg1"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblStdReg.PkStdReg"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblStdReg.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblStdRegSib1"
+    Cardinality="-1"
+    Owner="model.ERP.EO.TblStdRegSib">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblStdRegSib1"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblStdRegSib.FkStdRegSibSib"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblStdRegSib.SibStdRegId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

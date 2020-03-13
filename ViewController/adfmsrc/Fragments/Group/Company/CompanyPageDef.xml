@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="CompanyPageDef"
+                Package="Fragments.Group.Company">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Role_Company1" DataControl="AppModuleDataControl" id="Role_Company1Iterator"
+              Refresh="always" CacheResults="false"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Role_Company1Iterator" id="Role_Company1">
+      <nodeDefinition DefName="model.UserRoles.VO.Role_Company" Name="Role_Company10">
+        <AttrNames>
+          <Item Value="Rolcmpnyid"/>
+          <Item Value="Rolcmpnygrpcmpnyid"/>
+          <Item Value="Rolcmpnyrolid"/>
+          <Item Value="Rolcmpnyrview"/>
+          <Item Value="Grpcmpnyid"/>
+          <Item Value="Grpcmpnygrpid"/>
+          <Item Value="Grpcmpnyast"/>
+          <Item Value="Grpcmpnyname"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

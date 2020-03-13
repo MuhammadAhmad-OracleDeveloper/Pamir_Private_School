@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="GroupPageDef"
+                Package="Fragments.Group">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Role_Group1" DataControl="AppModuleDataControl" id="Role_Group1Iterator"
+              Refresh="always" CacheResults="false"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Role_Group1Iterator" id="Role_Group1">
+      <nodeDefinition DefName="model.UserRoles.VO.Role_Group" Name="Role_Group10">
+        <AttrNames>
+          <Item Value="Rolgrpid"/>
+          <Item Value="Rolgrpgrpid"/>
+          <Item Value="Rolgrprolid"/>
+          <Item Value="Rolgrprview"/>
+          <Item Value="Grpid"/>
+          <Item Value="Grpname"/>
+          <Item Value="Grpast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

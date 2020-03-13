@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="USERS_CRUD_OPERATIONS"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.UserRoles.VO.USERS_CRUD_OPERATIONS_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="get_role_id"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      CodeSourceName="USERS_CRUD_OPERATIONS"/>
+  </Variable>
+  <Variable
+    Name="get_page_id"
+    Kind="where"
+    Type="java.math.BigDecimal"/>
+  <SQLQuery><![CDATA[Select            
+Tbl_Role_Pages_Crud.Crud_ID as CrudId,            
+Tbl_Crud.CRUD_NAME as operation,            
+Tbl_Crud.CRUD_ICON as icon,            
+Tbl_Crud.CRUD_BINDING as bindingName,            
+Tbl_Crud.CRUD_DISABLED as btnDisabled         
+    
+From tbl_role_Pages,Tbl_Role_Pages_Crud,Tbl_Crud       
+    
+Where Tbl_Role_Pages_Crud.ROLE_PAGES_ID = tbl_role_Pages.ID            
+And Tbl_Crud.CRUD_ID = Tbl_Role_Pages_Crud.CRUD_ID            
+And tbl_role_Pages.R_VIEW = 'Y'            
+AND (            
+tbl_role_Pages.R_Add =  Tbl_Crud.Crud_ID OR             
+tbl_role_Pages.R_Edit =  Tbl_Crud.Crud_ID OR             
+tbl_role_Pages.R_Delete = Tbl_Crud.Crud_ID         
+)            
+And tbl_role_Pages.Role_ID = :get_role_id         
+And tbl_role_Pages.ID = :get_page_id]]></SQLQuery>
+  <ViewAttribute
+    Name="Crudid"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="CRUDID"
+    Expression="CRUDID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Operation"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="200"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="OPERATION"
+    Expression="OPERATION"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Icon"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="200"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="ICON"
+    Expression="ICON"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Bindingname"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="200"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="BINDINGNAME"
+    Expression="BINDINGNAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Btndisabled"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="200"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="BTNDISABLED"
+    Expression="BTNDISABLED"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Crudid"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

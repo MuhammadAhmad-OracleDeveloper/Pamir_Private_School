@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkRoleSbuUserCompanyLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.UserRoles.EO.FkRoleSbuUserCompanyAssoc">
+  <ViewLinkDefEnd
+    Name="TblRoleCompanyView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.UserRoles.VO.TblRoleCompanyView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblRoleCompanyView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.UserRoles.VO.TblRoleCompanyView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblRoleSbuView"
+    Cardinality="-1"
+    Owner="model.UserRoles.VO.TblRoleSbuView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblRoleSbuView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.UserRoles.VO.TblRoleSbuView.RoleCompanyId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>
