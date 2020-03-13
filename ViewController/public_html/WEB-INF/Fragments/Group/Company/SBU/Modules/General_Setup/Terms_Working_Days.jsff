@@ -89,7 +89,64 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
             <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab2" text="Terms Working Days">
-                
+                <af:table value="#{bindings.TblTermWorkDaysView3.collectionModel}" var="row"
+                          rows="#{bindings.TblTermWorkDaysView3.rangeSize}"
+                          emptyText="#{bindings.TblTermWorkDaysView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblTermWorkDaysView3.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblTermWorkDaysView3.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblTermWorkDaysView3.rangeSize}"
+                          filterModel="#{bindings.TblTermWorkDaysView3Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblTermWorkDaysView3Query.processQuery}" varStatus="vs" id="t2"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblTermWorkDaysView3.hints.Id.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblTermWorkDaysView3.hints.Id.label}" id="c5">
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblTermWorkDaysView3.hints.Id.label}"
+                                  required="#{bindings.TblTermWorkDaysView3.hints.Id.mandatory}"
+                                  columns="#{bindings.TblTermWorkDaysView3.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblTermWorkDaysView3.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblTermWorkDaysView3.hints.Id.tooltip}" id="it3">
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblTermWorkDaysView3.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblTermWorkDaysView3.hints.AcadYearId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblTermWorkDaysView3.hints.AcadYearId.label}"
+                             id="c6">
+                    <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
+                                        label="#{row.bindings.AcadYearId.label}"
+                                        required="#{bindings.TblTermWorkDaysView3.hints.AcadYearId.mandatory}"
+                                        shortDesc="#{bindings.TblTermWorkDaysView3.hints.AcadYearId.tooltip}" id="soc3">
+                      <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si3"/>
+                      <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblTermWorkDaysView3.hints.TermsId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblTermWorkDaysView3.hints.TermsId.label}" id="c7">
+                    <af:selectOneChoice value="#{row.bindings.TermsId.inputValue}" label="#{row.bindings.TermsId.label}"
+                                        required="#{bindings.TblTermWorkDaysView3.hints.TermsId.mandatory}"
+                                        shortDesc="#{bindings.TblTermWorkDaysView3.hints.TermsId.tooltip}" id="soc4">
+                      <f:selectItems value="#{row.bindings.TermsId.items}" id="si4"/>
+                      <f:validator binding="#{row.bindings.TermsId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblTermWorkDaysView3.hints.WorkDays.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblTermWorkDaysView3.hints.WorkDays.label}" id="c8">
+                    <af:inputText value="#{row.bindings.WorkDays.inputValue}"
+                                  label="#{bindings.TblTermWorkDaysView3.hints.WorkDays.label}"
+                                  required="#{bindings.TblTermWorkDaysView3.hints.WorkDays.mandatory}"
+                                  columns="#{bindings.TblTermWorkDaysView3.hints.WorkDays.displayWidth}"
+                                  maximumLength="#{bindings.TblTermWorkDaysView3.hints.WorkDays.precision}"
+                                  shortDesc="#{bindings.TblTermWorkDaysView3.hints.WorkDays.tooltip}" id="it4">
+                      <f:validator binding="#{row.bindings.WorkDays.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblTermWorkDaysView3.hints.WorkDays.format}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+               
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
@@ -97,7 +154,6 @@
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
              <af:panelGroupLayout id="pgl2" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s2"/>
                             <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
