@@ -6,8 +6,8 @@
     <variableIterator id="variables"/>
     <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.UserManagementSidebarBean.dynamicTaskFlowId}"
               activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
-    <iterator Binds="User_Management_Pages1" RangeSize="25" DataControl="AppModuleDataControl"
-              id="User_Management_Pages1Iterator"/>
+    <iterator Binds="User_Management_Pages1" DataControl="AppModuleDataControl"
+              id="User_Management_Pages1Iterator" Refresh="always" CacheResults="false"/>
   </executables>
   <bindings>
     <tree IterBinding="User_Management_Pages1Iterator" id="User_Management_Pages1">
