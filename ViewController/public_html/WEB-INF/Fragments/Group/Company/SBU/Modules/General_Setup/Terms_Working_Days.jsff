@@ -22,8 +22,62 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Academic Year">
-                
+              <af:showDetailItem id="tab1" text="Term">
+                <af:table value="#{bindings.TblTermsView1.collectionModel}" var="row"
+                          rows="#{bindings.TblTermsView1.rangeSize}"
+                          emptyText="#{bindings.TblTermsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0" selectedRowKeys="#{bindings.TblTermsView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblTermsView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblTermsView1.rangeSize}"
+                          filterModel="#{bindings.TblTermsView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblTermsView1Query.processQuery}" varStatus="vs" id="t1"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblTermsView1.hints.Id.name}" filterable="true" sortable="true"
+                             headerText="#{bindings.TblTermsView1.hints.Id.label}" id="c1">
+                    <af:inputText value="#{row.bindings.Id.inputValue}" label="#{bindings.TblTermsView1.hints.Id.label}"
+                                  required="#{bindings.TblTermsView1.hints.Id.mandatory}"
+                                  columns="#{bindings.TblTermsView1.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblTermsView1.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblTermsView1.hints.Id.tooltip}" id="it1"
+                                  readOnly="true"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblTermsView1.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblTermsView1.hints.AcadYearId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblTermsView1.hints.AcadYearId.label}" id="c2">
+                    <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
+                                        label="#{row.bindings.AcadYearId.label}"
+                                        required="#{bindings.TblTermsView1.hints.AcadYearId.mandatory}"
+                                        shortDesc="#{bindings.TblTermsView1.hints.AcadYearId.tooltip}" id="soc1"
+                                        readOnly="true">
+                      <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblTermsView1.hints.TermName.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblTermsView1.hints.TermName.label}" id="c3">
+                    <af:inputText value="#{row.bindings.TermName.inputValue}"
+                                  label="#{bindings.TblTermsView1.hints.TermName.label}"
+                                  required="#{bindings.TblTermsView1.hints.TermName.mandatory}"
+                                  columns="#{bindings.TblTermsView1.hints.TermName.displayWidth}"
+                                  maximumLength="#{bindings.TblTermsView1.hints.TermName.precision}"
+                                  shortDesc="#{bindings.TblTermsView1.hints.TermName.tooltip}" id="it2"
+                                  readOnly="true">
+                      <f:validator binding="#{row.bindings.TermName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblTermsView1.hints.Ast.name}" filterable="true" sortable="true"
+                             headerText="#{bindings.TblTermsView1.hints.Ast.label}" id="c4">
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblTermsView1.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblTermsView1.hints.Ast.tooltip}" id="soc2" readOnly="true">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si2"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
@@ -34,7 +88,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr4">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
             <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab2" text="Term">
+              <af:showDetailItem id="tab2" text="Terms Working Days">
                 
               </af:showDetailItem>
             </af:panelTabbed>

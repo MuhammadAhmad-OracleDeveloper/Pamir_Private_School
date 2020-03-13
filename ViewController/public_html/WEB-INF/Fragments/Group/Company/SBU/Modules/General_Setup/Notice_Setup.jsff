@@ -32,7 +32,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblNoticesView1.rangeSize}"
                           filterModel="#{bindings.TblNoticesView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblNoticesView1Query.processQuery}" varStatus="vs" id="t1"
-                          >
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblNoticesView1.hints.Id.name}" filterable="true" sortable="true"
                              headerText="#{bindings.TblNoticesView1.hints.Id.label}" id="c1">
                     <af:inputText value="#{row.bindings.Id.inputValue}"

@@ -13,6 +13,50 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Academic_Year_LOV1"
+    ViewObjectName="model.LOV.Academic_Year_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Terms_Name_LOV1"
+    ViewObjectName="model.LOV.Terms_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_AcadYearId"
+    ListVOName="Academic_Year_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AcadYearId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TermsId"
+    ListVOName="Terms_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TermsId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TermName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblTermWorkDays"
     Entity="model.ERP.EO.TblTermWorkDays"/>
@@ -34,13 +78,29 @@
     PrecisionRule="true"
     EntityAttrName="AcadYearId"
     EntityUsage="TblTermWorkDays"
-    AliasName="ACAD_YEAR_ID"/>
+    AliasName="ACAD_YEAR_ID"
+    LOVName="LOV_AcadYearId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="TermsId"
     PrecisionRule="true"
     EntityAttrName="TermsId"
     EntityUsage="TblTermWorkDays"
-    AliasName="TERMS_ID"/>
+    AliasName="TERMS_ID"
+    LOVName="LOV_TermsId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="WorkDays"
     PrecisionRule="true"

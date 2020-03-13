@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Terms_Working_DaysPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.General_Setup">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblTermsView1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblTermsView1Iterator"/>
+    <searchRegion Binds="TblTermsView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblTermsView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblTermsView1Iterator" id="TblTermsView1">
+      <nodeDefinition DefName="model.ERP.VO.TblTermsView" Name="TblTermsView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="AcadYearId"/>
+          <Item Value="TermName"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
