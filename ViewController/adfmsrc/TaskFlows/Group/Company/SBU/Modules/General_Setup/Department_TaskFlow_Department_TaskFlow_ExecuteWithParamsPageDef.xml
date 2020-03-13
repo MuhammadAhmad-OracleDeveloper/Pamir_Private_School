@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57"
+                id="Department_TaskFlow_Department_TaskFlow_ExecuteWithParamsPageDef"
+                Package="TaskFlows.Group.Company.SBU.Modules.General_Setup" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator" Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="get_page_id" NDValue="15" NDType="java.math.BigDecimal"/>
+    </action>
+  </bindings>
+</pageDefinition>
