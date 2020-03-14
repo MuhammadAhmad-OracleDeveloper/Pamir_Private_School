@@ -1,225 +1,268 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
-  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
-    <af:showDetailItem id="pane1" text="Holidays List">
-         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
-                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
-                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
-                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
-                            <af:resetActionListener/>
-                        </af:button>
-                        <af:spacer width="10" height="10" id="s9"/>
-                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
-                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
-                                   iconPosition="top"/>
-                        <af:spacer width="10" height="10" id="s1"/>
-                        </af:panelGroupLayout>
-      <af:panelGridLayout id="pgl1">
-        <af:gridRow marginTop="5px" height="auto" id="gr1">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
-        </af:gridRow>
-        <af:gridRow marginTop="5px" height="auto" id="gr2">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
-            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Academic Year">
-                <af:table value="#{bindings.TblAcadYearView1.collectionModel}" var="row"
-                          rows="#{bindings.TblAcadYearView1.rangeSize}"
-                          emptyText="#{bindings.TblAcadYearView1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                          rowBandingInterval="0"
-                          selectedRowKeys="#{bindings.TblAcadYearView1.collectionModel.selectedRow}"
-                          selectionListener="#{bindings.TblAcadYearView1.collectionModel.makeCurrent}"
-                          rowSelection="single" fetchSize="#{bindings.TblAcadYearView1.rangeSize}"
-                          filterModel="#{bindings.TblAcadYearView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblAcadYearView1Query.processQuery}" varStatus="vs" id="t1"
-                          scrollPolicy="page" autoHeightRows="0">
-                  <af:column sortProperty="#{bindings.TblAcadYearView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="#{bindings.TblAcadYearView1.hints.Id.label}" id="c1">
-                    <af:inputText value="#{row.bindings.Id.inputValue}"
-                                  label="#{bindings.TblAcadYearView1.hints.Id.label}"
-                                  required="#{bindings.TblAcadYearView1.hints.Id.mandatory}"
-                                  columns="#{bindings.TblAcadYearView1.hints.Id.displayWidth}"
-                                  maximumLength="#{bindings.TblAcadYearView1.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblAcadYearView1.hints.Id.tooltip}" id="it1"
-                                  readOnly="true"
+    <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+        <af:showDetailItem id="pane1" text="Holidays List">
+            <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                           icon="#{resource['images:cancel.png']}" iconPosition="top">
+                    <af:resetActionListener/>
+                </af:button>
+                <af:spacer width="10" height="10" id="s9"/>
+                <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                           disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                           iconPosition="top"/>
+                <af:spacer width="10" height="10" id="s1"/>
+            </af:panelGroupLayout>
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow marginTop="5px" height="auto" id="gr1">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr2">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                        <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+                            <af:showDetailItem id="tab1" text="Academic Year">
+                                <af:table value="#{bindings.TblAcadYearView1.collectionModel}" var="row"
+                                          rows="#{bindings.TblAcadYearView1.rangeSize}"
+                                          emptyText="#{bindings.TblAcadYearView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.TblAcadYearView1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.TblAcadYearView1.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.TblAcadYearView1.rangeSize}"
+                                          filterModel="#{bindings.TblAcadYearView1Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.TblAcadYearView1Query.processQuery}" varStatus="vs"
+                                          id="t1" scrollPolicy="page" autoHeightRows="0">
+                                    <af:column sortProperty="#{bindings.TblAcadYearView1.hints.Id.name}"
+                                               filterable="true" sortable="true" headerText="Academic Year ID" id="c1"
+                                               align="center" width="80">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.Id}" id="id4"
+                                                          placeholder="Search ID"></af:inputText>
+                                        </f:facet>
+                                        <af:inputText value="#{row.bindings.Id.inputValue}"
+                                                      label="#{bindings.TblAcadYearView1.hints.Id.label}"
+                                                      required="#{bindings.TblAcadYearView1.hints.Id.mandatory}"
+                                                      columns="#{bindings.TblAcadYearView1.hints.Id.displayWidth}"
+                                                      maximumLength="#{bindings.TblAcadYearView1.hints.Id.precision}"
+                                                      shortDesc="#{bindings.TblAcadYearView1.hints.Id.tooltip}" id="it1"
+                                                      readOnly="true" contentStyle='text-align: center'>
+                                            <f:validator binding="#{row.bindings.Id.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblAcadYearView1.hints.Id.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblAcadYearView1.hints.Name.name}"
+                                               filterable="true" sortable="true" headerText="Academic Year" id="c2"
+                                               width="100">
+                                                <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.Name}" id="it6"
+                                                          placeholder="Search Year"></af:inputText>
+                                        </f:facet>
+                                        <af:inputText value="#{row.bindings.Name.inputValue}"
+                                                      label="#{bindings.TblAcadYearView1.hints.Name.label}"
+                                                      required="#{bindings.TblAcadYearView1.hints.Name.mandatory}"
+                                                      columns="#{bindings.TblAcadYearView1.hints.Name.displayWidth}"
+                                                      maximumLength="#{bindings.TblAcadYearView1.hints.Name.precision}"
+                                                      shortDesc="#{bindings.TblAcadYearView1.hints.Name.tooltip}"
+                                                      id="it2" readOnly="true">
+                                            <f:validator binding="#{row.bindings.Name.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblAcadYearView1.hints.StartDate.name}"
+                                               filterable="true" sortable="true" headerText="Start Date" id="c3"
+                                               align="center">
+                                        <f:facet name="filter">
+                                            <af:inputDate value="#{bindings.TblAcadYearView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.StartDate.value}"
+                                                          id="id1">
+                                                <af:convertDateTime pattern="#{bindings.TblAcadYearView1.hints.StartDate.format}"/>
+                                            </af:inputDate>
+                                        </f:facet>
+                                        <af:inputDate value="#{row.bindings.StartDate.inputValue}"
+                                                      label="#{bindings.TblAcadYearView1.hints.StartDate.label}"
+                                                      required="#{bindings.TblAcadYearView1.hints.StartDate.mandatory}"
+                                                      columns="#{bindings.TblAcadYearView1.hints.StartDate.displayWidth}"
+                                                      shortDesc="#{bindings.TblAcadYearView1.hints.StartDate.tooltip}"
+                                                      id="id2" readOnly="true" contentStyle='text-align: center'>
+                                            <f:validator binding="#{row.bindings.StartDate.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.TblAcadYearView1.hints.StartDate.format}"/>
+                                        </af:inputDate>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblAcadYearView1.hints.EndDate.name}"
+                                               filterable="true" sortable="true" headerText="End Date" id="c4"
+                                               align="center">
+                                        <f:facet name="filter">
+                                            <af:inputDate value="#{bindings.TblAcadYearView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.EndDate.value}"
+                                                          id="id3">
+                                                <af:convertDateTime pattern="#{bindings.TblAcadYearView1.hints.EndDate.format}"/>
+                                            </af:inputDate>
+                                        </f:facet>
+                                        <af:inputDate value="#{row.bindings.EndDate.inputValue}"
+                                                      label="#{bindings.TblAcadYearView1.hints.EndDate.label}"
+                                                      required="#{bindings.TblAcadYearView1.hints.EndDate.mandatory}"
+                                                      columns="#{bindings.TblAcadYearView1.hints.EndDate.displayWidth}"
+                                                      shortDesc="#{bindings.TblAcadYearView1.hints.EndDate.tooltip}"
+                                                      id="id9" readOnly="true" contentStyle='text-align: center'>
+                                            <f:validator binding="#{row.bindings.EndDate.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.TblAcadYearView1.hints.EndDate.format}"/>
+                                        </af:inputDate>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblAcadYearView1.hints.Ast.name}"
+                                               filterable="true" sortable="true" headerText="Active" id="c5">
+                                                <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.Ast}" id="it7"
+                                                          placeholder="Search Status"></af:inputText>
+                                        </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                            label="#{row.bindings.Ast.label}"
+                                                            required="#{bindings.TblAcadYearView1.hints.Ast.mandatory}"
+                                                            shortDesc="#{bindings.TblAcadYearView1.hints.Ast.tooltip}"
+                                                            id="soc1" readOnly="true">
+                                            <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
+                                            <f:validator binding="#{row.bindings.Ast.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                </af:table>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr3">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3"/>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr4">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                        <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+                            <af:showDetailItem id="tab2" text="Holidays List">
+                                <af:table value="#{bindings.TblHolidaysView2.collectionModel}" var="row"
+                                          rows="#{bindings.TblHolidaysView2.rangeSize}"
+                                          emptyText="#{bindings.TblHolidaysView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.TblHolidaysView2.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.TblHolidaysView2.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.TblHolidaysView2.rangeSize}"
+                                          filterModel="#{bindings.TblHolidaysView2Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.TblHolidaysView2Query.processQuery}" varStatus="vs"
+                                          id="t2" scrollPolicy="page" autoHeightRows="0">
+                                    <af:column sortProperty="#{bindings.TblHolidaysView2.hints.Id.name}"
+                                               filterable="true" sortable="true" headerText="Holidays ID" id="c6"
+                                               align="center" width="80">
+                                                <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.Id}" id="it8"
+                                                          placeholder="Search ID"></af:inputText>
+                                        </f:facet>
+                                        <af:inputText value="#{row.bindings.Id.inputValue}"
+                                                      label="#{bindings.TblHolidaysView2.hints.Id.label}"
+                                                      required="#{bindings.TblHolidaysView2.hints.Id.mandatory}"
+                                                      columns="#{bindings.TblHolidaysView2.hints.Id.displayWidth}"
+                                                      maximumLength="#{bindings.TblHolidaysView2.hints.Id.precision}"
+                                                      shortDesc="#{bindings.TblHolidaysView2.hints.Id.tooltip}"
+                                                      id="it3" readOnly="true"
                                   contentStyle='text-align: center'>
-                      <f:validator binding="#{row.bindings.Id.validator}"/>
-                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblAcadYearView1.hints.Id.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblAcadYearView1.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblAcadYearView1.hints.Name.label}" id="c2">
-                    <af:inputText value="#{row.bindings.Name.inputValue}"
-                                  label="#{bindings.TblAcadYearView1.hints.Name.label}"
-                                  required="#{bindings.TblAcadYearView1.hints.Name.mandatory}"
-                                  columns="#{bindings.TblAcadYearView1.hints.Name.displayWidth}"
-                                  maximumLength="#{bindings.TblAcadYearView1.hints.Name.precision}"
-                                  shortDesc="#{bindings.TblAcadYearView1.hints.Name.tooltip}" id="it2" readOnly="true">
-                      <f:validator binding="#{row.bindings.Name.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblAcadYearView1.hints.StartDate.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblAcadYearView1.hints.StartDate.label}" id="c3">
-                    <f:facet name="filter">
-                      <af:inputDate value="#{bindings.TblAcadYearView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.StartDate.value}"
-                                    id="id1">
-                        <af:convertDateTime pattern="#{bindings.TblAcadYearView1.hints.StartDate.format}"/>
-                      </af:inputDate>
-                    </f:facet>
-                    <af:inputDate value="#{row.bindings.StartDate.inputValue}"
-                                  label="#{bindings.TblAcadYearView1.hints.StartDate.label}"
-                                  required="#{bindings.TblAcadYearView1.hints.StartDate.mandatory}"
-                                  columns="#{bindings.TblAcadYearView1.hints.StartDate.displayWidth}"
-                                  shortDesc="#{bindings.TblAcadYearView1.hints.StartDate.tooltip}" id="id2"
-                                  readOnly="true"
-                                  contentStyle='text-align: center'>
-                      <f:validator binding="#{row.bindings.StartDate.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.TblAcadYearView1.hints.StartDate.format}"/>
-                    </af:inputDate>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblAcadYearView1.hints.EndDate.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblAcadYearView1.hints.EndDate.label}" id="c4">
-                    <f:facet name="filter">
-                      <af:inputDate value="#{bindings.TblAcadYearView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.EndDate.value}"
-                                    id="id3">
-                        <af:convertDateTime pattern="#{bindings.TblAcadYearView1.hints.EndDate.format}"/>
-                      </af:inputDate>
-                    </f:facet>
-                    <af:inputDate value="#{row.bindings.EndDate.inputValue}"
-                                  label="#{bindings.TblAcadYearView1.hints.EndDate.label}"
-                                  required="#{bindings.TblAcadYearView1.hints.EndDate.mandatory}"
-                                  columns="#{bindings.TblAcadYearView1.hints.EndDate.displayWidth}"
-                                  shortDesc="#{bindings.TblAcadYearView1.hints.EndDate.tooltip}" id="id4"
-                                  readOnly="true"
-                                  contentStyle='text-align: center'>
-                      <f:validator binding="#{row.bindings.EndDate.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.TblAcadYearView1.hints.EndDate.format}"/>
-                    </af:inputDate>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblAcadYearView1.hints.Ast.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblAcadYearView1.hints.Ast.label}" id="c5">
-                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
-                                        required="#{bindings.TblAcadYearView1.hints.Ast.mandatory}"
-                                        shortDesc="#{bindings.TblAcadYearView1.hints.Ast.tooltip}" id="soc1" readOnly="true">
-                      <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
-                      <f:validator binding="#{row.bindings.Ast.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
-                </af:table>
-              </af:showDetailItem>
-            </af:panelTabbed>
-          </af:gridCell>
-        </af:gridRow>
-        <af:gridRow marginTop="5px" height="auto" id="gr3">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3"/>
-        </af:gridRow>
-        <af:gridRow marginTop="5px" height="auto" id="gr4">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
-            <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab2" text="Holidays List">
-                <af:table value="#{bindings.TblHolidaysView2.collectionModel}" var="row"
-                          rows="#{bindings.TblHolidaysView2.rangeSize}"
-                          emptyText="#{bindings.TblHolidaysView2.viewable ? 'No data to display.' : 'Access Denied.'}"
-                          rowBandingInterval="0"
-                          selectedRowKeys="#{bindings.TblHolidaysView2.collectionModel.selectedRow}"
-                          selectionListener="#{bindings.TblHolidaysView2.collectionModel.makeCurrent}"
-                          rowSelection="single" fetchSize="#{bindings.TblHolidaysView2.rangeSize}"
-                          filterModel="#{bindings.TblHolidaysView2Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblHolidaysView2Query.processQuery}" varStatus="vs" id="t2"
-                          scrollPolicy="page" autoHeightRows="0">
-
-                  <af:column sortProperty="#{bindings.TblHolidaysView2.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="#{bindings.TblHolidaysView2.hints.Id.label}" id="c6">
-                    <af:inputText value="#{row.bindings.Id.inputValue}"
-                                  label="#{bindings.TblHolidaysView2.hints.Id.label}"
-                                  required="#{bindings.TblHolidaysView2.hints.Id.mandatory}"
-                                  columns="#{bindings.TblHolidaysView2.hints.Id.displayWidth}"
-                                  maximumLength="#{bindings.TblHolidaysView2.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblHolidaysView2.hints.Id.tooltip}" id="it3"
-                                  >
-                      <f:validator binding="#{row.bindings.Id.validator}"/>
-                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblHolidaysView2.hints.Id.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblHolidaysView2.hints.AcadYearId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblHolidaysView2.hints.AcadYearId.label}" id="c7">
-                    <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
-                                        label="#{row.bindings.AcadYearId.label}"
-                                        required="#{bindings.TblHolidaysView2.hints.AcadYearId.mandatory}"
-                                        shortDesc="#{bindings.TblHolidaysView2.hints.AcadYearId.tooltip}" id="soc2">
-                      <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si2"/>
-                      <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblHolidaysView2.hints.HolidayFrDate.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblHolidaysView2.hints.HolidayFrDate.label}"
-                             id="c8">
-                    <f:facet name="filter">
-                      <af:inputDate value="#{bindings.TblHolidaysView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.HolidayFrDate.value}"
-                                    id="id5">
-                        <af:convertDateTime pattern="#{bindings.TblHolidaysView2.hints.HolidayFrDate.format}"/>
-                      </af:inputDate>
-                    </f:facet>
-                    <af:inputDate value="#{row.bindings.HolidayFrDate.inputValue}"
-                                  label="#{bindings.TblHolidaysView2.hints.HolidayFrDate.label}"
-                                  required="#{bindings.TblHolidaysView2.hints.HolidayFrDate.mandatory}"
-                                  columns="#{bindings.TblHolidaysView2.hints.HolidayFrDate.displayWidth}"
-                                  shortDesc="#{bindings.TblHolidaysView2.hints.HolidayFrDate.tooltip}" id="id6">
-                      <f:validator binding="#{row.bindings.HolidayFrDate.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.TblHolidaysView2.hints.HolidayFrDate.format}"/>
-                    </af:inputDate>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblHolidaysView2.hints.HolidayToDate.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblHolidaysView2.hints.HolidayToDate.label}"
-                             id="c9">
-                    <f:facet name="filter">
-                      <af:inputDate value="#{bindings.TblHolidaysView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.HolidayToDate.value}"
-                                    id="id7">
-                        <af:convertDateTime pattern="#{bindings.TblHolidaysView2.hints.HolidayToDate.format}"/>
-                      </af:inputDate>
-                    </f:facet>
-                    <af:inputDate value="#{row.bindings.HolidayToDate.inputValue}"
-                                  label="#{bindings.TblHolidaysView2.hints.HolidayToDate.label}"
-                                  required="#{bindings.TblHolidaysView2.hints.HolidayToDate.mandatory}"
-                                  columns="#{bindings.TblHolidaysView2.hints.HolidayToDate.displayWidth}"
-                                  shortDesc="#{bindings.TblHolidaysView2.hints.HolidayToDate.tooltip}" id="id8">
-                      <f:validator binding="#{row.bindings.HolidayToDate.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.TblHolidaysView2.hints.HolidayToDate.format}"/>
-                    </af:inputDate>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblHolidaysView2.hints.HolidayName.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblHolidaysView2.hints.HolidayName.label}" id="c10">
-                    <af:inputText value="#{row.bindings.HolidayName.inputValue}"
-                                  label="#{bindings.TblHolidaysView2.hints.HolidayName.label}"
-                                  required="#{bindings.TblHolidaysView2.hints.HolidayName.mandatory}"
-                                  columns="#{bindings.TblHolidaysView2.hints.HolidayName.displayWidth}"
-                                  maximumLength="#{bindings.TblHolidaysView2.hints.HolidayName.precision}"
-                                  shortDesc="#{bindings.TblHolidaysView2.hints.HolidayName.tooltip}" id="it4">
-                      <f:validator binding="#{row.bindings.HolidayName.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblHolidaysView2.hints.NotifyDays.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblHolidaysView2.hints.NotifyDays.label}" id="c11">
-                    <af:inputText value="#{row.bindings.NotifyDays.inputValue}"
-                                  label="#{bindings.TblHolidaysView2.hints.NotifyDays.label}"
-                                  required="#{bindings.TblHolidaysView2.hints.NotifyDays.mandatory}"
-                                  columns="#{bindings.TblHolidaysView2.hints.NotifyDays.displayWidth}"
-                                  maximumLength="#{bindings.TblHolidaysView2.hints.NotifyDays.precision}"
-                                  shortDesc="#{bindings.TblHolidaysView2.hints.NotifyDays.tooltip}" id="it5">
-                      <f:validator binding="#{row.bindings.NotifyDays.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblHolidaysView2.hints.NotifyDays.format}"/>
-                    </af:inputText>
-                  </af:column>
-                </af:table>
-                
-              </af:showDetailItem>
-            </af:panelTabbed>
-          </af:gridCell>
-        </af:gridRow>
-        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
-             <af:panelGroupLayout id="pgl2" layout="horizontal">
+                                            <f:validator binding="#{row.bindings.Id.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblHolidaysView2.hints.Id.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblHolidaysView2.hints.AcadYearId.name}"
+                                               filterable="true" sortable="true" headerText="Academic Year" id="c7">
+                                                <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.AcadYearId}" id="it9"
+                                                          placeholder="Search Year"></af:inputText>
+                                        </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
+                                                            label="#{row.bindings.AcadYearId.label}"
+                                                            required="#{bindings.TblHolidaysView2.hints.AcadYearId.mandatory}"
+                                                            shortDesc="#{bindings.TblHolidaysView2.hints.AcadYearId.tooltip}"
+                                                            id="soc2">
+                                            <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si2"/>
+                                            <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblHolidaysView2.hints.HolidayFrDate.name}"
+                                               filterable="true" sortable="true" headerText="From Date " id="c8"
+                                               align="center">
+                                        <f:facet name="filter">
+                                            <af:inputDate value="#{bindings.TblHolidaysView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.HolidayFrDate.value}"
+                                                          id="id5">
+                                                <af:convertDateTime pattern="#{bindings.TblHolidaysView2.hints.HolidayFrDate.format}"/>
+                                            </af:inputDate>
+                                        </f:facet>
+                                        <af:inputDate value="#{row.bindings.HolidayFrDate.inputValue}"
+                                                      label="#{bindings.TblHolidaysView2.hints.HolidayFrDate.label}"
+                                                      required="#{bindings.TblHolidaysView2.hints.HolidayFrDate.mandatory}"
+                                                      columns="#{bindings.TblHolidaysView2.hints.HolidayFrDate.displayWidth}"
+                                                      shortDesc="#{bindings.TblHolidaysView2.hints.HolidayFrDate.tooltip}"
+                                                      id="id6" contentStyle='text-align: center'>
+                                            <f:validator binding="#{row.bindings.HolidayFrDate.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.TblHolidaysView2.hints.HolidayFrDate.format}"/>
+                                        </af:inputDate>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblHolidaysView2.hints.HolidayToDate.name}"
+                                               filterable="true" sortable="true" headerText="To Date" id="c9"
+                                               align="center">
+                                        <f:facet name="filter">
+                                            <af:inputDate value="#{bindings.TblHolidaysView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.HolidayToDate.value}"
+                                                          id="id7">
+                                                <af:convertDateTime pattern="#{bindings.TblHolidaysView2.hints.HolidayToDate.format}"/>
+                                            </af:inputDate>
+                                        </f:facet>
+                                        <af:inputDate value="#{row.bindings.HolidayToDate.inputValue}"
+                                                      label="#{bindings.TblHolidaysView2.hints.HolidayToDate.label}"
+                                                      required="#{bindings.TblHolidaysView2.hints.HolidayToDate.mandatory}"
+                                                      columns="#{bindings.TblHolidaysView2.hints.HolidayToDate.displayWidth}"
+                                                      shortDesc="#{bindings.TblHolidaysView2.hints.HolidayToDate.tooltip}"
+                                                      id="id8" contentStyle='text-align: center'>
+                                            <f:validator binding="#{row.bindings.HolidayToDate.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.TblHolidaysView2.hints.HolidayToDate.format}"/>
+                                        </af:inputDate>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblHolidaysView2.hints.HolidayName.name}"
+                                               filterable="true" sortable="true" headerText="Holidays" id="c10"
+                                               width="200">
+                                               <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.HolidayName}" id="it10"
+                                                          placeholder="Search Holidays"></af:inputText>
+                                        </f:facet>
+                                        <af:inputText value="#{row.bindings.HolidayName.inputValue}"
+                                                      label="#{bindings.TblHolidaysView2.hints.HolidayName.label}"
+                                                      required="#{bindings.TblHolidaysView2.hints.HolidayName.mandatory}"
+                                                      columns="#{bindings.TblHolidaysView2.hints.HolidayName.displayWidth}"
+                                                      maximumLength="#{bindings.TblHolidaysView2.hints.HolidayName.precision}"
+                                                      shortDesc="#{bindings.TblHolidaysView2.hints.HolidayName.tooltip}"
+                                                      id="it4">
+                                            <f:validator binding="#{row.bindings.HolidayName.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblHolidaysView2.hints.NotifyDays.name}"
+                                               filterable="true" sortable="true" headerText="Notify Days" id="c11"
+                                               align="center">
+                                               <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.NotifyDays}" id="it11"
+                                                          placeholder="Search Days"></af:inputText>
+                                        </f:facet>
+                                        <af:inputText value="#{row.bindings.NotifyDays.inputValue}"
+                                                      label="#{bindings.TblHolidaysView2.hints.NotifyDays.label}"
+                                                      required="#{bindings.TblHolidaysView2.hints.NotifyDays.mandatory}"
+                                                      columns="#{bindings.TblHolidaysView2.hints.NotifyDays.displayWidth}"
+                                                      maximumLength="#{bindings.TblHolidaysView2.hints.NotifyDays.precision}"
+                                                      shortDesc="#{bindings.TblHolidaysView2.hints.NotifyDays.tooltip}"
+                                                      id="it5" contentStyle='text-align: center'>
+                                            <f:validator binding="#{row.bindings.NotifyDays.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblHolidaysView2.hints.NotifyDays.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                </af:table>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+                        <af:panelGroupLayout id="pgl2" layout="horizontal">
                             <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -230,9 +273,9 @@
                                 <af:spacer width="5" height="10" id="s3"/>
                             </af:iterator>
                         </af:panelGroupLayout>
-           </af:gridCell>
-        </af:gridRow>
-      </af:panelGridLayout>
-    </af:showDetailItem>
-  </af:panelAccordion>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:showDetailItem>
+    </af:panelAccordion>
 </ui:composition>
