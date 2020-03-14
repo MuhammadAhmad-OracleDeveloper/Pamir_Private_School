@@ -1,2 +1,175 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"></ui:composition>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+        <af:showDetailItem id="pane1" text="Grade Subjects Setup">
+            <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                           icon="#{resource['images:cancel.png']}" iconPosition="top">
+                    <af:resetActionListener/>
+                </af:button>
+                <af:spacer width="10" height="10" id="s9"/>
+                <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                           disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                           iconPosition="top"/>
+                <af:spacer width="10" height="10" id="s1"/>
+            </af:panelGroupLayout>
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow marginTop="5px" height="auto" id="gr1">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr2">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                        <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+                            <af:showDetailItem id="tab1" text="Subjects">
+                                <af:table value="#{bindings.TblSubjectView1.collectionModel}" var="row"
+                                          rows="#{bindings.TblSubjectView1.rangeSize}"
+                                          emptyText="#{bindings.TblSubjectView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.TblSubjectView1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.TblSubjectView1.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.TblSubjectView1.rangeSize}"
+                                          filterModel="#{bindings.TblSubjectView1Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.TblSubjectView1Query.processQuery}" varStatus="vs"
+                                          id="t1" scrollPolicy="page" autoHeightRows="0">
+                                    <af:column sortProperty="#{bindings.TblSubjectView1.hints.Id.name}"
+                                               filterable="true" sortable="true" headerText="Subject ID" id="c1"
+                                               width="80" align="center">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.Id}" id="id4"
+                                                          placeholder="Search ID"></af:inputText>
+                                        </f:facet>
+                                        <af:inputText value="#{row.bindings.Id.inputValue}"
+                                                      label="#{bindings.TblSubjectView1.hints.Id.label}"
+                                                      required="#{bindings.TblSubjectView1.hints.Id.mandatory}"
+                                                      columns="#{bindings.TblSubjectView1.hints.Id.displayWidth}"
+                                                      maximumLength="#{bindings.TblSubjectView1.hints.Id.precision}"
+                                                      shortDesc="#{bindings.TblSubjectView1.hints.Id.tooltip}" id="it1"
+                                                      readOnly="true"
+                                  contentStyle='text-align: center'>
+                                            <f:validator binding="#{row.bindings.Id.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblSubjectView1.hints.Id.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblSubjectView1.hints.Name.name}"
+                                               filterable="true" sortable="true" headerText="Subject" id="c2"
+                                               width="500">
+                                                <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.Name}" id="it4"
+                                                          placeholder="Search Subject"></af:inputText>
+                                        </f:facet>
+                                        <af:inputText value="#{row.bindings.Name.inputValue}"
+                                                      label="#{bindings.TblSubjectView1.hints.Name.label}"
+                                                      required="#{bindings.TblSubjectView1.hints.Name.mandatory}"
+                                                      columns="#{bindings.TblSubjectView1.hints.Name.displayWidth}"
+                                                      maximumLength="#{bindings.TblSubjectView1.hints.Name.precision}"
+                                                      shortDesc="#{bindings.TblSubjectView1.hints.Name.tooltip}"
+                                                      id="it2" readOnly="true">
+                                            <f:validator binding="#{row.bindings.Name.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                </af:table>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr3">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3"/>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr4">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                        <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+                            <af:showDetailItem id="tab2" text="Grade Subjects">
+                                <af:table value="#{bindings.TblGradeSubjectView3.collectionModel}" var="row"
+                                          rows="#{bindings.TblGradeSubjectView3.rangeSize}"
+                                          emptyText="#{bindings.TblGradeSubjectView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.TblGradeSubjectView3.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.TblGradeSubjectView3.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.TblGradeSubjectView3.rangeSize}"
+                                          filterModel="#{bindings.TblGradeSubjectView3Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.TblGradeSubjectView3Query.processQuery}"
+                                          varStatus="vs" id="t2" scrollPolicy="page" autoHeightRows="0">
+                                    <af:column sortProperty="#{bindings.TblGradeSubjectView3.hints.Id.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Grade Subjects ID" id="c3" align="center" width="100">
+                                                <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.Id}" id="it5"
+                                                          placeholder="Search ID"></af:inputText>
+                                        </f:facet>
+                                        <af:inputText value="#{row.bindings.Id.inputValue}"
+                                                      label="#{bindings.TblGradeSubjectView3.hints.Id.label}"
+                                                      required="#{bindings.TblGradeSubjectView3.hints.Id.mandatory}"
+                                                      columns="#{bindings.TblGradeSubjectView3.hints.Id.displayWidth}"
+                                                      maximumLength="#{bindings.TblGradeSubjectView3.hints.Id.precision}"
+                                                      shortDesc="#{bindings.TblGradeSubjectView3.hints.Id.tooltip}"
+                                                      id="it3" readOnly="true"
+                                  contentStyle='text-align: center'>
+                                            <f:validator binding="#{row.bindings.Id.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblGradeSubjectView3.hints.Id.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblGradeSubjectView3.hints.GradeId.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Grade"
+                                               id="c4" width="500">
+                                                <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.GradeId}" id="it6"
+                                                          placeholder="Search Grade"></af:inputText>
+                                        </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}"
+                                                            label="#{row.bindings.GradeId.label}"
+                                                            required="#{bindings.TblGradeSubjectView3.hints.GradeId.mandatory}"
+                                                            shortDesc="#{bindings.TblGradeSubjectView3.hints.GradeId.tooltip}"
+                                                            id="soc1">
+                                            <f:selectItems value="#{row.bindings.GradeId.items}" id="si1"/>
+                                            <f:validator binding="#{row.bindings.GradeId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblGradeSubjectView3.hints.SubjectId.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Subject"
+                                               id="c5" width="350">
+                                                <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.SubjectId}" id="it7"
+                                                          placeholder="Search Subject"></af:inputText>
+                                        </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.SubjectId.inputValue}"
+                                                            label="#{row.bindings.SubjectId.label}"
+                                                            required="#{bindings.TblGradeSubjectView3.hints.SubjectId.mandatory}"
+                                                            shortDesc="#{bindings.TblGradeSubjectView3.hints.SubjectId.tooltip}"
+                                                            id="soc2">
+                                            <f:selectItems value="#{row.bindings.SubjectId.items}" id="si2"/>
+                                            <f:validator binding="#{row.bindings.SubjectId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                </af:table>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+                        <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s2"/>
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:showDetailItem>
+    </af:panelAccordion>
+</ui:composition>

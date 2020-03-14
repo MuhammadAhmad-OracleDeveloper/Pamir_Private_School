@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Subject_Name_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblSubject.ID, 
+       TblSubject.NAME"
+  FromList="TBL_SUBJECT TblSubject"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Subject_Name_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblSubject"
+    Entity="model.ERP.EO.TblSubject"/>
+  <ViewAttribute
+    Name="Id"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblSubject"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Name"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblSubject"
+    AliasName="NAME"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

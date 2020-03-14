@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Grade_Name_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblGrade.ID, 
+       TblGrade.GRADE_NAME, 
+       TblGrade.AST"
+  FromList="TBL_GRADE TblGrade"
+  Where="AST='Y'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Grade_Name_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblGrade"
+    Entity="model.ERP.EO.TblGrade"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblGrade"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="GradeName"
+    PrecisionRule="true"
+    EntityAttrName="GradeName"
+    EntityUsage="TblGrade"
+    AliasName="GRADE_NAME"/>
+  <ViewAttribute
+    Name="Ast"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblGrade"
+    AliasName="AST"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

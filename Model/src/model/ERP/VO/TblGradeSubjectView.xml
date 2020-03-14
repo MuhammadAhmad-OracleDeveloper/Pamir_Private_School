@@ -13,6 +13,50 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Grade_Name_LOV1"
+    ViewObjectName="model.LOV.Grade_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Subject_Name_LOV1"
+    ViewObjectName="model.LOV.Subject_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_GradeId"
+    ListVOName="Grade_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GradeId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GradeName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SubjectId"
+    ListVOName="Subject_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SubjectId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblGradeSubject"
     Entity="model.ERP.EO.TblGradeSubject"/>
@@ -34,13 +78,29 @@
     PrecisionRule="true"
     EntityAttrName="GradeId"
     EntityUsage="TblGradeSubject"
-    AliasName="GRADE_ID"/>
+    AliasName="GRADE_ID"
+    LOVName="LOV_GradeId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="SubjectId"
     PrecisionRule="true"
     EntityAttrName="SubjectId"
     EntityUsage="TblGradeSubject"
-    AliasName="SUBJECT_ID"/>
+    AliasName="SUBJECT_ID"
+    LOVName="LOV_SubjectId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"

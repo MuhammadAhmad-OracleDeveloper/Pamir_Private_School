@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Academic_Group_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblAcadGroup.ID, 
+       TblAcadGroup.NAME, 
+       TblAcadGroup.AST"
+  FromList="TBL_ACAD_GROUP TblAcadGroup"
+  Where="AST='Y'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Academic_Group_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblAcadGroup"
+    Entity="model.ERP.EO.TblAcadGroup"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblAcadGroup"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Name"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblAcadGroup"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="Ast"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblAcadGroup"
+    AliasName="AST"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>
