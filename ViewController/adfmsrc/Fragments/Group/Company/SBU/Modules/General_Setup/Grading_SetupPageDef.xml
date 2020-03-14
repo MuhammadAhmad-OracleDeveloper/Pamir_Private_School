@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Grading_SetupPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.General_Setup">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblGradeView1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblGradeView1Iterator"/>
+    <searchRegion Binds="TblGradeView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGradeView1Query"/>
+    <iterator Binds="TblMarksGradingView2" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblMarksGradingView2Iterator"/>
+    <searchRegion Binds="TblMarksGradingView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblMarksGradingView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblGradeView1Iterator" id="TblGradeView1">
+      <nodeDefinition DefName="model.ERP.VO.TblGradeView" Name="TblGradeView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="AcadGroupId"/>
+          <Item Value="GradeName"/>
+          <Item Value="KitName"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblMarksGradingView2Iterator" id="TblMarksGradingView2">
+      <nodeDefinition DefName="model.ERP.VO.TblMarksGradingView" Name="TblMarksGradingView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="GradeId"/>
+          <Item Value="GradeCode"/>
+          <Item Value="GradeValue"/>
+          <Item Value="FrPerc"/>
+          <Item Value="ToPerc"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblMarksGradingView2Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblMarksGradingView2Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblMarksGradingView2Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+  </bindings>
+</pageDefinition>

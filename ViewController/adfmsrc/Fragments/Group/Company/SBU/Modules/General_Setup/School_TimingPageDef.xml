@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="School_TimingPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.General_Setup">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblGradeView1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblGradeView1Iterator"/>
+    <searchRegion Binds="TblGradeView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGradeView1Query"/>
+    <iterator Binds="TblSchoolTimeView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblSchoolTimeView2Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblGradeView1Iterator" id="TblGradeView1">
+      <nodeDefinition DefName="model.ERP.VO.TblGradeView" Name="TblGradeView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="AcadGroupId"/>
+          <Item Value="GradeName"/>
+          <Item Value="KitName"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TblSchoolTimeView2Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSchoolTimeView2Iterator" id="StartTime">
+      <AttrNames>
+        <Item Value="StartTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSchoolTimeView2Iterator" id="EndTime">
+      <AttrNames>
+        <Item Value="EndTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSchoolTimeView2Iterator" id="ZeroPrdStartTime">
+      <AttrNames>
+        <Item Value="ZeroPrdStartTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSchoolTimeView2Iterator" id="ZeroPrdEndTime">
+      <AttrNames>
+        <Item Value="ZeroPrdEndTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSchoolTimeView2Iterator" id="BreakStartTime">
+      <AttrNames>
+        <Item Value="BreakStartTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSchoolTimeView2Iterator" id="BreakEndTime">
+      <AttrNames>
+        <Item Value="BreakEndTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSchoolTimeView2Iterator" id="NoOfPerDay">
+      <AttrNames>
+        <Item Value="NoOfPerDay"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSchoolTimeView2Iterator" id="PrayStartTime">
+      <AttrNames>
+        <Item Value="PrayStartTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSchoolTimeView2Iterator" id="PrayEndTime">
+      <AttrNames>
+        <Item Value="PrayEndTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSchoolTimeView2Iterator" id="WeeklyOff">
+      <AttrNames>
+        <Item Value="WeeklyOff"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSchoolTimeView2Iterator" id="FrDate">
+      <AttrNames>
+        <Item Value="FrDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSchoolTimeView2Iterator" id="ToDate">
+      <AttrNames>
+        <Item Value="ToDate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblSchoolTimeView2Iterator" StaticList="false" Uses="LOV_GradeId" id="GradeId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblSchoolTimeView2Iterator" StaticList="false" Uses="LOV_Ast" id="Ast" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <action IterBinding="TblSchoolTimeView2Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblSchoolTimeView2Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblSchoolTimeView2Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblSchoolTimeView2Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <attributeValues IterBinding="TblSchoolTimeView2Iterator" id="ZeroPrdDuration">
+      <AttrNames>
+        <Item Value="ZeroPrdDuration"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblSchoolTimeView2Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblSchoolTimeView2Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblSchoolTimeView2Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+  </bindings>
+</pageDefinition>

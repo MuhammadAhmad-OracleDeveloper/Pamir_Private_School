@@ -1,2 +1,278 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"></ui:composition>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Marks Grading Setup">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Grade">
+                <af:table value="#{bindings.TblGradeView1.collectionModel}" var="row"
+                          rows="#{bindings.TblGradeView1.rangeSize}"
+                          emptyText="#{bindings.TblGradeView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0" selectedRowKeys="#{bindings.TblGradeView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblGradeView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblGradeView1.rangeSize}"
+                          filterModel="#{bindings.TblGradeView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblGradeView1Query.processQuery}" varStatus="vs" id="t1"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblGradeView1.hints.Id.name}" filterable="true" sortable="true"
+                             headerText="Grade ID" id="c1" align="center" width="80">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="id4" placeholder="Search ID">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Id.inputValue}" label="#{bindings.TblGradeView1.hints.Id.label}"
+                                  required="#{bindings.TblGradeView1.hints.Id.mandatory}"
+                                  columns="#{bindings.TblGradeView1.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblGradeView1.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblGradeView1.hints.Id.tooltip}" id="it1"
+                                  readOnly="true"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblGradeView1.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblGradeView1.hints.AcadGroupId.name}" filterable="true"
+                             sortable="true" headerText="Academic Group" id="c2" width="200">
+                    <af:selectOneChoice value="#{row.bindings.AcadGroupId.inputValue}"
+                                        label="#{row.bindings.AcadGroupId.label}"
+                                        required="#{bindings.TblGradeView1.hints.AcadGroupId.mandatory}"
+                                        shortDesc="#{bindings.TblGradeView1.hints.AcadGroupId.tooltip}" id="soc1" readOnly="true">
+                      <f:selectItems value="#{row.bindings.AcadGroupId.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.AcadGroupId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblGradeView1.hints.GradeName.name}" filterable="true"
+                             sortable="true" headerText="Grade" id="c3" width="300">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.GradeName}"
+       id="it9" placeholder="Search Grade">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.GradeName.inputValue}"
+                                  label="#{bindings.TblGradeView1.hints.GradeName.label}"
+                                  required="#{bindings.TblGradeView1.hints.GradeName.mandatory}"
+                                  columns="#{bindings.TblGradeView1.hints.GradeName.displayWidth}"
+                                  maximumLength="#{bindings.TblGradeView1.hints.GradeName.precision}"
+                                  shortDesc="#{bindings.TblGradeView1.hints.GradeName.tooltip}" id="it2" readOnly="true">
+                      <f:validator binding="#{row.bindings.GradeName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblGradeView1.hints.KitName.name}" filterable="true"
+                             sortable="true" headerText="Kit" id="c4" width="250">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.KitName}"
+       id="it10" placeholder="Search Kit">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.KitName.inputValue}"
+                                  label="#{bindings.TblGradeView1.hints.KitName.label}"
+                                  required="#{bindings.TblGradeView1.hints.KitName.mandatory}"
+                                  columns="#{bindings.TblGradeView1.hints.KitName.displayWidth}"
+                                  maximumLength="#{bindings.TblGradeView1.hints.KitName.precision}"
+                                  shortDesc="#{bindings.TblGradeView1.hints.KitName.tooltip}" id="it3" readOnly="true">
+                      <f:validator binding="#{row.bindings.KitName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblGradeView1.hints.Ast.name}" filterable="true" sortable="true"
+                             headerText="#{bindings.TblGradeView1.hints.Ast.label}" id="c5" width="90">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ast}"
+       id="it11" placeholder="Search Status">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblGradeView1.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblGradeView1.hints.Ast.tooltip}" id="soc2" readOnly="true">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si2"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr4">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+            <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab2" text="Marks Grading">
+                <af:table value="#{bindings.TblMarksGradingView2.collectionModel}" var="row"
+                          rows="#{bindings.TblMarksGradingView2.rangeSize}"
+                          emptyText="#{bindings.TblMarksGradingView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblMarksGradingView2.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblMarksGradingView2.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblMarksGradingView2.rangeSize}"
+                          filterModel="#{bindings.TblMarksGradingView2Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblMarksGradingView2Query.processQuery}" varStatus="vs" id="t2"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblMarksGradingView2.hints.Id.name}" filterable="true"
+                             sortable="true" headerText="Marks Grading ID" id="c6" align="center" width="80">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="it12" placeholder="Search ID">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblMarksGradingView2.hints.Id.label}"
+                                  required="#{bindings.TblMarksGradingView2.hints.Id.mandatory}"
+                                  columns="#{bindings.TblMarksGradingView2.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblMarksGradingView2.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblMarksGradingView2.hints.Id.tooltip}" id="it4"
+                                  readOnly="true"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblMarksGradingView2.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblMarksGradingView2.hints.GradeId.name}" filterable="true"
+                             sortable="true" headerText="Grade" id="c7" width="240">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.GradeId}"
+       id="it13" placeholder="Search Grade">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
+                                        required="#{bindings.TblMarksGradingView2.hints.GradeId.mandatory}"
+                                        shortDesc="#{bindings.TblMarksGradingView2.hints.GradeId.tooltip}" id="soc3">
+                      <f:selectItems value="#{row.bindings.GradeId.items}" id="si3"/>
+                      <f:validator binding="#{row.bindings.GradeId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblMarksGradingView2.hints.GradeCode.name}" filterable="true"
+                             sortable="true" headerText="Grade Code"
+                             id="c8" align="center" width="200">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.GradeCode}"
+       id="it14" placeholder="Search Code">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.GradeCode.inputValue}"
+                                  label="#{bindings.TblMarksGradingView2.hints.GradeCode.label}"
+                                  required="#{bindings.TblMarksGradingView2.hints.GradeCode.mandatory}"
+                                  columns="#{bindings.TblMarksGradingView2.hints.GradeCode.displayWidth}"
+                                  maximumLength="#{bindings.TblMarksGradingView2.hints.GradeCode.precision}"
+                                  shortDesc="#{bindings.TblMarksGradingView2.hints.GradeCode.tooltip}" id="it5"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.GradeCode.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblMarksGradingView2.hints.GradeValue.name}" filterable="true"
+                             sortable="true" headerText="Grade value"
+                             id="c9" align="center">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.GradeValue}"
+       id="it15" placeholder="Search value">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.GradeValue.inputValue}"
+                                  label="#{bindings.TblMarksGradingView2.hints.GradeValue.label}"
+                                  required="#{bindings.TblMarksGradingView2.hints.GradeValue.mandatory}"
+                                  columns="#{bindings.TblMarksGradingView2.hints.GradeValue.displayWidth}"
+                                  maximumLength="#{bindings.TblMarksGradingView2.hints.GradeValue.precision}"
+                                  shortDesc="#{bindings.TblMarksGradingView2.hints.GradeValue.tooltip}" id="it6"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.GradeValue.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblMarksGradingView2.hints.FrPerc.name}" filterable="true"
+                             sortable="true" headerText="From percentage" id="c10" width="110" align="center">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FrPerc}"
+       id="it16" placeholder="Search percentage">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.FrPerc.inputValue}"
+                                  label="#{bindings.TblMarksGradingView2.hints.FrPerc.label}"
+                                  required="#{bindings.TblMarksGradingView2.hints.FrPerc.mandatory}"
+                                  columns="#{bindings.TblMarksGradingView2.hints.FrPerc.displayWidth}"
+                                  maximumLength="#{bindings.TblMarksGradingView2.hints.FrPerc.precision}"
+                                  shortDesc="#{bindings.TblMarksGradingView2.hints.FrPerc.tooltip}" id="it7"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.FrPerc.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblMarksGradingView2.hints.FrPerc.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblMarksGradingView2.hints.ToPerc.name}" filterable="true"
+                             sortable="true" headerText="To percentage" id="c11" align="center">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ToPerc}"
+       id="it17" placeholder="Search percentage">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.ToPerc.inputValue}"
+                                  label="#{bindings.TblMarksGradingView2.hints.ToPerc.label}"
+                                  required="#{bindings.TblMarksGradingView2.hints.ToPerc.mandatory}"
+                                  columns="#{bindings.TblMarksGradingView2.hints.ToPerc.displayWidth}"
+                                  maximumLength="#{bindings.TblMarksGradingView2.hints.ToPerc.precision}"
+                                  shortDesc="#{bindings.TblMarksGradingView2.hints.ToPerc.tooltip}" id="it8"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.ToPerc.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblMarksGradingView2.hints.ToPerc.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblMarksGradingView2.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="Active" id="c12"
+                             width="70">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ast}"
+       id="it18" placeholder="Search Status">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblMarksGradingView2.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblMarksGradingView2.hints.Ast.tooltip}" id="soc4">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si4"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+               
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+             <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+           </af:gridCell>
+        </af:gridRow>
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>

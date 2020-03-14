@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Grade_SetupPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.General_Setup">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblAcadGroupView1" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblAcadGroupView1Iterator"/>
+    <searchRegion Binds="TblAcadGroupView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblAcadGroupView1Query"/>
+    <iterator Binds="TblGradeView2" RangeSize="8" DataControl="AppModuleDataControl1" id="TblGradeView2Iterator"/>
+    <searchRegion Binds="TblGradeView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGradeView2Query"/>
+    <iterator Binds="TblSectionsView2" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblSectionsView2Iterator"/>
+    <searchRegion Binds="TblSectionsView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblSectionsView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblAcadGroupView1Iterator" id="TblAcadGroupView1">
+      <nodeDefinition DefName="model.ERP.VO.TblAcadGroupView" Name="TblAcadGroupView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblGradeView2Iterator" id="TblGradeView2">
+      <nodeDefinition DefName="model.ERP.VO.TblGradeView" Name="TblGradeView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="AcadGroupId"/>
+          <Item Value="GradeName"/>
+          <Item Value="KitName"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblGradeView2Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblGradeView2Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblGradeView2Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblSectionsView2Iterator" id="TblSectionsView2">
+      <nodeDefinition DefName="model.ERP.VO.TblSectionsView" Name="TblSectionsView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="GradeId"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblSectionsView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblSectionsView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblSectionsView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

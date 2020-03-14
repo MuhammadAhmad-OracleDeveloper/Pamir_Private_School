@@ -1,2 +1,345 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"></ui:composition>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Evaluation Weightage Setup">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Grade">
+                <af:table value="#{bindings.TblGradeView1.collectionModel}" var="row"
+                          rows="#{bindings.TblGradeView1.rangeSize}"
+                          emptyText="#{bindings.TblGradeView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0" selectedRowKeys="#{bindings.TblGradeView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblGradeView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblGradeView1.rangeSize}"
+                          filterModel="#{bindings.TblGradeView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblGradeView1Query.processQuery}" varStatus="vs" id="t1">
+                  <af:column sortProperty="#{bindings.TblGradeView1.hints.Id.name}" filterable="true" sortable="true"
+                             headerText="#{bindings.TblGradeView1.hints.Id.label}" id="c1">
+                    <af:inputText value="#{row.bindings.Id.inputValue}" label="#{bindings.TblGradeView1.hints.Id.label}"
+                                  required="#{bindings.TblGradeView1.hints.Id.mandatory}"
+                                  columns="#{bindings.TblGradeView1.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblGradeView1.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblGradeView1.hints.Id.tooltip}" id="it1">
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblGradeView1.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblGradeView1.hints.AcadGroupId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblGradeView1.hints.AcadGroupId.label}" id="c2">
+                    <af:selectOneChoice value="#{row.bindings.AcadGroupId.inputValue}"
+                                        label="#{row.bindings.AcadGroupId.label}"
+                                        required="#{bindings.TblGradeView1.hints.AcadGroupId.mandatory}"
+                                        shortDesc="#{bindings.TblGradeView1.hints.AcadGroupId.tooltip}" id="soc1">
+                      <f:selectItems value="#{row.bindings.AcadGroupId.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.AcadGroupId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblGradeView1.hints.GradeName.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblGradeView1.hints.GradeName.label}" id="c3">
+                    <af:inputText value="#{row.bindings.GradeName.inputValue}"
+                                  label="#{bindings.TblGradeView1.hints.GradeName.label}"
+                                  required="#{bindings.TblGradeView1.hints.GradeName.mandatory}"
+                                  columns="#{bindings.TblGradeView1.hints.GradeName.displayWidth}"
+                                  maximumLength="#{bindings.TblGradeView1.hints.GradeName.precision}"
+                                  shortDesc="#{bindings.TblGradeView1.hints.GradeName.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.GradeName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblGradeView1.hints.KitName.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblGradeView1.hints.KitName.label}" id="c4">
+                    <af:inputText value="#{row.bindings.KitName.inputValue}"
+                                  label="#{bindings.TblGradeView1.hints.KitName.label}"
+                                  required="#{bindings.TblGradeView1.hints.KitName.mandatory}"
+                                  columns="#{bindings.TblGradeView1.hints.KitName.displayWidth}"
+                                  maximumLength="#{bindings.TblGradeView1.hints.KitName.precision}"
+                                  shortDesc="#{bindings.TblGradeView1.hints.KitName.tooltip}" id="it3">
+                      <f:validator binding="#{row.bindings.KitName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblGradeView1.hints.Ast.name}" filterable="true" sortable="true"
+                             headerText="#{bindings.TblGradeView1.hints.Ast.label}" id="c5">
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblGradeView1.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblGradeView1.hints.Ast.tooltip}" id="soc2">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si2"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr4">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+            <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab2" text="Evaluation Weightage">
+                <af:table value="#{bindings.TblEvalWeightageView2.collectionModel}" var="row"
+                          rows="#{bindings.TblEvalWeightageView2.rangeSize}"
+                          emptyText="#{bindings.TblEvalWeightageView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblEvalWeightageView2.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblEvalWeightageView2.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblEvalWeightageView2.rangeSize}"
+                          filterModel="#{bindings.TblEvalWeightageView2Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblEvalWeightageView2Query.processQuery}" varStatus="vs" id="t2"
+                          partialTriggers="::b2 ::b3 ::b4">
+                  <af:column sortProperty="#{bindings.TblEvalWeightageView2.hints.Id.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblEvalWeightageView2.hints.Id.label}" id="c6">
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblEvalWeightageView2.hints.Id.label}"
+                                  required="#{bindings.TblEvalWeightageView2.hints.Id.mandatory}"
+                                  columns="#{bindings.TblEvalWeightageView2.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblEvalWeightageView2.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblEvalWeightageView2.hints.Id.tooltip}" id="it4">
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblEvalWeightageView2.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblEvalWeightageView2.hints.GroupCompanyId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblEvalWeightageView2.hints.GroupCompanyId.label}" id="c7">
+                    <af:inputText value="#{row.bindings.GroupCompanyId.inputValue}"
+                                  label="#{bindings.TblEvalWeightageView2.hints.GroupCompanyId.label}"
+                                  required="#{bindings.TblEvalWeightageView2.hints.GroupCompanyId.mandatory}"
+                                  columns="#{bindings.TblEvalWeightageView2.hints.GroupCompanyId.displayWidth}"
+                                  maximumLength="#{bindings.TblEvalWeightageView2.hints.GroupCompanyId.precision}"
+                                  shortDesc="#{bindings.TblEvalWeightageView2.hints.GroupCompanyId.tooltip}" id="it5">
+                      <f:validator binding="#{row.bindings.GroupCompanyId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblEvalWeightageView2.hints.GroupCompanyId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblEvalWeightageView2.hints.GradeId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblEvalWeightageView2.hints.GradeId.label}" id="c8">
+                    <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
+                                        required="#{bindings.TblEvalWeightageView2.hints.GradeId.mandatory}"
+                                        shortDesc="#{bindings.TblEvalWeightageView2.hints.GradeId.tooltip}" id="soc3">
+                      <f:selectItems value="#{row.bindings.GradeId.items}" id="si3"/>
+                      <f:validator binding="#{row.bindings.GradeId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblEvalWeightageView2.hints.TermId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblEvalWeightageView2.hints.TermId.label}" id="c9">
+                    <af:selectOneChoice value="#{row.bindings.TermId.inputValue}" label="#{row.bindings.TermId.label}"
+                                        required="#{bindings.TblEvalWeightageView2.hints.TermId.mandatory}"
+                                        shortDesc="#{bindings.TblEvalWeightageView2.hints.TermId.tooltip}" id="soc4">
+                      <f:selectItems value="#{row.bindings.TermId.items}" id="si4"/>
+                      <f:validator binding="#{row.bindings.TermId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblEvalWeightageView2.hints.LookupEvaluation.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblEvalWeightageView2.hints.LookupEvaluation.label}" id="c10">
+                    <af:selectOneChoice value="#{row.bindings.LookupEvaluation.inputValue}"
+                                        label="#{row.bindings.LookupEvaluation.label}"
+                                        required="#{bindings.TblEvalWeightageView2.hints.LookupEvaluation.mandatory}"
+                                        shortDesc="#{bindings.TblEvalWeightageView2.hints.LookupEvaluation.tooltip}"
+                                        id="soc5">
+                      <f:selectItems value="#{row.bindings.LookupEvaluation.items}" id="si5"/>
+                      <f:validator binding="#{row.bindings.LookupEvaluation.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblEvalWeightageView2.hints.LookupDTopic1.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblEvalWeightageView2.hints.LookupDTopic1.label}"
+                             id="c11">
+                    <af:inputText value="#{row.bindings.LookupDTopic1.inputValue}"
+                                  label="#{bindings.TblEvalWeightageView2.hints.LookupDTopic1.label}"
+                                  required="#{bindings.TblEvalWeightageView2.hints.LookupDTopic1.mandatory}"
+                                  columns="#{bindings.TblEvalWeightageView2.hints.LookupDTopic1.displayWidth}"
+                                  maximumLength="#{bindings.TblEvalWeightageView2.hints.LookupDTopic1.precision}"
+                                  shortDesc="#{bindings.TblEvalWeightageView2.hints.LookupDTopic1.tooltip}" id="it6">
+                      <f:validator binding="#{row.bindings.LookupDTopic1.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblEvalWeightageView2.hints.LookupDTopic1.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblEvalWeightageView2.hints.Topic1Marks.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblEvalWeightageView2.hints.Topic1Marks.label}"
+                             id="c12">
+                    <af:inputText value="#{row.bindings.Topic1Marks.inputValue}"
+                                  label="#{bindings.TblEvalWeightageView2.hints.Topic1Marks.label}"
+                                  required="#{bindings.TblEvalWeightageView2.hints.Topic1Marks.mandatory}"
+                                  columns="#{bindings.TblEvalWeightageView2.hints.Topic1Marks.displayWidth}"
+                                  maximumLength="#{bindings.TblEvalWeightageView2.hints.Topic1Marks.precision}"
+                                  shortDesc="#{bindings.TblEvalWeightageView2.hints.Topic1Marks.tooltip}" id="it7">
+                      <f:validator binding="#{row.bindings.Topic1Marks.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblEvalWeightageView2.hints.Topic1Marks.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblEvalWeightageView2.hints.LookupDTopic2.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblEvalWeightageView2.hints.LookupDTopic2.label}"
+                             id="c13">
+                    <af:inputText value="#{row.bindings.LookupDTopic2.inputValue}"
+                                  label="#{bindings.TblEvalWeightageView2.hints.LookupDTopic2.label}"
+                                  required="#{bindings.TblEvalWeightageView2.hints.LookupDTopic2.mandatory}"
+                                  columns="#{bindings.TblEvalWeightageView2.hints.LookupDTopic2.displayWidth}"
+                                  maximumLength="#{bindings.TblEvalWeightageView2.hints.LookupDTopic2.precision}"
+                                  shortDesc="#{bindings.TblEvalWeightageView2.hints.LookupDTopic2.tooltip}" id="it8">
+                      <f:validator binding="#{row.bindings.LookupDTopic2.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblEvalWeightageView2.hints.LookupDTopic2.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblEvalWeightageView2.hints.Topic2Marks.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblEvalWeightageView2.hints.Topic2Marks.label}"
+                             id="c14">
+                    <af:inputText value="#{row.bindings.Topic2Marks.inputValue}"
+                                  label="#{bindings.TblEvalWeightageView2.hints.Topic2Marks.label}"
+                                  required="#{bindings.TblEvalWeightageView2.hints.Topic2Marks.mandatory}"
+                                  columns="#{bindings.TblEvalWeightageView2.hints.Topic2Marks.displayWidth}"
+                                  maximumLength="#{bindings.TblEvalWeightageView2.hints.Topic2Marks.precision}"
+                                  shortDesc="#{bindings.TblEvalWeightageView2.hints.Topic2Marks.tooltip}" id="it9">
+                      <f:validator binding="#{row.bindings.Topic2Marks.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblEvalWeightageView2.hints.Topic2Marks.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblEvalWeightageView2.hints.EvaType.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblEvalWeightageView2.hints.EvaType.label}"
+                             id="c15">
+                    <af:inputText value="#{row.bindings.EvaType.inputValue}"
+                                  label="#{bindings.TblEvalWeightageView2.hints.EvaType.label}"
+                                  required="#{bindings.TblEvalWeightageView2.hints.EvaType.mandatory}"
+                                  columns="#{bindings.TblEvalWeightageView2.hints.EvaType.displayWidth}"
+                                  maximumLength="#{bindings.TblEvalWeightageView2.hints.EvaType.precision}"
+                                  shortDesc="#{bindings.TblEvalWeightageView2.hints.EvaType.tooltip}" id="it10">
+                      <f:validator binding="#{row.bindings.EvaType.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblEvalWeightageView2.hints.TotalMarks.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblEvalWeightageView2.hints.TotalMarks.label}"
+                             id="c16">
+                    <af:inputText value="#{row.bindings.TotalMarks.inputValue}"
+                                  label="#{bindings.TblEvalWeightageView2.hints.TotalMarks.label}"
+                                  required="#{bindings.TblEvalWeightageView2.hints.TotalMarks.mandatory}"
+                                  columns="#{bindings.TblEvalWeightageView2.hints.TotalMarks.displayWidth}"
+                                  maximumLength="#{bindings.TblEvalWeightageView2.hints.TotalMarks.precision}"
+                                  shortDesc="#{bindings.TblEvalWeightageView2.hints.TotalMarks.tooltip}" id="it11">
+                      <f:validator binding="#{row.bindings.TotalMarks.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblEvalWeightageView2.hints.TotalMarks.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblEvalWeightageView2.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblEvalWeightageView2.hints.Ast.label}" id="c17">
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblEvalWeightageView2.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblEvalWeightageView2.hints.Ast.tooltip}" id="soc6">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si6"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblEvalWeightageView2.hints.CreatedDate.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblEvalWeightageView2.hints.CreatedDate.label}"
+                             id="c18">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblEvalWeightageView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.CreatedDate.value}"
+                                    id="id1">
+                        <af:convertDateTime pattern="#{bindings.TblEvalWeightageView2.hints.CreatedDate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.CreatedDate.inputValue}"
+                                  label="#{bindings.TblEvalWeightageView2.hints.CreatedDate.label}"
+                                  required="#{bindings.TblEvalWeightageView2.hints.CreatedDate.mandatory}"
+                                  columns="#{bindings.TblEvalWeightageView2.hints.CreatedDate.displayWidth}"
+                                  shortDesc="#{bindings.TblEvalWeightageView2.hints.CreatedDate.tooltip}" id="id2">
+                      <f:validator binding="#{row.bindings.CreatedDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblEvalWeightageView2.hints.CreatedDate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblEvalWeightageView2.hints.CreatedBy.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblEvalWeightageView2.hints.CreatedBy.label}"
+                             id="c19">
+                    <af:inputText value="#{row.bindings.CreatedBy.inputValue}"
+                                  label="#{bindings.TblEvalWeightageView2.hints.CreatedBy.label}"
+                                  required="#{bindings.TblEvalWeightageView2.hints.CreatedBy.mandatory}"
+                                  columns="#{bindings.TblEvalWeightageView2.hints.CreatedBy.displayWidth}"
+                                  maximumLength="#{bindings.TblEvalWeightageView2.hints.CreatedBy.precision}"
+                                  shortDesc="#{bindings.TblEvalWeightageView2.hints.CreatedBy.tooltip}" id="it12">
+                      <f:validator binding="#{row.bindings.CreatedBy.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblEvalWeightageView2.hints.CreatedBy.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblEvalWeightageView2.hints.UpdatedDate.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblEvalWeightageView2.hints.UpdatedDate.label}"
+                             id="c20">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblEvalWeightageView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.UpdatedDate.value}"
+                                    id="id3">
+                        <af:convertDateTime pattern="#{bindings.TblEvalWeightageView2.hints.UpdatedDate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.UpdatedDate.inputValue}"
+                                  label="#{bindings.TblEvalWeightageView2.hints.UpdatedDate.label}"
+                                  required="#{bindings.TblEvalWeightageView2.hints.UpdatedDate.mandatory}"
+                                  columns="#{bindings.TblEvalWeightageView2.hints.UpdatedDate.displayWidth}"
+                                  shortDesc="#{bindings.TblEvalWeightageView2.hints.UpdatedDate.tooltip}" id="id4">
+                      <f:validator binding="#{row.bindings.UpdatedDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblEvalWeightageView2.hints.UpdatedDate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblEvalWeightageView2.hints.UpdatedBy.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblEvalWeightageView2.hints.UpdatedBy.label}"
+                             id="c21">
+                    <af:inputText value="#{row.bindings.UpdatedBy.inputValue}"
+                                  label="#{bindings.TblEvalWeightageView2.hints.UpdatedBy.label}"
+                                  required="#{bindings.TblEvalWeightageView2.hints.UpdatedBy.mandatory}"
+                                  columns="#{bindings.TblEvalWeightageView2.hints.UpdatedBy.displayWidth}"
+                                  maximumLength="#{bindings.TblEvalWeightageView2.hints.UpdatedBy.precision}"
+                                  shortDesc="#{bindings.TblEvalWeightageView2.hints.UpdatedBy.tooltip}" id="it13">
+                      <f:validator binding="#{row.bindings.UpdatedBy.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblEvalWeightageView2.hints.UpdatedBy.format}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+               
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+             <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s2"/>
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+           </af:gridCell>
+        </af:gridRow>
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>

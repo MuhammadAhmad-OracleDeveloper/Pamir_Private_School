@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Evaluation_WeightagePageDef"
+                Package="Fragments.Group.Company.SBU.Modules.General_Setup">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblGradeView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblGradeView1Iterator"/>
+    <searchRegion Binds="TblGradeView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGradeView1Query"/>
+    <iterator Binds="TblEvalWeightageView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblEvalWeightageView2Iterator"/>
+    <searchRegion Binds="TblEvalWeightageView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblEvalWeightageView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblGradeView1Iterator" id="TblGradeView1">
+      <nodeDefinition DefName="model.ERP.VO.TblGradeView" Name="TblGradeView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="AcadGroupId"/>
+          <Item Value="GradeName"/>
+          <Item Value="KitName"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblEvalWeightageView2Iterator" id="TblEvalWeightageView2">
+      <nodeDefinition DefName="model.ERP.VO.TblEvalWeightageView" Name="TblEvalWeightageView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="GroupCompanyId"/>
+          <Item Value="GradeId"/>
+          <Item Value="TermId"/>
+          <Item Value="LookupEvaluation"/>
+          <Item Value="LookupDTopic1"/>
+          <Item Value="Topic1Marks"/>
+          <Item Value="LookupDTopic2"/>
+          <Item Value="Topic2Marks"/>
+          <Item Value="EvaType"/>
+          <Item Value="TotalMarks"/>
+          <Item Value="Ast"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="UpdatedDate"/>
+          <Item Value="UpdatedBy"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblEvalWeightageView2Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblEvalWeightageView2Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblEvalWeightageView2Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>
