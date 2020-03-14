@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Student_Enquiry_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblStdEnq.ID, 
+       TblStdEnq.FIRST_NAME, 
+       TblStdEnq.AST, 
+       TblStdEnq.LAST_NAME"
+  FromList="TBL_STD_ENQ TblStdEnq"
+  Where="AST='Y'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Student_Enquiry_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblStdEnq"
+    Entity="model.ERP.EO.TblStdEnq"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblStdEnq"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="FirstName"
+    PrecisionRule="true"
+    EntityAttrName="FirstName"
+    EntityUsage="TblStdEnq"
+    AliasName="FIRST_NAME"/>
+  <ViewAttribute
+    Name="Ast"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblStdEnq"
+    AliasName="AST"/>
+  <ViewAttribute
+    Name="LastName"
+    PrecisionRule="true"
+    EntityAttrName="LastName"
+    EntityUsage="TblStdEnq"
+    AliasName="LAST_NAME"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>
