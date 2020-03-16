@@ -1,2 +1,1012 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"></ui:composition>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Staff Setup">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Staff">
+                <af:table value="#{bindings.TblStaffView1.collectionModel}" var="row"
+                          rows="#{bindings.TblStaffView1.rangeSize}"
+                          emptyText="#{bindings.TblStaffView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0" selectedRowKeys="#{bindings.TblStaffView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblStaffView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblStaffView1.rangeSize}"
+                          filterModel="#{bindings.TblStaffView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblStaffView1Query.processQuery}" varStatus="vs" id="t1"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblStaffView1.hints.Id.name}" filterable="true" sortable="true"
+                             headerText="Staff ID" id="c1" width="80" align="center">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="id4" placeholder="Search ID">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Id.inputValue}" label="#{bindings.TblStaffView1.hints.Id.label}"
+                                  required="#{bindings.TblStaffView1.hints.Id.mandatory}"
+                                  columns="#{bindings.TblStaffView1.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblStaffView1.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblStaffView1.hints.Id.tooltip}" id="it1"
+                                  readOnly="true"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblStaffView1.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffView1.hints.Dated.name}" filterable="true" sortable="true"
+                             headerText="Date" id="c2" align="center">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblStaffView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                    id="id1">
+                        <af:convertDateTime pattern="#{bindings.TblStaffView1.hints.Dated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                  label="#{bindings.TblStaffView1.hints.Dated.label}"
+                                  required="#{bindings.TblStaffView1.hints.Dated.mandatory}"
+                                  columns="#{bindings.TblStaffView1.hints.Dated.displayWidth}"
+                                  shortDesc="#{bindings.TblStaffView1.hints.Dated.tooltip}" id="id2"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.Dated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblStaffView1.hints.Dated.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffView1.hints.FirstName.name}" filterable="true"
+                             sortable="true" headerText="First Name" id="c3" width="200">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FirstName}"
+       id="it6" placeholder="Search First Name">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.FirstName.inputValue}"
+                                  label="#{bindings.TblStaffView1.hints.FirstName.label}"
+                                  required="#{bindings.TblStaffView1.hints.FirstName.mandatory}"
+                                  columns="#{bindings.TblStaffView1.hints.FirstName.displayWidth}"
+                                  maximumLength="#{bindings.TblStaffView1.hints.FirstName.precision}"
+                                  shortDesc="#{bindings.TblStaffView1.hints.FirstName.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.FirstName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffView1.hints.LastName.name}" filterable="true"
+                             sortable="true" headerText="Last Name" id="c4" width="200">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.LastName}"
+       id="it14" placeholder="Search Last Name">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.LastName.inputValue}"
+                                  label="#{bindings.TblStaffView1.hints.LastName.label}"
+                                  required="#{bindings.TblStaffView1.hints.LastName.mandatory}"
+                                  columns="#{bindings.TblStaffView1.hints.LastName.displayWidth}"
+                                  maximumLength="#{bindings.TblStaffView1.hints.LastName.precision}"
+                                  shortDesc="#{bindings.TblStaffView1.hints.LastName.tooltip}" id="it3">
+                      <f:validator binding="#{row.bindings.LastName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffView1.hints.Doj.name}" filterable="true" sortable="true"
+                             headerText="Date OF Join" id="c5" align="center">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblStaffView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Doj.value}"
+                                    id="id3">
+                        <af:convertDateTime pattern="#{bindings.TblStaffView1.hints.Doj.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Doj.inputValue}"
+                                  label="#{bindings.TblStaffView1.hints.Doj.label}"
+                                  required="#{bindings.TblStaffView1.hints.Doj.mandatory}"
+                                  columns="#{bindings.TblStaffView1.hints.Doj.displayWidth}"
+                                  shortDesc="#{bindings.TblStaffView1.hints.Doj.tooltip}" id="id6" contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.Doj.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblStaffView1.hints.Doj.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffView1.hints.EmirId.name}" filterable="true"
+                             sortable="true" headerText="Emirates ID" id="c6" align="center" width="120">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.EmirId}"
+       id="it15" placeholder="Search Emirates ID">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.EmirId.inputValue}"
+                                  label="#{bindings.TblStaffView1.hints.EmirId.label}"
+                                  required="#{bindings.TblStaffView1.hints.EmirId.mandatory}"
+                                  columns="#{bindings.TblStaffView1.hints.EmirId.displayWidth}"
+                                  maximumLength="#{bindings.TblStaffView1.hints.EmirId.precision}"
+                                  shortDesc="#{bindings.TblStaffView1.hints.EmirId.tooltip}" id="it4" contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.EmirId.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="Active" id="c7" sortable="true"
+                             filterable="true">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ast}"
+       id="it16" placeholder="Search Status">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblStaffView1.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblStaffView1.hints.Ast.tooltip}" id="soc1">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+                
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+             <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s5"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr4">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+            <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab2" text="Staff Detail">
+                <af:panelFormLayout id="pfl1" maxColumns="3" rows="8">
+                  <af:inputDate value="#{bindings.Dob.inputValue}" label="DOB"
+                                required="#{bindings.Dob.hints.mandatory}" columns="#{bindings.Dob.hints.displayWidth}"
+                                shortDesc="#{bindings.Dob.hints.tooltip}" id="id5" contentStyle="width:150px;">
+                    <f:validator binding="#{bindings.Dob.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.Dob.format}"/>
+                  </af:inputDate>
+                  <af:inputText value="#{bindings.Gender.inputValue}" label="Gender"
+                                required="#{bindings.Gender.hints.mandatory}"
+                                columns="#{bindings.Gender.hints.displayWidth}"
+                                maximumLength="#{bindings.Gender.hints.precision}"
+                                shortDesc="#{bindings.Gender.hints.tooltip}" id="it5" contentStyle="width:150px;">
+                    <f:validator binding="#{bindings.Gender.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s6"/>
+                  <af:selectOneChoice value="#{bindings.JobStatus1.inputValue}" label="Job Status"
+                                      required="#{bindings.JobStatus1.hints.mandatory}"
+                                      shortDesc="#{bindings.JobStatus1.hints.tooltip}" id="soc7"
+                                      contentStyle="width:150px;">
+                    <f:selectItems value="#{bindings.JobStatus1.items}" id="si7"/>
+                    <f:validator binding="#{bindings.JobStatus1.validator}"/>
+                  </af:selectOneChoice>
+                  <af:inputText value="#{bindings.PersonalMobile.inputValue}"
+                                label="Mobile"
+                                required="#{bindings.PersonalMobile.hints.mandatory}"
+                                columns="#{bindings.PersonalMobile.hints.displayWidth}"
+                                maximumLength="#{bindings.PersonalMobile.hints.precision}"
+                                shortDesc="#{bindings.PersonalMobile.hints.tooltip}" id="it7"
+                                contentStyle="width:150px;">
+                    <f:validator binding="#{bindings.PersonalMobile.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.ResPhone.inputValue}" label="Phone"
+                                required="#{bindings.ResPhone.hints.mandatory}"
+                                columns="#{bindings.ResPhone.hints.displayWidth}"
+                                maximumLength="#{bindings.ResPhone.hints.precision}"
+                                shortDesc="#{bindings.ResPhone.hints.tooltip}" id="it8" contentStyle="width:150px;">
+                    <f:validator binding="#{bindings.ResPhone.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.OtherContact.inputValue}" label="Other Contact"
+                                required="#{bindings.OtherContact.hints.mandatory}"
+                                columns="#{bindings.OtherContact.hints.displayWidth}"
+                                maximumLength="#{bindings.OtherContact.hints.precision}"
+                                shortDesc="#{bindings.OtherContact.hints.tooltip}" id="it9" contentStyle="width:150px;">
+                    <f:validator binding="#{bindings.OtherContact.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s7"/>
+                  <af:selectOneChoice value="#{bindings.LookupSalutation.inputValue}"
+                                      label="Salutation"
+                                      required="#{bindings.LookupSalutation.hints.mandatory}"
+                                      shortDesc="#{bindings.LookupSalutation.hints.tooltip}" id="soc2"
+                                      contentStyle="width:150px;">
+                    <f:selectItems value="#{bindings.LookupSalutation.items}" id="si2"/>
+                    <f:validator binding="#{bindings.LookupSalutation.validator}"/>
+                  </af:selectOneChoice>
+                  <af:spacer  id="s8"/>
+                  <af:selectOneChoice value="#{bindings.LookupNationality.inputValue}"
+                                      label="Nationality"
+                                      required="#{bindings.LookupNationality.hints.mandatory}"
+                                      shortDesc="#{bindings.LookupNationality.hints.tooltip}" id="soc3"
+                                      contentStyle="width:150px;">
+                    <f:selectItems value="#{bindings.LookupNationality.items}" id="si3"/>
+                    <f:validator binding="#{bindings.LookupNationality.validator}"/>
+                  </af:selectOneChoice>
+                  <af:spacer  id="s10"/>
+                  <af:selectOneChoice value="#{bindings.LookupReligion.inputValue}"
+                                      label="Religion"
+                                      required="#{bindings.LookupReligion.hints.mandatory}"
+                                      shortDesc="#{bindings.LookupReligion.hints.tooltip}" id="soc4"
+                                      contentStyle="width:150px;">
+                    <f:selectItems value="#{bindings.LookupReligion.items}" id="si4"/>
+                    <f:validator binding="#{bindings.LookupReligion.validator}"/>
+                  </af:selectOneChoice>
+                  <af:spacer id="s11"/>
+                  <af:selectOneChoice value="#{bindings.LookupStaffType.inputValue}"
+                                      label="Staff Type"
+                                      required="#{bindings.LookupStaffType.hints.mandatory}"
+                                      shortDesc="#{bindings.LookupStaffType.hints.tooltip}" id="soc5"
+                                      contentStyle="width:150px;">
+                    <f:selectItems value="#{bindings.LookupStaffType.items}" id="si5"/>
+                    <f:validator binding="#{bindings.LookupStaffType.validator}"/>
+                  </af:selectOneChoice>
+                  <af:spacer id="s12"/>
+                  <af:selectOneChoice value="#{bindings.LookupRefBy.inputValue}" label="Refrence By"
+                                      required="#{bindings.LookupRefBy.hints.mandatory}"
+                                      shortDesc="#{bindings.LookupRefBy.hints.tooltip}" id="soc6"
+                                      contentStyle="width:200px;">
+                    <f:selectItems value="#{bindings.LookupRefBy.items}" id="si6"/>
+                    <f:validator binding="#{bindings.LookupRefBy.validator}"/>
+                  </af:selectOneChoice>
+                  
+                  <af:inputText value="#{bindings.CurrAddress.inputValue}" label="Current Address"
+                                required="#{bindings.CurrAddress.hints.mandatory}"
+                                maximumLength="#{bindings.CurrAddress.hints.precision}"
+                                shortDesc="#{bindings.CurrAddress.hints.tooltip}" id="it10"
+                                contentStyle="width:200px;" columns="20">
+                    <f:validator binding="#{bindings.CurrAddress.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.PerAddress.inputValue}" label="Permanent Address"
+                                required="#{bindings.PerAddress.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.PerAddress.hints.precision}"
+                                shortDesc="#{bindings.PerAddress.hints.tooltip}" id="it11" contentStyle="width:200px;">
+                    <f:validator binding="#{bindings.PerAddress.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.PersonalEmail.inputValue}"
+                                label="Email"
+                                required="#{bindings.PersonalEmail.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.PersonalEmail.hints.precision}"
+                                shortDesc="#{bindings.PersonalEmail.hints.tooltip}" id="it12"
+                                contentStyle="width:200px;">
+                    <f:validator binding="#{bindings.PersonalEmail.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.Image.inputValue}" label="Image"
+                                required="#{bindings.Image.hints.mandatory}"
+                                columns="#{bindings.Image.hints.displayWidth}"
+                                maximumLength="#{bindings.Image.hints.precision}"
+                                shortDesc="#{bindings.Image.hints.tooltip}" id="it13" contentStyle="width:200px;">
+                    <f:validator binding="#{bindings.Image.validator}"/>
+                  </af:inputText>
+                  <f:facet name="footer">
+                    <af:panelGroupLayout layout="horizontal" id="pgl5">
+                      <af:button actionListener="#{bindings.First.execute}" text="First"
+                                 disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b2"/>
+                      <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                 disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
+                      <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                 disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b4"/>
+                      <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                 disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b5"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                </af:panelFormLayout>
+              </af:showDetailItem>
+              <af:showDetailItem text="Kith &amp; Kin" id="sdi1">
+                <af:table value="#{bindings.TblStaffKinView2.collectionModel}" var="row"
+                          rows="#{bindings.TblStaffKinView2.rangeSize}"
+                          emptyText="#{bindings.TblStaffKinView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblStaffKinView2.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblStaffKinView2.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblStaffKinView2.rangeSize}"
+                          filterModel="#{bindings.TblStaffKinView2Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblStaffKinView2Query.processQuery}" varStatus="vs" id="t2"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblStaffKinView2.hints.Id.name}" filterable="true" sortable="true"
+                             headerText="kith &amp; Kin ID" id="c8" align="center" width="70">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="it24" placeholder="Search ID">
+      </af:inputText>
+</f:facet>
+
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblStaffKinView2.hints.Id.label}"
+                                  required="#{bindings.TblStaffKinView2.hints.Id.mandatory}"
+                                  columns="#{bindings.TblStaffKinView2.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblStaffKinView2.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblStaffKinView2.hints.Id.tooltip}" id="it17"
+                                  readOnly="true"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblStaffKinView2.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffKinView2.hints.Dated.name}" filterable="true"
+                             sortable="true" headerText="Date" id="c10" align="center">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblStaffKinView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                    id="id7">
+                        <af:convertDateTime pattern="#{bindings.TblStaffKinView2.hints.Dated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                  label="#{bindings.TblStaffKinView2.hints.Dated.label}"
+                                  required="#{bindings.TblStaffKinView2.hints.Dated.mandatory}"
+                                  columns="#{bindings.TblStaffKinView2.hints.Dated.displayWidth}"
+                                  shortDesc="#{bindings.TblStaffKinView2.hints.Dated.tooltip}" id="id8"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.Dated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblStaffKinView2.hints.Dated.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffKinView2.hints.Name.name}" filterable="true"
+                             sortable="true" headerText="kith &amp; Kin" id="c11" width="200">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Name}"
+       id="it26" placeholder="Search kith &amp; Kin">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Name.inputValue}"
+                                  label="#{bindings.TblStaffKinView2.hints.Name.label}"
+                                  required="#{bindings.TblStaffKinView2.hints.Name.mandatory}"
+                                  columns="#{bindings.TblStaffKinView2.hints.Name.displayWidth}"
+                                  maximumLength="#{bindings.TblStaffKinView2.hints.Name.precision}"
+                                  shortDesc="#{bindings.TblStaffKinView2.hints.Name.tooltip}" id="it18">
+                      <f:validator binding="#{row.bindings.Name.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffKinView2.hints.KinRel.name}" filterable="true"
+                             sortable="true" headerText="Relation" id="c12">
+                                                           <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.KinRel}"
+       id="it27" placeholder="Search Relation">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.KinRel.inputValue}"
+                                  label="#{bindings.TblStaffKinView2.hints.KinRel.label}"
+                                  required="#{bindings.TblStaffKinView2.hints.KinRel.mandatory}"
+                                  columns="#{bindings.TblStaffKinView2.hints.KinRel.displayWidth}"
+                                  maximumLength="#{bindings.TblStaffKinView2.hints.KinRel.precision}"
+                                  shortDesc="#{bindings.TblStaffKinView2.hints.KinRel.tooltip}" id="it19">
+                      <f:validator binding="#{row.bindings.KinRel.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffKinView2.hints.ContactNo.name}" filterable="true"
+                             sortable="true" headerText="Contact" id="c13" align="center">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ContactNo}"
+       id="it28" placeholder="Search Contact">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.ContactNo.inputValue}"
+                                  label="#{bindings.TblStaffKinView2.hints.ContactNo.label}"
+                                  required="#{bindings.TblStaffKinView2.hints.ContactNo.mandatory}"
+                                  columns="#{bindings.TblStaffKinView2.hints.ContactNo.displayWidth}"
+                                  maximumLength="#{bindings.TblStaffKinView2.hints.ContactNo.precision}"
+                                  shortDesc="#{bindings.TblStaffKinView2.hints.ContactNo.tooltip}" id="it20"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.ContactNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffKinView2.hints.Address.name}" filterable="true"
+                             sortable="true" headerText="Address" id="c14" width="200">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Address}"
+       id="it29" placeholder="Search Address">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Address.inputValue}"
+                                  label="#{bindings.TblStaffKinView2.hints.Address.label}"
+                                  required="#{bindings.TblStaffKinView2.hints.Address.mandatory}"
+                                  columns="#{bindings.TblStaffKinView2.hints.Address.displayWidth}"
+                                  maximumLength="#{bindings.TblStaffKinView2.hints.Address.precision}"
+                                  shortDesc="#{bindings.TblStaffKinView2.hints.Address.tooltip}" id="it21">
+                      <f:validator binding="#{row.bindings.Address.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffKinView2.hints.Mobile1.name}" filterable="true"
+                             sortable="true" headerText="Mobile 1" id="c15" align="center">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Mobile1}"
+       id="it30" placeholder="Search Mobile 1">
+      </af:inputText>
+      </f:facet>
+                    <af:inputText value="#{row.bindings.Mobile1.inputValue}"
+                                  label="#{bindings.TblStaffKinView2.hints.Mobile1.label}"
+                                  required="#{bindings.TblStaffKinView2.hints.Mobile1.mandatory}"
+                                  columns="#{bindings.TblStaffKinView2.hints.Mobile1.displayWidth}"
+                                  maximumLength="#{bindings.TblStaffKinView2.hints.Mobile1.precision}"
+                                  shortDesc="#{bindings.TblStaffKinView2.hints.Mobile1.tooltip}" id="it22"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.Mobile1.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffKinView2.hints.Mobile2.name}" filterable="true"
+                             sortable="true" headerText="Mobile 2" id="c16" align="center">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Mobile2}"
+       id="it31" placeholder="Search Mobile 2">
+      </af:inputText>
+      </f:facet>
+                    <af:inputText value="#{row.bindings.Mobile2.inputValue}"
+                                  label="#{bindings.TblStaffKinView2.hints.Mobile2.label}"
+                                  required="#{bindings.TblStaffKinView2.hints.Mobile2.mandatory}"
+                                  columns="#{bindings.TblStaffKinView2.hints.Mobile2.displayWidth}"
+                                  maximumLength="#{bindings.TblStaffKinView2.hints.Mobile2.precision}"
+                                  shortDesc="#{bindings.TblStaffKinView2.hints.Mobile2.tooltip}" id="it23"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.Mobile2.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffKinView2.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="Active" id="c17">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ast}"
+       id="it32" placeholder="Search Status">
+      </af:inputText>
+      </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblStaffKinView2.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblStaffKinView2.hints.Ast.tooltip}" id="soc9">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si9"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+                <af:spacer width="10" height="40" id="s2"/>
+                 <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+              </af:showDetailItem>
+              <af:showDetailItem text="Experience" id="sdi2">
+                <af:table value="#{bindings.TblStaffExprView2.collectionModel}" var="row"
+                          rows="#{bindings.TblStaffExprView2.rangeSize}"
+                          emptyText="#{bindings.TblStaffExprView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblStaffExprView2.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblStaffExprView2.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblStaffExprView2.rangeSize}"
+                          filterModel="#{bindings.TblStaffExprView2Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblStaffExprView2Query.processQuery}" varStatus="vs" id="t3"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblStaffExprView2.hints.Id.name}" filterable="true"
+                             sortable="true" headerText="Experience ID" id="c18" width="80" align="center">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="it37" placeholder="Search ID">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblStaffExprView2.hints.Id.label}"
+                                  required="#{bindings.TblStaffExprView2.hints.Id.mandatory}"
+                                  columns="#{bindings.TblStaffExprView2.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblStaffExprView2.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblStaffExprView2.hints.Id.tooltip}" id="it33"
+                                  readOnly="true"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblStaffExprView2.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffExprView2.hints.Dated.name}" filterable="true"
+                             sortable="true" headerText="Date" id="c20" align="center">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblStaffExprView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                    id="id9">
+                        <af:convertDateTime pattern="#{bindings.TblStaffExprView2.hints.Dated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                  label="#{bindings.TblStaffExprView2.hints.Dated.label}"
+                                  required="#{bindings.TblStaffExprView2.hints.Dated.mandatory}"
+                                  columns="#{bindings.TblStaffExprView2.hints.Dated.displayWidth}"
+                                  shortDesc="#{bindings.TblStaffExprView2.hints.Dated.tooltip}" id="id10"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.Dated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblStaffExprView2.hints.Dated.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffExprView2.hints.Organization.name}" filterable="true"
+                             sortable="true" headerText="Organization"
+                             id="c21" width="200">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Organization}"
+       id="it39" placeholder="Search Organization">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Organization.inputValue}"
+                                  label="#{bindings.TblStaffExprView2.hints.Organization.label}"
+                                  required="#{bindings.TblStaffExprView2.hints.Organization.mandatory}"
+                                  columns="#{bindings.TblStaffExprView2.hints.Organization.displayWidth}"
+                                  maximumLength="#{bindings.TblStaffExprView2.hints.Organization.precision}"
+                                  shortDesc="#{bindings.TblStaffExprView2.hints.Organization.tooltip}" id="it34">
+                      <f:validator binding="#{row.bindings.Organization.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffExprView2.hints.Position.name}" filterable="true"
+                             sortable="true" headerText="Position" id="c22">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Position}"
+       id="it40" placeholder="Search Position">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Position.inputValue}"
+                                  label="#{bindings.TblStaffExprView2.hints.Position.label}"
+                                  required="#{bindings.TblStaffExprView2.hints.Position.mandatory}"
+                                  columns="#{bindings.TblStaffExprView2.hints.Position.displayWidth}"
+                                  maximumLength="#{bindings.TblStaffExprView2.hints.Position.precision}"
+                                  shortDesc="#{bindings.TblStaffExprView2.hints.Position.tooltip}" id="it35">
+                      <f:validator binding="#{row.bindings.Position.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffExprView2.hints.ExprFrDate.name}" filterable="true"
+                             sortable="true" headerText="From Date" id="c23" align="center">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblStaffExprView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.ExprFrDate.value}"
+                                    id="id11">
+                        <af:convertDateTime pattern="#{bindings.TblStaffExprView2.hints.ExprFrDate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.ExprFrDate.inputValue}"
+                                  label="#{bindings.TblStaffExprView2.hints.ExprFrDate.label}"
+                                  required="#{bindings.TblStaffExprView2.hints.ExprFrDate.mandatory}"
+                                  columns="#{bindings.TblStaffExprView2.hints.ExprFrDate.displayWidth}"
+                                  shortDesc="#{bindings.TblStaffExprView2.hints.ExprFrDate.tooltip}" id="id12"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.ExprFrDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblStaffExprView2.hints.ExprFrDate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffExprView2.hints.ExprToDate.name}" filterable="true"
+                             sortable="true" headerText="To Date" id="c24" align="center">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblStaffExprView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.ExprToDate.value}"
+                                    id="id13">
+                        <af:convertDateTime pattern="#{bindings.TblStaffExprView2.hints.ExprToDate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.ExprToDate.inputValue}"
+                                  label="#{bindings.TblStaffExprView2.hints.ExprToDate.label}"
+                                  required="#{bindings.TblStaffExprView2.hints.ExprToDate.mandatory}"
+                                  columns="#{bindings.TblStaffExprView2.hints.ExprToDate.displayWidth}"
+                                  shortDesc="#{bindings.TblStaffExprView2.hints.ExprToDate.tooltip}" id="id14"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.ExprToDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblStaffExprView2.hints.ExprToDate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffExprView2.hints.Remarks.name}" filterable="true"
+                             sortable="true" headerText="Remarks" id="c25" width="200">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Remarks}"
+       id="it41" placeholder="Search Remarks">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Remarks.inputValue}"
+                                  label="#{bindings.TblStaffExprView2.hints.Remarks.label}"
+                                  required="#{bindings.TblStaffExprView2.hints.Remarks.mandatory}"
+                                  columns="#{bindings.TblStaffExprView2.hints.Remarks.displayWidth}"
+                                  maximumLength="#{bindings.TblStaffExprView2.hints.Remarks.precision}"
+                                  shortDesc="#{bindings.TblStaffExprView2.hints.Remarks.tooltip}" id="it36">
+                      <f:validator binding="#{row.bindings.Remarks.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffExprView2.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="Active" id="c26" width="80">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ast}"
+       id="it42" placeholder="Search Status">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblStaffExprView2.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblStaffExprView2.hints.Ast.tooltip}" id="soc11">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si11"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+                <af:spacer width="10" height="40" id="s4"/>
+                <af:panelGroupLayout id="pgl6" layout="horizontal">
+                            <af:iterator id="i3" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s13"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                        </af:showDetailItem>
+              <af:showDetailItem text="Deparments" id="sdi3">
+                <af:table value="#{bindings.TblStaffDepartmentView3.collectionModel}" var="row"
+                          rows="#{bindings.TblStaffDepartmentView3.rangeSize}"
+                          emptyText="#{bindings.TblStaffDepartmentView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblStaffDepartmentView3.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblStaffDepartmentView3.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblStaffDepartmentView3.rangeSize}"
+                          filterModel="#{bindings.TblStaffDepartmentView3Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblStaffDepartmentView3Query.processQuery}" varStatus="vs" id="t4"
+                         scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblStaffDepartmentView3.hints.Id.name}" filterable="true"
+                             sortable="true" headerText="Staff Department ID" id="c27" width="80" align="center">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="it25" placeholder="Search ID">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblStaffDepartmentView3.hints.Id.label}"
+                                  required="#{bindings.TblStaffDepartmentView3.hints.Id.mandatory}"
+                                  columns="#{bindings.TblStaffDepartmentView3.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblStaffDepartmentView3.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblStaffDepartmentView3.hints.Id.tooltip}" id="it43"
+                                  readOnly="true"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblStaffDepartmentView3.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffDepartmentView3.hints.Dated.name}" filterable="true"
+                             sortable="true" headerText="Date"
+                             id="c28" align="center">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblStaffDepartmentView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                    id="id15">
+                        <af:convertDateTime pattern="#{bindings.TblStaffDepartmentView3.hints.Dated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                  label="#{bindings.TblStaffDepartmentView3.hints.Dated.label}"
+                                  required="#{bindings.TblStaffDepartmentView3.hints.Dated.mandatory}"
+                                  columns="#{bindings.TblStaffDepartmentView3.hints.Dated.displayWidth}"
+                                  shortDesc="#{bindings.TblStaffDepartmentView3.hints.Dated.tooltip}" id="id16"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.Dated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblStaffDepartmentView3.hints.Dated.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffDepartmentView3.hints.DepartmentId.name}"
+                             filterable="true" sortable="true"
+                             headerText="Department" id="c29" width="300">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.DepartmentId}"
+       id="it38" placeholder="Search Department">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.DepartmentId.inputValue}"
+                                        label="#{row.bindings.DepartmentId.label}"
+                                        required="#{bindings.TblStaffDepartmentView3.hints.DepartmentId.mandatory}"
+                                        shortDesc="#{bindings.TblStaffDepartmentView3.hints.DepartmentId.tooltip}"
+                                        id="soc12">
+                      <f:selectItems value="#{row.bindings.DepartmentId.items}" id="si12"/>
+                      <f:validator binding="#{row.bindings.DepartmentId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffDepartmentView3.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="Active" id="c30">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ast}"
+       id="it44" placeholder="Search Status">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblStaffDepartmentView3.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblStaffDepartmentView3.hints.Ast.tooltip}" id="soc13">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si13"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+                <af:spacer width="10" height="40" id="s14"/>
+                <af:panelGroupLayout id="pgl7" layout="horizontal">
+                            <af:iterator id="i4" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s15"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+              </af:showDetailItem>
+              <af:showDetailItem text="Designation" id="sdi4">
+                <af:table value="#{bindings.TblStaffDesignationView3.collectionModel}" var="row"
+                          rows="#{bindings.TblStaffDesignationView3.rangeSize}"
+                          emptyText="#{bindings.TblStaffDesignationView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblStaffDesignationView3.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblStaffDesignationView3.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblStaffDesignationView3.rangeSize}"
+                          filterModel="#{bindings.TblStaffDesignationView3Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblStaffDesignationView3Query.processQuery}" varStatus="vs" id="t5"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblStaffDesignationView3.hints.Id.name}" filterable="true"
+                             sortable="true" headerText="Staff Designation ID" id="c9" align="center" width="80">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="it46" placeholder="Search ID">
+      </af:inputText>
+</f:facet>
+
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblStaffDesignationView3.hints.Id.label}"
+                                  required="#{bindings.TblStaffDesignationView3.hints.Id.mandatory}"
+                                  columns="#{bindings.TblStaffDesignationView3.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblStaffDesignationView3.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblStaffDesignationView3.hints.Id.tooltip}" id="it45"
+                                  readOnly="true"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblStaffDesignationView3.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffDesignationView3.hints.Dated.name}" filterable="true"
+                             sortable="true" headerText="Date"
+                             id="c19" align="center">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblStaffDesignationView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                    id="id17">
+                        <af:convertDateTime pattern="#{bindings.TblStaffDesignationView3.hints.Dated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                  label="#{bindings.TblStaffDesignationView3.hints.Dated.label}"
+                                  required="#{bindings.TblStaffDesignationView3.hints.Dated.mandatory}"
+                                  columns="#{bindings.TblStaffDesignationView3.hints.Dated.displayWidth}"
+                                  shortDesc="#{bindings.TblStaffDesignationView3.hints.Dated.tooltip}" id="id18"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.Dated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblStaffDesignationView3.hints.Dated.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffDesignationView3.hints.DesignationId.name}"
+                             filterable="true" sortable="true"
+                             headerText="Designation" id="c31" width="300">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.DesignationId}"
+       id="it47" placeholder="Search Designation">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.DesignationId.inputValue}"
+                                        label="#{row.bindings.DesignationId.label}"
+                                        required="#{bindings.TblStaffDesignationView3.hints.DesignationId.mandatory}"
+                                        shortDesc="#{bindings.TblStaffDesignationView3.hints.DesignationId.tooltip}"
+                                        id="soc8">
+                      <f:selectItems value="#{row.bindings.DesignationId.items}" id="si8"/>
+                      <f:validator binding="#{row.bindings.DesignationId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffDesignationView3.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="Active" id="c32">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ast}"
+       id="it48" placeholder="Search Status">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblStaffDesignationView3.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblStaffDesignationView3.hints.Ast.tooltip}" id="soc10">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si10"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+                <af:spacer width="10" height="40" id="s16"/>
+                <af:panelGroupLayout id="pgl8" layout="horizontal">
+                            <af:iterator id="i5" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s17"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+              </af:showDetailItem>
+              <af:showDetailItem text="Visa" id="sdi5">
+                <af:table value="#{bindings.TblStaffVisaView2.collectionModel}" var="row"
+                          rows="#{bindings.TblStaffVisaView2.rangeSize}"
+                          emptyText="#{bindings.TblStaffVisaView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblStaffVisaView2.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblStaffVisaView2.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblStaffVisaView2.rangeSize}"
+                          filterModel="#{bindings.TblStaffVisaView2Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblStaffVisaView2Query.processQuery}" varStatus="vs" id="t6"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblStaffVisaView2.hints.Id.name}" filterable="true"
+                             sortable="true" headerText="Staff Visa ID" id="c33" align="center" width="80">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="it51" placeholder="Search ID">
+      </af:inputText>
+</f:facet>
+
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblStaffVisaView2.hints.Id.label}"
+                                  required="#{bindings.TblStaffVisaView2.hints.Id.mandatory}"
+                                  columns="#{bindings.TblStaffVisaView2.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblStaffVisaView2.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblStaffVisaView2.hints.Id.tooltip}" id="it49"
+                                  readOnly="true"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblStaffVisaView2.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffVisaView2.hints.Dated.name}" filterable="true"
+                             sortable="true" headerText="Date" id="c34" align="center">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblStaffVisaView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                    id="id19">
+                        <af:convertDateTime pattern="#{bindings.TblStaffVisaView2.hints.Dated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                  label="#{bindings.TblStaffVisaView2.hints.Dated.label}"
+                                  required="#{bindings.TblStaffVisaView2.hints.Dated.mandatory}"
+                                  columns="#{bindings.TblStaffVisaView2.hints.Dated.displayWidth}"
+                                  shortDesc="#{bindings.TblStaffVisaView2.hints.Dated.tooltip}" id="id20"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.Dated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblStaffVisaView2.hints.Dated.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffVisaView2.hints.VisaNo.name}" filterable="true"
+                             sortable="true" headerText="Visa No." id="c35" align="center">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.VisaNo}"
+       id="it52" placeholder="Search Visa No.">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.VisaNo.inputValue}"
+                                  label="#{bindings.TblStaffVisaView2.hints.VisaNo.label}"
+                                  required="#{bindings.TblStaffVisaView2.hints.VisaNo.mandatory}"
+                                  columns="#{bindings.TblStaffVisaView2.hints.VisaNo.displayWidth}"
+                                  maximumLength="#{bindings.TblStaffVisaView2.hints.VisaNo.precision}"
+                                  shortDesc="#{bindings.TblStaffVisaView2.hints.VisaNo.tooltip}" id="it50"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.VisaNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffVisaView2.hints.VisaIssDate.name}" filterable="true"
+                             sortable="true" headerText="Visa Issue Date"
+                             id="c36">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblStaffVisaView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.VisaIssDate.value}"
+                                    id="id21">
+                        <af:convertDateTime pattern="#{bindings.TblStaffVisaView2.hints.VisaIssDate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.VisaIssDate.inputValue}"
+                                  label="#{bindings.TblStaffVisaView2.hints.VisaIssDate.label}"
+                                  required="#{bindings.TblStaffVisaView2.hints.VisaIssDate.mandatory}"
+                                  columns="#{bindings.TblStaffVisaView2.hints.VisaIssDate.displayWidth}"
+                                  shortDesc="#{bindings.TblStaffVisaView2.hints.VisaIssDate.tooltip}" id="id22"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.VisaIssDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblStaffVisaView2.hints.VisaIssDate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffVisaView2.hints.VisaExpDate.name}" filterable="true"
+                             sortable="true" headerText="Visa Expiry Date"
+                             id="c37" width="120">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblStaffVisaView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.VisaExpDate.value}"
+                                    id="id23">
+                        <af:convertDateTime pattern="#{bindings.TblStaffVisaView2.hints.VisaExpDate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.VisaExpDate.inputValue}"
+                                  label="#{bindings.TblStaffVisaView2.hints.VisaExpDate.label}"
+                                  required="#{bindings.TblStaffVisaView2.hints.VisaExpDate.mandatory}"
+                                  columns="#{bindings.TblStaffVisaView2.hints.VisaExpDate.displayWidth}"
+                                  shortDesc="#{bindings.TblStaffVisaView2.hints.VisaExpDate.tooltip}" id="id24"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.VisaExpDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblStaffVisaView2.hints.VisaExpDate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffVisaView2.hints.LookupVisaType.name}" filterable="true"
+                             sortable="true" headerText="Visa Type"
+                             id="c38" width="150">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.LookupVisaType}"
+       id="it53" placeholder="Search Visa Type">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.LookupVisaType.inputValue}"
+                                        label="#{row.bindings.LookupVisaType.label}"
+                                        required="#{bindings.TblStaffVisaView2.hints.LookupVisaType.mandatory}"
+                                        shortDesc="#{bindings.TblStaffVisaView2.hints.LookupVisaType.tooltip}"
+                                        id="soc14">
+                      <f:selectItems value="#{row.bindings.LookupVisaType.items}" id="si14"/>
+                      <f:validator binding="#{row.bindings.LookupVisaType.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffVisaView2.hints.LookupVisaSpons.name}" filterable="true"
+                             sortable="true" headerText="Visa Sponsor"
+                             id="c39" width="150">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.LookupVisaSpons}"
+       id="it54" placeholder="Search Visa Sponsor">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.LookupVisaSpons.inputValue}"
+                                        label="#{row.bindings.LookupVisaSpons.label}"
+                                        required="#{bindings.TblStaffVisaView2.hints.LookupVisaSpons.mandatory}"
+                                        shortDesc="#{bindings.TblStaffVisaView2.hints.LookupVisaSpons.tooltip}"
+                                        id="soc15">
+                      <f:selectItems value="#{row.bindings.LookupVisaSpons.items}" id="si15"/>
+                      <f:validator binding="#{row.bindings.LookupVisaSpons.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffVisaView2.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="Active" id="c40" width="80">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ast}"
+       id="it55" placeholder="Search Status">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblStaffVisaView2.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblStaffVisaView2.hints.Ast.tooltip}" id="soc16">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si16"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+                <af:spacer width="10" height="40" id="s18"/>
+                <af:panelGroupLayout id="pgl9" layout="horizontal">
+                            <af:iterator id="i6" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s19"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5"/>
+        </af:gridRow>
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>

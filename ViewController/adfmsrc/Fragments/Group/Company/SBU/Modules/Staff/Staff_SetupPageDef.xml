@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Staff_SetupPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.Staff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblStaffView1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblStaffView1Iterator"/>
+    <searchRegion Binds="TblStaffView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStaffView1Query"/>
+    <iterator Binds="TblStaffKinView2" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblStaffKinView2Iterator"/>
+    <searchRegion Binds="TblStaffKinView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStaffKinView2Query"/>
+    <iterator Binds="TblStaffExprView2" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblStaffExprView2Iterator"/>
+    <searchRegion Binds="TblStaffExprView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStaffExprView2Query"/>
+    <iterator Binds="TblStaffDepartmentView3" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblStaffDepartmentView3Iterator"/>
+    <searchRegion Binds="TblStaffDepartmentView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStaffDepartmentView3Query"/>
+    <iterator Binds="TblStaffDesignationView3" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblStaffDesignationView3Iterator"/>
+    <searchRegion Binds="TblStaffDesignationView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStaffDesignationView3Query"/>
+    <iterator Binds="TblStaffVisaView2" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblStaffVisaView2Iterator"/>
+    <searchRegion Binds="TblStaffVisaView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStaffVisaView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblStaffView1Iterator" id="TblStaffView1">
+      <nodeDefinition DefName="model.ERP.VO.TblStaffView" Name="TblStaffView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Doj"/>
+          <Item Value="EmirId"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TblStaffView1Iterator" id="Dob">
+      <AttrNames>
+        <Item Value="Dob"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStaffView1Iterator" id="Gender">
+      <AttrNames>
+        <Item Value="Gender"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStaffView1Iterator" id="JobStatus">
+      <AttrNames>
+        <Item Value="JobStatus"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStaffView1Iterator" id="PersonalMobile">
+      <AttrNames>
+        <Item Value="PersonalMobile"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStaffView1Iterator" id="ResPhone">
+      <AttrNames>
+        <Item Value="ResPhone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStaffView1Iterator" id="OtherContact">
+      <AttrNames>
+        <Item Value="OtherContact"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblStaffView1Iterator" StaticList="false" Uses="LOV_LookupSalutation" id="LookupSalutation"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStaffView1Iterator" StaticList="false" Uses="LOV_LookupNationality" id="LookupNationality"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStaffView1Iterator" StaticList="false" Uses="LOV_LookupReligion" id="LookupReligion"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStaffView1Iterator" StaticList="false" Uses="LOV_LookupStaffType" id="LookupStaffType"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStaffView1Iterator" StaticList="false" Uses="LOV_LookupRefBy" id="LookupRefBy"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblStaffView1Iterator" id="CurrAddress">
+      <AttrNames>
+        <Item Value="CurrAddress"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStaffView1Iterator" id="PerAddress">
+      <AttrNames>
+        <Item Value="PerAddress"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStaffView1Iterator" id="PersonalEmail">
+      <AttrNames>
+        <Item Value="PersonalEmail"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStaffView1Iterator" id="Image">
+      <AttrNames>
+        <Item Value="Image"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblStaffView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblStaffView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblStaffView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblStaffView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <list IterBinding="TblStaffView1Iterator" StaticList="false" Uses="LOV_JobStatus" id="JobStatus1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <action IterBinding="TblStaffView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblStaffView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblStaffView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblStaffKinView2Iterator" id="TblStaffKinView2">
+      <nodeDefinition DefName="model.ERP.VO.TblStaffKinView" Name="TblStaffKinView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="StaffId"/>
+          <Item Value="Dated"/>
+          <Item Value="Name"/>
+          <Item Value="KinRel"/>
+          <Item Value="ContactNo"/>
+          <Item Value="Address"/>
+          <Item Value="Mobile1"/>
+          <Item Value="Mobile2"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblStaffKinView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblStaffKinView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblStaffKinView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblStaffExprView2Iterator" id="TblStaffExprView2">
+      <nodeDefinition DefName="model.ERP.VO.TblStaffExprView" Name="TblStaffExprView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="StaffId"/>
+          <Item Value="Dated"/>
+          <Item Value="Organization"/>
+          <Item Value="Position"/>
+          <Item Value="ExprFrDate"/>
+          <Item Value="ExprToDate"/>
+          <Item Value="Remarks"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblStaffExprView2Iterator" id="CreateInsert2" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblStaffExprView2Iterator" id="Execute2" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblStaffExprView2Iterator" id="Delete2" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblStaffDepartmentView3Iterator" id="TblStaffDepartmentView3">
+      <nodeDefinition DefName="model.ERP.VO.TblStaffDepartmentView" Name="TblStaffDepartmentView30">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="DepartmentId"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblStaffDepartmentView3Iterator" id="CreateInsert3" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblStaffDepartmentView3Iterator" id="Execute3" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblStaffDepartmentView3Iterator" id="Delete3" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblStaffDesignationView3Iterator" id="TblStaffDesignationView3">
+      <nodeDefinition DefName="model.ERP.VO.TblStaffDesignationView" Name="TblStaffDesignationView30">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="DesignationId"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblStaffDesignationView3Iterator" id="CreateInsert4" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblStaffDesignationView3Iterator" id="Execute4" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblStaffDesignationView3Iterator" id="Delete4" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblStaffVisaView2Iterator" id="TblStaffVisaView2">
+      <nodeDefinition DefName="model.ERP.VO.TblStaffVisaView" Name="TblStaffVisaView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="VisaNo"/>
+          <Item Value="VisaIssDate"/>
+          <Item Value="VisaExpDate"/>
+          <Item Value="LookupVisaType"/>
+          <Item Value="LookupVisaSpons"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblStaffVisaView2Iterator" id="CreateInsert5" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblStaffVisaView2Iterator" id="Execute5" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblStaffVisaView2Iterator" id="Delete5" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>
