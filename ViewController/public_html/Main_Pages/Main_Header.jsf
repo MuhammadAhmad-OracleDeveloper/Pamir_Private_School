@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" definition="private"
+                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component">
+    <af:xmlContent>
+        <afc:component>
+            <afc:description/>
+            <afc:display-name>Main_Header</afc:display-name>
+        </afc:component>
+    </af:xmlContent>
+      <af:panelGridLayout id="pt_pgl2" inlineStyle=" background-color:White; ">
+        <af:gridRow marginTop="5px" height="auto" id="pt_gr2">
+            <af:gridCell halign="stretch" valign="stretch" id="pt_gc1">
+                <af:panelGridLayout id="pt_pgl1">
+                    <af:gridRow marginTop="5px" height="auto" id="pt_gr1">
+                        <af:gridCell marginStart="5px" width="20%" id="pt_gc2">
+                            <af:spacer width="20" height="10" id="pt_s2"/>
+                            <!--<af:image id="pt_i1"
+                                      inlineStyle="width:320px; height:100px; margin-top:2%;"
+                                      source="#{resource['images:atlas_power.jpg']}"/>-->
+                                      <af:panelGroupLayout id="pgl2" layout="horizontal">
+                                <af:spacer width="50" height="10" id="pt_s4"/>
+                                <af:outputLabel value="S" id="ol4"
+                                            inlineStyle="font-weight: bold;font-size: 50px;font-family: cursive; color: #00bada;"/>
+                             <af:outputLabel value="." id="pt_ol6"
+                                            inlineStyle="font-weight: bold;font-size: 50px;font-family: cursive; color: #00c9c5;"/>
+                             <af:outputLabel value="M" id="pt_ol5"
+                                            inlineStyle="font-weight: bold;font-size: 50px;font-family: cursive; color: #00d8b1;"/>
+                             <af:outputLabel value="." id="pt_ol4"
+                                            inlineStyle="font-weight: bold;font-size: 50px;font-family: cursive; color: #00c9c5;"/>
+                             <af:outputLabel value="S" id="pt_ol3"
+                                            inlineStyle="font-weight: bold;font-size: 50px;font-family: cursive; color: #00bada;"/>
+                            
+                        </af:panelGroupLayout>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="80%" halign="end" valign="bottom" marginEnd="5px"
+                                     id="pt_gc3">
+                            <af:panelGridLayout id="pt_pgl4">
+                                <af:gridRow marginTop="5px" height="auto" id="pt_gr4">
+                                    <af:gridCell marginStart="5px" width="50%" id="pt_gc5"></af:gridCell>
+                                    <af:gridCell marginStart="5px" width="50%" halign="end" valign="bottom"
+                                                 marginEnd="5px" id="pt_gc6">
+                                        <!--<af:image source="#{resource['images:punjab_agri_e_logo.png']}" id="pt_i2"
+                                      inlineStyle="width:105px; height:75px; margin-top:2%;"/>-->
+                                    </af:gridCell>
+                                </af:gridRow>
+                                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="pt_gr5">
+                                    <af:gridCell marginStart="5px" width="50%" id="pt_gc7"></af:gridCell>
+                                    <af:gridCell marginStart="5px" width="50%" halign="end" valign="bottom"
+                                                 marginEnd="5px" id="pt_gc8">
+                                        <af:panelGroupLayout id="pt_pgl5" layout="horizontal" valign="bottom">
+                                            <af:outputLabel value="HELLO" id="pt_ol2" inlineStyle="font-size:small;"/>
+                                            <af:outputLabel value="${sessionScope.sessUName}" id="pt_ol1"
+                                                            inlineStyle="font-variant-caps:all-petite-caps; font-size:x-large; font-weight:bolder;"/>
+                                            <!--<af:button text="Back to Module" id="pt_b2"
+                                                       icon="#{resource['images:back_to_home.png']}"
+                                                       destination="/faces/Main_Pages/Group/Company/SBU/Modules/ModuleBoard.jsf"/>-->
+                                            <af:spacer width="10" height="10" id="pt_s3"/>
+                                            <af:button text="Logout" id="pt_b1" icon="#{resource['images:logout.png']}"
+                                                       action="#{LoginsBean.logout_action}"/>
+                                            <af:spacer width="20" height="10" id="pt_s1"/>
+                                        </af:panelGroupLayout>
+                                    </af:gridCell>
+                                </af:gridRow>
+                            </af:panelGridLayout>
+                        </af:gridCell>
+                    </af:gridRow>
+                </af:panelGridLayout>
+            </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="100%" marginBottom="5px" id="pt_gr3">
+            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="pt_gc4">
+                <af:panelGroupLayout layout="scroll" id="pt_pgl3" inlineStyle="background-color:white;">
+                    <af:facetRef facetName="body">
+                        <?audit suppress oracle.adf.faces.pt-facet-references?>
+                    </af:facetRef>
+                </af:panelGroupLayout>
+            </af:gridCell>
+        </af:gridRow>
+    </af:panelGridLayout>
+
+</af:pageTemplateDef>
