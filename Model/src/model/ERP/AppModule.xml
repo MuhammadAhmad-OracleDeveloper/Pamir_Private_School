@@ -304,6 +304,9 @@
   <ViewUsage
     Name="TblGradeView2"
     ViewObjectName="model.ERP.VO.TblGradeView"/>
+  <ViewUsage
+    Name="TblLookupDetailDView3"
+    ViewObjectName="model.ERP.VO.TblLookupDetailDView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -681,5 +684,11 @@
     ViewLinkObjectName="model.ERP.VO.FkGradeGroupLink"
     SrcViewUsageName="model.ERP.AppModule.TblAcadGroupView1"
     DstViewUsageName="model.ERP.AppModule.TblGradeView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLookupDetailDDetailLink2"
+    ViewLinkObjectName="model.ERP.VO.FkLookupDetailDDetailLink"
+    SrcViewUsageName="model.ERP.AppModule.TblLookupDetailView2"
+    DstViewUsageName="model.ERP.AppModule.TblLookupDetailDView3"
     Reversed="false"/>
 </AppModule>
