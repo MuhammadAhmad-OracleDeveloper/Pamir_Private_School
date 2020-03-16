@@ -23,6 +23,74 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1" text=" Department">
+                <af:table value="#{bindings.TblDepartmentView1.collectionModel}" var="row"
+                          rows="#{bindings.TblDepartmentView1.rangeSize}"
+                          emptyText="#{bindings.TblDepartmentView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblDepartmentView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblDepartmentView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblDepartmentView1.rangeSize}"
+                          filterModel="#{bindings.TblDepartmentView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblDepartmentView1Query.processQuery}" varStatus="vs" id="t1"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblDepartmentView1.hints.Id.name}" filterable="true"
+                             sortable="true" headerText="Department ID" id="c1" align="center" width="80">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="id4" placeholder="Search ID">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblDepartmentView1.hints.Id.label}"
+                                  required="#{bindings.TblDepartmentView1.hints.Id.mandatory}"
+                                  columns="#{bindings.TblDepartmentView1.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblDepartmentView1.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblDepartmentView1.hints.Id.tooltip}" id="it1"
+                                  readOnly="true"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblDepartmentView1.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblDepartmentView1.hints.Name.name}" filterable="true"
+                             sortable="true" headerText="Deparment" id="c2" width="500">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Name}"
+       id="it3" placeholder="Search Deparment">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Name.inputValue}"
+                                  label="#{bindings.TblDepartmentView1.hints.Name.label}"
+                                  required="#{bindings.TblDepartmentView1.hints.Name.mandatory}"
+                                  columns="#{bindings.TblDepartmentView1.hints.Name.displayWidth}"
+                                  maximumLength="#{bindings.TblDepartmentView1.hints.Name.precision}"
+                                  shortDesc="#{bindings.TblDepartmentView1.hints.Name.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.Name.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblDepartmentView1.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="Active" id="c3">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ast}"
+       id="it4" placeholder="Search Status">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblDepartmentView1.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblDepartmentView1.hints.Ast.tooltip}" id="soc1">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+               
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+             <af:panelGroupLayout id="pgl3" layout="horizontal">
                 
               </af:showDetailItem>
             </af:panelTabbed>

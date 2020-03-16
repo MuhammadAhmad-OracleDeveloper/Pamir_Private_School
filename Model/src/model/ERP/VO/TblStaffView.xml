@@ -13,6 +13,160 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Active_Name_LOV1"
+    ViewObjectName="model.LOV.Active_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Salutation_LOV1"
+    ViewObjectName="model.LOV.Lookup_Salutation_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Nationality_LOV1"
+    ViewObjectName="model.LOV.Lookup_Nationality_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Religion_LOV1"
+    ViewObjectName="model.LOV.Lookup_Religion_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Staff_Type_LOV1"
+    ViewObjectName="model.LOV.Lookup_Staff_Type_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Ref_By_LOV1"
+    ViewObjectName="model.LOV.Lookup_Ref_By_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Job_Status_LOV1"
+    ViewObjectName="model.LOV.Job_Status_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Ast"
+    ListVOName="Active_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Ast"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LookupSalutation"
+    ListVOName="Lookup_Salutation_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LookupSalutation"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LookupNationality"
+    ListVOName="Lookup_Nationality_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LookupNationality"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LookupReligion"
+    ListVOName="Lookup_Religion_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LookupReligion"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LookupStaffType"
+    ListVOName="Lookup_Staff_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LookupStaffType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LookupRefBy"
+    ListVOName="Lookup_Ref_By_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LookupRefBy"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_JobStatus"
+    ListVOName="Job_Status_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="JobStatus"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblStaff"
     Entity="model.ERP.EO.TblStaff"/>
@@ -40,13 +194,29 @@
     PrecisionRule="true"
     EntityAttrName="JobStatus"
     EntityUsage="TblStaff"
-    AliasName="JOB_STATUS"/>
+    AliasName="JOB_STATUS"
+    LOVName="LOV_JobStatus">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="LookupSalutation"
     PrecisionRule="true"
     EntityAttrName="LookupSalutation"
     EntityUsage="TblStaff"
-    AliasName="LOOKUP_SALUTATION"/>
+    AliasName="LOOKUP_SALUTATION"
+    LOVName="LOV_LookupSalutation">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FirstName"
     PrecisionRule="true"
@@ -82,19 +252,43 @@
     PrecisionRule="true"
     EntityAttrName="LookupNationality"
     EntityUsage="TblStaff"
-    AliasName="LOOKUP_NATIONALITY"/>
+    AliasName="LOOKUP_NATIONALITY"
+    LOVName="LOV_LookupNationality">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="LookupReligion"
     PrecisionRule="true"
     EntityAttrName="LookupReligion"
     EntityUsage="TblStaff"
-    AliasName="LOOKUP_RELIGION"/>
+    AliasName="LOOKUP_RELIGION"
+    LOVName="LOV_LookupReligion">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="LookupStaffType"
     PrecisionRule="true"
     EntityAttrName="LookupStaffType"
     EntityUsage="TblStaff"
-    AliasName="LOOKUP_STAFF_TYPE"/>
+    AliasName="LOOKUP_STAFF_TYPE"
+    LOVName="LOV_LookupStaffType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CurrAddress"
     PrecisionRule="true"
@@ -148,13 +342,29 @@
     PrecisionRule="true"
     EntityAttrName="LookupRefBy"
     EntityUsage="TblStaff"
-    AliasName="LOOKUP_REF_BY"/>
+    AliasName="LOOKUP_REF_BY"
+    LOVName="LOV_LookupRefBy">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Ast"
     PrecisionRule="true"
     EntityAttrName="Ast"
     EntityUsage="TblStaff"
-    AliasName="AST"/>
+    AliasName="AST"
+    LOVName="LOV_Ast">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
