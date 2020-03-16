@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Student_RegistrationPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.Student_Registration">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblStdRegView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblStdRegView1Iterator"/>
+    <iterator Binds="TblStdRegGuardView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblStdRegGuardView2Iterator"/>
+    <iterator Binds="TblStdRegSibView3" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblStdRegSibView3Iterator"/>
+    <searchRegion Binds="TblStdRegSibView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStdRegSibView3Query"/>
+  </executables>
+  <bindings>
+    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_SpecialNeed" id="SpecialNeed"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_TransReq" id="TransReq"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <action IterBinding="TblStdRegView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblStdRegView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblStdRegView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="Name">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="GuardRelation">
+      <AttrNames>
+        <Item Value="GuardRelation"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="ContactNumber">
+      <AttrNames>
+        <Item Value="ContactNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="Address">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="Mobile1">
+      <AttrNames>
+        <Item Value="Mobile1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="Mobile2">
+      <AttrNames>
+        <Item Value="Mobile2"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblStdRegGuardView2Iterator" StaticList="false" Uses="LOV_Ast" id="Ast" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <action IterBinding="TblStdRegGuardView2Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblStdRegGuardView2Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblStdRegGuardView2Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblStdRegGuardView2Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <attributeValues IterBinding="TblStdRegSibView3Iterator" id="Id1">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegSibView3Iterator" id="SibStdRegId">
+      <AttrNames>
+        <Item Value="SibStdRegId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblStdRegSibView3Iterator" StaticList="false" Uses="LOV_GradeId" id="GradeId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStdRegSibView3Iterator" StaticList="false" Uses="LOV_SectionsId" id="SectionsId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStdRegSibView3Iterator" StaticList="false" Uses="LOV_Ast" id="Ast1" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <action IterBinding="TblStdRegSibView3Iterator" id="First1" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblStdRegSibView3Iterator" id="Previous1" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblStdRegSibView3Iterator" id="Next1" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblStdRegSibView3Iterator" id="Last1" RequiresUpdateModel="true" Action="last"/>
+    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_Ast" id="Ast2" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
+    <tree IterBinding="TblStdRegSibView3Iterator" id="TblStdRegSibView3">
+      <nodeDefinition DefName="model.ERP.VO.TblStdRegSibView" Name="TblStdRegSibView30">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="SibStdRegId"/>
+          <Item Value="GradeId"/>
+          <Item Value="SectionsId"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

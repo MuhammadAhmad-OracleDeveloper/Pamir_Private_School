@@ -1,2 +1,456 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"></ui:composition>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Panel Label 1">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="Enquiry" text="Tab Label 1">
+                <af:table value="#{bindings.TblStdEnqView1.collectionModel}" var="row"
+                          rows="#{bindings.TblStdEnqView1.rangeSize}"
+                          emptyText="#{bindings.TblStdEnqView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblStdEnqView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblStdEnqView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblStdEnqView1.rangeSize}"
+                          filterModel="#{bindings.TblStdEnqView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblStdEnqView1Query.processQuery}" varStatus="vs" id="t1"
+                          partialTriggers="::i2:b2 ::i2:b3 ::i2:b4">
+                  <af:column sortProperty="#{bindings.TblStdEnqView1.hints.Id.name}" filterable="true" sortable="true"
+                             headerText="Enquiry ID" id="c1">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Id}"
+                                   id="id4" placeholder="Enquiry ID">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblStdEnqView1.hints.Id.label}"
+                                  required="#{bindings.TblStdEnqView1.hints.Id.mandatory}"
+                                  columns="#{bindings.TblStdEnqView1.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblStdEnqView1.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblStdEnqView1.hints.Id.tooltip}" id="it1" readOnly="true">
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblStdEnqView1.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStdEnqView1.hints.Dated.name}" filterable="true"
+                             sortable="true" headerText="Date" id="c2">
+                             
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblStdEnqView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                    id="id1" placeholder="Date">
+                        <af:convertDateTime pattern="#{bindings.TblStdEnqView1.hints.Dated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                  label="#{bindings.TblStdEnqView1.hints.Dated.label}"
+                                  required="#{bindings.TblStdEnqView1.hints.Dated.mandatory}"
+                                  columns="#{bindings.TblStdEnqView1.hints.Dated.displayWidth}"
+                                  shortDesc="#{bindings.TblStdEnqView1.hints.Dated.tooltip}" id="id2">
+                      <f:validator binding="#{row.bindings.Dated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblStdEnqView1.hints.Dated.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStdEnqView1.hints.AcadYearId.name}" filterable="true"
+                             sortable="true" headerText="Academic Year" id="c3">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.AcadYearId}"
+                                   id="it15" placeholder="Academic Year" >
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
+                                        label="#{row.bindings.AcadYearId.label}"
+                                        required="#{bindings.TblStdEnqView1.hints.AcadYearId.mandatory}"
+                                        shortDesc="#{bindings.TblStdEnqView1.hints.AcadYearId.tooltip}" id="soc1">
+                      <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStdEnqView1.hints.FirstName.name}" filterable="true"
+                             sortable="true" headerText="First Name" id="c4">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.FirstName}"
+                                   id="it16" placeholder="First Name" >
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.FirstName.inputValue}"
+                                  label="#{bindings.TblStdEnqView1.hints.FirstName.label}"
+                                  required="#{bindings.TblStdEnqView1.hints.FirstName.mandatory}"
+                                  columns="#{bindings.TblStdEnqView1.hints.FirstName.displayWidth}"
+                                  maximumLength="#{bindings.TblStdEnqView1.hints.FirstName.precision}"
+                                  shortDesc="#{bindings.TblStdEnqView1.hints.FirstName.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.FirstName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStdEnqView1.hints.LastName.name}" filterable="true"
+                             sortable="true" headerText="Last Name" id="c5">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.LastName}"
+                                   id="it17" placeholder="Last Name" >
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.LastName.inputValue}"
+                                  label="#{bindings.TblStdEnqView1.hints.LastName.label}"
+                                  required="#{bindings.TblStdEnqView1.hints.LastName.mandatory}"
+                                  columns="#{bindings.TblStdEnqView1.hints.LastName.displayWidth}"
+                                  maximumLength="#{bindings.TblStdEnqView1.hints.LastName.precision}"
+                                  shortDesc="#{bindings.TblStdEnqView1.hints.LastName.tooltip}" id="it3">
+                      <f:validator binding="#{row.bindings.LastName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStdEnqView1.hints.Gender.name}" filterable="true"
+                             sortable="true" headerText="Gender" id="c6">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Gender}"
+                                   id="it18" placeholder="Gender" >
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Gender.inputValue}" label="#{row.bindings.Gender.label}"
+                                        required="#{bindings.TblStdEnqView1.hints.Gender.mandatory}"
+                                        shortDesc="#{bindings.TblStdEnqView1.hints.Gender.tooltip}" id="soc2">
+                      <f:selectItems value="#{row.bindings.Gender.items}" id="si2"/>
+                      <f:validator binding="#{row.bindings.Gender.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStdEnqView1.hints.GradeId.name}" filterable="true"
+                             sortable="true" headerText="Grade" id="c7">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.GradeId}"
+                                   id="it19" placeholder="Grade" >
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
+                                        required="#{bindings.TblStdEnqView1.hints.GradeId.mandatory}"
+                                        shortDesc="#{bindings.TblStdEnqView1.hints.GradeId.tooltip}" id="soc3">
+                      <f:selectItems value="#{row.bindings.GradeId.items}" id="si3"/>
+                      <f:validator binding="#{row.bindings.GradeId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStdEnqView1.hints.LookupElecGroup.name}" filterable="true"
+                             sortable="true" headerText="Elective Group"
+                             id="c8">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.LookupElecGroup}"
+                                   id="it20" placeholder="Elective Group" >
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.LookupElecGroup.inputValue}"
+                                        label="#{row.bindings.LookupElecGroup.label}"
+                                        required="#{bindings.TblStdEnqView1.hints.LookupElecGroup.mandatory}"
+                                        shortDesc="#{bindings.TblStdEnqView1.hints.LookupElecGroup.tooltip}" id="soc4">
+                      <f:selectItems value="#{row.bindings.LookupElecGroup.items}" id="si4"/>
+                      <f:validator binding="#{row.bindings.LookupElecGroup.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStdEnqView1.hints.EmirId.name}" filterable="true"
+                             sortable="true" headerText="Emirates ID" id="c9">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.EmirId}"
+                                   id="it21" placeholder="Emirates ID" >
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.EmirId.inputValue}"
+                                  label="#{bindings.TblStdEnqView1.hints.EmirId.label}"
+                                  required="#{bindings.TblStdEnqView1.hints.EmirId.mandatory}"
+                                  columns="#{bindings.TblStdEnqView1.hints.EmirId.displayWidth}"
+                                  maximumLength="#{bindings.TblStdEnqView1.hints.EmirId.precision}"
+                                  shortDesc="#{bindings.TblStdEnqView1.hints.EmirId.tooltip}" id="it4">
+                      <f:validator binding="#{row.bindings.EmirId.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStdEnqView1.hints.EmirArea.name}" filterable="true"
+                             sortable="true" headerText="Emirates Area" id="c10">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.EmirArea}"
+                                   id="it22" placeholder="Emirates Area" >
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.EmirArea.inputValue}"
+                                  label="#{bindings.TblStdEnqView1.hints.EmirArea.label}"
+                                  required="#{bindings.TblStdEnqView1.hints.EmirArea.mandatory}"
+                                  columns="#{bindings.TblStdEnqView1.hints.EmirArea.displayWidth}"
+                                  maximumLength="#{bindings.TblStdEnqView1.hints.EmirArea.precision}"
+                                  shortDesc="#{bindings.TblStdEnqView1.hints.EmirArea.tooltip}" id="it5">
+                      <f:validator binding="#{row.bindings.EmirArea.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStdEnqView1.hints.Address.name}" filterable="true"
+                             sortable="true" headerText="Address" id="c11">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Address}"
+                                   id="it23" placeholder="Address" >
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.Address.inputValue}"
+                                  label="#{bindings.TblStdEnqView1.hints.Address.label}"
+                                  required="#{bindings.TblStdEnqView1.hints.Address.mandatory}"
+                                  columns="#{bindings.TblStdEnqView1.hints.Address.displayWidth}"
+                                  maximumLength="#{bindings.TblStdEnqView1.hints.Address.precision}"
+                                  shortDesc="#{bindings.TblStdEnqView1.hints.Address.tooltip}" id="it6">
+                      <f:validator binding="#{row.bindings.Address.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStdEnqView1.hints.Ast.name}" filterable="true" sortable="true"
+                             headerText="Active" id="c12">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Ast}"
+                                   id="it24" placeholder="Active" >
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblStdEnqView1.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblStdEnqView1.hints.Ast.tooltip}" id="soc5">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si5"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+             <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s4"/>
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                
+              </af:iterator>
+                        </af:panelGroupLayout>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr4">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+            <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab2" text="Follow Up">
+                <af:table value="#{bindings.TblEnqFollowUpView2.collectionModel}" var="row"
+                          rows="#{bindings.TblEnqFollowUpView2.rangeSize}"
+                          emptyText="#{bindings.TblEnqFollowUpView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblEnqFollowUpView2.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblEnqFollowUpView2.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblEnqFollowUpView2.rangeSize}"
+                          filterModel="#{bindings.TblEnqFollowUpView2Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblEnqFollowUpView2Query.processQuery}" varStatus="vs" id="t2"
+                          partialTriggers="::i1:b7 ::i1:b8 ::i1:b9">
+                  <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.Id.name}" filterable="true"
+                             sortable="true" headerText="Follow Up ID" id="c13" align="center">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Id}"
+                                   id="it25" placeholder="Follow Up ID" >
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblEnqFollowUpView2.hints.Id.label}"
+                                  required="#{bindings.TblEnqFollowUpView2.hints.Id.mandatory}"
+                                  columns="#{bindings.TblEnqFollowUpView2.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblEnqFollowUpView2.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.Id.tooltip}" id="it7" readOnly="true">
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblEnqFollowUpView2.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.Dated.name}" filterable="true"
+                             sortable="true" headerText="Follow Up Date" id="c14">
+                             
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblEnqFollowUpView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                    id="id3" placeholder="Follow Up Date">
+                        <af:convertDateTime pattern="#{bindings.TblEnqFollowUpView2.hints.Dated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                  label="#{bindings.TblEnqFollowUpView2.hints.Dated.label}"
+                                  required="#{bindings.TblEnqFollowUpView2.hints.Dated.mandatory}"
+                                  columns="#{bindings.TblEnqFollowUpView2.hints.Dated.displayWidth}"
+                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.Dated.tooltip}" id="id5">
+                      <f:validator binding="#{row.bindings.Dated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblEnqFollowUpView2.hints.Dated.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.FollowMethod.name}" filterable="true"
+                             sortable="true" headerText="Follow Up Method"
+                             id="c15" align="center">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.FollowMethod}"
+                                   id="it26" placeholder="Follow Up Method" >
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.FollowMethod.inputValue}"
+                                        label="#{row.bindings.FollowMethod.label}"
+                                        required="#{bindings.TblEnqFollowUpView2.hints.FollowMethod.mandatory}"
+                                        shortDesc="#{bindings.TblEnqFollowUpView2.hints.FollowMethod.tooltip}"
+                                        id="soc6">
+                      <f:selectItems value="#{row.bindings.FollowMethod.items}" id="si6"/>
+                      <f:validator binding="#{row.bindings.FollowMethod.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.SmsContactNo.name}" filterable="true"
+                             sortable="true" headerText="SMS Contact No."
+                             id="c16">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.SmsContactNo}"
+                                   id="it27" placeholder="SMS Contact No." >
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.SmsContactNo.inputValue}"
+                                  label="#{bindings.TblEnqFollowUpView2.hints.SmsContactNo.label}"
+                                  required="#{bindings.TblEnqFollowUpView2.hints.SmsContactNo.mandatory}"
+                                  columns="#{bindings.TblEnqFollowUpView2.hints.SmsContactNo.displayWidth}"
+                                  maximumLength="#{bindings.TblEnqFollowUpView2.hints.SmsContactNo.precision}"
+                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.SmsContactNo.tooltip}" id="it8">
+                      <f:validator binding="#{row.bindings.SmsContactNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.SmsText.name}" filterable="true"
+                             sortable="true" headerText="SMS Text" id="c17">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.SmsText}"
+                                   id="it28" placeholder="SMS Text" >
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.SmsText.inputValue}"
+                                  label="#{bindings.TblEnqFollowUpView2.hints.SmsText.label}"
+                                  required="#{bindings.TblEnqFollowUpView2.hints.SmsText.mandatory}"
+                                  columns="#{bindings.TblEnqFollowUpView2.hints.SmsText.displayWidth}"
+                                  maximumLength="#{bindings.TblEnqFollowUpView2.hints.SmsText.precision}"
+                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.SmsText.tooltip}" id="it9">
+                      <f:validator binding="#{row.bindings.SmsText.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.EmailTo.name}" filterable="true"
+                             sortable="true" headerText="Email To" id="c18">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.EmailTo}"
+                                   id="it29" placeholder="Email To" >
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.EmailTo.inputValue}"
+                                  label="#{bindings.TblEnqFollowUpView2.hints.EmailTo.label}"
+                                  required="#{bindings.TblEnqFollowUpView2.hints.EmailTo.mandatory}"
+                                  columns="#{bindings.TblEnqFollowUpView2.hints.EmailTo.displayWidth}"
+                                  maximumLength="#{bindings.TblEnqFollowUpView2.hints.EmailTo.precision}"
+                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.EmailTo.tooltip}" id="it10">
+                      <f:validator binding="#{row.bindings.EmailTo.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.EmailSubject.name}" filterable="true"
+                             sortable="true" headerText="Email Subject"
+                             id="c19">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.EmailSubject}"
+                                   id="it30" placeholder="Email Subject" >
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.EmailSubject.inputValue}"
+                                  label="#{bindings.TblEnqFollowUpView2.hints.EmailSubject.label}"
+                                  required="#{bindings.TblEnqFollowUpView2.hints.EmailSubject.mandatory}"
+                                  columns="#{bindings.TblEnqFollowUpView2.hints.EmailSubject.displayWidth}"
+                                  maximumLength="#{bindings.TblEnqFollowUpView2.hints.EmailSubject.precision}"
+                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.EmailSubject.tooltip}" id="it11">
+                      <f:validator binding="#{row.bindings.EmailSubject.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.EmailBody.name}" filterable="true"
+                             sortable="true" headerText="Email Body"
+                             id="c20">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.EmailBody}"
+                                   id="it31" placeholder="Email Body" >
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.EmailBody.inputValue}"
+                                  label="#{bindings.TblEnqFollowUpView2.hints.EmailBody.label}"
+                                  required="#{bindings.TblEnqFollowUpView2.hints.EmailBody.mandatory}"
+                                  columns="#{bindings.TblEnqFollowUpView2.hints.EmailBody.displayWidth}"
+                                  maximumLength="#{bindings.TblEnqFollowUpView2.hints.EmailBody.precision}"
+                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.EmailBody.tooltip}" id="it12">
+                      <f:validator binding="#{row.bindings.EmailBody.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.CallContactNo.name}" filterable="true"
+                             sortable="true" headerText="Contact Number"
+                             id="c21">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.CallContactNo}"
+                                   id="it32" placeholder="Contact Number" >
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.CallContactNo.inputValue}"
+                                  label="#{bindings.TblEnqFollowUpView2.hints.CallContactNo.label}"
+                                  required="#{bindings.TblEnqFollowUpView2.hints.CallContactNo.mandatory}"
+                                  columns="#{bindings.TblEnqFollowUpView2.hints.CallContactNo.displayWidth}"
+                                  maximumLength="#{bindings.TblEnqFollowUpView2.hints.CallContactNo.precision}"
+                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.CallContactNo.tooltip}" id="it13">
+                      <f:validator binding="#{row.bindings.CallContactNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.CallContent.name}" filterable="true"
+                             sortable="true" headerText="Call Content"
+                             id="c22">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.CallContent}"
+                                   id="it33" placeholder="Contact Number" >
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.CallContent.inputValue}"
+                                  label="Call Content"
+                                  required="#{bindings.TblEnqFollowUpView2.hints.CallContent.mandatory}"
+                                  columns="#{bindings.TblEnqFollowUpView2.hints.CallContent.displayWidth}"
+                                  maximumLength="#{bindings.TblEnqFollowUpView2.hints.CallContent.precision}"
+                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.CallContent.tooltip}" id="it14">
+                      <f:validator binding="#{row.bindings.CallContent.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="Active" id="c23">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Ast}"
+                                   id="it34" placeholder="Active" >
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblEnqFollowUpView2.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblEnqFollowUpView2.hints.Ast.tooltip}" id="soc7">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si7"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+             <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s2"/>
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                
+              </af:iterator>
+                        </af:panelGroupLayout>
+           </af:gridCell>
+        </af:gridRow>
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>

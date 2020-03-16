@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Student_EnquiryPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.Student_Registration">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblStdEnqView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblStdEnqView1Iterator"/>
+    <searchRegion Binds="TblStdEnqView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStdEnqView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblStdEnqView1Iterator" id="TblStdEnqView1">
+      <nodeDefinition DefName="model.ERP.VO.TblStdEnqView" Name="TblStdEnqView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="AcadYearId"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="GradeId"/>
+          <Item Value="EmirId"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TblStdEnqView1Iterator" id="Gender">
+      <AttrNames>
+        <Item Value="Gender"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdEnqView1Iterator" id="Dob">
+      <AttrNames>
+        <Item Value="Dob"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdEnqView1Iterator" id="TotAge">
+      <AttrNames>
+        <Item Value="TotAge"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdEnqView1Iterator" id="ContPerson">
+      <AttrNames>
+        <Item Value="ContPerson"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdEnqView1Iterator" id="ContNumber">
+      <AttrNames>
+        <Item Value="ContNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdEnqView1Iterator" id="ContRelation">
+      <AttrNames>
+        <Item Value="ContRelation"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdEnqView1Iterator" id="LookupElecGroup">
+      <AttrNames>
+        <Item Value="LookupElecGroup"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdEnqView1Iterator" id="Address">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdEnqView1Iterator" id="EmirArea">
+      <AttrNames>
+        <Item Value="EmirArea"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdEnqView1Iterator" id="RegFee">
+      <AttrNames>
+        <Item Value="RegFee"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblStdEnqView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblStdEnqView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblStdEnqView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblStdEnqView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblStdEnqView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblStdEnqView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblStdEnqView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <list IterBinding="TblStdEnqView1Iterator" StaticList="false" Uses="LOV_Gender" id="Gender1" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStdEnqView1Iterator" StaticList="false" Uses="LOV_LookupElecGroup" id="LookupElecGroup1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Age_Eligibility_PolicyPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.Student_Registration">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblAgePolicyView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblAgePolicyView1Iterator"/>
+    <searchRegion Binds="TblAgePolicyView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblAgePolicyView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblAgePolicyView1Iterator" id="TblAgePolicyView1">
+      <nodeDefinition DefName="model.ERP.VO.TblAgePolicyView" Name="TblAgePolicyView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="AcadYearId"/>
+          <Item Value="Dated"/>
+          <Item Value="GradeId"/>
+          <Item Value="FrYear"/>
+          <Item Value="ToYear"/>
+          <Item Value="RefDocNo"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblAgePolicyView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblAgePolicyView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblAgePolicyView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+  </bindings>
+</pageDefinition>

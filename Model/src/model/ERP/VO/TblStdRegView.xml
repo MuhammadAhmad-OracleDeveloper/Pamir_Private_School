@@ -13,6 +13,373 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Student_Enquiry_LOV1"
+    ViewObjectName="model.LOV.Student_Enquiry_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Country_Name_LOV1"
+    ViewObjectName="model.LOV.Lookup_Country_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Nationality_LOV1"
+    ViewObjectName="model.LOV.Lookup_Nationality_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Religion_LOV1"
+    ViewObjectName="model.LOV.Lookup_Religion_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Blood_Group_LOV1"
+    ViewObjectName="model.LOV.Lookup_Blood_Group_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Mother_Tongue_LOV1"
+    ViewObjectName="model.LOV.Lookup_Mother_Tongue_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Grade_Name_LOV1"
+    ViewObjectName="model.LOV.Grade_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Section_Name_LOV1"
+    ViewObjectName="model.LOV.Section_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Second_Language_LOV1"
+    ViewObjectName="model.LOV.Lookup_Second_Language_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Third_Language_LOV1"
+    ViewObjectName="model.LOV.Lookup_Third_Language_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Ref_By_LOV1"
+    ViewObjectName="model.LOV.Lookup_Ref_By_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Value_Type_LOV1"
+    ViewObjectName="model.LOV.Value_Type_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Active_Name_LOV1"
+    ViewObjectName="model.LOV.Active_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Active_Name_LOV2"
+    ViewObjectName="model.LOV.Active_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Active_Name_LOV3"
+    ViewObjectName="model.LOV.Active_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_StdEnqId"
+    ListVOName="Student_Enquiry_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StdEnqId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LookupBirthCountry"
+    ListVOName="Lookup_Country_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LookupBirthCountry"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LookupNationality"
+    ListVOName="Lookup_Nationality_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LookupNationality"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LookupReligion"
+    ListVOName="Lookup_Religion_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LookupReligion"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LookupBloodGroup"
+    ListVOName="Lookup_Blood_Group_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LookupBloodGroup"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LookupMotherTounge"
+    ListVOName="Lookup_Mother_Tongue_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LookupMotherTounge"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_GradeId"
+    ListVOName="Grade_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GradeId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GradeName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SectionsId"
+    ListVOName="Section_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SectionsId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LookupSecondLang"
+    ListVOName="Lookup_Second_Language_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LookupSecondLang"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LookupThirdLang"
+    ListVOName="Lookup_Third_Language_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LookupThirdLang"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LookupRefBy"
+    ListVOName="Lookup_Ref_By_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LookupRefBy"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_MgtDiscType"
+    ListVOName="Value_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="MgtDiscType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SibDiscType"
+    ListVOName="Value_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SibDiscType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_StaffDiscType"
+    ListVOName="Value_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StaffDiscType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SpecialNeed"
+    ListVOName="Active_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SpecialNeed"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TransReq"
+    ListVOName="Active_Name_LOV2"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TransReq"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Ast"
+    ListVOName="Active_Name_LOV3"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Ast"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblStdReg"
     Entity="model.ERP.EO.TblStdReg"/>
@@ -58,7 +425,15 @@
     PrecisionRule="true"
     EntityAttrName="StdEnqId"
     EntityUsage="TblStdReg"
-    AliasName="STD_ENQ_ID"/>
+    AliasName="STD_ENQ_ID"
+    LOVName="LOV_StdEnqId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="BirthPlace"
     PrecisionRule="true"
@@ -70,31 +445,71 @@
     PrecisionRule="true"
     EntityAttrName="LookupBirthCountry"
     EntityUsage="TblStdReg"
-    AliasName="LOOKUP_BIRTH_COUNTRY"/>
+    AliasName="LOOKUP_BIRTH_COUNTRY"
+    LOVName="LOV_LookupBirthCountry">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="LookupNationality"
     PrecisionRule="true"
     EntityAttrName="LookupNationality"
     EntityUsage="TblStdReg"
-    AliasName="LOOKUP_NATIONALITY"/>
+    AliasName="LOOKUP_NATIONALITY"
+    LOVName="LOV_LookupNationality">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="LookupReligion"
     PrecisionRule="true"
     EntityAttrName="LookupReligion"
     EntityUsage="TblStdReg"
-    AliasName="LOOKUP_RELIGION"/>
+    AliasName="LOOKUP_RELIGION"
+    LOVName="LOV_LookupReligion">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="LookupBloodGroup"
     PrecisionRule="true"
     EntityAttrName="LookupBloodGroup"
     EntityUsage="TblStdReg"
-    AliasName="LOOKUP_BLOOD_GROUP"/>
+    AliasName="LOOKUP_BLOOD_GROUP"
+    LOVName="LOV_LookupBloodGroup">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="LookupMotherTounge"
     PrecisionRule="true"
     EntityAttrName="LookupMotherTounge"
     EntityUsage="TblStdReg"
-    AliasName="LOOKUP_MOTHER_TOUNGE"/>
+    AliasName="LOOKUP_MOTHER_TOUNGE"
+    LOVName="LOV_LookupMotherTounge">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="JoinDate"
     PrecisionRule="true"
@@ -106,13 +521,29 @@
     PrecisionRule="true"
     EntityAttrName="GradeId"
     EntityUsage="TblStdReg"
-    AliasName="GRADE_ID"/>
+    AliasName="GRADE_ID"
+    LOVName="LOV_GradeId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="SectionsId"
     PrecisionRule="true"
     EntityAttrName="SectionsId"
     EntityUsage="TblStdReg"
-    AliasName="SECTIONS_ID"/>
+    AliasName="SECTIONS_ID"
+    LOVName="LOV_SectionsId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Image"
     PrecisionRule="true"
@@ -124,7 +555,15 @@
     PrecisionRule="true"
     EntityAttrName="SpecialNeed"
     EntityUsage="TblStdReg"
-    AliasName="SPECIAL_NEED"/>
+    AliasName="SPECIAL_NEED"
+    LOVName="LOV_SpecialNeed">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="PassExpDate"
     PrecisionRule="true"
@@ -160,7 +599,15 @@
     PrecisionRule="true"
     EntityAttrName="TransReq"
     EntityUsage="TblStdReg"
-    AliasName="TRANS_REQ"/>
+    AliasName="TRANS_REQ"
+    LOVName="LOV_TransReq">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="SpecialDesc"
     PrecisionRule="true"
@@ -172,13 +619,29 @@
     PrecisionRule="true"
     EntityAttrName="LookupSecondLang"
     EntityUsage="TblStdReg"
-    AliasName="LOOKUP_SECOND_LANG"/>
+    AliasName="LOOKUP_SECOND_LANG"
+    LOVName="LOV_LookupSecondLang">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="LookupThirdLang"
     PrecisionRule="true"
     EntityAttrName="LookupThirdLang"
     EntityUsage="TblStdReg"
-    AliasName="LOOKUP_THIRD_LANG"/>
+    AliasName="LOOKUP_THIRD_LANG"
+    LOVName="LOV_LookupThirdLang">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="EsisRef"
     PrecisionRule="true"
@@ -190,7 +653,15 @@
     PrecisionRule="true"
     EntityAttrName="LookupRefBy"
     EntityUsage="TblStdReg"
-    AliasName="LOOKUP_REF_BY"/>
+    AliasName="LOOKUP_REF_BY"
+    LOVName="LOV_LookupRefBy">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="RefDesc"
     PrecisionRule="true"
@@ -292,7 +763,15 @@
     PrecisionRule="true"
     EntityAttrName="MgtDiscType"
     EntityUsage="TblStdReg"
-    AliasName="MGT_DISC_TYPE"/>
+    AliasName="MGT_DISC_TYPE"
+    LOVName="LOV_MgtDiscType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="MgtDiscValue"
     PrecisionRule="true"
@@ -310,7 +789,15 @@
     PrecisionRule="true"
     EntityAttrName="SibDiscType"
     EntityUsage="TblStdReg"
-    AliasName="SIB_DISC_TYPE"/>
+    AliasName="SIB_DISC_TYPE"
+    LOVName="LOV_SibDiscType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="SibDiscValue"
     PrecisionRule="true"
@@ -328,7 +815,15 @@
     PrecisionRule="true"
     EntityAttrName="StaffDiscType"
     EntityUsage="TblStdReg"
-    AliasName="STAFF_DISC_TYPE"/>
+    AliasName="STAFF_DISC_TYPE"
+    LOVName="LOV_StaffDiscType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="StaffDiscValue"
     PrecisionRule="true"
@@ -340,7 +835,15 @@
     PrecisionRule="true"
     EntityAttrName="Ast"
     EntityUsage="TblStdReg"
-    AliasName="AST"/>
+    AliasName="AST"
+    LOVName="LOV_Ast">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
