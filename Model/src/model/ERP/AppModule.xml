@@ -307,6 +307,36 @@
   <ViewUsage
     Name="TblLookupDetailDView3"
     ViewObjectName="model.ERP.VO.TblLookupDetailDView"/>
+  <ViewUsage
+    Name="TblFeeTypeView1"
+    ViewObjectName="model.ERP.VO.TblFeeTypeView"/>
+  <ViewUsage
+    Name="TblGradeStaffView1"
+    ViewObjectName="model.ERP.VO.TblGradeStaffView"/>
+  <ViewUsage
+    Name="TblSectionStaffView1"
+    ViewObjectName="model.ERP.VO.TblSectionStaffView"/>
+  <ViewUsage
+    Name="TblSectionTimetableDetailView1"
+    ViewObjectName="model.ERP.VO.TblSectionTimetableDetailView"/>
+  <ViewUsage
+    Name="TblSectionTimetableMasterView1"
+    ViewObjectName="model.ERP.VO.TblSectionTimetableMasterView"/>
+  <ViewUsage
+    Name="TblStaffSubjectView1"
+    ViewObjectName="model.ERP.VO.TblStaffSubjectView"/>
+  <ViewUsage
+    Name="TblVatView1"
+    ViewObjectName="model.ERP.VO.TblVatView"/>
+  <ViewUsage
+    Name="TblSectionStaffView2"
+    ViewObjectName="model.ERP.VO.TblSectionStaffView"/>
+  <ViewUsage
+    Name="TblSectionTimetableDetailView2"
+    ViewObjectName="model.ERP.VO.TblSectionTimetableDetailView"/>
+  <ViewUsage
+    Name="TblFeeTypeView2"
+    ViewObjectName="model.ERP.VO.TblFeeTypeView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -690,5 +720,23 @@
     ViewLinkObjectName="model.ERP.VO.FkLookupDetailDDetailLink"
     SrcViewUsageName="model.ERP.AppModule.TblLookupDetailView2"
     DstViewUsageName="model.ERP.AppModule.TblLookupDetailDView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkSectionStaffStaffSubjectLink1"
+    ViewLinkObjectName="model.ERP.VO.FkSectionStaffStaffSubjectLink"
+    SrcViewUsageName="model.ERP.AppModule.TblStaffSubjectView1"
+    DstViewUsageName="model.ERP.AppModule.TblSectionStaffView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkSectionTimetableDetailStaffSubjectLink1"
+    ViewLinkObjectName="model.ERP.VO.FkSectionTimetableDetailStaffSubjectLink"
+    SrcViewUsageName="model.ERP.AppModule.TblStaffSubjectView1"
+    DstViewUsageName="model.ERP.AppModule.TblSectionTimetableDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="Fk2FeeTypeVatLink1"
+    ViewLinkObjectName="model.ERP.VO.Fk2FeeTypeVatLink"
+    SrcViewUsageName="model.ERP.AppModule.TblVatView1"
+    DstViewUsageName="model.ERP.AppModule.TblFeeTypeView2"
     Reversed="false"/>
 </AppModule>
