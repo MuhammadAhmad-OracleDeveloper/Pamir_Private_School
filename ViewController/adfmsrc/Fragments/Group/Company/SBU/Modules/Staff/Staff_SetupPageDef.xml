@@ -27,6 +27,14 @@
               id="TblStaffVisaView2Iterator"/>
     <searchRegion Binds="TblStaffVisaView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStaffVisaView2Query"/>
+    <iterator Binds="TblStaffPassportView3" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblStaffPassportView3Iterator"/>
+    <searchRegion Binds="TblStaffPassportView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStaffPassportView3Query"/>
+    <iterator Binds="TblStaffRoleView3" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblStaffRoleView3Iterator"/>
+    <searchRegion Binds="TblStaffRoleView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStaffRoleView3Query"/>
   </executables>
   <bindings>
     <tree IterBinding="TblStaffView1Iterator" id="TblStaffView1">
@@ -202,5 +210,38 @@
             Action="createInsertRow"/>
     <action IterBinding="TblStaffVisaView2Iterator" id="Execute5" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblStaffVisaView2Iterator" id="Delete5" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblStaffPassportView3Iterator" id="TblStaffPassportView3">
+      <nodeDefinition DefName="model.ERP.VO.TblStaffPassportView" Name="TblStaffPassportView30">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="LookupIssCountry"/>
+          <Item Value="PassportNo"/>
+          <Item Value="PassportIssDate"/>
+          <Item Value="PassportExpDate"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblStaffPassportView3Iterator" id="CreateInsert6" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblStaffPassportView3Iterator" id="Execute6" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblStaffPassportView3Iterator" id="Delete6" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblStaffRoleView3Iterator" id="TblStaffRoleView3">
+      <nodeDefinition DefName="model.ERP.VO.TblStaffRoleView" Name="TblStaffRoleView30">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="LookupStaffRole"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblStaffRoleView3Iterator" id="CreateInsert7" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblStaffRoleView3Iterator" id="Execute7" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblStaffRoleView3Iterator" id="Delete7" RequiresUpdateModel="false" Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>
