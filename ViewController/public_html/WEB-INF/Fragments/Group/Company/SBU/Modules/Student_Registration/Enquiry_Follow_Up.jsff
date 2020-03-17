@@ -22,7 +22,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="Enquiry" text="Tab Label 1">
+              <af:showDetailItem id="tab1" text="Enquiry">
                 <af:table value="#{bindings.TblStdEnqView1.collectionModel}" var="row"
                           rows="#{bindings.TblStdEnqView1.rangeSize}"
                           emptyText="#{bindings.TblStdEnqView1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -32,7 +32,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblStdEnqView1.rangeSize}"
                           filterModel="#{bindings.TblStdEnqView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblStdEnqView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="::i2:b2 ::i2:b3 ::i2:b4">
+                          partialTriggers="">
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.Id.name}" filterable="true" sortable="true"
                              headerText="Enquiry ID" id="c1">
                              <f:facet name="filter">
@@ -250,7 +250,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblEnqFollowUpView2.rangeSize}"
                           filterModel="#{bindings.TblEnqFollowUpView2Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblEnqFollowUpView2Query.processQuery}" varStatus="vs" id="t2"
-                          partialTriggers="::i1:b7 ::i1:b8 ::i1:b9">
+                          partialTriggers="">
                   <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.Id.name}" filterable="true"
                              sortable="true" headerText="Follow Up ID" id="c13" align="center">
                              <f:facet name="filter">

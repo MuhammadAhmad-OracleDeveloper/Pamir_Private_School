@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Student_RegstrPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.Student_Registration">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblStdRegView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblStdRegView1Iterator"/>
+    <searchRegion Binds="TblStdRegView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStdRegView1Query"/>
+    <iterator Binds="TblStdRegGuardView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblStdRegGuardView2Iterator"/>
+    <iterator Binds="TblStdRegSibView3" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblStdRegSibView3Iterator"/>
+    <searchRegion Binds="TblStdRegSibView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStdRegSibView3Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblStdRegView1Iterator" id="TblStdRegView1">
+      <nodeDefinition DefName="model.ERP.VO.TblStdRegView" Name="TblStdRegView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="GroupCompanyId"/>
+          <Item Value="EnrollNo"/>
+          <Item Value="RegNo"/>
+          <Item Value="RegDate"/>
+          <Item Value="EsisNo"/>
+          <Item Value="StdEnqId"/>
+          <Item Value="BirthPlace"/>
+          <Item Value="LookupBirthCountry"/>
+          <Item Value="LookupNationality"/>
+          <Item Value="LookupReligion"/>
+          <Item Value="LookupBloodGroup"/>
+          <Item Value="LookupMotherTounge"/>
+          <Item Value="JoinDate"/>
+          <Item Value="GradeId"/>
+          <Item Value="SectionsId"/>
+          <Item Value="Image"/>
+          <Item Value="SpecialNeed"/>
+          <Item Value="PassExpDate"/>
+          <Item Value="VisaExpDate"/>
+          <Item Value="EmidExpDate"/>
+          <Item Value="JoinPerc"/>
+          <Item Value="MarksObtPerc"/>
+          <Item Value="TransReq"/>
+          <Item Value="SpecialDesc"/>
+          <Item Value="LookupSecondLang"/>
+          <Item Value="LookupThirdLang"/>
+          <Item Value="EsisRef"/>
+          <Item Value="LookupRefBy"/>
+          <Item Value="RefDesc"/>
+          <Item Value="FatherName"/>
+          <Item Value="FatherOccup"/>
+          <Item Value="FatherMobile"/>
+          <Item Value="FatherEmail"/>
+          <Item Value="FatherHomeTel"/>
+          <Item Value="FatherOffTel"/>
+          <Item Value="MotherName"/>
+          <Item Value="MotherOccup"/>
+          <Item Value="MotherMobile"/>
+          <Item Value="MotherEmail"/>
+          <Item Value="MotherOffTel"/>
+          <Item Value="ParMonIncome"/>
+          <Item Value="FatherIncAnn"/>
+          <Item Value="MotherIncAnn"/>
+          <Item Value="PerAddress"/>
+          <Item Value="MgtDiscType"/>
+          <Item Value="MgtDiscValue"/>
+          <Item Value="FoundMemDiscPerc"/>
+          <Item Value="SibDiscType"/>
+          <Item Value="SibDiscValue"/>
+          <Item Value="ScholarDiscAmt"/>
+          <Item Value="StaffDiscType"/>
+          <Item Value="StaffDiscValue"/>
+          <Item Value="Ast"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="UpdatedDate"/>
+          <Item Value="UpdatedBy"/>
+          <Item Value="RefDocNo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="StdRegId">
+      <AttrNames>
+        <Item Value="StdRegId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="Name">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="GuardRelation">
+      <AttrNames>
+        <Item Value="GuardRelation"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="ContactNumber">
+      <AttrNames>
+        <Item Value="ContactNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="Address">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="Mobile1">
+      <AttrNames>
+        <Item Value="Mobile1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="Mobile2">
+      <AttrNames>
+        <Item Value="Mobile2"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblStdRegGuardView2Iterator" StaticList="false" Uses="LOV_Ast" id="Ast" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="CreatedDate">
+      <AttrNames>
+        <Item Value="CreatedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="UpdatedDate">
+      <AttrNames>
+        <Item Value="UpdatedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="UpdatedBy">
+      <AttrNames>
+        <Item Value="UpdatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblStdRegGuardView2Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblStdRegGuardView2Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblStdRegGuardView2Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblStdRegGuardView2Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="Id1">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="GroupCompanyId">
+      <AttrNames>
+        <Item Value="GroupCompanyId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="EnrollNo">
+      <AttrNames>
+        <Item Value="EnrollNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="RegNo">
+      <AttrNames>
+        <Item Value="RegNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="RegDate">
+      <AttrNames>
+        <Item Value="RegDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="EsisNo">
+      <AttrNames>
+        <Item Value="EsisNo"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_StdEnqId" id="StdEnqId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="BirthPlace">
+      <AttrNames>
+        <Item Value="BirthPlace"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_LookupBirthCountry"
+          id="LookupBirthCountry" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_LookupNationality" id="LookupNationality"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_LookupReligion" id="LookupReligion"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_LookupBloodGroup" id="LookupBloodGroup"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_LookupMotherTounge"
+          id="LookupMotherTounge" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="JoinDate">
+      <AttrNames>
+        <Item Value="JoinDate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_GradeId" id="GradeId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_SectionsId" id="SectionsId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="Image">
+      <AttrNames>
+        <Item Value="Image"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_SpecialNeed" id="SpecialNeed"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="PassExpDate">
+      <AttrNames>
+        <Item Value="PassExpDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="VisaExpDate">
+      <AttrNames>
+        <Item Value="VisaExpDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="EmidExpDate">
+      <AttrNames>
+        <Item Value="EmidExpDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="JoinPerc">
+      <AttrNames>
+        <Item Value="JoinPerc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="MarksObtPerc">
+      <AttrNames>
+        <Item Value="MarksObtPerc"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_TransReq" id="TransReq"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="SpecialDesc">
+      <AttrNames>
+        <Item Value="SpecialDesc"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_LookupSecondLang" id="LookupSecondLang"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_LookupThirdLang" id="LookupThirdLang"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="EsisRef">
+      <AttrNames>
+        <Item Value="EsisRef"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_LookupRefBy" id="LookupRefBy"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="RefDesc">
+      <AttrNames>
+        <Item Value="RefDesc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="FatherName">
+      <AttrNames>
+        <Item Value="FatherName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="FatherOccup">
+      <AttrNames>
+        <Item Value="FatherOccup"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="FatherMobile">
+      <AttrNames>
+        <Item Value="FatherMobile"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="FatherEmail">
+      <AttrNames>
+        <Item Value="FatherEmail"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="FatherHomeTel">
+      <AttrNames>
+        <Item Value="FatherHomeTel"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="FatherOffTel">
+      <AttrNames>
+        <Item Value="FatherOffTel"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="MotherName">
+      <AttrNames>
+        <Item Value="MotherName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="MotherOccup">
+      <AttrNames>
+        <Item Value="MotherOccup"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="MotherMobile">
+      <AttrNames>
+        <Item Value="MotherMobile"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="MotherEmail">
+      <AttrNames>
+        <Item Value="MotherEmail"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="MotherOffTel">
+      <AttrNames>
+        <Item Value="MotherOffTel"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="ParMonIncome">
+      <AttrNames>
+        <Item Value="ParMonIncome"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="FatherIncAnn">
+      <AttrNames>
+        <Item Value="FatherIncAnn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="MotherIncAnn">
+      <AttrNames>
+        <Item Value="MotherIncAnn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="PerAddress">
+      <AttrNames>
+        <Item Value="PerAddress"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_MgtDiscType" id="MgtDiscType"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="MgtDiscValue">
+      <AttrNames>
+        <Item Value="MgtDiscValue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="FoundMemDiscPerc">
+      <AttrNames>
+        <Item Value="FoundMemDiscPerc"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_SibDiscType" id="SibDiscType"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="SibDiscValue">
+      <AttrNames>
+        <Item Value="SibDiscValue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="ScholarDiscAmt">
+      <AttrNames>
+        <Item Value="ScholarDiscAmt"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_StaffDiscType" id="StaffDiscType"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="StaffDiscValue">
+      <AttrNames>
+        <Item Value="StaffDiscValue"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_Ast" id="Ast1" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="CreatedDate1">
+      <AttrNames>
+        <Item Value="CreatedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="CreatedBy1">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="UpdatedDate1">
+      <AttrNames>
+        <Item Value="UpdatedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="UpdatedBy1">
+      <AttrNames>
+        <Item Value="UpdatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="RefDocNo">
+      <AttrNames>
+        <Item Value="RefDocNo"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblStdRegView1Iterator" id="First1" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblStdRegView1Iterator" id="Previous1" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblStdRegView1Iterator" id="Next1" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblStdRegView1Iterator" id="Last1" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="TblStdRegSibView3Iterator" id="TblStdRegSibView3">
+      <nodeDefinition DefName="model.ERP.VO.TblStdRegSibView" Name="TblStdRegSibView30">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="StdRegId"/>
+          <Item Value="SibStdRegId"/>
+          <Item Value="GradeId"/>
+          <Item Value="SectionsId"/>
+          <Item Value="Ast"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="UpdatedDate"/>
+          <Item Value="UpdatedBy"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblStdRegView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblStdRegView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblStdRegView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+  </bindings>
+</pageDefinition>
