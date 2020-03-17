@@ -23,7 +23,7 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1" text="Staff">
-                <af:table value="#{bindings.TblStaffView1.collectionModel}" var="row"
+               <af:table value="#{bindings.TblStaffView1.collectionModel}" var="row"
                           rows="#{bindings.TblStaffView1.rangeSize}"
                           emptyText="#{bindings.TblStaffView1.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="0" selectedRowKeys="#{bindings.TblStaffView1.collectionModel.selectedRow}"
@@ -476,7 +476,7 @@
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s3"/>
                             </af:iterator>
@@ -637,7 +637,7 @@
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}2"/>
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s13"/>
                             </af:iterator>
@@ -732,7 +732,7 @@
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}3"/>
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s15"/>
                             </af:iterator>
@@ -828,7 +828,7 @@
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}4"/>
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s17"/>
                             </af:iterator>
@@ -994,7 +994,7 @@
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}5"/>
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s19"/>
                             </af:iterator>
@@ -1144,7 +1144,7 @@
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}6"/>
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s21"/>
                             </af:iterator>
@@ -1237,7 +1237,7 @@
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}7"/>
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s23"/>
                             </af:iterator>
@@ -1424,7 +1424,7 @@
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}8"/>
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s25"/>
                             </af:iterator>
@@ -1611,7 +1611,7 @@
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}9"/>
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s26"/>
                             </af:iterator>
@@ -1740,7 +1740,7 @@
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}10"/>
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s27"/>
                             </af:iterator>
@@ -1821,7 +1821,7 @@
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}11"/>
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s29"/>
                             </af:iterator>

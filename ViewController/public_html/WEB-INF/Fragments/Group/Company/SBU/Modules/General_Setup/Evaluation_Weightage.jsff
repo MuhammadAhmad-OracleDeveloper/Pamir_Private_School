@@ -23,7 +23,7 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1" text="Grade">
-                <af:table value="#{bindings.TblGradeView1.collectionModel}" var="row"
+               <af:table value="#{bindings.TblGradeView1.collectionModel}" var="row"
                           rows="#{bindings.TblGradeView1.rangeSize}"
                           emptyText="#{bindings.TblGradeView1.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="0" selectedRowKeys="#{bindings.TblGradeView1.collectionModel.selectedRow}"
@@ -332,7 +332,7 @@
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s3"/>
                             </af:iterator>
