@@ -35,6 +35,18 @@
               id="TblStaffRoleView3Iterator"/>
     <searchRegion Binds="TblStaffRoleView3Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStaffRoleView3Query"/>
+    <iterator Binds="TblStaffBenefitView3" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblStaffBenefitView3Iterator"/>
+    <searchRegion Binds="TblStaffBenefitView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStaffBenefitView3Query"/>
+    <iterator Binds="TblStaffSalaryView2" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblStaffSalaryView2Iterator"/>
+    <searchRegion Binds="TblStaffSalaryView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStaffSalaryView2Query"/>
+    <iterator Binds="TblStaffSalElemView4" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblStaffSalElemView4Iterator"/>
+    <searchRegion Binds="TblStaffSalElemView4Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStaffSalElemView4Query"/>
   </executables>
   <bindings>
     <tree IterBinding="TblStaffView1Iterator" id="TblStaffView1">
@@ -243,5 +255,63 @@
             Action="createInsertRow"/>
     <action IterBinding="TblStaffRoleView3Iterator" id="Execute7" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblStaffRoleView3Iterator" id="Delete7" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblStaffBenefitView3Iterator" id="TblStaffBenefitView3">
+      <nodeDefinition DefName="model.ERP.VO.TblStaffBenefitView" Name="TblStaffBenefitView30">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="LookupBenefit"/>
+          <Item Value="BenefitAmount"/>
+          <Item Value="BenefitType"/>
+          <Item Value="BenefitFrDate"/>
+          <Item Value="BenefitToDate"/>
+          <Item Value="Remarks"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblStaffBenefitView3Iterator" id="CreateInsert8" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblStaffBenefitView3Iterator" id="Execute8" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblStaffBenefitView3Iterator" id="Delete8" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblStaffSalaryView2Iterator" id="TblStaffSalaryView2">
+      <nodeDefinition DefName="model.ERP.VO.TblStaffSalaryView" Name="TblStaffSalaryView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="PaymentMode"/>
+          <Item Value="Bank"/>
+          <Item Value="BankAc"/>
+          <Item Value="NetSalary"/>
+          <Item Value="Remarks"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblStaffSalaryView2Iterator" id="CreateInsert9" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblStaffSalaryView2Iterator" id="Execute9" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblStaffSalaryView2Iterator" id="Delete9" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblStaffSalElemView4Iterator" id="TblStaffSalElemView4">
+      <nodeDefinition DefName="model.ERP.VO.TblStaffSalElemView" Name="TblStaffSalElemView40">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="StaffSalaryId"/>
+          <Item Value="SalaryElementId"/>
+          <Item Value="Amount"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblStaffSalElemView4Iterator" id="CreateInsert10" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblStaffSalElemView4Iterator" id="Execute10" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblStaffSalElemView4Iterator" id="Delete10" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>
