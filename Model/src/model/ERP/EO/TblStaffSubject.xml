@@ -90,6 +90,13 @@
     AssociationOtherEnd="model.ERP.EO.FkSectionTimetableDetailStaffSubjectAssoc.TblStaffSubject"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblStaff"
+    Association="model.ERP.EO.FKTblStaffSubjectFkAssoc"
+    AssociationEnd="model.ERP.EO.FKTblStaffSubjectFkAssoc.TblStaff"
+    AssociationOtherEnd="model.ERP.EO.FKTblStaffSubjectFkAssoc.TblStaffSubject"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="PkStaffSubject"
     PrimaryKey="true">
@@ -109,6 +116,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.ERP.EO.TblStaffSubject.SubjectId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_TblStaffSubject">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_STAFF"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_TBL_STAFF_SUBJECT"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblStaffSubject.StaffId"/>
     </AttrArray>
   </Key>
 </Entity>

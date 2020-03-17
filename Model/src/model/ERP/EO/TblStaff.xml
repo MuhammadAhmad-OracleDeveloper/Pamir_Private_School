@@ -371,6 +371,13 @@
     AssociationOtherEnd="model.ERP.EO.FkStaffVisaStaffAssoc.TblStaff"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblStaffSubject"
+    Association="model.ERP.EO.FKTblStaffSubjectFkAssoc"
+    AssociationEnd="model.ERP.EO.FKTblStaffSubjectFkAssoc.TblStaffSubject"
+    AssociationOtherEnd="model.ERP.EO.FKTblStaffSubjectFkAssoc.TblStaff"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkStaff"
     PrimaryKey="true">
