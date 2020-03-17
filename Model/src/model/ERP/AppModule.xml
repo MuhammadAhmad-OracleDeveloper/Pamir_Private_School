@@ -337,6 +337,9 @@
   <ViewUsage
     Name="TblFeeTypeView2"
     ViewObjectName="model.ERP.VO.TblFeeTypeView"/>
+  <ViewUsage
+    Name="TblStaffSalElemView4"
+    ViewObjectName="model.ERP.VO.TblStaffSalElemView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -738,5 +741,11 @@
     ViewLinkObjectName="model.ERP.VO.Fk2FeeTypeVatLink"
     SrcViewUsageName="model.ERP.AppModule.TblVatView1"
     DstViewUsageName="model.ERP.AppModule.TblFeeTypeView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkStaffSalElemStaffSalLink2"
+    ViewLinkObjectName="model.ERP.VO.FkStaffSalElemStaffSalLink"
+    SrcViewUsageName="model.ERP.AppModule.TblStaffSalaryView2"
+    DstViewUsageName="model.ERP.AppModule.TblStaffSalElemView4"
     Reversed="false"/>
 </AppModule>
