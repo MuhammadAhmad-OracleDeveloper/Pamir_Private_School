@@ -47,6 +47,10 @@
               id="TblStaffSalElemView4Iterator"/>
     <searchRegion Binds="TblStaffSalElemView4Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStaffSalElemView4Query"/>
+    <iterator Binds="TblStaffSubjectView3" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblStaffSubjectView3Iterator"/>
+    <searchRegion Binds="TblStaffSubjectView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStaffSubjectView3Query"/>
   </executables>
   <bindings>
     <tree IterBinding="TblStaffView1Iterator" id="TblStaffView1">
@@ -312,6 +316,21 @@
     <action IterBinding="TblStaffSalElemView4Iterator" id="Execute10" RequiresUpdateModel="true"
             Action="iteratorExecute"/>
     <action IterBinding="TblStaffSalElemView4Iterator" id="Delete10" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblStaffSubjectView3Iterator" id="TblStaffSubjectView3">
+      <nodeDefinition DefName="model.ERP.VO.TblStaffSubjectView" Name="TblStaffSubjectView30">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="SubjectId"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblStaffSubjectView3Iterator" id="CreateInsert11" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblStaffSubjectView3Iterator" id="Execute11" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblStaffSubjectView3Iterator" id="Delete11" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

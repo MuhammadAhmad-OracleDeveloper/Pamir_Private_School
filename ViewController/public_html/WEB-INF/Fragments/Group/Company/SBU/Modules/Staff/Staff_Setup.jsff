@@ -1330,22 +1330,21 @@
                                         pattern="#{bindings.TblStaffBenefitView3.hints.BenefitAmount.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblStaffBenefitView3.hints.BenefitType.name}" filterable="true"
-                             sortable="true" headerText="Benefit Type"
-                             id="c56">
+                  <af:column headerText="#{bindings.TblStaffBenefitView3.hints.BenefitType.label}" id="c56"
+                             sortable="true" filterable="true">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.BenefitType}"
        id="it73" placeholder="Search Type">
       </af:inputText>
 </f:facet>
-                    <af:inputText value="#{row.bindings.BenefitType.inputValue}"
-                                  label="#{bindings.TblStaffBenefitView3.hints.BenefitType.label}"
-                                  required="#{bindings.TblStaffBenefitView3.hints.BenefitType.mandatory}"
-                                  columns="#{bindings.TblStaffBenefitView3.hints.BenefitType.displayWidth}"
-                                  maximumLength="#{bindings.TblStaffBenefitView3.hints.BenefitType.precision}"
-                                  shortDesc="#{bindings.TblStaffBenefitView3.hints.BenefitType.tooltip}" id="it67">
+                    <af:selectOneChoice value="#{row.bindings.BenefitType.inputValue}"
+                                        label="#{row.bindings.BenefitType.label}"
+                                        required="#{bindings.TblStaffBenefitView3.hints.BenefitType.mandatory}"
+                                        shortDesc="#{bindings.TblStaffBenefitView3.hints.BenefitType.tooltip}"
+                                        id="soc29">
+                      <f:selectItems value="#{row.bindings.BenefitType.items}" id="si29"/>
                       <f:validator binding="#{row.bindings.BenefitType.validator}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStaffBenefitView3.hints.BenefitFrDate.name}" filterable="true"
                              sortable="true" headerText="From Date"
@@ -1753,7 +1752,81 @@
                   </af:gridRow>
                 </af:panelGridLayout>
               </af:showDetailItem>
-              <af:showDetailItem text="Subject" id="sdi10"/>
+              <af:showDetailItem text="Subject" id="sdi10">
+                <af:table value="#{bindings.TblStaffSubjectView3.collectionModel}" var="row"
+                          rows="#{bindings.TblStaffSubjectView3.rangeSize}"
+                          emptyText="#{bindings.TblStaffSubjectView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblStaffSubjectView3.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblStaffSubjectView3.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblStaffSubjectView3.rangeSize}"
+                          filterModel="#{bindings.TblStaffSubjectView3Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblStaffSubjectView3Query.processQuery}" varStatus="vs" id="t12"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblStaffSubjectView3.hints.Id.name}" filterable="true"
+                             sortable="true" headerText="Staff Subject ID" id="c74" align="center" width="80">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="it96" placeholder="Search ID">
+      </af:inputText>
+      </f:facet>
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblStaffSubjectView3.hints.Id.label}"
+                                  required="#{bindings.TblStaffSubjectView3.hints.Id.mandatory}"
+                                  columns="#{bindings.TblStaffSubjectView3.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblStaffSubjectView3.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblStaffSubjectView3.hints.Id.tooltip}" id="it97"
+                                  readOnly="true"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblStaffSubjectView3.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffSubjectView3.hints.SubjectId.name}" filterable="true"
+                             sortable="true" headerText="Subject"
+                             id="c75" align="center" width="300">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.SubjectId}"
+       id="it98" placeholder="Search Subject">
+      </af:inputText>
+      </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.SubjectId.inputValue}"
+                                        label="#{row.bindings.SubjectId.label}"
+                                        required="#{bindings.TblStaffSubjectView3.hints.SubjectId.mandatory}"
+                                        shortDesc="#{bindings.TblStaffSubjectView3.hints.SubjectId.tooltip}" id="soc27">
+                      <f:selectItems value="#{row.bindings.SubjectId.items}" id="si27"/>
+                      <f:validator binding="#{row.bindings.SubjectId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStaffSubjectView3.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="Active" id="c76">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ast}"
+       id="it99" placeholder="Search Status">
+      </af:inputText>
+      </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblStaffSubjectView3.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblStaffSubjectView3.hints.Ast.tooltip}" id="soc28">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si28"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+                <af:spacer width="10" height="40" id="s28"/>
+                <af:panelGroupLayout id="pgl16" layout="horizontal">
+                            <af:iterator id="i12" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s29"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+              </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
         </af:gridRow>

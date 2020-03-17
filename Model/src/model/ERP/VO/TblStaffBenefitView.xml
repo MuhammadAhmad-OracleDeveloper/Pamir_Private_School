@@ -21,6 +21,10 @@
     Name="Lookup_Benefit_LOV1"
     ViewObjectName="model.LOV.Lookup_Benefit_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Benefit_Type_LOV1"
+    ViewObjectName="model.LOV.Benefit_Type_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Ast"
     ListVOName="Active_Name_LOV1"
@@ -54,6 +58,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_BenefitType"
+    ListVOName="Benefit_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="BenefitType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -104,7 +126,15 @@
     PrecisionRule="true"
     EntityAttrName="BenefitType"
     EntityUsage="TblStaffBenefit"
-    AliasName="BENEFIT_TYPE"/>
+    AliasName="BENEFIT_TYPE"
+    LOVName="LOV_BenefitType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="BenefitFrDate"
     PrecisionRule="true"
