@@ -141,23 +141,6 @@
                                                               pattern="#{bindings.TblTermWorkDaysView3.hints.Id.format}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column sortProperty="#{bindings.TblTermWorkDaysView3.hints.AcadYearId.name}"
-                                               filterable="true" sortable="true"
-                                               headerText="Academic Year"
-                                               id="c6">
-                                                <f:facet name="filter">
-                                            <af:inputText value="#{vs.filterCriteria.AcadYearId}" id="it9"
-                                                          placeholder="Search Year"></af:inputText>
-                                        </f:facet>
-                                        <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
-                                                            label="#{row.bindings.AcadYearId.label}"
-                                                            required="#{bindings.TblTermWorkDaysView3.hints.AcadYearId.mandatory}"
-                                                            shortDesc="#{bindings.TblTermWorkDaysView3.hints.AcadYearId.tooltip}"
-                                                            id="soc3">
-                                            <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si3"/>
-                                            <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
-                                        </af:selectOneChoice>
-                                    </af:column>
                                     <af:column sortProperty="#{bindings.TblTermWorkDaysView3.hints.TermsId.name}"
                                                filterable="true" sortable="true"
                                                headerText="Terms"
@@ -208,7 +191,7 @@
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s3"/>
                             </af:iterator>

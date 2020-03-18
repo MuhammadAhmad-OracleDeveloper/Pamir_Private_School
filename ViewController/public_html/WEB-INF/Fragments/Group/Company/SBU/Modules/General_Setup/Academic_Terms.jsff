@@ -156,26 +156,12 @@
                                                       required="#{bindings.TblTermsView2.hints.Id.mandatory}"
                                                       columns="#{bindings.TblTermsView2.hints.Id.displayWidth}"
                                                       maximumLength="#{bindings.TblTermsView2.hints.Id.precision}"
-                                                      shortDesc="#{bindings.TblTermsView2.hints.Id.tooltip}" id="it3">
+                                                      shortDesc="#{bindings.TblTermsView2.hints.Id.tooltip}" id="it3"
+                                                      readOnly="true" contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.Id.validator}"/>
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.TblTermsView2.hints.Id.format}"/>
                                         </af:inputText>
-                                    </af:column>
-                                    <af:column sortProperty="#{bindings.TblTermsView2.hints.AcadYearId.name}"
-                                               filterable="true" sortable="true" headerText="Academic Year" id="c7">
-                                                <f:facet name="filter">
-                                            <af:inputText value="#{vs.filterCriteria.AcadYearId}" id="it8"
-                                                          placeholder="Search Year"></af:inputText>
-                                        </f:facet>
-                                        <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
-                                                            label="#{row.bindings.AcadYearId.label}"
-                                                            required="#{bindings.TblTermsView2.hints.AcadYearId.mandatory}"
-                                                            shortDesc="#{bindings.TblTermsView2.hints.AcadYearId.tooltip}"
-                                                            id="soc2">
-                                            <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si2"/>
-                                            <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
-                                        </af:selectOneChoice>
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblTermsView2.hints.TermName.name}"
                                                filterable="true" sortable="true" headerText="Term" id="c8" width="200">
@@ -221,7 +207,7 @@
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s3"/>
                             </af:iterator>

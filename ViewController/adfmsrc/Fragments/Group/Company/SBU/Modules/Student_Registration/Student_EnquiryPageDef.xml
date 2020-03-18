@@ -7,6 +7,8 @@
     <iterator Binds="TblStdEnqView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblStdEnqView1Iterator"/>
     <searchRegion Binds="TblStdEnqView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStdEnqView1Query"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="TblStdEnqView1Iterator" id="TblStdEnqView1">
@@ -86,6 +88,14 @@
           SelectItemValueMode="ListObject"/>
     <list IterBinding="TblStdEnqView1Iterator" StaticList="false" Uses="LOV_LookupElecGroup" id="LookupElecGroup1"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
     <tree IterBinding="TblStdEnqView1Iterator" id="TblStdEnqView11">
       <nodeDefinition DefName="model.ERP.VO.TblStdEnqView" Name="TblStdEnqView110">
         <AttrNames>

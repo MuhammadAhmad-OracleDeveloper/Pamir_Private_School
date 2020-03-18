@@ -13,6 +13,72 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Staff_Salary_LOV1"
+    ViewObjectName="model.LOV.Staff_Salary_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Salary_Element_LOV1"
+    ViewObjectName="model.LOV.Salary_Element_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Active_Name_LOV1"
+    ViewObjectName="model.LOV.Active_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_StaffSalaryId"
+    ListVOName="Staff_Salary_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StaffSalaryId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="NetSalary"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SalaryElementId"
+    ListVOName="Salary_Element_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SalaryElementId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Ast"
+    ListVOName="Active_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Ast"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblStaffSalElem"
     Entity="model.ERP.EO.TblStaffSalElem"/>
@@ -28,13 +94,29 @@
     PrecisionRule="true"
     EntityAttrName="StaffSalaryId"
     EntityUsage="TblStaffSalElem"
-    AliasName="STAFF_SALARY_ID"/>
+    AliasName="STAFF_SALARY_ID"
+    LOVName="LOV_StaffSalaryId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="SalaryElementId"
     PrecisionRule="true"
     EntityAttrName="SalaryElementId"
     EntityUsage="TblStaffSalElem"
-    AliasName="SALARY_ELEMENT_ID"/>
+    AliasName="SALARY_ELEMENT_ID"
+    LOVName="LOV_SalaryElementId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Amount"
     PrecisionRule="true"
@@ -46,7 +128,15 @@
     PrecisionRule="true"
     EntityAttrName="Ast"
     EntityUsage="TblStaffSalElem"
-    AliasName="AST"/>
+    AliasName="AST"
+    LOVName="LOV_Ast">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"

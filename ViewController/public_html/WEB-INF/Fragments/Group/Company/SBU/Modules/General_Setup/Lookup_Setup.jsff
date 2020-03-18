@@ -23,7 +23,7 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1" text="Master Lookup">
-                <af:table value="#{bindings.TblLookupMasterView1.collectionModel}" var="row"
+               <af:table value="#{bindings.TblLookupMasterView1.collectionModel}" var="row"
                           rows="#{bindings.TblLookupMasterView1.rangeSize}"
                           emptyText="#{bindings.TblLookupMasterView1.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="0"
@@ -174,8 +174,70 @@
         <af:gridRow id="gr6">
           <af:gridCell id="gc6">
             <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab3" text="Tab Label 3">
-                
+              <af:showDetailItem id="tab3" text="Detail Lookup Detail">
+                <af:table value="#{bindings.TblLookupDetailDView3.collectionModel}" var="row"
+                          rows="#{bindings.TblLookupDetailDView3.rangeSize}"
+                          emptyText="#{bindings.TblLookupDetailDView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblLookupDetailDView3.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblLookupDetailDView3.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblLookupDetailDView3.rangeSize}"
+                          filterModel="#{bindings.TblLookupDetailDView3Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblLookupDetailDView3Query.processQuery}" varStatus="vs" id="t3"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblLookupDetailDView3.hints.Id.name}" filterable="true"
+                             sortable="true" headerText="Detail Lookup Detail ID" id="c6" align="center" width="80">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="it11" placeholder="Search ID">
+      </af:inputText>
+</f:facet>
+
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblLookupDetailDView3.hints.Id.label}"
+                                  required="#{bindings.TblLookupDetailDView3.hints.Id.mandatory}"
+                                  columns="#{bindings.TblLookupDetailDView3.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblLookupDetailDView3.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblLookupDetailDView3.hints.Id.tooltip}" id="it9"
+                                  readOnly="true"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblLookupDetailDView3.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblLookupDetailDView3.hints.Name.name}" filterable="true"
+                             sortable="true" headerText="lookup Detail" id="c7" width="300">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Name}"
+       id="it12" placeholder="Search lookup Detail">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Name.inputValue}"
+                                  label="#{bindings.TblLookupDetailDView3.hints.Name.label}"
+                                  required="#{bindings.TblLookupDetailDView3.hints.Name.mandatory}"
+                                  columns="#{bindings.TblLookupDetailDView3.hints.Name.displayWidth}"
+                                  maximumLength="#{bindings.TblLookupDetailDView3.hints.Name.precision}"
+                                  shortDesc="#{bindings.TblLookupDetailDView3.hints.Name.tooltip}" id="it10">
+                      <f:validator binding="#{row.bindings.Name.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblLookupDetailDView3.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="Active" id="c8">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ast}"
+       id="it13" placeholder="Search Status">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblLookupDetailDView3.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblLookupDetailDView3.hints.Ast.tooltip}" id="soc2">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si2"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+               
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
@@ -183,13 +245,13 @@
         <af:gridRow id="gr7">
           <af:gridCell id="gc7">
            <af:panelGroupLayout id="pgl5" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s6"/>
+                           
                             <af:iterator id="i3" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}2"/>
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s7"/>
                             </af:iterator>
