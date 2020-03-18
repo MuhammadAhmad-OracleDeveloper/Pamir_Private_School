@@ -93,7 +93,8 @@
                                           filterModel="#{bindings.TblGradeSubjectView3Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblGradeSubjectView3Query.processQuery}"
-                                          varStatus="vs" id="t2" scrollPolicy="page" autoHeightRows="0">
+                                          varStatus="vs" id="t2" scrollPolicy="page" autoHeightRows="0"
+                                          partialTriggers="::b2 ::b3 ::b4">
                                     <af:column sortProperty="#{bindings.TblGradeSubjectView3.hints.Id.name}"
                                                filterable="true" sortable="true"
                                                headerText="Grade Subjects ID" id="c3" align="center" width="100">
@@ -149,6 +150,7 @@
                                         </af:selectOneChoice>
                                     </af:column>
                                 </af:table>
+                                
                             </af:showDetailItem>
                         </af:panelTabbed>
                     </af:gridCell>
