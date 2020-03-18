@@ -14,6 +14,10 @@
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblLookupDetailView2Query"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblLookupDetailDView3" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblLookupDetailDView3Iterator"/>
+    <searchRegion Binds="TblLookupDetailDView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblLookupDetailDView3Query"/>
   </executables>
   <bindings>
     <tree IterBinding="TblLookupMasterView1Iterator" id="TblLookupMasterView1">
@@ -58,5 +62,20 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <tree IterBinding="TblLookupDetailDView3Iterator" id="TblLookupDetailDView3">
+      <nodeDefinition DefName="model.ERP.VO.TblLookupDetailDView" Name="TblLookupDetailDView30">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblLookupDetailDView3Iterator" id="CreateInsert2" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblLookupDetailDView3Iterator" id="Execute2" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblLookupDetailDView3Iterator" id="Delete2" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

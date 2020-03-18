@@ -158,71 +158,66 @@
                                             <f:validator binding="#{row.bindings.NoticeType.validator}"/>
                                         </af:selectOneChoice>
                                     </af:column>
-                                    <af:column sortProperty="#{bindings.TblNoticesView1.hints.NoticeTeacher.name}"
-                                               filterable="true" sortable="true" headerText="Notice Teacher" id="c8">
-                                                <f:facet name="filter">
+                                    <af:column headerText="Notice Teacher"
+                                               id="c8" sortable="true" filterable="true">
+                                               <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.NoticeTeacher}" id="it11"
                                                           placeholder="Search Teacher"></af:inputText>
                                         </f:facet>
-                                        <af:inputText value="#{row.bindings.NoticeTeacher.inputValue}"
-                                                      label="#{bindings.TblNoticesView1.hints.NoticeTeacher.label}"
-                                                      required="#{bindings.TblNoticesView1.hints.NoticeTeacher.mandatory}"
-                                                      columns="#{bindings.TblNoticesView1.hints.NoticeTeacher.displayWidth}"
-                                                      maximumLength="#{bindings.TblNoticesView1.hints.NoticeTeacher.precision}"
-                                                      shortDesc="#{bindings.TblNoticesView1.hints.NoticeTeacher.tooltip}"
-                                                      id="it3" >
+                                        <af:selectOneChoice value="#{row.bindings.NoticeTeacher.inputValue}"
+                                                            label="#{row.bindings.NoticeTeacher.label}"
+                                                            required="#{bindings.TblNoticesView1.hints.NoticeTeacher.mandatory}"
+                                                            shortDesc="#{bindings.TblNoticesView1.hints.NoticeTeacher.tooltip}"
+                                                            id="soc3">
+                                            <f:selectItems value="#{row.bindings.NoticeTeacher.items}" id="si3"/>
                                             <f:validator binding="#{row.bindings.NoticeTeacher.validator}"/>
-                                        </af:inputText>
+                                        </af:selectOneChoice>
                                     </af:column>
-                                    <af:column sortProperty="#{bindings.TblNoticesView1.hints.NoticeAll.name}"
-                                               filterable="true" sortable="true" headerText="Notice All" id="c9">
-                                                <f:facet name="filter">
+                                    <af:column headerText="Notice All" id="c9" sortable="true" filterable="true">
+                                    <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.NoticeAll}" id="it12"
                                                           placeholder="Search All"></af:inputText>
                                         </f:facet>
-                                        <af:inputText value="#{row.bindings.NoticeAll.inputValue}"
-                                                      label="#{bindings.TblNoticesView1.hints.NoticeAll.label}"
-                                                      required="#{bindings.TblNoticesView1.hints.NoticeAll.mandatory}"
-                                                      columns="#{bindings.TblNoticesView1.hints.NoticeAll.displayWidth}"
-                                                      maximumLength="#{bindings.TblNoticesView1.hints.NoticeAll.precision}"
-                                                      shortDesc="#{bindings.TblNoticesView1.hints.NoticeAll.tooltip}"
-                                                      id="it4">
+                                        <af:selectOneChoice value="#{row.bindings.NoticeAll.inputValue}"
+                                                            label="#{row.bindings.NoticeAll.label}"
+                                                            required="#{bindings.TblNoticesView1.hints.NoticeAll.mandatory}"
+                                                            shortDesc="#{bindings.TblNoticesView1.hints.NoticeAll.tooltip}"
+                                                            id="soc4">
+                                            <f:selectItems value="#{row.bindings.NoticeAll.items}" id="si4"/>
                                             <f:validator binding="#{row.bindings.NoticeAll.validator}"/>
-                                        </af:inputText>
+                                        </af:selectOneChoice>
                                     </af:column>
-                                    <af:column sortProperty="#{bindings.TblNoticesView1.hints.NoticeParent.name}"
-                                               filterable="true" sortable="true" headerText="Notice Parent" id="c10">
+                                    <af:column headerText="Notice Parent"
+                                               id="c10" sortable="true" filterable="true">
                                                <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.NoticeParent}" id="it13"
                                                           placeholder="Search Notice Parent"></af:inputText>
                                         </f:facet>
-                                        <af:inputText value="#{row.bindings.NoticeParent.inputValue}"
-                                                      label="#{bindings.TblNoticesView1.hints.NoticeParent.label}"
-                                                      required="#{bindings.TblNoticesView1.hints.NoticeParent.mandatory}"
-                                                      columns="#{bindings.TblNoticesView1.hints.NoticeParent.displayWidth}"
-                                                      maximumLength="#{bindings.TblNoticesView1.hints.NoticeParent.precision}"
-                                                      shortDesc="#{bindings.TblNoticesView1.hints.NoticeParent.tooltip}"
-                                                      id="it5">
+                                        <af:selectOneChoice value="#{row.bindings.NoticeParent.inputValue}"
+                                                            label="#{row.bindings.NoticeParent.label}"
+                                                            required="#{bindings.TblNoticesView1.hints.NoticeParent.mandatory}"
+                                                            shortDesc="#{bindings.TblNoticesView1.hints.NoticeParent.tooltip}"
+                                                            id="soc5">
+                                            <f:selectItems value="#{row.bindings.NoticeParent.items}" id="si5"/>
                                             <f:validator binding="#{row.bindings.NoticeParent.validator}"/>
-                                        </af:inputText>
+                                        </af:selectOneChoice>
                                     </af:column>
-                                    <af:column sortProperty="#{bindings.TblNoticesView1.hints.NoticeStudent.name}"
-                                               filterable="true" sortable="true" headerText="Notice Student" id="c11">
+                                    <af:column headerText="Notice Student"
+                                               id="c11" sortable="true" filterable="true">
                                                 <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.NoticeStudent}" id="it14"
                                                           placeholder="Search Notice Student"></af:inputText>
                                         </f:facet>
-                                        <af:inputText value="#{row.bindings.NoticeStudent.inputValue}"
-                                                      label="#{bindings.TblNoticesView1.hints.NoticeStudent.label}"
-                                                      required="#{bindings.TblNoticesView1.hints.NoticeStudent.mandatory}"
-                                                      columns="#{bindings.TblNoticesView1.hints.NoticeStudent.displayWidth}"
-                                                      maximumLength="#{bindings.TblNoticesView1.hints.NoticeStudent.precision}"
-                                                      shortDesc="#{bindings.TblNoticesView1.hints.NoticeStudent.tooltip}"
-                                                      id="it6">
+                                        <af:selectOneChoice value="#{row.bindings.NoticeStudent.inputValue}"
+                                                            label="#{row.bindings.NoticeStudent.label}"
+                                                            required="#{bindings.TblNoticesView1.hints.NoticeStudent.mandatory}"
+                                                            shortDesc="#{bindings.TblNoticesView1.hints.NoticeStudent.tooltip}"
+                                                            id="soc6">
+                                            <f:selectItems value="#{row.bindings.NoticeStudent.items}" id="si6"/>
                                             <f:validator binding="#{row.bindings.NoticeStudent.validator}"/>
-                                        </af:inputText>
+                                        </af:selectOneChoice>
                                     </af:column>
-                                    <af:column sortProperty="#{bindings.TblNoticesView1.hints.NoticeImage.name}"
+                                    <!--<af:column sortProperty="#{bindings.TblNoticesView1.hints.NoticeImage.name}"
                                                filterable="true" sortable="true" headerText="Notice Image" id="c12">
                                                 <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.NoticeImage}" id="it15"
@@ -237,7 +232,7 @@
                                                       id="it7">
                                             <f:validator binding="#{row.bindings.NoticeImage.validator}"/>
                                         </af:inputText>
-                                    </af:column>
+                                    </af:column>-->
                                 </af:table>
                             </af:showDetailItem>
                         </af:panelTabbed>

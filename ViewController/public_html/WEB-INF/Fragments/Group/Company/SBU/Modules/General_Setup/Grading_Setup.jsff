@@ -148,20 +148,6 @@
                                         pattern="#{bindings.TblMarksGradingView2.hints.Id.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblMarksGradingView2.hints.GradeId.name}" filterable="true"
-                             sortable="true" headerText="Grade" id="c7" width="240">
-                              <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.GradeId}"
-       id="it13" placeholder="Search Grade">
-      </af:inputText>
-</f:facet>
-                    <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
-                                        required="#{bindings.TblMarksGradingView2.hints.GradeId.mandatory}"
-                                        shortDesc="#{bindings.TblMarksGradingView2.hints.GradeId.tooltip}" id="soc3">
-                      <f:selectItems value="#{row.bindings.GradeId.items}" id="si3"/>
-                      <f:validator binding="#{row.bindings.GradeId.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
                   <af:column sortProperty="#{bindings.TblMarksGradingView2.hints.GradeCode.name}" filterable="true"
                              sortable="true" headerText="Grade Code"
                              id="c8" align="center" width="200">

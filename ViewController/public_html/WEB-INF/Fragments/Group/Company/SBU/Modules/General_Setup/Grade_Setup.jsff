@@ -125,21 +125,6 @@
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblGradeView2.hints.Id.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblGradeView2.hints.AcadGroupId.name}" filterable="true"
-                             sortable="true" headerText="Academic Group" id="c5" width="250">
-                              <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.AcadGroupId}"
-       id="it9" placeholder="Search Group">
-      </af:inputText>
-</f:facet>
-                    <af:selectOneChoice value="#{row.bindings.AcadGroupId.inputValue}"
-                                        label="#{row.bindings.AcadGroupId.label}"
-                                        required="#{bindings.TblGradeView2.hints.AcadGroupId.mandatory}"
-                                        shortDesc="#{bindings.TblGradeView2.hints.AcadGroupId.tooltip}" id="soc2">
-                      <f:selectItems value="#{row.bindings.AcadGroupId.items}" id="si2"/>
-                      <f:validator binding="#{row.bindings.AcadGroupId.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
                   <af:column sortProperty="#{bindings.TblGradeView2.hints.GradeName.name}" filterable="true"
                              sortable="true" headerText="Grade" id="c6" width="300">
                              <f:facet name="filter">
@@ -241,20 +226,6 @@
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblSectionsView2.hints.Id.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblSectionsView2.hints.GradeId.name}" filterable="true"
-                             sortable="true" headerText="Grade" id="c10" width="350">
-                             <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.GradeId}"
-       id="it16" placeholder="Search Grade">
-      </af:inputText>
-</f:facet>
-                    <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
-                                        required="#{bindings.TblSectionsView2.hints.GradeId.mandatory}"
-                                        shortDesc="#{bindings.TblSectionsView2.hints.GradeId.tooltip}" id="soc4">
-                      <f:selectItems value="#{row.bindings.GradeId.items}" id="si4"/>
-                      <f:validator binding="#{row.bindings.GradeId.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
                   <af:column sortProperty="#{bindings.TblSectionsView2.hints.Name.name}" filterable="true"
                              sortable="true" headerText="Section" id="c11" width="400">
                              <f:facet name="filter">
@@ -272,7 +243,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionsView2.hints.Ast.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblSectionsView2.hints.Ast.label}" id="c12">
+                             sortable="true" headerText="Active" id="c12">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Ast}"
        id="it18" placeholder="Search Status">

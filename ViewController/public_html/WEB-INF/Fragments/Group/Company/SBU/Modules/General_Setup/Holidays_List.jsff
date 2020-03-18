@@ -166,21 +166,6 @@
                                                               pattern="#{bindings.TblHolidaysView2.hints.Id.format}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column sortProperty="#{bindings.TblHolidaysView2.hints.AcadYearId.name}"
-                                               filterable="true" sortable="true" headerText="Academic Year" id="c7">
-                                                <f:facet name="filter">
-                                            <af:inputText value="#{vs.filterCriteria.AcadYearId}" id="it9"
-                                                          placeholder="Search Year"></af:inputText>
-                                        </f:facet>
-                                        <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
-                                                            label="#{row.bindings.AcadYearId.label}"
-                                                            required="#{bindings.TblHolidaysView2.hints.AcadYearId.mandatory}"
-                                                            shortDesc="#{bindings.TblHolidaysView2.hints.AcadYearId.tooltip}"
-                                                            id="soc2">
-                                            <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si2"/>
-                                            <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
-                                        </af:selectOneChoice>
-                                    </af:column>
                                     <af:column sortProperty="#{bindings.TblHolidaysView2.hints.HolidayFrDate.name}"
                                                filterable="true" sortable="true" headerText="From Date " id="c8"
                                                align="center">
