@@ -196,68 +196,68 @@
           <af:gridCell id="gc6">
             <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab3" text="Section">
-                <af:table value="#{bindings.TblSectionsView2.collectionModel}" var="row"
-                          rows="#{bindings.TblSectionsView2.rangeSize}"
-                          emptyText="#{bindings.TblSectionsView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                <af:table value="#{bindings.TblSectionsView3.collectionModel}" var="row"
+                          rows="#{bindings.TblSectionsView3.rangeSize}"
+                          emptyText="#{bindings.TblSectionsView3.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="0"
-                          selectedRowKeys="#{bindings.TblSectionsView2.collectionModel.selectedRow}"
-                          selectionListener="#{bindings.TblSectionsView2.collectionModel.makeCurrent}"
-                          rowSelection="single" fetchSize="#{bindings.TblSectionsView2.rangeSize}"
-                          filterModel="#{bindings.TblSectionsView2Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblSectionsView2Query.processQuery}" varStatus="vs" id="t3"
+                          selectedRowKeys="#{bindings.TblSectionsView3.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblSectionsView3.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblSectionsView3.rangeSize}"
+                          filterModel="#{bindings.TblSectionsView3Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblSectionsView3Query.processQuery}" varStatus="vs" id="t3"
                           scrollPolicy="page" autoHeightRows="0">
-                  <af:column sortProperty="#{bindings.TblSectionsView2.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="Section ID" id="c9" align="center" width="80">
+                  <af:column sortProperty="#{bindings.TblSectionsView3.hints.Id.name}" filterable="true" sortable="true"
+                             headerText="Section ID" id="c5" align="center" width="80">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Id}"
-       id="it15" placeholder="Search ID">
+       id="it14" placeholder="Search ID">
       </af:inputText>
 </f:facet>
 
                     <af:inputText value="#{row.bindings.Id.inputValue}"
-                                  label="#{bindings.TblSectionsView2.hints.Id.label}"
-                                  required="#{bindings.TblSectionsView2.hints.Id.mandatory}"
-                                  columns="#{bindings.TblSectionsView2.hints.Id.displayWidth}"
-                                  maximumLength="#{bindings.TblSectionsView2.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblSectionsView2.hints.Id.tooltip}" id="it13"
+                                  label="#{bindings.TblSectionsView3.hints.Id.label}"
+                                  required="#{bindings.TblSectionsView3.hints.Id.mandatory}"
+                                  columns="#{bindings.TblSectionsView3.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblSectionsView3.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblSectionsView3.hints.Id.tooltip}" id="it9"
                                   readOnly="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
-                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblSectionsView2.hints.Id.format}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblSectionsView3.hints.Id.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblSectionsView2.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="Section" id="c11" width="400">
+                  <af:column sortProperty="#{bindings.TblSectionsView3.hints.Name.name}" filterable="true"
+                             sortable="true" headerText="Section" id="c9" width="200">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Name}"
-       id="it17" placeholder="Search Section">
+       id="it15" placeholder="Search Section">
       </af:inputText>
 </f:facet>
                     <af:inputText value="#{row.bindings.Name.inputValue}"
-                                  label="#{bindings.TblSectionsView2.hints.Name.label}"
-                                  required="#{bindings.TblSectionsView2.hints.Name.mandatory}"
-                                  columns="#{bindings.TblSectionsView2.hints.Name.displayWidth}"
-                                  maximumLength="#{bindings.TblSectionsView2.hints.Name.precision}"
-                                  shortDesc="#{bindings.TblSectionsView2.hints.Name.tooltip}" id="it14">
+                                  label="#{bindings.TblSectionsView3.hints.Name.label}"
+                                  required="#{bindings.TblSectionsView3.hints.Name.mandatory}"
+                                  columns="#{bindings.TblSectionsView3.hints.Name.displayWidth}"
+                                  maximumLength="#{bindings.TblSectionsView3.hints.Name.precision}"
+                                  shortDesc="#{bindings.TblSectionsView3.hints.Name.tooltip}" id="it13">
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblSectionsView2.hints.Ast.name}" filterable="true"
-                             sortable="true" headerText="Active" id="c12">
-                              <f:facet name="filter">
+                  <af:column sortProperty="#{bindings.TblSectionsView3.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="Active" id="c10">
+                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Ast}"
-       id="it18" placeholder="Search Status">
+       id="it16" placeholder="Search Status">
       </af:inputText>
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
-                                        required="#{bindings.TblSectionsView2.hints.Ast.mandatory}"
-                                        shortDesc="#{bindings.TblSectionsView2.hints.Ast.tooltip}" id="soc5">
-                      <f:selectItems value="#{row.bindings.Ast.items}" id="si5"/>
+                                        required="#{bindings.TblSectionsView3.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblSectionsView3.hints.Ast.tooltip}" id="soc2">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                 </af:table>
-                
+               
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>

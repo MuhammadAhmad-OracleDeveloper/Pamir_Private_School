@@ -352,6 +352,9 @@
   <ViewUsage
     Name="TblSectionTimetableDetailView3"
     ViewObjectName="model.ERP.VO.TblSectionTimetableDetailView"/>
+  <ViewUsage
+    Name="TblSectionsView3"
+    ViewObjectName="model.ERP.VO.TblSectionsView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -783,5 +786,11 @@
     ViewLinkObjectName="model.ERP.VO.FkSectionTimetableMasterSectionTimetableDetailLink"
     SrcViewUsageName="model.ERP.AppModule.TblSectionTimetableMasterView1"
     DstViewUsageName="model.ERP.AppModule.TblSectionTimetableDetailView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkSectionsGradeLink2"
+    ViewLinkObjectName="model.ERP.VO.FkSectionsGradeLink"
+    SrcViewUsageName="model.ERP.AppModule.TblGradeView2"
+    DstViewUsageName="model.ERP.AppModule.TblSectionsView3"
     Reversed="false"/>
 </AppModule>

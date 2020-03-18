@@ -11,12 +11,12 @@
     <iterator Binds="TblGradeView2" RangeSize="8" DataControl="AppModuleDataControl1" id="TblGradeView2Iterator"/>
     <searchRegion Binds="TblGradeView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGradeView2Query"/>
-    <iterator Binds="TblSectionsView2" RangeSize="8" DataControl="AppModuleDataControl1"
-              id="TblSectionsView2Iterator"/>
-    <searchRegion Binds="TblSectionsView2Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblSectionsView2Query"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblSectionsView3" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblSectionsView3Iterator"/>
+    <searchRegion Binds="TblSectionsView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblSectionsView3Query"/>
   </executables>
   <bindings>
     <tree IterBinding="TblAcadGroupView1Iterator" id="TblAcadGroupView1">
@@ -44,20 +44,6 @@
     <action IterBinding="TblGradeView2Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
-    <tree IterBinding="TblSectionsView2Iterator" id="TblSectionsView2">
-      <nodeDefinition DefName="model.ERP.VO.TblSectionsView" Name="TblSectionsView20">
-        <AttrNames>
-          <Item Value="Id"/>
-          <Item Value="GradeId"/>
-          <Item Value="Name"/>
-          <Item Value="Ast"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <action IterBinding="TblSectionsView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
-    <action IterBinding="TblSectionsView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
-    <action IterBinding="TblSectionsView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
       <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
         <AttrNames>
@@ -69,5 +55,18 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <tree IterBinding="TblSectionsView3Iterator" id="TblSectionsView3">
+      <nodeDefinition DefName="model.ERP.VO.TblSectionsView" Name="TblSectionsView30">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblSectionsView3Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblSectionsView3Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblSectionsView3Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>
