@@ -13,6 +13,95 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Staff_Subject_Name_LOV1"
+    ViewObjectName="model.LOV.Staff_Subject_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Staff_Name_LOV1"
+    ViewObjectName="model.LOV.Staff_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Active_Name_LOV1"
+    ViewObjectName="model.LOV.Active_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Week_Days_LOV1"
+    ViewObjectName="model.LOV.Week_Days_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_StaffSubjectId"
+    ListVOName="Staff_Subject_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StaffSubjectId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_StaffId"
+    ListVOName="Staff_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StaffId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Ast"
+    ListVOName="Active_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Ast"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_WeekDays"
+    ListVOName="Week_Days_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="WeekDays"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblSectionTimetableDetail"
     Entity="model.ERP.EO.TblSectionTimetableDetail"/>
@@ -28,13 +117,29 @@
     PrecisionRule="true"
     EntityAttrName="StaffId"
     EntityUsage="TblSectionTimetableDetail"
-    AliasName="STAFF_ID"/>
+    AliasName="STAFF_ID"
+    LOVName="LOV_StaffId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="StaffSubjectId"
     PrecisionRule="true"
     EntityAttrName="StaffSubjectId"
     EntityUsage="TblSectionTimetableDetail"
-    AliasName="STAFF_SUBJECT_ID"/>
+    AliasName="STAFF_SUBJECT_ID"
+    LOVName="LOV_StaffSubjectId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="GroupCompanyId"
     PrecisionRule="true"
@@ -46,7 +151,15 @@
     PrecisionRule="true"
     EntityAttrName="WeekDays"
     EntityUsage="TblSectionTimetableDetail"
-    AliasName="WEEK_DAYS"/>
+    AliasName="WEEK_DAYS"
+    LOVName="LOV_WeekDays">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FromTime"
     PrecisionRule="true"
@@ -70,7 +183,15 @@
     PrecisionRule="true"
     EntityAttrName="Ast"
     EntityUsage="TblSectionTimetableDetail"
-    AliasName="AST"/>
+    AliasName="AST"
+    LOVName="LOV_Ast">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
@@ -95,4 +216,10 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblSectionTimetableDetail"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="SectionTimetableMasterId"
+    PrecisionRule="true"
+    EntityAttrName="SectionTimetableMasterId"
+    EntityUsage="TblSectionTimetableDetail"
+    AliasName="SECTION_TIMETABLE_MASTER_ID"/>
 </ViewObject>

@@ -109,6 +109,13 @@
     AssociationOtherEnd="model.ERP.EO.FkStdRegSibSectionsAssoc.TblSections"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblSectionStaff"
+    Association="model.ERP.EO.FkSectionSectionStaffAssoc"
+    AssociationEnd="model.ERP.EO.FkSectionSectionStaffAssoc.TblSectionStaff"
+    AssociationOtherEnd="model.ERP.EO.FkSectionSectionStaffAssoc.TblSections"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkSections"
     PrimaryKey="true">

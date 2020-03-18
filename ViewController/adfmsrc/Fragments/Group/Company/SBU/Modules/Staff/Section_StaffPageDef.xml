@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Section_StaffPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.Staff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblSectionStaffView3" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblSectionStaffView3Iterator"/>
+    <searchRegion Binds="TblSectionStaffView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblSectionStaffView3Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblSectionStaffView3Iterator" id="TblSectionStaffView3">
+      <nodeDefinition DefName="model.ERP.VO.TblSectionStaffView" Name="TblSectionStaffView30">
+        <AttrNames>
+          <Item Value="GradeId"/>
+          <Item Value="SectionId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblSectionStaffView3Iterator" id="TblSectionStaffView31">
+      <nodeDefinition DefName="model.ERP.VO.TblSectionStaffView" Name="TblSectionStaffView310">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Type"/>
+          <Item Value="StaffId"/>
+          <Item Value="StaffSubjectId"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblSectionStaffView3Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblSectionStaffView3Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblSectionStaffView3Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+  </bindings>
+</pageDefinition>

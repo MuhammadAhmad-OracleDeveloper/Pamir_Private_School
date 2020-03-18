@@ -343,6 +343,15 @@
   <ViewUsage
     Name="TblStaffSubjectView3"
     ViewObjectName="model.ERP.VO.TblStaffSubjectView"/>
+  <ViewUsage
+    Name="TblGradeStaffView2"
+    ViewObjectName="model.ERP.VO.TblGradeStaffView"/>
+  <ViewUsage
+    Name="TblSectionStaffView3"
+    ViewObjectName="model.ERP.VO.TblSectionStaffView"/>
+  <ViewUsage
+    Name="TblSectionTimetableDetailView3"
+    ViewObjectName="model.ERP.VO.TblSectionTimetableDetailView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -756,5 +765,23 @@
     ViewLinkObjectName="model.ERP.VO.FKTblStaffSubjectFkLink"
     SrcViewUsageName="model.ERP.AppModule.TblStaffView1"
     DstViewUsageName="model.ERP.AppModule.TblStaffSubjectView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKTblGradeStaffGradeLink1"
+    ViewLinkObjectName="model.ERP.VO.FKTblGradeStaffGradeLink"
+    SrcViewUsageName="model.ERP.AppModule.TblGradeView1"
+    DstViewUsageName="model.ERP.AppModule.TblGradeStaffView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkSectionSectionStaffLink1"
+    ViewLinkObjectName="model.ERP.VO.FkSectionSectionStaffLink"
+    SrcViewUsageName="model.ERP.AppModule.TblSectionsView1"
+    DstViewUsageName="model.ERP.AppModule.TblSectionStaffView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkSectionTimetableMasterSectionTimetableDetailLink1"
+    ViewLinkObjectName="model.ERP.VO.FkSectionTimetableMasterSectionTimetableDetailLink"
+    SrcViewUsageName="model.ERP.AppModule.TblSectionTimetableMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblSectionTimetableDetailView3"
     Reversed="false"/>
 </AppModule>

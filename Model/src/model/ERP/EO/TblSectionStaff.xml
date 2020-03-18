@@ -117,6 +117,13 @@
     AssociationOtherEnd="model.ERP.EO.FkSectionStaffStaffSubjectAssoc.TblSectionStaff"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblSections"
+    Association="model.ERP.EO.FkSectionSectionStaffAssoc"
+    AssociationEnd="model.ERP.EO.FkSectionSectionStaffAssoc.TblSections"
+    AssociationOtherEnd="model.ERP.EO.FkSectionSectionStaffAssoc.TblSectionStaff"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="PkSectionStaff"
     PrimaryKey="true">
