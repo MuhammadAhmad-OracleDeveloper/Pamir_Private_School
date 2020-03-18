@@ -68,7 +68,7 @@
                       <af:convertDateTime pattern="#{bindings.TblStdEnqView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column headerText="Academic Year" id="c3">
+                  <af:column headerText="Academic Year" id="c3" sortable="true" filterable="true">
                   <f:facet name="filter">
                         <af:inputText value="#{vs.filterCriteria.AcadYearId}"
                         id="id6" placeholder="Academic Year">
@@ -114,7 +114,7 @@
                       <f:validator binding="#{row.bindings.LastName.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Grade" id="c6">
+                  <af:column headerText="Grade" id="c6" sortable="true" filterable="true">
                   <f:facet name="filter">
                                     <af:inputText value="#{vs.filterCriteria.GradeId}"
                                     id="it7" placeholder="Grade">
@@ -143,7 +143,7 @@
                       <f:validator binding="#{row.bindings.EmirId.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Active" id="c8">
+                  <af:column headerText="Active" id="c8" sortable="true" filterable="true">
                   <f:facet name="filter">
                                     <af:inputText value="#{vs.filterCriteria.Ast}"
                                     id="it12" placeholder="Status">

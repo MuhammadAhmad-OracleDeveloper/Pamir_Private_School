@@ -170,6 +170,13 @@
     AssociationOtherEnd="model.ERP.EO.FkGradeGroupAssoc.TblGrade"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblGradeStaff"
+    Association="model.ERP.EO.FKTblGradeStaffGradeAssoc"
+    AssociationEnd="model.ERP.EO.FKTblGradeStaffGradeAssoc.TblGradeStaff"
+    AssociationOtherEnd="model.ERP.EO.FKTblGradeStaffGradeAssoc.TblGrade"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkGrade"
     PrimaryKey="true">

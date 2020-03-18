@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Grade_StaffPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.Staff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblGradeStaffView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblGradeStaffView2Iterator"/>
+    <iterator Binds="TblGradeView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblGradeView1Iterator"/>
+    <searchRegion Binds="TblGradeView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGradeView1Query"/>
+    <searchRegion Binds="TblGradeStaffView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGradeStaffView2Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="TblGradeStaffView2Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblGradeStaffView2Iterator" StaticList="false" Uses="LOV_HeadStaffId" id="HeadStaffId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblGradeStaffView2Iterator" StaticList="false" Uses="LOV_InchargeStaffId" id="InchargeStaffId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblGradeStaffView2Iterator" StaticList="false" Uses="LOV_Ast" id="Ast" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <action IterBinding="TblGradeStaffView2Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblGradeStaffView2Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblGradeStaffView2Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblGradeStaffView2Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblGradeStaffView2Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblGradeStaffView2Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblGradeStaffView2Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblGradeView1Iterator" id="TblGradeView1">
+      <nodeDefinition DefName="model.ERP.VO.TblGradeView" Name="TblGradeView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="AcadGroupId"/>
+          <Item Value="GradeName"/>
+          <Item Value="KitName"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblGradeStaffView2Iterator" id="TblGradeStaffView2">
+      <nodeDefinition DefName="model.ERP.VO.TblGradeStaffView" Name="TblGradeStaffView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="HeadStaffId"/>
+          <Item Value="InchargeStaffId"/>
+          <Item Value="GradeId"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

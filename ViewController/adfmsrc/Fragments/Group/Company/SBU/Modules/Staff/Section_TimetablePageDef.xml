@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Section_TimetablePageDef"
+                Package="Fragments.Group.Company.SBU.Modules.Staff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblSectionTimetableMasterView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblSectionTimetableMasterView1Iterator"/>
+    <searchRegion Binds="TblSectionTimetableMasterView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="TblSectionTimetableMasterView1Query"/>
+    <iterator Binds="TblSectionTimetableDetailView3" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblSectionTimetableDetailView3Iterator"/>
+    <searchRegion Binds="TblSectionTimetableDetailView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="TblSectionTimetableDetailView3Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblSectionTimetableMasterView1Iterator" id="TblSectionTimetableMasterView1">
+      <nodeDefinition DefName="model.ERP.VO.TblSectionTimetableMasterView" Name="TblSectionTimetableMasterView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="GradeId"/>
+          <Item Value="SectionId"/>
+          <Item Value="AcadYearId"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblSectionTimetableDetailView3Iterator" id="TblSectionTimetableDetailView3">
+      <nodeDefinition DefName="model.ERP.VO.TblSectionTimetableDetailView" Name="TblSectionTimetableDetailView30">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="StaffId"/>
+          <Item Value="StaffSubjectId"/>
+          <Item Value="WeekDays"/>
+          <Item Value="FromTime"/>
+          <Item Value="ToTime"/>
+          <Item Value="TimeDiff"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblSectionTimetableDetailView3Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblSectionTimetableDetailView3Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblSectionTimetableDetailView3Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+  </bindings>
+</pageDefinition>

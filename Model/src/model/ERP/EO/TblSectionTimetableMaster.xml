@@ -96,6 +96,13 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_SECTION_TIMETABLE_MASTER"/>
+  <AccessorAttribute
+    Name="TblSectionTimetableDetail"
+    Association="model.ERP.EO.FkSectionTimetableMasterSectionTimetableDetailAssoc"
+    AssociationEnd="model.ERP.EO.FkSectionTimetableMasterSectionTimetableDetailAssoc.TblSectionTimetableDetail"
+    AssociationOtherEnd="model.ERP.EO.FkSectionTimetableMasterSectionTimetableDetailAssoc.TblSectionTimetableMaster"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkSectionTimetableMaster"
     PrimaryKey="true">

@@ -151,6 +151,11 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblAgePolicyView1.hints.Ast.name}" filterable="true"
                              sortable="true" headerText="Active" id="c8">
+                             <f:facet name="filter">
+                                    <af:inputText value="#{vs.filterCriteria.Ast}"
+                                    id="it12" placeholder="Status">
+                                    </af:inputText>
+                            </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblAgePolicyView1.hints.Ast.mandatory}"
                                         shortDesc="#{bindings.TblAgePolicyView1.hints.Ast.tooltip}" id="soc3">

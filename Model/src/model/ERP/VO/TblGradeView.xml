@@ -21,6 +21,10 @@
     Name="Academic_Group_LOV1"
     ViewObjectName="model.LOV.Academic_Group_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Grade_Name_LOV1"
+    ViewObjectName="model.LOV.Grade_Name_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Ast"
     ListVOName="Active_Name_LOV1"
@@ -54,6 +58,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_GradeName"
+    ListVOName="Grade_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GradeName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GradeName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -92,7 +114,15 @@
     PrecisionRule="true"
     EntityAttrName="GradeName"
     EntityUsage="TblGrade"
-    AliasName="GRADE_NAME"/>
+    AliasName="GRADE_NAME"
+    LOVName="LOV_GradeName">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="KitName"
     PrecisionRule="true"
@@ -180,6 +210,11 @@
   <ViewLinkAccessor
     Name="TblStdRegSibView"
     ViewLink="model.ERP.VO.FkStdRegSibGradeLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblGradeStaffView"
+    ViewLink="model.ERP.VO.FKTblGradeStaffGradeLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>
