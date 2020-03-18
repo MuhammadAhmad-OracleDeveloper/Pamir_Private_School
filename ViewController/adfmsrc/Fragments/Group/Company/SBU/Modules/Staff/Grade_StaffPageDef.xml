@@ -11,6 +11,8 @@
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGradeView1Query"/>
     <searchRegion Binds="TblGradeStaffView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGradeStaffView2Query"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="TblGradeStaffView2Iterator" id="Id">
@@ -53,6 +55,17 @@
           <Item Value="InchargeStaffId"/>
           <Item Value="GradeId"/>
           <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
