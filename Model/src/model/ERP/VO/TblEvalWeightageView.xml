@@ -29,6 +29,14 @@
     Name="Lookup_Evaluation_LOV1"
     ViewObjectName="model.LOV.Lookup_Evaluation_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="lookup_Topic_LOV1"
+    ViewObjectName="model.LOV.lookup_Topic_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Evaluation_Type_LOV1"
+    ViewObjectName="model.LOV.Evaluation_Type_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_GradeId"
     ListVOName="Grade_Name_LOV1"
@@ -101,6 +109,60 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_LookupDTopic1"
+    ListVOName="lookup_Topic_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LookupDTopic1"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LookupDTopic2"
+    ListVOName="lookup_Topic_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LookupDTopic2"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_EvaType"
+    ListVOName="Evaluation_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="EvaType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblEvalWeightage"
     Entity="model.ERP.EO.TblEvalWeightage"/>
@@ -164,7 +226,15 @@
     PrecisionRule="true"
     EntityAttrName="LookupDTopic1"
     EntityUsage="TblEvalWeightage"
-    AliasName="LOOKUP_D_TOPIC1"/>
+    AliasName="LOOKUP_D_TOPIC1"
+    LOVName="LOV_LookupDTopic1">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Topic1Marks"
     PrecisionRule="true"
@@ -176,7 +246,15 @@
     PrecisionRule="true"
     EntityAttrName="LookupDTopic2"
     EntityUsage="TblEvalWeightage"
-    AliasName="LOOKUP_D_TOPIC2"/>
+    AliasName="LOOKUP_D_TOPIC2"
+    LOVName="LOV_LookupDTopic2">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Topic2Marks"
     PrecisionRule="true"
@@ -188,7 +266,15 @@
     PrecisionRule="true"
     EntityAttrName="EvaType"
     EntityUsage="TblEvalWeightage"
-    AliasName="EVA_TYPE"/>
+    AliasName="EVA_TYPE"
+    LOVName="LOV_EvaType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="TotalMarks"
     PrecisionRule="true"

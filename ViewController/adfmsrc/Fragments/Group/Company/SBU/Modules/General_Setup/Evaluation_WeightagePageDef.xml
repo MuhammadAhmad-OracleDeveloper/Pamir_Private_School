@@ -4,10 +4,10 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TblGradeView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblGradeView1Iterator"/>
+    <iterator Binds="TblGradeView1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblGradeView1Iterator"/>
     <searchRegion Binds="TblGradeView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGradeView1Query"/>
-    <iterator Binds="TblEvalWeightageView2" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblEvalWeightageView2" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblEvalWeightageView2Iterator"/>
     <searchRegion Binds="TblEvalWeightageView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblEvalWeightageView2Query"/>
@@ -65,5 +65,7 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
   </bindings>
 </pageDefinition>
