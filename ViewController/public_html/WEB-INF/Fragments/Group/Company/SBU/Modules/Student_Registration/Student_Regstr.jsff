@@ -2,7 +2,7 @@
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
-    <af:showDetailItem id="pane1" text="Panel Label 1">
+    <af:showDetailItem id="pane1" text="Student Registration">
          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
                             <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                                    disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
@@ -486,6 +486,11 @@
                             queryListener="#{bindings.TblStdRegSibView3Query.processQuery}" varStatus="vs" id="t2">
                     <af:column sortProperty="#{bindings.TblStdRegSibView3.hints.Id.name}" filterable="true"
                                sortable="true" headerText="Sibling ID" id="c10">
+                               <f:facet name="filter">
+                                      <af:inputText value="#{vs.filterCriteria.Id}"
+                                       id="it42" placeholder="Search ID">
+                                      </af:inputText>
+                                </f:facet>
                       <af:inputText value="#{row.bindings.Id.inputValue}"
                                     label="#{bindings.TblStdRegSibView3.hints.Id.label}"
                                     required="#{bindings.TblStdRegSibView3.hints.Id.mandatory}"
@@ -499,6 +504,11 @@
                     <af:column sortProperty="#{bindings.TblStdRegSibView3.hints.SibStdRegId.name}" filterable="true"
                                sortable="true" headerText="Student Sibling ID"
                                id="c11">
+                               <f:facet name="filter">
+                                      <af:inputText value="#{vs.filterCriteria.SibStdRegId}"
+                                       id="it43" placeholder="Search Sibling ID">
+                                      </af:inputText>
+                                </f:facet>
                       <af:inputText value="#{row.bindings.SibStdRegId.inputValue}"
                                     label="#{bindings.TblStdRegSibView3.hints.SibStdRegId.label}"
                                     required="#{bindings.TblStdRegSibView3.hints.SibStdRegId.mandatory}"
@@ -512,6 +522,11 @@
                     </af:column>
                     <af:column sortProperty="#{bindings.TblStdRegSibView3.hints.GradeId.name}" filterable="true"
                                sortable="true" headerText="Grade" id="c12">
+                               <f:facet name="filter">
+                                      <af:inputText value="#{vs.filterCriteria.GradeId}"
+                                       id="it44" placeholder="Search Grade">
+                                      </af:inputText>
+                                </f:facet>
                       <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}"
                                           label="#{row.bindings.GradeId.label}"
                                           required="#{bindings.TblStdRegSibView3.hints.GradeId.mandatory}"
@@ -523,6 +538,11 @@
                     <af:column sortProperty="#{bindings.TblStdRegSibView3.hints.SectionsId.name}" filterable="true"
                                sortable="true" headerText="Section"
                                id="c13">
+                               <f:facet name="filter">
+                                      <af:inputText value="#{vs.filterCriteria.GradeId}"
+                                       id="it45" placeholder="Search Section">
+                                      </af:inputText>
+                                </f:facet>
                       <af:selectOneChoice value="#{row.bindings.SectionsId.inputValue}"
                                           label="#{row.bindings.SectionsId.label}"
                                           required="#{bindings.TblStdRegSibView3.hints.SectionsId.mandatory}"
@@ -533,6 +553,11 @@
                     </af:column>
                     <af:column sortProperty="#{bindings.TblStdRegSibView3.hints.Ast.name}" filterable="true"
                                sortable="true" headerText="Active" id="c14">
+                               <f:facet name="filter">
+                                      <af:inputText value="#{vs.filterCriteria.Ast}"
+                                       id="it46" placeholder="Search Status">
+                                      </af:inputText>
+                                </f:facet>
                       <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                           required="#{bindings.TblStdRegSibView3.hints.Ast.mandatory}"
                                           shortDesc="#{bindings.TblStdRegSibView3.hints.Ast.tooltip}" id="soc19">
