@@ -128,7 +128,9 @@
                   <af:inputText value="#{bindings.Id.inputValue}" label="School Timing ID"
                                 required="#{bindings.Id.hints.mandatory}" columns="15"
                                 maximumLength="#{bindings.Id.hints.precision}" shortDesc="#{bindings.Id.hints.tooltip}"
-                                id="it4" contentStyle="Width:100px;">
+                                id="it4" contentStyle="Width:100px;"
+                                readOnly="true">
+                               
                     <f:validator binding="#{bindings.Id.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
                   </af:inputText>
@@ -177,7 +179,7 @@
                                 contentStyle="Width:140px;">
                     <f:validator binding="#{bindings.ZeroPrdDuration.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.ZeroPrdDuration.format}"/>
-                    <af:convertDateTime pattern="HH:mm"/>
+                    
                   </af:inputText>
                   <af:inputDate value="#{bindings.BreakStartTime.inputValue}"
                                 label="Break Start Time"
