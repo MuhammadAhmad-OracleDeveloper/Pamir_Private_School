@@ -45,7 +45,9 @@
                                   required="#{bindings.TblLookupMasterView1.hints.Id.mandatory}"
                                   columns="#{bindings.TblLookupMasterView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblLookupMasterView1.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblLookupMasterView1.hints.Id.tooltip}" id="it1">
+                                  shortDesc="#{bindings.TblLookupMasterView1.hints.Id.tooltip}" id="it1"
+                                  readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblLookupMasterView1.hints.Id.format}"/>
@@ -114,7 +116,9 @@
                                   required="#{bindings.TblLookupDetailView2.hints.Id.mandatory}"
                                   columns="#{bindings.TblLookupDetailView2.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblLookupDetailView2.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblLookupDetailView2.hints.Id.tooltip}" id="it3">
+                                  shortDesc="#{bindings.TblLookupDetailView2.hints.Id.tooltip}" id="it3"
+                                  readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblLookupDetailView2.hints.Id.format}"/>
