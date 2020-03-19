@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 
 import java.sql.Timestamp;
 
+import oracle.adf.share.ADFContext;
+
 import oracle.jbo.Key;
 import oracle.jbo.RowIterator;
 import oracle.jbo.domain.Number;
