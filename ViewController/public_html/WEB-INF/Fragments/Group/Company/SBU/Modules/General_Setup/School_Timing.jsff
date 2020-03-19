@@ -138,6 +138,7 @@
                                 shortDesc="#{bindings.StartTime.hints.tooltip}" id="id1" contentStyle="Width:100px;">
                     <f:validator binding="#{bindings.StartTime.validator}"/>
                     <af:convertDateTime pattern="#{bindings.StartTime.format}"/>
+                    <af:convertDateTime pattern="HH:mm"/>
                   </af:inputDate>
                   <af:inputDate value="#{bindings.EndTime.inputValue}" label="End Time"
                                 required="#{bindings.EndTime.hints.mandatory}"
@@ -145,6 +146,7 @@
                                 shortDesc="#{bindings.EndTime.hints.tooltip}" id="id2" contentStyle="Width:100px;">
                     <f:validator binding="#{bindings.EndTime.validator}"/>
                     <af:convertDateTime pattern="#{bindings.EndTime.format}"/>
+                    <af:convertDateTime pattern="HH:mm"/>
                   </af:inputDate>
                   <af:inputDate value="#{bindings.ZeroPrdStartTime.inputValue}"
                                 label="Zero Period Start Time"
@@ -154,6 +156,7 @@
                                 contentStyle="Width:100px;">
                     <f:validator binding="#{bindings.ZeroPrdStartTime.validator}"/>
                     <af:convertDateTime pattern="#{bindings.ZeroPrdStartTime.format}"/>
+                    <af:convertDateTime pattern="HH:mm"/>
                   </af:inputDate>
                   <af:inputDate value="#{bindings.ZeroPrdEndTime.inputValue}"
                                 label="Zero Period End Time"
@@ -163,6 +166,7 @@
                                 contentStyle="Width:100px;">
                     <f:validator binding="#{bindings.ZeroPrdEndTime.validator}"/>
                     <af:convertDateTime pattern="#{bindings.ZeroPrdEndTime.format}"/>
+                    <af:convertDateTime pattern="HH:mm"/>
                   </af:inputDate>
                   <af:inputText value="#{bindings.ZeroPrdDuration.inputValue}"
                                 label="Period Duration"
@@ -173,6 +177,7 @@
                                 contentStyle="Width:140px;">
                     <f:validator binding="#{bindings.ZeroPrdDuration.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.ZeroPrdDuration.format}"/>
+                    <af:convertDateTime pattern="HH:mm"/>
                   </af:inputText>
                   <af:inputDate value="#{bindings.BreakStartTime.inputValue}"
                                 label="Break Start Time"
@@ -182,6 +187,7 @@
                                 contentStyle="Width:100px;">
                     <f:validator binding="#{bindings.BreakStartTime.validator}"/>
                     <af:convertDateTime pattern="#{bindings.BreakStartTime.format}"/>
+                    <af:convertDateTime pattern="HH:mm"/>
                   </af:inputDate>
                   <af:inputDate value="#{bindings.BreakEndTime.inputValue}" label="Break End Time"
                                 required="#{bindings.BreakEndTime.hints.mandatory}"
@@ -189,6 +195,7 @@
                                 shortDesc="#{bindings.BreakEndTime.hints.tooltip}" id="id6" contentStyle="Width:100px;">
                     <f:validator binding="#{bindings.BreakEndTime.validator}"/>
                     <af:convertDateTime pattern="#{bindings.BreakEndTime.format}"/>
+                    <af:convertDateTime pattern="HH:mm"/>
                   </af:inputDate>
                   <af:inputText value="#{bindings.NoOfPerDay.inputValue}" label="No.of Periods"
                                 required="#{bindings.NoOfPerDay.hints.mandatory}"
@@ -206,6 +213,7 @@
                                 contentStyle="Width:100px;">
                     <f:validator binding="#{bindings.PrayStartTime.validator}"/>
                     <af:convertDateTime pattern="#{bindings.PrayStartTime.format}"/>
+                    <af:convertDateTime pattern="HH:mm"/>
                   </af:inputDate>
                   <af:inputDate value="#{bindings.PrayEndTime.inputValue}" label="Pray End Time"
                                 required="#{bindings.PrayEndTime.hints.mandatory}"
@@ -213,6 +221,7 @@
                                 shortDesc="#{bindings.PrayEndTime.hints.tooltip}" id="id8" contentStyle="Width:100px;">
                     <f:validator binding="#{bindings.PrayEndTime.validator}"/>
                     <af:convertDateTime pattern="#{bindings.PrayEndTime.format}"/>
+                    <af:convertDateTime pattern="HH:mm"/>
                   </af:inputDate>
                   <af:inputText value="#{bindings.WeeklyOff.inputValue}" label="Weekly Off"
                                 required="#{bindings.WeeklyOff.hints.mandatory}"
