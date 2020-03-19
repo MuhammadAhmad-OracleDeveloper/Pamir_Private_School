@@ -31,6 +31,7 @@ public class Login {
     private static String role_id;
     private static String user_id;
     private static String sessUName;
+    private static String sessImage;
 
     public Login() {
     }
@@ -142,6 +143,7 @@ public class Login {
     public String getCompanyID(String CmpnyID){
         System.out.println("oooooooooooo Company oooooooooo"+CmpnyID);
         storeOnSession("sessCmpnyID", CmpnyID);
+        getCmpnyImg(CmpnyID);
         return "/faces/Main_Pages/Group/Company/SBU/Sbu.jsf?faces-redirect=true";
     }
 
@@ -150,6 +152,31 @@ public class Login {
         System.out.println("oooooooooooo SBU oooooooooo"+SBUID);
         storeOnSession("sessSBUID", SBUID);
         return "/faces/Main_Pages/Group/Company/SBU/Modules/ModuleBoard.jsf?faces-redirect=true";
+    }
+    
+
+    public String getCmpnyImg(String CmpyID) {
+        Connection cone;
+
+        try {
+            cone = DatabaseConnection.getConnection();
+            Statement stmt = cone.createStatement();
+            ResultSet rset =
+                stmt.executeQuery("SELECT * FROM TBL_GROUP_COMPANY where ID = '" + CmpyID + "'");
+
+            if (rset.next()) {
+                //                conn.close();
+                //getting data against column from table
+                sessImage = (rset.getString("IMAGE")).toString();
+                storeOnSession("sessCmpnyImg", sessImage);
+                System.out.println(sessImage);
+            }
+        }
+        catch (SQLException e) {
+            System.out.println(e);
+        }
+
+        return "df";
     }
 
     //Logout > session cleared and session variable cleared
@@ -167,4 +194,5 @@ public class Login {
         //        return "good";
         return "/faces/Main_Pages/Login.jsf?faces-redirect=true";
     }
+
 }

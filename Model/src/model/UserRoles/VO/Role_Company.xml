@@ -34,19 +34,19 @@
       Name="VariableScript"
       CodeSourceName="Role_Company"/>
   </Variable>
-  <SQLQuery><![CDATA[SELECT TRC.ID rolcmpnyID, TRC.GROUP_COMPANY_ID rolcmpnyGrpcmpnyID, TRC.ROLE_ID rolcmpnyrolID, TRC.R_View rolcmpnyrView,       
-TGC.ID grpcmpnyID, TGC.GROUP_ID grpcmpnygrpID, TGC.AST grpcmpnyAst, TGC.NAME grpcmpnyName    
-FROM                           
-Tbl_ROLE_Company TRC , TBL_GROUP_COMPANY TGC         
-Where                           
-TRC.GROUP_COMPANY_ID = TGC.ID                        
+  <SQLQuery><![CDATA[SELECT TRC.ID rolcmpnyID, TRC.GROUP_COMPANY_ID rolcmpnyGrpcmpnyID, TRC.ROLE_ID rolcmpnyrolID, TRC.R_View rolcmpnyrView,        
+TGC.ID grpcmpnyID, TGC.GROUP_ID grpcmpnygrpID, TGC.AST grpcmpnyAst, TGC.NAME grpcmpnyName, TGC.IMAGE groupcmpnyImage 
+FROM                            
+Tbl_ROLE_Company TRC , TBL_GROUP_COMPANY TGC          
+Where                            
+TRC.GROUP_COMPANY_ID = TGC.ID                         
+AND                           
+TRC.R_VIEW = 'Y'                           
 AND                          
-TRC.R_VIEW = 'Y'                          
-AND                         
-TGC.AST = 'Y'                          
-AND                          
-TRC.ROLE_ID = :get_role_id   
-AND    
+TGC.AST = 'Y'                           
+AND                           
+TRC.ROLE_ID = :get_role_id    
+AND     
 TGC.Group_ID = :get_grp_id]]></SQLQuery>
   <ViewAttribute
     Name="Rolcmpnyid"
@@ -141,6 +141,21 @@ TGC.Group_ID = :get_grp_id]]></SQLQuery>
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Groupcmpnyimage"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="GROUPCMPNYIMAGE"
+    Expression="GROUPCMPNYIMAGE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
   </ViewAttribute>
   <AttrArray Name="KeyAttributes">
