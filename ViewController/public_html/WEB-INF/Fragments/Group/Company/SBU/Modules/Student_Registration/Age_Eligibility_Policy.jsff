@@ -32,9 +32,9 @@
                           rowSelection="single" fetchSize="#{bindings.TblAgePolicyView1.rangeSize}"
                           filterModel="#{bindings.TblAgePolicyView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblAgePolicyView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="">
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblAgePolicyView1.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Age Policy ID" id="c1" align="center">
+                             sortable="true" headerText="Age Policy ID" id="c1" align="center" width="80">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="id4" placeholder="Age Policy ID">
@@ -45,7 +45,9 @@
                                   required="#{bindings.TblAgePolicyView1.hints.Id.mandatory}"
                                   columns="#{bindings.TblAgePolicyView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblAgePolicyView1.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblAgePolicyView1.hints.Id.tooltip}" id="it1">
+                                  shortDesc="#{bindings.TblAgePolicyView1.hints.Id.tooltip}" id="it1"
+                                  readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblAgePolicyView1.hints.Id.format}"/>
                     </af:inputText>
@@ -66,7 +68,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblAgePolicyView1.hints.Dated.name}" filterable="true"
-                             sortable="true" headerText="Date" id="c3">
+                             sortable="true" headerText="Date" id="c3" align="center">
                              
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblAgePolicyView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
@@ -78,7 +80,7 @@
                                   label="#{bindings.TblAgePolicyView1.hints.Dated.label}"
                                   required="#{bindings.TblAgePolicyView1.hints.Dated.mandatory}"
                                   columns="#{bindings.TblAgePolicyView1.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.TblAgePolicyView1.hints.Dated.tooltip}" id="id2">
+                                  shortDesc="#{bindings.TblAgePolicyView1.hints.Dated.tooltip}" id="id2" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblAgePolicyView1.hints.Dated.format}"/>
                     </af:inputDate>
@@ -98,7 +100,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblAgePolicyView1.hints.FrYear.name}" filterable="true"
-                             sortable="true" headerText="For Year" id="c5">
+                             sortable="true" headerText="For Year" id="c5" align="center">
                              <f:facet name="filter">
                                   <af:inputDate value="#{vs.filterCriteria.FrYear}"
                                    id="it7" placeholder="For Year">
@@ -109,14 +111,14 @@
                                   required="#{bindings.TblAgePolicyView1.hints.FrYear.mandatory}"
                                   columns="#{bindings.TblAgePolicyView1.hints.FrYear.displayWidth}"
                                   maximumLength="#{bindings.TblAgePolicyView1.hints.FrYear.precision}"
-                                  shortDesc="#{bindings.TblAgePolicyView1.hints.FrYear.tooltip}" id="it2">
+                                  shortDesc="#{bindings.TblAgePolicyView1.hints.FrYear.tooltip}" id="it2" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FrYear.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblAgePolicyView1.hints.FrYear.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblAgePolicyView1.hints.ToYear.name}" filterable="true"
-                             sortable="true" headerText="To Year" id="c6">
+                             sortable="true" headerText="To Year" id="c6" align="center">
                              <f:facet name="filter">
                                   <af:inputDate value="#{vs.filterCriteria.ToYear}"
                                    id="id3" placeholder="To Year">
@@ -127,14 +129,14 @@
                                   required="#{bindings.TblAgePolicyView1.hints.ToYear.mandatory}"
                                   columns="#{bindings.TblAgePolicyView1.hints.ToYear.displayWidth}"
                                   maximumLength="#{bindings.TblAgePolicyView1.hints.ToYear.precision}"
-                                  shortDesc="#{bindings.TblAgePolicyView1.hints.ToYear.tooltip}" id="it3">
+                                  shortDesc="#{bindings.TblAgePolicyView1.hints.ToYear.tooltip}" id="it3" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.ToYear.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblAgePolicyView1.hints.ToYear.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblAgePolicyView1.hints.RefDocNo.name}" filterable="true"
-                             sortable="true" headerText="Reference Doc No." id="c7" align="center">
+                             sortable="true" headerText="Reference Doc No." id="c7" align="center" width="120">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.RefDocNo}"
                                    id="it8" placeholder="Reference Doc No.">
@@ -145,7 +147,7 @@
                                   required="#{bindings.TblAgePolicyView1.hints.RefDocNo.mandatory}"
                                   columns="#{bindings.TblAgePolicyView1.hints.RefDocNo.displayWidth}"
                                   maximumLength="#{bindings.TblAgePolicyView1.hints.RefDocNo.precision}"
-                                  shortDesc="#{bindings.TblAgePolicyView1.hints.RefDocNo.tooltip}" id="it4">
+                                  shortDesc="#{bindings.TblAgePolicyView1.hints.RefDocNo.tooltip}" id="it4" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.RefDocNo.validator}"/>
                     </af:inputText>
                   </af:column>

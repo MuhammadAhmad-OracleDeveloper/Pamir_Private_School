@@ -32,9 +32,9 @@
                           rowSelection="single" fetchSize="#{bindings.TblStdEnqView1.rangeSize}"
                           filterModel="#{bindings.TblStdEnqView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblStdEnqView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="">
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="Enquiry ID" id="c1">
+                             headerText="Enquiry ID" id="c1" align="center" width="80">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="id4" placeholder="Enquiry ID">
@@ -45,13 +45,14 @@
                                   required="#{bindings.TblStdEnqView1.hints.Id.mandatory}"
                                   columns="#{bindings.TblStdEnqView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblStdEnqView1.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblStdEnqView1.hints.Id.tooltip}" id="it1" readOnly="true">
+                                  shortDesc="#{bindings.TblStdEnqView1.hints.Id.tooltip}" id="it1" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblStdEnqView1.hints.Id.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.Dated.name}" filterable="true"
-                             sortable="true" headerText="Date" id="c2">
+                             sortable="true" headerText="Date" id="c2" align="center">
                              
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblStdEnqView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
@@ -63,7 +64,7 @@
                                   label="#{bindings.TblStdEnqView1.hints.Dated.label}"
                                   required="#{bindings.TblStdEnqView1.hints.Dated.mandatory}"
                                   columns="#{bindings.TblStdEnqView1.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.TblStdEnqView1.hints.Dated.tooltip}" id="id2">
+                                  shortDesc="#{bindings.TblStdEnqView1.hints.Dated.tooltip}" id="id2" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblStdEnqView1.hints.Dated.format}"/>
                     </af:inputDate>
@@ -84,7 +85,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.FirstName.name}" filterable="true"
-                             sortable="true" headerText="First Name" id="c4">
+                             sortable="true" headerText="First Name" id="c4" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.FirstName}"
                                    id="it16" placeholder="First Name" >
@@ -100,7 +101,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.LastName.name}" filterable="true"
-                             sortable="true" headerText="Last Name" id="c5">
+                             sortable="true" headerText="Last Name" id="c5" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.LastName}"
                                    id="it17" placeholder="Last Name" >
@@ -160,7 +161,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.EmirId.name}" filterable="true"
-                             sortable="true" headerText="Emirates ID" id="c9">
+                             sortable="true" headerText="Emirates ID" id="c9" align="center">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.EmirId}"
                                    id="it21" placeholder="Emirates ID" >
@@ -171,12 +172,12 @@
                                   required="#{bindings.TblStdEnqView1.hints.EmirId.mandatory}"
                                   columns="#{bindings.TblStdEnqView1.hints.EmirId.displayWidth}"
                                   maximumLength="#{bindings.TblStdEnqView1.hints.EmirId.precision}"
-                                  shortDesc="#{bindings.TblStdEnqView1.hints.EmirId.tooltip}" id="it4">
+                                  shortDesc="#{bindings.TblStdEnqView1.hints.EmirId.tooltip}" id="it4" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.EmirId.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.EmirArea.name}" filterable="true"
-                             sortable="true" headerText="Emirates Area" id="c10">
+                             sortable="true" headerText="Emirates Area" id="c10" align="center">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.EmirArea}"
                                    id="it22" placeholder="Emirates Area" >
@@ -187,7 +188,7 @@
                                   required="#{bindings.TblStdEnqView1.hints.EmirArea.mandatory}"
                                   columns="#{bindings.TblStdEnqView1.hints.EmirArea.displayWidth}"
                                   maximumLength="#{bindings.TblStdEnqView1.hints.EmirArea.precision}"
-                                  shortDesc="#{bindings.TblStdEnqView1.hints.EmirArea.tooltip}" id="it5">
+                                  shortDesc="#{bindings.TblStdEnqView1.hints.EmirArea.tooltip}" id="it5" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.EmirArea.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -211,7 +212,7 @@
                              headerText="Active" id="c12">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Ast}"
-                                   id="it24" placeholder="Active" >
+                                   id="it24" placeholder="Status" >
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
@@ -227,19 +228,7 @@
           </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr3">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
-              <af:panelGroupLayout id="pgl3" layout="horizontal">
-                            <af:iterator id="i2" var="index" varStatus="status"
-                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
-                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
-                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
-                                </af:button>
-                                <af:spacer width="5" height="10" id="s5"/>
-                            </af:iterator>
-                        </af:panelGroupLayout>
-          </af:gridCell>
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3"/>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr4">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
@@ -254,12 +243,12 @@
                           rowSelection="single" fetchSize="#{bindings.TblEnqFollowUpView2.rangeSize}"
                           filterModel="#{bindings.TblEnqFollowUpView2Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblEnqFollowUpView2Query.processQuery}" varStatus="vs" id="t2"
-                          partialTriggers="">
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Follow Up ID" id="c13" align="center">
+                             sortable="true" headerText="Follow Up ID" id="c13" align="center" width="80">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
-                                   id="it25" placeholder="Follow Up ID" >
+                                   id="it25" placeholder="Search Follow Up ID" >
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.Id.inputValue}"
@@ -267,17 +256,18 @@
                                   required="#{bindings.TblEnqFollowUpView2.hints.Id.mandatory}"
                                   columns="#{bindings.TblEnqFollowUpView2.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblEnqFollowUpView2.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.Id.tooltip}" id="it7" readOnly="true">
+                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.Id.tooltip}" id="it7" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblEnqFollowUpView2.hints.Id.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.Dated.name}" filterable="true"
-                             sortable="true" headerText="Follow Up Date" id="c14">
+                             sortable="true" headerText="Follow Up Date" id="c14" align="center">
                              
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblEnqFollowUpView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
-                                    id="id3" placeholder="Follow Up Date">
+                                    id="id3" placeholder="Search Follow Up Date">
                         <af:convertDateTime pattern="#{bindings.TblEnqFollowUpView2.hints.Dated.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -285,17 +275,17 @@
                                   label="#{bindings.TblEnqFollowUpView2.hints.Dated.label}"
                                   required="#{bindings.TblEnqFollowUpView2.hints.Dated.mandatory}"
                                   columns="#{bindings.TblEnqFollowUpView2.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.Dated.tooltip}" id="id5">
+                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.Dated.tooltip}" id="id5" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblEnqFollowUpView2.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.FollowMethod.name}" filterable="true"
                              sortable="true" headerText="Follow Up Method"
-                             id="c15" align="center">
+                             id="c15" align="center" width="120">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.FollowMethod}"
-                                   id="it26" placeholder="Follow Up Method" >
+                                   id="it26" placeholder="Search Follow Up Method" >
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.FollowMethod.inputValue}"
@@ -308,11 +298,11 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.SmsContactNo.name}" filterable="true"
-                             sortable="true" headerText="SMS Contact No."
-                             id="c16">
+                             sortable="true" headerText="SMS Contact"
+                             id="c16" align="center">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.SmsContactNo}"
-                                   id="it27" placeholder="SMS Contact No." >
+                                   id="it27" placeholder="Search SMS Contact No." >
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.SmsContactNo.inputValue}"
@@ -320,7 +310,7 @@
                                   required="#{bindings.TblEnqFollowUpView2.hints.SmsContactNo.mandatory}"
                                   columns="#{bindings.TblEnqFollowUpView2.hints.SmsContactNo.displayWidth}"
                                   maximumLength="#{bindings.TblEnqFollowUpView2.hints.SmsContactNo.precision}"
-                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.SmsContactNo.tooltip}" id="it8">
+                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.SmsContactNo.tooltip}" id="it8" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.SmsContactNo.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -328,7 +318,7 @@
                              sortable="true" headerText="SMS Text" id="c17">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.SmsText}"
-                                   id="it28" placeholder="SMS Text" >
+                                   id="it28" placeholder="Search SMS Text" >
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.SmsText.inputValue}"
@@ -344,7 +334,7 @@
                              sortable="true" headerText="Email To" id="c18">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.EmailTo}"
-                                   id="it29" placeholder="Email To" >
+                                   id="it29" placeholder="Search Email To" >
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.EmailTo.inputValue}"
@@ -361,7 +351,7 @@
                              id="c19">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.EmailSubject}"
-                                   id="it30" placeholder="Email Subject" >
+                                   id="it30" placeholder="Search Email Subject" >
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.EmailSubject.inputValue}"
@@ -378,7 +368,7 @@
                              id="c20">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.EmailBody}"
-                                   id="it31" placeholder="Email Body" >
+                                   id="it31" placeholder="Search Email Body" >
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.EmailBody.inputValue}"
@@ -392,10 +382,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.CallContactNo.name}" filterable="true"
                              sortable="true" headerText="Contact Number"
-                             id="c21">
+                             id="c21" align="center" width="110">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.CallContactNo}"
-                                   id="it32" placeholder="Contact Number" >
+                                   id="it32" placeholder="Search Contact Number" >
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.CallContactNo.inputValue}"
@@ -403,20 +393,20 @@
                                   required="#{bindings.TblEnqFollowUpView2.hints.CallContactNo.mandatory}"
                                   columns="#{bindings.TblEnqFollowUpView2.hints.CallContactNo.displayWidth}"
                                   maximumLength="#{bindings.TblEnqFollowUpView2.hints.CallContactNo.precision}"
-                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.CallContactNo.tooltip}" id="it13">
+                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.CallContactNo.tooltip}" id="it13" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.CallContactNo.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.CallContent.name}" filterable="true"
                              sortable="true" headerText="Call Content"
-                             id="c22">
+                             id="c22" width="110">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.CallContent}"
                                    id="it33" placeholder="Contact Number" >
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.CallContent.inputValue}"
-                                  label="Call Content"
+                                  label="Search Call Content"
                                   required="#{bindings.TblEnqFollowUpView2.hints.CallContent.mandatory}"
                                   columns="#{bindings.TblEnqFollowUpView2.hints.CallContent.displayWidth}"
                                   maximumLength="#{bindings.TblEnqFollowUpView2.hints.CallContent.precision}"
@@ -428,7 +418,7 @@
                              sortable="true" headerText="Active" id="c23">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Ast}"
-                                   id="it34" placeholder="Active" >
+                                   id="it34" placeholder="Search Status" >
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
