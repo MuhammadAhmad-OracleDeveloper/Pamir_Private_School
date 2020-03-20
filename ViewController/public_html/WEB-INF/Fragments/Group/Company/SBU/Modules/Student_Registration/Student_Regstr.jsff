@@ -32,7 +32,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblStdRegView1.rangeSize}"
                           filterModel="#{bindings.TblStdRegView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblStdRegView1Query.processQuery}" varStatus="vs" id="t1"
-                          >
+                          partialTriggers="::b23 ::b24 ::b25">
                           
                   <af:column sortProperty="#{bindings.TblStdRegView1.hints.Id.name}" filterable="true" sortable="true"
                              headerText="Student Registration ID" id="c1" align="center">
@@ -175,21 +175,24 @@
                     </af:selectOneChoice>
                   </af:column>
                 </af:table>
+                
               </af:showDetailItem>
+              
             </af:panelTabbed>
+           
           </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr3">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
-              <af:panelGroupLayout id="pgl3" layout="horizontal">
-                            <af:iterator id="i2" var="index" varStatus="status"
+               <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
                                 </af:button>
-                                <af:spacer width="5" height="10" id="s5"/>
+                                <af:spacer width="5" height="10" id="s2"/>
                             </af:iterator>
                         </af:panelGroupLayout>
           </af:gridCell>
@@ -270,6 +273,23 @@
                     </af:panelGroupLayout>
                   </f:facet>
                 </af:panelFormLayout>
+                <af:spacer width="10" height="40" id="s3"/>
+                 <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s5"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                <af:gridRow id="gr6">
+                  <af:gridCell id="gc6">
+                  
+                  </af:gridCell>
+                </af:gridRow>
               </af:showDetailItem>
               <af:showDetailItem text="Parent's Details" id="sdi1">
                 <af:panelFormLayout id="pfl2" maxColumns="3" rows="5">
@@ -688,17 +708,7 @@
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
-              <af:panelGroupLayout id="pgl2" layout="horizontal">
-                            <af:iterator id="i1" var="index" varStatus="status"
-                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
-                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
-                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
-                                </af:button>
-                                <af:spacer width="5" height="10" id="s2"/>
-                            </af:iterator>
-                        </af:panelGroupLayout>
+              
            </af:gridCell>
         </af:gridRow>
       </af:panelGridLayout>
