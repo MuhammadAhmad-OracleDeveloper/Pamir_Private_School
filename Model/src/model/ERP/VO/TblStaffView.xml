@@ -370,7 +370,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblStaff"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -382,13 +383,26 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblStaff"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
     EntityUsage="TblStaff"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="LicenseExp"
+    PrecisionRule="true"
+    EntityAttrName="LicenseExp"
+    EntityUsage="TblStaff"
+    AliasName="LICENSE_EXP"/>
+  <ViewAttribute
+    Name="LicenseNo"
+    PrecisionRule="true"
+    EntityAttrName="LicenseNo"
+    EntityUsage="TblStaff"
+    AliasName="LICENSE_NO"/>
   <ViewLinkAccessor
     Name="TblStaffBenefitView"
     ViewLink="model.ERP.VO.FkStaffBenefitStaffLink"

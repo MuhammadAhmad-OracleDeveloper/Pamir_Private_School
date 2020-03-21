@@ -281,6 +281,25 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_STAFF"/>
+  <Attribute
+    Name="LicenseExp"
+    ColumnName="LICENSE_EXP"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_STAFF"/>
+  <Attribute
+    Name="LicenseNo"
+    Precision="25"
+    ColumnName="LICENSE_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_STAFF">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblLookupDetail"
     Association="model.ERP.EO.FkStaffLookupNationalityAssoc"

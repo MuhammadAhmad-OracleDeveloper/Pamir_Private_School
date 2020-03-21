@@ -254,6 +254,22 @@
                     <f:validator binding="#{bindings.LookupStaffType.validator}"/>
                   </af:selectOneChoice>
                   <af:spacer id="s12"/>
+                  <af:inputText value="#{bindings.LicenseNo.inputValue}" label="License Number"
+                                required="#{bindings.LicenseNo.hints.mandatory}"
+                                columns="#{bindings.LicenseNo.hints.displayWidth}"
+                                maximumLength="#{bindings.LicenseNo.hints.precision}"
+                                shortDesc="#{bindings.LicenseNo.hints.tooltip}" id="it67">
+                    <f:validator binding="#{bindings.LicenseNo.validator}"/>
+                  </af:inputText>
+                  <af:spacer id="s30"/>
+                  <af:inputDate value="#{bindings.LicenseExp.inputValue}" label="License Expire"
+                                required="#{bindings.LicenseExp.hints.mandatory}"
+                                columns="#{bindings.LicenseExp.hints.displayWidth}"
+                                shortDesc="#{bindings.LicenseExp.hints.tooltip}" id="id41">
+                    <f:validator binding="#{bindings.LicenseExp.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.LicenseExp.format}"/>
+                  </af:inputDate>
+                  <af:spacer id="s31"/>
                   <af:selectOneChoice value="#{bindings.LookupRefBy.inputValue}" label="Refrence By"
                                       required="#{bindings.LookupRefBy.hints.mandatory}"
                                       shortDesc="#{bindings.LookupRefBy.hints.tooltip}" id="soc6"
@@ -261,7 +277,7 @@
                     <f:selectItems value="#{bindings.LookupRefBy.items}" id="si6"/>
                     <f:validator binding="#{bindings.LookupRefBy.validator}"/>
                   </af:selectOneChoice>
-                  
+                  <af:spacer id="s35"/>
                   <af:inputText value="#{bindings.CurrAddress.inputValue}" label="Current Address"
                                 required="#{bindings.CurrAddress.hints.mandatory}"
                                 maximumLength="#{bindings.CurrAddress.hints.precision}"
@@ -269,6 +285,7 @@
                                 contentStyle="width:200px;" columns="20">
                     <f:validator binding="#{bindings.CurrAddress.validator}"/>
                   </af:inputText>
+                  <af:spacer id="s34"/>
                   <af:inputText value="#{bindings.PerAddress.inputValue}" label="Permanent Address"
                                 required="#{bindings.PerAddress.hints.mandatory}"
                                 columns="20"
@@ -276,6 +293,7 @@
                                 shortDesc="#{bindings.PerAddress.hints.tooltip}" id="it11" contentStyle="width:200px;">
                     <f:validator binding="#{bindings.PerAddress.validator}"/>
                   </af:inputText>
+                  <af:spacer id="s33"/>
                   <af:inputText value="#{bindings.PersonalEmail.inputValue}"
                                 label="Email"
                                 required="#{bindings.PersonalEmail.hints.mandatory}"
@@ -285,6 +303,7 @@
                                 contentStyle="width:200px;">
                     <f:validator binding="#{bindings.PersonalEmail.validator}"/>
                   </af:inputText>
+                  <af:spacer id="s36"/>
                   <af:inputText value="#{bindings.Image.inputValue}" label="Image"
                                 required="#{bindings.Image.hints.mandatory}"
                                 columns="#{bindings.Image.hints.displayWidth}"

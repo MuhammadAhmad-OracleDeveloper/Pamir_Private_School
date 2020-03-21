@@ -50,6 +50,8 @@ public class TblStaffImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        LicenseExp,
+        LicenseNo,
         TblLookupDetail,
         TblLookupDetail1,
         TblLookupDetail2,
@@ -87,6 +89,7 @@ public class TblStaffImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int GROUPCOMPANYID = AttributesEnum.GroupCompanyId.index();
     public static final int DATED = AttributesEnum.Dated.index();
@@ -114,6 +117,8 @@ public class TblStaffImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int LICENSEEXP = AttributesEnum.LicenseExp.index();
+    public static final int LICENSENO = AttributesEnum.LicenseNo.index();
     public static final int TBLLOOKUPDETAIL = AttributesEnum.TblLookupDetail.index();
     public static final int TBLLOOKUPDETAIL1 = AttributesEnum.TblLookupDetail1.index();
     public static final int TBLLOOKUPDETAIL2 = AttributesEnum.TblLookupDetail2.index();
@@ -134,6 +139,13 @@ public class TblStaffImpl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public TblStaffImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblStaff");
     }
 
     /**
@@ -553,6 +565,38 @@ public class TblStaffImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for LicenseExp, using the alias name LicenseExp.
+     * @return the value of LicenseExp
+     */
+    public Timestamp getLicenseExp() {
+        return (Timestamp) getAttributeInternal(LICENSEEXP);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for LicenseExp.
+     * @param value value to set the LicenseExp
+     */
+    public void setLicenseExp(Timestamp value) {
+        setAttributeInternal(LICENSEEXP, value);
+    }
+
+    /**
+     * Gets the attribute value for LicenseNo, using the alias name LicenseNo.
+     * @return the value of LicenseNo
+     */
+    public String getLicenseNo() {
+        return (String) getAttributeInternal(LICENSENO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for LicenseNo.
+     * @param value value to set the LicenseNo
+     */
+    public void setLicenseNo(String value) {
+        setAttributeInternal(LICENSENO, value);
+    }
+
+    /**
      * @return the associated entity TblLookupDetailImpl.
      */
     public TblLookupDetailImpl getTblLookupDetail() {
@@ -692,6 +736,7 @@ public class TblStaffImpl extends EntityImpl {
         return (RowIterator) getAttributeInternal(TBLSTAFFSUBJECT);
     }
 
+
     /**
      * @param id key constituent
 
@@ -699,13 +744,6 @@ public class TblStaffImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblStaff");
     }
 
     /**
