@@ -34,23 +34,24 @@
       Name="VariableScript"
       CodeSourceName="User_Modules"/>
   </Variable>
-  <SQLQuery><![CDATA[SELECT     
-RM.ID RMID , RM.ROLE_ID , RM.COMPANY_MODULE_ID , RM.R_VIEW ,    
-CM.ID CMID , CM.GROUP_COMPANY_ID , CM.MODULE_ID , CM.AST CMAST ,    
-GC.ID GCID , GC.AST GCAST ,    
-TM.ID TMID , TM.NAME ModuleName , TM.ICON , TM.DESCRIPTION , TM.LINK , TM.SR_NO    
-FROM     
-TBL_ROLE_MODULES RM , TBL_COMPANY_MODULE CM , TBL_GROUP_COMPANY GC , TBL_MODULE TM    
-Where    
-CM.ID = RM.COMPANY_MODULE_ID    
-AND    
-GC.ID = CM.GROUP_COMPANY_ID    
-AND    
-TM.ID = CM.MODULE_ID    
-AND    
-RM.ROLE_ID = :get_Role_ID    
-AND    
-GC.ID = :get_com_mod_ID]]></SQLQuery>
+  <SQLQuery><![CDATA[SELECT       
+RM.ID RMID , RM.ROLE_ID , RM.COMPANY_MODULE_ID , RM.R_VIEW ,      
+CM.ID CMID , CM.GROUP_COMPANY_ID , CM.MODULE_ID , CM.AST CMAST ,      
+GC.ID GCID , GC.AST GCAST ,      
+TM.ID TMID , TM.NAME ModuleName , TM.ICON , TM.DESCRIPTION , TM.LINK , TM.SR_NO      
+FROM       
+TBL_ROLE_MODULES RM , TBL_COMPANY_MODULE CM , TBL_GROUP_COMPANY GC , TBL_MODULE TM      
+Where      
+CM.ID = RM.COMPANY_MODULE_ID      
+AND      
+GC.ID = CM.GROUP_COMPANY_ID      
+AND      
+TM.ID = CM.MODULE_ID      
+AND      
+RM.ROLE_ID = :get_Role_ID      
+AND      
+GC.ID = :get_com_mod_ID 
+order by TM.SR_NO ASC]]></SQLQuery>
   <ViewAttribute
     Name="Rmid"
     IsUpdateable="false"
