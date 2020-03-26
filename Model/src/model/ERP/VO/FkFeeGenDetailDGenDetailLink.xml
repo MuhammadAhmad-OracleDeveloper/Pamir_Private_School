@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkFeeGenDetailDGenDetailLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.ERP.EO.FkFeeGenDetailDGenDetailAssoc">
+  <ViewLinkDefEnd
+    Name="TblFeeGenDetailView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.VO.TblFeeGenDetailView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblFeeGenDetailView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblFeeGenDetailView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblFeeGenDetailDView"
+    Cardinality="-1"
+    Owner="model.ERP.VO.TblFeeGenDetailDView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblFeeGenDetailDView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblFeeGenDetailDView.FeeGenDetailId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

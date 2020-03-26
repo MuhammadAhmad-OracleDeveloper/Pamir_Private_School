@@ -355,6 +355,33 @@
   <ViewUsage
     Name="TblSectionsView3"
     ViewObjectName="model.ERP.VO.TblSectionsView"/>
+  <ViewUsage
+    Name="TblFeeGenDetailDView1"
+    ViewObjectName="model.ERP.VO.TblFeeGenDetailDView"/>
+  <ViewUsage
+    Name="TblFeeGenDetailView1"
+    ViewObjectName="model.ERP.VO.TblFeeGenDetailView"/>
+  <ViewUsage
+    Name="TblFeeGenMasterView1"
+    ViewObjectName="model.ERP.VO.TblFeeGenMasterView"/>
+  <ViewUsage
+    Name="TblGradeFeeDetailView1"
+    ViewObjectName="model.ERP.VO.TblGradeFeeDetailView"/>
+  <ViewUsage
+    Name="TblGradeFeeMasterView1"
+    ViewObjectName="model.ERP.VO.TblGradeFeeMasterView"/>
+  <ViewUsage
+    Name="TblGradeFeeDetailView2"
+    ViewObjectName="model.ERP.VO.TblGradeFeeDetailView"/>
+  <ViewUsage
+    Name="TblFeeGenDetailDView2"
+    ViewObjectName="model.ERP.VO.TblFeeGenDetailDView"/>
+  <ViewUsage
+    Name="TblFeeGenDetailView2"
+    ViewObjectName="model.ERP.VO.TblFeeGenDetailView"/>
+  <ViewUsage
+    Name="TblFeeGenDetailDView3"
+    ViewObjectName="model.ERP.VO.TblFeeGenDetailDView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -792,5 +819,29 @@
     ViewLinkObjectName="model.ERP.VO.FkSectionsGradeLink"
     SrcViewUsageName="model.ERP.AppModule.TblGradeView2"
     DstViewUsageName="model.ERP.AppModule.TblSectionsView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkGradeFeeDetailFeeMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkGradeFeeDetailFeeMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblGradeFeeMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblGradeFeeDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkFeeGenDetailDGenDetailLink1"
+    ViewLinkObjectName="model.ERP.VO.FkFeeGenDetailDGenDetailLink"
+    SrcViewUsageName="model.ERP.AppModule.TblFeeGenDetailView1"
+    DstViewUsageName="model.ERP.AppModule.TblFeeGenDetailDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkFeeGenDetailGenMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkFeeGenDetailGenMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblFeeGenMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblFeeGenDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkFeeGenDetailDGenMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkFeeGenDetailDGenMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblFeeGenMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblFeeGenDetailDView3"
     Reversed="false"/>
 </AppModule>
