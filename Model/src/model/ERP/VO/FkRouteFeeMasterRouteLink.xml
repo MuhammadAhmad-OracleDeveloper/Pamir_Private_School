@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkRouteFeeMasterRouteLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.ERP.EO.FkRouteFeeMasterRouteAssoc">
+  <ViewLinkDefEnd
+    Name="TblRouteView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.VO.TblRouteView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblRouteView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblRouteView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblRouteFeeMasterView"
+    Cardinality="-1"
+    Owner="model.ERP.VO.TblRouteFeeMasterView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblRouteFeeMasterView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblRouteFeeMasterView.RouteId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

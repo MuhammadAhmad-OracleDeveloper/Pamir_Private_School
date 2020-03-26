@@ -382,6 +382,45 @@
   <ViewUsage
     Name="TblFeeGenDetailDView3"
     ViewObjectName="model.ERP.VO.TblFeeGenDetailDView"/>
+  <ViewUsage
+    Name="TblRouteFeeDetailView1"
+    ViewObjectName="model.ERP.VO.TblRouteFeeDetailView"/>
+  <ViewUsage
+    Name="TblRouteFeeMasterView1"
+    ViewObjectName="model.ERP.VO.TblRouteFeeMasterView"/>
+  <ViewUsage
+    Name="TblRouteView1"
+    ViewObjectName="model.ERP.VO.TblRouteView"/>
+  <ViewUsage
+    Name="TblTransFeeGenDetailView1"
+    ViewObjectName="model.ERP.VO.TblTransFeeGenDetailView"/>
+  <ViewUsage
+    Name="TblTransFeeGenMasterView1"
+    ViewObjectName="model.ERP.VO.TblTransFeeGenMasterView"/>
+  <ViewUsage
+    Name="TblTransFeeRecView1"
+    ViewObjectName="model.ERP.VO.TblTransFeeRecView"/>
+  <ViewUsage
+    Name="TblTransportView1"
+    ViewObjectName="model.ERP.VO.TblTransportView"/>
+  <ViewUsage
+    Name="TblRouteView2"
+    ViewObjectName="model.ERP.VO.TblRouteView"/>
+  <ViewUsage
+    Name="TblRouteFeeDetailView2"
+    ViewObjectName="model.ERP.VO.TblRouteFeeDetailView"/>
+  <ViewUsage
+    Name="TblRouteFeeMasterView2"
+    ViewObjectName="model.ERP.VO.TblRouteFeeMasterView"/>
+  <ViewUsage
+    Name="TblTransFeeGenDetailView2"
+    ViewObjectName="model.ERP.VO.TblTransFeeGenDetailView"/>
+  <ViewUsage
+    Name="TblTransFeeGenDetailView3"
+    ViewObjectName="model.ERP.VO.TblTransFeeGenDetailView"/>
+  <ViewUsage
+    Name="TblTransFeeRecView2"
+    ViewObjectName="model.ERP.VO.TblTransFeeRecView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -843,5 +882,41 @@
     ViewLinkObjectName="model.ERP.VO.FkFeeGenDetailDGenMasterLink"
     SrcViewUsageName="model.ERP.AppModule.TblFeeGenMasterView1"
     DstViewUsageName="model.ERP.AppModule.TblFeeGenDetailDView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkRouteTransportLink1"
+    ViewLinkObjectName="model.ERP.VO.FkRouteTransportLink"
+    SrcViewUsageName="model.ERP.AppModule.TblTransportView1"
+    DstViewUsageName="model.ERP.AppModule.TblRouteView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkRouteFeeDetailRouteMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkRouteFeeDetailRouteMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblRouteFeeMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblRouteFeeDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkRouteFeeMasterRouteLink1"
+    ViewLinkObjectName="model.ERP.VO.FkRouteFeeMasterRouteLink"
+    SrcViewUsageName="model.ERP.AppModule.TblRouteView1"
+    DstViewUsageName="model.ERP.AppModule.TblRouteFeeMasterView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTransFeeGenDetailRouteMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkTransFeeGenDetailRouteMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblRouteFeeMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblTransFeeGenDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTransFeeGenDetailTransMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkTransFeeGenDetailTransMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblTransFeeGenMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblTransFeeGenDetailView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTransFeeRecFeeGenLink1"
+    ViewLinkObjectName="model.ERP.VO.FkTransFeeRecFeeGenLink"
+    SrcViewUsageName="model.ERP.AppModule.TblTransFeeGenMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblTransFeeRecView2"
     Reversed="false"/>
 </AppModule>

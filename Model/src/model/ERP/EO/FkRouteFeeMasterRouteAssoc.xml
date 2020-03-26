@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkRouteFeeMasterRouteAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblRoute"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.EO.TblRoute">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblRoute"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblRoute.PkRoute"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblRoute.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblRouteFeeMaster"
+    Cardinality="-1"
+    Owner="model.ERP.EO.TblRouteFeeMaster">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblRouteFeeMaster"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblRouteFeeMaster.FkRouteFeeMasterRoute"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblRouteFeeMaster.RouteId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

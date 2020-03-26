@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkTransFeeRecFeeGenLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.ERP.EO.FkTransFeeRecFeeGenAssoc">
+  <ViewLinkDefEnd
+    Name="TblTransFeeGenMasterView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.VO.TblTransFeeGenMasterView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblTransFeeGenMasterView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblTransFeeGenMasterView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblTransFeeRecView"
+    Cardinality="-1"
+    Owner="model.ERP.VO.TblTransFeeRecView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblTransFeeRecView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblTransFeeRecView.TransFeeGenMasterId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>
