@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Fee_TypePageDef"
+                Package="Fragments.Group.Company.SBU.Modules.Fee_Management">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblFeeTypeView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblFeeTypeView1Iterator"/>
+    <searchRegion Binds="TblFeeTypeView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFeeTypeView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblFeeTypeView1Iterator" id="TblFeeTypeView1">
+      <nodeDefinition DefName="model.ERP.VO.TblFeeTypeView" Name="TblFeeTypeView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Type"/>
+          <Item Value="Name"/>
+          <Item Value="DiscountAllow"/>
+          <Item Value="RefundAllow"/>
+          <Item Value="AcadYearId"/>
+          <Item Value="VatId"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFeeTypeView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFeeTypeView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblFeeTypeView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+  </bindings>
+</pageDefinition>
