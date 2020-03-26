@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Grade_FeePageDef"
+                Package="Fragments.Group.Company.SBU.Modules.Fee_Management">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblGradeFeeMasterView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblGradeFeeMasterView1Iterator"/>
+    <searchRegion Binds="TblGradeFeeMasterView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGradeFeeMasterView1Query"/>
+    <iterator Binds="TblGradeFeeDetailView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblGradeFeeDetailView2Iterator"/>
+    <searchRegion Binds="TblGradeFeeDetailView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGradeFeeDetailView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblGradeFeeMasterView1Iterator" id="TblGradeFeeMasterView1">
+      <nodeDefinition DefName="model.ERP.VO.TblGradeFeeMasterView" Name="TblGradeFeeMasterView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="AcadYearId"/>
+          <Item Value="GradeId"/>
+          <Item Value="FeeTypeId"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TblGradeFeeDetailView2Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblGradeFeeDetailView2Iterator" StaticList="false" Uses="LOV_TermsId" id="TermsId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblGradeFeeDetailView2Iterator" id="Amount">
+      <AttrNames>
+        <Item Value="Amount"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblGradeFeeDetailView2Iterator" StaticList="false" Uses="LOV_Ast" id="Ast"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action IterBinding="TblGradeFeeDetailView2Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblGradeFeeDetailView2Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblGradeFeeDetailView2Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblGradeFeeDetailView2Iterator" id="TblGradeFeeDetailView2">
+      <nodeDefinition DefName="model.ERP.VO.TblGradeFeeDetailView" Name="TblGradeFeeDetailView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="TermsId"/>
+          <Item Value="Amount"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
