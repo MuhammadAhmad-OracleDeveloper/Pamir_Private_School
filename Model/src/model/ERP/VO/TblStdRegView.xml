@@ -383,6 +383,25 @@
   <EntityUsage
     Name="TblStdReg"
     Entity="model.ERP.EO.TblStdReg"/>
+  <EntityUsage
+    Name="TblStdEnq"
+    Entity="model.ERP.EO.TblStdEnq"
+    Association="model.ERP.EO.FkStdRegEnqAssoc"
+    AssociationEnd="model.ERP.EO.FkStdRegEnqAssoc.TblStdEnq"
+    SourceUsage="model.ERP.VO.TblStdRegView.TblStdReg"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.ERP.EO.TblStdEnq.Id"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.ERP.EO.TblStdReg.StdEnqId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
@@ -849,7 +868,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblStdReg"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -861,7 +881,8 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblStdReg"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
@@ -874,6 +895,51 @@
     EntityAttrName="RefDocNo"
     EntityUsage="TblStdReg"
     AliasName="REF_DOC_NO"/>
+  <ViewAttribute
+    Name="FirstName"
+    PrecisionRule="true"
+    EntityAttrName="FirstName"
+    EntityUsage="TblStdEnq"
+    AliasName="FIRST_NAME"/>
+  <ViewAttribute
+    Name="Id1"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblStdEnq"
+    AliasName="ID1"/>
+  <ViewAttribute
+    Name="LastName"
+    PrecisionRule="true"
+    EntityAttrName="LastName"
+    EntityUsage="TblStdEnq"
+    AliasName="LAST_NAME"/>
+  <ViewAttribute
+    Name="EmirId"
+    PrecisionRule="true"
+    EntityAttrName="EmirId"
+    EntityUsage="TblStdEnq"
+    AliasName="EMIR_ID"/>
+  <ViewAttribute
+    Name="ContNumber"
+    PrecisionRule="true"
+    EntityAttrName="ContNumber"
+    EntityUsage="TblStdEnq"
+    AliasName="CONT_NUMBER"/>
+  <ViewAttribute
+    Name="ContPerson"
+    PrecisionRule="true"
+    EntityAttrName="ContPerson"
+    EntityUsage="TblStdEnq"
+    AliasName="CONT_PERSON"/>
+  <ViewAttribute
+    Name="Dob"
+    PrecisionRule="true"
+    EntityAttrName="Dob"
+    EntityUsage="TblStdEnq"
+    AliasName="DOB"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id"/>
+  </AttrArray>
   <ViewLinkAccessor
     Name="TblStdRegGuardView"
     ViewLink="model.ERP.VO.FkStdRegGuardRegLink"
