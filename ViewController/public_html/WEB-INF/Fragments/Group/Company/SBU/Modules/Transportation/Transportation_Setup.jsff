@@ -1,2 +1,294 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"></ui:composition>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Transport Setup">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Transport Entery Form">
+                <af:table value="#{bindings.TblTransportView1.collectionModel}" var="row"
+                          rows="#{bindings.TblTransportView1.rangeSize}"
+                          emptyText="#{bindings.TblTransportView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblTransportView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblTransportView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblTransportView1.rangeSize}"
+                          filterModel="#{bindings.TblTransportView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblTransportView1Query.processQuery}" varStatus="vs" id="t1"
+                          partialTriggers="">
+                  <af:column sortProperty="#{bindings.TblTransportView1.hints.Id.name}" filterable="true"
+                             sortable="true" headerText="ID" id="c1">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Id}"
+                                   id="id4" placeholder="Search ID">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblTransportView1.hints.Id.label}"
+                                  required="#{bindings.TblTransportView1.hints.Id.mandatory}"
+                                  columns="#{bindings.TblTransportView1.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblTransportView1.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblTransportView1.hints.Id.tooltip}" id="it1" readOnly="true">
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblTransportView1.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblTransportView1.hints.TransportNo.name}" filterable="true"
+                             sortable="true" headerText="Transport No." id="c2" align="center">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.TransportNo}"
+                                   id="it6" placeholder="Search Transport No.">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.TransportNo.inputValue}"
+                                  label="#{bindings.TblTransportView1.hints.TransportNo.label}"
+                                  required="#{bindings.TblTransportView1.hints.TransportNo.mandatory}"
+                                  columns="#{bindings.TblTransportView1.hints.TransportNo.displayWidth}"
+                                  maximumLength="#{bindings.TblTransportView1.hints.TransportNo.precision}"
+                                  shortDesc="#{bindings.TblTransportView1.hints.TransportNo.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.TransportNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblTransportView1.hints.RegNo.name}" filterable="true"
+                             sortable="true" headerText="Register No." id="c3">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.RegNo}"
+                                   id="it7" placeholder="Search Register No.">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.RegNo.inputValue}"
+                                  label="#{bindings.TblTransportView1.hints.RegNo.label}"
+                                  required="#{bindings.TblTransportView1.hints.RegNo.mandatory}"
+                                  columns="#{bindings.TblTransportView1.hints.RegNo.displayWidth}"
+                                  maximumLength="#{bindings.TblTransportView1.hints.RegNo.precision}"
+                                  shortDesc="#{bindings.TblTransportView1.hints.RegNo.tooltip}" id="it3">
+                      <f:validator binding="#{row.bindings.RegNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblTransportView1.hints.EngineNo.name}" filterable="true"
+                             sortable="true" headerText="Engine No." id="c4">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.EngineNo}"
+                                   id="it8" placeholder="Search Engine No.">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.EngineNo.inputValue}"
+                                  label="#{bindings.TblTransportView1.hints.EngineNo.label}"
+                                  required="#{bindings.TblTransportView1.hints.EngineNo.mandatory}"
+                                  columns="#{bindings.TblTransportView1.hints.EngineNo.displayWidth}"
+                                  maximumLength="#{bindings.TblTransportView1.hints.EngineNo.precision}"
+                                  shortDesc="#{bindings.TblTransportView1.hints.EngineNo.tooltip}" id="it4">
+                      <f:validator binding="#{row.bindings.EngineNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblTransportView1.hints.ChasisNo.name}" filterable="true"
+                             sortable="true" headerText="Chasis No." id="c5">
+                              <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.ChasisNo}"
+                                   id="it9" placeholder="Search Chasis No.">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.ChasisNo.inputValue}"
+                                  label="#{bindings.TblTransportView1.hints.ChasisNo.label}"
+                                  required="#{bindings.TblTransportView1.hints.ChasisNo.mandatory}"
+                                  columns="#{bindings.TblTransportView1.hints.ChasisNo.displayWidth}"
+                                  maximumLength="#{bindings.TblTransportView1.hints.ChasisNo.precision}"
+                                  shortDesc="#{bindings.TblTransportView1.hints.ChasisNo.tooltip}" id="it5">
+                      <f:validator binding="#{row.bindings.ChasisNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblTransportView1.hints.LookupTransportType.name}"
+                             filterable="true" sortable="true"
+                             headerText="Transport Type" id="c6">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.LookupTransportType}"
+                                   id="it10" placeholder="Search Transport Type">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.LookupTransportType.inputValue}"
+                                        label="#{row.bindings.LookupTransportType.label}"
+                                        required="#{bindings.TblTransportView1.hints.LookupTransportType.mandatory}"
+                                        shortDesc="#{bindings.TblTransportView1.hints.LookupTransportType.tooltip}"
+                                        id="soc1">
+                      <f:selectItems value="#{row.bindings.LookupTransportType.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.LookupTransportType.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblTransportView1.hints.StaffId.name}" filterable="true"
+                             sortable="true" headerText="Staff" id="c7">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.StaffId}"
+                                   id="it11" placeholder="Search Staff">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.StaffId.inputValue}" label="#{row.bindings.StaffId.label}"
+                                        required="#{bindings.TblTransportView1.hints.StaffId.mandatory}"
+                                        shortDesc="#{bindings.TblTransportView1.hints.StaffId.tooltip}" id="soc2">
+                      <f:selectItems value="#{row.bindings.StaffId.items}" id="si2"/>
+                      <f:validator binding="#{row.bindings.StaffId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblTransportView1.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="Active" id="c8">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Ast}"
+                                   id="it12" placeholder="Search Status">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblTransportView1.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblTransportView1.hints.Ast.tooltip}" id="soc3">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si3"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+             <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s4"/>
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+            
+              </af:iterator>
+                        </af:panelGroupLayout>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr4">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+            <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab2" text="Route Details">
+                <af:table value="#{bindings.TblRouteView2.collectionModel}" var="row"
+                          rows="#{bindings.TblRouteView2.rangeSize}"
+                          emptyText="#{bindings.TblRouteView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0" selectedRowKeys="#{bindings.TblRouteView2.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblRouteView2.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblRouteView2.rangeSize}"
+                          filterModel="#{bindings.TblRouteView2Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblRouteView2Query.processQuery}" varStatus="vs" id="t2">
+                  <af:column sortProperty="#{bindings.TblRouteView2.hints.Id.name}" filterable="true" sortable="true"
+                             headerText="Route ID" id="c9">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Id}"
+                                   id="it13" placeholder="Search ID">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:outputText value="#{row.Id}" shortDesc="#{bindings.TblRouteView2.hints.Id.tooltip}" id="ot1">
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblRouteView2.hints.Id.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblRouteView2.hints.AcadYearId.name}" filterable="true"
+                             sortable="true" headerText="Academic Year" id="c10">
+                              <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.AcadYearId}"
+                                   id="it14" placeholder="Search Academic Year">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
+                                        label="#{row.bindings.AcadYearId.label}"
+                                        required="#{bindings.TblRouteView2.hints.AcadYearId.mandatory}"
+                                        shortDesc="#{bindings.TblRouteView2.hints.AcadYearId.tooltip}" readOnly="true"
+                                        id="soc4">
+                      <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si4"/>
+                      <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblRouteView2.hints.RouteName.name}" filterable="true"
+                             sortable="true" headerText="Route Name" id="c11">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.RouteName}"
+                                   id="it15" placeholder="Search Route Name">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:outputText value="#{row.RouteName}"
+                                   shortDesc="#{bindings.TblRouteView2.hints.RouteName.tooltip}" id="ot2"/>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblRouteView2.hints.TransportId.name}" filterable="true"
+                             sortable="true" headerText="Transport No." id="c12">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.TransportId}"
+                                   id="it16" placeholder="Search Transport No.">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.TransportId.inputValue}"
+                                        label="#{row.bindings.TransportId.label}"
+                                        required="#{bindings.TblRouteView2.hints.TransportId.mandatory}"
+                                        shortDesc="#{bindings.TblRouteView2.hints.TransportId.tooltip}" readOnly="true"
+                                        id="soc5">
+                      <f:selectItems value="#{row.bindings.TransportId.items}" id="si5"/>
+                      <f:validator binding="#{row.bindings.TransportId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblRouteView2.hints.LookupSchoolBusStop.name}" filterable="true"
+                             sortable="true" headerText="Bus Stop"
+                             id="c13">
+                              <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.LookupSchoolBusStop}"
+                                   id="it17" placeholder="Search Bus Stop">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.LookupSchoolBusStop.inputValue}"
+                                        label="#{row.bindings.LookupSchoolBusStop.label}"
+                                        required="#{bindings.TblRouteView2.hints.LookupSchoolBusStop.mandatory}"
+                                        shortDesc="#{bindings.TblRouteView2.hints.LookupSchoolBusStop.tooltip}"
+                                        readOnly="true" id="soc6">
+                      <f:selectItems value="#{row.bindings.LookupSchoolBusStop.items}" id="si6"/>
+                      <f:validator binding="#{row.bindings.LookupSchoolBusStop.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblRouteView2.hints.Ast.name}" filterable="true" sortable="true"
+                             headerText="Active" id="c14">
+                              <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Ast}"
+                                   id="it18" placeholder="Search Status">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblRouteView2.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblRouteView2.hints.Ast.tooltip}" readOnly="true"
+                                        id="soc7">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si7"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+             <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s2"/>
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+           </af:gridCell>
+        </af:gridRow>
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>
