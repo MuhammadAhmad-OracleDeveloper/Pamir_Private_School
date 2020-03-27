@@ -30,19 +30,21 @@
                           selectionListener="#{bindings.TblGradeView1.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.TblGradeView1.rangeSize}"
                           filterModel="#{bindings.TblGradeView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblGradeView1Query.processQuery}" varStatus="vs" id="t1">
+                          queryListener="#{bindings.TblGradeView1Query.processQuery}" varStatus="vs" id="t1"
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblGradeView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="Grade ID" id="c1">
+                             headerText="Grade ID" id="c1" align="center" width="80">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
-                                   id="id5" placeholder="Grade ID">
+                                   id="id5" placeholder="Search ID">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.Id.inputValue}" label="#{bindings.TblGradeView1.hints.Id.label}"
                                   required="#{bindings.TblGradeView1.hints.Id.mandatory}"
                                   columns="#{bindings.TblGradeView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblGradeView1.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblGradeView1.hints.Id.tooltip}" id="it1" readOnly="true">
+                                  shortDesc="#{bindings.TblGradeView1.hints.Id.tooltip}" id="it1" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblGradeView1.hints.Id.format}"/>
                     </af:inputText>
@@ -51,28 +53,30 @@
                              sortable="true" headerText="Aademic Group" id="c2">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.AcadGroupId}"
-                                   id="id4" placeholder="Aademic Group">
+                                   id="id4" placeholder="Search Group">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.AcadGroupId.inputValue}"
                                         label="#{row.bindings.AcadGroupId.label}"
                                         required="#{bindings.TblGradeView1.hints.AcadGroupId.mandatory}"
-                                        shortDesc="#{bindings.TblGradeView1.hints.AcadGroupId.tooltip}" id="soc1">
+                                        shortDesc="#{bindings.TblGradeView1.hints.AcadGroupId.tooltip}" id="soc1"
+                                        readOnly="true">
                       <f:selectItems value="#{row.bindings.AcadGroupId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.AcadGroupId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblGradeView1.hints.GradeName.name}" filterable="true"
-                             sortable="true" headerText="Grade Name" id="c3">
+                             sortable="true" headerText="Grade" id="c3" width="150">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.GradeName}"
-                                   id="it4" placeholder="Grade Name">
+                                   id="it4" placeholder="Search Grade">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.GradeName.inputValue}"
                                         label="#{row.bindings.GradeName.label}"
                                         required="#{bindings.TblGradeView1.hints.GradeName.mandatory}"
-                                        shortDesc="#{bindings.TblGradeView1.hints.GradeName.tooltip}" id="soc2">
+                                        shortDesc="#{bindings.TblGradeView1.hints.GradeName.tooltip}" id="soc2"
+                                        readOnly="true">
                       <f:selectItems value="#{row.bindings.GradeName.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.GradeName.validator}"/>
                     </af:selectOneChoice>
@@ -81,12 +85,12 @@
                              headerText="Active" id="c5">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Ast}"
-                                   id="it2" placeholder="Status">
+                                   id="it2" placeholder="Search Status">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblGradeView1.hints.Ast.mandatory}"
-                                        shortDesc="#{bindings.TblGradeView1.hints.Ast.tooltip}" id="soc3">
+                                        shortDesc="#{bindings.TblGradeView1.hints.Ast.tooltip}" id="soc3" readOnly="true">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>
@@ -97,19 +101,7 @@
           </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr3">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
-             <af:panelGroupLayout id="pgl3" layout="horizontal">
-                            <af:iterator id="i2" var="index" varStatus="status"
-                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
-                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
-                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
-                                </af:button>
-                                <af:spacer width="5" height="10" id="s5"/>
-                            </af:iterator>
-                        </af:panelGroupLayout>
-          </af:gridCell>
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3"/>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr4">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
@@ -124,12 +116,12 @@
                           rowSelection="single" fetchSize="#{bindings.TblGradeStaffView2.rangeSize}"
                           filterModel="#{bindings.TblGradeStaffView2Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblGradeStaffView2Query.processQuery}" varStatus="vs" id="t2"
-                          partialTriggers="">
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblGradeStaffView2.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Staff ID" id="c6">
+                             sortable="true" headerText="Staff ID" id="c6" align="center" width="80">
                              <f:facet name="filter">
                                       <af:inputText value="#{vs.filterCriteria.Id}"
-                                       id="it5" placeholder="Staff ID">
+                                       id="it5" placeholder="Search ID">
                                       </af:inputText>
                                 </f:facet>
                     <af:inputText value="#{row.bindings.Id.inputValue}"
@@ -137,17 +129,18 @@
                                   required="#{bindings.TblGradeStaffView2.hints.Id.mandatory}"
                                   columns="#{bindings.TblGradeStaffView2.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblGradeStaffView2.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblGradeStaffView2.hints.Id.tooltip}" id="it3" readOnly="true">
+                                  shortDesc="#{bindings.TblGradeStaffView2.hints.Id.tooltip}" id="it3" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblGradeStaffView2.hints.Id.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblGradeStaffView2.hints.HeadStaffId.name}" filterable="true"
                              sortable="true" headerText="Head Staff"
-                             id="c7">
+                             id="c7" width="200">
                              <f:facet name="filter">
                                       <af:inputText value="#{vs.filterCriteria.HeadStaffId}"
-                                       id="it6" placeholder="Head Staff">
+                                       id="it6" placeholder="Search Staff">
                                       </af:inputText>
                                 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.HeadStaffId.inputValue}"
@@ -160,10 +153,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblGradeStaffView2.hints.InchargeStaffId.name}" filterable="true"
                              sortable="true" headerText="Incharge Staff"
-                             id="c8">
+                             id="c8" width="200">
                              <f:facet name="filter">
                                       <af:inputText value="#{vs.filterCriteria.InchargeStaffId}"
-                                       id="it7" placeholder="Incharge Staff">
+                                       id="it7" placeholder="Search Staff">
                                       </af:inputText>
                                 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.InchargeStaffId.inputValue}"
@@ -179,7 +172,7 @@
                              sortable="true" headerText="Active" id="c10">
                              <f:facet name="filter">
                                       <af:inputText value="#{vs.filterCriteria.Ast}"
-                                       id="it8" placeholder="Status">
+                                       id="it8" placeholder="Search Status">
                                       </af:inputText>
                                 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
