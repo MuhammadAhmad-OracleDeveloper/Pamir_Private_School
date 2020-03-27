@@ -35,6 +35,11 @@
                           partialTriggers="">
                   <af:column sortProperty="#{bindings.TblTransFeeRecView2.hints.Id.name}" filterable="true"
                              sortable="true" headerText="ID" id="c1">
+                             <f:facet name="filter">
+                              <af:inputText value="#{vs.filterCriteria.Id}"
+                               id="id4" placeholder="Search ID">
+                              </af:inputText>
+                        </f:facet>
                     <af:inputText value="#{row.bindings.Id.inputValue}"
                                   label="#{bindings.TblTransFeeRecView2.hints.Id.label}"
                                   required="#{bindings.TblTransFeeRecView2.hints.Id.mandatory}"
@@ -48,6 +53,11 @@
                   <af:column sortProperty="#{bindings.TblTransFeeRecView2.hints.TransFeeGenMasterId.name}"
                              filterable="true" sortable="true"
                              headerText="Academic Year / Grade / Term" id="c2" align="center">
+                             <f:facet name="filter">
+                              <af:inputText value="#{vs.filterCriteria.TransFeeGenMasterId}"
+                               id="it3" placeholder="Search Academic Year / Grade / Term">
+                              </af:inputText>
+                        </f:facet>
                     <af:selectOneChoice value="#{row.bindings.TransFeeGenMasterId.inputValue}"
                                         label="#{row.bindings.TransFeeGenMasterId.label}"
                                         required="#{bindings.TblTransFeeRecView2.hints.TransFeeGenMasterId.mandatory}"
@@ -61,7 +71,7 @@
                              sortable="true" headerText="Date" id="c3">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblTransFeeRecView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
-                                    id="id1">
+                                    id="id1" placeholder="Search Date">
                         <af:convertDateTime pattern="#{bindings.TblTransFeeRecView2.hints.Dated.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -76,6 +86,11 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblTransFeeRecView2.hints.RecType.name}" filterable="true"
                              sortable="true" headerText="Reciept Type" id="c4">
+                             <f:facet name="filter">
+                              <af:inputText value="#{vs.filterCriteria.RecType}"
+                               id="it4" placeholder="Search Reciept Type">
+                              </af:inputText>
+                        </f:facet>
                     <af:selectOneChoice value="#{row.bindings.RecType.inputValue}" label="#{row.bindings.RecType.label}"
                                         required="#{bindings.TblTransFeeRecView2.hints.RecType.mandatory}"
                                         shortDesc="#{bindings.TblTransFeeRecView2.hints.RecType.tooltip}" id="soc2">
@@ -85,6 +100,11 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblTransFeeRecView2.hints.StdRegId.name}" filterable="true"
                              sortable="true" headerText="Student Name" id="c5">
+                             <f:facet name="filter">
+                              <af:inputText value="#{vs.filterCriteria.StdRegId}"
+                               id="it5" placeholder="Search Student Name">
+                              </af:inputText>
+                        </f:facet>
                     <af:selectOneChoice value="#{row.bindings.StdRegId.inputValue}"
                                         label="#{row.bindings.StdRegId.label}"
                                         required="#{bindings.TblTransFeeRecView2.hints.StdRegId.mandatory}"
@@ -95,6 +115,11 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblTransFeeRecView2.hints.Amount.name}" filterable="true"
                              sortable="true" headerText="Amount" id="c6">
+                             <f:facet name="filter">
+                              <af:inputText value="#{vs.filterCriteria.Amount}"
+                               id="it6" placeholder="Search Amount">
+                              </af:inputText>
+                        </f:facet>
                     <af:inputText value="#{row.bindings.Amount.inputValue}"
                                   label="#{bindings.TblTransFeeRecView2.hints.Amount.label}"
                                   required="#{bindings.TblTransFeeRecView2.hints.Amount.mandatory}"
@@ -108,6 +133,11 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblTransFeeRecView2.hints.Ast.name}" filterable="true"
                              sortable="true" headerText="Active" id="c7">
+                              <f:facet name="filter">
+                              <af:inputText value="#{vs.filterCriteria.Ast}"
+                               id="it7" placeholder="Search Status">
+                              </af:inputText>
+                        </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblTransFeeRecView2.hints.Ast.mandatory}"
                                         shortDesc="#{bindings.TblTransFeeRecView2.hints.Ast.tooltip}" id="soc4">
