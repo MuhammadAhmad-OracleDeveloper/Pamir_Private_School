@@ -25,6 +25,10 @@
     Name="Active_Name_LOV1"
     ViewObjectName="model.LOV.Active_Name_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Trans_Fee_Gen_Master_LOV1"
+    ViewObjectName="model.LOV.Trans_Fee_Gen_Master_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_StdRegId"
     ListVOName="Student_Reg_LOV1"
@@ -80,6 +84,26 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_TransFeeGenMasterId"
+    ListVOName="Trans_Fee_Gen_Master_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TransFeeGenMasterId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="AcadYearId"/>
+      <Item Value="GradeId"/>
+      <Item Value="TermsId"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblTransFeeRec"
     Entity="model.ERP.EO.TblTransFeeRec"/>
@@ -95,7 +119,15 @@
     PrecisionRule="true"
     EntityAttrName="TransFeeGenMasterId"
     EntityUsage="TblTransFeeRec"
-    AliasName="TRANS_FEE_GEN_MASTER_ID"/>
+    AliasName="TRANS_FEE_GEN_MASTER_ID"
+    LOVName="LOV_TransFeeGenMasterId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Dated"
     PrecisionRule="true"
