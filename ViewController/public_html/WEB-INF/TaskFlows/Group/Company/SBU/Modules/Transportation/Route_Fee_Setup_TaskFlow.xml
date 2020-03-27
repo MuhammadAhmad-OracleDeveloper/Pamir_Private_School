@@ -5,8 +5,8 @@
     <data-control-scope>
       <shared/>
     </data-control-scope>
-    <view id="Area_Setup">
-      <page>/WEB-INF/Fragments/Group/Company/SBU/Modules/Transportation/Area_Setup.jsff</page>
+    <view id="Route_Fee_Setup">
+      <page>/WEB-INF/Fragments/Group/Company/SBU/Modules/Transportation/Route_Fee_Setup.jsff</page>
     </view>
     <method-call id="ExecuteWithParams">
       <method>#{bindings.ExecuteWithParams.execute}</method>
@@ -18,7 +18,7 @@
       <from-activity-id>ExecuteWithParams</from-activity-id>
       <control-flow-case id="__2">
         <from-outcome>ExecuteWithParams</from-outcome>
-        <to-activity-id>Area_Setup</to-activity-id>
+        <to-activity-id>Route_Fee_Setup</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <use-page-fragments/>

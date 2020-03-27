@@ -421,6 +421,12 @@
   <ViewUsage
     Name="TblTransFeeRecView2"
     ViewObjectName="model.ERP.VO.TblTransFeeRecView"/>
+  <ViewUsage
+    Name="TblRouteStopsView1"
+    ViewObjectName="model.ERP.VO.TblRouteStopsView"/>
+  <ViewUsage
+    Name="TblRouteStopsView2"
+    ViewObjectName="model.ERP.VO.TblRouteStopsView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -918,5 +924,11 @@
     ViewLinkObjectName="model.ERP.VO.FkTransFeeRecFeeGenLink"
     SrcViewUsageName="model.ERP.AppModule.TblTransFeeGenMasterView1"
     DstViewUsageName="model.ERP.AppModule.TblTransFeeRecView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKTblROuteStopFKLink1"
+    ViewLinkObjectName="model.ERP.VO.FKTblROuteStopFKLink"
+    SrcViewUsageName="model.ERP.AppModule.TblRouteView1"
+    DstViewUsageName="model.ERP.AppModule.TblRouteStopsView2"
     Reversed="false"/>
 </AppModule>

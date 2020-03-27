@@ -66,24 +66,6 @@
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_LookupSchoolBusStop"
-    ListVOName="Lookup_Bus_stop_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="LookupSchoolBusStop"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
     Name="LOV_Ast"
     ListVOName="Active_Name_LOV1"
     ListRangeSize="-1"
@@ -146,20 +128,6 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
-    Name="LookupSchoolBusStop"
-    PrecisionRule="true"
-    EntityAttrName="LookupSchoolBusStop"
-    EntityUsage="TblRoute"
-    AliasName="LOOKUP_SCHOOL_BUS_STOP"
-    LOVName="LOV_LookupSchoolBusStop">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
-  <ViewAttribute
     Name="Ast"
     PrecisionRule="true"
     EntityAttrName="Ast"
@@ -200,6 +168,11 @@
   <ViewLinkAccessor
     Name="TblRouteFeeMasterView"
     ViewLink="model.ERP.VO.FkRouteFeeMasterRouteLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblRouteStopsView"
+    ViewLink="model.ERP.VO.FKTblROuteStopFKLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

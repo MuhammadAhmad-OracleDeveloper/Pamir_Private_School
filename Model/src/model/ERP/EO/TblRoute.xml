@@ -46,13 +46,6 @@
     ColumnType="NUMBER"
     TableName="TBL_ROUTE"/>
   <Attribute
-    Name="LookupSchoolBusStop"
-    ColumnName="LOOKUP_SCHOOL_BUS_STOP"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_ROUTE"/>
-  <Attribute
     Name="Ast"
     Precision="1"
     ColumnName="AST"
@@ -108,6 +101,13 @@
     AssociationOtherEnd="model.ERP.EO.FkRouteFeeMasterRouteAssoc.TblRoute"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblRouteStops"
+    Association="model.ERP.EO.FKTblROuteStopFKAssoc"
+    AssociationEnd="model.ERP.EO.FKTblROuteStopFKAssoc.TblRouteStops"
+    AssociationOtherEnd="model.ERP.EO.FKTblROuteStopFKAssoc.TblRoute"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkRoute"
     PrimaryKey="true">
@@ -127,17 +127,6 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.ERP.EO.TblRoute.AcadYearId"/>
-    </AttrArray>
-  </Key>
-  <Key
-    Name="FkRouteLookup">
-    <DesignTime>
-      <Attr Name="_referencedKey" Value="PK_GEN_LOOKUP_MASTER"/>
-      <Attr Name="_isForeign" Value="true"/>
-      <Attr Name="_DBObjectName" Value="FK_ROUTE_LOOKUP"/>
-    </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblRoute.LookupSchoolBusStop"/>
     </AttrArray>
   </Key>
   <Key

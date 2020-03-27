@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="TblRouteFeeMasterView"
+  Name="TblRouteStopsView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -14,71 +14,55 @@
   SelectAllAttributes="false"
   PageIterMode="Full">
   <EntityUsage
-    Name="TblRouteFeeMaster"
-    Entity="model.ERP.EO.TblRouteFeeMaster"/>
+    Name="TblRouteStops"
+    Entity="model.ERP.EO.TblRouteStops"/>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Id"
-    EntityUsage="TblRouteFeeMaster"
+    EntityUsage="TblRouteStops"
     AliasName="ID"/>
-  <ViewAttribute
-    Name="AcadYearId"
-    PrecisionRule="true"
-    EntityAttrName="AcadYearId"
-    EntityUsage="TblRouteFeeMaster"
-    AliasName="ACAD_YEAR_ID"/>
   <ViewAttribute
     Name="RouteId"
     PrecisionRule="true"
     EntityAttrName="RouteId"
-    EntityUsage="TblRouteFeeMaster"
+    EntityUsage="TblRouteStops"
     AliasName="ROUTE_ID"/>
+  <ViewAttribute
+    Name="LookupSchoolBusStop"
+    PrecisionRule="true"
+    EntityAttrName="LookupSchoolBusStop"
+    EntityUsage="TblRouteStops"
+    AliasName="LOOKUP_SCHOOL_BUS_STOP"/>
   <ViewAttribute
     Name="Ast"
     PrecisionRule="true"
     EntityAttrName="Ast"
-    EntityUsage="TblRouteFeeMaster"
+    EntityUsage="TblRouteStops"
     AliasName="AST"/>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
-    EntityUsage="TblRouteFeeMaster"
+    EntityUsage="TblRouteStops"
     AliasName="CREATED_DATE"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
-    EntityUsage="TblRouteFeeMaster"
+    EntityUsage="TblRouteStops"
     AliasName="CREATED_BY"/>
   <ViewAttribute
     Name="UpdatedDate"
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
-    EntityUsage="TblRouteFeeMaster"
+    EntityUsage="TblRouteStops"
     AliasName="UPDATED_DATE"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
-    EntityUsage="TblRouteFeeMaster"
+    EntityUsage="TblRouteStops"
     AliasName="UPDATED_BY"/>
-  <ViewAttribute
-    Name="RouteStopsId"
-    PrecisionRule="true"
-    EntityAttrName="RouteStopsId"
-    EntityUsage="TblRouteFeeMaster"
-    AliasName="ROUTE_STOPS_ID"/>
-  <ViewLinkAccessor
-    Name="TblRouteFeeDetailView"
-    ViewLink="model.ERP.VO.FkRouteFeeDetailRouteMasterLink"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
-  <ViewLinkAccessor
-    Name="TblTransFeeGenDetailView"
-    ViewLink="model.ERP.VO.FkTransFeeGenDetailRouteMasterLink"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
 </ViewObject>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FKTblROuteStopFKLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.ERP.EO.FKTblROuteStopFKAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.ERP.VO.FKTblROuteStopFKLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="TblRouteView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.VO.TblRouteView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblRouteView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblRouteView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblRouteStopsView"
+    Cardinality="-1"
+    Owner="model.ERP.VO.TblRouteStopsView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblRouteStopsView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblRouteStopsView.RouteId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>
