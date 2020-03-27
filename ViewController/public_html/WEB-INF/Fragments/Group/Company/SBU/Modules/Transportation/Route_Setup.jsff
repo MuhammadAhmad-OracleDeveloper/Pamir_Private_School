@@ -22,7 +22,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Tab Label 1">
+              <af:showDetailItem id="tab1" text="Route">
                 <af:table value="#{bindings.TblRouteView1.collectionModel}" var="row"
                           rows="#{bindings.TblRouteView1.rangeSize}"
                           emptyText="#{bindings.TblRouteView1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -94,23 +94,7 @@
                       <f:validator binding="#{row.bindings.TransportId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblRouteView1.hints.LookupSchoolBusStop.name}" filterable="true"
-                             sortable="true" headerText="Bus Stop"
-                             id="c5">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.LookupSchoolBusStop}"
-                                   id="it6" placeholder="Search Bus Stop">
-                                  </af:inputText>
-                            </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.LookupSchoolBusStop.inputValue}"
-                                        label="#{row.bindings.LookupSchoolBusStop.label}"
-                                        required="#{bindings.TblRouteView1.hints.LookupSchoolBusStop.mandatory}"
-                                        shortDesc="#{bindings.TblRouteView1.hints.LookupSchoolBusStop.tooltip}"
-                                        id="soc3">
-                      <f:selectItems value="#{row.bindings.LookupSchoolBusStop.items}" id="si3"/>
-                      <f:validator binding="#{row.bindings.LookupSchoolBusStop.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
+                  
                   <af:column sortProperty="#{bindings.TblRouteView1.hints.Ast.name}" filterable="true" sortable="true"
                              headerText="Active" id="c6">
                              <f:facet name="filter">

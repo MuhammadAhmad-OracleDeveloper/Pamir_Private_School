@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57"
+                id="Transport_Fee_CollectionPageDef" Package="Fragments.Group.Company.SBU.Modules.Transportation">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblTransFeeGenMasterView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblTransFeeGenMasterView1Iterator"/>
+    <searchRegion Binds="TblTransFeeGenMasterView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblTransFeeGenMasterView1Query"/>
+    <iterator Binds="TblTransFeeRecView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblTransFeeRecView2Iterator"/>
+    <searchRegion Binds="TblTransFeeRecView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblTransFeeRecView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblTransFeeGenMasterView1Iterator" id="TblTransFeeGenMasterView1">
+      <nodeDefinition DefName="model.ERP.VO.TblTransFeeGenMasterView" Name="TblTransFeeGenMasterView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="AcadYearId"/>
+          <Item Value="GradeId"/>
+          <Item Value="TermsId"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblTransFeeRecView2Iterator" id="TblTransFeeRecView2">
+      <nodeDefinition DefName="model.ERP.VO.TblTransFeeRecView" Name="TblTransFeeRecView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="StdRegId"/>
+          <Item Value="RecType"/>
+          <Item Value="Amount"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
