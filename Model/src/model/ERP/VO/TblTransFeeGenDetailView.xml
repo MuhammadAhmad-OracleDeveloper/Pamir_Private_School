@@ -19,7 +19,7 @@
     RowLevelBinds="true"/>
   <ViewAccessor
     Name="Route_Fee_LOV1"
-    ViewObjectName="model.LOV.Route_Fee_LOV"
+    ViewObjectName="model.LOV.Route_Name_Bus_Stop_LOV"
     RowLevelBinds="true"/>
   <ViewAccessor
     Name="Active_Name_LOV1"
@@ -41,24 +41,6 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="FirstName"/>
       <Item Value="LastName"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_RouteFeeMasterId"
-    ListVOName="Route_Fee_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="RouteFeeMasterId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="RouteFeeMasterId"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Amount"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -101,15 +83,7 @@
     PrecisionRule="true"
     EntityAttrName="RouteFeeMasterId"
     EntityUsage="TblTransFeeGenDetail"
-    AliasName="ROUTE_FEE_MASTER_ID"
-    LOVName="LOV_RouteFeeMasterId">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="ROUTE_FEE_MASTER_ID"/>
   <ViewAttribute
     Name="StdRegId"
     PrecisionRule="true"
