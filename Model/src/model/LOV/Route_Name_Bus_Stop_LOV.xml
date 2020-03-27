@@ -68,6 +68,25 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_RouteStopsId1"
+    ListVOName="Lookup_Bus_stop_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RouteStopsId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblRouteFeeMaster"
     Entity="model.ERP.EO.TblRouteFeeMaster"/>
@@ -98,7 +117,8 @@
     EntityAttrName="RouteStopsId"
     EntityUsage="TblRouteFeeMaster"
     AliasName="ROUTE_STOPS_ID"
-    LOVName="LOV_RouteStopsId">
+    LOVName="LOV_RouteStopsId"
+    LOVFinder="RouteId">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
