@@ -32,9 +32,9 @@
                           rowSelection="single" fetchSize="#{bindings.TblSectionStaffView3.rangeSize}"
                           filterModel="#{bindings.TblSectionStaffView3Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblSectionStaffView3Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="">
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblSectionStaffView3.hints.GradeId.name}" filterable="true"
-                             sortable="true" headerText="Grade" id="c1">
+                             sortable="true" headerText="Grade" id="c1" width="300">
                              <f:facet name="filter">
                               <af:inputText value="#{vs.filterCriteria.GradeId}"
                                id="id4" placeholder="Search Grade">
@@ -42,13 +42,14 @@
                         </f:facet>
                     <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
                                         required="#{bindings.TblSectionStaffView3.hints.GradeId.mandatory}"
-                                        shortDesc="#{bindings.TblSectionStaffView3.hints.GradeId.tooltip}" id="soc1">
+                                        shortDesc="#{bindings.TblSectionStaffView3.hints.GradeId.tooltip}" id="soc1"
+                                        readOnly="true">
                       <f:selectItems value="#{row.bindings.GradeId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.GradeId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionStaffView3.hints.SectionId.name}" filterable="true"
-                             sortable="true" headerText="Section" id="c2">
+                             sortable="true" headerText="Section" id="c2" width="300">
                              <f:facet name="filter">
                               <af:inputText value="#{vs.filterCriteria.SectionId}"
                                id="it2" placeholder="Search Section">
@@ -57,7 +58,8 @@
                     <af:selectOneChoice value="#{row.bindings.SectionId.inputValue}"
                                         label="#{row.bindings.SectionId.label}"
                                         required="#{bindings.TblSectionStaffView3.hints.SectionId.mandatory}"
-                                        shortDesc="#{bindings.TblSectionStaffView3.hints.SectionId.tooltip}" id="soc2">
+                                        shortDesc="#{bindings.TblSectionStaffView3.hints.SectionId.tooltip}" id="soc2"
+                                        readOnly="true">
                       <f:selectItems value="#{row.bindings.SectionId.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.SectionId.validator}"/>
                     </af:selectOneChoice>
@@ -69,13 +71,7 @@
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr3">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
-             <af:panelGroupLayout id="pgl3" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s4"/>
-                            <af:iterator id="i2" var="index" varStatus="status"
-                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                                <af:spacer width="5" height="10" id="s5"/>
-                            </af:iterator>
-                        </af:panelGroupLayout>
+            
           </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr4">
@@ -91,12 +87,12 @@
                           rowSelection="single" fetchSize="#{bindings.TblSectionStaffView31.rangeSize}"
                           filterModel="#{bindings.TblSectionStaffView3Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblSectionStaffView3Query.processQuery}" varStatus="vs" id="t2"
-                          partialTriggers="">
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblSectionStaffView31.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Staff ID" id="c3">
+                             sortable="true" headerText="Staff ID" id="c3" width="80" align="center">
                              <f:facet name="filter">
                               <af:inputText value="#{vs.filterCriteria.Id}"
-                               id="it3" placeholder="Search Staff ID">
+                               id="it3" placeholder="Search  ID">
                               </af:inputText>
                              </f:facet>
                     <af:inputText value="#{row.bindings.Id.inputValue}"
@@ -104,7 +100,8 @@
                                   required="#{bindings.TblSectionStaffView31.hints.Id.mandatory}"
                                   columns="#{bindings.TblSectionStaffView31.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblSectionStaffView31.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblSectionStaffView31.hints.Id.tooltip}" id="it1" readOnly="true">
+                                  shortDesc="#{bindings.TblSectionStaffView31.hints.Id.tooltip}" id="it1" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblSectionStaffView31.hints.Id.format}"/>
@@ -125,7 +122,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionStaffView31.hints.StaffId.name}" filterable="true"
-                             sortable="true" headerText="Teacher" id="c5">
+                             sortable="true" headerText="Teacher" id="c5" width="200">
                              <f:facet name="filter">
                                <af:inputText value="#{vs.filterCriteria.StaffId}"
                                id="it5" placeholder="Search Teacher Name">
@@ -140,7 +137,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionStaffView31.hints.StaffSubjectId.name}"
                              filterable="true" sortable="true"
-                             headerText="Subject" id="c6">
+                             headerText="Subject" id="c6" width="200">
                              <f:facet name="filter">
                                <af:inputText value="#{vs.filterCriteria.StaffSubjectId}"
                                id="it6" placeholder="Search Subject">

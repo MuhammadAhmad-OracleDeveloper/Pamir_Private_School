@@ -22,7 +22,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Master Time Table">
+              <af:showDetailItem id="tab1" text="Time Table Master">
                 <af:table value="#{bindings.TblSectionTimetableMasterView1.collectionModel}" var="row"
                           rows="#{bindings.TblSectionTimetableMasterView1.rangeSize}"
                           emptyText="#{bindings.TblSectionTimetableMasterView1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -33,10 +33,10 @@
                           filterModel="#{bindings.TblSectionTimetableMasterView1Query.queryDescriptor}"
                           filterVisible="true"
                           queryListener="#{bindings.TblSectionTimetableMasterView1Query.processQuery}" varStatus="vs"
-                          id="t1">
+                          id="t1" scrollPolicy="page" autoHeightRows="0" partialTriggers="::b2 ::b3 ::b4">
                   <af:column sortProperty="#{bindings.TblSectionTimetableMasterView1.hints.Id.name}" filterable="true"
                              sortable="true" headerText="Time Table Master ID"
-                             id="c1" align="center">
+                             id="c1" align="center" width="80">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="id4" placeholder="Search ID">
@@ -47,7 +47,8 @@
                                   required="#{bindings.TblSectionTimetableMasterView1.hints.Id.mandatory}"
                                   columns="#{bindings.TblSectionTimetableMasterView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblSectionTimetableMasterView1.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblSectionTimetableMasterView1.hints.Id.tooltip}" id="it1" readOnly="true">
+                                  shortDesc="#{bindings.TblSectionTimetableMasterView1.hints.Id.tooltip}" id="it1" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblSectionTimetableMasterView1.hints.Id.format}"/>
@@ -55,7 +56,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionTimetableMasterView1.hints.Dated.name}"
                              filterable="true" sortable="true"
-                             headerText="Date" id="c2">
+                             headerText="Date" id="c2" align="center">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblSectionTimetableMasterView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
                                     id="id1" placeholder="Search Date">
@@ -66,14 +67,15 @@
                                   label="#{bindings.TblSectionTimetableMasterView1.hints.Dated.label}"
                                   required="#{bindings.TblSectionTimetableMasterView1.hints.Dated.mandatory}"
                                   columns="#{bindings.TblSectionTimetableMasterView1.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.TblSectionTimetableMasterView1.hints.Dated.tooltip}" id="id2">
+                                  shortDesc="#{bindings.TblSectionTimetableMasterView1.hints.Dated.tooltip}" id="id2"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblSectionTimetableMasterView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionTimetableMasterView1.hints.GradeId.name}"
                              filterable="true" sortable="true"
-                             headerText="Grade" id="c3">
+                             headerText="Grade" id="c3" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.GradeId}"
                                    id="it4" placeholder="Search Grade">
@@ -89,7 +91,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionTimetableMasterView1.hints.SectionId.name}"
                              filterable="true" sortable="true"
-                             headerText="Section" id="c4">
+                             headerText="Section" id="c4" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.SectionId}"
                                    id="it6" placeholder="Search Section">
@@ -138,17 +140,22 @@
                     </af:selectOneChoice>
                   </af:column>
                 </af:table>
+                
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr3">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
-             <af:panelGroupLayout id="pgl3" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s4"/>
-                            <af:iterator id="i2" var="index" varStatus="status"
+             <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                                <af:spacer width="5" height="10" id="s5"/>
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s2"/>
                             </af:iterator>
                         </af:panelGroupLayout>
           </af:gridCell>
@@ -156,7 +163,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr4">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
             <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab2" text="Detail Time Table">
+              <af:showDetailItem id="tab2" text="Time Table Detail">
                 <af:table value="#{bindings.TblSectionTimetableDetailView3.collectionModel}" var="row"
                           rows="#{bindings.TblSectionTimetableDetailView3.rangeSize}"
                           emptyText="#{bindings.TblSectionTimetableDetailView3.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -167,7 +174,7 @@
                           filterModel="#{bindings.TblSectionTimetableDetailView3Query.queryDescriptor}"
                           filterVisible="true"
                           queryListener="#{bindings.TblSectionTimetableDetailView3Query.processQuery}" varStatus="vs"
-                          id="t2" partialTriggers="">
+                          id="t2" scrollPolicy="page" autoHeightRows="0" partialTriggers="::b2 ::b3 ::b4">
                   <af:column sortProperty="#{bindings.TblSectionTimetableDetailView3.hints.Id.name}" filterable="true"
                              sortable="true" headerText="Time Table Detail ID"
                              id="c7" align="center">
@@ -181,7 +188,8 @@
                                   required="#{bindings.TblSectionTimetableDetailView3.hints.Id.mandatory}"
                                   columns="#{bindings.TblSectionTimetableDetailView3.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblSectionTimetableDetailView3.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblSectionTimetableDetailView3.hints.Id.tooltip}" id="it2" readOnly="true">
+                                  shortDesc="#{bindings.TblSectionTimetableDetailView3.hints.Id.tooltip}" id="it2" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblSectionTimetableDetailView3.hints.Id.format}"/>
@@ -222,24 +230,24 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionTimetableDetailView3.hints.WeekDays.name}"
                              filterable="true" sortable="true"
-                             headerText="Week Days" id="c10">
+                             headerText="Week Days" id="c10" align="center">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.WeekDays}"
-                                   id="it10" placeholder="Search Week Days">
+                                   id="it10" placeholder="Search Days">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.WeekDays.inputValue}"
                                         label="#{row.bindings.WeekDays.label}"
                                         required="#{bindings.TblSectionTimetableDetailView3.hints.WeekDays.mandatory}"
                                         shortDesc="#{bindings.TblSectionTimetableDetailView3.hints.WeekDays.tooltip}"
-                                        id="soc7">
+                                        id="soc7" contentStyle='text-align: center'>
                       <f:selectItems value="#{row.bindings.WeekDays.items}" id="si7"/>
                       <f:validator binding="#{row.bindings.WeekDays.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionTimetableDetailView3.hints.FromTime.name}"
                              filterable="true" sortable="true"
-                             headerText="From Time" id="c11">
+                             headerText="From Time" id="c11" align="center">
                              
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblSectionTimetableDetailView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FromTime.value}"
@@ -252,14 +260,15 @@
                                   required="#{bindings.TblSectionTimetableDetailView3.hints.FromTime.mandatory}"
                                   columns="#{bindings.TblSectionTimetableDetailView3.hints.FromTime.displayWidth}"
                                   shortDesc="#{bindings.TblSectionTimetableDetailView3.hints.FromTime.tooltip}"
-                                  id="id8">
+                                  id="id8" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FromTime.validator}"/>
+                      <af:convertDateTime pattern="HH:mm"/>
                       <af:convertDateTime pattern="#{bindings.TblSectionTimetableDetailView3.hints.FromTime.format}"/>
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionTimetableDetailView3.hints.ToTime.name}"
                              filterable="true" sortable="true"
-                             headerText="To Time" id="c12">
+                             headerText="To Time" id="c12" align="center">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblSectionTimetableDetailView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.ToTime.value}"
                                     id="id5" placeholder="Search To Time">
@@ -270,14 +279,16 @@
                                   label="#{bindings.TblSectionTimetableDetailView3.hints.ToTime.label}"
                                   required="#{bindings.TblSectionTimetableDetailView3.hints.ToTime.mandatory}"
                                   columns="#{bindings.TblSectionTimetableDetailView3.hints.ToTime.displayWidth}"
-                                  shortDesc="#{bindings.TblSectionTimetableDetailView3.hints.ToTime.tooltip}" id="id6">
+                                  shortDesc="#{bindings.TblSectionTimetableDetailView3.hints.ToTime.tooltip}" id="id6"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.ToTime.validator}"/>
+                      <af:convertDateTime pattern="HH:mm"/>
                       <af:convertDateTime pattern="#{bindings.TblSectionTimetableDetailView3.hints.ToTime.format}"/>
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionTimetableDetailView3.hints.TimeDiff.name}"
                              filterable="true" sortable="true"
-                             headerText="Duration" id="c13">
+                             headerText="Duration" id="c13" align="center">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.TimeDiff}"
                                    id="it13" placeholder="Search Duation">
@@ -289,7 +300,7 @@
                                   columns="#{bindings.TblSectionTimetableDetailView3.hints.TimeDiff.displayWidth}"
                                   maximumLength="#{bindings.TblSectionTimetableDetailView3.hints.TimeDiff.precision}"
                                   shortDesc="#{bindings.TblSectionTimetableDetailView3.hints.TimeDiff.tooltip}"
-                                  id="it3">
+                                  id="it3" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.TimeDiff.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblSectionTimetableDetailView3.hints.TimeDiff.format}"/>
@@ -312,21 +323,22 @@
                     </af:selectOneChoice>
                   </af:column>
                 </af:table>
+                
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
-             <af:panelGroupLayout id="pgl2" layout="horizontal">
-                            <af:iterator id="i1" var="index" varStatus="status"
+             <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
                                 </af:button>
-                                <af:spacer width="5" height="10" id="s2"/>
+                                <af:spacer width="5" height="10" id="s3"/>
                             </af:iterator>
                         </af:panelGroupLayout>
            </af:gridCell>
