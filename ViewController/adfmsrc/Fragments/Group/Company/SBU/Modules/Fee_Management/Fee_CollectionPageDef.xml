@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Fee_CollectionPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.Fee_Management">
+  <parameters/>
+  <executables>
+    <iterator Binds="TblFeeRecView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblFeeRecView1Iterator"/>
+    <searchRegion Binds="TblFeeRecView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFeeRecView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblFeeRecView1Iterator" id="TblFeeRecView1">
+      <nodeDefinition DefName="model.ERP.VO.TblFeeRecView" Name="TblFeeRecView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="FeeGenDetailId"/>
+          <Item Value="RecType"/>
+          <Item Value="Amount"/>
+          <Item Value="ChqNo"/>
+          <Item Value="ChqDate"/>
+          <Item Value="Bank"/>
+          <Item Value="Remarks"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
