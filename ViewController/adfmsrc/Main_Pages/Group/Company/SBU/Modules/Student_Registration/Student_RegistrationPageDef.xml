@@ -4,14 +4,14 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="Student_Registration_Pages1" DataControl="AppModuleDataControl"
-              id="Student_Registration_Pages1Iterator" CacheResults="false" Refresh="always"/>
-    <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.StudentRegistrationSidebarBean.dynamicTaskFlowId}"
+    <iterator Binds="Student_Management_Pages1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Student_Management_Pages1Iterator"/>
+    <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.StudentManagementSidebarBean.dynamicTaskFlowId}"
               activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
   <bindings>
-    <tree IterBinding="Student_Registration_Pages1Iterator" id="Student_Registration_Pages1">
-      <nodeDefinition DefName="model.UserRoles.VO.Student_Registration_Pages" Name="Student_Registration_Pages10">
+    <tree IterBinding="Student_Management_Pages1Iterator" id="Student_Management_Pages1">
+      <nodeDefinition DefName="model.UserRoles.VO.Student_Management_Pages" Name="Student_Management_Pages10">
         <AttrNames>
           <Item Value="Id"/>
           <Item Value="Name"/>

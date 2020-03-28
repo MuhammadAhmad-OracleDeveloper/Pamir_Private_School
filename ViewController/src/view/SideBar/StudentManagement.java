@@ -6,11 +6,11 @@ import javax.faces.event.ActionEvent;
 
 import oracle.adf.controller.TaskFlowId;
 
-public class StudentRegistration implements Serializable {
+public class StudentManagement implements Serializable {
     private String taskFlowId =
-        "/WEB-INF/TaskFlows/Group/Company/SBU/Modules/Student_Registration/Student_Registration_TaskFlow.xml#Student_Registration_TaskFlow";
+        "/WEB-INF/TaskFlows/Group/Company/SBU/Modules/Student_Management/Student_Management_TaskFlow.xml#Student_Registration_TaskFlow";
 
-    public StudentRegistration() {
+    public StudentManagement() {
     }
 
     public TaskFlowId getDynamicTaskFlowId() {
@@ -19,13 +19,13 @@ public class StudentRegistration implements Serializable {
 
     public void setDynamicTaskFlowId(String taskFlowId) {
         this.taskFlowId = taskFlowId;
-    }
+    }   
     
     public void fragmentCall(ActionEvent actionEvent) {
         // Add event code here...
         String action = (String)actionEvent.getComponent().getAttributes().get("link");
         StringBuilder link = new StringBuilder();
-        link.append("/WEB-INF/TaskFlows/Group/Company/SBU/Modules/Student_Registration/");
+        link.append("/WEB-INF/TaskFlows/Group/Company/SBU/Modules/Student_Management/");
         link.append(action);
         link.append(".xml#");
         link.append(action);

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
-  <task-flow-definition id="Student_Regstr_TaskFlow">
+  <task-flow-definition id="Student_Enquiry_TaskFlow">
     <default-activity>ExecuteWithParams</default-activity>
     <data-control-scope>
       <shared/>
     </data-control-scope>
-    <view id="Student_Regstr">
-      <page>/WEB-INF/Fragments/Group/Company/SBU/Modules/Student_Registration/Student_Regstr.jsff</page>
+    <view id="Student_Enquiry">
+      <page>/WEB-INF/Fragments/Group/Company/SBU/Modules/Student_Management/Student_Enquiry.jsff</page>
     </view>
     <method-call id="ExecuteWithParams">
       <method>#{bindings.ExecuteWithParams.execute}</method>
@@ -18,7 +18,7 @@
       <from-activity-id>ExecuteWithParams</from-activity-id>
       <control-flow-case id="__2">
         <from-outcome>ExecuteWithParams</from-outcome>
-        <to-activity-id>Student_Regstr</to-activity-id>
+        <to-activity-id>Student_Enquiry</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <use-page-fragments/>
