@@ -31,6 +31,10 @@
     Name="Lookup_Bus_stop_LOV1"
     ViewObjectName="model.LOV.Lookup_Bus_stop_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Bus_stop_LOV2"
+    ViewObjectName="model.LOV.Lookup_Bus_stop_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_RouteId"
     ListVOName="Route_Name_LOV1"
@@ -51,26 +55,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_RouteStopsId"
-    ListVOName="Route_Name_Bus_Stop_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="RouteStopsId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="RouteStopsId"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_RouteStopsId1"
-    ListVOName="Lookup_Bus_stop_LOV1"
+    ListVOName="Lookup_Bus_stop_LOV2"
     ListRangeSize="-1"
     NullValueFlag="start"
     NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
@@ -117,12 +102,11 @@
     EntityAttrName="RouteStopsId"
     EntityUsage="TblRouteFeeMaster"
     AliasName="ROUTE_STOPS_ID"
-    LOVName="LOV_RouteStopsId"
-    LOVFinder="RouteId">
+    LOVName="LOV_RouteStopsId">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
-          Value="combo"/>
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
