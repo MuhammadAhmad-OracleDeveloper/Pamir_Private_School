@@ -13,6 +13,73 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Student_Reg_LOV1"
+    ViewObjectName="model.LOV.Student_Reg_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Application_type_LOV1"
+    ViewObjectName="model.LOV.Application_type_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="FeeGenDetail_Student_Name_LOV1"
+    ViewObjectName="model.LOV.FeeGenDetail_Student_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ApplType"
+    ListVOName="Application_type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ApplType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_FeeGenDetailId"
+    ListVOName="FeeGenDetail_Student_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FeeGenDetailId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="StdRegId"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_StdRegId"
+    ListVOName="Student_Reg_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StdRegId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FirstName"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblStdAppl"
     Entity="model.ERP.EO.TblStdAppl"/>
@@ -28,7 +95,15 @@
     PrecisionRule="true"
     EntityAttrName="StdRegId"
     EntityUsage="TblStdAppl"
-    AliasName="STD_REG_ID"/>
+    AliasName="STD_REG_ID"
+    LOVName="LOV_StdRegId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Dated"
     PrecisionRule="true"
@@ -40,13 +115,29 @@
     PrecisionRule="true"
     EntityAttrName="ApplType"
     EntityUsage="TblStdAppl"
-    AliasName="APPL_TYPE"/>
+    AliasName="APPL_TYPE"
+    LOVName="LOV_ApplType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FeeGenDetailId"
     PrecisionRule="true"
     EntityAttrName="FeeGenDetailId"
     EntityUsage="TblStdAppl"
-    AliasName="FEE_GEN_DETAIL_ID"/>
+    AliasName="FEE_GEN_DETAIL_ID"
+    LOVName="LOV_FeeGenDetailId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Amount"
     PrecisionRule="true"
