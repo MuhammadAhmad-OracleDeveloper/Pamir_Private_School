@@ -4,13 +4,12 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TblTransportView1" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblTransportView1" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblTransportView1Iterator"/>
     <searchRegion Binds="TblTransportView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblTransportView1Query"/>
-    <iterator Binds="TblRouteView2" RangeSize="25" DataControl="AppModuleDataControl1" id="TblRouteView2Iterator"/>
-    <searchRegion Binds="TblRouteView2Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblRouteView2Query"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="TblTransportView1Iterator" id="TblTransportView1">
@@ -33,14 +32,14 @@
     <action IterBinding="TblTransportView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
-    <tree IterBinding="TblRouteView2Iterator" id="TblRouteView2">
-      <nodeDefinition DefName="model.ERP.VO.TblRouteView" Name="TblRouteView20">
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
         <AttrNames>
-          <Item Value="Id"/>
-          <Item Value="AcadYearId"/>
-          <Item Value="RouteName"/>
-          <Item Value="TransportId"/>
-          <Item Value="Ast"/>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

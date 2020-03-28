@@ -6,13 +6,20 @@
   Name="TblTransFeeGenDetailView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblTransFeeGenDetail.ID, 
+       TblTransFeeGenDetail.TRANS_FEE_GEN_MASTER_ID, 
+       TblTransFeeGenDetail.ROUTE_FEE_MASTER_ID, 
+       TblTransFeeGenDetail.STD_REG_ID, 
+       TblTransFeeGenDetail.AMOUNT, 
+       TblTransFeeGenDetail.AST, 
+       TblTransFeeGenDetail.CREATED_DATE, 
+       TblTransFeeGenDetail.CREATED_BY, 
+       TblTransFeeGenDetail.UPDATED_DATE, 
+       TblTransFeeGenDetail.UPDATED_BY"
+  FromList="TBL_TRANS_FEE_GEN_DETAIL TblTransFeeGenDetail">
   <ViewAccessor
     Name="Student_Reg_LOV1"
     ViewObjectName="model.LOV.Student_Reg_LOV"
