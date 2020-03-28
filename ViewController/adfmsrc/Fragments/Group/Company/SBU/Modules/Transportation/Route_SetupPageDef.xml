@@ -4,9 +4,15 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TblRouteView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblRouteView1Iterator"/>
+    <iterator Binds="TblRouteView1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblRouteView1Iterator"/>
     <searchRegion Binds="TblRouteView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblRouteView1Query"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblRouteStopsView2" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblRouteStopsView2Iterator"/>
+    <searchRegion Binds="TblRouteStopsView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblRouteStopsView2Query"/>
   </executables>
   <bindings>
     <tree IterBinding="TblRouteView1Iterator" id="TblRouteView1">
@@ -29,5 +35,30 @@
     <action IterBinding="TblRouteView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblRouteStopsView2Iterator" id="TblRouteStopsView2">
+      <nodeDefinition DefName="model.ERP.VO.TblRouteStopsView" Name="TblRouteStopsView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="LookupSchoolBusStop"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblRouteStopsView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblRouteStopsView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblRouteStopsView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

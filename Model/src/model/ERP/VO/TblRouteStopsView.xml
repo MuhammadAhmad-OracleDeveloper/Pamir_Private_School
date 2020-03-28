@@ -13,6 +13,50 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Active_Name_LOV1"
+    ViewObjectName="model.LOV.Active_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Bus_stop_LOV1"
+    ViewObjectName="model.LOV.Lookup_Bus_stop_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Ast"
+    ListVOName="Active_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Ast"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LookupSchoolBusStop"
+    ListVOName="Lookup_Bus_stop_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LookupSchoolBusStop"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblRouteStops"
     Entity="model.ERP.EO.TblRouteStops"/>
@@ -34,13 +78,29 @@
     PrecisionRule="true"
     EntityAttrName="LookupSchoolBusStop"
     EntityUsage="TblRouteStops"
-    AliasName="LOOKUP_SCHOOL_BUS_STOP"/>
+    AliasName="LOOKUP_SCHOOL_BUS_STOP"
+    LOVName="LOV_LookupSchoolBusStop">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Ast"
     PrecisionRule="true"
     EntityAttrName="Ast"
     EntityUsage="TblRouteStops"
-    AliasName="AST"/>
+    AliasName="AST"
+    LOVName="LOV_Ast">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"

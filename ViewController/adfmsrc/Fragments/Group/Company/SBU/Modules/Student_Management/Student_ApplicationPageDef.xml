@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Student_ApplicationPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.Student_Management">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblStdApplView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblStdApplView1Iterator"/>
+    <searchRegion Binds="TblStdApplView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStdApplView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblStdApplView1Iterator" id="TblStdApplView1">
+      <nodeDefinition DefName="model.ERP.VO.TblStdApplView" Name="TblStdApplView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="StdRegId"/>
+          <Item Value="Dated"/>
+          <Item Value="ApplType"/>
+          <Item Value="FeeGenDetailId"/>
+          <Item Value="Amount"/>
+          <Item Value="ApplStatus"/>
+          <Item Value="FromDate"/>
+          <Item Value="ToDate"/>
+          <Item Value="ApplReason"/>
+          <Item Value="MgtRemarks"/>
+          <Item Value="PrincRemarks"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblStdApplView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblStdApplView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblStdApplView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+  </bindings>
+</pageDefinition>
