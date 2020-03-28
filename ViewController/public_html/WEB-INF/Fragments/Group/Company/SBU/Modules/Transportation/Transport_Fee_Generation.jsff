@@ -185,7 +185,7 @@
                              headerText="Route/Bus Stop" id="c7" align="center">
                              <f:facet name="filter">
                                       <af:inputText value="#{vs.filterCriteria.RouteFeeMasterId}"
-                                       id="it9" placeholder="Search Route/Bus Stop">
+                                       id="it10" placeholder="Search Route/Bus Stop">
                                       </af:inputText>
                                 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.RouteFeeMasterId.inputValue}"
@@ -217,9 +217,8 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblTransFeeGenDetailView3.hints.Ast.name}" filterable="true"
-                             sortable="true" headerText="Active"
-                             id="c10">
-                             d="c9">
+                             sortable="true" headerText="Active"  id="c10">
+                             
                               <f:facet name="filter">
                                       <af:inputText value="#{vs.filterCriteria.Ast}"
                                        id="it12" placeholder="Search Status">
