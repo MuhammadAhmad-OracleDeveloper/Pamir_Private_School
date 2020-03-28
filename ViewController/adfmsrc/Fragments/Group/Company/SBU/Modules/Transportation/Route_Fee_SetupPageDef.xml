@@ -4,14 +4,16 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TblRouteFeeMasterView1" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblRouteFeeMasterView1" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblRouteFeeMasterView1Iterator"/>
     <searchRegion Binds="TblRouteFeeMasterView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblRouteFeeMasterView1Query"/>
-    <iterator Binds="TblRouteFeeDetailView2" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblRouteFeeDetailView2" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblRouteFeeDetailView2Iterator"/>
     <searchRegion Binds="TblRouteFeeDetailView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblRouteFeeDetailView2Query"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="TblRouteFeeMasterView1Iterator" id="TblRouteFeeMasterView1">
@@ -35,13 +37,30 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="TblRouteFeeDetailView2Iterator" id="CreateInsert" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
-    <action IterBinding="TblRouteFeeDetailView2Iterator" id="Execute" RequiresUpdateModel="true"
-            Action="iteratorExecute"/>
-    <action IterBinding="TblRouteFeeDetailView2Iterator" id="Delete" RequiresUpdateModel="false"
-            Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <action IterBinding="TblRouteFeeMasterView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblRouteFeeMasterView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblRouteFeeMasterView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="TblRouteFeeDetailView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblRouteFeeDetailView2Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblRouteFeeDetailView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

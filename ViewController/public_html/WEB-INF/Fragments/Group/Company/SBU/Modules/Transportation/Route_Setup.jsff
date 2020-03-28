@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
+ 
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
     <af:showDetailItem id="pane1" text="Route Setup">
          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
@@ -22,7 +23,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Route">
+              <af:showDetailItem id="tab1" text="Route Setup">
                 <af:table value="#{bindings.TblRouteView1.collectionModel}" var="row"
                           rows="#{bindings.TblRouteView1.rangeSize}"
                           emptyText="#{bindings.TblRouteView1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -31,9 +32,9 @@
                           rowSelection="single" fetchSize="#{bindings.TblRouteView1.rangeSize}"
                           filterModel="#{bindings.TblRouteView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblRouteView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="">
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblRouteView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="ID" id="c1">
+                             headerText="Route Setup ID" id="c1" align="center" width="80">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="id4" placeholder="Search ID">
@@ -43,7 +44,8 @@
                                   required="#{bindings.TblRouteView1.hints.Id.mandatory}"
                                   columns="#{bindings.TblRouteView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblRouteView1.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblRouteView1.hints.Id.tooltip}" id="it1" readOnly="true">
+                                  shortDesc="#{bindings.TblRouteView1.hints.Id.tooltip}" id="it1" 
+                                  readOnly="true" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblRouteView1.hints.Id.format}"/>
                     </af:inputText>
@@ -52,7 +54,7 @@
                              sortable="true" headerText="Academic Year" id="c2">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.AcadYearId}"
-                                   id="it3" placeholder="Search Academic Year">
+                                   id="it3" placeholder="Search Year">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
@@ -64,10 +66,10 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblRouteView1.hints.RouteName.name}" filterable="true"
-                             sortable="true" headerText="Route Name" id="c3">
+                             sortable="true" headerText="Route" id="c3" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.RouteName}"
-                                   id="it4" placeholder="Search Route Name">
+                                   id="it4" placeholder="Search Route ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.RouteName.inputValue}"
@@ -80,7 +82,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblRouteView1.hints.TransportId.name}" filterable="true"
-                             sortable="true" headerText="Transport No." id="c4">
+                             sortable="true" headerText="Transport No." id="c4" align="center">
                               <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.TransportId}"
                                    id="it5" placeholder="Search Transport No.">
@@ -89,7 +91,8 @@
                     <af:selectOneChoice value="#{row.bindings.TransportId.inputValue}"
                                         label="#{row.bindings.TransportId.label}"
                                         required="#{bindings.TblRouteView1.hints.TransportId.mandatory}"
-                                        shortDesc="#{bindings.TblRouteView1.hints.TransportId.tooltip}" id="soc2">
+                                        shortDesc="#{bindings.TblRouteView1.hints.TransportId.tooltip}" 
+                                        id="soc2" contentStyle='text-align: center'>
                       <f:selectItems value="#{row.bindings.TransportId.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.TransportId.validator}"/>
                     </af:selectOneChoice>
@@ -117,17 +120,112 @@
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr3">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
-             <af:panelGroupLayout id="pgl3" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s4"/>
+            <af:panelGroupLayout id="pgl3" layout="horizontal">
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                
-              </af:iterator>
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s5"/>
+                            </af:iterator>
                         </af:panelGroupLayout>
           </af:gridCell>
         </af:gridRow>
-        
+        <af:gridRow marginTop="5px" height="auto" id="gr6">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
+             
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr4">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+            <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab2" text="Rout Stop">
+                <af:table value="#{bindings.TblRouteStopsView2.collectionModel}" var="row"
+                          rows="#{bindings.TblRouteStopsView2.rangeSize}"
+                          emptyText="#{bindings.TblRouteStopsView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblRouteStopsView2.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblRouteStopsView2.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblRouteStopsView2.rangeSize}"
+                          filterModel="#{bindings.TblRouteStopsView2Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblRouteStopsView2Query.processQuery}" varStatus="vs" id="t2"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblRouteStopsView2.hints.Id.name}" filterable="true"
+                             sortable="true" headerText="Rout Stop ID" id="c5" width="80" align="center">
+                    <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="it8" placeholder="Search ID">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblRouteStopsView2.hints.Id.label}"
+                                  required="#{bindings.TblRouteStopsView2.hints.Id.mandatory}"
+                                  columns="#{bindings.TblRouteStopsView2.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblRouteStopsView2.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblRouteStopsView2.hints.Id.tooltip}" id="it6"
+                                  readOnly="true"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblRouteStopsView2.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblRouteStopsView2.hints.LookupSchoolBusStop.name}"
+                             filterable="true" sortable="true"
+                             headerText="Rout Stop" id="c7" width="300">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.LookupSchoolBusStop}"
+       id="it9" placeholder="Search Stop">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.LookupSchoolBusStop.inputValue}"
+                                        label="#{row.bindings.LookupSchoolBusStop.label}"
+                                        required="#{bindings.TblRouteStopsView2.hints.LookupSchoolBusStop.mandatory}"
+                                        shortDesc="#{bindings.TblRouteStopsView2.hints.LookupSchoolBusStop.tooltip}"
+                                        id="soc3">
+                      <f:selectItems value="#{row.bindings.LookupSchoolBusStop.items}" id="si3"/>
+                      <f:validator binding="#{row.bindings.LookupSchoolBusStop.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblRouteStopsView2.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="Active" id="c8">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ast}"
+       id="it10" placeholder="Search Active">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblRouteStopsView2.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblRouteStopsView2.hints.Ast.tooltip}" id="soc5">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si5"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+                
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+             <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+           </af:gridCell>
+        </af:gridRow>
+      
       </af:panelGridLayout>
+      
     </af:showDetailItem>
   </af:panelAccordion>
 </ui:composition>
