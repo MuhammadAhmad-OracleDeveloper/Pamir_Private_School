@@ -36,6 +36,14 @@
     Name="Route_Name_Bus_Stop_LOV1"
     ViewObjectName="model.LOV.Route_Name_Bus_Stop_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Route_Name_Bus_Stop_LOV2"
+    ViewObjectName="model.LOV.Route_Name_Bus_Stop_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Route_Name_Bus_Stop_LOV3"
+    ViewObjectName="model.LOV.Route_Name_Bus_Stop_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_StdRegId"
     ListVOName="Student_Reg_LOV1"
@@ -75,7 +83,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_RouteFeeMasterId"
-    ListVOName="Route_Name_Bus_Stop_LOV1"
+    ListVOName="Route_Name_Bus_Stop_LOV3"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
@@ -84,11 +92,11 @@
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
+      <Item Value="Id1"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="RouteId"/>
-      <Item Value="RouteStopsId"/>
+      <Item Value="Name"/>
+      <Item Value="RouteName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>

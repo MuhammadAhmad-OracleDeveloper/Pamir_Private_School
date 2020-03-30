@@ -190,7 +190,7 @@
                       <f:validator binding="#{row.bindings.StdRegId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblTransFeeGenDetailView2.hints.RouteFeeMasterId.name}"
+                  <af:column sortProperty="#{bindings.TblTransFeeGenDetailView3.hints.RouteFeeMasterId.name}"
                              filterable="true" sortable="true"
                              headerText="Route Bus Stop" id="c7" align="center" width="200">
                              <f:facet name="filter">
@@ -200,8 +200,8 @@
                                 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.RouteFeeMasterId.inputValue}"
                                         label="#{row.bindings.RouteFeeMasterId.label}"
-                                        required="#{bindings.TblTransFeeGenDetailView2.hints.RouteFeeMasterId.mandatory}"
-                                        shortDesc="#{bindings.TblTransFeeGenDetailView2.hints.RouteFeeMasterId.tooltip}"
+                                        required="#{bindings.TblTransFeeGenDetailView3.hints.RouteFeeMasterId.mandatory}"
+                                        shortDesc="#{bindings.TblTransFeeGenDetailView3.hints.RouteFeeMasterId.tooltip}"
                                         id="soc5">
                       <f:selectItems value="#{row.bindings.RouteFeeMasterId.items}" id="si5"/>
                       <f:validator binding="#{row.bindings.RouteFeeMasterId.validator}"/>
