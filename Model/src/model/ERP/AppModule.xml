@@ -436,6 +436,21 @@
   <ViewUsage
     Name="TblStdApplView1"
     ViewObjectName="model.ERP.VO.TblStdApplView"/>
+  <ViewUsage
+    Name="TblStudyWeekPlanDetailView1"
+    ViewObjectName="model.ERP.VO.TblStudyWeekPlanDetailView"/>
+  <ViewUsage
+    Name="TblStudyWeekPlanMasterView1"
+    ViewObjectName="model.ERP.VO.TblStudyWeekPlanMasterView"/>
+  <ViewUsage
+    Name="TblWeekView1"
+    ViewObjectName="model.ERP.VO.TblWeekView"/>
+  <ViewUsage
+    Name="TblStudyWeekPlanDetailView2"
+    ViewObjectName="model.ERP.VO.TblStudyWeekPlanDetailView"/>
+  <ViewUsage
+    Name="TblStudyWeekPlanMasterView2"
+    ViewObjectName="model.ERP.VO.TblStudyWeekPlanMasterView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -939,5 +954,17 @@
     ViewLinkObjectName="model.ERP.VO.FKTblROuteStopFKLink"
     SrcViewUsageName="model.ERP.AppModule.TblRouteView1"
     DstViewUsageName="model.ERP.AppModule.TblRouteStopsView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkStudyWeekPlanDetailMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkStudyWeekPlanDetailMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblStudyWeekPlanMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblStudyWeekPlanDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkStudyWeekPlanMasterWeekLink1"
+    ViewLinkObjectName="model.ERP.VO.FkStudyWeekPlanMasterWeekLink"
+    SrcViewUsageName="model.ERP.AppModule.TblWeekView1"
+    DstViewUsageName="model.ERP.AppModule.TblStudyWeekPlanMasterView2"
     Reversed="false"/>
 </AppModule>

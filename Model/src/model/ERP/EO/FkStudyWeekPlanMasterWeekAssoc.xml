@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkStudyWeekPlanMasterWeekAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblWeek"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.EO.TblWeek">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblWeek"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblWeek.PkWeek"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblWeek.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblStudyWeekPlanMaster"
+    Cardinality="-1"
+    Owner="model.ERP.EO.TblStudyWeekPlanMaster">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblStudyWeekPlanMaster"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblStudyWeekPlanMaster.FkStudyWeekPlanMasterWeek"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblStudyWeekPlanMaster.WeekId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>
