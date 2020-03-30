@@ -4,14 +4,16 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TblGradeFeeMasterView1" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblGradeFeeMasterView1" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblGradeFeeMasterView1Iterator"/>
     <searchRegion Binds="TblGradeFeeMasterView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGradeFeeMasterView1Query"/>
-    <iterator Binds="TblGradeFeeDetailView2" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblGradeFeeDetailView2" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblGradeFeeDetailView2Iterator"/>
     <searchRegion Binds="TblGradeFeeDetailView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGradeFeeDetailView2Query"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="TblGradeFeeMasterView1Iterator" id="TblGradeFeeMasterView1">
@@ -39,12 +41,6 @@
     </attributeValues>
     <list IterBinding="TblGradeFeeDetailView2Iterator" StaticList="false" Uses="LOV_Ast" id="Ast"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <action IterBinding="TblGradeFeeDetailView2Iterator" id="CreateInsert" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
-    <action IterBinding="TblGradeFeeDetailView2Iterator" id="Execute" RequiresUpdateModel="true"
-            Action="iteratorExecute"/>
-    <action IterBinding="TblGradeFeeDetailView2Iterator" id="Delete" RequiresUpdateModel="false"
-            Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
     <tree IterBinding="TblGradeFeeDetailView2Iterator" id="TblGradeFeeDetailView2">
@@ -57,5 +53,28 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblGradeFeeMasterView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblGradeFeeMasterView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblGradeFeeMasterView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="TblGradeFeeDetailView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblGradeFeeDetailView2Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblGradeFeeDetailView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

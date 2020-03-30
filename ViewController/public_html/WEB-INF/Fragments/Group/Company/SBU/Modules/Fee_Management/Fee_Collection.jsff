@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
+  
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
     <af:showDetailItem id="pane1" text="Fee Collection">
          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
@@ -22,7 +23,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Fee Collection Form">
+              <af:showDetailItem id="tab1" text="Fee Collection">
                 <af:table value="#{bindings.TblFeeRecView1.collectionModel}" var="row"
                           rows="#{bindings.TblFeeRecView1.rangeSize}"
                           emptyText="#{bindings.TblFeeRecView1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -32,9 +33,9 @@
                           rowSelection="single" fetchSize="#{bindings.TblFeeRecView1.rangeSize}"
                           filterModel="#{bindings.TblFeeRecView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblFeeRecView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="::i2:b2 ::i2:b3 ::i2:b4">
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblFeeRecView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="ID" id="c1">
+                             headerText="Fee Receive ID" id="c1" align="center" width="80">
                               <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="it9" placeholder="Search ID">
@@ -45,13 +46,14 @@
                                   required="#{bindings.TblFeeRecView1.hints.Id.mandatory}"
                                   columns="#{bindings.TblFeeRecView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblFeeRecView1.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblFeeRecView1.hints.Id.tooltip}" id="it1" readOnly="true">
+                                  shortDesc="#{bindings.TblFeeRecView1.hints.Id.tooltip}" id="it1" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFeeRecView1.hints.Id.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFeeRecView1.hints.Dated.name}" filterable="true"
-                             sortable="true" headerText="Date" id="c2">
+                             sortable="true" headerText="Date" id="c2" align="center">
                              
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblFeeRecView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
@@ -63,16 +65,17 @@
                                   label="#{bindings.TblFeeRecView1.hints.Dated.label}"
                                   required="#{bindings.TblFeeRecView1.hints.Dated.mandatory}"
                                   columns="#{bindings.TblFeeRecView1.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.TblFeeRecView1.hints.Dated.tooltip}" id="id2">
+                                  shortDesc="#{bindings.TblFeeRecView1.hints.Dated.tooltip}" id="id2"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblFeeRecView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFeeRecView1.hints.FeeGenDetailId.name}" filterable="true"
-                             sortable="true" headerText="Student Name" id="c3">
+                             sortable="true" headerText="Student" id="c3" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.FeeGenDetailId}"
-                                   id="it6" placeholder="Search Student Name">
+                                   id="it6" placeholder="Search Student">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.FeeGenDetailId.inputValue}"
@@ -87,7 +90,7 @@
                              sortable="true" headerText="Recieve Type" id="c4">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.RecType}"
-                                   id="it7" placeholder="Search Recieve Type">
+                                   id="it7" placeholder="Search Type">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.RecType.inputValue}" label="#{row.bindings.RecType.label}"
@@ -98,7 +101,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFeeRecView1.hints.Amount.name}" filterable="true"
-                             sortable="true" headerText="Amount" id="c5">
+                             sortable="true" headerText="Amount" id="c5" align="center">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Amount}"
                                    id="it8" placeholder="Search Amount">
@@ -109,16 +112,17 @@
                                   required="#{bindings.TblFeeRecView1.hints.Amount.mandatory}"
                                   columns="#{bindings.TblFeeRecView1.hints.Amount.displayWidth}"
                                   maximumLength="#{bindings.TblFeeRecView1.hints.Amount.precision}"
-                                  shortDesc="#{bindings.TblFeeRecView1.hints.Amount.tooltip}" id="it2">
+                                  shortDesc="#{bindings.TblFeeRecView1.hints.Amount.tooltip}" id="it2"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Amount.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFeeRecView1.hints.Amount.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFeeRecView1.hints.ChqNo.name}" filterable="true"
-                             sortable="true" headerText="Bank Check No." id="c6">
+                             sortable="true" headerText="Bank Cheque No." id="c6" width="120" align="center">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.ChqNo}"
-                                   id="it10" placeholder="Search Bank Check No.">
+                                   id="it10" placeholder="Search Check No.">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.ChqNo.inputValue}"
@@ -126,12 +130,13 @@
                                   required="#{bindings.TblFeeRecView1.hints.ChqNo.mandatory}"
                                   columns="#{bindings.TblFeeRecView1.hints.ChqNo.displayWidth}"
                                   maximumLength="#{bindings.TblFeeRecView1.hints.ChqNo.precision}"
-                                  shortDesc="#{bindings.TblFeeRecView1.hints.ChqNo.tooltip}" id="it3">
+                                  shortDesc="#{bindings.TblFeeRecView1.hints.ChqNo.tooltip}" id="it3"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.ChqNo.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFeeRecView1.hints.ChqDate.name}" filterable="true"
-                             sortable="true" headerText="Bank Check Date" id="c7">
+                             sortable="true" headerText="Bank Cheque Date" id="c7" align="center" width="120">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblFeeRecView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.ChqDate.value}"
                                     id="id3">
@@ -142,16 +147,17 @@
                                   label="#{bindings.TblFeeRecView1.hints.ChqDate.label}"
                                   required="#{bindings.TblFeeRecView1.hints.ChqDate.mandatory}"
                                   columns="#{bindings.TblFeeRecView1.hints.ChqDate.displayWidth}"
-                                  shortDesc="#{bindings.TblFeeRecView1.hints.ChqDate.tooltip}" id="id4">
+                                  shortDesc="#{bindings.TblFeeRecView1.hints.ChqDate.tooltip}" id="id4"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.ChqDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblFeeRecView1.hints.ChqDate.format}"/>
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFeeRecView1.hints.Bank.name}" filterable="true" sortable="true"
-                             headerText="Bank Name" id="c8">
+                             headerText="Bank" id="c8" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Bank}"
-                                   id="it11" placeholder="Search Bank Name">
+                                   id="it11" placeholder="Search Bank">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.Bank.inputValue}"
@@ -164,7 +170,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFeeRecView1.hints.Remarks.name}" filterable="true"
-                             sortable="true" headerText="Remarks" id="c9">
+                             sortable="true" headerText="Remarks" id="c9" width="300">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Remarks}"
                                    id="it12" placeholder="Search Remarks">
@@ -200,12 +206,15 @@
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr3">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
-             <af:panelGroupLayout id="pgl3" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s4"/>
+            <af:panelGroupLayout id="pgl3" layout="horizontal">
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                
-                <af:spacer width="5" height="10" id="s5"/>
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s5"/>
                             </af:iterator>
                         </af:panelGroupLayout>
           </af:gridCell>

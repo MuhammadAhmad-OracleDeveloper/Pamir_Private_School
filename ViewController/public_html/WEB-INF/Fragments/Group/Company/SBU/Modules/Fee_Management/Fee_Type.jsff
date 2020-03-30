@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
+  
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
     <af:showDetailItem id="pane1" text="Fee Type">
          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
@@ -23,7 +24,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Fee Type Form">
+              <af:showDetailItem id="tab1" text="Fee Type">
                 <af:table value="#{bindings.TblFeeTypeView1.collectionModel}" var="row"
                           rows="#{bindings.TblFeeTypeView1.rangeSize}"
                           emptyText="#{bindings.TblFeeTypeView1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -33,9 +34,9 @@
                           rowSelection="single" fetchSize="#{bindings.TblFeeTypeView1.rangeSize}"
                           filterModel="#{bindings.TblFeeTypeView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblFeeTypeView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="">
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblFeeTypeView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="ID" id="c1">
+                             headerText="Fee Type ID" id="c1" align="center" width="80">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="id4" placeholder="Search ID">
@@ -46,7 +47,8 @@
                                   required="#{bindings.TblFeeTypeView1.hints.Id.mandatory}"
                                   columns="#{bindings.TblFeeTypeView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblFeeTypeView1.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblFeeTypeView1.hints.Id.tooltip}" id="it1" readOnly="true">
+                                  shortDesc="#{bindings.TblFeeTypeView1.hints.Id.tooltip}" id="it1" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFeeTypeView1.hints.Id.format}"/>
                     </af:inputText>
@@ -55,7 +57,7 @@
                              sortable="true" headerText="Fee Type" id="c2">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Type}"
-                                   id="it3" placeholder="Search Fee Type">
+                                   id="it3" placeholder="Search Type">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Type.inputValue}" label="#{row.bindings.Type.label}"
@@ -66,7 +68,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFeeTypeView1.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="Fee Title" id="c3">
+                             sortable="true" headerText="Fee Title" id="c3" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Name}"
                                    id="it4" placeholder="Search Fee Title">
@@ -82,7 +84,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFeeTypeView1.hints.DiscountAllow.name}" filterable="true"
-                             sortable="true" headerText="Discount Allowed" id="c4">
+                             sortable="true" headerText="Discount Allowed" id="c4" width="120">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.DiscountAllow}"
                                    id="it5" placeholder="Search Discount Allowed">
@@ -91,7 +93,8 @@
                     <af:selectOneChoice value="#{row.bindings.DiscountAllow.inputValue}"
                                         label="#{row.bindings.DiscountAllow.label}"
                                         required="#{bindings.TblFeeTypeView1.hints.DiscountAllow.mandatory}"
-                                        shortDesc="#{bindings.TblFeeTypeView1.hints.DiscountAllow.tooltip}" id="soc2">
+                                        shortDesc="#{bindings.TblFeeTypeView1.hints.DiscountAllow.tooltip}" id="soc2"
+                                        contentStyle='text-align: center'>
                       <f:selectItems value="#{row.bindings.DiscountAllow.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.DiscountAllow.validator}"/>
                     </af:selectOneChoice>
@@ -100,7 +103,7 @@
                              sortable="true" headerText="Refund Allowed" id="c5">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.RefundAllow}"
-                                   id="it6" placeholder="Search Refund Allowed">
+                                   id="it6" placeholder="Search Refund">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.RefundAllow.inputValue}"
@@ -135,13 +138,14 @@
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.VatId.inputValue}" label="#{row.bindings.VatId.label}"
                                         required="#{bindings.TblFeeTypeView1.hints.VatId.mandatory}"
-                                        shortDesc="#{bindings.TblFeeTypeView1.hints.VatId.tooltip}" id="soc5">
+                                        shortDesc="#{bindings.TblFeeTypeView1.hints.VatId.tooltip}" id="soc5"
+                                        contentStyle='text-align: center'>
                       <f:selectItems value="#{row.bindings.VatId.items}" id="si5"/>
                       <f:validator binding="#{row.bindings.VatId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFeeTypeView1.hints.Ast.name}" filterable="true" sortable="true"
-                             headerText="Active" id="c8">
+                             headerText="Active" id="c8" width="70">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Ast}"
                                    id="it9" placeholder="Search Status">
@@ -161,12 +165,17 @@
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr3">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
-             <af:panelGroupLayout id="pgl3" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s4"/>
+           <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                
-              </af:iterator>
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s5"/>
+                            </af:iterator>
                         </af:panelGroupLayout>
           </af:gridCell>
         </af:gridRow>
