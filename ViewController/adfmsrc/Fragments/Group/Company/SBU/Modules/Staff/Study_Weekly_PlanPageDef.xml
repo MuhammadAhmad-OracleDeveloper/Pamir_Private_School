@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Study_Weekly_PlanPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.Staff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblStudyWeekPlanMasterView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblStudyWeekPlanMasterView1Iterator"/>
+    <searchRegion Binds="TblStudyWeekPlanMasterView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="TblStudyWeekPlanMasterView1Query"/>
+    <iterator Binds="TblStudyWeekPlanDetailView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblStudyWeekPlanDetailView2Iterator"/>
+    <searchRegion Binds="TblStudyWeekPlanDetailView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="TblStudyWeekPlanDetailView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblStudyWeekPlanMasterView1Iterator" id="TblStudyWeekPlanMasterView1">
+      <nodeDefinition DefName="model.ERP.VO.TblStudyWeekPlanMasterView" Name="TblStudyWeekPlanMasterView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="GroupCompanyId"/>
+          <Item Value="AcadYearId"/>
+          <Item Value="Dated"/>
+          <Item Value="StaffId"/>
+          <Item Value="WeekId"/>
+          <Item Value="SubjectId"/>
+          <Item Value="Remarks"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblStudyWeekPlanMasterView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblStudyWeekPlanMasterView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblStudyWeekPlanMasterView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblStudyWeekPlanDetailView2Iterator" id="TblStudyWeekPlanDetailView2">
+      <nodeDefinition DefName="model.ERP.VO.TblStudyWeekPlanDetailView" Name="TblStudyWeekPlanDetailView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="WeekLesson"/>
+          <Item Value="WeekPages"/>
+          <Item Value="HomeWork"/>
+          <Item Value="WeekAssessment"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
