@@ -190,8 +190,12 @@
                       <f:validator binding="#{row.bindings.StdRegId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <!--<af:column headerText="Rout Bus Stop" id="c7" sortable="true" filterable="true" width="200">
-                         <f:facet name="filter">
+
+                  <af:column sortProperty="#{bindings.TblTransFeeGenDetailView3.hints.RouteFeeMasterId.name}"
+                             filterable="true" sortable="true"
+                             headerText="Route Bus Stop" id="c7" align="center" width="200">
+                             <f:facet name="filter">
+                    
                                       <af:inputText value="#{vs.filterCriteria.RouteFeeMasterId}"
                                        id="it10" placeholder="Search Bus Stop">
                                       </af:inputText>
@@ -204,7 +208,7 @@
                       <f:selectItems value="#{row.bindings.RouteFeeMasterId.items}" id="si5"/>
                       <f:validator binding="#{row.bindings.RouteFeeMasterId.validator}"/>
                     </af:selectOneChoice>
-                  </af:column>-->
+                  </af:column>
                   <af:column sortProperty="#{bindings.TblTransFeeGenDetailView3.hints.Amount.name}" filterable="true"
                              sortable="true" headerText="Amount"
                              id="c9" align="center">

@@ -6,132 +6,81 @@
   Name="Route_Name_Bus_Stop_LOV"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
-  CustomQuery="false"
-  SelectAllAttributes="false"
+  CustomQuery="true"
   PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
   <Properties>
     <SchemaBasedProperties>
       <LABEL
         ResId="model.LOV.Route_Name_Bus_Stop_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <ViewAccessor
-    Name="Route_Name_LOV1"
-    ViewObjectName="model.LOV.Route_Name_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
-    Name="Route_Name_Bus_Stop_LOV1"
-    ViewObjectName="model.LOV.Route_Name_Bus_Stop_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
-    Name="Lookup_Bus_stop_LOV1"
-    ViewObjectName="model.LOV.Lookup_Bus_stop_LOV"
-    RowLevelBinds="true"/>
-  <ListBinding
-    Name="LOV_RouteId"
-    ListVOName="Route_Name_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="RouteId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="RouteName"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_RouteStopsId"
-    ListVOName="Route_Name_Bus_Stop_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="RouteStopsId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="RouteStopsId"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_RouteStopsId1"
-    ListVOName="Lookup_Bus_stop_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="RouteStopsId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <EntityUsage
-    Name="TblRouteFeeMaster"
-    Entity="model.ERP.EO.TblRouteFeeMaster"/>
+  <SQLQuery><![CDATA[Select 
+tbl_route.ID, 
+tbl_route.route_name, 
+tbl_lookup_detail.name,   
+tbl_lookup_detail.ID   
+From tbl_lookup_detail,tbl_lookup_master, tbl_route   
+where tbl_lookup_detail.lookup_master_id=tbl_lookup_master.id   
+And tbl_lookup_master.Name='Bus Stop']]></SQLQuery>
   <ViewAttribute
     Name="Id"
-    IsNotNull="true"
+    IsUpdateable="false"
+    IsPersistent="false"
     PrecisionRule="true"
-    EntityAttrName="Id"
-    EntityUsage="TblRouteFeeMaster"
-    AliasName="ID"/>
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ID"
+    Expression="ID"
+    SQLType="NUMERIC"/>
   <ViewAttribute
-    Name="RouteId"
+    Name="RouteName"
+    IsUpdateable="false"
+    IsPersistent="false"
     PrecisionRule="true"
-    EntityAttrName="RouteId"
-    EntityUsage="TblRouteFeeMaster"
-    AliasName="ROUTE_ID"
-    LOVName="LOV_RouteId">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="ROUTE_NAME"
+    Expression="ROUTE_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
   </ViewAttribute>
   <ViewAttribute
-    Name="RouteStopsId"
+    Name="Name"
+    IsUpdateable="false"
+    IsPersistent="false"
     PrecisionRule="true"
-    EntityAttrName="RouteStopsId"
-    EntityUsage="TblRouteFeeMaster"
-    AliasName="ROUTE_STOPS_ID"
-    LOVName="LOV_RouteStopsId"
-    LOVFinder="RouteId">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="NAME"
+    Expression="NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
   </ViewAttribute>
+  <ViewAttribute
+    Name="Id1"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ID"
+    Expression="ID"
+    SQLType="NUMERIC"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id1"/>
+  </AttrArray>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
   </ResourceBundle>
-  <SortCriteria>
-    <Sort
-      Attribute="RouteFeeMasterId"/>
-  </SortCriteria>
 </ViewObject>
