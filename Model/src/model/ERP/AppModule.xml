@@ -451,6 +451,57 @@
   <ViewUsage
     Name="TblStudyWeekPlanMasterView2"
     ViewObjectName="model.ERP.VO.TblStudyWeekPlanMasterView"/>
+  <ViewUsage
+    Name="TblLibAuthorView1"
+    ViewObjectName="model.ERP.VO.TblLibAuthorView"/>
+  <ViewUsage
+    Name="TblLibBooksCopyView1"
+    ViewObjectName="model.ERP.VO.TblLibBooksCopyView"/>
+  <ViewUsage
+    Name="TblLibBooksGradeView1"
+    ViewObjectName="model.ERP.VO.TblLibBooksGradeView"/>
+  <ViewUsage
+    Name="TblLibBooksView1"
+    ViewObjectName="model.ERP.VO.TblLibBooksView"/>
+  <ViewUsage
+    Name="TblLibCategoryView1"
+    ViewObjectName="model.ERP.VO.TblLibCategoryView"/>
+  <ViewUsage
+    Name="TblLibLanguageView1"
+    ViewObjectName="model.ERP.VO.TblLibLanguageView"/>
+  <ViewUsage
+    Name="TblLibPublisherView1"
+    ViewObjectName="model.ERP.VO.TblLibPublisherView"/>
+  <ViewUsage
+    Name="TblLibSubCategoryView1"
+    ViewObjectName="model.ERP.VO.TblLibSubCategoryView"/>
+  <ViewUsage
+    Name="TblLibBooksView2"
+    ViewObjectName="model.ERP.VO.TblLibBooksView"/>
+  <ViewUsage
+    Name="TblLibBooksCopyView2"
+    ViewObjectName="model.ERP.VO.TblLibBooksCopyView"/>
+  <ViewUsage
+    Name="TblLibBooksGradeView2"
+    ViewObjectName="model.ERP.VO.TblLibBooksGradeView"/>
+  <ViewUsage
+    Name="TblLibBooksView3"
+    ViewObjectName="model.ERP.VO.TblLibBooksView"/>
+  <ViewUsage
+    Name="TblLibBooksView4"
+    ViewObjectName="model.ERP.VO.TblLibBooksView"/>
+  <ViewUsage
+    Name="TblLibBooksView5"
+    ViewObjectName="model.ERP.VO.TblLibBooksView"/>
+  <ViewUsage
+    Name="TblLibBooksView6"
+    ViewObjectName="model.ERP.VO.TblLibBooksView"/>
+  <ViewUsage
+    Name="TblLibSubCategoryView2"
+    ViewObjectName="model.ERP.VO.TblLibSubCategoryView"/>
+  <ViewUsage
+    Name="TblFeeGenDetailDView4"
+    ViewObjectName="model.ERP.VO.TblFeeGenDetailDView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -966,5 +1017,59 @@
     ViewLinkObjectName="model.ERP.VO.FkStudyWeekPlanMasterWeekLink"
     SrcViewUsageName="model.ERP.AppModule.TblWeekView1"
     DstViewUsageName="model.ERP.AppModule.TblStudyWeekPlanMasterView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLibBooksAuthorLink1"
+    ViewLinkObjectName="model.ERP.VO.FkLibBooksAuthorLink"
+    SrcViewUsageName="model.ERP.AppModule.TblLibAuthorView1"
+    DstViewUsageName="model.ERP.AppModule.TblLibBooksView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLibBooksCopyBooksLink1"
+    ViewLinkObjectName="model.ERP.VO.FkLibBooksCopyBooksLink"
+    SrcViewUsageName="model.ERP.AppModule.TblLibBooksView1"
+    DstViewUsageName="model.ERP.AppModule.TblLibBooksCopyView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLibBooksGradeBooksLink1"
+    ViewLinkObjectName="model.ERP.VO.FkLibBooksGradeBooksLink"
+    SrcViewUsageName="model.ERP.AppModule.TblLibBooksView1"
+    DstViewUsageName="model.ERP.AppModule.TblLibBooksGradeView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLibBooksCatLink1"
+    ViewLinkObjectName="model.ERP.VO.FkLibBooksCatLink"
+    SrcViewUsageName="model.ERP.AppModule.TblLibCategoryView1"
+    DstViewUsageName="model.ERP.AppModule.TblLibBooksView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLibBooksLangLink1"
+    ViewLinkObjectName="model.ERP.VO.FkLibBooksLangLink"
+    SrcViewUsageName="model.ERP.AppModule.TblLibLanguageView1"
+    DstViewUsageName="model.ERP.AppModule.TblLibBooksView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLibBooksPublisherLink1"
+    ViewLinkObjectName="model.ERP.VO.FkLibBooksPublisherLink"
+    SrcViewUsageName="model.ERP.AppModule.TblLibPublisherView1"
+    DstViewUsageName="model.ERP.AppModule.TblLibBooksView5"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLibBooksSubCatLink1"
+    ViewLinkObjectName="model.ERP.VO.FkLibBooksSubCatLink"
+    SrcViewUsageName="model.ERP.AppModule.TblLibSubCategoryView1"
+    DstViewUsageName="model.ERP.AppModule.TblLibBooksView6"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLibSubCategoryLibCatLink1"
+    ViewLinkObjectName="model.ERP.VO.FkLibSubCategoryLibCatLink"
+    SrcViewUsageName="model.ERP.AppModule.TblLibCategoryView1"
+    DstViewUsageName="model.ERP.AppModule.TblLibSubCategoryView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkFeeGenDetailDGenDetailLink2"
+    ViewLinkObjectName="model.ERP.VO.FkFeeGenDetailDGenDetailLink"
+    SrcViewUsageName="model.ERP.AppModule.TblFeeGenDetailView2"
+    DstViewUsageName="model.ERP.AppModule.TblFeeGenDetailDView4"
     Reversed="false"/>
 </AppModule>

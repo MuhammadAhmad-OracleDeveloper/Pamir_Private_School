@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
-    <af:document title="Payroll" id="d1">
+    <af:document title="Library" id="d1">
         <af:messages id="m1"/>
         <af:form id="f1">
             <af:panelGridLayout id="pgl1">
@@ -19,15 +19,15 @@
                             <f:facet name="first">
                                 <!-- Left -->
                                 <af:panelAccordion discloseMany="false" id="pa4" inlineStyle="width:220px; ">
-                                    <af:showDetailItem id="sdi1" text="Payroll" inlineStyle="overflow: auto;">
+                                    <af:showDetailItem id="sdi1" text="Library" inlineStyle="overflow: auto;">
                                         <af:spacer width="190" height="10" id="s1"/>
-                                        <af:iterator id="i2" value="#{bindings.Payroll_Pages1.collectionModel}" var="item"
+                                        <af:iterator id="i2" value="#{bindings.Library_Pages1.collectionModel}" var="item"
                                                      varStatus="status">
                                             <af:panelGroupLayout id="pgl3" layout="vertical" inlineStyle="padding: 4%;">
                                                 <af:button text="#{item.bindings.Name.inputValue}" id="b1"
                                                            inlineStyle="width:190px;"
                                                            icon="/sms/faces/javax.faces.resource/#{item.bindings.PageIcon.inputValue}?ln=images"
-                                                           actionListener="#{viewScope.PayrollSidebarBean.fragmentCall}">
+                                                           actionListener="#{viewScope.LibrarySidebarBean.fragmentCall}">
                                                     <f:attribute name="link" value="#{item.bindings.PageLink.inputValue}"/>
                                                 </af:button>
                                             </af:panelGroupLayout>

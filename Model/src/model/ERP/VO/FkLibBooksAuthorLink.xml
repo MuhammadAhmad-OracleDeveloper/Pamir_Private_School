@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkLibBooksAuthorLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.ERP.EO.FkLibBooksAuthorAssoc">
+  <ViewLinkDefEnd
+    Name="TblLibAuthorView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.VO.TblLibAuthorView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblLibAuthorView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblLibAuthorView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblLibBooksView"
+    Cardinality="-1"
+    Owner="model.ERP.VO.TblLibBooksView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblLibBooksView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblLibBooksView.LibAuthorId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

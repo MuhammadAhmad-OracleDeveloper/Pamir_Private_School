@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkLibBooksPublisherAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblLibPublisher"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.EO.TblLibPublisher">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblLibPublisher"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblLibPublisher.PkLibPublisher"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblLibPublisher.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblLibBooks"
+    Cardinality="-1"
+    Owner="model.ERP.EO.TblLibBooks">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblLibBooks"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblLibBooks.FkLibBooksPublisher"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblLibBooks.LibPublisherId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>
