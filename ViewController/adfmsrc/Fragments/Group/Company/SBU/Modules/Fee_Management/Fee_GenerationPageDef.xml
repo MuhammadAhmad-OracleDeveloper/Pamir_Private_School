@@ -12,12 +12,12 @@
               id="TblFeeGenDetailView2Iterator"/>
     <searchRegion Binds="TblFeeGenDetailView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFeeGenDetailView2Query"/>
-    <iterator Binds="TblFeeGenDetailDView3" RangeSize="8" DataControl="AppModuleDataControl1"
-              id="TblFeeGenDetailDView3Iterator"/>
-    <searchRegion Binds="TblFeeGenDetailDView3Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFeeGenDetailDView3Query"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblFeeGenDetailDView4" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblFeeGenDetailDView4Iterator"/>
+    <searchRegion Binds="TblFeeGenDetailDView4Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFeeGenDetailDView4Query"/>
   </executables>
   <bindings>
     <tree IterBinding="TblFeeGenMasterView1Iterator" id="TblFeeGenMasterView1">
@@ -49,16 +49,6 @@
     </tree>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
-    <tree IterBinding="TblFeeGenDetailDView3Iterator" id="TblFeeGenDetailDView3">
-      <nodeDefinition DefName="model.ERP.VO.TblFeeGenDetailDView" Name="TblFeeGenDetailDView30">
-        <AttrNames>
-          <Item Value="Id"/>
-          <Item Value="FeeTypeId"/>
-          <Item Value="Amount"/>
-          <Item Value="Ast"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
       <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
         <AttrNames>
@@ -81,6 +71,22 @@
     <action IterBinding="TblFeeGenDetailView2Iterator" id="Execute1" RequiresUpdateModel="true"
             Action="iteratorExecute"/>
     <action IterBinding="TblFeeGenDetailView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblFeeGenDetailDView4Iterator" id="TblFeeGenDetailDView4">
+      <nodeDefinition DefName="model.ERP.VO.TblFeeGenDetailDView" Name="TblFeeGenDetailDView40">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="FeeTypeId"/>
+          <Item Value="Amount"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFeeGenDetailDView4Iterator" id="CreateInsert2" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFeeGenDetailDView4Iterator" id="Execute2" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblFeeGenDetailDView4Iterator" id="Delete2" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>
