@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Collection_TypesPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.Library">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblLibCategoryView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblLibCategoryView1Iterator"/>
+    <searchRegion Binds="TblLibCategoryView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblLibCategoryView1Query"/>
+    <iterator Binds="TblLibSubCategoryView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblLibSubCategoryView2Iterator"/>
+    <searchRegion Binds="TblLibSubCategoryView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblLibSubCategoryView2Query"/>
+    <iterator Binds="TblLibAuthorView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblLibAuthorView1Iterator"/>
+    <searchRegion Binds="TblLibAuthorView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblLibAuthorView1Query"/>
+    <iterator Binds="TblLibPublisherView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblLibPublisherView1Iterator"/>
+    <searchRegion Binds="TblLibPublisherView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblLibPublisherView1Query"/>
+    <iterator Binds="TblLibLanguageView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblLibLanguageView1Iterator"/>
+    <searchRegion Binds="TblLibLanguageView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblLibLanguageView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblLibCategoryView1Iterator" id="TblLibCategoryView1">
+      <nodeDefinition DefName="model.ERP.VO.TblLibCategoryView" Name="TblLibCategoryView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="DeweyNo"/>
+          <Item Value="Name"/>
+          <Item Value="Remarks"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblLibSubCategoryView2Iterator" id="TblLibSubCategoryView2">
+      <nodeDefinition DefName="model.ERP.VO.TblLibSubCategoryView" Name="TblLibSubCategoryView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Remarks"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblLibCategoryView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblLibCategoryView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblLibCategoryView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <action IterBinding="TblLibSubCategoryView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblLibSubCategoryView2Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblLibSubCategoryView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblLibAuthorView1Iterator" id="TblLibAuthorView1">
+      <nodeDefinition DefName="model.ERP.VO.TblLibAuthorView" Name="TblLibAuthorView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Remarks"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblLibPublisherView1Iterator" id="TblLibPublisherView1">
+      <nodeDefinition DefName="model.ERP.VO.TblLibPublisherView" Name="TblLibPublisherView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Remarks"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblLibLanguageView1Iterator" id="TblLibLanguageView1">
+      <nodeDefinition DefName="model.ERP.VO.TblLibLanguageView" Name="TblLibLanguageView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Remarks"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblLibAuthorView1Iterator" id="CreateInsert2" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblLibAuthorView1Iterator" id="Execute2" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblLibAuthorView1Iterator" id="Delete2" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="TblLibPublisherView1Iterator" id="CreateInsert3" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblLibPublisherView1Iterator" id="Execute3" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblLibPublisherView1Iterator" id="Delete3" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="TblLibLanguageView1Iterator" id="CreateInsert4" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblLibLanguageView1Iterator" id="Execute4" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblLibLanguageView1Iterator" id="Delete4" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>
