@@ -9,16 +9,22 @@
   DBObjectType="table"
   DBObjectName="TBL_STUDY_WEEK_PLAN_DETAIL"
   AliasName="TblStudyWeekPlanDetail"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.ERP.EO.TblStudyWeekPlanDetailImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="Id"
-    IsNotNull="true"
     ColumnName="ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_STUDY_WEEK_PLAN_DETAIL"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="StudyWeekPlanMasterId"
     ColumnName="STUDY_WEEK_PLAN_MASTER_ID"
@@ -87,12 +93,14 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_STUDY_WEEK_PLAN_DETAIL"/>
+    TableName="TBL_STUDY_WEEK_PLAN_DETAIL"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_STUDY_WEEK_PLAN_DETAIL"/>
   <Attribute
@@ -101,12 +109,13 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_STUDY_WEEK_PLAN_DETAIL"/>
+    TableName="TBL_STUDY_WEEK_PLAN_DETAIL"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_STUDY_WEEK_PLAN_DETAIL"/>
   <AccessorAttribute
