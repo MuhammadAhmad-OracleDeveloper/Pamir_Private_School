@@ -502,6 +502,27 @@
   <ViewUsage
     Name="TblFeeGenDetailDView4"
     ViewObjectName="model.ERP.VO.TblFeeGenDetailDView"/>
+  <ViewUsage
+    Name="TblStdApplPrncpl1"
+    ViewObjectName="model.ERP.VO.TblStdApplPrncpl"/>
+  <ViewUsage
+    Name="TblStdApplMngmt1"
+    ViewObjectName="model.ERP.VO.TblStdApplMngmt"/>
+  <ViewUsage
+    Name="TblLibBooksIssueDetailView1"
+    ViewObjectName="model.ERP.VO.TblLibBooksIssueDetailView"/>
+  <ViewUsage
+    Name="TblLibBooksIssueMasterView1"
+    ViewObjectName="model.ERP.VO.TblLibBooksIssueMasterView"/>
+  <ViewUsage
+    Name="TblLibBooksReturnView1"
+    ViewObjectName="model.ERP.VO.TblLibBooksReturnView"/>
+  <ViewUsage
+    Name="TblLibBooksIssueDetailView2"
+    ViewObjectName="model.ERP.VO.TblLibBooksIssueDetailView"/>
+  <ViewUsage
+    Name="TblLibBooksReturnView2"
+    ViewObjectName="model.ERP.VO.TblLibBooksReturnView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -1071,5 +1092,17 @@
     ViewLinkObjectName="model.ERP.VO.FkFeeGenDetailDGenDetailLink"
     SrcViewUsageName="model.ERP.AppModule.TblFeeGenDetailView2"
     DstViewUsageName="model.ERP.AppModule.TblFeeGenDetailDView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLibBooksIssueDetailMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkLibBooksIssueDetailMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblLibBooksIssueMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblLibBooksIssueDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLibBooksReturnIssueLink1"
+    ViewLinkObjectName="model.ERP.VO.FkLibBooksReturnIssueLink"
+    SrcViewUsageName="model.ERP.AppModule.TblLibBooksIssueDetailView1"
+    DstViewUsageName="model.ERP.AppModule.TblLibBooksReturnView2"
     Reversed="false"/>
 </AppModule>
