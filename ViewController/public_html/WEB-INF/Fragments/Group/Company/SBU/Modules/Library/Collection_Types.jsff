@@ -28,22 +28,271 @@
                                         <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
                                             <af:panelTabbed position="above" id="pt2">
                                                 <af:showDetailItem id="tab2" text="Category">
-                                                    
+                                                    <af:table value="#{bindings.TblLibCategoryView1.collectionModel}"
+                                                              var="row" rows="#{bindings.TblLibCategoryView1.rangeSize}"
+                                                              emptyText="#{bindings.TblLibCategoryView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                              rowBandingInterval="0"
+                                                              selectedRowKeys="#{bindings.TblLibCategoryView1.collectionModel.selectedRow}"
+                                                              selectionListener="#{bindings.TblLibCategoryView1.collectionModel.makeCurrent}"
+                                                              rowSelection="single"
+                                                              fetchSize="#{bindings.TblLibCategoryView1.rangeSize}"
+                                                              filterModel="#{bindings.TblLibCategoryView1Query.queryDescriptor}"
+                                                              filterVisible="true"
+                                                              queryListener="#{bindings.TblLibCategoryView1Query.processQuery}"
+                                                              varStatus="vs" id="t1"
+                                                              partialTriggers="">
+                                                        <af:column sortProperty="#{bindings.TblLibCategoryView1.hints.Id.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="ID"
+                                                                   id="c1" align="center">
+                                                                   <f:facet name="filter">
+                                                                          <af:inputText value="#{vs.filterCriteria.Id}"
+                                                                           id="id4" placeholder="Search ID">
+                                                                          </af:inputText>
+                                                                    </f:facet>
+                                                            <af:inputText value="#{row.bindings.Id.inputValue}"
+                                                                          label="#{bindings.TblLibCategoryView1.hints.Id.label}"
+                                                                          required="#{bindings.TblLibCategoryView1.hints.Id.mandatory}"
+                                                                          columns="#{bindings.TblLibCategoryView1.hints.Id.displayWidth}"
+                                                                          maximumLength="#{bindings.TblLibCategoryView1.hints.Id.precision}"
+                                                                          shortDesc="#{bindings.TblLibCategoryView1.hints.Id.tooltip}"
+                                                                          id="it1">
+                                                                <f:validator binding="#{row.bindings.Id.validator}"/>
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.TblLibCategoryView1.hints.Id.format}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.TblLibCategoryView1.hints.DeweyNo.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="Dewey No."
+                                                                   id="c2">
+                                                                   <f:facet name="filter">
+                                                                          <af:inputText value="#{vs.filterCriteria.DeweyNo}"
+                                                                           id="it11" placeholder="Search Dewey No.">
+                                                                          </af:inputText>
+                                                                    </f:facet>
+                                                            <af:inputText value="#{row.bindings.DeweyNo.inputValue}"
+                                                                          label="#{bindings.TblLibCategoryView1.hints.DeweyNo.label}"
+                                                                          required="#{bindings.TblLibCategoryView1.hints.DeweyNo.mandatory}"
+                                                                          columns="#{bindings.TblLibCategoryView1.hints.DeweyNo.displayWidth}"
+                                                                          maximumLength="#{bindings.TblLibCategoryView1.hints.DeweyNo.precision}"
+                                                                          shortDesc="#{bindings.TblLibCategoryView1.hints.DeweyNo.tooltip}"
+                                                                          id="it2">
+                                                                <f:validator binding="#{row.bindings.DeweyNo.validator}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.TblLibCategoryView1.hints.Name.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="Category "
+                                                                   id="c3">
+                                                                   <f:facet name="filter">
+                                                                          <af:inputText value="#{vs.filterCriteria.Name}"
+                                                                           id="it12" placeholder="Search Category ">
+                                                                          </af:inputText>
+                                                                    </f:facet>
+                                                            <af:inputText value="#{row.bindings.Name.inputValue}"
+                                                                          label="#{bindings.TblLibCategoryView1.hints.Name.label}"
+                                                                          required="#{bindings.TblLibCategoryView1.hints.Name.mandatory}"
+                                                                          columns="#{bindings.TblLibCategoryView1.hints.Name.displayWidth}"
+                                                                          maximumLength="#{bindings.TblLibCategoryView1.hints.Name.precision}"
+                                                                          shortDesc="#{bindings.TblLibCategoryView1.hints.Name.tooltip}"
+                                                                          id="it3">
+                                                                <f:validator binding="#{row.bindings.Name.validator}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.TblLibCategoryView1.hints.Remarks.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="Remarks"
+                                                                   id="c4">
+                                                                   <f:facet name="filter">
+                                                                          <af:inputText value="#{vs.filterCriteria.Remarks}"
+                                                                           id="it13" placeholder="Search Remarks">
+                                                                          </af:inputText>
+                                                                    </f:facet>
+                                                            <af:inputText value="#{row.bindings.Remarks.inputValue}"
+                                                                          label="#{bindings.TblLibCategoryView1.hints.Remarks.label}"
+                                                                          required="#{bindings.TblLibCategoryView1.hints.Remarks.mandatory}"
+                                                                          columns="#{bindings.TblLibCategoryView1.hints.Remarks.displayWidth}"
+                                                                          maximumLength="#{bindings.TblLibCategoryView1.hints.Remarks.precision}"
+                                                                          shortDesc="#{bindings.TblLibCategoryView1.hints.Remarks.tooltip}"
+                                                                          id="it4">
+                                                                <f:validator binding="#{row.bindings.Remarks.validator}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.TblLibCategoryView1.hints.Ast.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="Active"
+                                                                   id="c5">
+                                                                   <f:facet name="filter">
+                                                                          <af:inputText value="#{vs.filterCriteria.Ast}"
+                                                                           id="it14" placeholder="Search Status">
+                                                                          </af:inputText>
+                                                                    </f:facet>
+                                                            <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                                                label="#{row.bindings.Ast.label}"
+                                                                                required="#{bindings.TblLibCategoryView1.hints.Ast.mandatory}"
+                                                                                shortDesc="#{bindings.TblLibCategoryView1.hints.Ast.tooltip}"
+                                                                                id="soc1">
+                                                                <f:selectItems value="#{row.bindings.Ast.items}"
+                                                                               id="si1"/>
+                                                                <f:validator binding="#{row.bindings.Ast.validator}"/>
+                                                            </af:selectOneChoice>
+                                                        </af:column>
+                                                    </af:table>
+                                                    <af:gridRow id="gr8">
+                                                        <af:gridCell id="gc8"/>
+                                                        <af:gridCell id="gc9"/>
+                                                        <af:gridCell id="gc10"/>
+                                                        <af:gridCell id="gc11"/>
+                                                        <af:gridCell id="gc12"/>
+                                                    </af:gridRow>
                                                 </af:showDetailItem>
+                                                
                                             </af:panelTabbed>
                                         </af:gridCell>
                                     </af:gridRow>
-                                    <af:gridRow marginTop="5px" height="auto" id="gr5">
-                                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5"/>
+                                    <af:gridRow id="gr9">
+                                        <af:gridCell id="gc13"/>
                                     </af:gridRow>
+                                    <af:gridRow marginTop="5px" height="auto" id="gr5">
+                                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+             <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s4"/>
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                    
+                                </af:button>
+                                                   
+                                                    <af:spacer width="5" height="10" id="s5"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+          </af:gridCell>
+                                        
+                                    </af:gridRow>
+                                    
                                     <af:gridRow marginTop="5px" height="auto" id="gr6">
                                         <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
                                             <af:panelTabbed position="above" id="pt3">
                                                 <af:showDetailItem id="tab3" text="Sub Category">
-                                                   
+                                                    <af:table value="#{bindings.TblLibSubCategoryView2.collectionModel}"
+                                                              var="row"
+                                                              rows="#{bindings.TblLibSubCategoryView2.rangeSize}"
+                                                              emptyText="#{bindings.TblLibSubCategoryView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                              rowBandingInterval="0"
+                                                              selectedRowKeys="#{bindings.TblLibSubCategoryView2.collectionModel.selectedRow}"
+                                                              selectionListener="#{bindings.TblLibSubCategoryView2.collectionModel.makeCurrent}"
+                                                              rowSelection="single"
+                                                              fetchSize="#{bindings.TblLibSubCategoryView2.rangeSize}"
+                                                              filterModel="#{bindings.TblLibSubCategoryView2Query.queryDescriptor}"
+                                                              filterVisible="true"
+                                                              queryListener="#{bindings.TblLibSubCategoryView2Query.processQuery}"
+                                                              varStatus="vs" id="t2"
+                                                              partialTriggers="">
+                                                        <af:column sortProperty="#{bindings.TblLibSubCategoryView2.hints.Id.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="ID" align="center"
+                                                                   id="c6">
+                                                                   <f:facet name="filter">
+                                                                          <af:inputText value="#{vs.filterCriteria.Id}"
+                                                                           id="it15" placeholder="Search ID">
+                                                                          </af:inputText>
+                                                                    </f:facet>
+                                                            <af:inputText value="#{row.bindings.Id.inputValue}"
+                                                                          label="#{bindings.TblLibSubCategoryView2.hints.Id.label}"
+                                                                          required="#{bindings.TblLibSubCategoryView2.hints.Id.mandatory}"
+                                                                          columns="#{bindings.TblLibSubCategoryView2.hints.Id.displayWidth}"
+                                                                          maximumLength="#{bindings.TblLibSubCategoryView2.hints.Id.precision}"
+                                                                          shortDesc="#{bindings.TblLibSubCategoryView2.hints.Id.tooltip}"
+                                                                          id="it5" readOnly="true">
+                                                                <f:validator binding="#{row.bindings.Id.validator}"/>
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.TblLibSubCategoryView2.hints.Id.format}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.TblLibSubCategoryView2.hints.Name.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="Sub Category "
+                                                                   id="c7">
+                                                                   <f:facet name="filter">
+                                                                          <af:inputText value="#{vs.filterCriteria.Name}"
+                                                                           id="it8" placeholder="Search Sub Category ">
+                                                                          </af:inputText>
+                                                                    </f:facet>
+                                                            <af:inputText value="#{row.bindings.Name.inputValue}"
+                                                                          label="#{bindings.TblLibSubCategoryView2.hints.Name.label}"
+                                                                          required="#{bindings.TblLibSubCategoryView2.hints.Name.mandatory}"
+                                                                          columns="#{bindings.TblLibSubCategoryView2.hints.Name.displayWidth}"
+                                                                          maximumLength="#{bindings.TblLibSubCategoryView2.hints.Name.precision}"
+                                                                          shortDesc="#{bindings.TblLibSubCategoryView2.hints.Name.tooltip}"
+                                                                          id="it6">
+                                                                <f:validator binding="#{row.bindings.Name.validator}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.TblLibSubCategoryView2.hints.Remarks.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.TblLibSubCategoryView2.hints.Remarks.label}"
+                                                                   id="c8">
+                                                                   <f:facet name="filter">
+                                                                          <af:inputText value="#{vs.filterCriteria.Remarks}"
+                                                                           id="it9" placeholder="Search Remarks">
+                                                                          </af:inputText>
+                                                                    </f:facet>
+                                                            <af:inputText value="#{row.bindings.Remarks.inputValue}"
+                                                                          label="#{bindings.TblLibSubCategoryView2.hints.Remarks.label}"
+                                                                          required="#{bindings.TblLibSubCategoryView2.hints.Remarks.mandatory}"
+                                                                          columns="#{bindings.TblLibSubCategoryView2.hints.Remarks.displayWidth}"
+                                                                          maximumLength="#{bindings.TblLibSubCategoryView2.hints.Remarks.precision}"
+                                                                          shortDesc="#{bindings.TblLibSubCategoryView2.hints.Remarks.tooltip}"
+                                                                          id="it7">
+                                                                <f:validator binding="#{row.bindings.Remarks.validator}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.TblLibSubCategoryView2.hints.Ast.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.TblLibSubCategoryView2.hints.Ast.label}"
+                                                                   id="c9">
+                                                                   <f:facet name="filter">
+                                                                          <af:inputText value="#{vs.filterCriteria.Ast}"
+                                                                           id="it10" placeholder="Search Status">
+                                                                          </af:inputText>
+                                                                    </f:facet>
+                                                            <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                                                label="#{row.bindings.Ast.label}"
+                                                                                required="#{bindings.TblLibSubCategoryView2.hints.Ast.mandatory}"
+                                                                                shortDesc="#{bindings.TblLibSubCategoryView2.hints.Ast.tooltip}"
+                                                                                id="soc2">
+                                                                <f:selectItems value="#{row.bindings.Ast.items}"
+                                                                               id="si2"/>
+                                                                <f:validator binding="#{row.bindings.Ast.validator}"/>
+                                                            </af:selectOneChoice>
+                                                        </af:column>
+                                                    </af:table>
                                                 </af:showDetailItem>
                                             </af:panelTabbed>
                                         </af:gridCell>
+                                    </af:gridRow>
+                                    <af:gridRow marginTop="5px" height="auto" id="gr10">
+                                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc14">
+             <af:panelGroupLayout id="pgl5" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s2"/>
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                    
+                                </af:button>
+                                                    
+                                                    <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+          </af:gridCell>
+                                        
                                     </af:gridRow>
                                     <af:gridRow marginTop="5px" height="auto" id="gr7">
                                         <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7"/>
@@ -66,7 +315,7 @@
                     </af:gridCell>
                 </af:gridRow>
                 <af:gridRow marginTop="5px" height="auto" id="gr3">
-                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3"/>
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5"/>
                 </af:gridRow>
                 <!--<af:gridRow marginTop="5px" height="auto" id="gr4">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">

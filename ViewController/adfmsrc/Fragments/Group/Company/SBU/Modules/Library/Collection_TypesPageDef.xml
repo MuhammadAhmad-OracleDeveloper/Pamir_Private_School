@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Collection_TypesPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.Library">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblLibCategoryView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblLibCategoryView1Iterator"/>
+    <searchRegion Binds="TblLibCategoryView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblLibCategoryView1Query"/>
+    <iterator Binds="TblLibSubCategoryView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblLibSubCategoryView2Iterator"/>
+    <searchRegion Binds="TblLibSubCategoryView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblLibSubCategoryView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblLibCategoryView1Iterator" id="TblLibCategoryView1">
+      <nodeDefinition DefName="model.ERP.VO.TblLibCategoryView" Name="TblLibCategoryView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="DeweyNo"/>
+          <Item Value="Name"/>
+          <Item Value="Remarks"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblLibSubCategoryView2Iterator" id="TblLibSubCategoryView2">
+      <nodeDefinition DefName="model.ERP.VO.TblLibSubCategoryView" Name="TblLibSubCategoryView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Remarks"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblLibCategoryView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblLibCategoryView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblLibCategoryView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <action IterBinding="TblLibSubCategoryView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblLibSubCategoryView2Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblLibSubCategoryView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>
