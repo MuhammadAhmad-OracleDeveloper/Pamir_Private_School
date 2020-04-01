@@ -186,9 +186,27 @@
           usageId="view_Collection_Types_TaskFlow_Collection_Types_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/TaskFlows/Group/Company/SBU/Modules/Library/Books_Setup_TaskFlow.xml#Books_Setup_TaskFlow@ExecuteWithParams"
           usageId="view_Books_Setup_TaskFlow_Books_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/TaskFlows/Group/Company/SBU/Modules/Library/Book_Issue_TaskFlow.xml#Book_Issue_TaskFlow@ExecuteWithParams"
+          usageId="view_Book_Issue_TaskFlow_Book_Issue_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/TaskFlows/Group/Company/SBU/Modules/Library/Book_Return_TaskFlow.xml#Book_Return_TaskFlow@ExecuteWithParams"
+          usageId="view_Book_Return_TaskFlow_Book_Return_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Group/Company/SBU/Modules/Library/Collection_Types.jsff"
           usageId="view_Collection_TypesPageDef"/>
-  </pageMap>
+  
+    <page path="/WEB-INF/Fragments/Group/Company/SBU/Modules/Library/Collection_Types.jsff"
+          usageId="view_Collection_TypesPageDef"/>
+  
+  <pageDefinitionUsages>
+    <page id="view_Collection_TypesPageDef" path="Fragments.Group.Company.SBU.Modules.Library.Collection_TypesPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl1" Package="model.ERP"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</pageMap>
   <pageDefinitionUsages>
     <page id="view_GroupPageDef" path="Main_Pages.Group.GroupPageDef"/>
     <page id="view_GroupPageDef1" path="Fragments.Group.GroupPageDef"/>
@@ -354,6 +372,10 @@
           path="TaskFlows.Group.Company.SBU.Modules.Library.Collection_Types_TaskFlow_Collection_Types_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Books_Setup_TaskFlow_Books_Setup_TaskFlow_ExecuteWithParamsPageDef"
           path="TaskFlows.Group.Company.SBU.Modules.Library.Books_Setup_TaskFlow_Books_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Book_Issue_TaskFlow_Book_Issue_TaskFlow_ExecuteWithParamsPageDef"
+          path="TaskFlows.Group.Company.SBU.Modules.Library.Book_Issue_TaskFlow_Book_Issue_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Book_Return_TaskFlow_Book_Return_TaskFlow_ExecuteWithParamsPageDef"
+          path="TaskFlows.Group.Company.SBU.Modules.Library.Book_Return_TaskFlow_Book_Return_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Collection_TypesPageDef" path="Fragments.Group.Company.SBU.Modules.Library.Collection_TypesPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>

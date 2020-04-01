@@ -303,17 +303,255 @@
                                 </af:panelGridLayout>
                             </af:showDetailItem>
                             <af:showDetailItem text="Author" id="sdi1">
-                               
+                                <af:table value="#{bindings.TblLibAuthorView1.collectionModel}" var="row"
+                                          rows="#{bindings.TblLibAuthorView1.rangeSize}"
+                                          emptyText="#{bindings.TblLibAuthorView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.TblLibAuthorView1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.TblLibAuthorView1.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.TblLibAuthorView1.rangeSize}"
+                                          filterModel="#{bindings.TblLibAuthorView1Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.TblLibAuthorView1Query.processQuery}" varStatus="vs"
+                                          id="t3" partialTriggers="">
+                                    <af:column sortProperty="#{bindings.TblLibAuthorView1.hints.Id.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="ID" id="c10" align="center">
+                                        <af:inputText value="#{row.bindings.Id.inputValue}"
+                                                      label="#{bindings.TblLibAuthorView1.hints.Id.label}"
+                                                      required="#{bindings.TblLibAuthorView1.hints.Id.mandatory}"
+                                                      columns="#{bindings.TblLibAuthorView1.hints.Id.displayWidth}"
+                                                      maximumLength="#{bindings.TblLibAuthorView1.hints.Id.precision}"
+                                                      shortDesc="#{bindings.TblLibAuthorView1.hints.Id.tooltip}"
+                                                      id="it16" readOnly="true">
+                                            <f:validator binding="#{row.bindings.Id.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblLibAuthorView1.hints.Id.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblLibAuthorView1.hints.Name.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Author Name" id="c11">
+                                        <af:inputText value="#{row.bindings.Name.inputValue}"
+                                                      label="#{bindings.TblLibAuthorView1.hints.Name.label}"
+                                                      required="#{bindings.TblLibAuthorView1.hints.Name.mandatory}"
+                                                      columns="#{bindings.TblLibAuthorView1.hints.Name.displayWidth}"
+                                                      maximumLength="#{bindings.TblLibAuthorView1.hints.Name.precision}"
+                                                      shortDesc="#{bindings.TblLibAuthorView1.hints.Name.tooltip}"
+                                                      id="it17">
+                                            <f:validator binding="#{row.bindings.Name.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblLibAuthorView1.hints.Remarks.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Remarks" id="c12">
+                                        <af:inputText value="#{row.bindings.Remarks.inputValue}"
+                                                      label="#{bindings.TblLibAuthorView1.hints.Remarks.label}"
+                                                      required="#{bindings.TblLibAuthorView1.hints.Remarks.mandatory}"
+                                                      columns="#{bindings.TblLibAuthorView1.hints.Remarks.displayWidth}"
+                                                      maximumLength="#{bindings.TblLibAuthorView1.hints.Remarks.precision}"
+                                                      shortDesc="#{bindings.TblLibAuthorView1.hints.Remarks.tooltip}"
+                                                      id="it18">
+                                            <f:validator binding="#{row.bindings.Remarks.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblLibAuthorView1.hints.Ast.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Active" id="c13">
+                                        <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                            label="#{row.bindings.Ast.label}"
+                                                            required="#{bindings.TblLibAuthorView1.hints.Ast.mandatory}"
+                                                            shortDesc="#{bindings.TblLibAuthorView1.hints.Ast.tooltip}"
+                                                            id="soc3">
+                                            <f:selectItems value="#{row.bindings.Ast.items}" id="si3"/>
+                                            <f:validator binding="#{row.bindings.Ast.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                </af:table>
+                                <af:panelGroupLayout id="pgl6" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s6"/>
+                            <af:iterator id="i3" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}2"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s7"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
                             </af:showDetailItem>
                             <af:showDetailItem text="Publisher" id="sdi2">
-                               
+                                <af:table value="#{bindings.TblLibPublisherView1.collectionModel}" var="row"
+                                          rows="#{bindings.TblLibPublisherView1.rangeSize}"
+                                          emptyText="#{bindings.TblLibPublisherView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.TblLibPublisherView1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.TblLibPublisherView1.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.TblLibPublisherView1.rangeSize}"
+                                          filterModel="#{bindings.TblLibPublisherView1Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.TblLibPublisherView1Query.processQuery}"
+                                          varStatus="vs" id="t4" partialTriggers="">
+                                    <af:column sortProperty="#{bindings.TblLibPublisherView1.hints.Id.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="ID" id="c14" align="center">
+                                        <af:inputText value="#{row.bindings.Id.inputValue}"
+                                                      label="#{bindings.TblLibPublisherView1.hints.Id.label}"
+                                                      required="#{bindings.TblLibPublisherView1.hints.Id.mandatory}"
+                                                      columns="#{bindings.TblLibPublisherView1.hints.Id.displayWidth}"
+                                                      maximumLength="#{bindings.TblLibPublisherView1.hints.Id.precision}"
+                                                      shortDesc="#{bindings.TblLibPublisherView1.hints.Id.tooltip}"
+                                                      id="it19">
+                                            <f:validator binding="#{row.bindings.Id.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblLibPublisherView1.hints.Id.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblLibPublisherView1.hints.Name.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Publisher" id="c15">
+                                        <af:inputText value="#{row.bindings.Name.inputValue}"
+                                                      label="#{bindings.TblLibPublisherView1.hints.Name.label}"
+                                                      required="#{bindings.TblLibPublisherView1.hints.Name.mandatory}"
+                                                      columns="#{bindings.TblLibPublisherView1.hints.Name.displayWidth}"
+                                                      maximumLength="#{bindings.TblLibPublisherView1.hints.Name.precision}"
+                                                      shortDesc="#{bindings.TblLibPublisherView1.hints.Name.tooltip}"
+                                                      id="it20">
+                                            <f:validator binding="#{row.bindings.Name.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblLibPublisherView1.hints.Remarks.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Remarks"
+                                               id="c16">
+                                        <af:inputText value="#{row.bindings.Remarks.inputValue}"
+                                                      label="#{bindings.TblLibPublisherView1.hints.Remarks.label}"
+                                                      required="#{bindings.TblLibPublisherView1.hints.Remarks.mandatory}"
+                                                      columns="#{bindings.TblLibPublisherView1.hints.Remarks.displayWidth}"
+                                                      maximumLength="#{bindings.TblLibPublisherView1.hints.Remarks.precision}"
+                                                      shortDesc="#{bindings.TblLibPublisherView1.hints.Remarks.tooltip}"
+                                                      id="it21">
+                                            <f:validator binding="#{row.bindings.Remarks.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblLibPublisherView1.hints.Ast.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Active" id="c17">
+                                        <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                            label="#{row.bindings.Ast.label}"
+                                                            required="#{bindings.TblLibPublisherView1.hints.Ast.mandatory}"
+                                                            shortDesc="#{bindings.TblLibPublisherView1.hints.Ast.tooltip}"
+                                                            id="soc4">
+                                            <f:selectItems value="#{row.bindings.Ast.items}" id="si4"/>
+                                            <f:validator binding="#{row.bindings.Ast.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                </af:table>
+                                <af:panelGroupLayout id="pgl7" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s8"/>
+                            <af:iterator id="i4" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}3"/>
+                                </af:button>
+                                   
+                                        <af:spacer width="5" height="10" id="s10"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
                             </af:showDetailItem>
+                            
                             <af:showDetailItem text="Language" id="sdi3">
-                               
+                                <af:table value="#{bindings.TblLibLanguageView1.collectionModel}" var="row"
+                                          rows="#{bindings.TblLibLanguageView1.rangeSize}"
+                                          emptyText="#{bindings.TblLibLanguageView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.TblLibLanguageView1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.TblLibLanguageView1.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.TblLibLanguageView1.rangeSize}"
+                                          filterModel="#{bindings.TblLibLanguageView1Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.TblLibLanguageView1Query.processQuery}"
+                                          varStatus="vs" id="t5" partialTriggers="">
+                                    <af:column sortProperty="#{bindings.TblLibLanguageView1.hints.Id.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="ID" id="c18" align="center">
+                                        <af:inputText value="#{row.bindings.Id.inputValue}"
+                                                      label="#{bindings.TblLibLanguageView1.hints.Id.label}"
+                                                      required="#{bindings.TblLibLanguageView1.hints.Id.mandatory}"
+                                                      columns="#{bindings.TblLibLanguageView1.hints.Id.displayWidth}"
+                                                      maximumLength="#{bindings.TblLibLanguageView1.hints.Id.precision}"
+                                                      shortDesc="#{bindings.TblLibLanguageView1.hints.Id.tooltip}"
+                                                      id="it22">
+                                            <f:validator binding="#{row.bindings.Id.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblLibLanguageView1.hints.Id.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblLibLanguageView1.hints.Name.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Language" id="c19">
+                                        <af:inputText value="#{row.bindings.Name.inputValue}"
+                                                      label="#{bindings.TblLibLanguageView1.hints.Name.label}"
+                                                      required="#{bindings.TblLibLanguageView1.hints.Name.mandatory}"
+                                                      columns="#{bindings.TblLibLanguageView1.hints.Name.displayWidth}"
+                                                      maximumLength="#{bindings.TblLibLanguageView1.hints.Name.precision}"
+                                                      shortDesc="#{bindings.TblLibLanguageView1.hints.Name.tooltip}"
+                                                      id="it23">
+                                            <f:validator binding="#{row.bindings.Name.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblLibLanguageView1.hints.Remarks.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Remarks"
+                                               id="c20">
+                                        <af:inputText value="#{row.bindings.Remarks.inputValue}"
+                                                      label="#{bindings.TblLibLanguageView1.hints.Remarks.label}"
+                                                      required="#{bindings.TblLibLanguageView1.hints.Remarks.mandatory}"
+                                                      columns="#{bindings.TblLibLanguageView1.hints.Remarks.displayWidth}"
+                                                      maximumLength="#{bindings.TblLibLanguageView1.hints.Remarks.precision}"
+                                                      shortDesc="#{bindings.TblLibLanguageView1.hints.Remarks.tooltip}"
+                                                      id="it24">
+                                            <f:validator binding="#{row.bindings.Remarks.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblLibLanguageView1.hints.Ast.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Active" id="c21">
+                                        <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                            label="#{row.bindings.Ast.label}"
+                                                            required="#{bindings.TblLibLanguageView1.hints.Ast.mandatory}"
+                                                            shortDesc="#{bindings.TblLibLanguageView1.hints.Ast.tooltip}"
+                                                            id="soc5">
+                                            <f:selectItems value="#{row.bindings.Ast.items}" id="si5"/>
+                                            <f:validator binding="#{row.bindings.Ast.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                </af:table>
+                                 <af:panelGroupLayout id="pgl8" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s11"/>
+                            <af:iterator id="i5" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}4"/>
+                                </af:button>
+                                        
+                                        <af:spacer width="5" height="10" id="s12"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
                             </af:showDetailItem>
                         </af:panelTabbed>
                     </af:gridCell>
                 </af:gridRow>
+                <af:gridRow id="gr12">
+                    <af:gridCell id="gc15">
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow id="gr11"/>
                 <af:gridRow marginTop="5px" height="auto" id="gr3">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5"/>
                 </af:gridRow>
