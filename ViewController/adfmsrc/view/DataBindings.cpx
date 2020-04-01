@@ -196,17 +196,7 @@
     <page path="/WEB-INF/Fragments/Group/Company/SBU/Modules/Library/Collection_Types.jsff"
           usageId="view_Collection_TypesPageDef"/>
   
-  <pageDefinitionUsages>
-    <page id="view_Collection_TypesPageDef" path="Fragments.Group.Company.SBU.Modules.Library.Collection_TypesPageDef"/>
-  </pageDefinitionUsages>
-  <dataControlUsages>
-    <BC4JDataControl id="AppModuleDataControl1" Package="model.ERP"
-                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
-                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
-                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
-                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
-  </dataControlUsages>
-</pageMap>
+  
     <page path="/WEB-INF/TaskFlows/Group/Company/SBU/Modules/Staff/Student_Management_Application_Approval_TaskFlow.xml#Student_Management_Application_Approval_TaskFlow@ExecuteWithParams"
           usageId="view_Student_Management_Application_Approval_TaskFlow_Student_Management_Application_Approval_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/TaskFlows/Group/Company/SBU/Modules/Staff/Student_Principle_Application_Approval_TaskFlow.xml#Student_Principle_Application_Approval_TaskFlow@ExecuteWithParams"
@@ -387,6 +377,17 @@
     <page id="view_Student_Principle_Application_Approval_TaskFlow_Student_Principle_Application_Approval_TaskFlow_ExecuteWithParamsPageDef"
           path="TaskFlows.Group.Company.SBU.Modules.Staff.Student_Principle_Application_Approval_TaskFlow_Student_Principle_Application_Approval_TaskFlow_ExecuteWithParamsPageDef"/>
   </pageDefinitionUsages>
+  
+  <!--<pageDefinitionUsages>
+    <page id="view_Collection_TypesPageDef" path="Fragments.Group.Company.SBU.Modules.Library.Collection_TypesPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl1" Package="model.ERP"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>-->
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRoles"
                      FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"

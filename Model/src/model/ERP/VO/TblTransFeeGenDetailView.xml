@@ -24,25 +24,13 @@
     Name="Student_Reg_LOV1"
     ViewObjectName="model.LOV.Student_Reg_LOV"
     RowLevelBinds="true"/>
-  <ViewAccessor
+  <!--<ViewAccessor
     Name="Route_Fee_LOV1"
     ViewObjectName="model.LOV.Route_Name_Bus_Stop_LOV"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true"/>-->
   <ViewAccessor
     Name="Active_Name_LOV1"
     ViewObjectName="model.LOV.Active_Name_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
-    Name="Route_Name_Bus_Stop_LOV1"
-    ViewObjectName="model.LOV.Route_Name_Bus_Stop_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
-    Name="Route_Name_Bus_Stop_LOV2"
-    ViewObjectName="model.LOV.Route_Name_Bus_Stop_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
-    Name="Route_Name_Bus_Stop_LOV3"
-    ViewObjectName="model.LOV.Route_Name_Bus_Stop_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_StdRegId"
@@ -81,26 +69,6 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
-  <ListBinding
-    Name="LOV_RouteFeeMasterId"
-    ListVOName="Route_Name_Bus_Stop_LOV3"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="RouteFeeMasterId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id1"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="RouteStopsId"/>
-      <Item Value="Name"/>
-      <Item Value="RouteName"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
   <EntityUsage
     Name="TblTransFeeGenDetail"
     Entity="model.ERP.EO.TblTransFeeGenDetail"/>
@@ -122,15 +90,7 @@
     PrecisionRule="true"
     EntityAttrName="RouteFeeMasterId"
     EntityUsage="TblTransFeeGenDetail"
-    AliasName="ROUTE_FEE_MASTER_ID"
-    LOVName="LOV_RouteFeeMasterId">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="ROUTE_FEE_MASTER_ID"/>
   <ViewAttribute
     Name="StdRegId"
     PrecisionRule="true"
@@ -170,7 +130,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblTransFeeGenDetail"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -182,7 +143,8 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblTransFeeGenDetail"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
