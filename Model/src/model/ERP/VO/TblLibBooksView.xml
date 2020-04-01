@@ -13,6 +13,28 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="LibCategory_LOV1"
+    ViewObjectName="model.LOV.LibCategory_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_LibCategoryId"
+    ListVOName="LibCategory_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LibCategoryId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblLibBooks"
     Entity="model.ERP.EO.TblLibBooks"/>
@@ -40,7 +62,15 @@
     PrecisionRule="true"
     EntityAttrName="LibCategoryId"
     EntityUsage="TblLibBooks"
-    AliasName="LIB_CATEGORY_ID"/>
+    AliasName="LIB_CATEGORY_ID"
+    LOVName="LOV_LibCategoryId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="LibSubCategoryId"
     PrecisionRule="true"
