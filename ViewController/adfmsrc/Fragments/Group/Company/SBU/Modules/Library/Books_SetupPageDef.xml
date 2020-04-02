@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Books_SetupPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.Library">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblLibBooksView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblLibBooksView1Iterator"/>
+    <searchRegion Binds="TblLibBooksView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblLibBooksView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblLibBooksView1Iterator" id="TblLibBooksView1">
+      <nodeDefinition DefName="model.ERP.VO.TblLibBooksView" Name="TblLibBooksView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="Name"/>
+          <Item Value="LibCategoryId"/>
+          <Item Value="LibSubCategoryId"/>
+          <Item Value="LibLanguageId"/>
+          <Item Value="LibAuthorId"/>
+          <Item Value="LibPublisherId"/>
+          <Item Value="IsbnNo"/>
+          <Item Value="BlockNo"/>
+          <Item Value="RowNo"/>
+          <Item Value="ShelfNo"/>
+          <Item Value="Remarks"/>
+          <Item Value="Image"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblLibBooksView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblLibBooksView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblLibBooksView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+  </bindings>
+</pageDefinition>

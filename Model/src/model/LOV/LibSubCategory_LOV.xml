@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="LibSubCategory_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.LibSubCategory_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewAccessor
+    Name="TblLibSubCategoryView1"
+    ViewObjectName="model.ERP.VO.TblLibSubCategoryView"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="TblLibSubCategoryViewCriteria"
+      FullName="model.ERP.VO.TblLibSubCategoryView.TblLibSubCategoryViewCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="LibCategoryIdBind">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[LibCategoryId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <EntityUsage
+    Name="TblLibSubCategory"
+    Entity="model.ERP.EO.TblLibSubCategory"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblLibSubCategory"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="LibCategoryId"
+    PrecisionRule="true"
+    EntityAttrName="LibCategoryId"
+    EntityUsage="TblLibSubCategory"
+    AliasName="LIB_CATEGORY_ID"/>
+  <ViewAttribute
+    Name="Name"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblLibSubCategory"
+    AliasName="NAME"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

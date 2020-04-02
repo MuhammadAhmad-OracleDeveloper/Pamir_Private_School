@@ -13,13 +13,13 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="LibCategoryIdBind"
+    Kind="viewcriteria"
+    Type="java.math.BigDecimal"/>
   <ViewAccessor
     Name="Active_Name_LOV1"
     ViewObjectName="model.LOV.Active_Name_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
-    Name="LibCategory_LOV1"
-    ViewObjectName="model.LOV.LibCategory_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Ast"
@@ -39,24 +39,6 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
-  <ListBinding
-    Name="LOV_LibCategoryId"
-    ListVOName="LibCategory_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="LibCategoryId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
   <EntityUsage
     Name="TblLibSubCategory"
     Entity="model.ERP.EO.TblLibSubCategory"/>
@@ -72,15 +54,7 @@
     PrecisionRule="true"
     EntityAttrName="LibCategoryId"
     EntityUsage="TblLibSubCategory"
-    AliasName="LIB_CATEGORY_ID"
-    LOVName="LOV_LibCategoryId">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="LIB_CATEGORY_ID"/>
   <ViewAttribute
     Name="Name"
     PrecisionRule="true"
@@ -131,6 +105,42 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblLibSubCategory"
     AliasName="UPDATED_BY"/>
+  <ViewCriteria
+    Name="TblLibSubCategoryViewCriteria"
+    ViewObjectName="model.ERP.VO.TblLibSubCategoryView"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="TblLibSubCategoryViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="LibCategoryId"
+        ViewAttribute="LibCategoryId"
+        Operator="="
+        Conjunction="AND"
+        Value=":LibCategoryIdBind"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="TblLibBooksView"
     ViewLink="model.ERP.VO.FkLibBooksSubCatLink"
