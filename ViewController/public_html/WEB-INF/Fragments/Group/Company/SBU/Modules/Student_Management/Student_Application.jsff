@@ -52,9 +52,8 @@
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblStdApplView1.hints.Id.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblStdApplView1.hints.StdRegId.name}" filterable="true"
-                             sortable="true" headerText="Student Registration" id="c2" align="center" width="150">
-                   <f:facet name="filter">
+                  <af:column headerText="Student Registration" id="c2" sortable="true" filterable="true">
+                    <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.StdRegId}"
                                    id="it14" placeholder="Search Registration">
                                   </af:inputText>
@@ -62,8 +61,7 @@
                     <af:selectOneChoice value="#{row.bindings.StdRegId.inputValue}"
                                         label="#{row.bindings.StdRegId.label}"
                                         required="#{bindings.TblStdApplView1.hints.StdRegId.mandatory}"
-                                        shortDesc="#{bindings.TblStdApplView1.hints.StdRegId.tooltip}" id="soc1" readOnly="true"
-                                        contentStyle='text-align: center'>
+                                        shortDesc="#{bindings.TblStdApplView1.hints.StdRegId.tooltip}" id="soc1">
                       <f:selectItems value="#{row.bindings.StdRegId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.StdRegId.validator}"/>
                     </af:selectOneChoice>
