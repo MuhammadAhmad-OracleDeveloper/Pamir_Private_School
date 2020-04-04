@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
+  
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
     <af:showDetailItem id="pane1" text="Book Issue">
          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
@@ -22,7 +23,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Book Issue Form">
+              <af:showDetailItem id="tab1" text="Book Issue Master">
                 <af:table value="#{bindings.TblLibBooksIssueMasterView1.collectionModel}" var="row"
                           rows="#{bindings.TblLibBooksIssueMasterView1.rangeSize}"
                           emptyText="#{bindings.TblLibBooksIssueMasterView1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -32,10 +33,11 @@
                           rowSelection="single" fetchSize="#{bindings.TblLibBooksIssueMasterView1.rangeSize}"
                           filterModel="#{bindings.TblLibBooksIssueMasterView1Query.queryDescriptor}"
                           filterVisible="true" queryListener="#{bindings.TblLibBooksIssueMasterView1Query.processQuery}"
-                          varStatus="vs" id="t1">
+                          varStatus="vs" id="t1" scrollPolicy="page" autoHeightRows="0"
+                          >
                   <af:column sortProperty="#{bindings.TblLibBooksIssueMasterView1.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="ID"
-                             id="c1">
+                             sortable="true" headerText="Book Issue Master ID"
+                             id="c1" align="center" width="80">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="id4" placeholder="Search ID">
@@ -46,7 +48,9 @@
                                   required="#{bindings.TblLibBooksIssueMasterView1.hints.Id.mandatory}"
                                   columns="#{bindings.TblLibBooksIssueMasterView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblLibBooksIssueMasterView1.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblLibBooksIssueMasterView1.hints.Id.tooltip}" id="it1">
+                                  shortDesc="#{bindings.TblLibBooksIssueMasterView1.hints.Id.tooltip}" id="it1"
+                                  readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblLibBooksIssueMasterView1.hints.Id.format}"/>
@@ -54,7 +58,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLibBooksIssueMasterView1.hints.Dated.name}" filterable="true"
                              sortable="true" headerText="Date"
-                             id="c2">
+                             id="c2" align="center">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblLibBooksIssueMasterView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
                                     id="id1" placeholder="Search Date">
@@ -65,17 +69,18 @@
                                   label="#{bindings.TblLibBooksIssueMasterView1.hints.Dated.label}"
                                   required="#{bindings.TblLibBooksIssueMasterView1.hints.Dated.mandatory}"
                                   columns="#{bindings.TblLibBooksIssueMasterView1.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.TblLibBooksIssueMasterView1.hints.Dated.tooltip}" id="id2">
+                                  shortDesc="#{bindings.TblLibBooksIssueMasterView1.hints.Dated.tooltip}" id="id2"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblLibBooksIssueMasterView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLibBooksIssueMasterView1.hints.StdRegId.name}"
                              filterable="true" sortable="true"
-                             headerText="Student" id="c3">
+                             headerText="Student" id="c3" width="250">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.StdRegId}"
-                                   id="it3" placeholder="Search Student Name">
+                                   id="it3" placeholder="Search Student">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.StdRegId.inputValue}"
@@ -89,10 +94,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLibBooksIssueMasterView1.hints.StaffId.name}" filterable="true"
                              sortable="true" headerText="Staff"
-                             id="c4">
+                             id="c4" width="250">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.StaffId}"
-                                   id="it4" placeholder="Search Staff Name">
+                                   id="it4" placeholder="Search Staff">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.StaffId.inputValue}" label="#{row.bindings.StaffId.label}"
@@ -116,7 +121,8 @@
                                   label="#{bindings.TblLibBooksIssueMasterView1.hints.ReturnDate.label}"
                                   required="#{bindings.TblLibBooksIssueMasterView1.hints.ReturnDate.mandatory}"
                                   columns="#{bindings.TblLibBooksIssueMasterView1.hints.ReturnDate.displayWidth}"
-                                  shortDesc="#{bindings.TblLibBooksIssueMasterView1.hints.ReturnDate.tooltip}" id="id5">
+                                  shortDesc="#{bindings.TblLibBooksIssueMasterView1.hints.ReturnDate.tooltip}" id="id5"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.ReturnDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblLibBooksIssueMasterView1.hints.ReturnDate.format}"/>
                     </af:inputDate>
@@ -137,6 +143,7 @@
                     </af:selectOneChoice>
                   </af:column>
                 </af:table>
+                
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
@@ -144,7 +151,6 @@
         <af:gridRow marginTop="5px" height="auto" id="gr3">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
              <af:panelGroupLayout id="pgl3" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s4"/>
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -170,10 +176,11 @@
                           rowSelection="single" fetchSize="#{bindings.TblLibBooksIssueDetailView2.rangeSize}"
                           filterModel="#{bindings.TblLibBooksIssueDetailView2Query.queryDescriptor}"
                           filterVisible="true" queryListener="#{bindings.TblLibBooksIssueDetailView2Query.processQuery}"
-                          varStatus="vs" id="t2" partialTriggers="">
+                          varStatus="vs" id="t2" scrollPolicy="page" autoHeightRows="0"
+                          >
                   <af:column sortProperty="#{bindings.TblLibBooksIssueDetailView2.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="ID"
-                             id="c7">
+                             sortable="true" headerText="Book Issue Detail ID"
+                             id="c7" align="center" width="80">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="it6" placeholder="Search ID">
@@ -184,7 +191,8 @@
                                   required="#{bindings.TblLibBooksIssueDetailView2.hints.Id.mandatory}"
                                   columns="#{bindings.TblLibBooksIssueDetailView2.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblLibBooksIssueDetailView2.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblLibBooksIssueDetailView2.hints.Id.tooltip}" id="it2" readOnly="true">
+                                  shortDesc="#{bindings.TblLibBooksIssueDetailView2.hints.Id.tooltip}" id="it2" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblLibBooksIssueDetailView2.hints.Id.format}"/>
@@ -192,7 +200,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLibBooksIssueDetailView2.hints.LibBooksCopyId.name}"
                              filterable="true" sortable="true"
-                             headerText="Book" id="c8">
+                             headerText="Book" id="c8" width="300">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.LibBooksCopyId}"
                                    id="it7" placeholder="Search Book">
@@ -223,6 +231,7 @@
                     </af:selectOneChoice>
                   </af:column>
                 </af:table>
+                
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
@@ -230,7 +239,6 @@
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
              <af:panelGroupLayout id="pgl2" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s2"/>
                             <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
