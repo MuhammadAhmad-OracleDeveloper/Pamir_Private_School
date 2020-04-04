@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Book_IssuePageDef"
+                Package="Fragments.Group.Company.SBU.Modules.Library">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblLibBooksIssueMasterView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblLibBooksIssueMasterView1Iterator"/>
+    <searchRegion Binds="TblLibBooksIssueMasterView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="TblLibBooksIssueMasterView1Query"/>
+    <iterator Binds="TblLibBooksIssueDetailView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblLibBooksIssueDetailView2Iterator"/>
+    <searchRegion Binds="TblLibBooksIssueDetailView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="TblLibBooksIssueDetailView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblLibBooksIssueMasterView1Iterator" id="TblLibBooksIssueMasterView1">
+      <nodeDefinition DefName="model.ERP.VO.TblLibBooksIssueMasterView" Name="TblLibBooksIssueMasterView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="StdRegId"/>
+          <Item Value="StaffId"/>
+          <Item Value="ReturnDate"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblLibBooksIssueDetailView2Iterator" id="TblLibBooksIssueDetailView2">
+      <nodeDefinition DefName="model.ERP.VO.TblLibBooksIssueDetailView" Name="TblLibBooksIssueDetailView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="LibBooksCopyId"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblLibBooksIssueDetailView2Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblLibBooksIssueDetailView2Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblLibBooksIssueDetailView2Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+  </bindings>
+</pageDefinition>
