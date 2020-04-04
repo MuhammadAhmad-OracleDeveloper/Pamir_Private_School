@@ -33,7 +33,7 @@
                           filterModel="#{bindings.TblSectionTimetableMasterView1Query.queryDescriptor}"
                           filterVisible="true"
                           queryListener="#{bindings.TblSectionTimetableMasterView1Query.processQuery}" varStatus="vs"
-                          id="t1" scrollPolicy="page" autoHeightRows="0" partialTriggers="::b2 ::b3 ::b4">
+                          id="t1" scrollPolicy="page" autoHeightRows="0" >
                   <af:column sortProperty="#{bindings.TblSectionTimetableMasterView1.hints.Id.name}" filterable="true"
                              sortable="true" headerText="Time Table Master ID"
                              id="c1" align="center" width="80">
@@ -174,8 +174,8 @@
                           filterModel="#{bindings.TblSectionTimetableDetailView3Query.queryDescriptor}"
                           filterVisible="true"
                           queryListener="#{bindings.TblSectionTimetableDetailView3Query.processQuery}" varStatus="vs"
-                          id="t2" scrollPolicy="page" autoHeightRows="0" partialTriggers="::b2 ::b3 ::b4">
-                  <af:column sortProperty="#{bindings.TblSectionTimetableDetailView3.hints.Id.name}" filterable="true"
+                          id="t2" scrollPolicy="page" autoHeightRows="0" >
+                  <af:column sortProperty="#{bindings.TblSectionTimetableDetailView3.hints.Id.name}" fiterable="true"
                              sortable="true" headerText="Time Table Detail ID"
                              id="c7" align="center">
                              <f:facet name="filter">
@@ -197,7 +197,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionTimetableDetailView3.hints.StaffId.name}"
                              filterable="true" sortable="true"
-                             headerText="Subject Teacher" id="c8">
+                             headerText="Subject Teacher" id="c8" width="120">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.StaffId}"
                                    id="it9" placeholder="Search Subject Teacher">
@@ -213,7 +213,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionTimetableDetailView3.hints.StaffSubjectId.name}"
                              filterable="true" sortable="true"
-                             headerText="Teaching Subjects" id="c9">
+                             headerText="Teaching Subjects" id="c9" width="120">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.StaffSubjectId}"
                                    id="it11" placeholder="Search Teaching Subjects">

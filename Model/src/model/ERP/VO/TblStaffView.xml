@@ -41,6 +41,10 @@
     Name="Job_Status_LOV1"
     ViewObjectName="model.LOV.Job_Status_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Gender_Name_LOV1"
+    ViewObjectName="model.LOV.Gender_Name_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Ast"
     ListVOName="Active_Name_LOV1"
@@ -167,6 +171,24 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_Gender"
+    ListVOName="Gender_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Gender"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblStaff"
     Entity="model.ERP.EO.TblStaff"/>
@@ -234,7 +256,15 @@
     PrecisionRule="true"
     EntityAttrName="Gender"
     EntityUsage="TblStaff"
-    AliasName="GENDER"/>
+    AliasName="GENDER"
+    LOVName="LOV_Gender">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Dob"
     PrecisionRule="true"

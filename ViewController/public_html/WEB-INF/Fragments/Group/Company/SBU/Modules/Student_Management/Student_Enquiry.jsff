@@ -225,13 +225,13 @@
                     <f:validator binding="#{bindings.ContRelation.validator}"/>
                   </af:inputText>
                   <af:spacer  id="s2"/>
-                  <af:selectOneChoice value="#{bindings.LookupElecGroup1.inputValue}"
+                  <af:selectOneChoice value="#{bindings.LookupElecGroup.inputValue}"
                                       label="Elective Group"
-                                      required="#{bindings.LookupElecGroup1.hints.mandatory}"
-                                      shortDesc="#{bindings.LookupElecGroup1.hints.tooltip}" id="soc5"
+                                      required="#{bindings.LookupElecGroup.hints.mandatory}"
+                                      shortDesc="#{bindings.LookupElecGroup.hints.tooltip}" id="soc5"
                                       contentStyle="width:200px;">
-                    <f:selectItems value="#{bindings.LookupElecGroup1.items}" id="si5"/>
-                    <f:validator binding="#{bindings.LookupElecGroup1.validator}"/>
+                    <f:selectItems value="#{bindings.LookupElecGroup.items}" id="si5"/>
+                    <f:validator binding="#{bindings.LookupElecGroup.validator}"/>
                   </af:selectOneChoice>
                   <af:inputText value="#{bindings.Address.inputValue}" label="Address"
                                 required="#{bindings.Address.hints.mandatory}"

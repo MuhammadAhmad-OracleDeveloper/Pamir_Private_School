@@ -73,11 +73,6 @@
         <Item Value="Dob"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblStaffView1Iterator" id="Gender">
-      <AttrNames>
-        <Item Value="Gender"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="TblStaffView1Iterator" id="JobStatus">
       <AttrNames>
         <Item Value="JobStatus"/>
@@ -355,5 +350,7 @@
         <Item Value="LicenseExp"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="TblStaffView1Iterator" StaticList="false" Uses="LOV_Gender" id="Gender" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

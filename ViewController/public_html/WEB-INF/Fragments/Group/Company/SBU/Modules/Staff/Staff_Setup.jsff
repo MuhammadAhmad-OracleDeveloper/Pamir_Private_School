@@ -101,7 +101,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStaffView1.hints.Doj.name}" filterable="true" sortable="true"
-                             headerText="Date OF Join" id="c5" align="center">
+                             headerText="Date of Join" id="c5" align="center">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblStaffView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Doj.value}"
                                     id="id3">
@@ -179,13 +179,13 @@
                     <f:validator binding="#{bindings.Dob.validator}"/>
                     <af:convertDateTime pattern="#{bindings.Dob.format}"/>
                   </af:inputDate>
-                  <af:inputText value="#{bindings.Gender.inputValue}" label="Gender"
-                                required="#{bindings.Gender.hints.mandatory}"
-                                columns="#{bindings.Gender.hints.displayWidth}"
-                                maximumLength="#{bindings.Gender.hints.precision}"
-                                shortDesc="#{bindings.Gender.hints.tooltip}" id="it5" contentStyle="width:150px;">
+                  <af:spacer  id="s32"/>
+                  <af:selectOneChoice value="#{bindings.Gender.inputValue}" label="Gender"
+                                      required="#{bindings.Gender.hints.mandatory}"
+                                      shortDesc="#{bindings.Gender.hints.tooltip}" id="soc30" contentStyle="width:150px;">
+                    <f:selectItems value="#{bindings.Gender.items}" id="si30"/>
                     <f:validator binding="#{bindings.Gender.validator}"/>
-                  </af:inputText>
+                  </af:selectOneChoice>
                   <af:spacer  id="s6"/>
                   <af:selectOneChoice value="#{bindings.JobStatus1.inputValue}" label="Job Status"
                                       required="#{bindings.JobStatus1.hints.mandatory}"

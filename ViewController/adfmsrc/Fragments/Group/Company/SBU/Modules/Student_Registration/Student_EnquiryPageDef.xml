@@ -55,11 +55,6 @@
         <Item Value="ContRelation"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblStdEnqView1Iterator" id="LookupElecGroup">
-      <AttrNames>
-        <Item Value="LookupElecGroup"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="TblStdEnqView1Iterator" id="Address">
       <AttrNames>
         <Item Value="Address"/>
@@ -86,8 +81,6 @@
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
     <list IterBinding="TblStdEnqView1Iterator" StaticList="false" Uses="LOV_Gender" id="Gender1" DTSupportsMRU="true"
           SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblStdEnqView1Iterator" StaticList="false" Uses="LOV_LookupElecGroup" id="LookupElecGroup1"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
       <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
         <AttrNames>
@@ -128,5 +121,7 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <list IterBinding="TblStdEnqView1Iterator" StaticList="false" Uses="LOV_LookupElecGroup" id="LookupElecGroup"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
