@@ -177,7 +177,7 @@
                           id="t2" scrollPolicy="page" autoHeightRows="0" >
                   <af:column sortProperty="#{bindings.TblSectionTimetableDetailView3.hints.Id.name}" fiterable="true"
                              sortable="true" headerText="Time Table Detail ID"
-                             id="c7" align="center">
+                             id="c7" align="center" filterable="true">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="it8" placeholder="Search ID">
@@ -262,8 +262,9 @@
                                   shortDesc="#{bindings.TblSectionTimetableDetailView3.hints.FromTime.tooltip}"
                                   id="id8" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FromTime.validator}"/>
-                      <af:convertDateTime pattern="HH:mm"/>
+                      
                       <af:convertDateTime pattern="#{bindings.TblSectionTimetableDetailView3.hints.FromTime.format}"/>
+                    <af:convertDateTime pattern="HH:mm"/>
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionTimetableDetailView3.hints.ToTime.name}"
@@ -282,8 +283,8 @@
                                   shortDesc="#{bindings.TblSectionTimetableDetailView3.hints.ToTime.tooltip}" id="id6"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.ToTime.validator}"/>
-                      <af:convertDateTime pattern="HH:mm"/>
                       <af:convertDateTime pattern="#{bindings.TblSectionTimetableDetailView3.hints.ToTime.format}"/>
+                      <af:convertDateTime pattern="HH:mm"/>
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionTimetableDetailView3.hints.TimeDiff.name}"

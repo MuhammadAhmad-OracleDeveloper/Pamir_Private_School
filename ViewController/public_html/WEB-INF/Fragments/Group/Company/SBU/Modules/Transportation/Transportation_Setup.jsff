@@ -125,7 +125,7 @@
                              headerText="Transport Type" id="c6">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.LookupTransportType}"
-                                   id="it10" placeholder="Search Transport Type">
+                                   id="it10" placeholder="Search Type">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.LookupTransportType.inputValue}"
@@ -137,6 +137,7 @@
                       <f:validator binding="#{row.bindings.LookupTransportType.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
+
                   <af:column sortProperty="#{bindings.TblTransportView1.hints.StaffId.name}" filterable="true"
                              sortable="true" headerText="Staff" id="c7" width="200">
                              <f:facet name="filter">
