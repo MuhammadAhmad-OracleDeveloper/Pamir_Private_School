@@ -4,26 +4,28 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TblLibCategoryView1" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblLibCategoryView1" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblLibCategoryView1Iterator"/>
     <searchRegion Binds="TblLibCategoryView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblLibCategoryView1Query"/>
-    <iterator Binds="TblLibSubCategoryView2" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblLibSubCategoryView2" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblLibSubCategoryView2Iterator"/>
     <searchRegion Binds="TblLibSubCategoryView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblLibSubCategoryView2Query"/>
-    <iterator Binds="TblLibAuthorView1" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblLibAuthorView1" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblLibAuthorView1Iterator"/>
     <searchRegion Binds="TblLibAuthorView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblLibAuthorView1Query"/>
-    <iterator Binds="TblLibPublisherView1" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblLibPublisherView1" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblLibPublisherView1Iterator"/>
     <searchRegion Binds="TblLibPublisherView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblLibPublisherView1Query"/>
-    <iterator Binds="TblLibLanguageView1" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblLibLanguageView1" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblLibLanguageView1Iterator"/>
     <searchRegion Binds="TblLibLanguageView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblLibLanguageView1Query"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="TblLibCategoryView1Iterator" id="TblLibCategoryView1">
@@ -106,5 +108,16 @@
             Action="iteratorExecute"/>
     <action IterBinding="TblLibLanguageView1Iterator" id="Delete4" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

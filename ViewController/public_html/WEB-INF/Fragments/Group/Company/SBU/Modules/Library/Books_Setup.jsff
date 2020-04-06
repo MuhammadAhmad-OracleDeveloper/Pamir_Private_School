@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
+  
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
     <af:showDetailItem id="pane1" text="Books Setup">
          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
@@ -22,7 +23,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Books Setup Form">
+              <af:showDetailItem id="tab1" text="Library Book">
                 <af:table value="#{bindings.TblLibBooksView1.collectionModel}" var="row"
                           rows="#{bindings.TblLibBooksView1.rangeSize}"
                           emptyText="#{bindings.TblLibBooksView1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -32,9 +33,9 @@
                           rowSelection="single" fetchSize="#{bindings.TblLibBooksView1.rangeSize}"
                           filterModel="#{bindings.TblLibBooksView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblLibBooksView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="">
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblLibBooksView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="ID" id="c1" align="center">
+                             headerText="Library Book ID" id="c1" align="center" width="80">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="id4" placeholder="Search ID">
@@ -45,13 +46,14 @@
                                   required="#{bindings.TblLibBooksView1.hints.Id.mandatory}"
                                   columns="#{bindings.TblLibBooksView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblLibBooksView1.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblLibBooksView1.hints.Id.tooltip}" id="it1" readOnly="true">
+                                  shortDesc="#{bindings.TblLibBooksView1.hints.Id.tooltip}" id="it1" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblLibBooksView1.hints.Id.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLibBooksView1.hints.Dated.name}" filterable="true"
-                             sortable="true" headerText="Date" id="c2">
+                             sortable="true" headerText="Date" id="c2" align="center">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblLibBooksView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
                                     id="id1" placeholder="Search Date">
@@ -62,13 +64,14 @@
                                   label="#{bindings.TblLibBooksView1.hints.Dated.label}"
                                   required="#{bindings.TblLibBooksView1.hints.Dated.mandatory}"
                                   columns="#{bindings.TblLibBooksView1.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.TblLibBooksView1.hints.Dated.tooltip}" id="id2">
+                                  shortDesc="#{bindings.TblLibBooksView1.hints.Dated.tooltip}" id="id2"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblLibBooksView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLibBooksView1.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="Book Title" id="c3">
+                             sortable="true" headerText="Book Title" id="c3" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Name}"
                                    id="it9" placeholder="Search Book Title">
@@ -164,7 +167,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLibBooksView1.hints.IsbnNo.name}" filterable="true"
-                             sortable="true" headerText="ISBN No." id="c9">
+                             sortable="true" headerText="ISBN No." id="c9" align="center">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.IsbnNo}"
                                    id="it15" placeholder="Search ISBN No.">
@@ -175,12 +178,13 @@
                                   required="#{bindings.TblLibBooksView1.hints.IsbnNo.mandatory}"
                                   columns="#{bindings.TblLibBooksView1.hints.IsbnNo.displayWidth}"
                                   maximumLength="#{bindings.TblLibBooksView1.hints.IsbnNo.precision}"
-                                  shortDesc="#{bindings.TblLibBooksView1.hints.IsbnNo.tooltip}" id="it3">
+                                  shortDesc="#{bindings.TblLibBooksView1.hints.IsbnNo.tooltip}" id="it3"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.IsbnNo.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLibBooksView1.hints.BlockNo.name}" filterable="true"
-                             sortable="true" headerText="Block No." id="c10">
+                             sortable="true" headerText="Block No." id="c10" align="center">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.BlockNo}"
                                    id="it16" placeholder="Search Block No.">
@@ -191,12 +195,13 @@
                                   required="#{bindings.TblLibBooksView1.hints.BlockNo.mandatory}"
                                   columns="#{bindings.TblLibBooksView1.hints.BlockNo.displayWidth}"
                                   maximumLength="#{bindings.TblLibBooksView1.hints.BlockNo.precision}"
-                                  shortDesc="#{bindings.TblLibBooksView1.hints.BlockNo.tooltip}" id="it4">
+                                  shortDesc="#{bindings.TblLibBooksView1.hints.BlockNo.tooltip}" id="it4"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.BlockNo.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLibBooksView1.hints.RowNo.name}" filterable="true"
-                             sortable="true" headerText="Row No." id="c11">
+                             sortable="true" headerText="Row No." id="c11" align="center">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.RowNo}"
                                    id="it17" placeholder="Search Row No.">
@@ -207,12 +212,13 @@
                                   required="#{bindings.TblLibBooksView1.hints.RowNo.mandatory}"
                                   columns="#{bindings.TblLibBooksView1.hints.RowNo.displayWidth}"
                                   maximumLength="#{bindings.TblLibBooksView1.hints.RowNo.precision}"
-                                  shortDesc="#{bindings.TblLibBooksView1.hints.RowNo.tooltip}" id="it5">
+                                  shortDesc="#{bindings.TblLibBooksView1.hints.RowNo.tooltip}" id="it5"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.RowNo.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLibBooksView1.hints.ShelfNo.name}" filterable="true"
-                             sortable="true" headerText="Shelf No." id="c12">
+                             sortable="true" headerText="Shelf No." id="c12" align="center">
                               <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.ShelfNo}"
                                    id="it18" placeholder="Search Shelf No.">
@@ -223,12 +229,13 @@
                                   required="#{bindings.TblLibBooksView1.hints.ShelfNo.mandatory}"
                                   columns="#{bindings.TblLibBooksView1.hints.ShelfNo.displayWidth}"
                                   maximumLength="#{bindings.TblLibBooksView1.hints.ShelfNo.precision}"
-                                  shortDesc="#{bindings.TblLibBooksView1.hints.ShelfNo.tooltip}" id="it6">
+                                  shortDesc="#{bindings.TblLibBooksView1.hints.ShelfNo.tooltip}" id="it6"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.ShelfNo.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLibBooksView1.hints.Remarks.name}" filterable="true"
-                             sortable="true" headerText="Remarks" id="c13">
+                             sortable="true" headerText="Remarks" id="c13" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Remarks}"
                                    id="it19" placeholder="Search Remarks">
@@ -277,7 +284,6 @@
         <af:gridRow marginTop="5px" height="auto" id="gr3">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
              <af:panelGroupLayout id="pgl3" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s4"/>
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -296,7 +302,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr5">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
             <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="sdi1" text="Books Copy Form">
+              <af:showDetailItem id="sdi1" text="Library Books Copy">
                 <af:table value="#{bindings.TblLibBooksCopyView2.collectionModel}" var="row"
                           rows="#{bindings.TblLibBooksCopyView2.rangeSize}"
                           emptyText="#{bindings.TblLibBooksCopyView2.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -306,9 +312,9 @@
                           rowSelection="single" fetchSize="#{bindings.TblLibBooksCopyView2.rangeSize}"
                           filterModel="#{bindings.TblLibBooksCopyView2Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblLibBooksCopyView2Query.processQuery}" varStatus="vs" id="t2"
-                          partialTriggers="">
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblLibBooksCopyView2.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="ID" id="c16" align="center">
+                             sortable="true" headerText="Library Books Copy ID" id="c16" align="center" width="80">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="it24" placeholder="Search ID">
@@ -319,7 +325,8 @@
                                   required="#{bindings.TblLibBooksCopyView2.hints.Id.mandatory}"
                                   columns="#{bindings.TblLibBooksCopyView2.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblLibBooksCopyView2.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblLibBooksCopyView2.hints.Id.tooltip}" id="it21" readOnly="true">
+                                  shortDesc="#{bindings.TblLibBooksCopyView2.hints.Id.tooltip}" id="it21" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblLibBooksCopyView2.hints.Id.format}"/>
@@ -327,7 +334,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLibBooksCopyView2.hints.CopyStatus.name}" filterable="true"
                              sortable="true" headerText="Copy Status"
-                             id="c17">
+                             id="c17" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.CopyStatus}"
                                    id="it25" placeholder="Search Copy Status">
@@ -344,7 +351,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLibBooksCopyView2.hints.CopyBarcode.name}" filterable="true"
                              sortable="true" headerText="Copy BarCode"
-                             id="c18">
+                             id="c18" width="200">
                               <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.CopyBarcode}"
                                    id="it26" placeholder="Search Copy BarCode">
@@ -381,7 +388,6 @@
         <af:gridRow marginTop="5px" height="auto" id="gr6">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
              <af:panelGroupLayout id="pgl2" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s2"/>
                             <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -401,7 +407,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr9">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9">
             <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="sdi2" text="Grade Books Form">
+              <af:showDetailItem id="sdi2" text="Library Books Grade ">
                 <af:table value="#{bindings.TblLibBooksGradeView2.collectionModel}" var="row"
                           rows="#{bindings.TblLibBooksGradeView2.rangeSize}"
                           emptyText="#{bindings.TblLibBooksGradeView2.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -411,9 +417,9 @@
                           rowSelection="single" fetchSize="#{bindings.TblLibBooksGradeView2.rangeSize}"
                           filterModel="#{bindings.TblLibBooksGradeView2Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblLibBooksGradeView2Query.processQuery}" varStatus="vs" id="t3"
-                          partialTriggers="">
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblLibBooksGradeView2.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="ID" id="c20" align="center">
+                             sortable="true" headerText="Library Books Copy ID" id="c20" align="center" width="80">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="it29" placeholder="Search ID">
@@ -424,7 +430,9 @@
                                   required="#{bindings.TblLibBooksGradeView2.hints.Id.mandatory}"
                                   columns="#{bindings.TblLibBooksGradeView2.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblLibBooksGradeView2.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblLibBooksGradeView2.hints.Id.tooltip}" id="it28">
+                                  shortDesc="#{bindings.TblLibBooksGradeView2.hints.Id.tooltip}" id="it28"
+                                  readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblLibBooksGradeView2.hints.Id.format}"/>
@@ -432,7 +440,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLibBooksGradeView2.hints.GradeId.name}" filterable="true"
                              sortable="true" headerText="Grade"
-                             id="c21">
+                             id="c21" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.GradeId}"
                                    id="it30" placeholder="Search Grade">

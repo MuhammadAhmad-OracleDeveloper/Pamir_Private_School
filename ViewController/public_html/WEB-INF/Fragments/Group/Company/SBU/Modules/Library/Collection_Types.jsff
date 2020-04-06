@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
+    
     <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
         <af:showDetailItem id="pane1" text="Collection Types">
             <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
@@ -40,11 +41,11 @@
                                                               filterVisible="true"
                                                               queryListener="#{bindings.TblLibCategoryView1Query.processQuery}"
                                                               varStatus="vs" id="t1"
-                                                              partialTriggers="">
+                                                              scrollPolicy="page" autoHeightRows="0">
                                                         <af:column sortProperty="#{bindings.TblLibCategoryView1.hints.Id.name}"
                                                                    filterable="true" sortable="true"
-                                                                   headerText="ID"
-                                                                   id="c1" align="center">
+                                                                   headerText="Category ID"
+                                                                   id="c1" align="center" width="80">
                                                                    <f:facet name="filter">
                                                                           <af:inputText value="#{vs.filterCriteria.Id}"
                                                                            id="id4" placeholder="Search ID">
@@ -56,7 +57,7 @@
                                                                           columns="#{bindings.TblLibCategoryView1.hints.Id.displayWidth}"
                                                                           maximumLength="#{bindings.TblLibCategoryView1.hints.Id.precision}"
                                                                           shortDesc="#{bindings.TblLibCategoryView1.hints.Id.tooltip}"
-                                                                          id="it1" readOnly="true">
+                                                                          id="it1" readOnly="true" contentStyle='text-align: center'>
                                                                 <f:validator binding="#{row.bindings.Id.validator}"/>
                                                                 <af:convertNumber groupingUsed="false"
                                                                                   pattern="#{bindings.TblLibCategoryView1.hints.Id.format}"/>
@@ -65,7 +66,7 @@
                                                         <af:column sortProperty="#{bindings.TblLibCategoryView1.hints.DeweyNo.name}"
                                                                    filterable="true" sortable="true"
                                                                    headerText="Dewey No."
-                                                                   id="c2">
+                                                                   id="c2" align="center">
                                                                    <f:facet name="filter">
                                                                           <af:inputText value="#{vs.filterCriteria.DeweyNo}"
                                                                            id="it11" placeholder="Search Dewey No.">
@@ -77,7 +78,7 @@
                                                                           columns="#{bindings.TblLibCategoryView1.hints.DeweyNo.displayWidth}"
                                                                           maximumLength="#{bindings.TblLibCategoryView1.hints.DeweyNo.precision}"
                                                                           shortDesc="#{bindings.TblLibCategoryView1.hints.DeweyNo.tooltip}"
-                                                                          id="it2">
+                                                                          id="it2" contentStyle='text-align: center'>
                                                                 <f:validator binding="#{row.bindings.DeweyNo.validator}"/>
                                                             </af:inputText>
                                                         </af:column>
@@ -87,7 +88,7 @@
                                                                    id="c3">
                                                                    <f:facet name="filter">
                                                                           <af:inputText value="#{vs.filterCriteria.Name}"
-                                                                           id="it12" placeholder="Search Category ">
+                                                                           id="it12" placeholder="Search Category">
                                                                           </af:inputText>
                                                                     </f:facet>
                                                             <af:inputText value="#{row.bindings.Name.inputValue}"
@@ -103,7 +104,7 @@
                                                         <af:column sortProperty="#{bindings.TblLibCategoryView1.hints.Remarks.name}"
                                                                    filterable="true" sortable="true"
                                                                    headerText="Remarks"
-                                                                   id="c4">
+                                                                   id="c4" width="200">
                                                                    <f:facet name="filter">
                                                                           <af:inputText value="#{vs.filterCriteria.Remarks}"
                                                                            id="it13" placeholder="Search Remarks">
@@ -139,25 +140,16 @@
                                                             </af:selectOneChoice>
                                                         </af:column>
                                                     </af:table>
-                                                    <af:gridRow id="gr8">
-                                                        <af:gridCell id="gc8"/>
-                                                        <af:gridCell id="gc9"/>
-                                                        <af:gridCell id="gc10"/>
-                                                        <af:gridCell id="gc11"/>
-                                                        <af:gridCell id="gc12"/>
-                                                    </af:gridRow>
+                                                    
                                                 </af:showDetailItem>
                                                 
                                             </af:panelTabbed>
                                         </af:gridCell>
                                     </af:gridRow>
-                                    <af:gridRow id="gr9">
-                                        <af:gridCell id="gc13"/>
-                                    </af:gridRow>
+                                   
                                     <af:gridRow marginTop="5px" height="auto" id="gr5">
                                         <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
              <af:panelGroupLayout id="pgl3" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s4"/>
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -191,11 +183,11 @@
                                                               filterVisible="true"
                                                               queryListener="#{bindings.TblLibSubCategoryView2Query.processQuery}"
                                                               varStatus="vs" id="t2"
-                                                              partialTriggers="">
+                                                              scrollPolicy="page" autoHeightRows="0">
                                                         <af:column sortProperty="#{bindings.TblLibSubCategoryView2.hints.Id.name}"
                                                                    filterable="true" sortable="true"
-                                                                   headerText="ID" align="center"
-                                                                   id="c6">
+                                                                   headerText="Sub Category ID" align="center"
+                                                                   id="c6" width="80">
                                                                    <f:facet name="filter">
                                                                           <af:inputText value="#{vs.filterCriteria.Id}"
                                                                            id="it15" placeholder="Search ID">
@@ -207,7 +199,7 @@
                                                                           columns="#{bindings.TblLibSubCategoryView2.hints.Id.displayWidth}"
                                                                           maximumLength="#{bindings.TblLibSubCategoryView2.hints.Id.precision}"
                                                                           shortDesc="#{bindings.TblLibSubCategoryView2.hints.Id.tooltip}"
-                                                                          id="it5" readOnly="true">
+                                                                          id="it5" readOnly="true" contentStyle='text-align: center'>
                                                                 <f:validator binding="#{row.bindings.Id.validator}"/>
                                                                 <af:convertNumber groupingUsed="false"
                                                                                   pattern="#{bindings.TblLibSubCategoryView2.hints.Id.format}"/>
@@ -234,8 +226,8 @@
                                                         </af:column>
                                                         <af:column sortProperty="#{bindings.TblLibSubCategoryView2.hints.Remarks.name}"
                                                                    filterable="true" sortable="true"
-                                                                   headerText="#{bindings.TblLibSubCategoryView2.hints.Remarks.label}"
-                                                                   id="c8">
+                                                                   headerText="Remarks"
+                                                                   id="c8" width="200">
                                                                    <f:facet name="filter">
                                                                           <af:inputText value="#{vs.filterCriteria.Remarks}"
                                                                            id="it9" placeholder="Search Remarks">
@@ -253,7 +245,7 @@
                                                         </af:column>
                                                         <af:column sortProperty="#{bindings.TblLibSubCategoryView2.hints.Ast.name}"
                                                                    filterable="true" sortable="true"
-                                                                   headerText="#{bindings.TblLibSubCategoryView2.hints.Ast.label}"
+                                                                   headerText="Active"
                                                                    id="c9">
                                                                    <f:facet name="filter">
                                                                           <af:inputText value="#{vs.filterCriteria.Ast}"
@@ -278,7 +270,6 @@
                                     <af:gridRow marginTop="5px" height="auto" id="gr10">
                                         <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc14">
              <af:panelGroupLayout id="pgl5" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s2"/>
                             <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -313,10 +304,10 @@
                                           filterModel="#{bindings.TblLibAuthorView1Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblLibAuthorView1Query.processQuery}" varStatus="vs"
-                                          id="t3" partialTriggers="">
+                                          id="t3" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblLibAuthorView1.hints.Id.name}"
                                                filterable="true" sortable="true"
-                                               headerText="ID" id="c10" align="center">
+                                               headerText="Author ID" id="c10" align="center" width="80">
                                                <f:facet name="filter">
                                                      <af:inputText value="#{vs.filterCriteria.Id}"
                                                        id="it25" placeholder="Search ID">
@@ -328,7 +319,7 @@
                                                       columns="#{bindings.TblLibAuthorView1.hints.Id.displayWidth}"
                                                       maximumLength="#{bindings.TblLibAuthorView1.hints.Id.precision}"
                                                       shortDesc="#{bindings.TblLibAuthorView1.hints.Id.tooltip}"
-                                                      id="it16" readOnly="true">
+                                                      id="it16" readOnly="true" contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.Id.validator}"/>
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.TblLibAuthorView1.hints.Id.format}"/>
@@ -336,10 +327,10 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblLibAuthorView1.hints.Name.name}"
                                                filterable="true" sortable="true"
-                                               headerText="Author Name" id="c11">
+                                               headerText="Author" id="c11" width="200">
                                                  <f:facet name="filter">
                                                      <af:inputText value="#{vs.filterCriteria.Name}"
-                                                       id="it26" placeholder="Search Author Name">
+                                                       id="it26" placeholder="Search Author">
                                                             </af:inputText>
                                                              </f:facet>
                                         <af:inputText value="#{row.bindings.Name.inputValue}"
@@ -354,7 +345,7 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblLibAuthorView1.hints.Remarks.name}"
                                                filterable="true" sortable="true"
-                                               headerText="Remarks" id="c12">
+                                               headerText="Remarks" id="c12" width="200">
                                                <f:facet name="filter">
                                                      <af:inputText value="#{vs.filterCriteria.Remarks}"
                                                        id="it27" placeholder="Search Remarks">
@@ -388,8 +379,8 @@
                                         </af:selectOneChoice>
                                     </af:column>
                                 </af:table>
+                                <af:spacer width="10" height="40" id="s2"/>
                                 <af:panelGroupLayout id="pgl6" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s6"/>
                             <af:iterator id="i3" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -412,10 +403,10 @@
                                           filterModel="#{bindings.TblLibPublisherView1Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblLibPublisherView1Query.processQuery}"
-                                          varStatus="vs" id="t4" partialTriggers="">
+                                          varStatus="vs" id="t4" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblLibPublisherView1.hints.Id.name}"
                                                filterable="true" sortable="true"
-                                               headerText="ID" id="c14" align="center">
+                                               headerText="Publisher ID" id="c14" align="center" width="80">
                                                <f:facet name="filter">
                                                      <af:inputText value="#{vs.filterCriteria.Id}"
                                                        id="it29" placeholder="Search ID">
@@ -427,7 +418,7 @@
                                                       columns="#{bindings.TblLibPublisherView1.hints.Id.displayWidth}"
                                                       maximumLength="#{bindings.TblLibPublisherView1.hints.Id.precision}"
                                                       shortDesc="#{bindings.TblLibPublisherView1.hints.Id.tooltip}"
-                                                      id="it19" readOnly="true">
+                                                      id="it19" readOnly="true" contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.Id.validator}"/>
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.TblLibPublisherView1.hints.Id.format}"/>
@@ -435,7 +426,7 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblLibPublisherView1.hints.Name.name}"
                                                filterable="true" sortable="true"
-                                               headerText="Publisher" id="c15">
+                                               headerText="Publisher" id="c15" width="200">
                                                <f:facet name="filter">
                                                      <af:inputText value="#{vs.filterCriteria.Name}"
                                                        id="it30" placeholder="Search Publisher">
@@ -454,7 +445,7 @@
                                     <af:column sortProperty="#{bindings.TblLibPublisherView1.hints.Remarks.name}"
                                                filterable="true" sortable="true"
                                                headerText="Remarks"
-                                               id="c16">
+                                               id="c16" width="200">
                                               <f:facet name="filter">
                                                      <af:inputText value="#{vs.filterCriteria.Remarks}"
                                                        id="it31" placeholder="Search Remarks">
@@ -488,8 +479,8 @@
                                         </af:selectOneChoice>
                                     </af:column>
                                 </af:table>
+                                <af:spacer width="10" height="40" id="s4"/>
                                 <af:panelGroupLayout id="pgl7" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s8"/>
                             <af:iterator id="i4" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -514,10 +505,10 @@
                                           filterModel="#{bindings.TblLibLanguageView1Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblLibLanguageView1Query.processQuery}"
-                                          varStatus="vs" id="t5" partialTriggers="">
+                                          varStatus="vs" id="t5" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblLibLanguageView1.hints.Id.name}"
                                                filterable="true" sortable="true"
-                                               headerText="ID" id="c18" align="center">
+                                               headerText="Language ID" id="c18" align="center" width="80">
                                                <f:facet name="filter">
                                                      <af:inputText value="#{vs.filterCriteria.Id}"
                                                        id="it33" placeholder="Search ID">
@@ -529,7 +520,7 @@
                                                       columns="#{bindings.TblLibLanguageView1.hints.Id.displayWidth}"
                                                       maximumLength="#{bindings.TblLibLanguageView1.hints.Id.precision}"
                                                       shortDesc="#{bindings.TblLibLanguageView1.hints.Id.tooltip}"
-                                                      id="it22" readOnly="true">
+                                                      id="it22" readOnly="true" contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.Id.validator}"/>
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.TblLibLanguageView1.hints.Id.format}"/>
@@ -556,7 +547,7 @@
                                     <af:column sortProperty="#{bindings.TblLibLanguageView1.hints.Remarks.name}"
                                                filterable="true" sortable="true"
                                                headerText="Remarks"
-                                               id="c20">
+                                               id="c20" width="200">
                                                <f:facet name="filter">
                                                      <af:inputText value="#{vs.filterCriteria.Remarks}"
                                                        id="it35" placeholder="Search Remarks">
@@ -590,8 +581,8 @@
                                         </af:selectOneChoice>
                                     </af:column>
                                 </af:table>
-                                 <af:panelGroupLayout id="pgl8" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s11"/>
+                                <af:spacer width="10" height="40" id="s6"/>
+                                <af:panelGroupLayout id="pgl8" layout="horizontal">
                             <af:iterator id="i5" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
