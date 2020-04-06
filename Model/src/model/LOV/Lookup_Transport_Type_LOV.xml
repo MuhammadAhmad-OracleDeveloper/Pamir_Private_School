@@ -3,10 +3,9 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="Lookup_Transport_LOV"
+  Name="Lookup_Transport_Type_LOV"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  OrderBy='"ID"'
   BindingStyle="OracleName"
   CustomQuery="true"
   PageIterMode="Full">
@@ -16,15 +15,25 @@
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.LOV.Lookup_Transport_LOV_LABEL"/>
+        ResId="LOOKUP_TRANSPORT_TYPE_LOV"/>
     </SchemaBasedProperties>
   </Properties>
-  <SQLQuery><![CDATA[Select   
-tbl_lookup_detail.name,  
-tbl_lookup_detail.ID  
-From tbl_lookup_detail,tbl_lookup_master  
-where tbl_lookup_detail.lookup_master_id=tbl_lookup_master.id  
-And tbl_lookup_master.Name='Transport']]></SQLQuery>
+  <SQLQuery><![CDATA[Select      
+tbl_lookup_detail.ID ,   
+tbl_lookup_detail.name   
+From tbl_lookup_detail,tbl_lookup_master     
+where tbl_lookup_detail.lookup_master_id=tbl_lookup_master.id     
+And tbl_lookup_master.Name='Transport Type']]></SQLQuery>
+  <ViewAttribute
+    Name="Id"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ID"
+    Expression="ID"
+    SQLType="NUMERIC"/>
   <ViewAttribute
     Name="Name"
     IsUpdateable="false"
@@ -40,16 +49,6 @@ And tbl_lookup_master.Name='Transport']]></SQLQuery>
       <Attr Name="_DisplaySize" Value="150"/>
     </DesignTime>
   </ViewAttribute>
-  <ViewAttribute
-    Name="Id"
-    IsUpdateable="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    AliasName="ID"
-    Expression="ID"
-    SQLType="NUMERIC"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>
