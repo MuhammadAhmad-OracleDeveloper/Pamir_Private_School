@@ -190,14 +190,11 @@
                       <f:validator binding="#{row.bindings.StdRegId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-
-                  <af:column sortProperty="#{bindings.TblTransFeeGenDetailView3.hints.RouteFeeMasterId.name}"
-                             filterable="true" sortable="true"
-                             headerText="Route Bus Stop" id="c7" align="center" width="200">
-                             <f:facet name="filter">
+                  <af:column headerText="Bus Route" id="c7" sortable="true" filterable="true">
+                    <f:facet name="filter">
                     
                                       <af:inputText value="#{vs.filterCriteria.RouteFeeMasterId}"
-                                       id="it10" placeholder="Search Bus Stop">
+                                       id="it10" placeholder="Search Bus Route">
                                       </af:inputText>
                                 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.RouteFeeMasterId.inputValue}"

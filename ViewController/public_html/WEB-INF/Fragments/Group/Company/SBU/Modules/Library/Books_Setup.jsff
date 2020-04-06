@@ -475,8 +475,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr7">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
              <af:panelGroupLayout id="pgl5" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s6"/>
-                            <af:iterator id="i3" var="index" varStatus="status"
+                           <af:iterator id="i3" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
