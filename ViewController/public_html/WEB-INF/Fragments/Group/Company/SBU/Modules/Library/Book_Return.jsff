@@ -73,25 +73,21 @@
                       <af:convertDateTime pattern="#{bindings.TblLibBooksReturnView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblLibBooksReturnView1.hints.LibBooksIssueDetailId.name}"
-                             filterable="true" sortable="true"
-                             headerText="BookIssueId" id="c3">
-                             <f:facet name="filter">
+                  <af:column headerText="Book Issue" id="c3"
+                             sortable="true" filterable="true">
+                   <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.LibBooksIssueDetailId}"
-                                   id="it4" placeholder="Search Books">
+                                   id="it2" placeholder="Search Book">
                                   </af:inputText>
                             </f:facet>
-                    <af:inputText value="#{row.bindings.LibBooksIssueDetailId.inputValue}"
-                                  label="#{bindings.TblLibBooksReturnView1.hints.LibBooksIssueDetailId.label}"
-                                  required="#{bindings.TblLibBooksReturnView1.hints.LibBooksIssueDetailId.mandatory}"
-                                  columns="#{bindings.TblLibBooksReturnView1.hints.LibBooksIssueDetailId.displayWidth}"
-                                  maximumLength="#{bindings.TblLibBooksReturnView1.hints.LibBooksIssueDetailId.precision}"
-                                  shortDesc="#{bindings.TblLibBooksReturnView1.hints.LibBooksIssueDetailId.tooltip}"
-                                  id="it2">
+                    <af:selectOneChoice value="#{row.bindings.LibBooksIssueDetailId.inputValue}"
+                                        label="#{row.bindings.LibBooksIssueDetailId.label}"
+                                        required="#{bindings.TblLibBooksReturnView1.hints.LibBooksIssueDetailId.mandatory}"
+                                        shortDesc="#{bindings.TblLibBooksReturnView1.hints.LibBooksIssueDetailId.tooltip}"
+                                        id="soc2">
+                      <f:selectItems value="#{row.bindings.LibBooksIssueDetailId.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.LibBooksIssueDetailId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblLibBooksReturnView1.hints.LibBooksIssueDetailId.format}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLibBooksReturnView1.hints.FineAmount.name}" filterable="true"
                              sortable="true" headerText="Fine Amount"
