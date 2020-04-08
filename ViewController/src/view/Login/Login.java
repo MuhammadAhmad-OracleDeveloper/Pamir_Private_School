@@ -32,6 +32,7 @@ public class Login {
     private static String user_id;
     private static String sessUName;
     private static String sessImage;
+    private static String sessCmpnyName;
 
     public Login() {
     }
@@ -167,9 +168,13 @@ public class Login {
             if (rset.next()) {
                 //                conn.close();
                 //getting data against column from table
+                sessCmpnyName = (rset.getString("NAME")).toString();
+                storeOnSession("sessCmpnyName", sessCmpnyName);
+                System.out.println(sessCmpnyName);
+                
                 sessImage = (rset.getString("IMAGE")).toString();
                 storeOnSession("sessCmpnyImg", sessImage);
-                System.out.println(sessImage);
+//                System.out.println(sessImage);
             }
         }
         catch (SQLException e) {
@@ -191,6 +196,8 @@ public class Login {
         storeOnSession("sessGrpID", "");
         storeOnSession("sessCmpnyID", "");
         storeOnSession("sessSBUID", "");
+        storeOnSession("sessCmpnyName", "");
+        storeOnSession("sessCmpnyImg", "");
         //        return "good";
         return "/faces/Main_Pages/Login.jsf?faces-redirect=true";
     }

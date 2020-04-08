@@ -22,12 +22,12 @@
     ViewObjectName="model.LOV.Route_Name_LOV"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="Lookup_Bus_stop_LOV1"
-    ViewObjectName="model.LOV.Lookup_Bus_stop_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
     Name="Active_Name_LOV1"
     ViewObjectName="model.LOV.Active_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Route_Stops_Name_LOV1"
+    ViewObjectName="model.LOV.Route_Stops_Name_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_AcadYearId"
@@ -66,24 +66,6 @@
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_RouteStopsId"
-    ListVOName="Lookup_Bus_stop_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="RouteStopsId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
     Name="LOV_Ast"
     ListVOName="Active_Name_LOV1"
     ListRangeSize="-1"
@@ -98,6 +80,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_RouteStopsId"
+    ListVOName="Route_Stops_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RouteStopsId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -158,7 +158,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblRouteFeeMaster"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -170,7 +171,8 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblRouteFeeMaster"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
