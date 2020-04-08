@@ -4,8 +4,8 @@
     <af:document title="Student Registration" id="d1">
         <af:messages id="m1"/>
         <af:form id="f1">
-            <af:panelGridLayout id="pgl1">
-                <af:gridRow height="160px" id="gr1">
+            <af:panelGridLayout id="pgl1"  styleClass="themes">
+                <af:gridRow height="96px" id="gr1">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
                         <!-- Header -->
                          <af:pageTemplate viewId="../Header.jsf" id="pt1">
@@ -13,13 +13,13 @@
                         </af:pageTemplate>
                     </af:gridCell>
                 </af:gridRow>
-                <af:gridRow height="100%" id="gr2">
+                <af:gridRow height="100%" id="gr2" marginTop="10px">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
                         <af:panelSplitter orientation="horizontal" splitterPosition="210" id="ps1">
                             <f:facet name="first">
                                 <!-- Left -->
                                 <af:panelAccordion discloseMany="false" id="pa4" inlineStyle="width:220px; ">
-                                    <af:showDetailItem id="sdi1" text="Student Management" inlineStyle="overflow: auto;">
+                                    <af:showDetailItem id="sdi1" text="Student Management" inlineStyle="overflow: auto;" styleClass="themes">
                                         <af:spacer width="190" height="10" id="s1"/>
                                         <af:iterator id="i2" value="#{bindings.Student_Management_Pages1.collectionModel}" var="item"
                                                      varStatus="status">
