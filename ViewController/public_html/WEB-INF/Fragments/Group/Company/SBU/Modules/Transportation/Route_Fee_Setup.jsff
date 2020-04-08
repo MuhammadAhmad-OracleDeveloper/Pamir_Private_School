@@ -86,9 +86,8 @@
                       <f:validator binding="#{row.bindings.RouteId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblRouteFeeMasterView1.hints.RouteStopsId.name}" filterable="true"
-                             sortable="true" headerText="Route Bus Stops"
-                             id="c4" width="200">
+                  <af:column headerText="Route Stops" id="c4"
+                             sortable="true" filterable="true" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.RouteStopsId}"
                                    id="it6" placeholder="Search Route Bus">
