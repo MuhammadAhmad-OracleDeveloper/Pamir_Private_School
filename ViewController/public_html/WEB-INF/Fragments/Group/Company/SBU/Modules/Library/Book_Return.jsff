@@ -73,9 +73,9 @@
                       <af:convertDateTime pattern="#{bindings.TblLibBooksReturnView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column headerText="Book Issue" id="c3"
-                             sortable="true" filterable="true">
-                   <f:facet name="filter">
+                  <af:column headerText="Issue Book" id="c3"
+                             sortable="true" filterable="true" width="250">
+                             <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.LibBooksIssueDetailId}"
                                    id="it2" placeholder="Search Book">
                                   </af:inputText>
