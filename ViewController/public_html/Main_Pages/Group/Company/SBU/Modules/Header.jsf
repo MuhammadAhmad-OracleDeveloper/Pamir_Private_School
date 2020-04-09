@@ -10,13 +10,14 @@
     <af:panelGridLayout id="pt_pgl2" >
         <af:gridRow marginTop="5px" height="auto" id="pt_gr2">
             <af:gridCell halign="stretch" valign="stretch" id="pt_gc1">
-                <af:panelGridLayout id="pt_pgl1" styleClass="themes">
+                <af:panelGridLayout id="pt_pgl1" styleClass="backColor">
                     <af:gridRow marginTop="5px" height="auto" id="pt_gr1">
                         <af:gridCell marginStart="5px" width="20%" id="pt_gc2">
                             <af:spacer width="20" height="10" id="pt_s2"/>
                             <!--<af:image id="pt_i1" inlineStyle="width:300px; height:90px; margin-top:2%;"
                                       source="/imageservlet?imageNameParam=${sessionScope.sessCmpnyImg}"/>-->
-                            <af:link text="${sessionScope.sessCmpnyName}" inlineStyle="font-size: 25px; color: white;" id="pt_l1"/>
+                            <af:link icon="/imageservlet?imageNameParam=${sessionScope.sessCmpnyImg}"
+                             action="/faces/Main_Pages/Group/Company/SBU/Modules/ModuleBoard.jsf" id="pt_l1"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="80%" halign="end" valign="bottom" marginEnd="5px"
                                      id="pt_gc3">
@@ -35,17 +36,19 @@
                                                  marginEnd="5px" id="pt_gc8">
                                         <af:panelGroupLayout id="pt_pgl5" layout="horizontal" valign="bottom">
                                             <af:outputLabel value="${sessionScope.sessUName}" id="pt_ol1"
-                                                            inlineStyle="text-transform: capitalize; font-size:x-large;color: white;"/>
+                                                            inlineStyle="text-transform: capitalize; font-size:x-large;"/>
                                             <!--<af:button text="Back to Module" id="pt_b2"
                                                        icon="#{resource['images:back_to_home.png']}"
                                                        destination="/faces/Main_Pages/Group/Company/SBU/Modules/ModuleBoard.jsf"/>-->
                                                        <af:spacer width="20" height="10" id="pt_s3"/>
-                                            <af:link id="pt_l2" icon="#{resource['images:back_to_home.png']}"
-                                                     action="/faces/Main_Pages/Group/Company/SBU/Modules/ModuleBoard.jsf"/>
+                                            <af:link id="pt_l2" icon="#{resource['images:back_to_home.png']}" 
+                                                     action="/faces/Main_Pages/Group/Company/SBU/Modules/ModuleBoard.jsf"
+                                                     text="Back to Module"/>
                                             <af:spacer width="10" height="10" id="pt_s4"/>
                                             <!--<af:button text="Logout" id="pt_b1" icon="#{resource['images:logout.png']}"
                                                        action="#{LoginsBean.logout_action}"/>-->
-                                            <af:link id="pt_l3" icon="#{resource['images:logout.png']}" action="#{LoginsBean.logout_action}"/>
+                                            <af:link id="pt_l3" icon="#{resource['images:logout.png']}" action="#{LoginsBean.logout_action}"
+                                                     text="Logout"/>
                                             <af:spacer width="20" height="10" id="pt_s1"/>
                                         
                                         </af:panelGroupLayout>
@@ -63,14 +66,14 @@
                         </af:gridCell>
                     </af:gridRow>-->
                 </af:panelGridLayout>
-                <af:panelGridLayout id="pt_pgl6" styleClass="themes">
+                <!--<af:panelGridLayout id="pt_pgl6">
                     <af:gridRow marginTop="5px" height="auto" id="pt_gr6">
                         <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="pt_gc9">
                         <af:spacer width="20" height="10" id="pt_ss6"/>
                             <af:panelGroupLayout id="pt_pgl7">
                                 <af:link icon="#{resource['images:hdr_student_registration.png']}"
                                 destination="/faces/Main_Pages/Group/Company/SBU/Modules/Student_Management/Student_Management.jsf" id="pt_l4"/>
-                                <!--<af:spacer width="10" height="10" id="pt_s5"/>-->
+                                --><!--<af:spacer width="10" height="10" id="pt_s5"/>--><!--
                                 <af:link text="Student Management" id="pt_l6" 
                                 destination="/faces/Main_Pages/Group/Company/SBU/Modules/Student_Management/Student_Management.jsf" styleClass="header_module"/>
                             </af:panelGroupLayout>
@@ -78,7 +81,7 @@
                             <af:panelGroupLayout id="pt_pg5l7">
                                 <af:link icon="#{resource['images:hdr_fee_management.png']}" 
                                 destination="/faces/Main_Pages/Group/Company/SBU/Modules/Fee_Management/Fee_Management.jsf" id="pt2_l4"/>
-                                <!--<af:spacer width="10" height="10" id="pwt_s5"/>-->
+                                --><!--<af:spacer width="10" height="10" id="pwt_s5"/>--><!--
                                 <af:link text="Fee Management" id="pt_3l6" 
                                 destination="/faces/Main_Pages/Group/Company/SBU/Modules/Fee_Management/Fee_Management.jsf" styleClass="header_module"/>
                             </af:panelGroupLayout>
@@ -86,7 +89,7 @@
                             <af:panelGroupLayout id="pt_p32gl7">
                                 <af:link icon="#{resource['images:hdr_transportation.png']}" 
                                 destination="/faces/Main_Pages/Group/Company/SBU/Modules/Transportation/Transportation.jsf" id="pt_ql4"/>
-                                <!--<af:spacer width="10" height="10" id="pt_sq5"/>-->
+                                --><!--<af:spacer width="10" height="10" id="pt_sq5"/>--><!--
                                 <af:link text="Transportation" id="ptwq_l6" 
                                 destination="/faces/Main_Pages/Group/Company/SBU/Modules/Transportation/Transportation.jsf" styleClass="header_module"/>
                             </af:panelGroupLayout>
@@ -94,7 +97,7 @@
                             <af:panelGroupLayout id="pt_pgwl7">
                                 <af:link icon="#{resource['images:hdr_sttaff.png']}" 
                                 destination="/faces/Main_Pages/Group/Company/SBU/Modules/Staff/Staff.jsf" id="ptq_l4"/>
-                                <!--<af:spacer width="10" height="10" id="pt_sq65"/>-->
+                                --><!--<af:spacer width="10" height="10" id="pt_sq65"/>--><!--
                                 <af:link text="Staff" id="pt_lq6" 
                                 destination="/faces/Main_Pages/Group/Company/SBU/Modules/Staff/Staff.jsf" styleClass="header_module"/>
                             </af:panelGroupLayout>
@@ -102,7 +105,7 @@
                             <af:panelGroupLayout id="vf">
                                 <af:link icon="#{resource['images:hdr_general_setup.png']}" 
                                 destination="/faces/Main_Pages/Group/Company/SBU/Modules/General_Setup/General_Setup.jsf" id="fv"/>
-                                <!--<af:spacer width="10" height="10" id="pt_sq65"/>-->
+                                --><!--<af:spacer width="10" height="10" id="pt_sq65"/>--><!--
                                 <af:link text="General Setup" id="vdf" 
                                 destination="/faces/Main_Pages/Group/Company/SBU/Modules/General_Setup/General_Setup.jsf" styleClass="header_module"/>
                             </af:panelGroupLayout>
@@ -110,7 +113,7 @@
                             <af:panelGroupLayout id="nh">
                                 <af:link icon="#{resource['images:hdr_library.png']}" 
                                 destination="/faces/Main_Pages/Group/Company/SBU/Modules/Library/Library.jsf" id="jmh"/>
-                                <!--<af:spacer width="10" height="10" id="pt_sq65"/>-->
+                                --><!--<af:spacer width="10" height="10" id="pt_sq65"/>--><!--
                                 <af:link text="Library" id="fvd" 
                                 destination="/faces/Main_Pages/Group/Company/SBU/Modules/Library/Library.jsf" styleClass="header_module"/>
                             </af:panelGroupLayout>
@@ -118,7 +121,7 @@
                             <af:panelGroupLayout id="csd">
                                 <af:link icon="#{resource['images:hdr_user_management.png']}" 
                                 destination="/faces/Main_Pages/Group/Company/SBU/Modules/User_Management/User_Management.jsf" id="sd"/>
-                                <!--<af:spacer width="10" height="10" id="pt_sq65"/>-->
+                                --><!--<af:spacer width="10" height="10" id="pt_sq65"/>--><!--
                                 <af:link text="User Management" id="vd" 
                                 destination="/faces/Main_Pages/Group/Company/SBU/Modules/User_Management/User_Management.jsf" styleClass="header_module"/>
                             </af:panelGroupLayout>
@@ -126,25 +129,25 @@
                             <af:panelGroupLayout id="pt_pgwl17">
                                 <af:link icon="#{resource['images:hdr_payroll.png']}" 
                                 destination="/faces/Main_Pages/Group/Company/SBU/Modules/Payroll/Payroll.jsf" id="ptq_3l4"/>
-                                <!--<af:spacer width="10" height="10" id="pt_sq65"/>-->
+                                --><!--<af:spacer width="10" height="10" id="pt_sq65"/>--><!--
                                 <af:link text="Payroll" id="pt_2lq6" 
                                 destination="/faces/Main_Pages/Group/Company/SBU/Modules/Payroll/Payroll.jsf" styleClass="header_module"/>
                             </af:panelGroupLayout>
                             <af:spacer width="15" height="10" id="pt_1s6w"/>
-                            <!--<af:panelGridLayout id="pt_pgl8">
+                            --><!--<af:panelGridLayout id="pt_pgl8">
                                 <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="pt_gr8">
                                     <af:gridCell marginStart="5px" width="50%" id="pt_gc11"/>
                                     <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="pt_gc12"/>
                                 </af:gridRow>
-                            </af:panelGridLayout>-->
+                            </af:panelGridLayout>--><!--
                         </af:gridCell>
                     </af:gridRow>
-                    <!--<af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="pt_gr7">
+                    --><!--<af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="pt_gr7">
                         <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="pt_gc10">
                             <af:link text="link 2" id="pt_l5"/>
                         </af:gridCell>
-                    </af:gridRow>-->
-                </af:panelGridLayout>
+                    </af:gridRow>--><!--
+                </af:panelGridLayout>-->
             </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="100%" marginBottom="5px" id="pt_gr3">
