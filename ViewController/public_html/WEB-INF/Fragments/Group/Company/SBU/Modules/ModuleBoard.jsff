@@ -171,7 +171,7 @@
     </af:table>-->
     <af:panelGroupLayout layout="scroll" id="pgl2" styleClass="backColor">
                              <!--Content--> 
-                           <af:panelFormLayout id="pfl3" maxColumns="3" rows="1" fieldWidth="500px;" inlineStyle=" padding-left: 2%;">
+    <af:panelFormLayout id="pfl3" maxColumns="3" rows="1" fieldWidth="500px;" inlineStyle=" padding-left: 2%; margin-top: 80px;">
         <af:iterator id="i2" value="#{bindings.User_Modules1.collectionModel}" var="item" varStatus="status">
             <af:panelGroupLayout id="pgl3" layout="horizontal" inlineStyle="padding: 4%;">
                 <af:link id="l6" destination="/faces/#{item.bindings.Link.inputValue}"
