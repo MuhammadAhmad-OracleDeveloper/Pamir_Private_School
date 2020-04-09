@@ -6,13 +6,20 @@
   Name="LibBooksCopy_LOV"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblLibBooks.ID, 
+       TblLibBooks.IMAGE, 
+       TblLibBooksCopy.LIB_BOOKS_ID, 
+       TblLibBooks.NAME, 
+       TblLibBooks.ISBN_NO, 
+       TblLibBooks.LIB_AUTHOR_ID, 
+       TblLibBooksCopy.ID AS ID1, 
+       TblLibBooksCopy.COPY_BARCODE"
+  FromList="TBL_LIB_BOOKS TblLibBooks, TBL_LIB_BOOKS_COPY TblLibBooksCopy"
+  Where="(TblLibBooks.ID = TblLibBooksCopy.LIB_BOOKS_ID(+)) AND ( ( (TblLibBooks.ID = LibBooksId ) ) )"
+  OrderBy="TblLibBooks.NAME">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -128,28 +135,4 @@
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
   </ResourceBundle>
-  <DeclarativeWhereClause
-    Name="DeclarativeWhereClause">
-    <ViewCriteria
-      Name="LibBooksCopy_LOVWhereCriteria"
-      ViewObjectName="model.LOV.LibBooksCopy_LOV"
-      Conjunction="AND"
-      Mode="3">
-      <ViewCriteriaRow
-        Name="LibBooksCopy_LOVWhereCriteria_row_0"
-        UpperColumns="1">
-        <ViewCriteriaItem
-          Name="Id"
-          ViewAttribute="Id"
-          Operator="="
-          Conjunction="AND"
-          Value="LibBooksId"
-          Required="Optional"/>
-      </ViewCriteriaRow>
-    </ViewCriteria>
-  </DeclarativeWhereClause>
-  <SortCriteria>
-    <Sort
-      Attribute="Name"/>
-  </SortCriteria>
 </ViewObject>

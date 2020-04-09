@@ -198,9 +198,8 @@
                                         pattern="#{bindings.TblLibBooksIssueDetailView2.hints.Id.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblLibBooksIssueDetailView2.hints.LibBooksCopyId.name}"
-                             filterable="true" sortable="true"
-                             headerText="Book" id="c8" width="300">
+                  <af:column headerText="Book" id="c8"
+                             sortable="true" filterable="true" width="300">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.LibBooksCopyId}"
                                    id="it7" placeholder="Search Book">
