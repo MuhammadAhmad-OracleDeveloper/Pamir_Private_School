@@ -34,7 +34,7 @@
                           queryListener="#{bindings.TblDepartmentView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblDepartmentView1.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Department ID" id="c1" align="center" width="80">
+                             sortable="true" headerText="Department ID" id="c1" align="right" width="80">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Id}"
        id="id4" placeholder="Search ID">
@@ -53,7 +53,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblDepartmentView1.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="Deparment" id="c2" width="500">
+                             sortable="true" headerText="Deparment" id="c2" width="500" align="left">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Name}"
        id="it3" placeholder="Search Deparment">
@@ -69,7 +69,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblDepartmentView1.hints.Ast.name}" filterable="true"
-                             sortable="true" headerText="Active" id="c3">
+                             sortable="true" headerText="Active" id="c3" align="left">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Ast}"
        id="it4" placeholder="Search Status">

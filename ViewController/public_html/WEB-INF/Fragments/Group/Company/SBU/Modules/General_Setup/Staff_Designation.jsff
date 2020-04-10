@@ -34,10 +34,10 @@
                           queryListener="#{bindings.TblDesignationView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblDesignationView1.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Designation ID" id="c1" align="center" width="80">
+                             sortable="true" headerText="Designation ID" id="c1" align="right" width="80">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Id}"
-       id="id4" placeholder="Search ID">
+       id="id4" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:inputText value="#{row.bindings.Id.inputValue}"
@@ -53,10 +53,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblDesignationView1.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="Designation" id="c2" width="300">
+                             sortable="true" headerText="Designation" id="c2" width="300" align="left">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Name}"
-       id="it3" placeholder="Search ID">
+       id="it3" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:inputText value="#{row.bindings.Name.inputValue}"
@@ -69,10 +69,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblDesignationView1.hints.Ast.name}" filterable="true"
-                             sortable="true" headerText="Active" id="c3">
+                             sortable="true" headerText="Active" id="c3" align="left">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Ast}"
-       id="it4" placeholder="Search Status">
+       id="it4" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"

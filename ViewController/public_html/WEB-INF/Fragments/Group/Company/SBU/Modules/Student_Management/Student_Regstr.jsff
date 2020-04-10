@@ -34,10 +34,10 @@
                           queryListener="#{bindings.TblStdRegView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblStdRegView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="Student Registration ID" id="c1" align="center" width="80">
+                             headerText="Student Registration ID" id="c1" align="right" width="80">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Id}"
-       id="id4" placeholder="Search ID">
+       id="id4" placeholder="Search ">
       </af:inputText>
 </f:facet>
 
@@ -54,10 +54,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdRegView1.hints.RegDate.name}" filterable="true"
-                             sortable="true" headerText="Date" id="c2" align="center">
+                             sortable="true" headerText="Date" id="c2" align="left">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblStdRegView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.RegDate.value}"
-                                    id="id1">
+                                    id="id1" placeholder="Search ">
                         <af:convertDateTime pattern="#{bindings.TblStdRegView1.hints.RegDate.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -72,10 +72,10 @@
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdRegView1.hints.StdEnqId.name}" filterable="true"
-                             sortable="true" headerText="Student Enquiry" id="c3" width="110">
+                             sortable="true" headerText="Student Enquiry" id="c3" width="110" align="left">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.StdEnqId}"
-       id="it7" placeholder="Search Enquiry">
+       id="it7" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.StdEnqId.inputValue}"
@@ -87,10 +87,10 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdRegView1.hints.EnrollNo.name}" filterable="true"
-                             sortable="true" headerText="Enroll No." id="c4" align="center">
+                             sortable="true" headerText="Enroll No." id="c4" align="right">
                       <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.EnrollNo}"
-       id="it28" placeholder="Search Enroll No.">
+       id="it28" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:inputText value="#{row.bindings.EnrollNo.inputValue}"
@@ -104,10 +104,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdRegView1.hints.RegNo.name}" filterable="true"
-                             sortable="true" headerText="Student Registration No." id="c5" align="center" width="110">
+                             sortable="true" headerText="Student Registration No." id="c5" align="right" width="110">
                     <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.RegNo}"
-       id="it29" placeholder="Search Reg No.">
+       id="it29" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:inputText value="#{row.bindings.RegNo.inputValue}"
@@ -121,10 +121,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdRegView1.hints.EsisNo.name}" filterable="true"
-                             sortable="true" headerText="ESIS No." id="c6" align="center">
+                             sortable="true" headerText="ESIS No." id="c6" align="right">
                    <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.EsisNo}"
-       id="it30" placeholder="Search ESIS No.">
+       id="it30" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:inputText value="#{row.bindings.EsisNo.inputValue}"
@@ -137,10 +137,10 @@
                       <f:validator binding="#{row.bindings.EsisNo.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Emirates ID" id="c11" align="center" sortable="true" filterable="true">
+                  <af:column headerText="Emirates ID" id="c11" align="right" sortable="true" filterable="true">
                     <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.EmirId}"
-       id="it50" placeholder="Search ID">
+       id="it50" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:inputText value="#{row.bindings.EmirId.inputValue}"
@@ -153,10 +153,11 @@
                       <f:validator binding="#{row.bindings.EmirId.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="First Name" id="c15" sortable="true" filterable="true" width="200">
+                  <af:column headerText="First Name" id="c15" sortable="true" filterable="true" width="200"
+                             align="left">
                     <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.FirstName}"
-       id="it51" placeholder="Search First Name">
+       id="it51" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:inputText value="#{row.bindings.FirstName.inputValue}"
@@ -169,10 +170,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column headerText="Last Name" id="c16" sortable="true"
-                             filterable="true" width="200">
+                             filterable="true" width="200" align="left">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.LastName}"
-       id="it52" placeholder="Search Last Name">
+       id="it52" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:inputText value="#{row.bindings.LastName.inputValue}"
@@ -184,10 +185,10 @@
                       <f:validator binding="#{row.bindings.LastName.validator}"/>
                     </af:inputText>
                  </af:column>
-                  <af:column headerText="DOB" id="c19" align="center" sortable="true" filterable="true">
+                  <af:column headerText="DOB" id="c19" align="left" sortable="true" filterable="true">
                      <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Dob}"
-       id="it53" placeholder="Search DOB">
+       id="it53" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:inputDate value="#{row.bindings.Dob.inputValue}"
@@ -200,10 +201,10 @@
                       <af:convertDateTime pattern="#{bindings.TblStdRegView1.hints.Dob.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column headerText="Contact No." id="c17" sortable="true" filterable="true" align="center">
+                  <af:column headerText="Contact No." id="c17" sortable="true" filterable="true" align="right">
                     <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.ContNumber}"
-       id="it54" placeholder="Search No.">
+       id="it54" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:inputText value="#{row.bindings.ContNumber.inputValue}"
@@ -216,10 +217,10 @@
                       <f:validator binding="#{row.bindings.ContNumber.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Contact Person" id="c18" sortable="true" filterable="true" align="center">
+                  <af:column headerText="Contact Person" id="c18" sortable="true" filterable="true" align="left">
                     <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.ContPerson}"
-       id="it55" placeholder="Search Person">
+       id="it55" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:inputText value="#{row.bindings.ContPerson.inputValue}"
@@ -233,10 +234,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdRegView1.hints.GradeId.name}" filterable="true"
-                             sortable="true" headerText="Grade" id="c7">
+                             sortable="true" headerText="Grade" id="c7" align="left">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.GradeId}"
-       id="it31" placeholder="Search Grade">
+       id="it31" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
@@ -247,10 +248,10 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdRegView1.hints.SectionsId.name}" filterable="true"
-                             sortable="true" headerText="Section" id="c8">
+                             sortable="true" headerText="Section" id="c8" align="left">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.SectionsId}"
-       id="it32" placeholder="Search Sections">
+       id="it32" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.SectionsId.inputValue}"
@@ -262,10 +263,10 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdRegView1.hints.Ast.name}" filterable="true" sortable="true"
-                             headerText="Active" id="c9" width="80">
+                             headerText="Active" id="c9" width="80" align="left">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Ast}"
-       id="it33" placeholder="Search Status">
+       id="it33" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"

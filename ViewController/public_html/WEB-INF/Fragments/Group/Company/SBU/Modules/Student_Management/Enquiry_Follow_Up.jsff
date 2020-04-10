@@ -34,10 +34,10 @@
                           queryListener="#{bindings.TblStdEnqView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="Enquiry ID" id="c1" align="center" width="80">
+                             headerText="Enquiry ID" id="c1" align="right" width="80">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
-                                   id="id4" placeholder="Enquiry ID">
+                                   id="id4" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.Id.inputValue}"
@@ -52,11 +52,11 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.Dated.name}" filterable="true"
-                             sortable="true" headerText="Date" id="c2" align="center">
+                             sortable="true" headerText="Date" id="c2" align="left">
                              
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblStdEnqView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
-                                    id="id1" placeholder="Date">
+                                    id="id1" placeholder="Search ">
                         <af:convertDateTime pattern="#{bindings.TblStdEnqView1.hints.Dated.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -70,10 +70,10 @@
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.AcadYearId.name}" filterable="true"
-                             sortable="true" headerText="Academic Year" id="c3">
+                             sortable="true" headerText="Academic Year" id="c3" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.AcadYearId}"
-                                   id="it15" placeholder="Academic Year" >
+                                   id="it15" placeholder="Search " >
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
@@ -85,10 +85,10 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.FirstName.name}" filterable="true"
-                             sortable="true" headerText="First Name" id="c4" width="200">
+                             sortable="true" headerText="First Name" id="c4" width="200" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.FirstName}"
-                                   id="it16" placeholder="First Name" >
+                                   id="it16" placeholder="Search " >
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.FirstName.inputValue}"
@@ -101,10 +101,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.LastName.name}" filterable="true"
-                             sortable="true" headerText="Last Name" id="c5" width="200">
+                             sortable="true" headerText="Last Name" id="c5" width="200" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.LastName}"
-                                   id="it17" placeholder="Last Name" >
+                                   id="it17" placeholder="Search " >
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.LastName.inputValue}"
@@ -117,10 +117,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.Gender.name}" filterable="true"
-                             sortable="true" headerText="Gender" id="c6">
+                             sortable="true" headerText="Gender" id="c6" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Gender}"
-                                   id="it18" placeholder="Gender" >
+                                   id="it18" placeholder="Search " >
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Gender.inputValue}" label="#{row.bindings.Gender.label}"
@@ -131,10 +131,10 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.GradeId.name}" filterable="true"
-                             sortable="true" headerText="Grade" id="c7">
+                             sortable="true" headerText="Grade" id="c7" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.GradeId}"
-                                   id="it19" placeholder="Grade" >
+                                   id="it19" placeholder="Search " >
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
@@ -146,10 +146,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.LookupElecGroup.name}" filterable="true"
                              sortable="true" headerText="Elective Group"
-                             id="c8">
+                             id="c8" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.LookupElecGroup}"
-                                   id="it20" placeholder="Elective Group" >
+                                   id="it20" placeholder="Search " >
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.LookupElecGroup.inputValue}"
@@ -161,10 +161,10 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.EmirId.name}" filterable="true"
-                             sortable="true" headerText="Emirates ID" id="c9" align="center">
+                             sortable="true" headerText="Emirates ID" id="c9" align="right">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.EmirId}"
-                                   id="it21" placeholder="Emirates ID" >
+                                   id="it21" placeholder="Search " >
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.EmirId.inputValue}"
@@ -177,10 +177,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.EmirArea.name}" filterable="true"
-                             sortable="true" headerText="Emirates Area" id="c10" align="center">
+                             sortable="true" headerText="Emirates Area" id="c10" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.EmirArea}"
-                                   id="it22" placeholder="Emirates Area" >
+                                   id="it22" placeholder="Search " >
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.EmirArea.inputValue}"
@@ -193,10 +193,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.Address.name}" filterable="true"
-                             sortable="true" headerText="Address" id="c11">
+                             sortable="true" headerText="Address" id="c11" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Address}"
-                                   id="it23" placeholder="Address" >
+                                   id="it23" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.Address.inputValue}"
@@ -209,10 +209,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.Ast.name}" filterable="true" sortable="true"
-                             headerText="Active" id="c12">
+                             headerText="Active" id="c12" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Ast}"
-                                   id="it24" placeholder="Status" >
+                                   id="it24" placeholder="Search " >
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
@@ -245,10 +245,10 @@
                           queryListener="#{bindings.TblEnqFollowUpView2Query.processQuery}" varStatus="vs" id="t2"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Follow Up ID" id="c13" align="center" width="80">
+                             sortable="true" headerText="Follow Up ID" id="c13" align="right" width="80">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
-                                   id="it25" placeholder="Search Follow Up ID" >
+                                   id="it25" placeholder="Search " >
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.Id.inputValue}"
@@ -263,11 +263,11 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.Dated.name}" filterable="true"
-                             sortable="true" headerText="Follow Up Date" id="c14" align="center">
+                             sortable="true" headerText="Follow Up Date" id="c14" align="left">
                              
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblEnqFollowUpView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
-                                    id="id3" placeholder="Search Follow Up Date">
+                                    id="id3" placeholder="Search ">
                         <af:convertDateTime pattern="#{bindings.TblEnqFollowUpView2.hints.Dated.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -282,10 +282,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.FollowMethod.name}" filterable="true"
                              sortable="true" headerText="Follow Up Method"
-                             id="c15" align="center" width="120">
+                             id="c15" align="left" width="120">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.FollowMethod}"
-                                   id="it26" placeholder="Search Follow Up Method" >
+                                   id="it26" placeholder="Search " >
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.FollowMethod.inputValue}"
@@ -299,10 +299,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.SmsContactNo.name}" filterable="true"
                              sortable="true" headerText="SMS Contact"
-                             id="c16" align="center">
+                             id="c16" align="right">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.SmsContactNo}"
-                                   id="it27" placeholder="Search SMS Contact No." >
+                                   id="it27" placeholder="Search " >
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.SmsContactNo.inputValue}"
@@ -315,10 +315,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.SmsText.name}" filterable="true"
-                             sortable="true" headerText="SMS Text" id="c17">
+                             sortable="true" headerText="SMS Text" id="c17" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.SmsText}"
-                                   id="it28" placeholder="Search SMS Text" >
+                                   id="it28" placeholder="Search " >
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.SmsText.inputValue}"
@@ -331,10 +331,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.EmailTo.name}" filterable="true"
-                             sortable="true" headerText="Email To" id="c18">
+                             sortable="true" headerText="Email To" id="c18" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.EmailTo}"
-                                   id="it29" placeholder="Search Email To" >
+                                   id="it29" placeholder="Search " >
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.EmailTo.inputValue}"
@@ -348,10 +348,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.EmailSubject.name}" filterable="true"
                              sortable="true" headerText="Email Subject"
-                             id="c19">
+                             id="c19" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.EmailSubject}"
-                                   id="it30" placeholder="Search Email Subject" >
+                                   id="it30" placeholder="Search " >
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.EmailSubject.inputValue}"
@@ -365,10 +365,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.EmailBody.name}" filterable="true"
                              sortable="true" headerText="Email Body"
-                             id="c20">
+                             id="c20" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.EmailBody}"
-                                   id="it31" placeholder="Search Email Body" >
+                                   id="it31" placeholder="Search " >
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.EmailBody.inputValue}"
@@ -382,10 +382,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.CallContactNo.name}" filterable="true"
                              sortable="true" headerText="Contact Number"
-                             id="c21" align="center" width="110">
+                             id="c21" align="right" width="110">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.CallContactNo}"
-                                   id="it32" placeholder="Search Contact Number" >
+                                   id="it32" placeholder="Search " >
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.CallContactNo.inputValue}"
@@ -399,10 +399,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.CallContent.name}" filterable="true"
                              sortable="true" headerText="Call Content"
-                             id="c22" width="110">
+                             id="c22" width="110" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.CallContent}"
-                                   id="it33" placeholder="Contact Number" >
+                                   id="it33" placeholder="Search " >
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.CallContent.inputValue}"
@@ -415,10 +415,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.Ast.name}" filterable="true"
-                             sortable="true" headerText="Active" id="c23">
+                             sortable="true" headerText="Active" id="c23" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Ast}"
-                                   id="it34" placeholder="Search Status" >
+                                   id="it34" placeholder="Search " >
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"

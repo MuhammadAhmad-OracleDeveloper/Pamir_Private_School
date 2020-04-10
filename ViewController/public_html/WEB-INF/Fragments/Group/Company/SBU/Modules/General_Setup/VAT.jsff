@@ -34,10 +34,10 @@
                           queryListener="#{bindings.TblVatView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblVatView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="VAT ID" id="c1" width="80" align="center">
+                             headerText="VAT ID" id="c1" width="80" align="right">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Id}"
-       id="id4" placeholder="Search ID">
+       id="id4" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:inputText value="#{row.bindings.Id.inputValue}" label="#{bindings.TblVatView1.hints.Id.label}"
@@ -52,10 +52,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblVatView1.hints.Dated.name}" filterable="true" sortable="true"
-                             headerText="Date" id="c2" align="center">
+                             headerText="Date" id="c2" align="left">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblVatView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
-                                    id="id1">
+                                    id="id1" placeholder="Search ">
                         <af:convertDateTime pattern="#{bindings.TblVatView1.hints.Dated.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -70,10 +70,10 @@
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblVatView1.hints.VatPerc.name}" filterable="true" sortable="true"
-                             headerText="VAT Percentage" id="c3" align="center" width="120">
+                             headerText="VAT Percentage" id="c3" align="right" width="120">
                                <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.VatPerc}"
-       id="it3" placeholder="Search Percentage">
+       id="it3" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:inputText value="#{row.bindings.VatPerc.inputValue}"
@@ -88,10 +88,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblVatView1.hints.Ast.name}" filterable="true" sortable="true"
-                             headerText="Active" id="c4">
+                             headerText="Active" id="c4" align="left">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Ast}"
-       id="it4" placeholder="Search Status">
+       id="it4" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"

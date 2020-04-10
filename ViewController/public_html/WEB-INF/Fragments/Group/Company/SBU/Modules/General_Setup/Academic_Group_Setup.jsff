@@ -44,30 +44,31 @@
                           queryListener="#{bindings.TblAcadGroupView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblAcadGroupView1.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Academic Group ID" id="c1" align="center" width="80">
+                             sortable="true" headerText="Academic Group ID" id="c1"  width="80" 
+                             align="right">
                              <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.Id}"
-       id="id4" placeholder="Search ID">
-      </af:inputText>
-</f:facet>
+                                  <af:inputText value="#{vs.filterCriteria.Id}"
+                                   id="id4" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
 
-                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                    <af:inputText value="#{row.bindings.Id.inputValue}" 
                                   label="#{bindings.TblAcadGroupView1.hints.Id.label}"
                                   required="#{bindings.TblAcadGroupView1.hints.Id.mandatory}"
                                   columns="#{bindings.TblAcadGroupView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblAcadGroupView1.hints.Id.precision}"
                                   shortDesc="#{bindings.TblAcadGroupView1.hints.Id.tooltip}" id="it1"
                                   readOnly="true"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: right'  >
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblAcadGroupView1.hints.Id.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblAcadGroupView1.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="Academic Group" id="c2" width="200">
+                             sortable="true" headerText="Academic Group" id="c2" width="200" align="left">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Name}"
-       id="it3" placeholder="Search Group">
+       id="it3" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:inputText value="#{row.bindings.Name.inputValue}"
@@ -80,10 +81,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column headerText="Active" id="c3" sortable="true"
-                             filterable="true">
+                             filterable="true" align="left">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Ast}"
-       id="it4" placeholder="Search Status">
+       id="it4" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"

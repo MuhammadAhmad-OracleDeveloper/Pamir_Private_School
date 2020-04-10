@@ -35,10 +35,10 @@
                                           queryListener="#{bindings.TblTermsView1Query.processQuery}" varStatus="vs"
                                           id="t1" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblTermsView1.hints.Id.name}" filterable="true"
-                                               sortable="true" headerText="Term ID" id="c1" align="center" width="80">
+                                               sortable="true" headerText="Term ID" id="c1" align="right" width="80">
                                         <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Id}" id="id4"
-                                                          placeholder="Search ID"></af:inputText>
+                                                          placeholder="Search "></af:inputText>
                                         </f:facet>
                                         <af:inputText value="#{row.bindings.Id.inputValue}"
                                                       label="#{bindings.TblTermsView1.hints.Id.label}"
@@ -53,10 +53,11 @@
                                         </af:inputText>
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblTermsView1.hints.AcadYearId.name}"
-                                               filterable="true" sortable="true" headerText="Academic Year" id="c2">
+                                               filterable="true" sortable="true" headerText="Academic Year" id="c2"
+                                               align="left">
                                                 <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.AcadYearId}" id="it5"
-                                                          placeholder="Search Year"></af:inputText>
+                                                          placeholder="Search "></af:inputText>
                                         </f:facet>
                                         <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
                                                             label="#{row.bindings.AcadYearId.label}"
@@ -68,10 +69,11 @@
                                         </af:selectOneChoice>
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblTermsView1.hints.TermName.name}"
-                                               filterable="true" sortable="true" headerText="Term" id="c3" width="200">
+                                               filterable="true" sortable="true" headerText="Term" id="c3" width="200"
+                                               align="left">
                                                <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.TermName}" id="it6"
-                                                          placeholder="Search Term"></af:inputText>
+                                                          placeholder="Search "></af:inputText>
                                         </f:facet>
                                         <af:inputText value="#{row.bindings.TermName.inputValue}"
                                                       label="#{bindings.TblTermsView1.hints.TermName.label}"
@@ -84,10 +86,10 @@
                                         </af:inputText>
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblTermsView1.hints.Ast.name}" filterable="true"
-                                               sortable="true" headerText="Active" id="c4">
+                                               sortable="true" headerText="Active" id="c4" align="left">
                                                 <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Ast}" id="it7"
-                                                          placeholder="Search Status"></af:inputText>
+                                                          placeholder="Search "></af:inputText>
                                         </f:facet>
                                         <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
                                                             label="#{row.bindings.Ast.label}"
@@ -123,10 +125,10 @@
                                           varStatus="vs" id="t2" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblTermWorkDaysView3.hints.Id.name}"
                                                filterable="true" sortable="true"
-                                               headerText="Terms Working Days ID" id="c5" align="center" width="100">
+                                               headerText="Terms Working Days ID" id="c5" align="right" width="100">
                                                 <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Id}" id="it8"
-                                                          placeholder="Search ID"></af:inputText>
+                                                          placeholder="Search "></af:inputText>
                                         </f:facet>
                                         <af:inputText value="#{row.bindings.Id.inputValue}"
                                                       label="#{bindings.TblTermWorkDaysView3.hints.Id.label}"
@@ -144,10 +146,10 @@
                                     <af:column sortProperty="#{bindings.TblTermWorkDaysView3.hints.TermsId.name}"
                                                filterable="true" sortable="true"
                                                headerText="Terms"
-                                               id="c7" width="200">
+                                               id="c7" width="200" align="left">
                                                <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.TermsId}" id="it10"
-                                                          placeholder="Search Terms"></af:inputText>
+                                                          placeholder="Search "></af:inputText>
                                         </f:facet>
                                         <af:selectOneChoice value="#{row.bindings.TermsId.inputValue}"
                                                             label="#{row.bindings.TermsId.label}"
@@ -161,10 +163,10 @@
                                     <af:column sortProperty="#{bindings.TblTermWorkDaysView3.hints.WorkDays.name}"
                                                filterable="true" sortable="true"
                                                headerText="Work Days"
-                                               id="c8" align="center">
+                                               id="c8" align="right">
                                                 <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.WorkDays}" id="it11"
-                                                          placeholder="Search Work Days"></af:inputText>
+                                                          placeholder="Search "></af:inputText>
                                         </f:facet>
                                         <af:inputText value="#{row.bindings.WorkDays.inputValue}"
                                                       label="#{bindings.TblTermWorkDaysView3.hints.WorkDays.label}"

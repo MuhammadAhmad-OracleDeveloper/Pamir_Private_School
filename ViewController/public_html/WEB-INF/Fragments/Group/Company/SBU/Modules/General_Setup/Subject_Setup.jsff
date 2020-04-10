@@ -36,10 +36,10 @@
                                           id="t1" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblSubjectView1.hints.Id.name}"
                                                filterable="true" sortable="true" headerText="Subject ID" id="c1"
-                                               align="center" width="80">
+                                               align="right" width="80">
                                         <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Id}" id="id4"
-                                                          placeholder="Search ID"></af:inputText>
+                                                          placeholder="Search "></af:inputText>
                                         </f:facet>
                                         <af:inputText value="#{row.bindings.Id.inputValue}"
                                                       label="#{bindings.TblSubjectView1.hints.Id.label}"
@@ -56,10 +56,10 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblSubjectView1.hints.Name.name}"
                                                filterable="true" sortable="true" headerText="Subject" id="c2"
-                                               width="500">
+                                               width="500" align="left">
                                                 <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Name}" id="it3"
-                                                          placeholder="Search Subject"></af:inputText>
+                                                          placeholder="Search "></af:inputText>
                                         </f:facet>
                                         <af:inputText value="#{row.bindings.Name.inputValue}"
                                                       label="#{bindings.TblSubjectView1.hints.Name.label}"

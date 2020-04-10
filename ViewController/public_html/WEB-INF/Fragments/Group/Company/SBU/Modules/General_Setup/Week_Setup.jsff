@@ -34,10 +34,10 @@
                           queryListener="#{bindings.TblWeekView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblWeekView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="Week ID" id="c1" align="center" width="80">
+                             headerText="Week ID" id="c1" align="right" width="80">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
-                                   id="id4" placeholder="Search ID">
+                                   id="id4" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.Id.inputValue}" label="#{bindings.TblWeekView1.hints.Id.label}"
@@ -51,10 +51,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblWeekView1.hints.AcadYearId.name}" filterable="true"
-                             sortable="true" headerText="Academic Year" id="c3">
+                             sortable="true" headerText="Academic Year" id="c3" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.AcadYearId}"
-                                   id="it2" placeholder="Search Year">
+                                   id="it2" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
@@ -66,11 +66,11 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblWeekView1.hints.StartDate.name}" filterable="true"
-                             sortable="true" headerText="Start Date" id="c4" align="center">
+                             sortable="true" headerText="Start Date" id="c4" align="left">
                              
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblWeekView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.StartDate.value}"
-                                    id="id1" placeholder="Search Start Date">
+                                    id="id1" placeholder="Search ">
                         <af:convertDateTime pattern="#{bindings.TblWeekView1.hints.StartDate.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -85,10 +85,10 @@
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblWeekView1.hints.EndDate.name}" filterable="true"
-                             sortable="true" headerText="End Date" id="c5" align="center">
+                             sortable="true" headerText="End Date" id="c5" align="left">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblWeekView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.EndDate.value}"
-                                    id="id3" placeholder="End Date">
+                                    id="id3" placeholder="Search ">
                         <af:convertDateTime pattern="#{bindings.TblWeekView1.hints.EndDate.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -103,10 +103,10 @@
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblWeekView1.hints.WeekNo.name}" filterable="true" sortable="true"
-                             headerText="Week No." id="c6" align="center">
+                             headerText="Week No." id="c6" align="right">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.WeekNo}"
-                                   id="it4" placeholder="Search Week No.">
+                                   id="it4" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.WeekNo.inputValue}"

@@ -34,10 +34,10 @@
                           queryListener="#{bindings.TblStdEnqView1Query.processQuery}" varStatus="vs" id="t1"
                           partialTriggers="::b2 ::b3 ::b4 ::b5"  scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="Enquiry ID" id="c1" align="center" width="80">
+                             headerText="Enquiry ID" id="c1" align="right" width="80">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
-                                   id="id4" placeholder="Enquiry ID">
+                                   id="id4" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.Id.inputValue}"
@@ -52,11 +52,11 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.Dated.name}" filterable="true"
-                             sortable="true" headerText="Enquiry Date" id="c2" align="center">
+                             sortable="true" headerText="Enquiry Date" id="c2" align="left">
                              
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblStdEnqView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
-                                    id="id1" placeholder="Enquiry Date">
+                                    id="id1" placeholder="Search ">
                         <af:convertDateTime pattern="#{bindings.TblStdEnqView1.hints.Dated.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -69,10 +69,10 @@
                       <af:convertDateTime pattern="#{bindings.TblStdEnqView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column headerText="Academic Year" id="c3" sortable="true" filterable="true">
+                  <af:column headerText="Academic Year" id="c3" sortable="true" filterable="true" align="left">
                   <f:facet name="filter">
                         <af:inputText value="#{vs.filterCriteria.AcadYearId}"
-                        id="id6" placeholder="Academic Year">
+                        id="id6" placeholder="Search ">
                         </af:inputText>
                 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
@@ -84,10 +84,10 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.FirstName.name}" filterable="true"
-                             sortable="true" headerText="First Name" id="c4" width="200">
+                             sortable="true" headerText="First Name" id="c4" width="200" align="left">
                              <f:facet name="filter">
                                     <af:inputText value="#{vs.filterCriteria.FirstName}"
-                                    id="it2" placeholder="First Name">
+                                    id="it2" placeholder="Search ">
                                     </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.FirstName.inputValue}"
@@ -100,10 +100,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.LastName.name}" filterable="true"
-                             sortable="true" headerText="Last Name" id="c5" width="200">
+                             sortable="true" headerText="Last Name" id="c5" width="200" align="left">
                              <f:facet name="filter">
                                     <af:inputText value="#{vs.filterCriteria.LastName}"
-                                    id="it5" placeholder="Last Name">
+                                    id="it5" placeholder="Search ">
                                     </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.LastName.inputValue}"
@@ -115,10 +115,10 @@
                       <f:validator binding="#{row.bindings.LastName.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Grade" id="c6" sortable="true" filterable="true">
+                  <af:column headerText="Grade" id="c6" sortable="true" filterable="true" align="left">
                   <f:facet name="filter">
                                     <af:inputText value="#{vs.filterCriteria.GradeId}"
-                                    id="it7" placeholder="Grade">
+                                    id="it7" placeholder="Search ">
                                     </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
@@ -129,10 +129,10 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.EmirId.name}" filterable="true"
-                             sortable="true" headerText="Emirates ID" id="c7" align="center">
+                             sortable="true" headerText="Emirates ID" id="c7" align="right">
                              <f:facet name="filter">
                                     <af:inputText value="#{vs.filterCriteria.EmirId}"
-                                    id="it8" placeholder="Emirates ID">
+                                    id="it8" placeholder="Search ">
                                     </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.EmirId.inputValue}"
@@ -144,10 +144,10 @@
                       <f:validator binding="#{row.bindings.EmirId.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Active" id="c8" sortable="true" filterable="true">
+                  <af:column headerText="Active" id="c8" sortable="true" filterable="true" align="left">
                   <f:facet name="filter">
                                     <af:inputText value="#{vs.filterCriteria.Ast}"
-                                    id="it12" placeholder="Status">
+                                    id="it12" placeholder="Search ">
                                     </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"

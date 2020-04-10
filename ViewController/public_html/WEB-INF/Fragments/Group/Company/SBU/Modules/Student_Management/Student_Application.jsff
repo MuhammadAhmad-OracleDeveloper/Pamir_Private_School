@@ -35,10 +35,10 @@
                           queryListener="#{bindings.TblStdApplView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblStdApplView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="Student Application ID" id="c1" align="center" width="80">
+                             headerText="Student Application ID" id="c1" align="right" width="80">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
-                                   id="id4" placeholder="Search ID">
+                                   id="id4" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.Id.inputValue}"
@@ -52,10 +52,10 @@
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblStdApplView1.hints.Id.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Student Registration" id="c2" sortable="true" filterable="true">
+                  <af:column headerText="Student Registration" id="c2" sortable="true" filterable="true" align="left">
                     <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.StdRegId}"
-                                   id="it14" placeholder="Search Registration">
+                                   id="it14" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.StdRegId.inputValue}"
@@ -68,10 +68,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdApplView1.hints.FeeGenDetailId.name}" filterable="true"
                              sortable="true" headerText="Student"
-                             id="c5" align="center" width="200">
+                             id="c5" align="left" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.FeeGenDetailId}"
-                                   id="it7" placeholder="Search Student">
+                                   id="it7" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.FeeGenDetailId.inputValue}"
@@ -83,10 +83,10 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdApplView1.hints.Dated.name}" filterable="true"
-                             sortable="true" headerText="Date" id="c3" align="center">
+                             sortable="true" headerText="Date" id="c3" align="left">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblStdApplView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
-                                    id="id1" placeholder="Search Date">
+                                    id="id1" placeholder="Search ">
                         <af:convertDateTime pattern="#{bindings.TblStdApplView1.hints.Dated.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -101,10 +101,10 @@
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdApplView1.hints.ApplType.name}" filterable="true"
-                             sortable="true" headerText="Application Type" id="c4" width="110">
+                             sortable="true" headerText="Application Type" id="c4" width="110" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.FeeGenDetailId}"
-                                   id="it8" placeholder="Search Type">
+                                   id="it8" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.ApplType.inputValue}"
@@ -117,10 +117,10 @@
                   </af:column>
                   
                   <af:column sortProperty="#{bindings.TblStdApplView1.hints.Amount.name}" filterable="true"
-                             sortable="true" headerText="Amount" id="c6" align="center">
+                             sortable="true" headerText="Amount" id="c6" align="right">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Amount}"
-                                   id="it9" placeholder="Search Amount">
+                                   id="it9" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.Amount.inputValue}"
@@ -135,10 +135,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdApplView1.hints.ApplStatus.name}" filterable="true"
-                             sortable="true" headerText="Application Status" id="c7" width="120">
+                             sortable="true" headerText="Application Status" id="c7" width="120" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.ApplStatus}"
-                                   id="it10" placeholder="Search Status">
+                                   id="it10" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.ApplStatus.inputValue}"
@@ -151,10 +151,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdApplView1.hints.FromDate.name}" filterable="true"
-                             sortable="true" headerText="From Date" id="c8" align="center">
+                             sortable="true" headerText="From Date" id="c8" align="left">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblStdApplView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FromDate.value}"
-                                    id="id3" placeholder="Search From Date">
+                                    id="id3" placeholder="Search ">
                         <af:convertDateTime pattern="#{bindings.TblStdApplView1.hints.FromDate.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -169,10 +169,10 @@
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdApplView1.hints.ToDate.name}" filterable="true"
-                             sortable="true" headerText="To Date" id="c9" align="center">
+                             sortable="true" headerText="To Date" id="c9" align="left">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblStdApplView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.ToDate.value}"
-                                    id="id5" placeholder="Search To Date">
+                                    id="id5" placeholder="Search ">
                         <af:convertDateTime pattern="#{bindings.TblStdApplView1.hints.ToDate.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -187,10 +187,10 @@
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdApplView1.hints.ApplReason.name}" filterable="true"
-                             sortable="true" headerText="Application Reason" id="c10" width="120">
+                             sortable="true" headerText="Application Reason" id="c10" width="120" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.ApplReason}"
-                                   id="it11" placeholder="Search Reason">
+                                   id="it11" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.ApplReason.inputValue}"
@@ -203,10 +203,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdApplView1.hints.MgtRemarks.name}" filterable="true"
-                             sortable="true" headerText="Management Remarks" id="c11" width="200">
+                             sortable="true" headerText="Management Remarks" id="c11" width="200" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.MgtRemarks}"
-                                   id="it12" placeholder="Search Remarks">
+                                   id="it12" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.MgtRemarks.inputValue}"
@@ -219,10 +219,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdApplView1.hints.PrincRemarks.name}" filterable="true"
-                             sortable="true" headerText="Principal Remarks" id="c12" width="200">
+                             sortable="true" headerText="Principal Remarks" id="c12" width="200" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.PrincRemarks}"
-                                   id="it13" placeholder="Search Remarks">
+                                   id="it13" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.PrincRemarks.inputValue}"
