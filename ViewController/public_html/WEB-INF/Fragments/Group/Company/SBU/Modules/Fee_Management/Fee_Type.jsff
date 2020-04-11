@@ -36,7 +36,7 @@
                           queryListener="#{bindings.TblFeeTypeView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblFeeTypeView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="Fee Type ID" id="c1" align="center" width="80">
+                             headerText="Fee Type ID" id="c1" align="right" width="80">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="id4" placeholder="Search ID">
@@ -54,7 +54,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFeeTypeView1.hints.Type.name}" filterable="true"
-                             sortable="true" headerText="Fee Type" id="c2">
+                             sortable="true" headerText="Fee Type" id="c2" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Type}"
                                    id="it3" placeholder="Search Type">
@@ -68,7 +68,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFeeTypeView1.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="Fee Title" id="c3" width="200">
+                             sortable="true" headerText="Fee Title" id="c3" width="200" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Name}"
                                    id="it4" placeholder="Search Fee Title">
@@ -84,7 +84,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFeeTypeView1.hints.DiscountAllow.name}" filterable="true"
-                             sortable="true" headerText="Discount Allowed" id="c4" width="120">
+                             sortable="true" headerText="Discount Allowed" id="c4" width="120" align="right">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.DiscountAllow}"
                                    id="it5" placeholder="Search Discount Allowed">
@@ -100,7 +100,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFeeTypeView1.hints.RefundAllow.name}" filterable="true"
-                             sortable="true" headerText="Refund Allowed" id="c5">
+                             sortable="true" headerText="Refund Allowed" id="c5" align="right">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.RefundAllow}"
                                    id="it6" placeholder="Search Refund">
@@ -115,7 +115,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFeeTypeView1.hints.AcadYearId.name}" filterable="true"
-                             sortable="true" headerText="Academic Year" id="c6">
+                             sortable="true" headerText="Academic Year" id="c6" align="right">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.AcadYearId}"
                                    id="it7" placeholder="Search Academic Year">
@@ -130,7 +130,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFeeTypeView1.hints.VatId.name}" filterable="true"
-                             sortable="true" headerText="VAT" id="c7">
+                             sortable="true" headerText="VAT" id="c7" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.VatId}"
                                    id="it8" placeholder="Search VAT">
@@ -145,7 +145,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFeeTypeView1.hints.Ast.name}" filterable="true" sortable="true"
-                             headerText="Active" id="c8" width="70">
+                             headerText="Active" id="c8" width="70" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Ast}"
                                    id="it9" placeholder="Search Status">

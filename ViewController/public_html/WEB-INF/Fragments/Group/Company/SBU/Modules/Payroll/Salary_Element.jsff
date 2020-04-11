@@ -35,10 +35,10 @@
                           scrollPolicy="page" autoHeightRows="0">
                           
                   <af:column sortProperty="#{bindings.TblSalaryElementView1.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Salary Element ID" id="c1" align="center" width="80">
+                             sortable="true" headerText="Salary Element ID" id="c1" align="right" width="80">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Id}"
-       id="id4" placeholder="Search ID">
+       id="id4" placeholder="Search ">
       </af:inputText>
 </f:facet>
 
@@ -57,10 +57,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSalaryElementView1.hints.ElementType.name}" filterable="true"
                              sortable="true" headerText="Element Type"
-                             id="c2" width="300">
+                             id="c2" width="300" align="left">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.ElementType}"
-       id="it3" placeholder="Search Type">
+       id="it3" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.ElementType.inputValue}"
@@ -73,10 +73,10 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSalaryElementView1.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="Element" id="c3" width="300">
+                             sortable="true" headerText="Element" id="c3" width="300" align="left">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Name}"
-       id="it4" placeholder="Search Element">
+       id="it4" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:inputText value="#{row.bindings.Name.inputValue}"
@@ -89,7 +89,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSalaryElementView1.hints.Ast.name}" filterable="true"
-                             sortable="true" headerText="Active" id="c4">
+                             sortable="true" headerText="Active" id="c4" align="left">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Ast}"
        id="it5" placeholder="Search Status">

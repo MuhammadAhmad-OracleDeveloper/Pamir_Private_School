@@ -35,10 +35,10 @@
                           queryListener="#{bindings.TblGradeFeeMasterView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblGradeFeeMasterView1.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Grade Fee Master ID" id="c1" align="center" width="80">
+                             sortable="true" headerText="Grade Fee Master ID" id="c1" align="right" width="80">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Id}"
-       id="id4" placeholder="Search ID">
+       id="id4" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:inputText value="#{row.bindings.Id.inputValue}"
@@ -56,10 +56,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblGradeFeeMasterView1.hints.AcadYearId.name}" filterable="true"
                              sortable="true" headerText="Academic Year"
-                             id="c2">
+                             id="c2" align="left">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.AcadYearId}"
-       id="it7" placeholder="Search Year">
+       id="it7" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
@@ -73,10 +73,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblGradeFeeMasterView1.hints.GradeId.name}" filterable="true"
                              sortable="true" headerText="Grade"
-                             id="c3" width="150">
+                             id="c3" width="150" align="left">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.GradeId}"
-       id="it8" placeholder="Search Grade">
+       id="it8" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
@@ -88,10 +88,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblGradeFeeMasterView1.hints.FeeTypeId.name}" filterable="true"
                              sortable="true" headerText="Fee Type"
-                             id="c4">
+                             id="c4" align="left">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.FeeTypeId}"
-       id="it9" placeholder="Search Type">
+       id="it9" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.FeeTypeId.inputValue}"
@@ -104,10 +104,10 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblGradeFeeMasterView1.hints.Ast.name}" filterable="true"
-                             sortable="true" headerText="Active" id="c5">
+                             sortable="true" headerText="Active" id="c5" align="left">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Ast}"
-       id="it10" placeholder="Search Status">
+       id="it10" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
@@ -154,10 +154,10 @@
                             queryListener="#{bindings.TblGradeFeeDetailView2Query.processQuery}" varStatus="vs" id="t2"
                             scrollPolicy="page" autoHeightRows="0">
                     <af:column sortProperty="#{bindings.TblGradeFeeDetailView2.hints.Id.name}" filterable="true"
-                               sortable="true" headerText="Grade Fee Detail ID" id="c6" align="center" width="80">
+                               sortable="true" headerText="Grade Fee Detail ID" id="c6" align="right" width="80">
                                <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
-                                   id="it11" placeholder="Search ID">
+                                   id="it11" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                       <af:inputText value="#{row.bindings.Id.inputValue}"
@@ -174,10 +174,10 @@
                     </af:column>
                     <af:column sortProperty="#{bindings.TblGradeFeeDetailView2.hints.TermsId.name}" filterable="true"
                                sortable="true" headerText="Term"
-                               id="c7" width="150">
+                               id="c7" width="150" align="left">
                                <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.TermsId}"
-                                   id="it4" placeholder="Search Term">
+                                   id="it4" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                       <af:selectOneChoice value="#{row.bindings.TermsId.inputValue}"
@@ -191,10 +191,10 @@
                     </af:column>
                     <af:column sortProperty="#{bindings.TblGradeFeeDetailView2.hints.Amount.name}" filterable="true"
                                sortable="true" headerText="Amount"
-                               id="c8" align="center">
+                               id="c8" align="right">
                                <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Amount}"
-                                   id="it5" placeholder="Search Amount">
+                                   id="it5" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                       <af:inputText value="#{row.bindings.Amount.inputValue}"
@@ -203,17 +203,17 @@
                                     columns="#{bindings.TblGradeFeeDetailView2.hints.Amount.displayWidth}"
                                     maximumLength="#{bindings.TblGradeFeeDetailView2.hints.Amount.precision}"
                                     shortDesc="#{bindings.TblGradeFeeDetailView2.hints.Amount.tooltip}" id="it3"
-                                    contentStyle='text-align: center'>
+                                    contentStyle='text-align: right'>
                         <f:validator binding="#{row.bindings.Amount.validator}"/>
                         <af:convertNumber groupingUsed="false"
                                           pattern="#{bindings.TblGradeFeeDetailView2.hints.Amount.format}"/>
                       </af:inputText>
                     </af:column>
                     <af:column sortProperty="#{bindings.TblGradeFeeDetailView2.hints.Ast.name}" filterable="true"
-                               sortable="true" headerText="Active" id="c9" width="80">
+                               sortable="true" headerText="Active" id="c9" width="80" align="left">
                                <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Ast}"
-                                   id="it6" placeholder="Search Status">
+                                   id="it6" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                       <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
