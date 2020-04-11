@@ -34,10 +34,10 @@
                           queryListener="#{bindings.TblSectionStaffView3Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblSectionStaffView3.hints.GradeId.name}" filterable="true"
-                             sortable="true" headerText="Grade" id="c1" width="300">
+                             sortable="true" headerText="Grade" id="c1" width="300" align="left">
                              <f:facet name="filter">
                               <af:inputText value="#{vs.filterCriteria.GradeId}"
-                               id="id4" placeholder="Search Grade">
+                               id="id4" placeholder="Search ">
                               </af:inputText>
                         </f:facet>
                     <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
@@ -49,10 +49,10 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionStaffView3.hints.SectionId.name}" filterable="true"
-                             sortable="true" headerText="Section" id="c2" width="300">
+                             sortable="true" headerText="Section" id="c2" width="300" align="left">
                              <f:facet name="filter">
                               <af:inputText value="#{vs.filterCriteria.SectionId}"
-                               id="it2" placeholder="Search Section">
+                               id="it2" placeholder="Search ">
                               </af:inputText>
                              </f:facet>
                     <af:selectOneChoice value="#{row.bindings.SectionId.inputValue}"
@@ -89,10 +89,10 @@
                           queryListener="#{bindings.TblSectionStaffView3Query.processQuery}" varStatus="vs" id="t2"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblSectionStaffView31.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Staff ID" id="c3" width="80" align="center">
+                             sortable="true" headerText="Staff ID" id="c3" width="80" align="right">
                              <f:facet name="filter">
                               <af:inputText value="#{vs.filterCriteria.Id}"
-                               id="it3" placeholder="Search  ID">
+                               id="it3" placeholder="Search ">
                               </af:inputText>
                              </f:facet>
                     <af:inputText value="#{row.bindings.Id.inputValue}"
@@ -108,10 +108,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionStaffView31.hints.Type.name}" filterable="true"
-                             sortable="true" headerText="Type" id="c4">
+                             sortable="true" headerText="Type" id="c4" align="left">
                              <f:facet name="filter">
                               <af:inputText value="#{vs.filterCriteria.Type}"
-                               id="it4" placeholder="Search Type">
+                               id="it4" placeholder="Search ">
                               </af:inputText>
                              </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Type.inputValue}" label="#{row.bindings.Type.label}"
@@ -122,10 +122,10 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionStaffView31.hints.StaffId.name}" filterable="true"
-                             sortable="true" headerText="Teacher" id="c5" width="200">
+                             sortable="true" headerText="Teacher" id="c5" width="200" align="left">
                              <f:facet name="filter">
                                <af:inputText value="#{vs.filterCriteria.StaffId}"
-                               id="it5" placeholder="Search Teacher Name">
+                               id="it5" placeholder="Search ">
                               </af:inputText>
                              </f:facet>
                     <af:selectOneChoice value="#{row.bindings.StaffId.inputValue}" label="#{row.bindings.StaffId.label}"
@@ -137,10 +137,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionStaffView31.hints.StaffSubjectId.name}"
                              filterable="true" sortable="true"
-                             headerText="Subject" id="c6" width="200">
+                             headerText="Subject" id="c6" width="200" align="left">
                              <f:facet name="filter">
                                <af:inputText value="#{vs.filterCriteria.StaffSubjectId}"
-                               id="it6" placeholder="Search Subject">
+                               id="it6" placeholder="Search ">
                               </af:inputText>
                              </f:facet>
                     <af:selectOneChoice value="#{row.bindings.StaffSubjectId.inputValue}"
@@ -153,10 +153,10 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionStaffView31.hints.Ast.name}" filterable="true"
-                             sortable="true" headerText="Active" id="c7">
+                             sortable="true" headerText="Active" id="c7" align="left">
                              <f:facet name="filter">
                                <af:inputText value="#{vs.filterCriteria.Ast}"
-                               id="it7" placeholder="Search Status">
+                               id="it7" placeholder="Search ">
                               </af:inputText>
                              </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"

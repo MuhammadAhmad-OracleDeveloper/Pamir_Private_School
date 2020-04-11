@@ -36,10 +36,10 @@
                           id="t1" scrollPolicy="page" autoHeightRows="0" >
                   <af:column sortProperty="#{bindings.TblSectionTimetableMasterView1.hints.Id.name}" filterable="true"
                              sortable="true" headerText="Time Table Master ID"
-                             id="c1" align="center" width="80">
+                             id="c1" align="right" width="80">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
-                                   id="id4" placeholder="Search ID">
+                                   id="id4" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.Id.inputValue}"
@@ -56,10 +56,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionTimetableMasterView1.hints.Dated.name}"
                              filterable="true" sortable="true"
-                             headerText="Date" id="c2" align="center">
+                             headerText="Date" id="c2" align="left">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblSectionTimetableMasterView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
-                                    id="id1" placeholder="Search Date">
+                                    id="id1" placeholder="Search ">
                         <af:convertDateTime pattern="#{bindings.TblSectionTimetableMasterView1.hints.Dated.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -75,10 +75,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionTimetableMasterView1.hints.GradeId.name}"
                              filterable="true" sortable="true"
-                             headerText="Grade" id="c3" width="200">
+                             headerText="Grade" id="c3" width="200" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.GradeId}"
-                                   id="it4" placeholder="Search Grade">
+                                   id="it4" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
@@ -91,10 +91,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionTimetableMasterView1.hints.SectionId.name}"
                              filterable="true" sortable="true"
-                             headerText="Section" id="c4" width="200">
+                             headerText="Section" id="c4" width="200" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.SectionId}"
-                                   id="it6" placeholder="Search Section">
+                                   id="it6" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.SectionId.inputValue}"
@@ -108,10 +108,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionTimetableMasterView1.hints.AcadYearId.name}"
                              filterable="true" sortable="true"
-                             headerText="Academic Year" id="c5">
+                             headerText="Academic Year" id="c5" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.AcadYearId}"
-                                   id="it5" placeholder="Search Academic Year">
+                                   id="it5" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
@@ -125,10 +125,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionTimetableMasterView1.hints.Ast.name}" filterable="true"
                              sortable="true" headerText="Active"
-                             id="c6">
+                             id="c6" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Ast}"
-                                   id="it7" placeholder="Search Status">
+                                   id="it7" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
@@ -177,10 +177,10 @@
                           id="t2" scrollPolicy="page" autoHeightRows="0" >
                   <af:column sortProperty="#{bindings.TblSectionTimetableDetailView3.hints.Id.name}" fiterable="true"
                              sortable="true" headerText="Time Table Detail ID"
-                             id="c7" align="center" filterable="true">
+                             id="c7" align="right" filterable="true">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
-                                   id="it8" placeholder="Search ID">
+                                   id="it8" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.Id.inputValue}"
@@ -197,10 +197,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionTimetableDetailView3.hints.StaffId.name}"
                              filterable="true" sortable="true"
-                             headerText="Subject Teacher" id="c8" width="120">
+                             headerText="Subject Teacher" id="c8" width="120" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.StaffId}"
-                                   id="it9" placeholder="Search Subject Teacher">
+                                   id="it9" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.StaffId.inputValue}" label="#{row.bindings.StaffId.label}"
@@ -213,10 +213,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionTimetableDetailView3.hints.StaffSubjectId.name}"
                              filterable="true" sortable="true"
-                             headerText="Teaching Subjects" id="c9" width="120">
+                             headerText="Teaching Subjects" id="c9" width="120" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.StaffSubjectId}"
-                                   id="it11" placeholder="Search Teaching Subjects">
+                                   id="it11" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.StaffSubjectId.inputValue}"
@@ -230,10 +230,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionTimetableDetailView3.hints.WeekDays.name}"
                              filterable="true" sortable="true"
-                             headerText="Week Days" id="c10" align="center">
+                             headerText="Week Days" id="c10" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.WeekDays}"
-                                   id="it10" placeholder="Search Days">
+                                   id="it10" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.WeekDays.inputValue}"
@@ -247,11 +247,11 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionTimetableDetailView3.hints.FromTime.name}"
                              filterable="true" sortable="true"
-                             headerText="From Time" id="c11" align="center">
+                             headerText="From Time" id="c11" align="left">
                              
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblSectionTimetableDetailView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FromTime.value}"
-                                    id="id3" placeholder="Search From Time">
+                                    id="id3" placeholder="Search ">
                         <af:convertDateTime pattern="#{bindings.TblSectionTimetableDetailView3.hints.FromTime.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -260,7 +260,7 @@
                                   required="#{bindings.TblSectionTimetableDetailView3.hints.FromTime.mandatory}"
                                   columns="#{bindings.TblSectionTimetableDetailView3.hints.FromTime.displayWidth}"
                                   shortDesc="#{bindings.TblSectionTimetableDetailView3.hints.FromTime.tooltip}"
-                                  id="id8" contentStyle='text-align: center'>
+                                  id="id8" contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.FromTime.validator}"/>
                       
                       <af:convertDateTime pattern="#{bindings.TblSectionTimetableDetailView3.hints.FromTime.format}"/>
@@ -269,10 +269,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionTimetableDetailView3.hints.ToTime.name}"
                              filterable="true" sortable="true"
-                             headerText="To Time" id="c12" align="center">
+                             headerText="To Time" id="c12" align="left">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblSectionTimetableDetailView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.ToTime.value}"
-                                    id="id5" placeholder="Search To Time">
+                                    id="id5" placeholder="Search ">
                         <af:convertDateTime pattern="#{bindings.TblSectionTimetableDetailView3.hints.ToTime.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -281,7 +281,7 @@
                                   required="#{bindings.TblSectionTimetableDetailView3.hints.ToTime.mandatory}"
                                   columns="#{bindings.TblSectionTimetableDetailView3.hints.ToTime.displayWidth}"
                                   shortDesc="#{bindings.TblSectionTimetableDetailView3.hints.ToTime.tooltip}" id="id6"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.ToTime.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblSectionTimetableDetailView3.hints.ToTime.format}"/>
                       <af:convertDateTime pattern="HH:mm"/>
@@ -289,10 +289,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionTimetableDetailView3.hints.TimeDiff.name}"
                              filterable="true" sortable="true"
-                             headerText="Duration" id="c13" align="center">
+                             headerText="Duration" id="c13" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.TimeDiff}"
-                                   id="it13" placeholder="Search Duation">
+                                   id="it13" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.TimeDiff.inputValue}"
@@ -301,7 +301,7 @@
                                   columns="#{bindings.TblSectionTimetableDetailView3.hints.TimeDiff.displayWidth}"
                                   maximumLength="#{bindings.TblSectionTimetableDetailView3.hints.TimeDiff.precision}"
                                   shortDesc="#{bindings.TblSectionTimetableDetailView3.hints.TimeDiff.tooltip}"
-                                  id="it3" contentStyle='text-align: center'>
+                                  id="it3" contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.TimeDiff.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblSectionTimetableDetailView3.hints.TimeDiff.format}"/>
@@ -309,10 +309,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionTimetableDetailView3.hints.Ast.name}" filterable="true"
                              sortable="true" headerText="Active"
-                             id="c14">
+                             id="c14" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Ast}"
-                                   id="it12" placeholder="Search Status">
+                                   id="it12" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
