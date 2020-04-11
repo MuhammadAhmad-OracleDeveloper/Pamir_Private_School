@@ -34,10 +34,10 @@
                           queryListener="#{bindings.TblRouteView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblRouteView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="Route Setup ID" id="c1" align="center" width="80">
+                             headerText="Route Setup ID" id="c1" align="right" width="80">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
-                                   id="id4" placeholder="Search ID">
+                                   id="id4" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.Id.inputValue}" label="#{bindings.TblRouteView1.hints.Id.label}"
@@ -51,10 +51,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblRouteView1.hints.AcadYearId.name}" filterable="true"
-                             sortable="true" headerText="Academic Year" id="c2">
+                             sortable="true" headerText="Academic Year" id="c2" align="right">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.AcadYearId}"
-                                   id="it3" placeholder="Search Year">
+                                   id="it3" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
@@ -66,10 +66,10 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblRouteView1.hints.RouteName.name}" filterable="true"
-                             sortable="true" headerText="Route" id="c3" width="200">
+                             sortable="true" headerText="Route" id="c3" width="200" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.RouteName}"
-                                   id="it4" placeholder="Search Route ">
+                                   id="it4" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.RouteName.inputValue}"
@@ -82,27 +82,27 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblRouteView1.hints.TransportId.name}" filterable="true"
-                             sortable="true" headerText="Transport No." id="c4" align="center">
+                             sortable="true" headerText="Transport No." id="c4" align="right">
                               <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.TransportId}"
-                                   id="it5" placeholder="Search Transport No.">
+                                   id="it5" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.TransportId.inputValue}"
                                         label="#{row.bindings.TransportId.label}"
                                         required="#{bindings.TblRouteView1.hints.TransportId.mandatory}"
                                         shortDesc="#{bindings.TblRouteView1.hints.TransportId.tooltip}" 
-                                        id="soc2" contentStyle='text-align: center'>
+                                        id="soc2" contentStyle='text-align: right'>
                       <f:selectItems value="#{row.bindings.TransportId.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.TransportId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   
                   <af:column sortProperty="#{bindings.TblRouteView1.hints.Ast.name}" filterable="true" sortable="true"
-                             headerText="Active" id="c6">
+                             headerText="Active" id="c6" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Ast}"
-                                   id="it7" placeholder="Search Status">
+                                   id="it7" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
@@ -153,10 +153,10 @@
                           queryListener="#{bindings.TblRouteStopsView2Query.processQuery}" varStatus="vs" id="t2"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblRouteStopsView2.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Rout Stop ID" id="c5" width="80" align="center">
+                             sortable="true" headerText="Rout Stop ID" id="c5" width="80" align="right">
                     <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Id}"
-       id="it8" placeholder="Search ID">
+       id="it8" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:inputText value="#{row.bindings.Id.inputValue}"
@@ -173,10 +173,10 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblRouteStopsView2.hints.LookupSchoolBusStop.name}"
                              filterable="true" sortable="true"
-                             headerText="Rout Stop" id="c7" width="300">
+                             headerText="Rout Stop" id="c7" width="300" align="left">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.LookupSchoolBusStop}"
-       id="it9" placeholder="Search Stop">
+       id="it9" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.LookupSchoolBusStop.inputValue}"
@@ -189,10 +189,10 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblRouteStopsView2.hints.Ast.name}" filterable="true"
-                             sortable="true" headerText="Active" id="c8">
+                             sortable="true" headerText="Active" id="c8" align="left">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Ast}"
-       id="it10" placeholder="Search Active">
+       id="it10" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"

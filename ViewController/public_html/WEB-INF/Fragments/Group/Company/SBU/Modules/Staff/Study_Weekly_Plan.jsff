@@ -39,7 +39,7 @@
                              id="c1" align="right" width="80">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
-                                   id="id4" placeholder="Search ID">
+                                   id="id4" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.Id.inputValue}"
@@ -59,7 +59,7 @@
                              headerText="Academic Year" id="c3" align="right">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.AcadYearId}"
-                                   id="it2" placeholder="Search Year">
+                                   id="it2" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
@@ -77,7 +77,7 @@
                              
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblStudyWeekPlanMasterView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
-                                    id="id1" placeholder="Search Date">
+                                    id="id1" placeholder="Search ">
                         <af:convertDateTime pattern="#{bindings.TblStudyWeekPlanMasterView1.hints.Dated.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -96,7 +96,7 @@
                              id="c5" width="150" align="left">
                               <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.StaffId}"
-                                   id="it4" placeholder="Search Staff">
+                                   id="it4" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.StaffId.inputValue}" label="#{row.bindings.StaffId.label}"
@@ -109,16 +109,16 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStudyWeekPlanMasterView1.hints.WeekId.name}" filterable="true"
                              sortable="true" headerText="Week No."
-                             id="c6" align="right">
+                             id="c6" align="left">
                               <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.WeekId}"
-                                   id="it5" placeholder="Search Week No.">
+                                   id="it5" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.WeekId.inputValue}" label="#{row.bindings.WeekId.label}"
                                         required="#{bindings.TblStudyWeekPlanMasterView1.hints.WeekId.mandatory}"
                                         shortDesc="#{bindings.TblStudyWeekPlanMasterView1.hints.WeekId.tooltip}"
-                                        id="soc3" contentStyle='text-align: center'>
+                                        id="soc3" contentStyle='text-align: right'>
                       <f:selectItems value="#{row.bindings.WeekId.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.WeekId.validator}"/>
                     </af:selectOneChoice>
@@ -128,7 +128,7 @@
                              headerText="Subject" id="c7" width="150" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.SubjectId}"
-                                   id="it6" placeholder="Search Subject">
+                                   id="it6" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.SubjectId.inputValue}"
@@ -145,7 +145,7 @@
                              id="c8" width="220" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.SubjectId}"
-                                   id="it7" placeholder="Search Remarks">
+                                   id="it7" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.Remarks.inputValue}"
@@ -197,7 +197,7 @@
                              id="c2" align="right" width="80">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
-                                   id="it13" placeholder="Search ID">
+                                   id="it13" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.Id.inputValue}"
@@ -219,7 +219,7 @@
                              
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblStudyWeekPlanDetailView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
-                                    id="id3" placeholder="Search Date">
+                                    id="id3" placeholder="Search ">
                         <af:convertDateTime pattern="#{bindings.TblStudyWeekPlanDetailView2.hints.Dated.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -238,7 +238,7 @@
                              headerText="Week Lesson" id="c10" width="200" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.WeekLesson}"
-                                   id="it14" placeholder="Search Lesson">
+                                   id="it14" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.WeekLesson.inputValue}"
@@ -255,7 +255,7 @@
                              headerText="Week Pages" id="c11" width="170" align="right">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.WeekPages}"
-                                   id="it15" placeholder="Search Pages">
+                                   id="it15" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.WeekPages.inputValue}"
@@ -263,7 +263,8 @@
                                   required="#{bindings.TblStudyWeekPlanDetailView2.hints.WeekPages.mandatory}"
                                   columns="#{bindings.TblStudyWeekPlanDetailView2.hints.WeekPages.displayWidth}"
                                   maximumLength="#{bindings.TblStudyWeekPlanDetailView2.hints.WeekPages.precision}"
-                                  shortDesc="#{bindings.TblStudyWeekPlanDetailView2.hints.WeekPages.tooltip}" id="it10">
+                                  shortDesc="#{bindings.TblStudyWeekPlanDetailView2.hints.WeekPages.tooltip}" id="it10"
+                                  inlineStyle="text-align:right;">
                       <f:validator binding="#{row.bindings.WeekPages.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -272,7 +273,7 @@
                              headerText="Home Work" id="c12" width="170" align="left">
                               <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.HomeWork}"
-                                   id="it16" placeholder="Search Work">
+                                   id="it16" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.HomeWork.inputValue}"
@@ -289,7 +290,7 @@
                              headerText="Week Assessment" id="c13" align="left" width="170">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.WeekAssessment}"
-                                   id="it17" placeholder="Search Assessment">
+                                   id="it17" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.WeekAssessment.inputValue}"

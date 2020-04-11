@@ -35,10 +35,10 @@
                           queryListener="#{bindings.TblTransportView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblTransportView1.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Transport ID" id="c1" align="center" width="80">
+                             sortable="true" headerText="Transport ID" id="c1" align="right" width="80">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
-                                   id="id4" placeholder="Search ID">
+                                   id="id4" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.Id.inputValue}"
@@ -53,10 +53,10 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblTransportView1.hints.TransportNo.name}" filterable="true"
-                             sortable="true" headerText="Transport No." id="c2" align="center">
+                             sortable="true" headerText="Transport No." id="c2" align="right">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.TransportNo}"
-                                   id="it6" placeholder="Search Transport No.">
+                                   id="it6" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.TransportNo.inputValue}"
@@ -65,15 +65,15 @@
                                   columns="#{bindings.TblTransportView1.hints.TransportNo.displayWidth}"
                                   maximumLength="#{bindings.TblTransportView1.hints.TransportNo.precision}"
                                   shortDesc="#{bindings.TblTransportView1.hints.TransportNo.tooltip}" 
-                                  id="it2" contentStyle='text-align: center'>
+                                  id="it2" contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.TransportNo.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblTransportView1.hints.RegNo.name}" filterable="true"
-                             sortable="true" headerText="Register No." id="c3" align="center">
+                             sortable="true" headerText="Register No." id="c3" align="right">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.RegNo}"
-                                   id="it7" placeholder="Search Register No.">
+                                   id="it7" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.RegNo.inputValue}"
@@ -82,15 +82,15 @@
                                   columns="#{bindings.TblTransportView1.hints.RegNo.displayWidth}"
                                   maximumLength="#{bindings.TblTransportView1.hints.RegNo.precision}"
                                   shortDesc="#{bindings.TblTransportView1.hints.RegNo.tooltip}" id="it3"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.RegNo.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblTransportView1.hints.EngineNo.name}" filterable="true"
-                             sortable="true" headerText="Engine No." id="c4" align="center">
+                             sortable="true" headerText="Engine No." id="c4" align="right">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.EngineNo}"
-                                   id="it8" placeholder="Search Engine No.">
+                                   id="it8" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.EngineNo.inputValue}"
@@ -99,15 +99,15 @@
                                   columns="#{bindings.TblTransportView1.hints.EngineNo.displayWidth}"
                                   maximumLength="#{bindings.TblTransportView1.hints.EngineNo.precision}"
                                   shortDesc="#{bindings.TblTransportView1.hints.EngineNo.tooltip}" id="it4"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.EngineNo.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblTransportView1.hints.ChasisNo.name}" filterable="true"
-                             sortable="true" headerText="Chasis No." id="c5" align="center">
+                             sortable="true" headerText="Chasis No." id="c5" align="right">
                               <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.ChasisNo}"
-                                   id="it9" placeholder="Search Chasis No.">
+                                   id="it9" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:inputText value="#{row.bindings.ChasisNo.inputValue}"
@@ -116,16 +116,16 @@
                                   columns="#{bindings.TblTransportView1.hints.ChasisNo.displayWidth}"
                                   maximumLength="#{bindings.TblTransportView1.hints.ChasisNo.precision}"
                                   shortDesc="#{bindings.TblTransportView1.hints.ChasisNo.tooltip}" id="it5"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.ChasisNo.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblTransportView1.hints.LookupTransportType.name}"
                              filterable="true" sortable="true"
-                             headerText="Transport Type" id="c6">
+                             headerText="Transport Type" id="c6" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.LookupTransportType}"
-                                   id="it10" placeholder="Search Type">
+                                   id="it10" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.LookupTransportType.inputValue}"
@@ -139,10 +139,10 @@
                   </af:column>
 
                   <af:column sortProperty="#{bindings.TblTransportView1.hints.StaffId.name}" filterable="true"
-                             sortable="true" headerText="Staff" id="c7" width="200">
+                             sortable="true" headerText="Staff" id="c7" width="200" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.StaffId}"
-                                   id="it11" placeholder="Search Staff">
+                                   id="it11" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.StaffId.inputValue}" label="#{row.bindings.StaffId.label}"
@@ -153,10 +153,10 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblTransportView1.hints.Ast.name}" filterable="true"
-                             sortable="true" headerText="Active" id="c8">
+                             sortable="true" headerText="Active" id="c8" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Ast}"
-                                   id="it12" placeholder="Search Status">
+                                   id="it12" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
