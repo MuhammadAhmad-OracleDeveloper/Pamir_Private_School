@@ -1,29 +1,65 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
-<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+<f:view xmlns:f="http://java.sun.com/jsf/core" 
+xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="Library" id="d1">
         <af:messages id="m1"/>
         <af:form id="f1">
             <af:panelGridLayout id="pgl1" styleClass="backColor">
-                <af:gridRow height="100px" id="gr1">
+                <af:gridRow height="66px" id="gr1">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
                         <!-- Header -->
-                          <af:pageTemplate viewId="../Header.jsf" id="pt1">
+                        <af:pageTemplate viewId="../Header.jsf" id="pt1">
                             <?audit suppress oracle.adf.faces.pt-type-not-found?>
                         </af:pageTemplate>
                     </af:gridCell>
                 </af:gridRow>
                 <af:gridRow height="100%" id="gr2">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
-                        <af:panelSplitter orientation="horizontal" splitterPosition="210" id="ps1">
-                            <f:facet name="first">
-                                <!-- Left -->
-                                <af:panelAccordion discloseMany="false" id="pa4" inlineStyle="width:220px; ">
-                                    <af:showDetailItem id="sdi1" text="Library" inlineStyle="overflow: auto;">
-                                        <af:spacer width="190" height="10" id="s1"/>
-                                        <af:iterator id="i2" value="#{bindings.Library_Pages1.collectionModel}" var="item"
+                        <af:panelGridLayout id="pgl5" styleClass="backColor" inlineStyle="left: -5px;">
+                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr4">
+                                <af:gridCell marginStart="5px" width="3%" id="gc5" halign="stretch">
+                                     <!-- SideIconBar -->
+                                                    <af:panelGroupLayout id="pgl3" layout="vertical" inlineStyle="padding-left: 5px;" styleClass="theme_color">
+                                    <af:spacer width="5" height="10" id="s1"/>
+            <af:iterator id="i2" value="#{bindings.User_Modules1.collectionModel}" var="item"
+                         varStatus="status">
+                <af:panelGroupLayout id="pgl9" layout="vertical" inlineStyle="padding-top: 24%;">
+                    <af:link id="l6" destination="/faces/#{item.bindings.Link.inputValue}"
+                             icon="/sms/faces/javax.faces.resource/#{item.bindings.Icon.inputValue}?ln=images"/>
+                </af:panelGroupLayout>
+            </af:iterator>
+            </af:panelGroupLayout>
+                                </af:gridCell>
+                                <af:gridCell marginStart="5px" width="97%" marginEnd="5px" id="gc6">
+                                    <af:panelGroupLayout layout="horizontal" id="pgl23" styleClass="backColor">
+                                        <af:panelGroupLayout layout="horizontal" id="pgl6" styleClass="backColor" inlineStyle="margin-top: 10px;">                          
+                                            <af:panelSplitter orientation="horizontal" splitterPosition="175" id="ps2">
+                                                <f:facet name="first">
+                                                    <!--SideTextBar-->
+                                                    
+            <af:iterator id="i3" value="#{bindings.User_Modules1.collectionModel}" var="item"
+                         varStatus="status">
+                <af:panelGroupLayout id="pgl8" layout="vertical" inlineStyle="padding-top: 11%;">
+                    <af:link id="l1" destination="/faces/#{item.bindings.Link.inputValue}"
+                             text="#{item.bindings.Modulename.inputValue}"
+                             inlineStyle="font-size:large; color: Black;"/>
+                </af:panelGroupLayout>
+            </af:iterator>
+                                                </f:facet>
+                                                <f:facet name="second">
+                                                    <af:panelGridLayout id="pgl2">
+                                                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px"
+                                                                    id="gr3">
+                                                            <af:gridCell marginStart="5px" width="20%" id="gc3">
+                                                            <!--Module Pages-->
+                                                                <af:panelAccordion discloseMany="false" id="pa4"
+                                                                                   inlineStyle="width:220px; ">
+                                                                    <af:showDetailItem id="sdi1" text="Library Pages" inlineStyle="overflow: auto;">
+                                        <af:spacer width="190" height="10" id="s2"/>
+                                        <af:iterator id="i1" value="#{bindings.Library_Pages1.collectionModel}" var="item"
                                                      varStatus="status">
-                                            <af:panelGroupLayout id="pgl3" layout="vertical" inlineStyle="padding: 4%;">
+                                            <af:panelGroupLayout id="pgl7" layout="vertical" inlineStyle="padding: 4%;">
                                                 <af:button text="#{item.bindings.Name.inputValue}" id="b1"
                                                            inlineStyle="width:190px;"
                                                            icon="/sms/faces/javax.faces.resource/#{item.bindings.PageIcon.inputValue}?ln=images"
@@ -33,18 +69,31 @@
                                             </af:panelGroupLayout>
                                         </af:iterator>
                                     </af:showDetailItem>
-                                </af:panelAccordion>
-                            </f:facet>
-                            <f:facet name="second">
-                                <af:panelGroupLayout layout="scroll" id="pgl2">
-                                    <!-- Content -->
-                                    <af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1"/>
-                                </af:panelGroupLayout>
-                            </f:facet>
-                        </af:panelSplitter>
+                                                                </af:panelAccordion>
+                                                            </af:gridCell>
+                                                            <af:gridCell marginStart="5px" width="80%" marginEnd="5px"
+                                                                         id="gc4">
+                                                                <af:panelSplitter id="ps1">
+                                                                    <f:facet name="first">
+                                                                        <af:panelGroupLayout layout="scroll" id="pgl4">
+                                                                                                                          <af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1"/>
+                                                                        </af:panelGroupLayout>
+                                                                    </f:facet>
+                                                                </af:panelSplitter>
+                                                            </af:gridCell>
+                                                        </af:gridRow>
+                                                    </af:panelGridLayout>
+                                                </f:facet>
+                                            </af:panelSplitter>
+                                        </af:panelGroupLayout>
+                                    </af:panelGroupLayout>
+                                </af:gridCell>
+                            </af:gridRow>
+                        </af:panelGridLayout>
                     </af:gridCell>
                 </af:gridRow>
             </af:panelGridLayout>
         </af:form>
     </af:document>
 </f:view>
+

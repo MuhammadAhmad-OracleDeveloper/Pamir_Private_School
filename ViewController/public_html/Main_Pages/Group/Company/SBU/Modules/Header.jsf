@@ -1,163 +1,60 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" definition="private"
-                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component">
+                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component" xmlns:f="http://java.sun.com/jsf/core">
     <af:xmlContent>
         <afc:component>
             <afc:description/>
             <afc:display-name>Header</afc:display-name>
         </afc:component>
     </af:xmlContent>
-    <af:panelGridLayout id="pt_pgl2" >
-        <af:gridRow marginTop="5px" height="auto" id="pt_gr2">
-            <af:gridCell halign="stretch" valign="stretch" id="pt_gc1">
-                <af:panelGridLayout id="pt_pgl1" styleClass="backColor">
-                    <af:gridRow marginTop="5px" height="auto" id="pt_gr1">
-                        <af:gridCell marginStart="5px" width="20%" id="pt_gc2">
-                            <af:spacer width="20" height="10" id="pt_s2"/>
-                            <!--<af:image id="pt_i1" inlineStyle="width:300px; height:90px; margin-top:2%;"
-                                      source="/imageservlet?imageNameParam=${sessionScope.sessCmpnyImg}"/>-->
-                            <af:link icon="/imageservlet?imageNameParam=${sessionScope.sessCmpnyImg}"
-                             action="/faces/Main_Pages/Group/Company/SBU/Modules/ModuleBoard.jsf" id="pt_l1"/>
-                        </af:gridCell>
-                        <af:gridCell marginStart="5px" width="80%" halign="end" valign="bottom" marginEnd="5px"
-                                     id="pt_gc3">
-                            <af:panelGridLayout id="pt_pgl4">
-                                <af:gridRow marginTop="5px" height="auto" id="pt_gr4">
-                                    <af:gridCell marginStart="5px" width="50%" id="pt_gc5"></af:gridCell>
-                                    <af:gridCell marginStart="5px" width="50%" halign="end" valign="bottom"
-                                                 marginEnd="5px" id="pt_gc6">
-                                        <!--<af:image source="#{resource['images:punjab_agri_e_logo.png']}" id="pt_i2"
+    <af:panelSplitter orientation="vertical" splitterPosition="70" id="pt_ps1">
+        <f:facet name="first">
+            <af:panelGridLayout id="pt_pgl1" styleClass="theme_color">
+                <af:gridRow marginTop="5px" height="auto" id="pt_gr1">
+                    <af:gridCell marginStart="5px" width="20%" id="pt_gc2">
+                        <af:spacer width="20" height="10" id="pt_s2"/>
+                        <!--<af:link icon="/imageservlet?imageNameParam=${sessionScope.sessCmpnyImg}"
+                             action="/faces/Main_Pages/Group/Company/SBU/Modules/ModuleBoard.jsf" id="pt_l1"/>-->
+                        <af:link icon="#{resource['images:Pamiir_Logo.png']}"
+                                 action="/faces/Main_Pages/Group/Company/SBU/Modules/ModuleBoard.jsf" id="pt_l11"/>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="80%" halign="end" valign="bottom" marginEnd="5px" id="pt_gc3">
+                        <af:panelGridLayout id="pt_pgl4">
+                            <af:gridRow marginTop="5px" height="auto" id="pt_gr4">
+                                <af:gridCell marginStart="5px" width="50%" id="pt_gc5"></af:gridCell>
+                                <af:gridCell marginStart="5px" width="50%" halign="end" valign="bottom" marginEnd="5px"
+                                             id="pt_gc6">
+                                    <!--<af:image source="#{resource['images:punjab_agri_e_logo.png']}" id="pt_i2"
                                       inlineStyle="width:105px; height:75px; margin-top:2%;"/>-->
-                                    </af:gridCell>
-                                </af:gridRow>
-                                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="pt_gr5">
-                                    <af:gridCell marginStart="5px" width="50%" id="pt_gc7"></af:gridCell>
-                                    <af:gridCell marginStart="5px" width="50%" halign="end" valign="bottom"
-                                                 marginEnd="5px" id="pt_gc8">
-                                        <af:panelGroupLayout id="pt_pgl5" layout="horizontal" valign="bottom">
-                                            <af:outputLabel value="${sessionScope.sessUName}" id="pt_ol1"
-                                                            inlineStyle="text-transform: capitalize; font-size:x-large;"/>
-                                            <!--<af:button text="Back to Module" id="pt_b2"
+                                </af:gridCell>
+                            </af:gridRow>
+                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="pt_gr5">
+                                <af:gridCell marginStart="5px" width="50%" id="pt_gc7"></af:gridCell>
+                                <af:gridCell marginStart="5px" width="50%" halign="end" valign="bottom" marginEnd="5px"
+                                             id="pt_gc8">
+                                    <af:panelGroupLayout id="pt_pgl5" layout="horizontal" valign="bottom">
+                                        <af:outputLabel value="${sessionScope.sessUName}" id="pt_ol1"
+                                                        inlineStyle="text-transform: capitalize; font-size:x-large;"/>
+                                        <!--<af:button text="Back to Module" id="pt_b2"
                                                        icon="#{resource['images:back_to_home.png']}"
                                                        destination="/faces/Main_Pages/Group/Company/SBU/Modules/ModuleBoard.jsf"/>-->
-                                                       <af:spacer width="20" height="10" id="pt_s3"/>
-                                            <af:link id="pt_l2" icon="#{resource['images:back_to_home.png']}" 
-                                                     action="/faces/Main_Pages/Group/Company/SBU/Modules/ModuleBoard.jsf"
-                                                     text="Back to Module"/>
-                                            <af:spacer width="10" height="10" id="pt_s4"/>
-                                            <!--<af:button text="Logout" id="pt_b1" icon="#{resource['images:logout.png']}"
+                                        <af:spacer width="20" height="10" id="pt_s3"/>
+                                        <af:link id="pt_l2" icon="#{resource['images:back_to_home.png']}"
+                                                 action="/faces/Main_Pages/Group/Company/SBU/Modules/ModuleBoard.jsf"
+                                                 text="Back to Module"/>
+                                        <af:spacer width="10" height="10" id="pt_s4"/>
+                                        <!--<af:button text="Logout" id="pt_b1" icon="#{resource['images:logout.png']}"
                                                        action="#{LoginsBean.logout_action}"/>-->
-                                            <af:link id="pt_l3" icon="#{resource['images:logout.png']}" action="#{LoginsBean.logout_action}"
-                                                     text="Logout"/>
-                                            <af:spacer width="20" height="10" id="pt_s1"/>
-                                        
-                                        </af:panelGroupLayout>
-                                    </af:gridCell>
-                                </af:gridRow>
-                            </af:panelGridLayout>
-                        </af:gridCell>
-                    </af:gridRow>
-                    <!--<af:gridRow marginTop="5px" height="auto" id="pt_gr6">
-                        <af:gridCell marginStart="5px" width="20%" id="pt_gc9">
-                        
-                        </af:gridCell>
-                        <af:gridCell marginStart="5px" width="80%" marginEnd="5px" id="pt_gc10">
-                                     
-                        </af:gridCell>
-                    </af:gridRow>-->
-                </af:panelGridLayout>
-                <!--<af:panelGridLayout id="pt_pgl6">
-                    <af:gridRow marginTop="5px" height="auto" id="pt_gr6">
-                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="pt_gc9">
-                        <af:spacer width="20" height="10" id="pt_ss6"/>
-                            <af:panelGroupLayout id="pt_pgl7">
-                                <af:link icon="#{resource['images:hdr_student_registration.png']}"
-                                destination="/faces/Main_Pages/Group/Company/SBU/Modules/Student_Management/Student_Management.jsf" id="pt_l4"/>
-                                --><!--<af:spacer width="10" height="10" id="pt_s5"/>--><!--
-                                <af:link text="Student Management" id="pt_l6" 
-                                destination="/faces/Main_Pages/Group/Company/SBU/Modules/Student_Management/Student_Management.jsf" styleClass="header_module"/>
-                            </af:panelGroupLayout>
-                            <af:spacer width="15" height="10" id="pt_s6"/>
-                            <af:panelGroupLayout id="pt_pg5l7">
-                                <af:link icon="#{resource['images:hdr_fee_management.png']}" 
-                                destination="/faces/Main_Pages/Group/Company/SBU/Modules/Fee_Management/Fee_Management.jsf" id="pt2_l4"/>
-                                --><!--<af:spacer width="10" height="10" id="pwt_s5"/>--><!--
-                                <af:link text="Fee Management" id="pt_3l6" 
-                                destination="/faces/Main_Pages/Group/Company/SBU/Modules/Fee_Management/Fee_Management.jsf" styleClass="header_module"/>
-                            </af:panelGroupLayout>
-                            <af:spacer width="15" height="10" id="pt_ws6"/>
-                            <af:panelGroupLayout id="pt_p32gl7">
-                                <af:link icon="#{resource['images:hdr_transportation.png']}" 
-                                destination="/faces/Main_Pages/Group/Company/SBU/Modules/Transportation/Transportation.jsf" id="pt_ql4"/>
-                                --><!--<af:spacer width="10" height="10" id="pt_sq5"/>--><!--
-                                <af:link text="Transportation" id="ptwq_l6" 
-                                destination="/faces/Main_Pages/Group/Company/SBU/Modules/Transportation/Transportation.jsf" styleClass="header_module"/>
-                            </af:panelGroupLayout>
-                            <af:spacer width="15" height="10" id="pt_sw6"/>
-                            <af:panelGroupLayout id="pt_pgwl7">
-                                <af:link icon="#{resource['images:hdr_sttaff.png']}" 
-                                destination="/faces/Main_Pages/Group/Company/SBU/Modules/Staff/Staff.jsf" id="ptq_l4"/>
-                                --><!--<af:spacer width="10" height="10" id="pt_sq65"/>--><!--
-                                <af:link text="Staff" id="pt_lq6" 
-                                destination="/faces/Main_Pages/Group/Company/SBU/Modules/Staff/Staff.jsf" styleClass="header_module"/>
-                            </af:panelGroupLayout>
-                            <af:spacer width="15" height="10" id="pt_s6w"/>
-                            <af:panelGroupLayout id="vf">
-                                <af:link icon="#{resource['images:hdr_general_setup.png']}" 
-                                destination="/faces/Main_Pages/Group/Company/SBU/Modules/General_Setup/General_Setup.jsf" id="fv"/>
-                                --><!--<af:spacer width="10" height="10" id="pt_sq65"/>--><!--
-                                <af:link text="General Setup" id="vdf" 
-                                destination="/faces/Main_Pages/Group/Company/SBU/Modules/General_Setup/General_Setup.jsf" styleClass="header_module"/>
-                            </af:panelGroupLayout>
-                            <af:spacer width="15" height="10" id="sf"/>
-                            <af:panelGroupLayout id="nh">
-                                <af:link icon="#{resource['images:hdr_library.png']}" 
-                                destination="/faces/Main_Pages/Group/Company/SBU/Modules/Library/Library.jsf" id="jmh"/>
-                                --><!--<af:spacer width="10" height="10" id="pt_sq65"/>--><!--
-                                <af:link text="Library" id="fvd" 
-                                destination="/faces/Main_Pages/Group/Company/SBU/Modules/Library/Library.jsf" styleClass="header_module"/>
-                            </af:panelGroupLayout>
-                            <af:spacer width="15" height="10" id="vdfvr"/>
-                            <af:panelGroupLayout id="csd">
-                                <af:link icon="#{resource['images:hdr_user_management.png']}" 
-                                destination="/faces/Main_Pages/Group/Company/SBU/Modules/User_Management/User_Management.jsf" id="sd"/>
-                                --><!--<af:spacer width="10" height="10" id="pt_sq65"/>--><!--
-                                <af:link text="User Management" id="vd" 
-                                destination="/faces/Main_Pages/Group/Company/SBU/Modules/User_Management/User_Management.jsf" styleClass="header_module"/>
-                            </af:panelGroupLayout>
-                            <af:spacer width="15" height="10" id="pt_3s6w"/>
-                            <af:panelGroupLayout id="pt_pgwl17">
-                                <af:link icon="#{resource['images:hdr_payroll.png']}" 
-                                destination="/faces/Main_Pages/Group/Company/SBU/Modules/Payroll/Payroll.jsf" id="ptq_3l4"/>
-                                --><!--<af:spacer width="10" height="10" id="pt_sq65"/>--><!--
-                                <af:link text="Payroll" id="pt_2lq6" 
-                                destination="/faces/Main_Pages/Group/Company/SBU/Modules/Payroll/Payroll.jsf" styleClass="header_module"/>
-                            </af:panelGroupLayout>
-                            <af:spacer width="15" height="10" id="pt_1s6w"/>
-                            --><!--<af:panelGridLayout id="pt_pgl8">
-                                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="pt_gr8">
-                                    <af:gridCell marginStart="5px" width="50%" id="pt_gc11"/>
-                                    <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="pt_gc12"/>
-                                </af:gridRow>
-                            </af:panelGridLayout>--><!--
-                        </af:gridCell>
-                    </af:gridRow>
-                    --><!--<af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="pt_gr7">
-                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="pt_gc10">
-                            <af:link text="link 2" id="pt_l5"/>
-                        </af:gridCell>
-                    </af:gridRow>--><!--
-                </af:panelGridLayout>-->
-            </af:gridCell>
-        </af:gridRow>
-        <af:gridRow marginTop="5px" height="100%" marginBottom="5px" id="pt_gr3">
-            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="pt_gc4">
-                <af:panelGroupLayout layout="scroll" id="pt_pgl3" inlineStyle="background-color:white;">
-                    <af:facetRef facetName="body">
-                        <?audit suppress oracle.adf.faces.pt-facet-references?>
-                    </af:facetRef>
-                </af:panelGroupLayout>
-            </af:gridCell>
-        </af:gridRow>
-    </af:panelGridLayout>
+                                        <af:link id="pt_l3" icon="#{resource['images:logout.png']}"
+                                                 action="#{LoginsBean.logout_action}" text="Logout"/>
+                                        <af:spacer width="20" height="10" id="pt_s1"/>
+                                    </af:panelGroupLayout>
+                                </af:gridCell>
+                            </af:gridRow>
+                        </af:panelGridLayout>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </f:facet>
+    </af:panelSplitter>
 </af:pageTemplateDef>
