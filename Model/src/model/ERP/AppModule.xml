@@ -523,6 +523,27 @@
   <ViewUsage
     Name="TblLibBooksReturnView2"
     ViewObjectName="model.ERP.VO.TblLibBooksReturnView"/>
+  <ViewUsage
+    Name="TblLeavePkgDetailView1"
+    ViewObjectName="model.ERP.VO.TblLeavePkgDetailView"/>
+  <ViewUsage
+    Name="TblLeavePkgMasterView1"
+    ViewObjectName="model.ERP.VO.TblLeavePkgMasterView"/>
+  <ViewUsage
+    Name="TblLeaveReqView1"
+    ViewObjectName="model.ERP.VO.TblLeaveReqView"/>
+  <ViewUsage
+    Name="TblLeaveTypeView1"
+    ViewObjectName="model.ERP.VO.TblLeaveTypeView"/>
+  <ViewUsage
+    Name="TblLeavePkgDetailView2"
+    ViewObjectName="model.ERP.VO.TblLeavePkgDetailView"/>
+  <ViewUsage
+    Name="TblLeaveReqView2"
+    ViewObjectName="model.ERP.VO.TblLeaveReqView"/>
+  <ViewUsage
+    Name="TblLeavePkgDetailView3"
+    ViewObjectName="model.ERP.VO.TblLeavePkgDetailView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -1104,5 +1125,23 @@
     ViewLinkObjectName="model.ERP.VO.FkLibBooksReturnIssueLink"
     SrcViewUsageName="model.ERP.AppModule.TblLibBooksIssueDetailView1"
     DstViewUsageName="model.ERP.AppModule.TblLibBooksReturnView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLeavePkgDetailMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkLeavePkgDetailMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblLeavePkgMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblLeavePkgDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLeaveReqLeaveTypeLink1"
+    ViewLinkObjectName="model.ERP.VO.FkLeaveReqLeaveTypeLink"
+    SrcViewUsageName="model.ERP.AppModule.TblLeaveTypeView1"
+    DstViewUsageName="model.ERP.AppModule.TblLeaveReqView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLeavePkgDetailLeaveTypeLink1"
+    ViewLinkObjectName="model.ERP.VO.FkLeavePkgDetailLeaveTypeLink"
+    SrcViewUsageName="model.ERP.AppModule.TblLeaveTypeView1"
+    DstViewUsageName="model.ERP.AppModule.TblLeavePkgDetailView3"
     Reversed="false"/>
 </AppModule>
