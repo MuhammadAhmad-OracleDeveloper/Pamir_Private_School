@@ -13,6 +13,72 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Active_Name_LOV1"
+    ViewObjectName="model.LOV.Active_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Leave_Type_LOV1"
+    ViewObjectName="model.LOV.Leave_Type_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Calc_Type_LOV1"
+    ViewObjectName="model.LOV.Calc_Type_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Ast"
+    ListVOName="Active_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Ast"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LeaveTypeId"
+    ListVOName="Leave_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LeaveTypeId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="LeaveName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CalcType"
+    ListVOName="Calc_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CalcType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblLeavePkgDetail"
     Entity="model.ERP.EO.TblLeavePkgDetail"/>
@@ -34,7 +100,15 @@
     PrecisionRule="true"
     EntityAttrName="LeaveTypeId"
     EntityUsage="TblLeavePkgDetail"
-    AliasName="LEAVE_TYPE_ID"/>
+    AliasName="LEAVE_TYPE_ID"
+    LOVName="LOV_LeaveTypeId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="NoOfDays"
     PrecisionRule="true"
@@ -52,7 +126,15 @@
     PrecisionRule="true"
     EntityAttrName="CalcType"
     EntityUsage="TblLeavePkgDetail"
-    AliasName="CALC_TYPE"/>
+    AliasName="CALC_TYPE"
+    LOVName="LOV_CalcType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ElegAfterDays"
     PrecisionRule="true"
@@ -64,7 +146,15 @@
     PrecisionRule="true"
     EntityAttrName="Ast"
     EntityUsage="TblLeavePkgDetail"
-    AliasName="AST"/>
+    AliasName="AST"
+    LOVName="LOV_Ast">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"

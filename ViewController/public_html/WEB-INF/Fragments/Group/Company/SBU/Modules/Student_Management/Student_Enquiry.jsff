@@ -64,12 +64,12 @@
                                   label="#{bindings.TblStdEnqView1.hints.Dated.label}"
                                   required="#{bindings.TblStdEnqView1.hints.Dated.mandatory}"
                                   columns="#{bindings.TblStdEnqView1.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.TblStdEnqView1.hints.Dated.tooltip}" id="id2" contentStyle='text-align: center'>
+                                  shortDesc="#{bindings.TblStdEnqView1.hints.Dated.tooltip}" id="id2" contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblStdEnqView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column headerText="Academic Year" id="c3" sortable="true" filterable="true" align="left">
+                  <af:column headerText="Academic Year" id="c3" sortable="true" filterable="true" align="right">
                   <f:facet name="filter">
                         <af:inputText value="#{vs.filterCriteria.AcadYearId}"
                         id="id6" placeholder="Search ">
@@ -78,8 +78,8 @@
                     <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
                                         label="#{row.bindings.AcadYearId.label}"
                                         required="#{bindings.TblStdEnqView1.hints.AcadYearId.mandatory}"
-                                        shortDesc="#{bindings.TblStdEnqView1.hints.AcadYearId.tooltip}" id="soc1">
-                      <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si1"/>
+                                        shortDesc="#{bindings.TblStdEnqView1.hints.AcadYearId.tooltip}" id="soc1" contentStyle='text-align: right'>
+                      <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si1" />
                       <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
@@ -140,7 +140,7 @@
                                   required="#{bindings.TblStdEnqView1.hints.EmirId.mandatory}"
                                   columns="#{bindings.TblStdEnqView1.hints.EmirId.displayWidth}"
                                   maximumLength="#{bindings.TblStdEnqView1.hints.EmirId.precision}"
-                                  shortDesc="#{bindings.TblStdEnqView1.hints.EmirId.tooltip}" id="it6" contentStyle='text-align: center'>
+                                  shortDesc="#{bindings.TblStdEnqView1.hints.EmirId.tooltip}" id="it6" contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.EmirId.validator}"/>
                     </af:inputText>
                   </af:column>

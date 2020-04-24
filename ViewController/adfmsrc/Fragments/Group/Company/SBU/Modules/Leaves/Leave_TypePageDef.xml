@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Leave_TypePageDef"
+                Package="Fragments.Group.Company.SBU.Modules.Leaves">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblLeaveTypeView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblLeaveTypeView1Iterator"/>
+    <searchRegion Binds="TblLeaveTypeView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblLeaveTypeView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblLeaveTypeView1Iterator" id="TblLeaveTypeView1">
+      <nodeDefinition DefName="model.ERP.VO.TblLeaveTypeView" Name="TblLeaveTypeView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="LeaveCode"/>
+          <Item Value="LeaveName"/>
+          <Item Value="PayType"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblLeaveTypeView1Iterator" id="Create" RequiresUpdateModel="true" Action="createRow"/>
+    <action IterBinding="TblLeaveTypeView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblLeaveTypeView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+  </bindings>
+</pageDefinition>

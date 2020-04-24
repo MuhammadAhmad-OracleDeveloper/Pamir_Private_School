@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Leave_PackagePageDef"
+                Package="Fragments.Group.Company.SBU.Modules.Leaves">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblLeavePkgMasterView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblLeavePkgMasterView1Iterator"/>
+    <searchRegion Binds="TblLeavePkgMasterView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblLeavePkgMasterView1Query"/>
+    <iterator Binds="TblLeavePkgDetailView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblLeavePkgDetailView2Iterator"/>
+    <searchRegion Binds="TblLeavePkgDetailView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblLeavePkgDetailView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblLeavePkgMasterView1Iterator" id="TblLeavePkgMasterView1">
+      <nodeDefinition DefName="model.ERP.VO.TblLeavePkgMasterView" Name="TblLeavePkgMasterView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="PkgName"/>
+          <Item Value="Remarks"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblLeavePkgDetailView2Iterator" id="TblLeavePkgDetailView2">
+      <nodeDefinition DefName="model.ERP.VO.TblLeavePkgDetailView" Name="TblLeavePkgDetailView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="LeaveTypeId"/>
+          <Item Value="NoOfDays"/>
+          <Item Value="PeriodMonths"/>
+          <Item Value="CalcType"/>
+          <Item Value="ElegAfterDays"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblLeavePkgMasterView1Iterator" id="Create" RequiresUpdateModel="true" Action="createRow"/>
+    <action IterBinding="TblLeavePkgMasterView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblLeavePkgMasterView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <action IterBinding="TblLeavePkgDetailView2Iterator" id="Create1" RequiresUpdateModel="true" Action="createRow"/>
+    <action IterBinding="TblLeavePkgDetailView2Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblLeavePkgDetailView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>
