@@ -88,7 +88,6 @@ public class Login {
         System.out.println(".......................................................................");
         System.out.println(".......................................................................");
 
-        storeOnSession("goolaa", "gola molaa vollaa");  
         Connection conn;
 
         try {
@@ -148,13 +147,17 @@ public class Login {
         return "/faces/Main_Pages/Group/Company/SBU/Sbu.jsf?faces-redirect=true";
     }
 
-    
     public String getSBUID(String SBUID){
         System.out.println("oooooooooooo SBU oooooooooo"+SBUID);
         storeOnSession("sessSBUID", SBUID);
         return "/faces/Main_Pages/Group/Company/SBU/Modules/ModuleBoard.jsf?faces-redirect=true";
     }
-    
+
+    public String getMODID(String MODID){
+        System.out.println("oooooooooooo MODID oooooooooo"+MODID);
+        storeOnSession("sessMODID", MODID);
+        return "/faces/Main_Pages/Group/Company/SBU/Modules/SubModuleBoard.jsf?faces-redirect=true";
+    }
 
     public String getCmpnyImg(String CmpyID) {
         Connection cone;

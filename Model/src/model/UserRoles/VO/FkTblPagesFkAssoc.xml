@@ -3,21 +3,27 @@
 <!---->
 <ViewLink
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="FkPagesModuleLink"
+  Name="FkTblPagesFkAssoc"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  EntityAssociation="model.UserRoles.EO.FkPagesModuleAssoc">
+  EntityAssociation="model.UserRoles.EO.FkTblPagesFkAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.UserRoles.VO.FkTblPagesFkAssoc_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
   <ViewLinkDefEnd
-    Name="TblModuleView"
+    Name="TblSubModuleView"
     Cardinality="1"
     Source="true"
-    Owner="model.UserRoles.VO.TblModuleView">
+    Owner="model.UserRoles.VO.TblSubModuleView">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="TblModuleView"/>
+      <Attr Name="_finderName" Value="TblSubModuleView"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.UserRoles.VO.TblModuleView.Id"/>
+      <Item Value="model.UserRoles.VO.TblSubModuleView.Id"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ViewLinkDefEnd
@@ -29,7 +35,11 @@
       <Attr Name="_finderName" Value="TblPagesView"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.UserRoles.VO.TblPagesView.ModuleId"/>
+      <Item Value="model.UserRoles.VO.TblPagesView.SubModuleId"/>
     </AttrArray>
   </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewLink>

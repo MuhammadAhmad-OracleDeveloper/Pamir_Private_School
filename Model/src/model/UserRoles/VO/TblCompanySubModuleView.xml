@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="TblCompanyPagesView"
+  Name="TblCompanySubModuleView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -14,60 +14,70 @@
   SelectAllAttributes="false"
   PageIterMode="Full">
   <EntityUsage
-    Name="TblCompanyPages"
-    Entity="model.UserRoles.EO.TblCompanyPages"/>
+    Name="TblCompanySubModule"
+    Entity="model.UserRoles.EO.TblCompanySubModule"/>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Id"
-    EntityUsage="TblCompanyPages"
+    EntityUsage="TblCompanySubModule"
     AliasName="ID"/>
   <ViewAttribute
-    Name="PageId"
+    Name="SubModuleId"
     PrecisionRule="true"
-    EntityAttrName="PageId"
-    EntityUsage="TblCompanyPages"
-    AliasName="PAGE_ID"/>
+    EntityAttrName="SubModuleId"
+    EntityUsage="TblCompanySubModule"
+    AliasName="SUB_MODULE_ID"/>
+  <ViewAttribute
+    Name="GroupCompanyId"
+    PrecisionRule="true"
+    EntityAttrName="GroupCompanyId"
+    EntityUsage="TblCompanySubModule"
+    AliasName="GROUP_COMPANY_ID"/>
   <ViewAttribute
     Name="Ast"
     PrecisionRule="true"
     EntityAttrName="Ast"
-    EntityUsage="TblCompanyPages"
+    EntityUsage="TblCompanySubModule"
     AliasName="AST"/>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
-    EntityUsage="TblCompanyPages"
+    EntityUsage="TblCompanySubModule"
     AliasName="CREATED_DATE"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
-    EntityUsage="TblCompanyPages"
+    EntityUsage="TblCompanySubModule"
     AliasName="CREATED_BY"/>
   <ViewAttribute
     Name="UpdatedDate"
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
-    EntityUsage="TblCompanyPages"
+    EntityUsage="TblCompanySubModule"
     AliasName="UPDATED_DATE"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
-    EntityUsage="TblCompanyPages"
+    EntityUsage="TblCompanySubModule"
     AliasName="UPDATED_BY"/>
-  <ViewAttribute
-    Name="CompanySubModuleId"
-    PrecisionRule="true"
-    EntityAttrName="CompanySubModuleId"
-    EntityUsage="TblCompanyPages"
-    AliasName="COMPANY_SUB_MODULE_ID"/>
+  <ViewLinkAccessor
+    Name="TblRoleSubModulesView"
+    ViewLink="model.UserRoles.VO.TblRoleSubModulesFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblCompanyPagesView"
+    ViewLink="model.UserRoles.VO.FkTblCompanyPagesFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ViewLinkAccessor
     Name="TblRolePagesView"
-    ViewLink="model.UserRoles.VO.Fk2RolePagesLink"
+    ViewLink="model.UserRoles.VO.FkTblRolePagesFkAssoc"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>
