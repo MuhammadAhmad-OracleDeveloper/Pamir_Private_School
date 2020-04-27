@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkCompanySubModuleLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.UserRoles.EO.FkCompanySubModuleAssoc">
+  <ViewLinkDefEnd
+    Name="TblSubModuleView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.UserRoles.VO.TblSubModuleView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblSubModuleView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.UserRoles.VO.TblSubModuleView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblCompanySubModuleView"
+    Cardinality="-1"
+    Owner="model.UserRoles.VO.TblCompanySubModuleView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblCompanySubModuleView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.UserRoles.VO.TblCompanySubModuleView.SubModuleId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

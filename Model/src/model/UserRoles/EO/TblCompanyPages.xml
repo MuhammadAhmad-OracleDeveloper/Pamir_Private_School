@@ -20,13 +20,6 @@
     TableName="TBL_COMPANY_PAGES"
     PrimaryKey="true"/>
   <Attribute
-    Name="CompanyModuleId"
-    ColumnName="COMPANY_MODULE_ID"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_COMPANY_PAGES"/>
-  <Attribute
     Name="PageId"
     ColumnName="PAGE_ID"
     SQLType="NUMERIC"
@@ -75,6 +68,13 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_COMPANY_PAGES"/>
+  <Attribute
+    Name="CompanySubModuleId"
+    ColumnName="COMPANY_SUB_MODULE_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_COMPANY_PAGES"/>
   <AccessorAttribute
     Name="TblRolePages"
     Association="model.UserRoles.EO.Fk2RolePagesAssoc"
@@ -83,10 +83,10 @@
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <AccessorAttribute
-    Name="TblCompanyModule"
-    Association="model.UserRoles.EO.FKCompanyPagesFKAssoc"
-    AssociationEnd="model.UserRoles.EO.FKCompanyPagesFKAssoc.TblCompanyModule"
-    AssociationOtherEnd="model.UserRoles.EO.FKCompanyPagesFKAssoc.TblCompanyPages"
+    Name="TblCompanySubModule"
+    Association="model.UserRoles.EO.FkTblCompanyPagesFkAssoc"
+    AssociationEnd="model.UserRoles.EO.FkTblCompanyPagesFkAssoc.TblCompanySubModule"
+    AssociationOtherEnd="model.UserRoles.EO.FkTblCompanyPagesFkAssoc.TblCompanyPages"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
   <Key
@@ -97,17 +97,6 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.UserRoles.EO.TblCompanyPages.Id"/>
-    </AttrArray>
-  </Key>
-  <Key
-    Name="FkGroupPagesCoProf">
-    <DesignTime>
-      <Attr Name="_referencedKey" Value="PK_GROUP"/>
-      <Attr Name="_isForeign" Value="true"/>
-      <Attr Name="_DBObjectName" Value="FK_GROUP_PAGES_CO_PROF"/>
-    </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="model.UserRoles.EO.TblCompanyPages.CompanyModuleId"/>
     </AttrArray>
   </Key>
   <Key
@@ -124,12 +113,12 @@
   <Key
     Name="fk_TblCompanyPages">
     <DesignTime>
-      <Attr Name="_referencedKey" Value="PK_GROUP_MODULE"/>
+      <Attr Name="_referencedKey" Value="PK_COMPANY_SUB_MODULE"/>
       <Attr Name="_isForeign" Value="true"/>
       <Attr Name="_DBObjectName" Value="FK_TBL_COMPANY_PAGES"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.UserRoles.EO.TblCompanyPages.CompanyModuleId"/>
+      <Item Value="model.UserRoles.EO.TblCompanyPages.CompanySubModuleId"/>
     </AttrArray>
   </Key>
 </Entity>

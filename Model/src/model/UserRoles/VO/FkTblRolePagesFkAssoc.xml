@@ -3,39 +3,39 @@
 <!---->
 <ViewLink
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="FKCompanyPagesFKLink"
+  Name="FkTblRolePagesFkAssoc"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  EntityAssociation="model.UserRoles.EO.FKCompanyPagesFKAssoc">
+  EntityAssociation="model.UserRoles.EO.FkTblRolePagesFkAssoc">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.UserRoles.VO.FKCompanyPagesFKLink_LABEL"/>
+        ResId="model.UserRoles.VO.FkTblRolePagesFkAssoc_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <ViewLinkDefEnd
-    Name="TblCompanyModuleView"
+    Name="TblCompanySubModuleView"
     Cardinality="1"
     Source="true"
-    Owner="model.UserRoles.VO.TblCompanyModuleView">
+    Owner="model.UserRoles.VO.TblCompanySubModuleView">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="TblCompanyModuleView"/>
+      <Attr Name="_finderName" Value="TblCompanySubModuleView"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.UserRoles.VO.TblCompanyModuleView.Id"/>
+      <Item Value="model.UserRoles.VO.TblCompanySubModuleView.Id"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ViewLinkDefEnd
-    Name="TblCompanyPagesView"
+    Name="TblRolePagesView"
     Cardinality="-1"
-    Owner="model.UserRoles.VO.TblCompanyPagesView">
+    Owner="model.UserRoles.VO.TblRolePagesView">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="TblCompanyPagesView"/>
+      <Attr Name="_finderName" Value="TblRolePagesView"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.UserRoles.VO.TblCompanyPagesView.CompanyModuleId"/>
+      <Item Value="model.UserRoles.VO.TblRolePagesView.CompanySubModuleId"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ResourceBundle>

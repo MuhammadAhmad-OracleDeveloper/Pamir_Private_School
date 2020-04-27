@@ -90,6 +90,13 @@
     AssociationOtherEnd="model.UserRoles.EO.FkTblRoleModulesFkAssoc.TblRoleModules"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblRoleSubModules"
+    Association="model.UserRoles.EO.FkTblRoleSubModuleFkAssoc"
+    AssociationEnd="model.UserRoles.EO.FkTblRoleSubModuleFkAssoc.TblRoleSubModules"
+    AssociationOtherEnd="model.UserRoles.EO.FkTblRoleSubModuleFkAssoc.TblRoleModules"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkRoleDetailModules"
     PrimaryKey="true">

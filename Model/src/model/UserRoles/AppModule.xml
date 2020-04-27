@@ -224,6 +224,24 @@
     Name="Leaves_Pages1"
     ViewObjectName="model.UserRoles.VO.Leaves_Pages"/>
   <ViewUsage
+    Name="TblCompanySubModuleView1"
+    ViewObjectName="model.UserRoles.VO.TblCompanySubModuleView"/>
+  <ViewUsage
+    Name="TblRoleSubModulesView1"
+    ViewObjectName="model.UserRoles.VO.TblRoleSubModulesView"/>
+  <ViewUsage
+    Name="TblSubModuleView1"
+    ViewObjectName="model.UserRoles.VO.TblSubModuleView"/>
+  <ViewUsage
+    Name="TblRoleSubModulesView2"
+    ViewObjectName="model.UserRoles.VO.TblRoleSubModulesView"/>
+  <ViewUsage
+    Name="TblCompanySubModuleView2"
+    ViewObjectName="model.UserRoles.VO.TblCompanySubModuleView"/>
+  <ViewUsage
+    Name="User_Sub_Modules1"
+    ViewObjectName="model.UserRoles.VO.User_Sub_Modules"/>
+  <ViewUsage
     Name="Payroll_Pages1"
     ViewObjectName="model.UserRoles.VO.Payroll_Pages"/>
   <ViewLinkUsage
@@ -256,12 +274,12 @@
     SrcViewUsageName="model.UserRoles.AppModule.TblModuleView1"
     DstViewUsageName="model.UserRoles.AppModule.TblGroupModuleView3"
     Reversed="false"/>-->
-  <ViewLinkUsage
+  <!--<ViewLinkUsage
     Name="FkPagesModuleLink1"
     ViewLinkObjectName="model.UserRoles.VO.FkPagesModuleLink"
     SrcViewUsageName="model.UserRoles.AppModule.TblModuleView1"
     DstViewUsageName="model.UserRoles.AppModule.TblPagesView2"
-    Reversed="false"/>
+    Reversed="false"/>-->
   <ViewLinkUsage
     Name="FkPeriodCoProfLink1"
     ViewLinkObjectName="model.UserRoles.VO.FkPeriodCoProfLink"
@@ -376,12 +394,12 @@
     SrcViewUsageName="model.UserRoles.AppModule.TblGroupCompanyView3"
     DstViewUsageName="model.UserRoles.AppModule.TblCompanyModuleView1"
     Reversed="false"/>
-  <ViewLinkUsage
+  <!--<ViewLinkUsage
     Name="FKCompanyPagesFKLink"
     ViewLinkObjectName="model.UserRoles.VO.FKCompanyPagesFKLink"
     SrcViewUsageName="model.UserRoles.AppModule.TblCompanyModuleView2"
     DstViewUsageName="model.UserRoles.AppModule.TblCompanyPagesView1"
-    Reversed="false"/>
+    Reversed="false"/>-->
   <ViewLinkUsage
     Name="FKTblCompanyReportsFKLink"
     ViewLinkObjectName="model.UserRoles.VO.FKTblCompanyReportsFKLink"
@@ -399,5 +417,17 @@
     ViewLinkObjectName="model.UserRoles.VO.FkTblRoleModulesFkLink"
     SrcViewUsageName="model.UserRoles.AppModule.TblRoleView2"
     DstViewUsageName="model.UserRoles.AppModule.TblRoleModulesView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="TblRoleSubModulesFk1Link1"
+    ViewLinkObjectName="model.UserRoles.VO.TblRoleSubModulesFk1Link"
+    SrcViewUsageName="model.UserRoles.AppModule.TblCompanySubModuleView1"
+    DstViewUsageName="model.UserRoles.AppModule.TblRoleSubModulesView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkCompanySubModuleLink1"
+    ViewLinkObjectName="model.UserRoles.VO.FkCompanySubModuleLink"
+    SrcViewUsageName="model.UserRoles.AppModule.TblSubModuleView1"
+    DstViewUsageName="model.UserRoles.AppModule.TblCompanySubModuleView2"
     Reversed="false"/>
 </AppModule>

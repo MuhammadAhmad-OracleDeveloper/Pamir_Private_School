@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="SubModuleBoardPageDef"
+                Package="Fragments.Group.Company.SBU.Modules">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="User_Sub_Modules1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="User_Sub_Modules1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="User_Sub_Modules1Iterator" id="User_Sub_Modules1">
+      <nodeDefinition DefName="model.UserRoles.VO.User_Sub_Modules" Name="User_Sub_Modules10">
+        <AttrNames>
+          <Item Value="Rsmid"/>
+          <Item Value="RoleModuleId"/>
+          <Item Value="CompanySubModuleId"/>
+          <Item Value="RView"/>
+          <Item Value="Tsmid"/>
+          <Item Value="Name"/>
+          <Item Value="Link"/>
+          <Item Value="Icon"/>
+          <Item Value="Description"/>
+          <Item Value="SrNo"/>
+          <Item Value="Rmid"/>
+          <Item Value="RoleId"/>
+          <Item Value="CompanyModuleId"/>
+          <Item Value="RView1"/>
+          <Item Value="Cmid"/>
+          <Item Value="GroupCompanyId"/>
+          <Item Value="ModuleId"/>
+          <Item Value="Cmast"/>
+          <Item Value="Gcid"/>
+          <Item Value="Gcast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

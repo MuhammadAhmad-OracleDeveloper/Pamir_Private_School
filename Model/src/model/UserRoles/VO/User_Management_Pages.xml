@@ -26,21 +26,21 @@
       Name="VariableScript"
       CodeSourceName="User_Management_Pages"/>
   </Variable>
-  <SQLQuery><![CDATA[SELECT                           
-TP.ID, TP.NAME, TP.AST, TP.PAGE_ICON, TP.PAGE_LINK, TP.SR_NO,               
-RP.ROLE_ID, RP.COMPANY_PAGES_ID, RP.ROLE_ID, RP.R_VIEW, RP.R_ADD, RP.R_EDIT, RP.R_DELETE, RP.R_PRINT                          
-FROM                           
-TBL_PAGES TP, TBL_ROLE_PAGES RP                         
-Where                           
-TP.ID = RP.COMPANY_PAGES_ID                          
-AND                          
-RP.R_VIEW = 'Y'                          
-AND                          
-TP.AST = 'Y'                          
-AND                          
-RP.COMPANY_MODULE_ID = 1                     
-AND                          
-RP.ROLE_ID = :get_role_id              
+  <SQLQuery><![CDATA[SELECT                            
+TP.ID, TP.NAME, TP.AST, TP.PAGE_ICON, TP.PAGE_LINK, TP.SR_NO,                
+RP.ROLE_ID, RP.COMPANY_PAGES_ID, RP.ROLE_ID, RP.R_VIEW, RP.R_ADD, RP.R_EDIT, RP.R_DELETE, RP.R_PRINT                           
+FROM                            
+TBL_PAGES TP, TBL_ROLE_PAGES RP                          
+Where                            
+TP.ID = RP.COMPANY_PAGES_ID                           
+AND                           
+RP.R_VIEW = 'Y'                           
+AND                           
+TP.AST = 'Y'                           
+AND                           
+RP.COMPANY_SUB_MODULE_ID = 1                      
+AND                           
+RP.ROLE_ID = :get_role_id               
 ORDER BY TP.SR_NO ASC]]></SQLQuery>
   <ViewAttribute
     Name="Id"
@@ -227,11 +227,11 @@ ORDER BY TP.SR_NO ASC]]></SQLQuery>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
   </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id"/>
+  </AttrArray>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
   </ResourceBundle>
-  <AttrArray Name="KeyAttributes">
-    <Item Value="Id"/>
-  </AttrArray>
 </ViewObject>

@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="User_Sub_Modules"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.UserRoles.VO.User_Sub_Modules_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="get_com_mod_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="User_Sub_Modules"/>
+  </Variable>
+  <Variable
+    Name="get_Role_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="User_Sub_Modules"/>
+  </Variable>
+  <Variable
+    Name="get_Module_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="User_Sub_Modules"/>
+  </Variable>
+  <SQLQuery><![CDATA[SELECT           
+RSM.ID RSMID , RSM.ROLE_MODULE_ID ,RSM.COMPANY_SUB_MODULE_ID, RSM.R_VIEW ,    
+TSM.ID TSMID ,TSM.NAME , TSM.LINK, TSM.ICON ,TSM.DESCRIPTION ,TSM.SR_NO ,    
+RM.ID RMID , RM.ROLE_ID , RM.COMPANY_MODULE_ID , RM.R_VIEW ,          
+CM.ID CMID , CM.GROUP_COMPANY_ID , CM.MODULE_ID , CM.AST CMAST ,          
+GC.ID GCID , GC.AST GCAST     
+FROM           
+TBL_ROLE_SUB_MODULES RSM , TBL_ROLE_MODULES RM , TBL_COMPANY_SUB_MODULE CSM ,TBL_COMPANY_MODULE CM , TBL_GROUP_COMPANY GC , TBL_SUB_MODULE TSM , TBL_MODULE TM          
+Where          
+RM.ID = RSM.ROLE_MODULE_ID     
+AND         
+RSM.COMPANY_SUB_MODULE_ID = CSM.ID    
+AND         
+CSM.SUB_MODULE_ID = TSM.ID     
+AND    
+CM.ID = RM.COMPANY_MODULE_ID          
+AND          
+GC.ID = CM.GROUP_COMPANY_ID          
+AND          
+TM.ID = CM.MODULE_ID      
+AND         
+TSM.MODULE_ID = :get_Module_ID         
+AND          
+RSM.ROLE_ID = :get_Role_ID          
+AND          
+GC.ID = :get_com_mod_ID     
+order by TSM.SR_NO ASC]]></SQLQuery>
+  <ViewAttribute
+    Name="Rsmid"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="RSMID"
+    Expression="RSMID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="RoleModuleId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ROLE_MODULE_ID"
+    Expression="ROLE_MODULE_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="CompanySubModuleId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="COMPANY_SUB_MODULE_ID"
+    Expression="COMPANY_SUB_MODULE_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="RView"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="R_VIEW"
+    Expression="R_VIEW"
+    SQLType="CHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Tsmid"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TSMID"
+    Expression="TSMID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Name"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="NAME"
+    Expression="NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Link"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="200"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="LINK"
+    Expression="LINK"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Icon"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="200"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="ICON"
+    Expression="ICON"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Description"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="200"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="DESCRIPTION"
+    Expression="DESCRIPTION"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SrNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="SR_NO"
+    Expression="SR_NO"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Rmid"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="RMID"
+    Expression="RMID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="RoleId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ROLE_ID"
+    Expression="ROLE_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="CompanyModuleId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="COMPANY_MODULE_ID"
+    Expression="COMPANY_MODULE_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="RView1"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="R_VIEW"
+    Expression="R_VIEW"
+    SQLType="CHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Cmid"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="CMID"
+    Expression="CMID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="GroupCompanyId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="GROUP_COMPANY_ID"
+    Expression="GROUP_COMPANY_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="ModuleId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="MODULE_ID"
+    Expression="MODULE_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Cmast"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="CMAST"
+    Expression="CMAST"
+    SQLType="CHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Gcid"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="GCID"
+    Expression="GCID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Gcast"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="GCAST"
+    Expression="GCAST"
+    SQLType="CHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Rsmid"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

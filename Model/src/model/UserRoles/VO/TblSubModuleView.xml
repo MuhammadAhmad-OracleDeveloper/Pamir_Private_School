@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="TblModuleView"
+  Name="TblSubModuleView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -14,84 +14,90 @@
   SelectAllAttributes="false"
   PageIterMode="Full">
   <EntityUsage
-    Name="TblModule"
-    Entity="model.UserRoles.EO.TblModule"/>
+    Name="TblSubModule"
+    Entity="model.UserRoles.EO.TblSubModule"/>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Id"
-    EntityUsage="TblModule"
+    EntityUsage="TblSubModule"
     AliasName="ID"/>
+  <ViewAttribute
+    Name="ModuleId"
+    PrecisionRule="true"
+    EntityAttrName="ModuleId"
+    EntityUsage="TblSubModule"
+    AliasName="MODULE_ID"/>
   <ViewAttribute
     Name="Name"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Name"
-    EntityUsage="TblModule"
+    EntityUsage="TblSubModule"
     AliasName="NAME"/>
   <ViewAttribute
     Name="Ast"
     PrecisionRule="true"
     EntityAttrName="Ast"
-    EntityUsage="TblModule"
+    EntityUsage="TblSubModule"
     AliasName="AST"/>
   <ViewAttribute
     Name="Icon"
     PrecisionRule="true"
     EntityAttrName="Icon"
-    EntityUsage="TblModule"
+    EntityUsage="TblSubModule"
     AliasName="ICON"/>
   <ViewAttribute
     Name="Description"
     PrecisionRule="true"
     EntityAttrName="Description"
-    EntityUsage="TblModule"
+    EntityUsage="TblSubModule"
     AliasName="DESCRIPTION"/>
   <ViewAttribute
     Name="Link"
     PrecisionRule="true"
     EntityAttrName="Link"
-    EntityUsage="TblModule"
+    EntityUsage="TblSubModule"
     AliasName="LINK"/>
   <ViewAttribute
     Name="SrNo"
     PrecisionRule="true"
     EntityAttrName="SrNo"
-    EntityUsage="TblModule"
+    EntityUsage="TblSubModule"
     AliasName="SR_NO"/>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
-    EntityUsage="TblModule"
+    EntityUsage="TblSubModule"
     AliasName="CREATED_DATE"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
-    EntityUsage="TblModule"
+    EntityUsage="TblSubModule"
     AliasName="CREATED_BY"/>
   <ViewAttribute
     Name="UpdatedDate"
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
-    EntityUsage="TblModule"
+    EntityUsage="TblSubModule"
     AliasName="UPDATED_DATE"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
-    EntityUsage="TblModule"
+    EntityUsage="TblSubModule"
     AliasName="UPDATED_BY"/>
   <ViewLinkAccessor
-    Name="TblGroupModuleView"
-    ViewLink="model.UserRoles.VO.FkGroupModuleModuleLink"
+    Name="TblCompanySubModuleView"
+    ViewLink="model.UserRoles.VO.FkCompanySubModuleLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ViewLinkAccessor
-    Name="TblReportsView"
-    ViewLink="model.UserRoles.VO.FkReportsModuleLink"
+    Name="TblPagesView"
+    ViewLink="model.UserRoles.VO.FkTblPagesFkAssoc"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

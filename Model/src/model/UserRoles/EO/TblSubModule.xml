@@ -3,12 +3,12 @@
 <!---->
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="TblPages"
+  Name="TblSubModule"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   DBObjectType="table"
-  DBObjectName="TBL_PAGES"
-  AliasName="TblPages"
+  DBObjectName="TBL_SUB_MODULE"
+  AliasName="TblSubModule"
   BindingStyle="OracleName">
   <Attribute
     Name="Id"
@@ -17,8 +17,15 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_PAGES"
+    TableName="TBL_SUB_MODULE"
     PrimaryKey="true"/>
+  <Attribute
+    Name="ModuleId"
+    ColumnName="MODULE_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_SUB_MODULE"/>
   <Attribute
     Name="Name"
     IsNotNull="true"
@@ -27,7 +34,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="TBL_PAGES">
+    TableName="TBL_SUB_MODULE">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="150"/>
     </DesignTime>
@@ -39,7 +46,7 @@
     SQLType="CHAR"
     Type="java.lang.String"
     ColumnType="CHAR"
-    TableName="TBL_PAGES"
+    TableName="TBL_SUB_MODULE"
     RetrievedOnUpdate="true"
     RetrievedOnInsert="true">
     <DesignTime>
@@ -47,25 +54,37 @@
     </DesignTime>
   </Attribute>
   <Attribute
-    Name="PageIcon"
+    Name="Icon"
     Precision="200"
-    ColumnName="PAGE_ICON"
+    ColumnName="ICON"
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="TBL_PAGES">
+    TableName="TBL_SUB_MODULE">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="200"/>
     </DesignTime>
   </Attribute>
   <Attribute
-    Name="PageLink"
+    Name="Description"
     Precision="200"
-    ColumnName="PAGE_LINK"
+    ColumnName="DESCRIPTION"
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="TBL_PAGES">
+    TableName="TBL_SUB_MODULE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Link"
+    Precision="200"
+    ColumnName="LINK"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_SUB_MODULE">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="200"/>
     </DesignTime>
@@ -76,77 +95,68 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_PAGES"/>
+    TableName="TBL_SUB_MODULE"/>
   <Attribute
     Name="CreatedDate"
     ColumnName="CREATED_DATE"
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_PAGES"/>
+    TableName="TBL_SUB_MODULE"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_PAGES"/>
+    TableName="TBL_SUB_MODULE"/>
   <Attribute
     Name="UpdatedDate"
     ColumnName="UPDATED_DATE"
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_PAGES"/>
+    TableName="TBL_SUB_MODULE"/>
   <Attribute
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_PAGES"/>
-  <Attribute
-    Name="SubModuleId"
-    ColumnName="SUB_MODULE_ID"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_PAGES"/>
+    TableName="TBL_SUB_MODULE"/>
   <AccessorAttribute
-    Name="TblSubModule"
+    Name="TblCompanySubModule"
+    Association="model.UserRoles.EO.FkCompanySubModuleAssoc"
+    AssociationEnd="model.UserRoles.EO.FkCompanySubModuleAssoc.TblCompanySubModule"
+    AssociationOtherEnd="model.UserRoles.EO.FkCompanySubModuleAssoc.TblSubModule"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblPages"
     Association="model.UserRoles.EO.FkTblPagesFkAssoc"
-    AssociationEnd="model.UserRoles.EO.FkTblPagesFkAssoc.TblSubModule"
-    AssociationOtherEnd="model.UserRoles.EO.FkTblPagesFkAssoc.TblPages"
-    Type="oracle.jbo.server.EntityImpl"
-    IsUpdateable="true"/>
+    AssociationEnd="model.UserRoles.EO.FkTblPagesFkAssoc.TblPages"
+    AssociationOtherEnd="model.UserRoles.EO.FkTblPagesFkAssoc.TblSubModule"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
-    Name="PkPages"
+    Name="PkSubModule"
     PrimaryKey="true">
     <DesignTime>
-      <Attr Name="_DBObjectName" Value="PK_PAGES"/>
+      <Attr Name="_DBObjectName" Value="PK_SUB_MODULE"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.UserRoles.EO.TblPages.Id"/>
+      <Item Value="model.UserRoles.EO.TblSubModule.Id"/>
     </AttrArray>
   </Key>
   <Key
-    Name="FkPagesModule">
+    Name="FkSubModule">
     <DesignTime>
       <Attr Name="_referencedKey" Value="PK_MODULE"/>
       <Attr Name="_isForeign" Value="true"/>
-      <Attr Name="_DBObjectName" Value="FK_PAGES_MODULE"/>
-    </DesignTime>
-    <AttrArray Name="Attributes"/>
-  </Key>
-  <Key
-    Name="fk_TblPages">
-    <DesignTime>
-      <Attr Name="_referencedKey" Value="PK_SUB_MODULE"/>
-      <Attr Name="_isForeign" Value="true"/>
-      <Attr Name="_DBObjectName" Value="FK_TBL_PAGES"/>
+      <Attr Name="_DBObjectName" Value="FK_SUB_MODULE"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.UserRoles.EO.TblPages.SubModuleId"/>
+      <Item Value="model.UserRoles.EO.TblSubModule.ModuleId"/>
     </AttrArray>
   </Key>
 </Entity>
