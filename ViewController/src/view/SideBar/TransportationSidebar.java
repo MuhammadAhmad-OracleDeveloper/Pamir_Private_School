@@ -8,7 +8,7 @@ import oracle.adf.controller.TaskFlowId;
 
 public class TransportationSidebar implements Serializable {
     private String taskFlowId =
-        "/WEB-INF/TaskFlows/Group/Company/SBU/Modules/Transportation/Transportation_TaskFlow.xml#Transportation_TaskFlow";
+        "/WEB-INF/TaskFlows/Group/Company/SBU/Modules/School_Management_System/Transportation/Transportation_TaskFlow.xml#Transportation_TaskFlow";
 
     public TransportationSidebar() {
     }
@@ -25,7 +25,7 @@ public class TransportationSidebar implements Serializable {
         // Add event code here...
         String action = (String)actionEvent.getComponent().getAttributes().get("link");
         StringBuilder link = new StringBuilder();
-        link.append("/WEB-INF/TaskFlows/Group/Company/SBU/Modules/Transportation/");
+        link.append("/WEB-INF/TaskFlows/Group/Company/SBU/Modules/School_Management_System/Transportation/");
         link.append(action);
         link.append(".xml#");
         link.append(action);

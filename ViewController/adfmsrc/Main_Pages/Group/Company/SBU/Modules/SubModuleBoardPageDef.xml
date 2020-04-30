@@ -4,9 +4,138 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <taskFlow id="SubModuleBoard_TaskFlow1"
-              taskFlowId="/WEB-INF/TaskFlows/Group/Company/SBU/Modules/SubModuleBoard_TaskFlow.xml#SubModuleBoard_TaskFlow"
+    <iterator Binds="Setup_Pages1" RangeSize="25" DataControl="AppModuleDataControl" id="Setup_Pages1Iterator"/>
+    <iterator Binds="Fee_Management_Pages1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Fee_Management_Pages1Iterator"/>
+    <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.SchlMngmtModuleBoard_SidebarBean.dynamicTaskFlowId}"
               activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <iterator Binds="Student_Management_Pages1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Student_Management_Pages1Iterator"/>
+    <iterator Binds="Staff_Pages1" RangeSize="25" DataControl="AppModuleDataControl" id="Staff_Pages1Iterator"/>
+    <iterator Binds="Transportation_Pages1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Transportation_Pages1Iterator"/>
+    <iterator Binds="Library_Pages1" RangeSize="25" DataControl="AppModuleDataControl" id="Library_Pages1Iterator"/>
   </executables>
-  <bindings/>
+  <bindings>
+    <tree IterBinding="Setup_Pages1Iterator" id="Setup_Pages1">
+      <nodeDefinition DefName="model.UserRoles.VO.Setup_Pages" Name="Setup_Pages10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+          <Item Value="SrNo"/>
+          <Item Value="RoleId"/>
+          <Item Value="CompanyPagesId"/>
+          <Item Value="RoleId1"/>
+          <Item Value="RView"/>
+          <Item Value="RAdd"/>
+          <Item Value="REdit"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="Fee_Management_Pages1Iterator" id="Fee_Management_Pages1">
+      <nodeDefinition DefName="model.UserRoles.VO.Fee_Management_Pages" Name="Fee_Management_Pages10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+          <Item Value="SrNo"/>
+          <Item Value="RoleId"/>
+          <Item Value="CompanyPagesId"/>
+          <Item Value="RoleId1"/>
+          <Item Value="RView"/>
+          <Item Value="RAdd"/>
+          <Item Value="REdit"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="Student_Management_Pages1Iterator" id="Student_Management_Pages1">
+      <nodeDefinition DefName="model.UserRoles.VO.Student_Management_Pages" Name="Student_Management_Pages10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+          <Item Value="SrNo"/>
+          <Item Value="RoleId"/>
+          <Item Value="CompanyPagesId"/>
+          <Item Value="RoleId1"/>
+          <Item Value="RView"/>
+          <Item Value="RAdd"/>
+          <Item Value="REdit"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="Staff_Pages1Iterator" id="Staff_Pages1">
+      <nodeDefinition DefName="model.UserRoles.VO.Staff_Pages" Name="Staff_Pages10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+          <Item Value="SrNo"/>
+          <Item Value="RoleId"/>
+          <Item Value="CompanyPagesId"/>
+          <Item Value="RoleId1"/>
+          <Item Value="RView"/>
+          <Item Value="RAdd"/>
+          <Item Value="REdit"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="Transportation_Pages1Iterator" id="Transportation_Pages1">
+      <nodeDefinition DefName="model.UserRoles.VO.Transportation_Pages" Name="Transportation_Pages10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+          <Item Value="SrNo"/>
+          <Item Value="RoleId"/>
+          <Item Value="CompanyPagesId"/>
+          <Item Value="RoleId1"/>
+          <Item Value="RView"/>
+          <Item Value="RAdd"/>
+          <Item Value="REdit"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="Library_Pages1Iterator" id="Library_Pages1">
+      <nodeDefinition DefName="model.UserRoles.VO.Library_Pages" Name="Library_Pages10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+          <Item Value="SrNo"/>
+          <Item Value="RoleId"/>
+          <Item Value="CompanyPagesId"/>
+          <Item Value="RoleId1"/>
+          <Item Value="RView"/>
+          <Item Value="RAdd"/>
+          <Item Value="REdit"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
 </pageDefinition>

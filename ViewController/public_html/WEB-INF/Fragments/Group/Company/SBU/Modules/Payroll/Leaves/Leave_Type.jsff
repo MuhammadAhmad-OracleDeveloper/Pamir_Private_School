@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Leave Type">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Leave Type Form">
+                <af:table value="#{bindings.TblLeaveTypeView1.collectionModel}" var="row"
+                          rows="#{bindings.TblLeaveTypeView1.rangeSize}"
+                          emptyText="#{bindings.TblLeaveTypeView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblLeaveTypeView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblLeaveTypeView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblLeaveTypeView1.rangeSize}"
+                          filterModel="#{bindings.TblLeaveTypeView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblLeaveTypeView1Query.processQuery}" varStatus="vs" id="t1"
+                          partialTriggers="">
+                  <af:column sortProperty="#{bindings.TblLeaveTypeView1.hints.Id.name}" filterable="true"
+                             sortable="true" headerText="ID" id="c1"
+                             align="right">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Id}"
+                                   id="id4" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblLeaveTypeView1.hints.Id.label}"
+                                  required="#{bindings.TblLeaveTypeView1.hints.Id.mandatory}"
+                                  columns="#{bindings.TblLeaveTypeView1.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblLeaveTypeView1.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblLeaveTypeView1.hints.Id.tooltip}" id="it1" readOnly="true">
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblLeaveTypeView1.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblLeaveTypeView1.hints.LeaveCode.name}" filterable="true"
+                             sortable="true" headerText="Leave Code" id="c2"
+                             align="left">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.LeaveCode}"
+                                   id="it4" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.LeaveCode.inputValue}"
+                                  label="#{bindings.TblLeaveTypeView1.hints.LeaveCode.label}"
+                                  required="#{bindings.TblLeaveTypeView1.hints.LeaveCode.mandatory}"
+                                  columns="#{bindings.TblLeaveTypeView1.hints.LeaveCode.displayWidth}"
+                                  maximumLength="#{bindings.TblLeaveTypeView1.hints.LeaveCode.precision}"
+                                  shortDesc="#{bindings.TblLeaveTypeView1.hints.LeaveCode.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.LeaveCode.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblLeaveTypeView1.hints.LeaveName.name}" filterable="true"
+                             sortable="true" headerText="Leave Name" id="c3"
+                             align="left">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.LeaveName}"
+                                   id="it5" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.LeaveName.inputValue}"
+                                  label="#{bindings.TblLeaveTypeView1.hints.LeaveName.label}"
+                                  required="#{bindings.TblLeaveTypeView1.hints.LeaveName.mandatory}"
+                                  columns="#{bindings.TblLeaveTypeView1.hints.LeaveName.displayWidth}"
+                                  maximumLength="#{bindings.TblLeaveTypeView1.hints.LeaveName.precision}"
+                                  shortDesc="#{bindings.TblLeaveTypeView1.hints.LeaveName.tooltip}" id="it3">
+                      <f:validator binding="#{row.bindings.LeaveName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblLeaveTypeView1.hints.PayType.name}" filterable="true"
+                             sortable="true" headerText="Payment Type" id="c4"
+                             align="left">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.PayType}"
+                                   id="it6" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.PayType.inputValue}" label="#{row.bindings.PayType.label}"
+                                        required="#{bindings.TblLeaveTypeView1.hints.PayType.mandatory}"
+                                        shortDesc="#{bindings.TblLeaveTypeView1.hints.PayType.tooltip}" id="soc1">
+                      <f:selectItems value="#{row.bindings.PayType.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.PayType.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblLeaveTypeView1.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="Active" id="c5"
+                             align="left">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Ast}"
+                                   id="it7" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblLeaveTypeView1.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblLeaveTypeView1.hints.Ast.tooltip}" id="soc2">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si2"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+             <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s4"/>
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                
+                <af:spacer width="5" height="10" id="s5"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+          </af:gridCell>
+        </af:gridRow>
+        
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>

@@ -8,7 +8,7 @@ import oracle.adf.controller.TaskFlowId;
 
 public class LeavesSidebar implements Serializable {
     private String taskFlowId =
-        "/WEB-INF/TaskFlows/Group/Company/SBU/Modules/Leaves/Leaves_TaskFlow.xml#Leaves_TaskFlow";
+        "/WEB-INF/TaskFlows/Group/Company/SBU/Modules/Payroll/Leaves/Leaves_TaskFlow.xml#Leaves_TaskFlow";
 
     public LeavesSidebar() {
     }
@@ -25,7 +25,7 @@ public class LeavesSidebar implements Serializable {
         // Add event code here...
         String action = (String)actionEvent.getComponent().getAttributes().get("link");
         StringBuilder link = new StringBuilder();
-        link.append("/WEB-INF/TaskFlows/Group/Company/SBU/Modules/Leaves/");
+        link.append("/WEB-INF/TaskFlows/Group/Company/SBU/Modules/Payroll/Leaves/");
         link.append(action);
         link.append(".xml#");
         link.append(action);

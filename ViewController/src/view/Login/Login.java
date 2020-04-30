@@ -156,7 +156,27 @@ public class Login {
     public String getMODID(String MODID){
         System.out.println("oooooooooooo MODID oooooooooo"+MODID);
         storeOnSession("sessMODID", MODID);
-        return "/faces/Main_Pages/Group/Company/SBU/Modules/SubModuleBoard.jsf?faces-redirect=true";
+        
+        int module_ID = Integer.parseInt(MODID);
+        
+        
+        if(module_ID == 1){
+            return "/faces/Main_Pages/Group/Company/SBU/Modules/School_Management_System/SchlMngmtModuleBoard.jsf?faces-redirect=true";
+        }
+        else if(module_ID == 2){
+            return "/faces/Main_Pages/Group/Company/SBU/Modules/Payroll/PayrollModuleBoard.jsf?faces-redirect=true";
+             }
+        else if(module_ID == 3){
+            return "/faces/Main_Pages/Group/Company/SBU/Modules/User_Management/UserMngmtModuleBoard.jsf?faces-redirect=true";
+             }
+        else {
+            System.out.println("-----nothing");
+            return "good";
+        }
+        
+        
+//        return "/faces/Main_Pages/Group/Company/SBU/Modules/School_Management_System/SchlMngmtModuleBoard.jsf?faces-redirect=true";
+
     }
 
     public String getCmpnyImg(String CmpyID) {

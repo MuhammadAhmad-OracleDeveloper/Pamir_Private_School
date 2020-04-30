@@ -8,7 +8,7 @@ import oracle.adf.controller.TaskFlowId;
 
 public class FeeManagementSidebar implements Serializable {
     private String taskFlowId =
-        "/WEB-INF/TaskFlows/Group/Company/SBU/Modules/Fee_Management/Fee_Management_TaskFlow.xml#Fee_Management_TaskFlow";
+        "/WEB-INF/TaskFlows/Group/Company/SBU/Modules/School_Management_System/Fee_Management/Fee_Management_TaskFlow.xml#Fee_Management_TaskFlow";
 
     public FeeManagementSidebar() {
     }
@@ -25,7 +25,18 @@ public class FeeManagementSidebar implements Serializable {
         // Add event code here...
         String action = (String)actionEvent.getComponent().getAttributes().get("link");
         StringBuilder link = new StringBuilder();
-        link.append("/WEB-INF/TaskFlows/Group/Company/SBU/Modules/Fee_Management/");
+        link.append("/WEB-INF/TaskFlows/Group/Company/SBU/Modules/School_Management_System/Fee_Management/");
+        link.append(action);
+        link.append(".xml#");
+        link.append(action);
+        setDynamicTaskFlowId(link.toString());
+    }
+    
+    public void fragmentCall2(ActionEvent actionEvent) {
+        // Add event code here...
+        String action = (String)actionEvent.getComponent().getAttributes().get("link");
+        StringBuilder link = new StringBuilder();
+        link.append("/WEB-INF/TaskFlows/Group/Company/SBU/Modules/School_Management_System/General_Setup/");
         link.append(action);
         link.append(".xml#");
         link.append(action);

@@ -1,0 +1,290 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Leave Package">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Leave Package Master">
+                <af:table value="#{bindings.TblLeavePkgMasterView1.collectionModel}" var="row"
+                          rows="#{bindings.TblLeavePkgMasterView1.rangeSize}"
+                          emptyText="#{bindings.TblLeavePkgMasterView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblLeavePkgMasterView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblLeavePkgMasterView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblLeavePkgMasterView1.rangeSize}"
+                          filterModel="#{bindings.TblLeavePkgMasterView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblLeavePkgMasterView1Query.processQuery}" varStatus="vs" id="t1"
+                          partialTriggers="">
+                  <af:column sortProperty="#{bindings.TblLeavePkgMasterView1.hints.Id.name}" filterable="true"
+                             sortable="true" headerText="ID" id="c1"
+                             align="right">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Id}"
+                                   id="id4" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblLeavePkgMasterView1.hints.Id.label}"
+                                  required="#{bindings.TblLeavePkgMasterView1.hints.Id.mandatory}"
+                                  columns="#{bindings.TblLeavePkgMasterView1.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblLeavePkgMasterView1.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblLeavePkgMasterView1.hints.Id.tooltip}" id="it1" readOnly="true">
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblLeavePkgMasterView1.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblLeavePkgMasterView1.hints.PkgName.name}" filterable="true"
+                             sortable="true" headerText="Package Name"
+                             id="c2" align="left">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.PkgName}"
+                                   id="it8" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.PkgName.inputValue}"
+                                  label="#{bindings.TblLeavePkgMasterView1.hints.PkgName.label}"
+                                  required="#{bindings.TblLeavePkgMasterView1.hints.PkgName.mandatory}"
+                                  columns="#{bindings.TblLeavePkgMasterView1.hints.PkgName.displayWidth}"
+                                  maximumLength="#{bindings.TblLeavePkgMasterView1.hints.PkgName.precision}"
+                                  shortDesc="#{bindings.TblLeavePkgMasterView1.hints.PkgName.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.PkgName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblLeavePkgMasterView1.hints.Remarks.name}" filterable="true"
+                             sortable="true" headerText="Remarks"
+                             id="c3" align="left">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Remarks}"
+                                   id="it9" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.Remarks.inputValue}"
+                                  label="#{bindings.TblLeavePkgMasterView1.hints.Remarks.label}"
+                                  required="#{bindings.TblLeavePkgMasterView1.hints.Remarks.mandatory}"
+                                  columns="#{bindings.TblLeavePkgMasterView1.hints.Remarks.displayWidth}"
+                                  maximumLength="#{bindings.TblLeavePkgMasterView1.hints.Remarks.precision}"
+                                  shortDesc="#{bindings.TblLeavePkgMasterView1.hints.Remarks.tooltip}" id="it3">
+                      <f:validator binding="#{row.bindings.Remarks.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblLeavePkgMasterView1.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="Active" id="c4"
+                             align="left">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Ast}"
+                                   id="it10" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblLeavePkgMasterView1.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblLeavePkgMasterView1.hints.Ast.tooltip}" id="soc1">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+             <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s4"/>
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                
+                <af:spacer width="5" height="10" id="s5"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr4">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+            <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab2" text="Leave Package Detail">
+                <af:table value="#{bindings.TblLeavePkgDetailView2.collectionModel}" var="row"
+                          rows="#{bindings.TblLeavePkgDetailView2.rangeSize}"
+                          emptyText="#{bindings.TblLeavePkgDetailView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblLeavePkgDetailView2.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblLeavePkgDetailView2.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblLeavePkgDetailView2.rangeSize}"
+                          filterModel="#{bindings.TblLeavePkgDetailView2Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblLeavePkgDetailView2Query.processQuery}" varStatus="vs" id="t2"
+                          partialTriggers="">
+                  <af:column sortProperty="#{bindings.TblLeavePkgDetailView2.hints.Id.name}" filterable="true"
+                             sortable="true" headerText="ID" id="c5"
+                             align="right">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Id}"
+                                   id="it11" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblLeavePkgDetailView2.hints.Id.label}"
+                                  required="#{bindings.TblLeavePkgDetailView2.hints.Id.mandatory}"
+                                  columns="#{bindings.TblLeavePkgDetailView2.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblLeavePkgDetailView2.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblLeavePkgDetailView2.hints.Id.tooltip}" id="it4" readOnly="true">
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblLeavePkgDetailView2.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblLeavePkgDetailView2.hints.LeaveTypeId.name}" filterable="true"
+                             sortable="true" headerText="Leave Type"
+                             id="c6" align="left">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.LeaveTypeId}"
+                                   id="it12" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.LeaveTypeId.inputValue}"
+                                        label="#{row.bindings.LeaveTypeId.label}"
+                                        required="#{bindings.TblLeavePkgDetailView2.hints.LeaveTypeId.mandatory}"
+                                        shortDesc="#{bindings.TblLeavePkgDetailView2.hints.LeaveTypeId.tooltip}"
+                                        id="soc2">
+                      <f:selectItems value="#{row.bindings.LeaveTypeId.items}" id="si2"/>
+                      <f:validator binding="#{row.bindings.LeaveTypeId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblLeavePkgDetailView2.hints.NoOfDays.name}" filterable="true"
+                             sortable="true" headerText="No. of Days"
+                             id="c7" align="right">
+                              <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.NoOfDays}"
+                                   id="it13" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.NoOfDays.inputValue}"
+                                  label="#{bindings.TblLeavePkgDetailView2.hints.NoOfDays.label}"
+                                  required="#{bindings.TblLeavePkgDetailView2.hints.NoOfDays.mandatory}"
+                                  columns="#{bindings.TblLeavePkgDetailView2.hints.NoOfDays.displayWidth}"
+                                  maximumLength="#{bindings.TblLeavePkgDetailView2.hints.NoOfDays.precision}"
+                                  shortDesc="#{bindings.TblLeavePkgDetailView2.hints.NoOfDays.tooltip}" id="it5">
+                      <f:validator binding="#{row.bindings.NoOfDays.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblLeavePkgDetailView2.hints.NoOfDays.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblLeavePkgDetailView2.hints.PeriodMonths.name}" filterable="true"
+                             sortable="true" headerText="Duration (Months)"
+                             id="c8" align="right">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.PeriodMonths}"
+                                   id="it14" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.PeriodMonths.inputValue}"
+                                  label="#{bindings.TblLeavePkgDetailView2.hints.PeriodMonths.label}"
+                                  required="#{bindings.TblLeavePkgDetailView2.hints.PeriodMonths.mandatory}"
+                                  columns="#{bindings.TblLeavePkgDetailView2.hints.PeriodMonths.displayWidth}"
+                                  maximumLength="#{bindings.TblLeavePkgDetailView2.hints.PeriodMonths.precision}"
+                                  shortDesc="#{bindings.TblLeavePkgDetailView2.hints.PeriodMonths.tooltip}" id="it6">
+                      <f:validator binding="#{row.bindings.PeriodMonths.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblLeavePkgDetailView2.hints.PeriodMonths.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblLeavePkgDetailView2.hints.CalcType.name}" filterable="true"
+                             sortable="true" headerText="Calculation Type"
+                             id="c9" align="left">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.CalcType}"
+                                   id="it15" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.CalcType.inputValue}"
+                                        label="#{row.bindings.CalcType.label}"
+                                        required="#{bindings.TblLeavePkgDetailView2.hints.CalcType.mandatory}"
+                                        shortDesc="#{bindings.TblLeavePkgDetailView2.hints.CalcType.tooltip}" id="soc3">
+                      <f:selectItems value="#{row.bindings.CalcType.items}" id="si3"/>
+                      <f:validator binding="#{row.bindings.CalcType.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblLeavePkgDetailView2.hints.ElegAfterDays.name}"
+                             filterable="true" sortable="true"
+                             headerText="Eligible After Days" id="c10"
+                             align="right">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.ElegAfterDays}"
+                                   id="it16" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.ElegAfterDays.inputValue}"
+                                  label="#{bindings.TblLeavePkgDetailView2.hints.ElegAfterDays.label}"
+                                  required="#{bindings.TblLeavePkgDetailView2.hints.ElegAfterDays.mandatory}"
+                                  columns="#{bindings.TblLeavePkgDetailView2.hints.ElegAfterDays.displayWidth}"
+                                  maximumLength="#{bindings.TblLeavePkgDetailView2.hints.ElegAfterDays.precision}"
+                                  shortDesc="#{bindings.TblLeavePkgDetailView2.hints.ElegAfterDays.tooltip}" id="it7">
+                      <f:validator binding="#{row.bindings.ElegAfterDays.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblLeavePkgDetailView2.hints.ElegAfterDays.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblLeavePkgDetailView2.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="Active" id="c11"
+                             align="left">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Ast}"
+                                   id="it17" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblLeavePkgDetailView2.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblLeavePkgDetailView2.hints.Ast.tooltip}" id="soc4">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si4"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+             <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s2"/>
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+               
+                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+           </af:gridCell>
+        </af:gridRow>
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>
