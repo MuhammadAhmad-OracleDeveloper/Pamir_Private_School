@@ -13,6 +13,28 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Gl4_Name_LOV1"
+    ViewObjectName="model.LOV.Gl4_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_OpenBlncGlL4Id"
+    ListVOName="Gl4_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="OpenBlncGlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblOpenBlnc"
     Entity="model.ERP.EO.TblOpenBlnc"/>
@@ -35,7 +57,15 @@
     PrecisionRule="true"
     EntityAttrName="OpenBlncGlL4Id"
     EntityUsage="TblOpenBlnc"
-    AliasName="OPEN_BLNC_GL_L4_ID"/>
+    AliasName="OPEN_BLNC_GL_L4_ID"
+    LOVName="LOV_OpenBlncGlL4Id">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="OpenBlncDr"
     PrecisionRule="true"

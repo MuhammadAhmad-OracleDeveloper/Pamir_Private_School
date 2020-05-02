@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Gl4_Name_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Gl4_Name_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblGlL4"
+    Entity="model.ERP.EO.TblGlL4"/>
+  <ViewAttribute
+    Name="GlL4Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="GlL4Id"
+    EntityUsage="TblGlL4"
+    AliasName="GL_L4_ID"/>
+  <ViewAttribute
+    Name="GlL4Name"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="GlL4Name"
+    EntityUsage="TblGlL4"
+    AliasName="GL_L4_NAME"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>
