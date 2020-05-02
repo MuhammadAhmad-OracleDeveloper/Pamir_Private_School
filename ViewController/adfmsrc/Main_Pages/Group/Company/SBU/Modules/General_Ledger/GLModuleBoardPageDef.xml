@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="GLModuleBoardPageDef"
+                Package="Main_Pages.Group.Company.SBU.Modules.General_Ledger">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Payable_Pages1" RangeSize="25" DataControl="AppModuleDataControl" id="Payable_Pages1Iterator"/>
+    <iterator Binds="Receivable_Pages1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Receivable_Pages1Iterator"/>
+    <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.GLModuleBoard_SidebarBean.dynamicTaskFlowId}"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <iterator Binds="GL_Setup_Pages1" RangeSize="25" DataControl="AppModuleDataControl" id="GL_Setup_Pages1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Payable_Pages1Iterator" id="Payable_Pages1">
+      <nodeDefinition DefName="model.UserRoles.VO.Payable_Pages" Name="Payable_Pages10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+          <Item Value="SrNo"/>
+          <Item Value="RoleId"/>
+          <Item Value="CompanyPagesId"/>
+          <Item Value="RoleId1"/>
+          <Item Value="RView"/>
+          <Item Value="RAdd"/>
+          <Item Value="REdit"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="Receivable_Pages1Iterator" id="Receivable_Pages1">
+      <nodeDefinition DefName="model.UserRoles.VO.Receivable_Pages" Name="Receivable_Pages10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+          <Item Value="SrNo"/>
+          <Item Value="RoleId"/>
+          <Item Value="CompanyPagesId"/>
+          <Item Value="RoleId1"/>
+          <Item Value="RView"/>
+          <Item Value="RAdd"/>
+          <Item Value="REdit"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="GL_Setup_Pages1Iterator" id="GL_Setup_Pages1">
+      <nodeDefinition DefName="model.UserRoles.VO.GL_Setup_Pages" Name="GL_Setup_Pages10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+          <Item Value="SrNo"/>
+          <Item Value="RoleId"/>
+          <Item Value="CompanyPagesId"/>
+          <Item Value="RoleId1"/>
+          <Item Value="RView"/>
+          <Item Value="RAdd"/>
+          <Item Value="REdit"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

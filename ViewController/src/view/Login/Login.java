@@ -169,6 +169,12 @@ public class Login {
         else if(module_ID == 3){
             return "/faces/Main_Pages/Group/Company/SBU/Modules/User_Management/UserMngmtModuleBoard.jsf?faces-redirect=true";
              }
+        else if(module_ID == 4){
+            return "/faces/Main_Pages/Group/Company/SBU/Modules/General_Ledger/GLModuleBoard.jsf?faces-redirect=true";
+             }
+        else if(module_ID == 5){
+            return "/faces/Main_Pages/Group/Company/SBU/Modules/Inventory/InventoryModuleBoard.jsf?faces-redirect=true";
+             }
         else {
             System.out.println("-----nothing");
             return "good";
