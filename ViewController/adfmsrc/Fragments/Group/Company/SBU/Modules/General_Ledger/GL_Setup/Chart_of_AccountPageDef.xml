@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Chart_of_AccountPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.General_Ledger.GL_Setup">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblGlL1View1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblGlL1View1Iterator"/>
+    <searchRegion Binds="TblGlL1View1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGlL1View1Query"/>
+    <iterator Binds="TblGlL2View2" RangeSize="25" DataControl="AppModuleDataControl1" id="TblGlL2View2Iterator"/>
+    <searchRegion Binds="TblGlL2View2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGlL2View2Query"/>
+    <iterator Binds="TblGlL3View2" RangeSize="25" DataControl="AppModuleDataControl1" id="TblGlL3View2Iterator"/>
+    <searchRegion Binds="TblGlL3View2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGlL3View2Query"/>
+    <iterator Binds="TblGlL4View2" RangeSize="25" DataControl="AppModuleDataControl1" id="TblGlL4View2Iterator"/>
+    <searchRegion Binds="TblGlL4View2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGlL4View2Query"/>
+    <iterator Binds="TblGlL3View1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblGlL3View1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblGlL1View1Iterator" id="TblGlL1View1">
+      <nodeDefinition DefName="model.ERP.VO.TblGlL1View" Name="TblGlL1View10">
+        <AttrNames>
+          <Item Value="GlL1Id"/>
+          <Item Value="GlL1Name"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblGlL1View1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblGlL1View1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblGlL1View1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblGlL2View2Iterator" id="TblGlL2View2">
+      <nodeDefinition DefName="model.ERP.VO.TblGlL2View" Name="TblGlL2View20">
+        <AttrNames>
+          <Item Value="GlL2Id"/>
+          <Item Value="GlL2Name"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblGlL3View2Iterator" id="TblGlL3View2">
+      <nodeDefinition DefName="model.ERP.VO.TblGlL3View" Name="TblGlL3View20">
+        <AttrNames>
+          <Item Value="GlL3Id"/>
+          <Item Value="GlL3Name"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblGlL3View2Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblGlL3View2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblGlL3View2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblGlL4View2Iterator" id="TblGlL4View2">
+      <nodeDefinition DefName="model.ERP.VO.TblGlL4View" Name="TblGlL4View20">
+        <AttrNames>
+          <Item Value="GlL4Id"/>
+          <Item Value="GlL4Name"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblGlL3View1Iterator" id="CreateInsert2" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblGlL3View1Iterator" id="Execute2" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblGlL3View1Iterator" id="Delete2" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>
