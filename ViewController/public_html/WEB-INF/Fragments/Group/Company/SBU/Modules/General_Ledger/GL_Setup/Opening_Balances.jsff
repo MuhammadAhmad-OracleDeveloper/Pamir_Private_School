@@ -22,6 +22,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+             
               <af:showDetailItem id="tab1"
                                  text="Opening Balance Form">
                 <af:table value="#{bindings.TblOpenBlncView1.collectionModel}" var="row"
@@ -46,7 +47,7 @@
                                   required="#{bindings.TblOpenBlncView1.hints.OpenBlncId.mandatory}"
                                   columns="#{bindings.TblOpenBlncView1.hints.OpenBlncId.displayWidth}"
                                   maximumLength="#{bindings.TblOpenBlncView1.hints.OpenBlncId.precision}"
-                                  shortDesc="#{bindings.TblOpenBlncView1.hints.OpenBlncId.tooltip}" id="it1">
+                                  shortDesc="#{bindings.TblOpenBlncView1.hints.OpenBlncId.tooltip}" id="it1" readOnly="true">
                       <f:validator binding="#{row.bindings.OpenBlncId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblOpenBlncView1.hints.OpenBlncId.format}"/>
