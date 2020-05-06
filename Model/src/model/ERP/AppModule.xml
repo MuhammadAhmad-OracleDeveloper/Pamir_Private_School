@@ -652,6 +652,12 @@
   <ViewUsage
     Name="TblInvVoucherDetailView3"
     ViewObjectName="model.ERP.VO.TblInvVoucherDetailView"/>
+  <ViewUsage
+    Name="TblGlVoucherMasterTransView1"
+    ViewObjectName="model.ERP.VO.TblGlVoucherMasterTransView"/>
+  <ViewUsage
+    Name="TblGlVoucherDetailView8"
+    ViewObjectName="model.ERP.VO.TblGlVoucherDetailView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -1329,5 +1335,11 @@
     ViewLinkObjectName="model.ERP.VO.FkInvVoucherDetailMasterTransLink"
     SrcViewUsageName="model.ERP.AppModule.TblInvVoucherMasterTransView1"
     DstViewUsageName="model.ERP.AppModule.TblInvVoucherDetailView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkGlVoucherDetailMasterTransLink"
+    ViewLinkObjectName="model.ERP.VO.FkGlVoucherDetailMasterTransLink"
+    SrcViewUsageName="model.ERP.AppModule.TblGlVoucherMasterTransView1"
+    DstViewUsageName="model.ERP.AppModule.TblGlVoucherDetailView8"
     Reversed="false"/>
 </AppModule>
