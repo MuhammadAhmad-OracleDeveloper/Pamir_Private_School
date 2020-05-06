@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
-    <af:document title="PayrollModuleBoard.jsf" id="d1">
+    <af:document title="Payroll" id="d1">
         <af:messages id="m1"/>
         <af:form id="f1">
             <af:panelGridLayout id="pgl1" styleClass="backColor">
@@ -29,7 +29,7 @@
                                                 <!--<af:outputText value="#{item.rowIterator.rowCount}" id="ot1" />-->
                                                 <af:button text="#{item.bindings.Name.inputValue}" id="b1"
                                                            inlineStyle="width:190px;"
-                                                           icon="/ViewController/faces/javax.faces.resource/#{item.bindings.PageIcon.inputValue}?ln=images"
+                                                           icon="/sms/faces/javax.faces.resource/#{item.bindings.Icon.inputValue}?ln=images"
                                                            actionListener="#{viewScope.PayrollModuleBoard_SidebarBean.PayrollSetupFragmentCall}">
                                                     <f:attribute name="link"
                                                                  value="#{item.bindings.PageLink.inputValue}"/>
@@ -48,7 +48,7 @@
                                                 <!--<af:outputText value="#{item.rowIterator.rowCount}" id="ot1" />-->
                                                 <af:button text="#{item.bindings.Name.inputValue}" id="b2"
                                                            inlineStyle="width:190px;"
-                                                           icon="/ViewController/faces/javax.faces.resource/#{item.bindings.PageIcon.inputValue}?ln=images"
+                                                           icon="/sms/faces/javax.faces.resource/#{item.bindings.Icon.inputValue}?ln=images"
                                                            actionListener="#{viewScope.PayrollModuleBoard_SidebarBean.LeavesFragmentCall}">
                                                     <f:attribute name="link"
                                                                  value="#{item.bindings.PageLink.inputValue}"/>

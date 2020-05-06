@@ -32,6 +32,17 @@ public class GLModuleBoard_Sidebar implements Serializable {
         setDynamicTaskFlowId(link.toString());
     }
     
+    public void TransactionFragmentCall(ActionEvent actionEvent) {
+        // Add event code here...
+        String action = (String)actionEvent.getComponent().getAttributes().get("link");
+        StringBuilder link = new StringBuilder();
+        link.append("/WEB-INF/TaskFlows/Group/Company/SBU/Modules/General_Ledger/Transaction/");
+        link.append(action);
+        link.append(".xml#");
+        link.append(action);
+        setDynamicTaskFlowId(link.toString());
+    }
+    
     public void PayableFragmentCall(ActionEvent actionEvent) {
         // Add event code here...
         String action = (String)actionEvent.getComponent().getAttributes().get("link");

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="SalesModuleBoardPageDef"
+                Package="Main_Pages.Group.Company.SBU.Modules.Sales">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Sales_Setup_Pages1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Sales_Setup_Pages1Iterator"/>
+    <iterator Binds="Sales_Transaction_Pages1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Sales_Transaction_Pages1Iterator"/>
+    <iterator Binds="Point_of_Sales_Pages1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Point_of_Sales_Pages1Iterator"/>
+    <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.SalesModuleBoard_SidebarBean.dynamicTaskFlowId}"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Sales_Setup_Pages1Iterator" id="Sales_Setup_Pages1">
+      <nodeDefinition DefName="model.UserRoles.VO.Sales_Setup_Pages" Name="Sales_Setup_Pages10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+          <Item Value="SrNo"/>
+          <Item Value="RoleId"/>
+          <Item Value="CompanyPagesId"/>
+          <Item Value="RoleId1"/>
+          <Item Value="RView"/>
+          <Item Value="RAdd"/>
+          <Item Value="REdit"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="Sales_Transaction_Pages1Iterator" id="Sales_Transaction_Pages1">
+      <nodeDefinition DefName="model.UserRoles.VO.Sales_Transaction_Pages" Name="Sales_Transaction_Pages10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+          <Item Value="SrNo"/>
+          <Item Value="RoleId"/>
+          <Item Value="CompanyPagesId"/>
+          <Item Value="RoleId1"/>
+          <Item Value="RView"/>
+          <Item Value="RAdd"/>
+          <Item Value="REdit"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="Point_of_Sales_Pages1Iterator" id="Point_of_Sales_Pages1">
+      <nodeDefinition DefName="model.UserRoles.VO.Point_of_Sales_Pages" Name="Point_of_Sales_Pages10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+          <Item Value="SrNo"/>
+          <Item Value="RoleId"/>
+          <Item Value="CompanyPagesId"/>
+          <Item Value="RoleId1"/>
+          <Item Value="RView"/>
+          <Item Value="RAdd"/>
+          <Item Value="REdit"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
