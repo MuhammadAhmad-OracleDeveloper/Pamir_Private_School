@@ -13,6 +13,28 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Gl4_Name_LOV1"
+    ViewObjectName="model.LOV.Gl4_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_GlL4Id"
+    ListVOName="Gl4_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblGlVoucherDetail"
     Entity="model.ERP.EO.TblGlVoucherDetail"/>
@@ -41,7 +63,15 @@
     PrecisionRule="true"
     EntityAttrName="GlL4Id"
     EntityUsage="TblGlVoucherDetail"
-    AliasName="GL_L4_ID"/>
+    AliasName="GL_L4_ID"
+    LOVName="LOV_GlL4Id">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Description"
     PrecisionRule="true"
