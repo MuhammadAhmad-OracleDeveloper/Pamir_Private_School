@@ -1,2 +1,133 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"></ui:composition>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Supplier Opening Balance">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Supplier Opening Balance">
+                <af:table value="#{bindings.TblSuppOpenBlncView1.collectionModel}" var="row"
+                          rows="#{bindings.TblSuppOpenBlncView1.rangeSize}"
+                          emptyText="#{bindings.TblSuppOpenBlncView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblSuppOpenBlncView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblSuppOpenBlncView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblSuppOpenBlncView1.rangeSize}"
+                          filterModel="#{bindings.TblSuppOpenBlncView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblSuppOpenBlncView1Query.processQuery}" varStatus="vs" id="t1"
+                          >
+                  <af:column sortProperty="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncId.name}" filterable="true"
+                             sortable="true" headerText="ID"
+                             id="c1" align="right">
+                    <af:inputText value="#{row.bindings.SuppOpenBlncId.inputValue}"
+                                  label="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncId.label}"
+                                  required="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncId.mandatory}"
+                                  columns="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncId.displayWidth}"
+                                  maximumLength="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncId.precision}"
+                                  shortDesc="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncId.tooltip}" id="it1" readOnly="true">
+                      <f:validator binding="#{row.bindings.SuppOpenBlncId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncDated.name}"
+                             filterable="true" sortable="true"
+                             headerText="Date" id="c2">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblSuppOpenBlncView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.SuppOpenBlncDated.value}"
+                                    id="id1">
+                        <af:convertDateTime pattern="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncDated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.SuppOpenBlncDated.inputValue}"
+                                  label="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncDated.label}"
+                                  required="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncDated.mandatory}"
+                                  columns="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncDated.displayWidth}"
+                                  shortDesc="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncDated.tooltip}" id="id2">
+                      <f:validator binding="#{row.bindings.SuppOpenBlncDated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncDated.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSuppOpenBlncView1.hints.PblSuppId.name}" filterable="true"
+                             sortable="true" headerText="Supplier"
+                             id="c3">
+                    <af:selectOneChoice value="#{row.bindings.PblSuppId.inputValue}"
+                                        label="#{row.bindings.PblSuppId.label}"
+                                        required="#{bindings.TblSuppOpenBlncView1.hints.PblSuppId.mandatory}"
+                                        shortDesc="#{bindings.TblSuppOpenBlncView1.hints.PblSuppId.tooltip}" id="soc1">
+                      <f:selectItems value="#{row.bindings.PblSuppId.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.PblSuppId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncDr.name}" filterable="true"
+                             sortable="true" headerText="Dr"
+                             id="c4" align="right">
+                    <af:inputText value="#{row.bindings.SuppOpenBlncDr.inputValue}"
+                                  label="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncDr.label}"
+                                  required="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncDr.mandatory}"
+                                  columns="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncDr.displayWidth}"
+                                  maximumLength="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncDr.precision}"
+                                  shortDesc="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncDr.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.SuppOpenBlncDr.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncDr.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncCr.name}" filterable="true"
+                             sortable="true" headerText="Cr"
+                             id="c5" align="right">
+                    <af:inputText value="#{row.bindings.SuppOpenBlncCr.inputValue}"
+                                  label="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncCr.label}"
+                                  required="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncCr.mandatory}"
+                                  columns="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncCr.displayWidth}"
+                                  maximumLength="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncCr.precision}"
+                                  shortDesc="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncCr.tooltip}" id="it3">
+                      <f:validator binding="#{row.bindings.SuppOpenBlncCr.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblSuppOpenBlncView1.hints.SuppOpenBlncCr.format}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+             <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s4"/>
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                
+                <af:spacer width="5" height="10" id="s5"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+          </af:gridCell>
+        </af:gridRow>
+        
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57"
+                id="Customer_Opening_BalancePageDef"
+                Package="Fragments.Group.Company.SBU.Modules.General_Ledger.Receivable">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblCustOpenBlncView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblCustOpenBlncView1Iterator"/>
+    <searchRegion Binds="TblCustOpenBlncView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblCustOpenBlncView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblCustOpenBlncView1Iterator" id="TblCustOpenBlncView1">
+      <nodeDefinition DefName="model.ERP.VO.TblCustOpenBlncView" Name="TblCustOpenBlncView10">
+        <AttrNames>
+          <Item Value="CustOpenBlncId"/>
+          <Item Value="CustOpenBlncDated"/>
+          <Item Value="PblCustId"/>
+          <Item Value="CustOpenBlncDr"/>
+          <Item Value="CustOpenBlncCr"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblCustOpenBlncView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblCustOpenBlncView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblCustOpenBlncView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+  </bindings>
+</pageDefinition>
