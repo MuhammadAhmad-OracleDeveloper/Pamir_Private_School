@@ -52,6 +52,7 @@
           <Item Value="Narration"/>
           <Item Value="PblSuppId"/>
           <Item Value="Vno"/>
+          <Item Value="PblCustId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -78,5 +79,7 @@
             Action="iteratorExecute"/>
     <action IterBinding="TblGlVoucherDetailView8Iterator" id="Delete1" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <list IterBinding="TblGlVoucherMasterTransView1Iterator" StaticList="false" Uses="LOV_PblCustId" id="PblCustId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

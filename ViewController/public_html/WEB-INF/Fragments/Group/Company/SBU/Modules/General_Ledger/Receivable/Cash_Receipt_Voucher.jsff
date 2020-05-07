@@ -38,11 +38,11 @@
                     <f:validator binding="#{bindings.Dated.validator}"/>
                     <af:convertDateTime pattern="#{bindings.Dated.format}"/>
                   </af:inputDate>
-                  <af:selectOneChoice value="#{bindings.PblSuppId.inputValue}" label="Supplier"
-                                      required="#{bindings.PblSuppId.hints.mandatory}"
-                                      shortDesc="#{bindings.PblSuppId.hints.tooltip}" id="soc2">
-                    <f:selectItems value="#{bindings.PblSuppId.items}" id="si2"/>
-                    <f:validator binding="#{bindings.PblSuppId.validator}"/>
+                  <af:selectOneChoice value="#{bindings.PblCustId.inputValue}" label="Customer"
+                                      required="#{bindings.PblCustId.hints.mandatory}"
+                                      shortDesc="#{bindings.PblCustId.hints.tooltip}" id="soc1">
+                    <f:selectItems value="#{bindings.PblCustId.items}" id="si1"/>
+                    <f:validator binding="#{bindings.PblCustId.validator}"/>
                   </af:selectOneChoice>
                   <af:inputText value="#{bindings.Narration.inputValue}" label="Narration"
                                 required="#{bindings.Narration.hints.mandatory}"
@@ -121,21 +121,14 @@
                       <af:convertDateTime pattern="#{bindings.TblGlVoucherMasterTransView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblGlVoucherMasterTransView1.hints.PblSuppId.name}"
-                             filterable="true" sortable="true"
-                             headerText="Supplier" id="c13">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.PblSuppId}"
-                                   id="it15" placeholder="Search ">
-                                  </af:inputText>
-                            </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.PblSuppId.inputValue}"
-                                        label="#{row.bindings.PblSuppId.label}"
-                                        required="#{bindings.TblGlVoucherMasterTransView1.hints.PblSuppId.mandatory}"
-                                        shortDesc="#{bindings.TblGlVoucherMasterTransView1.hints.PblSuppId.tooltip}"
-                                        id="soc5" readOnly="true">
-                      <f:selectItems value="#{row.bindings.PblSuppId.items}" id="si5"/>
-                      <f:validator binding="#{row.bindings.PblSuppId.validator}"/>
+                  <af:column headerText="Customer" id="c5">
+                    <af:selectOneChoice value="#{row.bindings.PblCustId.inputValue}"
+                                        label="#{row.bindings.PblCustId.label}"
+                                        required="#{bindings.TblGlVoucherMasterTransView1.hints.PblCustId.mandatory}"
+                                        shortDesc="#{bindings.TblGlVoucherMasterTransView1.hints.PblCustId.tooltip}"
+                                        id="soc2" readOnly="true">
+                      <f:selectItems value="#{row.bindings.PblCustId.items}" id="si2"/>
+                      <f:validator binding="#{row.bindings.PblCustId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblGlVoucherMasterTransView1.hints.Narration.name}"
