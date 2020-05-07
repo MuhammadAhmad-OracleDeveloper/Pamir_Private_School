@@ -32,7 +32,8 @@
                           rowSelection="single" fetchSize="#{bindings.TblStdEnqView1.rangeSize}"
                           filterModel="#{bindings.TblStdEnqView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblStdEnqView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="::b2 ::b3 ::b4 ::b5"  scrollPolicy="page" autoHeightRows="0">
+                          partialTriggers="::b2 ::b3 ::b4 ::b5"  scrollPolicy="page" autoHeightRows="0"
+                         inlineStyle="font-family:serif;">
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.Id.name}" filterable="true" sortable="true"
                              headerText="Enquiry ID" id="c1" align="right" width="80">
                              <f:facet name="filter">
