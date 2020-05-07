@@ -4,10 +4,10 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TblGlL1View1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblGlL1View1Iterator"/>
+    <iterator Binds="TblGlL1View1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblGlL1View1Iterator"/>
     <searchRegion Binds="TblGlL1View1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGlL1View1Query"/>
-    <iterator Binds="TblGlL2View2" RangeSize="25" DataControl="AppModuleDataControl1" id="TblGlL2View2Iterator"/>
+    <iterator Binds="TblGlL2View2" RangeSize="8" DataControl="AppModuleDataControl1" id="TblGlL2View2Iterator"/>
     <searchRegion Binds="TblGlL2View2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGlL2View2Query"/>
     <iterator Binds="TblGlL3View2" RangeSize="25" DataControl="AppModuleDataControl1" id="TblGlL3View2Iterator"/>
@@ -17,6 +17,8 @@
     <searchRegion Binds="TblGlL4View2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGlL4View2Query"/>
     <iterator Binds="TblGlL3View1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblGlL3View1Iterator"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="TblGlL1View1Iterator" id="TblGlL1View1">
@@ -66,5 +68,16 @@
     <action IterBinding="TblGlL3View1Iterator" id="CreateInsert2" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="TblGlL3View1Iterator" id="Execute2" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblGlL3View1Iterator" id="Delete2" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>
