@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkCustOpenBlncPblCustIdLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.ERP.EO.FkCustOpenBlncPblCustIdAssoc">
+  <ViewLinkDefEnd
+    Name="TblPblCustView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.VO.TblPblCustView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="TblPblCustView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblPblCustView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblCustOpenBlncView"
+    Cardinality="-1"
+    Owner="model.ERP.VO.TblCustOpenBlncView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblCustOpenBlncView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblCustOpenBlncView.PblCustId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>
