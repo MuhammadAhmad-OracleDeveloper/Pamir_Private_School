@@ -19,6 +19,50 @@
         ResId="model.ERP.VO.TblGlVoucherMasterTransView_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <ViewAccessor
+    Name="Gl_Trans_Vtp_LOV1"
+    ViewObjectName="model.LOV.Gl_Trans_Vtp_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Supp_Name_LOV1"
+    ViewObjectName="model.LOV.Supp_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Vtp"
+    ListVOName="Gl_Trans_Vtp_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Vtp"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_PblSuppId"
+    ListVOName="Supp_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PblSuppId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblGlVoucherMaster"
     Entity="model.ERP.EO.TblGlVoucherMaster"/>
@@ -82,7 +126,15 @@
     PrecisionRule="true"
     EntityAttrName="PblSuppId"
     EntityUsage="TblGlVoucherMaster"
-    AliasName="PBL_SUPP_ID"/>
+    AliasName="PBL_SUPP_ID"
+    LOVName="LOV_PblSuppId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
@@ -106,7 +158,15 @@
     PrecisionRule="true"
     EntityAttrName="Vtp"
     EntityUsage="TblGlVoucherMaster"
-    AliasName="VTP"/>
+    AliasName="VTP"
+    LOVName="LOV_Vtp">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblGlVoucherDetailView"
     ViewLink="model.ERP.VO.FkGlVoucherDetailMasterTransLink"
