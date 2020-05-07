@@ -95,7 +95,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblGlVoucherMaster"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="Dated"
     PrecisionRule="true"
@@ -146,7 +147,8 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblGlVoucherMaster"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="Vno"
     PrecisionRule="true"
@@ -167,6 +169,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="PblCustId"
+    PrecisionRule="true"
+    EntityAttrName="PblCustId"
+    EntityUsage="TblGlVoucherMaster"
+    AliasName="PBL_CUST_ID"/>
   <ViewLinkAccessor
     Name="TblGlVoucherDetailView"
     ViewLink="model.ERP.VO.FkGlVoucherDetailMasterTransLink"
