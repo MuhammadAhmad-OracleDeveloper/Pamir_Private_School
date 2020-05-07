@@ -27,6 +27,10 @@
     Name="PBL_Supplier_Name_LOV1"
     ViewObjectName="model.LOV.PBL_Supplier_Name_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Inventory_Type1"
+    ViewObjectName="model.LOV.Inventory_Type"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_DepartmentId"
     ListVOName="Deparment_Name_LOV1"
@@ -60,6 +64,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_InvType"
+    ListVOName="Inventory_Type1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="InvType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -152,7 +174,15 @@
     PrecisionRule="true"
     EntityAttrName="InvType"
     EntityUsage="TblInvVoucherMaster"
-    AliasName="INV_TYPE"/>
+    AliasName="INV_TYPE"
+    LOVName="LOV_InvType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="LcNo"
     PrecisionRule="true"

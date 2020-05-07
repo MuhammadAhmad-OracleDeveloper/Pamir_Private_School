@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblSuppOpenBlncView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="TblSuppOpenBlnc"
+    Entity="model.ERP.EO.TblSuppOpenBlnc"/>
+  <ViewAttribute
+    Name="SuppOpenBlncId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SuppOpenBlncId"
+    EntityUsage="TblSuppOpenBlnc"
+    AliasName="SUPP_OPEN_BLNC_ID"/>
+  <ViewAttribute
+    Name="SuppOpenBlncDated"
+    PrecisionRule="true"
+    EntityAttrName="SuppOpenBlncDated"
+    EntityUsage="TblSuppOpenBlnc"
+    AliasName="SUPP_OPEN_BLNC_DATED"/>
+  <ViewAttribute
+    Name="PblSuppId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PblSuppId"
+    EntityUsage="TblSuppOpenBlnc"
+    AliasName="PBL_SUPP_ID"/>
+  <ViewAttribute
+    Name="SuppOpenBlncDr"
+    PrecisionRule="true"
+    EntityAttrName="SuppOpenBlncDr"
+    EntityUsage="TblSuppOpenBlnc"
+    AliasName="SUPP_OPEN_BLNC_DR"/>
+  <ViewAttribute
+    Name="SuppOpenBlncCr"
+    PrecisionRule="true"
+    EntityAttrName="SuppOpenBlncCr"
+    EntityUsage="TblSuppOpenBlnc"
+    AliasName="SUPP_OPEN_BLNC_CR"/>
+  <ViewAttribute
+    Name="GroupCompanyId"
+    PrecisionRule="true"
+    EntityAttrName="GroupCompanyId"
+    EntityUsage="TblSuppOpenBlnc"
+    AliasName="GROUP_COMPANY_ID"/>
+</ViewObject>

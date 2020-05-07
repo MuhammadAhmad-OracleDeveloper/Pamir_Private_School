@@ -658,6 +658,30 @@
   <ViewUsage
     Name="TblGlVoucherDetailView8"
     ViewObjectName="model.ERP.VO.TblGlVoucherDetailView"/>
+  <ViewUsage
+    Name="TblCustOpenBlncView1"
+    ViewObjectName="model.ERP.VO.TblCustOpenBlncView"/>
+  <ViewUsage
+    Name="TblPblCustView1"
+    ViewObjectName="model.ERP.VO.TblPblCustView"/>
+  <ViewUsage
+    Name="TblSuppOpenBlncView1"
+    ViewObjectName="model.ERP.VO.TblSuppOpenBlncView"/>
+  <ViewUsage
+    Name="TblCustOpenBlncView2"
+    ViewObjectName="model.ERP.VO.TblCustOpenBlncView"/>
+  <ViewUsage
+    Name="TblGlL3View3"
+    ViewObjectName="model.ERP.VO.TblGlL3View"/>
+  <ViewUsage
+    Name="TblGlL4View3"
+    ViewObjectName="model.ERP.VO.TblGlL4View"/>
+  <ViewUsage
+    Name="TblItemL3View3"
+    ViewObjectName="model.ERP.VO.TblItemL3View"/>
+  <ViewUsage
+    Name="TblItemL4View3"
+    ViewObjectName="model.ERP.VO.TblItemL4View"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -1341,5 +1365,35 @@
     ViewLinkObjectName="model.ERP.VO.FkGlVoucherDetailMasterTransLink"
     SrcViewUsageName="model.ERP.AppModule.TblGlVoucherMasterTransView1"
     DstViewUsageName="model.ERP.AppModule.TblGlVoucherDetailView8"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkCustOpenBlncPblCustIdLink1"
+    ViewLinkObjectName="model.ERP.VO.FkCustOpenBlncPblCustIdLink"
+    SrcViewUsageName="model.ERP.AppModule.TblPblCustView1"
+    DstViewUsageName="model.ERP.AppModule.TblCustOpenBlncView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkGlL2IdLink2"
+    ViewLinkObjectName="model.ERP.VO.FkGlL2IdLink"
+    SrcViewUsageName="model.ERP.AppModule.TblGlL2View2"
+    DstViewUsageName="model.ERP.AppModule.TblGlL3View3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkGlL3IdLink2"
+    ViewLinkObjectName="model.ERP.VO.FkGlL3IdLink"
+    SrcViewUsageName="model.ERP.AppModule.TblGlL3View3"
+    DstViewUsageName="model.ERP.AppModule.TblGlL4View3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblItemL3FkLink2"
+    ViewLinkObjectName="model.ERP.VO.FkTblItemL3FkLink"
+    SrcViewUsageName="model.ERP.AppModule.TblItemL2View2"
+    DstViewUsageName="model.ERP.AppModule.TblItemL3View3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblItemL4FkLink2"
+    ViewLinkObjectName="model.ERP.VO.FkTblItemL4FkLink"
+    SrcViewUsageName="model.ERP.AppModule.TblItemL3View3"
+    DstViewUsageName="model.ERP.AppModule.TblItemL4View3"
     Reversed="false"/>
 </AppModule>
