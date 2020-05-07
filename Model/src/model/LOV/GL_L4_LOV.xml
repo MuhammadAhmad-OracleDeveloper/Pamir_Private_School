@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="GL_L4_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblGlL4.GL_L4_ID, 
+       TblGlL4.GL_L4_NAME, 
+       TblGlL4.AST"
+  FromList="TBL_GL_L4 TblGlL4"
+  Where="Ast='Y'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.GL_L4_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblGlL4"
+    Entity="model.ERP.EO.TblGlL4"/>
+  <ViewAttribute
+    Name="GlL4Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="GlL4Id"
+    EntityUsage="TblGlL4"
+    AliasName="GL_L4_ID"/>
+  <ViewAttribute
+    Name="GlL4Name"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="GlL4Name"
+    EntityUsage="TblGlL4"
+    AliasName="GL_L4_NAME"/>
+  <ViewAttribute
+    Name="Ast"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblGlL4"
+    AliasName="AST"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>
