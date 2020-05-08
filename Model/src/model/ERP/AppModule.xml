@@ -682,6 +682,15 @@
   <ViewUsage
     Name="TblItemL4View3"
     ViewObjectName="model.ERP.VO.TblItemL4View"/>
+  <ViewUsage
+    Name="TblRdfDetailView1"
+    ViewObjectName="model.ERP.VO.TblRdfDetailView"/>
+  <ViewUsage
+    Name="TblRdfMasterView1"
+    ViewObjectName="model.ERP.VO.TblRdfMasterView"/>
+  <ViewUsage
+    Name="TblRdfDetailView2"
+    ViewObjectName="model.ERP.VO.TblRdfDetailView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -1395,5 +1404,11 @@
     ViewLinkObjectName="model.ERP.VO.FkTblItemL4FkLink"
     SrcViewUsageName="model.ERP.AppModule.TblItemL3View3"
     DstViewUsageName="model.ERP.AppModule.TblItemL4View3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkRdfDetailMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkRdfDetailMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblRdfMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblRdfDetailView2"
     Reversed="false"/>
 </AppModule>
