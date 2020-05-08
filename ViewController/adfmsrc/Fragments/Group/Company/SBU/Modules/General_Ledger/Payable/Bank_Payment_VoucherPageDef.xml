@@ -4,15 +4,17 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TblGlVoucherMasterTransView1" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblGlVoucherMasterTransView1" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblGlVoucherMasterTransView1Iterator"/>
     <searchRegion Binds="TblGlVoucherMasterTransView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="TblGlVoucherMasterTransView1Query"/>
-    <iterator Binds="TblGlVoucherDetailView8" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblGlVoucherDetailView8" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblGlVoucherDetailView8Iterator"/>
     <searchRegion Binds="TblGlVoucherDetailView8Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGlVoucherDetailView8Query"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
   </executables>
   <bindings>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
@@ -99,5 +101,16 @@
             Action="iteratorExecute"/>
     <action IterBinding="TblGlVoucherDetailView8Iterator" id="Delete1" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

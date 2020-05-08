@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
+  
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
     <af:showDetailItem id="pane1" text="Supplier Setup">
          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
@@ -27,26 +28,29 @@
                   <af:inputText value="#{bindings.Id.inputValue}" label="ID"
                                 required="#{bindings.Id.hints.mandatory}" columns="#{bindings.Id.hints.displayWidth}"
                                 maximumLength="#{bindings.Id.hints.precision}" shortDesc="#{bindings.Id.hints.tooltip}"
-                                id="it1" readOnly="true">
+                                id="it1" disabled="true" contentStyle="width:150px;">
                     <f:validator binding="#{bindings.Id.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
                   </af:inputText>
-                  <af:inputText value="#{bindings.Name.inputValue}" label="Name"
+                  <af:inputText value="#{bindings.Name.inputValue}" label="Supplier"
                                 required="#{bindings.Name.hints.mandatory}"
                                 columns="#{bindings.Name.hints.displayWidth}"
                                 maximumLength="#{bindings.Name.hints.precision}"
-                                shortDesc="#{bindings.Name.hints.tooltip}" id="it2">
+                                shortDesc="#{bindings.Name.hints.tooltip}" id="it2" contentStyle="width:150px;">
                     <f:validator binding="#{bindings.Name.validator}"/>
                   </af:inputText>
+                  <af:spacer id="s6"/>
                   <af:selectOneChoice value="#{bindings.Type.inputValue}" label="Type"
                                       required="#{bindings.Type.hints.mandatory}"
-                                      shortDesc="#{bindings.Type.hints.tooltip}" id="soc1">
+                                      shortDesc="#{bindings.Type.hints.tooltip}" id="soc1" contentStyle="width:150px;">
                     <f:selectItems value="#{bindings.Type.items}" id="si1"/>
                     <f:validator binding="#{bindings.Type.validator}"/>
                   </af:selectOneChoice>
+                  <af:spacer  id="s7"/>
                   <af:selectOneChoice value="#{bindings.GlL4Id.inputValue}" label="GL-Control Account"
                                       required="#{bindings.GlL4Id.hints.mandatory}"
-                                      shortDesc="#{bindings.GlL4Id.hints.tooltip}" id="soc2">
+                                      shortDesc="#{bindings.GlL4Id.hints.tooltip}" id="soc2"
+                                      contentStyle="width:150px;">
                     <f:selectItems value="#{bindings.GlL4Id.items}" id="si2"/>
                     <f:validator binding="#{bindings.GlL4Id.validator}"/>
                   </af:selectOneChoice>
@@ -84,6 +88,7 @@
                                 maximumLength="#{bindings.Cnic.hints.precision}"
                                 shortDesc="#{bindings.Cnic.hints.tooltip}" id="it7">
                     <f:validator binding="#{bindings.Cnic.validator}"/>
+                    <f:validateRegex pattern="(^[0-9]{5}-[0-9]{7}-[0-9]$)"/>
                   </af:inputText>
                   <af:inputText value="#{bindings.Cell.inputValue}" label="Cell"
                                 required="#{bindings.Cell.hints.mandatory}"
@@ -95,33 +100,33 @@
                   <af:inputText value="#{bindings.Fax.inputValue}" label="Fax"
                                 required="#{bindings.Fax.hints.mandatory}" columns="#{bindings.Fax.hints.displayWidth}"
                                 maximumLength="#{bindings.Fax.hints.precision}"
-                                shortDesc="#{bindings.Fax.hints.tooltip}" id="it9">
+                                shortDesc="#{bindings.Fax.hints.tooltip}" id="it9" contentStyle="width:200px;">
                     <f:validator binding="#{bindings.Fax.validator}"/>
                   </af:inputText>
                   <af:inputText value="#{bindings.Ntn.inputValue}" label="NTN"
                                 required="#{bindings.Ntn.hints.mandatory}" columns="#{bindings.Ntn.hints.displayWidth}"
                                 maximumLength="#{bindings.Ntn.hints.precision}"
-                                shortDesc="#{bindings.Ntn.hints.tooltip}" id="it10">
+                                shortDesc="#{bindings.Ntn.hints.tooltip}" id="it10" contentStyle="width:200px;">
                     <f:validator binding="#{bindings.Ntn.validator}"/>
                   </af:inputText>
                   <af:inputText value="#{bindings.Strn.inputValue}" label="STRN"
                                 required="#{bindings.Strn.hints.mandatory}"
                                 columns="#{bindings.Strn.hints.displayWidth}"
                                 maximumLength="#{bindings.Strn.hints.precision}"
-                                shortDesc="#{bindings.Strn.hints.tooltip}" id="it11">
+                                shortDesc="#{bindings.Strn.hints.tooltip}" id="it11" contentStyle="width:200px;">
                     <f:validator binding="#{bindings.Strn.validator}"/>
                   </af:inputText>
                   <af:inputText value="#{bindings.EMail.inputValue}" label="Email"
                                 required="#{bindings.EMail.hints.mandatory}"
                                 columns="#{bindings.EMail.hints.displayWidth}"
                                 maximumLength="#{bindings.EMail.hints.precision}"
-                                shortDesc="#{bindings.EMail.hints.tooltip}" id="it12">
+                                shortDesc="#{bindings.EMail.hints.tooltip}" id="it12" contentStyle="width:200px;">
                     <f:validator binding="#{bindings.EMail.validator}"/>
                   </af:inputText>
                   <af:inputText value="#{bindings.Url.inputValue}" label="URL"
                                 required="#{bindings.Url.hints.mandatory}" columns="#{bindings.Url.hints.displayWidth}"
                                 maximumLength="#{bindings.Url.hints.precision}"
-                                shortDesc="#{bindings.Url.hints.tooltip}" id="it13">
+                                shortDesc="#{bindings.Url.hints.tooltip}" id="it13" contentStyle="width:200px;">
                     <f:validator binding="#{bindings.Url.validator}"/>
                   </af:inputText>
                   <f:facet name="footer">
@@ -147,9 +152,9 @@
                           rowSelection="multiple" fetchSize="#{bindings.TblPblSuppView1.rangeSize}"
                           filterModel="#{bindings.TblPblSuppView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblPblSuppView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="::b2 ::b3 ::b4 ::b5">
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblPblSuppView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="ID" id="c1">
+                             headerText="ID" id="c1" align="right">
                              <f:facet name="filter">
                               <af:inputText value="#{vs.filterCriteria.Id}"
                                id="id4" placeholder="Search ">
@@ -160,7 +165,7 @@
                     </af:outputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblPblSuppView1.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="Name" id="c2">
+                             sortable="true" headerText="Supplier" id="c2" width="200">
                               <f:facet name="filter">
                               <af:inputText value="#{vs.filterCriteria.Name}"
                                id="it15" placeholder="Search ">
@@ -185,7 +190,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblPblSuppView1.hints.GlL4Id.name}" filterable="true"
-                             sortable="true" headerText="GL-Control Account" id="c4">
+                             sortable="true" headerText="GL-Control Account" id="c4" width="120">
                              <f:facet name="filter">
                               <af:inputText value="#{vs.filterCriteria.GlL4Id}"
                                id="it17" placeholder="Search ">
@@ -317,7 +322,6 @@
         <af:gridRow marginTop="5px" height="auto" id="gr3">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
              <af:panelGroupLayout id="pgl3" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s4"/>
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -344,7 +348,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblPblSuppItemsView3.rangeSize}"
                           filterModel="#{bindings.TblPblSuppItemsView3Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblPblSuppItemsView3Query.processQuery}" varStatus="vs" id="t2"
-                          partialTriggers="">
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblPblSuppItemsView3.hints.Id.name}" filterable="true"
                              sortable="true" headerText="ID" id="c16" align="right">
                              <f:facet name="filter">
@@ -365,7 +369,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblPblSuppItemsView3.hints.ItemL4Id.name}" filterable="true"
                              sortable="true" headerText="Items"
-                             id="c17">
+                             id="c17" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.ItemL4Id}"
                                    id="it30" placeholder="Search ">
@@ -387,7 +391,6 @@
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
              <af:panelGroupLayout id="pgl2" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s2"/>
                             <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"

@@ -27,6 +27,10 @@
     Name="Supp_Name_LOV1"
     ViewObjectName="model.LOV.Supp_Name_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Customer_Name_LOV1"
+    ViewObjectName="model.LOV.Customer_Name_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
     ListVOName="Gl_Trans_Vtp_LOV1"
@@ -53,6 +57,24 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="PblSuppId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_PblCustId"
+    ListVOName="Customer_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PblCustId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -174,7 +196,15 @@
     PrecisionRule="true"
     EntityAttrName="PblCustId"
     EntityUsage="TblGlVoucherMaster"
-    AliasName="PBL_CUST_ID"/>
+    AliasName="PBL_CUST_ID"
+    LOVName="LOV_PblCustId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblGlVoucherDetailView"
     ViewLink="model.ERP.VO.FkGlVoucherDetailMasterTransLink"

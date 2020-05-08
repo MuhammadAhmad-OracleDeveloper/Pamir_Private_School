@@ -24,7 +24,7 @@
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
              
               <af:showDetailItem id="tab1"
-                                 text="Opening Balance Form">
+                                 text="Opening Balance">
                 <af:table value="#{bindings.TblOpenBlncView1.collectionModel}" var="row"
                           rows="#{bindings.TblOpenBlncView1.rangeSize}"
                           emptyText="#{bindings.TblOpenBlncView1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -34,11 +34,11 @@
                           rowSelection="single" fetchSize="#{bindings.TblOpenBlncView1.rangeSize}"
                           filterModel="#{bindings.TblOpenBlncView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblOpenBlncView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="">
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblOpenBlncView1.hints.OpenBlncId.name}" filterable="true"
-                             sortable="true" headerText="ID" id="c1">
+                             sortable="true" headerText="ID" id="c1" align="right">
                              <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.Id}"
+                                  <af:inputText value="#{vs.filterCriteria.OpenBlncId}"
                                    id="id4" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
@@ -88,7 +88,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblOpenBlncView1.hints.OpenBlncDr.name}" filterable="true"
-                             sortable="true" headerText="Dr." id="c4">
+                             sortable="true" headerText="Dr." id="c4" align="right">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.OpenBlncDr}"
                                    id="it5" placeholder="Search ">
@@ -106,7 +106,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblOpenBlncView1.hints.OpenBlncCr.name}" filterable="true"
-                             sortable="true" headerText="Cr." id="c5">
+                             sortable="true" headerText="Cr." id="c5" align="right">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.OpenBlncCr}"
                                    id="it6" placeholder="Search ">
@@ -131,7 +131,6 @@
         <af:gridRow marginTop="5px" height="auto" id="gr3">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
              <af:panelGroupLayout id="pgl3" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s4"/>
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"

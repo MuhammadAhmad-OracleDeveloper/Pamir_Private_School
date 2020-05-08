@@ -1,2 +1,153 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"></ui:composition>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Customer Opening Balance">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Customer Opening Balance">
+                <af:table value="#{bindings.TblCustOpenBlncView1.collectionModel}" var="row"
+                          rows="#{bindings.TblCustOpenBlncView1.rangeSize}"
+                          emptyText="#{bindings.TblCustOpenBlncView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblCustOpenBlncView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblCustOpenBlncView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblCustOpenBlncView1.rangeSize}"
+                          filterModel="#{bindings.TblCustOpenBlncView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblCustOpenBlncView1Query.processQuery}" varStatus="vs" id="t1"
+                          >
+                  <af:column sortProperty="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncId.name}" filterable="true"
+                             sortable="true" headerText="ID"
+                             id="c1" align="right">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Id}"
+                                   id="id4" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.CustOpenBlncId.inputValue}"
+                                  label="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncId.label}"
+                                  required="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncId.mandatory}"
+                                  columns="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncId.displayWidth}"
+                                  maximumLength="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncId.precision}"
+                                  shortDesc="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncId.tooltip}" id="it1" readOnly="true">
+                      <f:validator binding="#{row.bindings.CustOpenBlncId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncDated.name}"
+                             filterable="true" sortable="true"
+                             headerText="Date" id="c2">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblCustOpenBlncView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.CustOpenBlncDated.value}"
+                                    id="id1" placeholder="Search ">
+                        <af:convertDateTime pattern="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncDated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.CustOpenBlncDated.inputValue}"
+                                  label="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncDated.label}"
+                                  required="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncDated.mandatory}"
+                                  columns="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncDated.displayWidth}"
+                                  shortDesc="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncDated.tooltip}" id="id2">
+                      <f:validator binding="#{row.bindings.CustOpenBlncDated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncDated.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCustOpenBlncView1.hints.PblCustId.name}" filterable="true"
+                             sortable="true" headerText="Customer"
+                             id="c3">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.PblCustId}"
+                                   id="it4" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.PblCustId.inputValue}"
+                                        label="#{row.bindings.PblCustId.label}"
+                                        required="#{bindings.TblCustOpenBlncView1.hints.PblCustId.mandatory}"
+                                        shortDesc="#{bindings.TblCustOpenBlncView1.hints.PblCustId.tooltip}" id="soc1">
+                      <f:selectItems value="#{row.bindings.PblCustId.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.PblCustId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncDr.name}" filterable="true"
+                             sortable="true" headerText="Dr"
+                             id="c4" align="right">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.CustOpenBlncDr}"
+                                   id="it5" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.CustOpenBlncDr.inputValue}"
+                                  label="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncDr.label}"
+                                  required="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncDr.mandatory}"
+                                  columns="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncDr.displayWidth}"
+                                  maximumLength="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncDr.precision}"
+                                  shortDesc="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncDr.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.CustOpenBlncDr.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncDr.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncCr.name}" filterable="true"
+                             sortable="true" headerText="Cr"
+                             id="c5" align="right">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.CustOpenBlncCr}"
+                                   id="it6" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.CustOpenBlncCr.inputValue}"
+                                  label="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncCr.label}"
+                                  required="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncCr.mandatory}"
+                                  columns="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncCr.displayWidth}"
+                                  maximumLength="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncCr.precision}"
+                                  shortDesc="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncCr.tooltip}" id="it3">
+                      <f:validator binding="#{row.bindings.CustOpenBlncCr.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncCr.format}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+             <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s4"/>
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                
+                <af:spacer width="5" height="10" id="s5"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+          </af:gridCell>
+        </af:gridRow>
+        
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>
