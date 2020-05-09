@@ -35,7 +35,7 @@
                           queryListener="#{bindings.TblRouteFeeMasterView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblRouteFeeMasterView1.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Route ID" id="c1" align="right" width="80">
+                             sortable="true" headerText="Route ID" id="c1" align="right" width="80" visible="false">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="id4" placeholder="Search ">
@@ -48,7 +48,7 @@
                                   columns="#{bindings.TblRouteFeeMasterView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblRouteFeeMasterView1.hints.Id.precision}"
                                   shortDesc="#{bindings.TblRouteFeeMasterView1.hints.Id.tooltip}" id="it1" 
-                                  readOnly="true" contentStyle='text-align: center'>
+                                  disabled="true" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblRouteFeeMasterView1.hints.Id.format}"/>
@@ -152,7 +152,7 @@
                           queryListener="#{bindings.TblRouteFeeDetailView2Query.processQuery}" varStatus="vs" id="t2"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblRouteFeeDetailView2.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Fee Charges ID" id="c6" align="right" width="80">
+                             sortable="true" headerText="Fee Charges ID" id="c6" align="right" width="80" visible="false">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="it7" placeholder="Search ">
@@ -164,7 +164,7 @@
                                   columns="#{bindings.TblRouteFeeDetailView2.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblRouteFeeDetailView2.hints.Id.precision}"
                                   shortDesc="#{bindings.TblRouteFeeDetailView2.hints.Id.tooltip}" id="it2" 
-                                  readOnly="true" contentStyle='text-align: center'>
+                                  disabled="true" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblRouteFeeDetailView2.hints.Id.format}"/>
@@ -198,7 +198,7 @@
                                   columns="#{bindings.TblRouteFeeDetailView2.hints.Amount.displayWidth}"
                                   maximumLength="#{bindings.TblRouteFeeDetailView2.hints.Amount.precision}"
                                   shortDesc="#{bindings.TblRouteFeeDetailView2.hints.Amount.tooltip}" id="it3"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.Amount.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblRouteFeeDetailView2.hints.Amount.format}"/>

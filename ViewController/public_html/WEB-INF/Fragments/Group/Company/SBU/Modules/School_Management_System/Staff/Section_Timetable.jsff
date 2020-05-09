@@ -36,7 +36,7 @@
                           id="t1" scrollPolicy="page" autoHeightRows="0" >
                   <af:column sortProperty="#{bindings.TblSectionTimetableMasterView1.hints.Id.name}" filterable="true"
                              sortable="true" headerText="Time Table Master ID"
-                             id="c1" align="right" width="80">
+                             id="c1" align="right" width="80" visible="false">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="id4" placeholder="Search ">
@@ -177,7 +177,7 @@
                           id="t2" scrollPolicy="page" autoHeightRows="0" >
                   <af:column sortProperty="#{bindings.TblSectionTimetableDetailView3.hints.Id.name}" fiterable="true"
                              sortable="true" headerText="Time Table Detail ID"
-                             id="c7" align="right" filterable="true">
+                             id="c7" align="right" filterable="true" visible="false">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="it8" placeholder="Search ">

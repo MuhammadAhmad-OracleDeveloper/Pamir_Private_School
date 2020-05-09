@@ -36,7 +36,7 @@
                                           id="t1" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblAcadYearView1.hints.Id.name}"
                                                filterable="true" sortable="true" headerText="Academic Year ID" id="c1"
-                                               align="right" width="80">
+                                               align="right" width="80" visible="false">
                                         <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Id}" id="id4"
                                                           placeholder="Search "></af:inputText>
@@ -47,7 +47,7 @@
                                                       columns="#{bindings.TblAcadYearView1.hints.Id.displayWidth}"
                                                       maximumLength="#{bindings.TblAcadYearView1.hints.Id.precision}"
                                                       shortDesc="#{bindings.TblAcadYearView1.hints.Id.tooltip}" id="it1"
-                                                      readOnly="true" contentStyle='text-align: center'>
+                                                      disabled="true" contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.Id.validator}"/>
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.TblAcadYearView1.hints.Id.format}"/>
@@ -84,7 +84,7 @@
                                                       required="#{bindings.TblAcadYearView1.hints.StartDate.mandatory}"
                                                       columns="#{bindings.TblAcadYearView1.hints.StartDate.displayWidth}"
                                                       shortDesc="#{bindings.TblAcadYearView1.hints.StartDate.tooltip}"
-                                                      id="id2" readOnly="true" contentStyle='text-align: center'>
+                                                      id="id2" disabled="true" contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.StartDate.validator}"/>
                                             <af:convertDateTime pattern="#{bindings.TblAcadYearView1.hints.StartDate.format}"/>
                                         </af:inputDate>
@@ -103,7 +103,7 @@
                                                       required="#{bindings.TblAcadYearView1.hints.EndDate.mandatory}"
                                                       columns="#{bindings.TblAcadYearView1.hints.EndDate.displayWidth}"
                                                       shortDesc="#{bindings.TblAcadYearView1.hints.EndDate.tooltip}"
-                                                      id="id5" readOnly="true" contentStyle='text-align: center'>
+                                                      id="id5" disabled="true" contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.EndDate.validator}"/>
                                             <af:convertDateTime pattern="#{bindings.TblAcadYearView1.hints.EndDate.format}"/>
                                         </af:inputDate>
@@ -148,7 +148,7 @@
                                           queryListener="#{bindings.TblTermsView2Query.processQuery}" varStatus="vs"
                                           id="t2" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblTermsView2.hints.Id.name}" filterable="true"
-                                               sortable="true" headerText="Term ID" id="c6" align="right" width="80">
+                                               sortable="true" headerText="Term ID" id="c6" align="right" width="80" visible="false">
                                                <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Id}" id="it7"
                                                           placeholder="Search "></af:inputText>
@@ -159,7 +159,7 @@
                                                       columns="#{bindings.TblTermsView2.hints.Id.displayWidth}"
                                                       maximumLength="#{bindings.TblTermsView2.hints.Id.precision}"
                                                       shortDesc="#{bindings.TblTermsView2.hints.Id.tooltip}" id="it3"
-                                                      readOnly="true" contentStyle='text-align: center'>
+                                                      disabled="true" contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.Id.validator}"/>
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.TblTermsView2.hints.Id.format}"/>

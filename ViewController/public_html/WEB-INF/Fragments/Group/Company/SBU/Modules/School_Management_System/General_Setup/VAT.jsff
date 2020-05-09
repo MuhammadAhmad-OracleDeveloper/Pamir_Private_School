@@ -34,7 +34,7 @@
                           queryListener="#{bindings.TblVatView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblVatView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="VAT ID" id="c1" width="80" align="right">
+                             headerText="VAT ID" id="c1" width="80" align="right" visible="false">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Id}"
        id="id4" placeholder="Search ">

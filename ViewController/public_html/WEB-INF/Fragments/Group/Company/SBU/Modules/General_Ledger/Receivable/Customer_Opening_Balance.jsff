@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
+  
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
     <af:showDetailItem id="pane1" text="Customer Opening Balance">
          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
@@ -32,12 +33,12 @@
                           rowSelection="single" fetchSize="#{bindings.TblCustOpenBlncView1.rangeSize}"
                           filterModel="#{bindings.TblCustOpenBlncView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblCustOpenBlncView1Query.processQuery}" varStatus="vs" id="t1"
-                          >
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncId.name}" filterable="true"
                              sortable="true" headerText="ID"
                              id="c1" align="right">
                              <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.Id}"
+                                  <af:inputText value="#{vs.filterCriteria.CustOpenBlncId}"
                                    id="id4" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
@@ -72,7 +73,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCustOpenBlncView1.hints.PblCustId.name}" filterable="true"
                              sortable="true" headerText="Customer"
-                             id="c3">
+                             id="c3" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.PblCustId}"
                                    id="it4" placeholder="Search ">
@@ -132,7 +133,6 @@
         <af:gridRow marginTop="5px" height="auto" id="gr3">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
              <af:panelGroupLayout id="pgl3" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s4"/>
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"

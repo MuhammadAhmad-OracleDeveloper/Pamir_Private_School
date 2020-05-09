@@ -36,7 +36,7 @@
                                           id="t1" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblSubjectView1.hints.Id.name}"
                                                filterable="true" sortable="true" headerText="Subject ID" id="c1"
-                                               width="80" align="right">
+                                               width="80" align="right" visible="false">
                                         <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Id}" id="id4"
                                                           placeholder="Search "></af:inputText>
@@ -94,10 +94,10 @@
                                           filterVisible="true"
                                           queryListener="#{bindings.TblGradeSubjectView3Query.processQuery}"
                                           varStatus="vs" id="t2" scrollPolicy="page" autoHeightRows="0"
-                                          partialTriggers="::b2 ::b3 ::b4">
+                                          >
                                     <af:column sortProperty="#{bindings.TblGradeSubjectView3.hints.Id.name}"
                                                filterable="true" sortable="true"
-                                               headerText="Grade Subjects ID" id="c3" align="right" width="100">
+                                               headerText="Grade Subjects ID" id="c3" align="right" width="100" visible="false">
                                                 <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Id}" id="it5"
                                                           placeholder="Search "></af:inputText>

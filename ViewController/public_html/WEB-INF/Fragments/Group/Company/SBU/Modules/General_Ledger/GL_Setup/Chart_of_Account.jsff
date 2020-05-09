@@ -34,7 +34,7 @@
                           queryListener="#{bindings.TblGlL1View1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblGlL1View1.hints.GlL1Id.name}" filterable="true" sortable="true"
-                             headerText="ID" id="c1" align="right">
+                             headerText="ID" id="c1" align="right" visible="false">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.GlL1Id}"
                                    id="id4" placeholder="Search ">
@@ -121,7 +121,7 @@
                           queryListener="#{bindings.TblGlL2View2Query.processQuery}" varStatus="vs" id="t2"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblGlL2View2.hints.GlL2Id.name}" filterable="true" sortable="true"
-                             headerText="ID" id="c4" align="right">
+                             headerText="ID" id="c4" align="right" visible="false">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.GlL2Id}"
                                    id="it11" placeholder="Search ">
@@ -213,7 +213,7 @@
                           queryListener="#{bindings.TblGlL3View3Query.processQuery}" varStatus="vs" id="t3"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblGlL3View3.hints.GlL3Id.name}" filterable="true" sortable="true"
-                             headerText="ID" id="c7" align="right">
+                             headerText="ID" id="c7" align="right" visible="false">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.GlL3Id}"
                                    id="it14" placeholder="Search ">
@@ -230,7 +230,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblGlL3View3.hints.GlL3Name.name}" filterable="true"
-                             sortable="true" headerText="Level 3" id="c8" width="200">
+                             sortable="true" headerText="Level 3" id="c8" width="200" >
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.GlL3Name}"
                                    id="it15" placeholder="Search ">
@@ -300,7 +300,7 @@
                           queryListener="#{bindings.TblGlL4View3Query.processQuery}" varStatus="vs" id="t4"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblGlL4View3.hints.GlL4Id.name}" filterable="true" sortable="true"
-                             headerText="ID" id="c10" align="right">
+                             headerText="ID" id="c10" align="right" visible="false">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.GlL4Id}"
                                    id="it17" placeholder="Search ">

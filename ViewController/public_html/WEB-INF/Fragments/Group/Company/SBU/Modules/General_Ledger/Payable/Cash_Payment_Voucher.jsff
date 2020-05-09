@@ -28,13 +28,13 @@
                   <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                 required="#{bindings.Vno.hints.mandatory}" columns="#{bindings.Vno.hints.displayWidth}"
                                 maximumLength="#{bindings.Vno.hints.precision}"
-                                shortDesc="#{bindings.Vno.hints.tooltip}" id="it1" contentStyle="width:150px;">
+                                shortDesc="#{bindings.Vno.hints.tooltip}" id="it1" contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.Vno.validator}"/>
                   </af:inputText>
                   <af:inputDate value="#{bindings.Dated.inputValue}" label="Date"
                                 required="#{bindings.Dated.hints.mandatory}"
                                 columns="#{bindings.Dated.hints.displayWidth}"
-                                shortDesc="#{bindings.Dated.hints.tooltip}" id="id1" contentStyle="width:150px;">
+                                shortDesc="#{bindings.Dated.hints.tooltip}" id="id1" contentStyle="width:136px;">
                     <f:validator binding="#{bindings.Dated.validator}"/>
                     <af:convertDateTime pattern="#{bindings.Dated.format}"/>
                   </af:inputDate>
@@ -243,7 +243,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblGlVoucherDetailView8.hints.Cr.name}" filterable="true"
-                             sortable="true" headerText="Cr" id="c5" align="right">
+                             sortable="true" headerText="Cr" id="c5" align="left">
                               <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Cr}"
                                    id="it21" placeholder="Search ">

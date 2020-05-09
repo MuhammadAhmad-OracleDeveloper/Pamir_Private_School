@@ -34,7 +34,7 @@
                           queryListener="#{bindings.TblLookupMasterView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblLookupMasterView1.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Lookup Master ID" id="c1" align="right" width="80">
+                             sortable="true" headerText="Lookup Master ID" id="c1" align="right" width="80" visible="false">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Id}"
        id="id4" placeholder="Search ">
@@ -105,7 +105,7 @@
                           queryListener="#{bindings.TblLookupDetailView2Query.processQuery}" varStatus="vs" id="t2"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblLookupDetailView2.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Lookup Master ID" id="c3" align="right" width="80">
+                             sortable="true" headerText="Lookup Master ID" id="c3" align="right" width="80" visible="false">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Id}"
        id="it6" placeholder="Search ">
@@ -190,7 +190,7 @@
                           queryListener="#{bindings.TblLookupDetailDView3Query.processQuery}" varStatus="vs" id="t3"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblLookupDetailDView3.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Detail Lookup Detail ID" id="c6" align="right" width="80">
+                             sortable="true" headerText="Detail Lookup Detail ID" id="c6" align="right" width="80" visible="false">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Id}"
        id="it11" placeholder="Search ">

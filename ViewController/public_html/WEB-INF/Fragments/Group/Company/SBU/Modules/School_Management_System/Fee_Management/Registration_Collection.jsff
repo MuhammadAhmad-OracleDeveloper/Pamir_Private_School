@@ -36,7 +36,7 @@
                           queryListener="#{bindings.TblRegFeeRecView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblRegFeeRecView1.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Registration Fee Record ID" id="c1" align="right" width="80">
+                             sortable="true" headerText="Registration Fee Record ID" id="c1" align="right" width="80" visible="false">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="id4" placeholder="Search ">
@@ -48,7 +48,7 @@
                                   columns="#{bindings.TblRegFeeRecView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblRegFeeRecView1.hints.Id.precision}"
                                   shortDesc="#{bindings.TblRegFeeRecView1.hints.Id.tooltip}" id="it1" 
-                                  readOnly="true" contentStyle='text-align: center'>
+                                  disabled="true"contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblRegFeeRecView1.hints.Id.format}"/>
                     </af:inputText>

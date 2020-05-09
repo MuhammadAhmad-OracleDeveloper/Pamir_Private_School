@@ -36,7 +36,7 @@
                           id="t1" scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblTransFeeGenMasterView1.hints.Id.name}" filterable="true"
                              sortable="true" headerText="Transport Fee Generation Master ID" id="c1" align="right"
-                             width="100">
+                             width="100" visible="false">
                              <f:facet name="filter">
                                       <af:inputText value="#{vs.filterCriteria.Id}"
                                        id="id4" placeholder="Search ">
@@ -48,7 +48,7 @@
                                   columns="#{bindings.TblTransFeeGenMasterView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblTransFeeGenMasterView1.hints.Id.precision}"
                                   shortDesc="#{bindings.TblTransFeeGenMasterView1.hints.Id.tooltip}" 
-                                  id="it1" readOnly="true" contentStyle='text-align: center'>
+                                  id="it1" disabled="true"contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblTransFeeGenMasterView1.hints.Id.format}"/>
@@ -153,7 +153,7 @@
                           queryListener="#{bindings.TblTransFeeGenDetailView3Query.processQuery}" varStatus="vs"
                           id="t2" scrollPolicy="page" autoHeightRows="0" >
                   <af:column sortProperty="#{bindings.TblTransFeeGenDetailView3.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Transport Fee Generation Detail ID" id="c6" align="right">
+                             sortable="true" headerText="Transport Fee Generation Detail ID" id="c6" align="right" visible="false">
                              <f:facet name="filter">
                                       <af:inputText value="#{vs.filterCriteria.Id}"
                                        id="it8" placeholder="Search ">

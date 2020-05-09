@@ -34,7 +34,7 @@
                           queryListener="#{bindings.TblStdRegView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblStdRegView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="Student Registration ID" id="c1" align="right" width="80">
+                             headerText="Student Registration ID" id="c1" align="right" width="80" visible="false">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Id}"
        id="id4" placeholder="Search ">
@@ -775,7 +775,7 @@
                             queryListener="#{bindings.TblStdRegSibView3Query.processQuery}" varStatus="vs" id="t2"
                             scrollPolicy="page" autoHeightRows="0" >
                     <af:column sortProperty="#{bindings.TblStdRegSibView3.hints.Id.name}" filterable="true"
-                               sortable="true" headerText="Sibling ID" id="c10" align="center" width="80">
+                               sortable="true" headerText="Sibling ID" id="c10" align="center" width="80" visible="false">
                                <f:facet name="filter">
                                       <af:inputText value="#{vs.filterCriteria.Id}"
                                        id="it42" placeholder="Search ID">

@@ -45,7 +45,7 @@
                                                         <af:column sortProperty="#{bindings.TblLibCategoryView1.hints.Id.name}"
                                                                    filterable="true" sortable="true"
                                                                    headerText="Category ID"
-                                                                   id="c1" align="right" width="80">
+                                                                   id="c1" align="right" width="80" visible="false">
                                                                    <f:facet name="filter">
                                                                           <af:inputText value="#{vs.filterCriteria.Id}"
                                                                            id="id4" placeholder="Search ">
@@ -57,7 +57,7 @@
                                                                           columns="#{bindings.TblLibCategoryView1.hints.Id.displayWidth}"
                                                                           maximumLength="#{bindings.TblLibCategoryView1.hints.Id.precision}"
                                                                           shortDesc="#{bindings.TblLibCategoryView1.hints.Id.tooltip}"
-                                                                          id="it1" readOnly="true" contentStyle='text-align: center'>
+                                                                          id="it1" disabled="true" contentStyle='text-align: center'>
                                                                 <f:validator binding="#{row.bindings.Id.validator}"/>
                                                                 <af:convertNumber groupingUsed="false"
                                                                                   pattern="#{bindings.TblLibCategoryView1.hints.Id.format}"/>
@@ -199,7 +199,7 @@
                                                                           columns="#{bindings.TblLibSubCategoryView2.hints.Id.displayWidth}"
                                                                           maximumLength="#{bindings.TblLibSubCategoryView2.hints.Id.precision}"
                                                                           shortDesc="#{bindings.TblLibSubCategoryView2.hints.Id.tooltip}"
-                                                                          id="it5" readOnly="true" contentStyle='text-align: center'>
+                                                                          id="it5" disabled="true" contentStyle='text-align: center'>
                                                                 <f:validator binding="#{row.bindings.Id.validator}"/>
                                                                 <af:convertNumber groupingUsed="false"
                                                                                   pattern="#{bindings.TblLibSubCategoryView2.hints.Id.format}"/>
@@ -307,7 +307,7 @@
                                           id="t3" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblLibAuthorView1.hints.Id.name}"
                                                filterable="true" sortable="true"
-                                               headerText="Author ID" id="c10" align="right" width="80">
+                                               headerText="Author ID" id="c10" align="right" width="80" visible="false">
                                                <f:facet name="filter">
                                                      <af:inputText value="#{vs.filterCriteria.Id}"
                                                        id="it25" placeholder="Search ">
@@ -319,7 +319,7 @@
                                                       columns="#{bindings.TblLibAuthorView1.hints.Id.displayWidth}"
                                                       maximumLength="#{bindings.TblLibAuthorView1.hints.Id.precision}"
                                                       shortDesc="#{bindings.TblLibAuthorView1.hints.Id.tooltip}"
-                                                      id="it16" readOnly="true" contentStyle='text-align: center'>
+                                                      id="it16" disabled="true" contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.Id.validator}"/>
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.TblLibAuthorView1.hints.Id.format}"/>
@@ -406,7 +406,7 @@
                                           varStatus="vs" id="t4" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblLibPublisherView1.hints.Id.name}"
                                                filterable="true" sortable="true"
-                                               headerText="Publisher ID" id="c14" align="right" width="80">
+                                               headerText="Publisher ID" id="c14" align="right" width="80" visible="false">
                                                <f:facet name="filter">
                                                      <af:inputText value="#{vs.filterCriteria.Id}"
                                                        id="it29" placeholder="Search ">
@@ -418,7 +418,7 @@
                                                       columns="#{bindings.TblLibPublisherView1.hints.Id.displayWidth}"
                                                       maximumLength="#{bindings.TblLibPublisherView1.hints.Id.precision}"
                                                       shortDesc="#{bindings.TblLibPublisherView1.hints.Id.tooltip}"
-                                                      id="it19" readOnly="true" contentStyle='text-align: center'>
+                                                      id="it19" disabled="true" contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.Id.validator}"/>
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.TblLibPublisherView1.hints.Id.format}"/>
@@ -508,7 +508,7 @@
                                           varStatus="vs" id="t5" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblLibLanguageView1.hints.Id.name}"
                                                filterable="true" sortable="true"
-                                               headerText="Language ID" id="c18" align="right" width="80">
+                                               headerText="Language ID" id="c18" align="right" width="80" visible="false">
                                                <f:facet name="filter">
                                                      <af:inputText value="#{vs.filterCriteria.Id}"
                                                        id="it33" placeholder="Search ">
@@ -520,7 +520,7 @@
                                                       columns="#{bindings.TblLibLanguageView1.hints.Id.displayWidth}"
                                                       maximumLength="#{bindings.TblLibLanguageView1.hints.Id.precision}"
                                                       shortDesc="#{bindings.TblLibLanguageView1.hints.Id.tooltip}"
-                                                      id="it22" readOnly="true" contentStyle='text-align: center'>
+                                                      id="it22" disabled="true" contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.Id.validator}"/>
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.TblLibLanguageView1.hints.Id.format}"/>

@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
+  
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
     <af:showDetailItem id="pane1" text="Customer Setup">
          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
@@ -27,26 +28,29 @@
                   <af:inputText value="#{bindings.Id.inputValue}" label="ID"
                                 required="#{bindings.Id.hints.mandatory}" columns="#{bindings.Id.hints.displayWidth}"
                                 maximumLength="#{bindings.Id.hints.precision}" shortDesc="#{bindings.Id.hints.tooltip}"
-                                id="it1" readOnly="true">
+                                id="it1" disabled="true" contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.Id.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
                   </af:inputText>
-                  <af:inputText value="#{bindings.Name.inputValue}" label="Name"
+                  <af:inputText value="#{bindings.Name.inputValue}" label="Customer"
                                 required="#{bindings.Name.hints.mandatory}"
                                 columns="#{bindings.Name.hints.displayWidth}"
                                 maximumLength="#{bindings.Name.hints.precision}"
                                 shortDesc="#{bindings.Name.hints.tooltip}" id="it2">
                     <f:validator binding="#{bindings.Name.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s4"/>
                   <af:selectOneChoice value="#{bindings.Type.inputValue}" label="Type"
                                       required="#{bindings.Type.hints.mandatory}"
-                                      shortDesc="#{bindings.Type.hints.tooltip}" id="soc1">
+                                      shortDesc="#{bindings.Type.hints.tooltip}" id="soc1" contentStyle="width:136px;">
                     <f:selectItems value="#{bindings.Type.items}" id="si1"/>
                     <f:validator binding="#{bindings.Type.validator}"/>
                   </af:selectOneChoice>
+                  <af:spacer  id="s6"/>
                   <af:selectOneChoice value="#{bindings.GlL4Id.inputValue}" label="GL-Control Account"
                                       required="#{bindings.GlL4Id.hints.mandatory}"
-                                      shortDesc="#{bindings.GlL4Id.hints.tooltip}" id="soc2">
+                                      shortDesc="#{bindings.GlL4Id.hints.tooltip}" id="soc2"
+                                      contentStyle="width:136px;">
                     <f:selectItems value="#{bindings.GlL4Id.items}" id="si2"/>
                     <f:validator binding="#{bindings.GlL4Id.validator}"/>
                   </af:selectOneChoice>
@@ -57,21 +61,6 @@
                                 shortDesc="#{bindings.CustBuss.hints.tooltip}" id="it41">
                     <f:validator binding="#{bindings.CustBuss.validator}"/>
                   </af:inputText>
-                  
-                  <af:inputText value="#{bindings.ContactPer.inputValue}" label="Contact Person"
-                                required="#{bindings.ContactPer.hints.mandatory}"
-                                columns="#{bindings.ContactPer.hints.displayWidth}"
-                                maximumLength="#{bindings.ContactPer.hints.precision}"
-                                shortDesc="#{bindings.ContactPer.hints.tooltip}" id="it4">
-                    <f:validator binding="#{bindings.ContactPer.validator}"/>
-                  </af:inputText>
-                  <af:inputText value="#{bindings.Phone.inputValue}" label="Phone"
-                                required="#{bindings.Phone.hints.mandatory}"
-                                columns="#{bindings.Phone.hints.displayWidth}"
-                                maximumLength="#{bindings.Phone.hints.precision}"
-                                shortDesc="#{bindings.Phone.hints.tooltip}" id="it5">
-                    <f:validator binding="#{bindings.Phone.validator}"/>
-                  </af:inputText>
                   <af:inputText value="#{bindings.Designation.inputValue}" label="Designation"
                                 required="#{bindings.Designation.hints.mandatory}"
                                 columns="#{bindings.Designation.hints.displayWidth}"
@@ -79,44 +68,61 @@
                                 shortDesc="#{bindings.Designation.hints.tooltip}" id="it6">
                     <f:validator binding="#{bindings.Designation.validator}"/>
                   </af:inputText>
+                  <af:inputText value="#{bindings.ContactPer.inputValue}" label="Contact Person"
+                                required="#{bindings.ContactPer.hints.mandatory}"
+                                columns="#{bindings.ContactPer.hints.displayWidth}"
+                                maximumLength="#{bindings.ContactPer.hints.precision}"
+                                shortDesc="#{bindings.ContactPer.hints.tooltip}" id="it4" contentStyle='text-align: right'>
+                    <f:validator binding="#{bindings.ContactPer.validator}"/>
+                  </af:inputText>
+                  
+                  <af:inputText value="#{bindings.Phone.inputValue}" label="Phone"
+                                required="#{bindings.Phone.hints.mandatory}"
+                                columns="#{bindings.Phone.hints.displayWidth}"
+                                maximumLength="#{bindings.Phone.hints.precision}"
+                                shortDesc="#{bindings.Phone.hints.tooltip}" id="it5" contentStyle='text-align: right'>
+                    <f:validator binding="#{bindings.Phone.validator}"/>
+                  </af:inputText>
+                  
                   <af:inputText value="#{bindings.Cnic.inputValue}" label="CNIC"
                                 required="#{bindings.Cnic.hints.mandatory}"
                                 columns="#{bindings.Cnic.hints.displayWidth}"
                                 maximumLength="#{bindings.Cnic.hints.precision}"
-                                shortDesc="#{bindings.Cnic.hints.tooltip}" id="it7">
+                                shortDesc="#{bindings.Cnic.hints.tooltip}" id="it7" contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.Cnic.validator}"/>
+                    <f:validateRegex pattern="(^[0-9]{5}-[0-9]{7}-[0-9]$)"/>
                   </af:inputText>
                   <af:inputText value="#{bindings.Cell.inputValue}" label="Cell"
                                 required="#{bindings.Cell.hints.mandatory}"
                                 columns="#{bindings.Cell.hints.displayWidth}"
                                 maximumLength="#{bindings.Cell.hints.precision}"
-                                shortDesc="#{bindings.Cell.hints.tooltip}" id="it8">
+                                shortDesc="#{bindings.Cell.hints.tooltip}" id="it8" contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.Cell.validator}"/>
                   </af:inputText>
                   <af:inputText value="#{bindings.Fax.inputValue}" label="Fax"
                                 required="#{bindings.Fax.hints.mandatory}" columns="#{bindings.Fax.hints.displayWidth}"
                                 maximumLength="#{bindings.Fax.hints.precision}"
-                                shortDesc="#{bindings.Fax.hints.tooltip}" id="it9">
+                                shortDesc="#{bindings.Fax.hints.tooltip}" id="it9" contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.Fax.validator}"/>
                   </af:inputText>
                   <af:inputText value="#{bindings.Ntn.inputValue}" label="NTN"
                                 required="#{bindings.Ntn.hints.mandatory}" columns="#{bindings.Ntn.hints.displayWidth}"
                                 maximumLength="#{bindings.Ntn.hints.precision}"
-                                shortDesc="#{bindings.Ntn.hints.tooltip}" id="it10">
+                                shortDesc="#{bindings.Ntn.hints.tooltip}" id="it10" contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.Ntn.validator}"/>
                   </af:inputText>
                   <af:inputText value="#{bindings.Strn.inputValue}" label="STRN"
                                 required="#{bindings.Strn.hints.mandatory}"
                                 columns="#{bindings.Strn.hints.displayWidth}"
                                 maximumLength="#{bindings.Strn.hints.precision}"
-                                shortDesc="#{bindings.Strn.hints.tooltip}" id="it11">
+                                shortDesc="#{bindings.Strn.hints.tooltip}" id="it11" contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.Strn.validator}"/>
                   </af:inputText>
                   <af:inputText value="#{bindings.EMail.inputValue}" label="Email"
                                 required="#{bindings.EMail.hints.mandatory}"
                                 columns="#{bindings.EMail.hints.displayWidth}"
                                 maximumLength="#{bindings.EMail.hints.precision}"
-                                shortDesc="#{bindings.EMail.hints.tooltip}" id="it12">
+                                shortDesc="#{bindings.EMail.hints.tooltip}" id="it12" >
                     <f:validator binding="#{bindings.EMail.validator}"/>
                   </af:inputText>
                   <af:inputText value="#{bindings.Url.inputValue}" label="URL"
@@ -139,7 +145,7 @@
                   </f:facet>
                 </af:panelFormLayout>
               </af:showDetailItem>
-              <af:showDetailItem text="Search Customer" id="sdi1">
+              <af:showDetailItem text="Search" id="sdi1">
                 <af:table value="#{bindings.TblPblCustView1.collectionModel}" var="row"
                           rows="#{bindings.TblPblCustView1.rangeSize}"
                           emptyText="#{bindings.TblPblCustView1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -149,7 +155,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblPblCustView1.rangeSize}"
                           filterModel="#{bindings.TblPblCustView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblPblCustView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="::b2 ::b3 ::b4 ::b5">
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblPblCustView1.hints.Id.name}" filterable="true" sortable="true"
                              headerText="ID" id="c1" align="right">
                              <f:facet name="filter">
@@ -168,7 +174,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblPblCustView1.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="Name" id="c2">
+                             sortable="true" headerText="Customer" id="c2" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Name}"
                                    id="it27" placeholder="Search ">
@@ -198,7 +204,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblPblCustView1.hints.GlL4Id.name}" filterable="true"
-                             sortable="true" headerText="GL-Control Account" id="c4">
+                             sortable="true" headerText="GL-Control Account" id="c4" width="120">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.GlL4Id}"
                                    id="it29" placeholder="Search ">
@@ -227,8 +233,23 @@
                       <f:validator binding="#{row.bindings.CustBuss.validator}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column sortProperty="#{bindings.TblPblCustView1.hints.Designation.name}" filterable="true"
+                             sortable="true" headerText="Designation" id="c8">
+                    <f:facet name="filter">
+                      <af:inputText value="#{vs.filterCriteria.Designation}" id="it33" placeholder="Search "/>
+                    </f:facet>
+                    <af:inputText value="#{row.bindings.Designation.inputValue}"
+                                  label="#{bindings.TblPblCustView1.hints.Designation.label}"
+                                  required="#{bindings.TblPblCustView1.hints.Designation.mandatory}"
+                                  columns="#{bindings.TblPblCustView1.hints.Designation.displayWidth}"
+                                  maximumLength="#{bindings.TblPblCustView1.hints.Designation.precision}"
+                                  shortDesc="#{bindings.TblPblCustView1.hints.Designation.tooltip}" id="it19"
+                                  readOnly="true">
+                      <f:validator binding="#{row.bindings.Designation.validator}"/>
+                    </af:inputText>
+                  </af:column>
                   <af:column sortProperty="#{bindings.TblPblCustView1.hints.ContactPer.name}" filterable="true"
-                             sortable="true" headerText="Contact Person" id="c6">
+                             sortable="true" headerText="Contact Person" id="c6" align="right">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.ContactPer}"
                                    id="it31" placeholder="Search ">
@@ -259,24 +280,8 @@
                       <f:validator binding="#{row.bindings.Phone.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblPblCustView1.hints.Designation.name}" filterable="true"
-                             sortable="true" headerText="Designation" id="c8">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.Designation}"
-                                   id="it33" placeholder="Search ">
-                                  </af:inputText>
-                            </f:facet>
-                    <af:inputText value="#{row.bindings.Designation.inputValue}"
-                                  label="#{bindings.TblPblCustView1.hints.Designation.label}"
-                                  required="#{bindings.TblPblCustView1.hints.Designation.mandatory}"
-                                  columns="#{bindings.TblPblCustView1.hints.Designation.displayWidth}"
-                                  maximumLength="#{bindings.TblPblCustView1.hints.Designation.precision}"
-                                  shortDesc="#{bindings.TblPblCustView1.hints.Designation.tooltip}" id="it19" readOnly="true">
-                      <f:validator binding="#{row.bindings.Designation.validator}"/>
-                    </af:inputText>
-                  </af:column>
                   <af:column sortProperty="#{bindings.TblPblCustView1.hints.Cnic.name}" filterable="true"
-                             sortable="true" headerText="CNIC" id="c9">
+                             sortable="true" headerText="CNIC" id="c9" align="right">
                               <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Cnic}"
                                    id="it34" placeholder="Search ">
@@ -356,7 +361,8 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblPblCustView1.hints.EMail.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblPblCustView1.hints.EMail.label}" id="c14">
+                             sortable="true" headerText="#{bindings.TblPblCustView1.hints.EMail.label}" id="c14"
+                             width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.EMail}"
                                    id="it39" placeholder="Search ">
@@ -372,7 +378,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblPblCustView1.hints.Url.name}" filterable="true" sortable="true"
-                             headerText="URL" id="c15">
+                             headerText="URL" id="c15" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Url}"
                                    id="it40" placeholder="Search ">
@@ -395,7 +401,6 @@
         <af:gridRow marginTop="5px" height="auto" id="gr3">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
              <af:panelGroupLayout id="pgl3" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s4"/>
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
