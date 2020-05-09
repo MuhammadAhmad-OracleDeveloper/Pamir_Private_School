@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="TblPblCustView"
+  Name="TblQuoMasterView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -14,39 +14,39 @@
   SelectAllAttributes="false"
   PageIterMode="Full">
   <ViewAccessor
-    Name="GL_L4_LOV1"
-    ViewObjectName="model.LOV.GL_L4_LOV"
+    Name="Customer_Name_LOV1"
+    ViewObjectName="model.LOV.Customer_Name_LOV"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="Customer_Type_LOV1"
-    ViewObjectName="model.LOV.Customer_Type_LOV"
+    Name="Gl_Trans_Vtp_LOV1"
+    ViewObjectName="model.LOV.Gl_Trans_Vtp_LOV"
     RowLevelBinds="true"/>
   <ListBinding
-    Name="LOV_GlL4Id"
-    ListVOName="GL_L4_LOV1"
+    Name="LOV_PblCustId"
+    ListVOName="Customer_Name_LOV1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
     <AttrArray Name="AttrNames">
-      <Item Value="GlL4Id"/>
+      <Item Value="PblCustId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
-      <Item Value="GlL4Id"/>
+      <Item Value="Id"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="GlL4Name"/>
+      <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_Type"
-    ListVOName="Customer_Type_LOV1"
+    Name="LOV_Vtp"
+    ListVOName="Gl_Trans_Vtp_LOV1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
     <AttrArray Name="AttrNames">
-      <Item Value="Type"/>
+      <Item Value="Vtp"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -58,28 +58,28 @@
     <DisplayCriteria/>
   </ListBinding>
   <EntityUsage
-    Name="TblPblCust"
-    Entity="model.ERP.EO.TblPblCust"/>
+    Name="TblQuoMaster"
+    Entity="model.ERP.EO.TblQuoMaster"/>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Id"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblQuoMaster"
     AliasName="ID"/>
   <ViewAttribute
-    Name="Name"
+    Name="Vno"
     PrecisionRule="true"
-    EntityAttrName="Name"
-    EntityUsage="TblPblCust"
-    AliasName="NAME"/>
+    EntityAttrName="Vno"
+    EntityUsage="TblQuoMaster"
+    AliasName="VNO"/>
   <ViewAttribute
-    Name="Type"
+    Name="Vtp"
     PrecisionRule="true"
-    EntityAttrName="Type"
-    EntityUsage="TblPblCust"
-    AliasName="TYPE"
-    LOVName="LOV_Type">
+    EntityAttrName="Vtp"
+    EntityUsage="TblQuoMaster"
+    AliasName="VTP"
+    LOVName="LOV_Vtp">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -88,12 +88,18 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
-    Name="GlL4Id"
+    Name="Dated"
     PrecisionRule="true"
-    EntityAttrName="GlL4Id"
-    EntityUsage="TblPblCust"
-    AliasName="GL_L4_ID"
-    LOVName="LOV_GlL4Id">
+    EntityAttrName="Dated"
+    EntityUsage="TblQuoMaster"
+    AliasName="DATED"/>
+  <ViewAttribute
+    Name="PblCustId"
+    PrecisionRule="true"
+    EntityAttrName="PblCustId"
+    EntityUsage="TblQuoMaster"
+    AliasName="PBL_CUST_ID"
+    LOVName="LOV_PblCustId">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -102,104 +108,56 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
-    Name="CustBuss"
+    Name="ContactPerson"
     PrecisionRule="true"
-    EntityAttrName="CustBuss"
-    EntityUsage="TblPblCust"
-    AliasName="CUST_BUSS"/>
+    EntityAttrName="ContactPerson"
+    EntityUsage="TblQuoMaster"
+    AliasName="CONTACT_PERSON"/>
   <ViewAttribute
-    Name="ContactPer"
+    Name="NetAmt"
     PrecisionRule="true"
-    EntityAttrName="ContactPer"
-    EntityUsage="TblPblCust"
-    AliasName="CONTACT_PER"/>
+    EntityAttrName="NetAmt"
+    EntityUsage="TblQuoMaster"
+    AliasName="NET_AMT"/>
   <ViewAttribute
-    Name="Phone"
+    Name="Narration"
     PrecisionRule="true"
-    EntityAttrName="Phone"
-    EntityUsage="TblPblCust"
-    AliasName="PHONE"/>
-  <ViewAttribute
-    Name="Designation"
-    PrecisionRule="true"
-    EntityAttrName="Designation"
-    EntityUsage="TblPblCust"
-    AliasName="DESIGNATION"/>
-  <ViewAttribute
-    Name="Cnic"
-    PrecisionRule="true"
-    EntityAttrName="Cnic"
-    EntityUsage="TblPblCust"
-    AliasName="CNIC"/>
-  <ViewAttribute
-    Name="Cell"
-    PrecisionRule="true"
-    EntityAttrName="Cell"
-    EntityUsage="TblPblCust"
-    AliasName="CELL"/>
-  <ViewAttribute
-    Name="Fax"
-    PrecisionRule="true"
-    EntityAttrName="Fax"
-    EntityUsage="TblPblCust"
-    AliasName="FAX"/>
-  <ViewAttribute
-    Name="Ntn"
-    PrecisionRule="true"
-    EntityAttrName="Ntn"
-    EntityUsage="TblPblCust"
-    AliasName="NTN"/>
-  <ViewAttribute
-    Name="Strn"
-    PrecisionRule="true"
-    EntityAttrName="Strn"
-    EntityUsage="TblPblCust"
-    AliasName="STRN"/>
-  <ViewAttribute
-    Name="EMail"
-    PrecisionRule="true"
-    EntityAttrName="EMail"
-    EntityUsage="TblPblCust"
-    AliasName="E_MAIL"/>
-  <ViewAttribute
-    Name="Url"
-    PrecisionRule="true"
-    EntityAttrName="Url"
-    EntityUsage="TblPblCust"
-    AliasName="URL"/>
+    EntityAttrName="Narration"
+    EntityUsage="TblQuoMaster"
+    AliasName="NARRATION"/>
   <ViewAttribute
     Name="GroupCompanyId"
     PrecisionRule="true"
     EntityAttrName="GroupCompanyId"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblQuoMaster"
     AliasName="GROUP_COMPANY_ID"/>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblQuoMaster"
     AliasName="CREATED_DATE"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblQuoMaster"
     AliasName="CREATED_BY"/>
   <ViewAttribute
     Name="UpdatedDate"
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblQuoMaster"
     AliasName="UPDATED_DATE"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblQuoMaster"
     AliasName="UPDATED_BY"/>
   <ViewLinkAccessor
-    Name="TblCustOpenBlncView"
-    ViewLink="model.ERP.VO.FkCustOpenBlncPblCustIdLink"
+    Name="TblQuoDetailView"
+    ViewLink="model.ERP.VO.FkQuoDetailMasterLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

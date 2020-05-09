@@ -36,6 +36,11 @@
                   <af:column sortProperty="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncId.name}" filterable="true"
                              sortable="true" headerText="ID"
                              id="c1" align="right">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Id}"
+                                   id="id4" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
                     <af:inputText value="#{row.bindings.CustOpenBlncId.inputValue}"
                                   label="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncId.label}"
                                   required="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncId.mandatory}"
@@ -52,7 +57,7 @@
                              headerText="Date" id="c2">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblCustOpenBlncView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.CustOpenBlncDated.value}"
-                                    id="id1">
+                                    id="id1" placeholder="Search ">
                         <af:convertDateTime pattern="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncDated.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -68,6 +73,11 @@
                   <af:column sortProperty="#{bindings.TblCustOpenBlncView1.hints.PblCustId.name}" filterable="true"
                              sortable="true" headerText="Customer"
                              id="c3">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.PblCustId}"
+                                   id="it4" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
                     <af:selectOneChoice value="#{row.bindings.PblCustId.inputValue}"
                                         label="#{row.bindings.PblCustId.label}"
                                         required="#{bindings.TblCustOpenBlncView1.hints.PblCustId.mandatory}"
@@ -79,6 +89,11 @@
                   <af:column sortProperty="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncDr.name}" filterable="true"
                              sortable="true" headerText="Dr"
                              id="c4" align="right">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.CustOpenBlncDr}"
+                                   id="it5" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
                     <af:inputText value="#{row.bindings.CustOpenBlncDr.inputValue}"
                                   label="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncDr.label}"
                                   required="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncDr.mandatory}"
@@ -93,6 +108,11 @@
                   <af:column sortProperty="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncCr.name}" filterable="true"
                              sortable="true" headerText="Cr"
                              id="c5" align="right">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.CustOpenBlncCr}"
+                                   id="it6" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
                     <af:inputText value="#{row.bindings.CustOpenBlncCr.inputValue}"
                                   label="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncCr.label}"
                                   required="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncCr.mandatory}"

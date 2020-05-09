@@ -682,6 +682,33 @@
   <ViewUsage
     Name="TblItemL4View3"
     ViewObjectName="model.ERP.VO.TblItemL4View"/>
+  <ViewUsage
+    Name="TblRdfDetailView1"
+    ViewObjectName="model.ERP.VO.TblRdfDetailView"/>
+  <ViewUsage
+    Name="TblRdfMasterView1"
+    ViewObjectName="model.ERP.VO.TblRdfMasterView"/>
+  <ViewUsage
+    Name="TblRdfDetailView2"
+    ViewObjectName="model.ERP.VO.TblRdfDetailView"/>
+  <ViewUsage
+    Name="TblQuoDetailView1"
+    ViewObjectName="model.ERP.VO.TblQuoDetailView"/>
+  <ViewUsage
+    Name="TblQuoMasterView1"
+    ViewObjectName="model.ERP.VO.TblQuoMasterView"/>
+  <ViewUsage
+    Name="TblQuoDetailView2"
+    ViewObjectName="model.ERP.VO.TblQuoDetailView"/>
+  <ViewUsage
+    Name="TblCoDetailView1"
+    ViewObjectName="model.ERP.VO.TblCoDetailView"/>
+  <ViewUsage
+    Name="TblCoMasterView1"
+    ViewObjectName="model.ERP.VO.TblCoMasterView"/>
+  <ViewUsage
+    Name="TblCoDetailView2"
+    ViewObjectName="model.ERP.VO.TblCoDetailView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -1395,5 +1422,23 @@
     ViewLinkObjectName="model.ERP.VO.FkTblItemL4FkLink"
     SrcViewUsageName="model.ERP.AppModule.TblItemL3View3"
     DstViewUsageName="model.ERP.AppModule.TblItemL4View3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkRdfDetailMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkRdfDetailMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblRdfMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblRdfDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkQuoDetailMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkQuoDetailMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblQuoMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblQuoDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkCoDetailMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkCoDetailMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblCoMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblCoDetailView2"
     Reversed="false"/>
 </AppModule>

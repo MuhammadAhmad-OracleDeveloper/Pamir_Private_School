@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Customer_QuotationPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.Sales.Sales_Setup">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblQuoMasterView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblQuoMasterView1Iterator"/>
+    <searchRegion Binds="TblQuoMasterView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblQuoMasterView1Query"/>
+    <iterator Binds="TblQuoDetailView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblQuoDetailView2Iterator"/>
+    <searchRegion Binds="TblQuoDetailView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblQuoDetailView2Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="TblQuoMasterView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblQuoMasterView1Iterator" id="Vno">
+      <AttrNames>
+        <Item Value="Vno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblQuoMasterView1Iterator" id="Dated">
+      <AttrNames>
+        <Item Value="Dated"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblQuoMasterView1Iterator" StaticList="false" Uses="LOV_Vtp" id="Vtp" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblQuoMasterView1Iterator" StaticList="false" Uses="LOV_PblCustId" id="PblCustId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblQuoMasterView1Iterator" id="ContactPerson">
+      <AttrNames>
+        <Item Value="ContactPerson"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblQuoMasterView1Iterator" id="NetAmt">
+      <AttrNames>
+        <Item Value="NetAmt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblQuoMasterView1Iterator" id="Narration">
+      <AttrNames>
+        <Item Value="Narration"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblQuoMasterView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblQuoMasterView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblQuoMasterView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblQuoMasterView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="TblQuoMasterView1Iterator" id="TblQuoMasterView1">
+      <nodeDefinition DefName="model.ERP.VO.TblQuoMasterView" Name="TblQuoMasterView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Vno"/>
+          <Item Value="Dated"/>
+          <Item Value="Vtp"/>
+          <Item Value="PblCustId"/>
+          <Item Value="ContactPerson"/>
+          <Item Value="NetAmt"/>
+          <Item Value="Narration"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblQuoMasterView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblQuoMasterView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblQuoMasterView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblQuoDetailView2Iterator" id="TblQuoDetailView2">
+      <nodeDefinition DefName="model.ERP.VO.TblQuoDetailView" Name="TblQuoDetailView20">
+        <AttrNames>
+          <Item Value="SrNo"/>
+          <Item Value="ItemL4Id"/>
+          <Item Value="UomId"/>
+          <Item Value="Description"/>
+          <Item Value="Qty"/>
+          <Item Value="Rate"/>
+          <Item Value="Amount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblQuoDetailView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblQuoDetailView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblQuoDetailView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>
