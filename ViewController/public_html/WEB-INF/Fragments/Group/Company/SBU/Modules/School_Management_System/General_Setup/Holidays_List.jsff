@@ -47,7 +47,7 @@
                                                       columns="#{bindings.TblAcadYearView1.hints.Id.displayWidth}"
                                                       maximumLength="#{bindings.TblAcadYearView1.hints.Id.precision}"
                                                       shortDesc="#{bindings.TblAcadYearView1.hints.Id.tooltip}" id="it1"
-                                                      readOnly="true" contentStyle='text-align: center'>
+                                                      disabled="true"contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.Id.validator}"/>
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.TblAcadYearView1.hints.Id.format}"/>
@@ -84,7 +84,7 @@
                                                       required="#{bindings.TblAcadYearView1.hints.StartDate.mandatory}"
                                                       columns="#{bindings.TblAcadYearView1.hints.StartDate.displayWidth}"
                                                       shortDesc="#{bindings.TblAcadYearView1.hints.StartDate.tooltip}"
-                                                      id="id2" readOnly="true" contentStyle='text-align: center'>
+                                                      id="id2" disabled="true"contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.StartDate.validator}"/>
                                             <af:convertDateTime pattern="#{bindings.TblAcadYearView1.hints.StartDate.format}"/>
                                         </af:inputDate>
@@ -103,7 +103,7 @@
                                                       required="#{bindings.TblAcadYearView1.hints.EndDate.mandatory}"
                                                       columns="#{bindings.TblAcadYearView1.hints.EndDate.displayWidth}"
                                                       shortDesc="#{bindings.TblAcadYearView1.hints.EndDate.tooltip}"
-                                                      id="id9" readOnly="true" contentStyle='text-align: center'>
+                                                      id="id9" disabled="true"contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.EndDate.validator}"/>
                                             <af:convertDateTime pattern="#{bindings.TblAcadYearView1.hints.EndDate.format}"/>
                                         </af:inputDate>

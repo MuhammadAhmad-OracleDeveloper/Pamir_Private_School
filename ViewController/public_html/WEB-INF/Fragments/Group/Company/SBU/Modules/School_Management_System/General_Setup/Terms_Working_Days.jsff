@@ -46,7 +46,7 @@
                                                       columns="#{bindings.TblTermsView1.hints.Id.displayWidth}"
                                                       maximumLength="#{bindings.TblTermsView1.hints.Id.precision}"
                                                       shortDesc="#{bindings.TblTermsView1.hints.Id.tooltip}" id="it1"
-                                                      readOnly="true" contentStyle='text-align: center'>
+                                                      disabled="true"contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.Id.validator}"/>
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.TblTermsView1.hints.Id.format}"/>

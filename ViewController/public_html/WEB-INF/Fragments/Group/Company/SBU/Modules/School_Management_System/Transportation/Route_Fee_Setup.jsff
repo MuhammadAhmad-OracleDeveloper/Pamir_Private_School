@@ -48,7 +48,7 @@
                                   columns="#{bindings.TblRouteFeeMasterView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblRouteFeeMasterView1.hints.Id.precision}"
                                   shortDesc="#{bindings.TblRouteFeeMasterView1.hints.Id.tooltip}" id="it1" 
-                                  readOnly="true" contentStyle='text-align: center'>
+                                  disabled="true"contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblRouteFeeMasterView1.hints.Id.format}"/>
@@ -164,7 +164,7 @@
                                   columns="#{bindings.TblRouteFeeDetailView2.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblRouteFeeDetailView2.hints.Id.precision}"
                                   shortDesc="#{bindings.TblRouteFeeDetailView2.hints.Id.tooltip}" id="it2" 
-                                  readOnly="true" contentStyle='text-align: center'>
+                                  disabled="true"contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblRouteFeeDetailView2.hints.Id.format}"/>
