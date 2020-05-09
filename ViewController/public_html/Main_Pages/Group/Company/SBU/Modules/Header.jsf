@@ -33,8 +33,13 @@
                                 <af:gridCell marginStart="5px" width="50%" halign="end" valign="bottom" marginEnd="5px"
                                              id="pt_gc8">
                                     <af:panelGroupLayout id="pt_pgl5" layout="horizontal" valign="bottom">
-                                        <af:outputLabel value="${sessionScope.sessUName}" id="pt_ol1"
+                                        <af:panelGroupLayout id="pt_pgl2" layout="vertical">
+                                         <af:outputLabel value="Welcome.." id="pt_ol1"
+                                                        inlineStyle="text-transform: capitalize; font-size:medium; color: #145c9e;"/>
+                                            <af:outputLabel value="${sessionScope.sessUName}" id="pt_ol2"
                                                         inlineStyle="text-transform: capitalize; font-size:x-large;"/>
+                                        </af:panelGroupLayout>
+                                       
                                         <!--<af:button text="Back to Module" id="pt_b2"
                                                        icon="#{resource['images:back_to_home.png']}"
                                                        destination="/faces/Main_Pages/Group/Company/SBU/Modules/ModuleBoard.jsf"/>-->

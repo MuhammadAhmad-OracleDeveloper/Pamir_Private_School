@@ -67,17 +67,21 @@
                            <af:panelFormLayout id="pfl3" maxColumns="3" rows="1" fieldWidth="500px;" inlineStyle=" padding-left: 2%;padding-top: 3%;">
         <af:iterator id="i2" value="#{bindings.User_Modules1.collectionModel}" var="item" varStatus="status">
             <af:panelGroupLayout id="pgl3" layout="horizontal" inlineStyle="padding: 4%;">
-                <af:link id="l6" action="#{LoginsBean.getMODID(item.bindings.ModuleId.inputValue)}"
-                         icon="/sms/faces/javax.faces.resource/#{item.bindings.Icon.inputValue}?ln=images"/>
+                <af:link id="l6" inlineStyle="font-size:large; color: Black;font-weight: bold;"
+                action="#{LoginsBean.getMODID(item.bindings.ModuleId.inputValue)}"
+                text="#{item.bindings.Modulename.inputValue}"
+                         icon="/sms/faces/javax.faces.resource/#{item.bindings.Icon.inputValue}?ln=images"
+                         iconPosition="top"/>
                                         <af:spacer width="10" height="10" id="s1"/>
-                <af:panelGroupLayout id="pgl4" layout="vertical" inlineStyle="margin-top: -15%; width:75%;">
+                                        
+                <!--<af:panelGroupLayout id="pgl4" layout="vertical" inlineStyle="margin-top: -15%; width:75%;">
                     <af:link text="#{item.bindings.Modulename.inputValue}" id="l17"
-                             
                              action="#{LoginsBean.getMODID(item.bindings.ModuleId.inputValue)}"
                              inlineStyle="font-size:x-large; color: Black;font-weight: bold;"/>
                     <af:spacer width="10" height="1" id="s3"/>
                     <af:outputLabel value="#{item.bindings.Description.inputValue}" id="ol1"/>
-                </af:panelGroupLayout>
+                </af:panelGroupLayout>-->
+                
             </af:panelGroupLayout>
         </af:iterator>
     </af:panelFormLayout>
