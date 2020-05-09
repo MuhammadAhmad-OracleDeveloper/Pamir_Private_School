@@ -129,7 +129,7 @@
                                 required="#{bindings.Id.hints.mandatory}" columns="15"
                                 maximumLength="#{bindings.Id.hints.precision}" shortDesc="#{bindings.Id.hints.tooltip}"
                                 id="it4" contentStyle="Width:100px;"
-                                readOnly="true" visible="false">
+                                disabled="true"visible="false">
                                
                     <f:validator binding="#{bindings.Id.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
