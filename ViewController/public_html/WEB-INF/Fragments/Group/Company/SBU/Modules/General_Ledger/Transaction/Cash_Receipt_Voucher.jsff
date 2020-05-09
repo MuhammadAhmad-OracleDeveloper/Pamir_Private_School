@@ -1,8 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
+ 
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
-    <af:showDetailItem id="pane1" text="Cash Reciept Voucher">
+    <af:showDetailItem id="pane1" text="Cash Payment Voucher">
          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
                             <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                                    disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
@@ -22,7 +23,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Cash Reciept Voucher">
+              <af:showDetailItem id="tab1" text="Cash Payment Voucher">
                <af:panelFormLayout id="pfl1" maxColumns="2" rows="1">
                   <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                 required="#{bindings.Vno.hints.mandatory}" columns="#{bindings.Vno.hints.displayWidth}"
@@ -33,13 +34,14 @@
                   <af:inputDate value="#{bindings.Dated.inputValue}" label="Date"
                                 required="#{bindings.Dated.hints.mandatory}"
                                 columns="#{bindings.Dated.hints.displayWidth}"
-                                shortDesc="#{bindings.Dated.hints.tooltip}" id="id1">
+                                shortDesc="#{bindings.Dated.hints.tooltip}" id="id1" contentStyle="width:136px;">
                     <f:validator binding="#{bindings.Dated.validator}"/>
                     <af:convertDateTime pattern="#{bindings.Dated.format}"/>
                   </af:inputDate>
                   <af:selectOneChoice value="#{bindings.PblSuppId.inputValue}" label="Supplier"
                                       required="#{bindings.PblSuppId.hints.mandatory}"
-                                      shortDesc="#{bindings.PblSuppId.hints.tooltip}" id="soc2">
+                                      shortDesc="#{bindings.PblSuppId.hints.tooltip}" id="soc2"
+                                      contentStyle="width:150px;">
                     <f:selectItems value="#{bindings.PblSuppId.items}" id="si2"/>
                     <f:validator binding="#{bindings.PblSuppId.validator}"/>
                   </af:selectOneChoice>
@@ -47,7 +49,7 @@
                                 required="#{bindings.Narration.hints.mandatory}"
                                 columns="#{bindings.Narration.hints.displayWidth}"
                                 maximumLength="#{bindings.Narration.hints.precision}"
-                                shortDesc="#{bindings.Narration.hints.tooltip}" id="it3">
+                                shortDesc="#{bindings.Narration.hints.tooltip}" id="it3" contentStyle="width:150px;">
                     <f:validator binding="#{bindings.Narration.validator}"/>
                   </af:inputText>
                   <f:facet name="footer">
@@ -56,7 +58,7 @@
                 </af:panelFormLayout>
               </af:showDetailItem>
              <af:showDetailItem text="Search" id="sdi1">
-               <af:table value="#{bindings.TblGlVoucherMasterTransView1.collectionModel}" var="row"
+              <af:table value="#{bindings.TblGlVoucherMasterTransView1.collectionModel}" var="row"
                           rows="#{bindings.TblGlVoucherMasterTransView1.rangeSize}"
                           emptyText="#{bindings.TblGlVoucherMasterTransView1.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="0"
@@ -65,7 +67,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblGlVoucherMasterTransView1.rangeSize}"
                           filterModel="#{bindings.TblGlVoucherMasterTransView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblGlVoucherMasterTransView1Query.processQuery}" varStatus="vs"
-                          id="t2" >
+                          id="t2" scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblGlVoucherMasterTransView1.hints.Id.name}" filterable="true"
                              sortable="true" headerText="ID" id="c6" align="right">
                              <f:facet name="filter">
@@ -86,7 +88,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblGlVoucherMasterTransView1.hints.Vno.name}" filterable="true"
                              sortable="true" headerText="Voucher No."
-                             id="c7">
+                             id="c7" align="right">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Vno}"
                                    id="it12" placeholder="Search ">
@@ -122,7 +124,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblGlVoucherMasterTransView1.hints.PblSuppId.name}"
                              filterable="true" sortable="true"
-                             headerText="Supplier" id="c13">
+                             headerText="Supplier" id="c13" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.PblSuppId}"
                                    id="it15" placeholder="Search ">
@@ -139,7 +141,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblGlVoucherMasterTransView1.hints.Narration.name}"
                              filterable="true" sortable="true"
-                             headerText="Narration" id="c14">
+                             headerText="Narration" id="c14" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Narration}"
                                    id="it16" placeholder="Search ">
@@ -162,7 +164,6 @@
         <af:gridRow marginTop="5px" height="auto" id="gr3">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
              <af:panelGroupLayout id="pgl3" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s4"/>
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -170,7 +171,7 @@
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
                                     <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
                                 </af:button>
-               
+                
                 <af:spacer width="5" height="10" id="s5"/>
                 
                             </af:iterator>
@@ -181,7 +182,7 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
             <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
              <af:showDetailItem id="tab2" text="Details">
-               <af:table value="#{bindings.TblGlVoucherDetailView8.collectionModel}" var="row"
+                <af:table value="#{bindings.TblGlVoucherDetailView8.collectionModel}" var="row"
                           rows="#{bindings.TblGlVoucherDetailView8.rangeSize}"
                           emptyText="#{bindings.TblGlVoucherDetailView8.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="0"
@@ -190,7 +191,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblGlVoucherDetailView8.rangeSize}"
                           filterModel="#{bindings.TblGlVoucherDetailView8Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblGlVoucherDetailView8Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="::i1:b2 ::i1:b3 ::i1:b4">
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblGlVoucherDetailView8.hints.SrNo.name}" filterable="true"
                              sortable="true" headerText="Serial No." id="c1" align="right">
                              <f:facet name="filter">
@@ -211,7 +212,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblGlVoucherDetailView8.hints.GlL4Id.name}" filterable="true"
                              sortable="true" headerText="Account Title"
-                             id="c2">
+                             id="c2" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.GlL4Id}"
                                    id="it18" placeholder="Search ">
@@ -226,7 +227,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblGlVoucherDetailView8.hints.Description.name}" filterable="true"
                              sortable="true" headerText="Description"
-                             id="c3">
+                             id="c3" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Description}"
                                    id="it19" placeholder="Search ">
@@ -278,6 +279,7 @@
                     </af:inputText>
                   </af:column>
                 </af:table>
+                
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
@@ -285,7 +287,6 @@
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
              <af:panelGroupLayout id="pgl2" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s2"/>
                             <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -295,7 +296,8 @@
                                 </af:button>
                 
                 <af:spacer width="5" height="10" id="s3"/>
-                                </af:iterator>
+                
+                            </af:iterator>
                         </af:panelGroupLayout>
            </af:gridCell>
         </af:gridRow>
