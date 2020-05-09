@@ -31,6 +31,10 @@
     Name="Inventory_Type1"
     ViewObjectName="model.LOV.Inventory_Type"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Voucher_Type_LOV1"
+    ViewObjectName="model.LOV.Voucher_Type_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_DepartmentId"
     ListVOName="Deparment_Name_LOV1"
@@ -75,6 +79,24 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="InvType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Vtp"
+    ListVOName="Voucher_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Vtp"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -250,7 +272,15 @@
     PrecisionRule="true"
     EntityAttrName="Vtp"
     EntityUsage="TblInvVoucherMaster"
-    AliasName="VTP"/>
+    AliasName="VTP"
+    LOVName="LOV_Vtp">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblInvVoucherDetailView"
     ViewLink="model.ERP.VO.FkInvVoucherDetailMasterTransLink"

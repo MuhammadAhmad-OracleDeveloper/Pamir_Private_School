@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Debit_NotesPageDef"
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Goods_Issue_NotesPageDef"
                 Package="Fragments.Group.Company.SBU.Modules.Inventory.Transaction">
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
-    <iterator Binds="TblInvVoucherMasterTransView1" RangeSize="8" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblInvVoucherMasterTransView1" RangeSize="25" DataControl="AppModuleDataControl1"
               id="TblInvVoucherMasterTransView1Iterator"/>
-    <iterator Binds="TblInvVoucherDetailView3" RangeSize="8" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblInvVoucherDetailView3" RangeSize="25" DataControl="AppModuleDataControl1"
               id="TblInvVoucherDetailView3Iterator"/>
     <searchRegion Binds="TblInvVoucherDetailView3Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblInvVoucherDetailView3Query"/>
@@ -28,21 +28,6 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <attributeValues IterBinding="TblInvVoucherMasterTransView1Iterator" id="Id">
-      <AttrNames>
-        <Item Value="Id"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblInvVoucherMasterTransView1Iterator" id="Vno">
-      <AttrNames>
-        <Item Value="Vno"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblInvVoucherMasterTransView1Iterator" id="Dated">
-      <AttrNames>
-        <Item Value="Dated"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="TblInvVoucherMasterTransView1Iterator" id="Carrier">
       <AttrNames>
         <Item Value="Carrier"/>
@@ -58,11 +43,36 @@
         <Item Value="ConvRate"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="TblInvVoucherMasterTransView1Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblInvVoucherMasterTransView1Iterator" id="CreatedDate">
+      <AttrNames>
+        <Item Value="CreatedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblInvVoucherMasterTransView1Iterator" id="Dated">
+      <AttrNames>
+        <Item Value="Dated"/>
+      </AttrNames>
+    </attributeValues>
     <list IterBinding="TblInvVoucherMasterTransView1Iterator" StaticList="false" Uses="LOV_DepartmentId"
           id="DepartmentId" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="TblInvVoucherMasterTransView1Iterator" id="DoNo">
       <AttrNames>
         <Item Value="DoNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblInvVoucherMasterTransView1Iterator" id="GroupCompanyId">
+      <AttrNames>
+        <Item Value="GroupCompanyId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblInvVoucherMasterTransView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="TblInvVoucherMasterTransView1Iterator" id="IgpNo">
@@ -104,6 +114,23 @@
         <Item Value="QcNo"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="TblInvVoucherMasterTransView1Iterator" id="UpdatedBy">
+      <AttrNames>
+        <Item Value="UpdatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblInvVoucherMasterTransView1Iterator" id="UpdatedDate">
+      <AttrNames>
+        <Item Value="UpdatedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblInvVoucherMasterTransView1Iterator" id="Vno">
+      <AttrNames>
+        <Item Value="Vno"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblInvVoucherMasterTransView1Iterator" StaticList="false" Uses="LOV_Vtp" id="Vtp"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <action IterBinding="TblInvVoucherMasterTransView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
     <action IterBinding="TblInvVoucherMasterTransView1Iterator" id="Previous" RequiresUpdateModel="true"
             Action="previous"/>
@@ -121,6 +148,7 @@
       <nodeDefinition DefName="model.ERP.VO.TblInvVoucherDetailView" Name="TblInvVoucherDetailView30">
         <AttrNames>
           <Item Value="Id"/>
+          <Item Value="InvVoucherMasterId"/>
           <Item Value="SrNo"/>
           <Item Value="ItemL4Id"/>
           <Item Value="UomId"/>
@@ -136,6 +164,10 @@
           <Item Value="Amount"/>
           <Item Value="AmountFc"/>
           <Item Value="LandedCost"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="UpdatedDate"/>
+          <Item Value="UpdatedBy"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -145,29 +177,32 @@
             Action="iteratorExecute"/>
     <action IterBinding="TblInvVoucherDetailView3Iterator" id="Delete1" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
-    <list IterBinding="TblInvVoucherMasterTransView1Iterator" StaticList="false" Uses="LOV_Vtp" id="Vtp"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <tree IterBinding="TblInvVoucherMasterTransView1Iterator" id="TblInvVoucherMasterTransView1">
       <nodeDefinition DefName="model.ERP.VO.TblInvVoucherMasterTransView" Name="TblInvVoucherMasterTransView10">
         <AttrNames>
-          <Item Value="Id"/>
-          <Item Value="Vno"/>
-          <Item Value="Dated"/>
-          <Item Value="DepartmentId"/>
-          <Item Value="Vtp"/>
-          <Item Value="InvType"/>
           <Item Value="Carrier"/>
           <Item Value="ClrDocNo"/>
           <Item Value="ConvRate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="Dated"/>
+          <Item Value="DepartmentId"/>
           <Item Value="DoNo"/>
+          <Item Value="GroupCompanyId"/>
+          <Item Value="Id"/>
           <Item Value="IgpNo"/>
-          <Item Value="PoNo"/>
-          <Item Value="QcNo"/>
           <Item Value="ImportCurrency"/>
+          <Item Value="InvType"/>
           <Item Value="LcNo"/>
           <Item Value="Narration"/>
           <Item Value="NetAmount"/>
           <Item Value="PblSuppId"/>
+          <Item Value="PoNo"/>
+          <Item Value="QcNo"/>
+          <Item Value="UpdatedBy"/>
+          <Item Value="UpdatedDate"/>
+          <Item Value="Vno"/>
+          <Item Value="Vtp"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
