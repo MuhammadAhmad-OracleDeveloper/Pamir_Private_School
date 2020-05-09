@@ -35,7 +35,7 @@
                           queryListener="#{bindings.TblGradeFeeMasterView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblGradeFeeMasterView1.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Grade Fee Master ID" id="c1" align="right" width="80">
+                             sortable="true" headerText="Grade Fee Master ID" id="c1" align="right" width="80" visible="false">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Id}"
        id="id4" placeholder="Search ">
@@ -154,7 +154,7 @@
                             queryListener="#{bindings.TblGradeFeeDetailView2Query.processQuery}" varStatus="vs" id="t2"
                             scrollPolicy="page" autoHeightRows="0">
                     <af:column sortProperty="#{bindings.TblGradeFeeDetailView2.hints.Id.name}" filterable="true"
-                               sortable="true" headerText="Grade Fee Detail ID" id="c6" align="right" width="80">
+                               sortable="true" headerText="Grade Fee Detail ID" id="c6" align="right" width="80" visible="false">
                                <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="it11" placeholder="Search ">

@@ -35,7 +35,7 @@
                           partialTriggers="::b2 ::b3 ::b4 ::b5"  scrollPolicy="page" autoHeightRows="0"
                          inlineStyle="font-family:serif;">
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="Enquiry ID" id="c1" align="right" width="80">
+                             headerText="Enquiry ID" id="c1" align="left" width="80" visible="false">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="id4" placeholder="Search ">
@@ -65,12 +65,12 @@
                                   label="#{bindings.TblStdEnqView1.hints.Dated.label}"
                                   required="#{bindings.TblStdEnqView1.hints.Dated.mandatory}"
                                   columns="#{bindings.TblStdEnqView1.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.TblStdEnqView1.hints.Dated.tooltip}" id="id2" contentStyle='text-align: right'>
+                                  shortDesc="#{bindings.TblStdEnqView1.hints.Dated.tooltip}" id="id2" contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblStdEnqView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column headerText="Academic Year" id="c3" sortable="true" filterable="true" align="right">
+                  <af:column headerText="Academic Year" id="c3" sortable="true" filterable="true" align="left">
                   <f:facet name="filter">
                         <af:inputText value="#{vs.filterCriteria.AcadYearId}"
                         id="id6" placeholder="Search ">
@@ -130,7 +130,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.EmirId.name}" filterable="true"
-                             sortable="true" headerText="Emirates ID" id="c7" align="right">
+                             sortable="true" headerText="Emirates ID" id="c7" align="left">
                              <f:facet name="filter">
                                     <af:inputText value="#{vs.filterCriteria.EmirId}"
                                     id="it8" placeholder="Search ">
@@ -141,7 +141,7 @@
                                   required="#{bindings.TblStdEnqView1.hints.EmirId.mandatory}"
                                   columns="#{bindings.TblStdEnqView1.hints.EmirId.displayWidth}"
                                   maximumLength="#{bindings.TblStdEnqView1.hints.EmirId.precision}"
-                                  shortDesc="#{bindings.TblStdEnqView1.hints.EmirId.tooltip}" id="it6" contentStyle='text-align: right'>
+                                  shortDesc="#{bindings.TblStdEnqView1.hints.EmirId.tooltip}" id="it6" contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.EmirId.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -153,7 +153,7 @@
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblStdEnqView1.hints.Ast.mandatory}"
-                                        shortDesc="#{bindings.TblStdEnqView1.hints.Ast.tooltip}" id="soc3">
+                                        shortDesc="#{bindings.TblStdEnqView1.hints.Ast.tooltip}" id="soc3" contentStyle='text-align: left'>
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>

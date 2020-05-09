@@ -35,7 +35,7 @@
                           queryListener="#{bindings.TblFeeGenMasterView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0" >
                   <af:column sortProperty="#{bindings.TblFeeGenMasterView1.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Fee Generation Master ID" id="c1" align="right" width="80">
+                             sortable="true" headerText="Fee Generation Master ID" id="c1" align="right" width="80" visible="false">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="id4" placeholder="Search ID">
@@ -163,7 +163,7 @@
                           queryListener="#{bindings.TblFeeGenDetailView2Query.processQuery}" varStatus="vs" id="t2"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblFeeGenDetailView2.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Fee Generation Detail ID" id="c7" width="80" align="right">
+                             sortable="true" headerText="Fee Generation Detail ID" id="c7" width="80" align="right" visible="false">
                               <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="it14" placeholder="Search ">
@@ -365,7 +365,7 @@
                           queryListener="#{bindings.TblFeeGenDetailDView4Query.processQuery}" varStatus="vs" id="t3"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblFeeGenDetailDView4.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Fee Generation Detail D ID" id="c16" align="center" width="80">
+                             sortable="true" headerText="Fee Generation Detail D ID" id="c16" align="center" width="80" visible="false">
                    <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Id}"
        id="it25" placeholder="Search ID">

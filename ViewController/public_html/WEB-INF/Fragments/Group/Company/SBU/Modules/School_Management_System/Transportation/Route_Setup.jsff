@@ -34,7 +34,7 @@
                           queryListener="#{bindings.TblRouteView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblRouteView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="Route Setup ID" id="c1" align="right" width="80">
+                             headerText="Route Setup ID" id="c1" align="right" width="80" visible="false">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="id4" placeholder="Search ">
@@ -153,7 +153,7 @@
                           queryListener="#{bindings.TblRouteStopsView2Query.processQuery}" varStatus="vs" id="t2"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblRouteStopsView2.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Rout Stop ID" id="c5" width="80" align="right">
+                             sortable="true" headerText="Rout Stop ID" id="c5" width="80" align="right" visible="false">
                     <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Id}"
        id="it8" placeholder="Search ">

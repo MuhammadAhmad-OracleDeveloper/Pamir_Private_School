@@ -35,7 +35,7 @@
                           queryListener="#{bindings.TblTransFeeRecView2Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblTransFeeRecView2.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Transport Fee Reciept ID" id="c1" width="80" align="right">
+                             sortable="true" headerText="Transport Fee Reciept ID" id="c1" width="80" align="right" visible="false">
                              <f:facet name="filter">
                               <af:inputText value="#{vs.filterCriteria.Id}"
                                id="id4" placeholder="Search ">

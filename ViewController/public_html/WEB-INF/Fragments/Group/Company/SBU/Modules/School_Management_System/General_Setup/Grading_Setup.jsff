@@ -33,7 +33,7 @@
                           queryListener="#{bindings.TblGradeView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblGradeView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="Grade ID" id="c1" align="right" width="80">
+                             headerText="Grade ID" id="c1" align="right" width="80" visible="false">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Id}"
        id="id4" placeholder="Search ">
@@ -129,7 +129,7 @@
                           queryListener="#{bindings.TblMarksGradingView2Query.processQuery}" varStatus="vs" id="t2"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblMarksGradingView2.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Marks Grading ID" id="c6" align="right" width="80">
+                             sortable="true" headerText="Marks Grading ID" id="c6" align="right" width="80" visible="false">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Id}"
        id="it12" placeholder="Search ">
@@ -149,8 +149,8 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblMarksGradingView2.hints.GradeCode.name}" filterable="true"
-                             sortable="true" headerText="Grade Code"
-                             id="c8" align="right" width="200">
+                             sortable="true" headerText="Grade name"
+                             id="c8" align="left" width="200">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.GradeCode}"
        id="it14" placeholder="Search ">
@@ -168,7 +168,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblMarksGradingView2.hints.GradeValue.name}" filterable="true"
                              sortable="true" headerText="Grade value"
-                             id="c9" align="right">
+                             id="c9" align="left" visible="false">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.GradeValue}"
        id="it15" placeholder="Search ">

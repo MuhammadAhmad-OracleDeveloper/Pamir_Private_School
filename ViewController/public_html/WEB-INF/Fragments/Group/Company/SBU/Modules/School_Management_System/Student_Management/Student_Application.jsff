@@ -35,7 +35,7 @@
                           queryListener="#{bindings.TblStdApplView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblStdApplView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="Student Application ID" id="c1" align="right" width="80">
+                             headerText="Student Application ID" id="c1" align="right" width="80" visible="false">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="id4" placeholder="Search ">

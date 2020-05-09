@@ -35,7 +35,7 @@
                                           queryListener="#{bindings.TblStaffView1Query.processQuery}" varStatus="vs"
                                           id="t1" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblStaffView1.hints.Id.name}" filterable="true"
-                                               sortable="true" headerText="Staff ID" id="c1" width="80" align="right">
+                                               sortable="true" headerText="Staff ID" id="c1" width="80" align="right" visible="false">
                                         <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Id}" id="id4"
                                                           placeholder="Search "></af:inputText>
@@ -352,7 +352,7 @@
                                           id="t2" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblStaffKinView2.hints.Id.name}"
                                                filterable="true" sortable="true" headerText="kith &amp; Kin ID" id="c8"
-                                               align="center" width="70">
+                                               align="center" width="70" visible="false">
                                         <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Id}" id="it24"
                                                           placeholder="Search ID"></af:inputText>
@@ -533,7 +533,7 @@
                                           id="t3" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblStaffExprView2.hints.Id.name}"
                                                filterable="true" sortable="true" headerText="Experience ID" id="c18"
-                                               width="80" align="center">
+                                               width="80" align="center" visible="false">
                                         <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Id}" id="it37"
                                                           placeholder="Search ID"></af:inputText>
@@ -703,7 +703,7 @@
                                           varStatus="vs" id="t4" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblStaffDepartmentView3.hints.Id.name}"
                                                filterable="true" sortable="true" headerText="Staff Department ID"
-                                               id="c27" width="80" align="center">
+                                               id="c27" width="80" align="center" visible="false">
                                         <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Id}" id="it25"
                                                           placeholder="Search ID"></af:inputText>
@@ -800,7 +800,7 @@
                                           varStatus="vs" id="t5" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblStaffDesignationView3.hints.Id.name}"
                                                filterable="true" sortable="true" headerText="Staff Designation ID"
-                                               id="c9" align="center" width="80">
+                                               id="c9" align="center" width="80" visible="false">
                                         <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Id}" id="it46"
                                                           placeholder="Search ID"></af:inputText>
@@ -896,7 +896,7 @@
                                           id="t6" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblStaffVisaView2.hints.Id.name}"
                                                filterable="true" sortable="true" headerText="Staff Visa ID" id="c33"
-                                               align="center" width="80">
+                                               align="center" width="80" visible="false">
                                         <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Id}" id="it51"
                                                           placeholder="Search ID"></af:inputText>
@@ -1063,7 +1063,7 @@
                                           varStatus="vs" id="t7" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblStaffPassportView3.hints.Id.name}"
                                                filterable="true" sortable="true" headerText="Staff Passport ID" id="c41"
-                                               align="center" width="80">
+                                               align="center" width="80" visible="false">
                                         <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Id}" id="it58"
                                                           placeholder="Search ID"></af:inputText>
@@ -1213,7 +1213,7 @@
                                           id="t8" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblStaffRoleView3.hints.Id.name}"
                                                filterable="true" sortable="true" headerText="Staff Role ID" id="c48"
-                                               align="center" width="80">
+                                               align="center" width="80" visible="false">
                                         <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Id}" id="it63"
                                                           placeholder="Search ID"></af:inputText>
@@ -1309,7 +1309,7 @@
                                           varStatus="vs" id="t9" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblStaffBenefitView3.hints.Id.name}"
                                                filterable="true" sortable="true" headerText="Staff Benefit ID" id="c52"
-                                               align="center" width="80">
+                                               align="center" width="80" visible="false">
                                         <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Id}" id="it70"
                                                           placeholder="Search ID"></af:inputText>
@@ -1500,7 +1500,7 @@
                                                         <af:column sortProperty="#{bindings.TblStaffSalaryView2.hints.Id.name}"
                                                                    filterable="true" sortable="true"
                                                                    headerText="Staff Salary ID" id="c61" width="80"
-                                                                   align="center">
+                                                                   align="center" visible="false">
                                                             <f:facet name="filter">
                                                                 <af:inputText value="#{vs.filterCriteria.Id}" id="it85"
                                                                               placeholder="Search ID"></af:inputText>
@@ -1811,7 +1811,7 @@
                                           varStatus="vs" id="t12" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblStaffSubjectView3.hints.Id.name}"
                                                filterable="true" sortable="true" headerText="Staff Subject ID" id="c74"
-                                               align="center" width="80">
+                                               align="center" width="80" visible="false">
                                         <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Id}" id="it96"
                                                           placeholder="Search ID"></af:inputText>

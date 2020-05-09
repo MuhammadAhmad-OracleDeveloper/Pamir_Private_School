@@ -36,7 +36,7 @@
                                           id="t1" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblAcadYearView1.hints.Id.name}"
                                                filterable="true" sortable="true" headerText="Academic Year ID" id="c1"
-                                               align="right" width="80">
+                                               align="right" width="80" visible="false">
                                         <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Id}" id="id4"
                                                           placeholder="Search "></af:inputText>
@@ -148,7 +148,7 @@
                                           queryListener="#{bindings.TblTermsView2Query.processQuery}" varStatus="vs"
                                           id="t2" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblTermsView2.hints.Id.name}" filterable="true"
-                                               sortable="true" headerText="Term ID" id="c6" align="right" width="80">
+                                               sortable="true" headerText="Term ID" id="c6" align="right" width="80" visible="false">
                                                <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Id}" id="it7"
                                                           placeholder="Search "></af:inputText>

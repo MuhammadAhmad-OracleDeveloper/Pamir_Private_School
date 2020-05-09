@@ -1,4 +1,3 @@
-
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
@@ -36,7 +35,7 @@
                           queryListener="#{bindings.TblFeeRecView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblFeeRecView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="Fee Receive ID" id="c1" align="right" width="80">
+                             headerText="Fee Receive ID" id="c1" align="right" width="80" visible="false">
                               <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="it9" placeholder="Search ">
