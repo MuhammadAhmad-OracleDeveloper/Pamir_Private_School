@@ -55,7 +55,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFeeGenMasterView1.hints.AcadYearId.name}" filterable="true"
                              sortable="true" headerText="Academic Year"
-                             id="c2" align="right">
+                             id="c2" align="left">
                               <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.AcadYearId}"
                                    id="it9" placeholder="Search Year">
@@ -323,7 +323,8 @@
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblFeeGenDetailView2.hints.Ast.mandatory}"
-                                        shortDesc="#{bindings.TblFeeGenDetailView2.hints.Ast.tooltip}" id="soc7">
+                                        shortDesc="#{bindings.TblFeeGenDetailView2.hints.Ast.tooltip}" id="soc7"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si7"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>
@@ -394,7 +395,8 @@
                     <af:selectOneChoice value="#{row.bindings.FeeTypeId.inputValue}"
                                         label="#{row.bindings.FeeTypeId.label}"
                                         required="#{bindings.TblFeeGenDetailDView4.hints.FeeTypeId.mandatory}"
-                                        shortDesc="#{bindings.TblFeeGenDetailDView4.hints.FeeTypeId.tooltip}" id="soc8">
+                                        shortDesc="#{bindings.TblFeeGenDetailDView4.hints.FeeTypeId.tooltip}" id="soc8"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.FeeTypeId.items}" id="si8"/>
                       <f:validator binding="#{row.bindings.FeeTypeId.validator}"/>
                     </af:selectOneChoice>
@@ -419,7 +421,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFeeGenDetailDView4.hints.Ast.name}" filterable="true"
-                             sortable="true" headerText="Active" id="c19">
+                             sortable="true" headerText="Active" id="c19" align="left">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Ast}"
        id="it28" placeholder="Search Status">
@@ -427,7 +429,8 @@
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblFeeGenDetailDView4.hints.Ast.mandatory}"
-                                        shortDesc="#{bindings.TblFeeGenDetailDView4.hints.Ast.tooltip}" id="soc9">
+                                        shortDesc="#{bindings.TblFeeGenDetailDView4.hints.Ast.tooltip}" id="soc9"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si9"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>

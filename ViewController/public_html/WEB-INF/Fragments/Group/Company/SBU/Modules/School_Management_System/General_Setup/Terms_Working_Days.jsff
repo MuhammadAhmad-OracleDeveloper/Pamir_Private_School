@@ -46,7 +46,7 @@
                                                       columns="#{bindings.TblTermsView1.hints.Id.displayWidth}"
                                                       maximumLength="#{bindings.TblTermsView1.hints.Id.precision}"
                                                       shortDesc="#{bindings.TblTermsView1.hints.Id.tooltip}" id="it1"
-                                                      disabled="true"contentStyle='text-align: center'>
+                                                      disabled="true" contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.Id.validator}"/>
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.TblTermsView1.hints.Id.format}"/>
@@ -63,7 +63,7 @@
                                                             label="#{row.bindings.AcadYearId.label}"
                                                             required="#{bindings.TblTermsView1.hints.AcadYearId.mandatory}"
                                                             shortDesc="#{bindings.TblTermsView1.hints.AcadYearId.tooltip}"
-                                                            id="soc1" readOnly="true">
+                                                            id="soc1" disabled="true" contentStyle="text-align: left">
                                             <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si1"/>
                                             <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
                                         </af:selectOneChoice>
@@ -81,7 +81,7 @@
                                                       columns="#{bindings.TblTermsView1.hints.TermName.displayWidth}"
                                                       maximumLength="#{bindings.TblTermsView1.hints.TermName.precision}"
                                                       shortDesc="#{bindings.TblTermsView1.hints.TermName.tooltip}"
-                                                      id="it2" readOnly="true">
+                                                      id="it2" disabled="true" contentStyle="text-align: left">
                                             <f:validator binding="#{row.bindings.TermName.validator}"/>
                                         </af:inputText>
                                     </af:column>
@@ -95,7 +95,7 @@
                                                             label="#{row.bindings.Ast.label}"
                                                             required="#{bindings.TblTermsView1.hints.Ast.mandatory}"
                                                             shortDesc="#{bindings.TblTermsView1.hints.Ast.tooltip}"
-                                                            id="soc2" readOnly="true">
+                                                            id="soc2" disabled="true" contentStyle="text-align: left">
                                             <f:selectItems value="#{row.bindings.Ast.items}" id="si2"/>
                                             <f:validator binding="#{row.bindings.Ast.validator}"/>
                                         </af:selectOneChoice>
@@ -136,7 +136,7 @@
                                                       columns="#{bindings.TblTermWorkDaysView3.hints.Id.displayWidth}"
                                                       maximumLength="#{bindings.TblTermWorkDaysView3.hints.Id.precision}"
                                                       shortDesc="#{bindings.TblTermWorkDaysView3.hints.Id.tooltip}"
-                                                      id="it3" readOnly="true"
+                                                      id="it3" disabled="true"
                                   contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.Id.validator}"/>
                                             <af:convertNumber groupingUsed="false"
@@ -155,7 +155,7 @@
                                                             label="#{row.bindings.TermsId.label}"
                                                             required="#{bindings.TblTermWorkDaysView3.hints.TermsId.mandatory}"
                                                             shortDesc="#{bindings.TblTermWorkDaysView3.hints.TermsId.tooltip}"
-                                                            id="soc4">
+                                                            id="soc4" contentStyle="text-align: left">
                                             <f:selectItems value="#{row.bindings.TermsId.items}" id="si4"/>
                                             <f:validator binding="#{row.bindings.TermsId.validator}"/>
                                         </af:selectOneChoice>
@@ -174,7 +174,7 @@
                                                       columns="#{bindings.TblTermWorkDaysView3.hints.WorkDays.displayWidth}"
                                                       maximumLength="#{bindings.TblTermWorkDaysView3.hints.WorkDays.precision}"
                                                       shortDesc="#{bindings.TblTermWorkDaysView3.hints.WorkDays.tooltip}"
-                                                      id="it4" contentStyle='text-align: center'>
+                                                      id="it4" contentStyle='text-align: right'>
                                             <f:validator binding="#{row.bindings.WorkDays.validator}"/>
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.TblTermWorkDaysView3.hints.WorkDays.format}"/>

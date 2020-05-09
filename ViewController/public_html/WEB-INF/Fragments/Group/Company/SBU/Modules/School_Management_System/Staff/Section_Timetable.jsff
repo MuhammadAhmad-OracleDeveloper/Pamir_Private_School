@@ -68,7 +68,7 @@
                                   required="#{bindings.TblSectionTimetableMasterView1.hints.Dated.mandatory}"
                                   columns="#{bindings.TblSectionTimetableMasterView1.hints.Dated.displayWidth}"
                                   shortDesc="#{bindings.TblSectionTimetableMasterView1.hints.Dated.tooltip}" id="id2"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblSectionTimetableMasterView1.hints.Dated.format}"/>
                     </af:inputDate>
@@ -84,7 +84,7 @@
                     <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
                                         required="#{bindings.TblSectionTimetableMasterView1.hints.GradeId.mandatory}"
                                         shortDesc="#{bindings.TblSectionTimetableMasterView1.hints.GradeId.tooltip}"
-                                        id="soc1">
+                                        id="soc1" contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.GradeId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.GradeId.validator}"/>
                     </af:selectOneChoice>
@@ -101,7 +101,7 @@
                                         label="#{row.bindings.SectionId.label}"
                                         required="#{bindings.TblSectionTimetableMasterView1.hints.SectionId.mandatory}"
                                         shortDesc="#{bindings.TblSectionTimetableMasterView1.hints.SectionId.tooltip}"
-                                        id="soc2">
+                                        id="soc2" contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.SectionId.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.SectionId.validator}"/>
                     </af:selectOneChoice>
@@ -118,7 +118,7 @@
                                         label="#{row.bindings.AcadYearId.label}"
                                         required="#{bindings.TblSectionTimetableMasterView1.hints.AcadYearId.mandatory}"
                                         shortDesc="#{bindings.TblSectionTimetableMasterView1.hints.AcadYearId.tooltip}"
-                                        id="soc3">
+                                        id="soc3" contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
                     </af:selectOneChoice>
@@ -134,7 +134,7 @@
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblSectionTimetableMasterView1.hints.Ast.mandatory}"
                                         shortDesc="#{bindings.TblSectionTimetableMasterView1.hints.Ast.tooltip}"
-                                        id="soc4">
+                                        id="soc4" contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si4"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>
@@ -206,7 +206,7 @@
                     <af:selectOneChoice value="#{row.bindings.StaffId.inputValue}" label="#{row.bindings.StaffId.label}"
                                         required="#{bindings.TblSectionTimetableDetailView3.hints.StaffId.mandatory}"
                                         shortDesc="#{bindings.TblSectionTimetableDetailView3.hints.StaffId.tooltip}"
-                                        id="soc5">
+                                        id="soc5" contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.StaffId.items}" id="si5"/>
                       <f:validator binding="#{row.bindings.StaffId.validator}"/>
                     </af:selectOneChoice>
@@ -223,7 +223,7 @@
                                         label="#{row.bindings.StaffSubjectId.label}"
                                         required="#{bindings.TblSectionTimetableDetailView3.hints.StaffSubjectId.mandatory}"
                                         shortDesc="#{bindings.TblSectionTimetableDetailView3.hints.StaffSubjectId.tooltip}"
-                                        id="soc6">
+                                        id="soc6" contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.StaffSubjectId.items}" id="si6"/>
                       <f:validator binding="#{row.bindings.StaffSubjectId.validator}"/>
                     </af:selectOneChoice>
@@ -240,7 +240,7 @@
                                         label="#{row.bindings.WeekDays.label}"
                                         required="#{bindings.TblSectionTimetableDetailView3.hints.WeekDays.mandatory}"
                                         shortDesc="#{bindings.TblSectionTimetableDetailView3.hints.WeekDays.tooltip}"
-                                        id="soc7" contentStyle='text-align: center'>
+                                        id="soc7" contentStyle='text-align: right'>
                       <f:selectItems value="#{row.bindings.WeekDays.items}" id="si7"/>
                       <f:validator binding="#{row.bindings.WeekDays.validator}"/>
                     </af:selectOneChoice>
@@ -318,7 +318,7 @@
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblSectionTimetableDetailView3.hints.Ast.mandatory}"
                                         shortDesc="#{bindings.TblSectionTimetableDetailView3.hints.Ast.tooltip}"
-                                        id="soc8">
+                                        id="soc8" contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si8"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>

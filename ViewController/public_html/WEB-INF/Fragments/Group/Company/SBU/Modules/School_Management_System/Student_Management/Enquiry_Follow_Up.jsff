@@ -64,7 +64,8 @@
                                   label="#{bindings.TblStdEnqView1.hints.Dated.label}"
                                   required="#{bindings.TblStdEnqView1.hints.Dated.mandatory}"
                                   columns="#{bindings.TblStdEnqView1.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.TblStdEnqView1.hints.Dated.tooltip}" id="id2" contentStyle='text-align: center'>
+                                  shortDesc="#{bindings.TblStdEnqView1.hints.Dated.tooltip}" id="id2"
+                                  contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblStdEnqView1.hints.Dated.format}"/>
                     </af:inputDate>
@@ -79,7 +80,8 @@
                     <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
                                         label="#{row.bindings.AcadYearId.label}"
                                         required="#{bindings.TblStdEnqView1.hints.AcadYearId.mandatory}"
-                                        shortDesc="#{bindings.TblStdEnqView1.hints.AcadYearId.tooltip}" id="soc1">
+                                        shortDesc="#{bindings.TblStdEnqView1.hints.AcadYearId.tooltip}" id="soc1"
+                                        contentStyle="text-align: right">
                       <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
                     </af:selectOneChoice>
@@ -96,7 +98,8 @@
                                   required="#{bindings.TblStdEnqView1.hints.FirstName.mandatory}"
                                   columns="#{bindings.TblStdEnqView1.hints.FirstName.displayWidth}"
                                   maximumLength="#{bindings.TblStdEnqView1.hints.FirstName.precision}"
-                                  shortDesc="#{bindings.TblStdEnqView1.hints.FirstName.tooltip}" id="it2">
+                                  shortDesc="#{bindings.TblStdEnqView1.hints.FirstName.tooltip}" id="it2"
+                                  contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.FirstName.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -112,7 +115,8 @@
                                   required="#{bindings.TblStdEnqView1.hints.LastName.mandatory}"
                                   columns="#{bindings.TblStdEnqView1.hints.LastName.displayWidth}"
                                   maximumLength="#{bindings.TblStdEnqView1.hints.LastName.precision}"
-                                  shortDesc="#{bindings.TblStdEnqView1.hints.LastName.tooltip}" id="it3">
+                                  shortDesc="#{bindings.TblStdEnqView1.hints.LastName.tooltip}" id="it3"
+                                  contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.LastName.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -125,7 +129,8 @@
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Gender.inputValue}" label="#{row.bindings.Gender.label}"
                                         required="#{bindings.TblStdEnqView1.hints.Gender.mandatory}"
-                                        shortDesc="#{bindings.TblStdEnqView1.hints.Gender.tooltip}" id="soc2">
+                                        shortDesc="#{bindings.TblStdEnqView1.hints.Gender.tooltip}" id="soc2"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.Gender.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.Gender.validator}"/>
                     </af:selectOneChoice>
@@ -139,7 +144,8 @@
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
                                         required="#{bindings.TblStdEnqView1.hints.GradeId.mandatory}"
-                                        shortDesc="#{bindings.TblStdEnqView1.hints.GradeId.tooltip}" id="soc3">
+                                        shortDesc="#{bindings.TblStdEnqView1.hints.GradeId.tooltip}" id="soc3"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.GradeId.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.GradeId.validator}"/>
                     </af:selectOneChoice>
@@ -155,13 +161,14 @@
                     <af:selectOneChoice value="#{row.bindings.LookupElecGroup.inputValue}"
                                         label="#{row.bindings.LookupElecGroup.label}"
                                         required="#{bindings.TblStdEnqView1.hints.LookupElecGroup.mandatory}"
-                                        shortDesc="#{bindings.TblStdEnqView1.hints.LookupElecGroup.tooltip}" id="soc4">
+                                        shortDesc="#{bindings.TblStdEnqView1.hints.LookupElecGroup.tooltip}" id="soc4"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.LookupElecGroup.items}" id="si4"/>
                       <f:validator binding="#{row.bindings.LookupElecGroup.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.EmirId.name}" filterable="true"
-                             sortable="true" headerText="Emirates ID" id="c9" align="right">
+                             sortable="true" headerText="Emirates ID" id="c9" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.EmirId}"
                                    id="it21" placeholder="Search " >
@@ -172,7 +179,8 @@
                                   required="#{bindings.TblStdEnqView1.hints.EmirId.mandatory}"
                                   columns="#{bindings.TblStdEnqView1.hints.EmirId.displayWidth}"
                                   maximumLength="#{bindings.TblStdEnqView1.hints.EmirId.precision}"
-                                  shortDesc="#{bindings.TblStdEnqView1.hints.EmirId.tooltip}" id="it4" contentStyle='text-align: right'>
+                                  shortDesc="#{bindings.TblStdEnqView1.hints.EmirId.tooltip}" id="it4"
+                                  contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.EmirId.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -188,7 +196,8 @@
                                   required="#{bindings.TblStdEnqView1.hints.EmirArea.mandatory}"
                                   columns="#{bindings.TblStdEnqView1.hints.EmirArea.displayWidth}"
                                   maximumLength="#{bindings.TblStdEnqView1.hints.EmirArea.precision}"
-                                  shortDesc="#{bindings.TblStdEnqView1.hints.EmirArea.tooltip}" id="it5" contentStyle='text-align: center'>
+                                  shortDesc="#{bindings.TblStdEnqView1.hints.EmirArea.tooltip}" id="it5"
+                                  contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.EmirArea.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -204,7 +213,8 @@
                                   required="#{bindings.TblStdEnqView1.hints.Address.mandatory}"
                                   columns="#{bindings.TblStdEnqView1.hints.Address.displayWidth}"
                                   maximumLength="#{bindings.TblStdEnqView1.hints.Address.precision}"
-                                  shortDesc="#{bindings.TblStdEnqView1.hints.Address.tooltip}" id="it6">
+                                  shortDesc="#{bindings.TblStdEnqView1.hints.Address.tooltip}" id="it6"
+                                  contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.Address.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -217,7 +227,8 @@
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblStdEnqView1.hints.Ast.mandatory}"
-                                        shortDesc="#{bindings.TblStdEnqView1.hints.Ast.tooltip}" id="soc5">
+                                        shortDesc="#{bindings.TblStdEnqView1.hints.Ast.tooltip}" id="soc5"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si5"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>
@@ -275,7 +286,8 @@
                                   label="#{bindings.TblEnqFollowUpView2.hints.Dated.label}"
                                   required="#{bindings.TblEnqFollowUpView2.hints.Dated.mandatory}"
                                   columns="#{bindings.TblEnqFollowUpView2.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.Dated.tooltip}" id="id5" contentStyle='text-align: center'>
+                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.Dated.tooltip}" id="id5"
+                                  contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblEnqFollowUpView2.hints.Dated.format}"/>
                     </af:inputDate>
@@ -292,14 +304,14 @@
                                         label="#{row.bindings.FollowMethod.label}"
                                         required="#{bindings.TblEnqFollowUpView2.hints.FollowMethod.mandatory}"
                                         shortDesc="#{bindings.TblEnqFollowUpView2.hints.FollowMethod.tooltip}"
-                                        id="soc6">
+                                        id="soc6" contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.FollowMethod.items}" id="si6"/>
                       <f:validator binding="#{row.bindings.FollowMethod.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.SmsContactNo.name}" filterable="true"
                              sortable="true" headerText="SMS Contact"
-                             id="c16" align="right">
+                             id="c16" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.SmsContactNo}"
                                    id="it27" placeholder="Search " >
@@ -310,7 +322,8 @@
                                   required="#{bindings.TblEnqFollowUpView2.hints.SmsContactNo.mandatory}"
                                   columns="#{bindings.TblEnqFollowUpView2.hints.SmsContactNo.displayWidth}"
                                   maximumLength="#{bindings.TblEnqFollowUpView2.hints.SmsContactNo.precision}"
-                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.SmsContactNo.tooltip}" id="it8" contentStyle='text-align: right'>
+                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.SmsContactNo.tooltip}" id="it8"
+                                  contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.SmsContactNo.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -326,7 +339,8 @@
                                   required="#{bindings.TblEnqFollowUpView2.hints.SmsText.mandatory}"
                                   columns="#{bindings.TblEnqFollowUpView2.hints.SmsText.displayWidth}"
                                   maximumLength="#{bindings.TblEnqFollowUpView2.hints.SmsText.precision}"
-                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.SmsText.tooltip}" id="it9">
+                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.SmsText.tooltip}" id="it9"
+                                  contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.SmsText.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -342,7 +356,8 @@
                                   required="#{bindings.TblEnqFollowUpView2.hints.EmailTo.mandatory}"
                                   columns="#{bindings.TblEnqFollowUpView2.hints.EmailTo.displayWidth}"
                                   maximumLength="#{bindings.TblEnqFollowUpView2.hints.EmailTo.precision}"
-                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.EmailTo.tooltip}" id="it10">
+                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.EmailTo.tooltip}" id="it10"
+                                  contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.EmailTo.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -359,7 +374,8 @@
                                   required="#{bindings.TblEnqFollowUpView2.hints.EmailSubject.mandatory}"
                                   columns="#{bindings.TblEnqFollowUpView2.hints.EmailSubject.displayWidth}"
                                   maximumLength="#{bindings.TblEnqFollowUpView2.hints.EmailSubject.precision}"
-                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.EmailSubject.tooltip}" id="it11">
+                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.EmailSubject.tooltip}" id="it11"
+                                  contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.EmailSubject.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -376,13 +392,14 @@
                                   required="#{bindings.TblEnqFollowUpView2.hints.EmailBody.mandatory}"
                                   columns="#{bindings.TblEnqFollowUpView2.hints.EmailBody.displayWidth}"
                                   maximumLength="#{bindings.TblEnqFollowUpView2.hints.EmailBody.precision}"
-                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.EmailBody.tooltip}" id="it12">
+                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.EmailBody.tooltip}" id="it12"
+                                  contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.EmailBody.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.CallContactNo.name}" filterable="true"
                              sortable="true" headerText="Contact Number"
-                             id="c21" align="right" width="110">
+                             id="c21" align="left" width="110">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.CallContactNo}"
                                    id="it32" placeholder="Search " >
@@ -393,7 +410,8 @@
                                   required="#{bindings.TblEnqFollowUpView2.hints.CallContactNo.mandatory}"
                                   columns="#{bindings.TblEnqFollowUpView2.hints.CallContactNo.displayWidth}"
                                   maximumLength="#{bindings.TblEnqFollowUpView2.hints.CallContactNo.precision}"
-                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.CallContactNo.tooltip}" id="it13" contentStyle='text-align: right'>
+                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.CallContactNo.tooltip}" id="it13"
+                                  contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.CallContactNo.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -410,7 +428,8 @@
                                   required="#{bindings.TblEnqFollowUpView2.hints.CallContent.mandatory}"
                                   columns="#{bindings.TblEnqFollowUpView2.hints.CallContent.displayWidth}"
                                   maximumLength="#{bindings.TblEnqFollowUpView2.hints.CallContent.precision}"
-                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.CallContent.tooltip}" id="it14">
+                                  shortDesc="#{bindings.TblEnqFollowUpView2.hints.CallContent.tooltip}" id="it14"
+                                  contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.CallContent.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -423,7 +442,8 @@
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblEnqFollowUpView2.hints.Ast.mandatory}"
-                                        shortDesc="#{bindings.TblEnqFollowUpView2.hints.Ast.tooltip}" id="soc7">
+                                        shortDesc="#{bindings.TblEnqFollowUpView2.hints.Ast.tooltip}" id="soc7"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si7"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>

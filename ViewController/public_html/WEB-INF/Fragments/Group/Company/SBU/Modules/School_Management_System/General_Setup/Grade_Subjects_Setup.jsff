@@ -47,7 +47,7 @@
                                                       columns="#{bindings.TblSubjectView1.hints.Id.displayWidth}"
                                                       maximumLength="#{bindings.TblSubjectView1.hints.Id.precision}"
                                                       shortDesc="#{bindings.TblSubjectView1.hints.Id.tooltip}" id="it1"
-                                                      readOnly="true"
+                                                      disabled="true"
                                   contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.Id.validator}"/>
                                             <af:convertNumber groupingUsed="false"
@@ -67,7 +67,7 @@
                                                       columns="#{bindings.TblSubjectView1.hints.Name.displayWidth}"
                                                       maximumLength="#{bindings.TblSubjectView1.hints.Name.precision}"
                                                       shortDesc="#{bindings.TblSubjectView1.hints.Name.tooltip}"
-                                                      id="it2" readOnly="true">
+                                                      id="it2" disabled="true" contentStyle="text-align: left">
                                             <f:validator binding="#{row.bindings.Name.validator}"/>
                                         </af:inputText>
                                     </af:column>
@@ -108,7 +108,7 @@
                                                       columns="#{bindings.TblGradeSubjectView3.hints.Id.displayWidth}"
                                                       maximumLength="#{bindings.TblGradeSubjectView3.hints.Id.precision}"
                                                       shortDesc="#{bindings.TblGradeSubjectView3.hints.Id.tooltip}"
-                                                      id="it3" readOnly="true"
+                                                      id="it3" disabled="true"
                                   contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.Id.validator}"/>
                                             <af:convertNumber groupingUsed="false"
@@ -127,7 +127,7 @@
                                                             label="#{row.bindings.GradeId.label}"
                                                             required="#{bindings.TblGradeSubjectView3.hints.GradeId.mandatory}"
                                                             shortDesc="#{bindings.TblGradeSubjectView3.hints.GradeId.tooltip}"
-                                                            id="soc1">
+                                                            id="soc1" contentStyle="text-align: left">
                                             <f:selectItems value="#{row.bindings.GradeId.items}" id="si1"/>
                                             <f:validator binding="#{row.bindings.GradeId.validator}"/>
                                         </af:selectOneChoice>
@@ -144,7 +144,7 @@
                                                             label="#{row.bindings.SubjectId.label}"
                                                             required="#{bindings.TblGradeSubjectView3.hints.SubjectId.mandatory}"
                                                             shortDesc="#{bindings.TblGradeSubjectView3.hints.SubjectId.tooltip}"
-                                                            id="soc2">
+                                                            id="soc2" contentStyle="text-align: left">
                                             <f:selectItems value="#{row.bindings.SubjectId.items}" id="si2"/>
                                             <f:validator binding="#{row.bindings.SubjectId.validator}"/>
                                         </af:selectOneChoice>

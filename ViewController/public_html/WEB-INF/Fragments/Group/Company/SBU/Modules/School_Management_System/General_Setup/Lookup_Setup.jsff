@@ -65,7 +65,8 @@
                                   required="#{bindings.TblLookupMasterView1.hints.Name.mandatory}"
                                   columns="#{bindings.TblLookupMasterView1.hints.Name.displayWidth}"
                                   maximumLength="#{bindings.TblLookupMasterView1.hints.Name.precision}"
-                                  shortDesc="#{bindings.TblLookupMasterView1.hints.Name.tooltip}" id="it2">
+                                  shortDesc="#{bindings.TblLookupMasterView1.hints.Name.tooltip}" id="it2"
+                                  contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -136,7 +137,8 @@
                                   required="#{bindings.TblLookupDetailView2.hints.Name.mandatory}"
                                   columns="#{bindings.TblLookupDetailView2.hints.Name.displayWidth}"
                                   maximumLength="#{bindings.TblLookupDetailView2.hints.Name.precision}"
-                                  shortDesc="#{bindings.TblLookupDetailView2.hints.Name.tooltip}" id="it4">
+                                  shortDesc="#{bindings.TblLookupDetailView2.hints.Name.tooltip}" id="it4"
+                                  contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -149,7 +151,8 @@
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblLookupDetailView2.hints.Ast.mandatory}"
-                                        shortDesc="#{bindings.TblLookupDetailView2.hints.Ast.tooltip}" id="soc1">
+                                        shortDesc="#{bindings.TblLookupDetailView2.hints.Ast.tooltip}" id="soc1"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>
@@ -222,7 +225,8 @@
                                   required="#{bindings.TblLookupDetailDView3.hints.Name.mandatory}"
                                   columns="#{bindings.TblLookupDetailDView3.hints.Name.displayWidth}"
                                   maximumLength="#{bindings.TblLookupDetailDView3.hints.Name.precision}"
-                                  shortDesc="#{bindings.TblLookupDetailDView3.hints.Name.tooltip}" id="it10">
+                                  shortDesc="#{bindings.TblLookupDetailDView3.hints.Name.tooltip}" id="it10"
+                                  contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -235,7 +239,8 @@
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblLookupDetailDView3.hints.Ast.mandatory}"
-                                        shortDesc="#{bindings.TblLookupDetailDView3.hints.Ast.tooltip}" id="soc2">
+                                        shortDesc="#{bindings.TblLookupDetailDView3.hints.Ast.tooltip}" id="soc2"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>
