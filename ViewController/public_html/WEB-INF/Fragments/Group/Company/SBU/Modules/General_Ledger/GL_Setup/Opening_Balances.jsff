@@ -36,7 +36,7 @@
                           queryListener="#{bindings.TblOpenBlncView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblOpenBlncView1.hints.OpenBlncId.name}" filterable="true"
-                             sortable="true" headerText="ID" id="c1" align="right">
+                             sortable="true" headerText="ID" id="c1" align="right" visible="false">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.OpenBlncId}"
                                    id="id4" placeholder="Search ">
@@ -73,7 +73,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblOpenBlncView1.hints.OpenBlncGlL4Id.name}" filterable="true"
                              sortable="true" headerText="Details"
-                             id="c3">
+                             id="c3" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.OpenBlncGlL4Id}"
                                    id="it4" placeholder="Search ">
@@ -88,7 +88,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblOpenBlncView1.hints.OpenBlncDr.name}" filterable="true"
-                             sortable="true" headerText="Dr." id="c4" align="right">
+                             sortable="true" headerText="Dr" id="c4" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.OpenBlncDr}"
                                    id="it5" placeholder="Search ">
@@ -106,7 +106,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblOpenBlncView1.hints.OpenBlncCr.name}" filterable="true"
-                             sortable="true" headerText="Cr." id="c5" align="right">
+                             sortable="true" headerText="Cr" id="c5" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.OpenBlncCr}"
                                    id="it6" placeholder="Search ">
