@@ -48,13 +48,13 @@
                                   columns="#{bindings.TblRegFeeRecView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblRegFeeRecView1.hints.Id.precision}"
                                   shortDesc="#{bindings.TblRegFeeRecView1.hints.Id.tooltip}" id="it1" 
-                                  disabled="true"contentStyle='text-align: center'>
+                                  disabled="true" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblRegFeeRecView1.hints.Id.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblRegFeeRecView1.hints.Dated.name}" filterable="true"
-                             sortable="true" headerText="Date" id="c2" align="right">
+                             sortable="true" headerText="Date" id="c2" align="left">
                              
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblRegFeeRecView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
@@ -67,7 +67,7 @@
                                   required="#{bindings.TblRegFeeRecView1.hints.Dated.mandatory}"
                                   columns="#{bindings.TblRegFeeRecView1.hints.Dated.displayWidth}"
                                   shortDesc="#{bindings.TblRegFeeRecView1.hints.Dated.tooltip}" id="id2"
-                                  contentStyle='text-align: right'>
+                                  contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblRegFeeRecView1.hints.Dated.format}"/>
                     </af:inputDate>
@@ -82,7 +82,8 @@
                     <af:selectOneChoice value="#{row.bindings.StdRegId.inputValue}"
                                         label="#{row.bindings.StdRegId.label}"
                                         required="#{bindings.TblRegFeeRecView1.hints.StdRegId.mandatory}"
-                                        shortDesc="#{bindings.TblRegFeeRecView1.hints.StdRegId.tooltip}" id="soc1">
+                                        shortDesc="#{bindings.TblRegFeeRecView1.hints.StdRegId.tooltip}" id="soc1"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.StdRegId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.StdRegId.validator}"/>
                     </af:selectOneChoice>
@@ -96,13 +97,14 @@
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.RecType.inputValue}" label="#{row.bindings.RecType.label}"
                                         required="#{bindings.TblRegFeeRecView1.hints.RecType.mandatory}"
-                                        shortDesc="#{bindings.TblRegFeeRecView1.hints.RecType.tooltip}" id="soc2">
+                                        shortDesc="#{bindings.TblRegFeeRecView1.hints.RecType.tooltip}" id="soc2"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.RecType.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.RecType.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblRegFeeRecView1.hints.ChqNo.name}" filterable="true"
-                             sortable="true" headerText="Bank Cheque No." id="c5" align="right" width="120">
+                             sortable="true" headerText="Bank Cheque No." id="c5" align="left" width="120">
                              
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.ChqNo}"
@@ -115,12 +117,12 @@
                                   columns="#{bindings.TblRegFeeRecView1.hints.ChqNo.displayWidth}"
                                   maximumLength="#{bindings.TblRegFeeRecView1.hints.ChqNo.precision}"
                                   shortDesc="#{bindings.TblRegFeeRecView1.hints.ChqNo.tooltip}" id="it2"
-                                  contentStyle='text-align: right'>
+                                  contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.ChqNo.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblRegFeeRecView1.hints.ChqDate.name}" filterable="true"
-                             sortable="true" headerText="Bank Cheque Date" id="c6" align="right" width="120">
+                             sortable="true" headerText="Bank Cheque Date" id="c6" align="left" width="120">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblRegFeeRecView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.ChqDate.value}"
                                     id="id3" placeholder="Search ">
@@ -132,7 +134,7 @@
                                   required="#{bindings.TblRegFeeRecView1.hints.ChqDate.mandatory}"
                                   columns="#{bindings.TblRegFeeRecView1.hints.ChqDate.displayWidth}"
                                   shortDesc="#{bindings.TblRegFeeRecView1.hints.ChqDate.tooltip}" id="id5"
-                                  contentStyle='text-align: right'>
+                                  contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.ChqDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblRegFeeRecView1.hints.ChqDate.format}"/>
                     </af:inputDate>
@@ -149,12 +151,13 @@
                                   required="#{bindings.TblRegFeeRecView1.hints.Bank.mandatory}"
                                   columns="#{bindings.TblRegFeeRecView1.hints.Bank.displayWidth}"
                                   maximumLength="#{bindings.TblRegFeeRecView1.hints.Bank.precision}"
-                                  shortDesc="#{bindings.TblRegFeeRecView1.hints.Bank.tooltip}" id="it3">
+                                  shortDesc="#{bindings.TblRegFeeRecView1.hints.Bank.tooltip}" id="it3"
+                                  contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.Bank.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblRegFeeRecView1.hints.Amount.name}" filterable="true"
-                             sortable="true" headerText="Amount" id="c8" align="right">
+                             sortable="true" headerText="Amount" id="c8" align="left">
                               <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Amount}"
                                    id="it9" placeholder="Search ">
@@ -166,7 +169,7 @@
                                   columns="#{bindings.TblRegFeeRecView1.hints.Amount.displayWidth}"
                                   maximumLength="#{bindings.TblRegFeeRecView1.hints.Amount.precision}"
                                   shortDesc="#{bindings.TblRegFeeRecView1.hints.Amount.tooltip}" id="it4"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.Amount.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblRegFeeRecView1.hints.Amount.format}"/>
@@ -181,7 +184,8 @@
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblRegFeeRecView1.hints.Ast.mandatory}"
-                                        shortDesc="#{bindings.TblRegFeeRecView1.hints.Ast.tooltip}" id="soc3">
+                                        shortDesc="#{bindings.TblRegFeeRecView1.hints.Ast.tooltip}" id="soc3"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>

@@ -66,7 +66,7 @@
                                                         <af:column sortProperty="#{bindings.TblLibCategoryView1.hints.DeweyNo.name}"
                                                                    filterable="true" sortable="true"
                                                                    headerText="Dewey No."
-                                                                   id="c2" align="right">
+                                                                   id="c2" align="left">
                                                                    <f:facet name="filter">
                                                                           <af:inputText value="#{vs.filterCriteria.DeweyNo}"
                                                                            id="it11" placeholder="Search ">
@@ -97,7 +97,7 @@
                                                                           columns="#{bindings.TblLibCategoryView1.hints.Name.displayWidth}"
                                                                           maximumLength="#{bindings.TblLibCategoryView1.hints.Name.precision}"
                                                                           shortDesc="#{bindings.TblLibCategoryView1.hints.Name.tooltip}"
-                                                                          id="it3">
+                                                                          id="it3" contentStyle="text-align: left">
                                                                 <f:validator binding="#{row.bindings.Name.validator}"/>
                                                             </af:inputText>
                                                         </af:column>
@@ -116,7 +116,7 @@
                                                                           columns="#{bindings.TblLibCategoryView1.hints.Remarks.displayWidth}"
                                                                           maximumLength="#{bindings.TblLibCategoryView1.hints.Remarks.precision}"
                                                                           shortDesc="#{bindings.TblLibCategoryView1.hints.Remarks.tooltip}"
-                                                                          id="it4">
+                                                                          id="it4" contentStyle="text-align: left">
                                                                 <f:validator binding="#{row.bindings.Remarks.validator}"/>
                                                             </af:inputText>
                                                         </af:column>
@@ -133,7 +133,8 @@
                                                                                 label="#{row.bindings.Ast.label}"
                                                                                 required="#{bindings.TblLibCategoryView1.hints.Ast.mandatory}"
                                                                                 shortDesc="#{bindings.TblLibCategoryView1.hints.Ast.tooltip}"
-                                                                                id="soc1">
+                                                                                id="soc1"
+                                                                                contentStyle="text-align: left">
                                                                 <f:selectItems value="#{row.bindings.Ast.items}"
                                                                                id="si1"/>
                                                                 <f:validator binding="#{row.bindings.Ast.validator}"/>
@@ -339,7 +340,7 @@
                                                       columns="#{bindings.TblLibAuthorView1.hints.Name.displayWidth}"
                                                       maximumLength="#{bindings.TblLibAuthorView1.hints.Name.precision}"
                                                       shortDesc="#{bindings.TblLibAuthorView1.hints.Name.tooltip}"
-                                                      id="it17">
+                                                      id="it17" contentStyle="text-align: left">
                                             <f:validator binding="#{row.bindings.Name.validator}"/>
                                         </af:inputText>
                                     </af:column>
@@ -357,7 +358,7 @@
                                                       columns="#{bindings.TblLibAuthorView1.hints.Remarks.displayWidth}"
                                                       maximumLength="#{bindings.TblLibAuthorView1.hints.Remarks.precision}"
                                                       shortDesc="#{bindings.TblLibAuthorView1.hints.Remarks.tooltip}"
-                                                      id="it18">
+                                                      id="it18" contentStyle="text-align: left">
                                             <f:validator binding="#{row.bindings.Remarks.validator}"/>
                                         </af:inputText>
                                     </af:column>
@@ -373,7 +374,7 @@
                                                             label="#{row.bindings.Ast.label}"
                                                             required="#{bindings.TblLibAuthorView1.hints.Ast.mandatory}"
                                                             shortDesc="#{bindings.TblLibAuthorView1.hints.Ast.tooltip}"
-                                                            id="soc3">
+                                                            id="soc3" contentStyle="text-align: left">
                                             <f:selectItems value="#{row.bindings.Ast.items}" id="si3"/>
                                             <f:validator binding="#{row.bindings.Ast.validator}"/>
                                         </af:selectOneChoice>
@@ -438,7 +439,7 @@
                                                       columns="#{bindings.TblLibPublisherView1.hints.Name.displayWidth}"
                                                       maximumLength="#{bindings.TblLibPublisherView1.hints.Name.precision}"
                                                       shortDesc="#{bindings.TblLibPublisherView1.hints.Name.tooltip}"
-                                                      id="it20">
+                                                      id="it20" contentStyle="text-align: left">
                                             <f:validator binding="#{row.bindings.Name.validator}"/>
                                         </af:inputText>
                                     </af:column>
@@ -457,7 +458,7 @@
                                                       columns="#{bindings.TblLibPublisherView1.hints.Remarks.displayWidth}"
                                                       maximumLength="#{bindings.TblLibPublisherView1.hints.Remarks.precision}"
                                                       shortDesc="#{bindings.TblLibPublisherView1.hints.Remarks.tooltip}"
-                                                      id="it21">
+                                                      id="it21" contentStyle="text-align: left">
                                             <f:validator binding="#{row.bindings.Remarks.validator}"/>
                                         </af:inputText>
                                     </af:column>
@@ -473,7 +474,7 @@
                                                             label="#{row.bindings.Ast.label}"
                                                             required="#{bindings.TblLibPublisherView1.hints.Ast.mandatory}"
                                                             shortDesc="#{bindings.TblLibPublisherView1.hints.Ast.tooltip}"
-                                                            id="soc4">
+                                                            id="soc4" contentStyle="text-align: left">
                                             <f:selectItems value="#{row.bindings.Ast.items}" id="si4"/>
                                             <f:validator binding="#{row.bindings.Ast.validator}"/>
                                         </af:selectOneChoice>
@@ -540,7 +541,7 @@
                                                       columns="#{bindings.TblLibLanguageView1.hints.Name.displayWidth}"
                                                       maximumLength="#{bindings.TblLibLanguageView1.hints.Name.precision}"
                                                       shortDesc="#{bindings.TblLibLanguageView1.hints.Name.tooltip}"
-                                                      id="it23">
+                                                      id="it23" contentStyle="text-align: left">
                                             <f:validator binding="#{row.bindings.Name.validator}"/>
                                         </af:inputText>
                                     </af:column>
@@ -559,7 +560,7 @@
                                                       columns="#{bindings.TblLibLanguageView1.hints.Remarks.displayWidth}"
                                                       maximumLength="#{bindings.TblLibLanguageView1.hints.Remarks.precision}"
                                                       shortDesc="#{bindings.TblLibLanguageView1.hints.Remarks.tooltip}"
-                                                      id="it24">
+                                                      id="it24" contentStyle="text-align: left">
                                             <f:validator binding="#{row.bindings.Remarks.validator}"/>
                                         </af:inputText>
                                     </af:column>
@@ -575,7 +576,7 @@
                                                             label="#{row.bindings.Ast.label}"
                                                             required="#{bindings.TblLibLanguageView1.hints.Ast.mandatory}"
                                                             shortDesc="#{bindings.TblLibLanguageView1.hints.Ast.tooltip}"
-                                                            id="soc5">
+                                                            id="soc5" contentStyle="text-align: left">
                                             <f:selectItems value="#{row.bindings.Ast.items}" id="si5"/>
                                             <f:validator binding="#{row.bindings.Ast.validator}"/>
                                         </af:selectOneChoice>

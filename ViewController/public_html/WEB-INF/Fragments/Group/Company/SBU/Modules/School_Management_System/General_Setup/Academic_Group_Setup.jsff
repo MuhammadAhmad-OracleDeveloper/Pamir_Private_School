@@ -76,7 +76,8 @@
                                   required="#{bindings.TblAcadGroupView1.hints.Name.mandatory}"
                                   columns="#{bindings.TblAcadGroupView1.hints.Name.displayWidth}"
                                   maximumLength="#{bindings.TblAcadGroupView1.hints.Name.precision}"
-                                  shortDesc="#{bindings.TblAcadGroupView1.hints.Name.tooltip}" id="it2">
+                                  shortDesc="#{bindings.TblAcadGroupView1.hints.Name.tooltip}" id="it2"
+                                  contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -89,7 +90,8 @@
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblAcadGroupView1.hints.Ast.mandatory}"
-                                        shortDesc="#{bindings.TblAcadGroupView1.hints.Ast.tooltip}" id="soc1">
+                                        shortDesc="#{bindings.TblAcadGroupView1.hints.Ast.tooltip}" id="soc1"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>

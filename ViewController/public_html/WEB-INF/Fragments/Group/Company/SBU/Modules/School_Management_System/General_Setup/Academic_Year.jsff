@@ -65,7 +65,8 @@
                                   required="#{bindings.TblAcadYearView1.hints.Name.mandatory}"
                                   columns="#{bindings.TblAcadYearView1.hints.Name.displayWidth}"
                                   maximumLength="#{bindings.TblAcadYearView1.hints.Name.precision}"
-                                  shortDesc="#{bindings.TblAcadYearView1.hints.Name.tooltip}" id="it2">
+                                  shortDesc="#{bindings.TblAcadYearView1.hints.Name.tooltip}" id="it2"
+                                  contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -82,7 +83,7 @@
                                   required="#{bindings.TblAcadYearView1.hints.StartDate.mandatory}"
                                   columns="#{bindings.TblAcadYearView1.hints.StartDate.displayWidth}"
                                   shortDesc="#{bindings.TblAcadYearView1.hints.StartDate.tooltip}" id="id2"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.StartDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblAcadYearView1.hints.StartDate.format}"/>
                     </af:inputDate>
@@ -100,7 +101,7 @@
                                   required="#{bindings.TblAcadYearView1.hints.EndDate.mandatory}"
                                   columns="#{bindings.TblAcadYearView1.hints.EndDate.displayWidth}"
                                   shortDesc="#{bindings.TblAcadYearView1.hints.EndDate.tooltip}" id="id5"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.EndDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblAcadYearView1.hints.EndDate.format}"/>
                     </af:inputDate>
@@ -114,7 +115,8 @@
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblAcadYearView1.hints.Ast.mandatory}"
-                                        shortDesc="#{bindings.TblAcadYearView1.hints.Ast.tooltip}" id="soc1">
+                                        shortDesc="#{bindings.TblAcadYearView1.hints.Ast.tooltip}" id="soc1"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>

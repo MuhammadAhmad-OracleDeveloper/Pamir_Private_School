@@ -44,7 +44,7 @@
                                   columns="#{bindings.TblGradeView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblGradeView1.hints.Id.precision}"
                                   shortDesc="#{bindings.TblGradeView1.hints.Id.tooltip}" id="it1"
-                                  readOnly="true"
+                                  disabled="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblGradeView1.hints.Id.format}"/>
@@ -60,7 +60,8 @@
                     <af:selectOneChoice value="#{row.bindings.AcadGroupId.inputValue}"
                                         label="#{row.bindings.AcadGroupId.label}"
                                         required="#{bindings.TblGradeView1.hints.AcadGroupId.mandatory}"
-                                        shortDesc="#{bindings.TblGradeView1.hints.AcadGroupId.tooltip}" id="soc1" readOnly="true">
+                                        shortDesc="#{bindings.TblGradeView1.hints.AcadGroupId.tooltip}" id="soc1" disabled="true"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.AcadGroupId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.AcadGroupId.validator}"/>
                     </af:selectOneChoice>
@@ -77,7 +78,8 @@
                                   required="#{bindings.TblGradeView1.hints.GradeName.mandatory}"
                                   columns="#{bindings.TblGradeView1.hints.GradeName.displayWidth}"
                                   maximumLength="#{bindings.TblGradeView1.hints.GradeName.precision}"
-                                  shortDesc="#{bindings.TblGradeView1.hints.GradeName.tooltip}" id="it2" readOnly="true">
+                                  shortDesc="#{bindings.TblGradeView1.hints.GradeName.tooltip}" id="it2" disabled="true"
+                                  contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.GradeName.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -93,7 +95,8 @@
                                   required="#{bindings.TblGradeView1.hints.KitName.mandatory}"
                                   columns="#{bindings.TblGradeView1.hints.KitName.displayWidth}"
                                   maximumLength="#{bindings.TblGradeView1.hints.KitName.precision}"
-                                  shortDesc="#{bindings.TblGradeView1.hints.KitName.tooltip}" id="it3" readOnly="true">
+                                  shortDesc="#{bindings.TblGradeView1.hints.KitName.tooltip}" id="it3" disabled="true"
+                                  contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.KitName.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -106,7 +109,8 @@
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblGradeView1.hints.Ast.mandatory}"
-                                        shortDesc="#{bindings.TblGradeView1.hints.Ast.tooltip}" id="soc2" readOnly="true">
+                                        shortDesc="#{bindings.TblGradeView1.hints.Ast.tooltip}" id="soc2" disabled="true"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>
@@ -147,7 +151,7 @@
                                   columns="#{bindings.TblEvalWeightageView2.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblEvalWeightageView2.hints.Id.precision}"
                                   shortDesc="#{bindings.TblEvalWeightageView2.hints.Id.tooltip}" id="it4"
-                                  readOnly="true"
+                                  disabled="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false"
@@ -163,7 +167,8 @@
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.TermId.inputValue}" label="#{row.bindings.TermId.label}"
                                         required="#{bindings.TblEvalWeightageView2.hints.TermId.mandatory}"
-                                        shortDesc="#{bindings.TblEvalWeightageView2.hints.TermId.tooltip}" id="soc4">
+                                        shortDesc="#{bindings.TblEvalWeightageView2.hints.TermId.tooltip}" id="soc4"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.TermId.items}" id="si4"/>
                       <f:validator binding="#{row.bindings.TermId.validator}"/>
                     </af:selectOneChoice>
@@ -180,7 +185,7 @@
                                         label="#{row.bindings.LookupEvaluation.label}"
                                         required="#{bindings.TblEvalWeightageView2.hints.LookupEvaluation.mandatory}"
                                         shortDesc="#{bindings.TblEvalWeightageView2.hints.LookupEvaluation.tooltip}"
-                                        id="soc5">
+                                        id="soc5" contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.LookupEvaluation.items}" id="si5"/>
                       <f:validator binding="#{row.bindings.LookupEvaluation.validator}"/>
                     </af:selectOneChoice>
@@ -193,7 +198,8 @@
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.EvaType.inputValue}" label="#{row.bindings.EvaType.label}"
                                         required="#{bindings.TblEvalWeightageView2.hints.EvaType.mandatory}"
-                                        shortDesc="#{bindings.TblEvalWeightageView2.hints.EvaType.tooltip}" id="soc8">
+                                        shortDesc="#{bindings.TblEvalWeightageView2.hints.EvaType.tooltip}" id="soc8"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.EvaType.items}" id="si8"/>
                       <f:validator binding="#{row.bindings.EvaType.validator}"/>
                     </af:selectOneChoice>
@@ -209,7 +215,7 @@
                                         label="#{row.bindings.LookupDTopic1.label}"
                                         required="#{bindings.TblEvalWeightageView2.hints.LookupDTopic1.mandatory}"
                                         shortDesc="#{bindings.TblEvalWeightageView2.hints.LookupDTopic1.tooltip}"
-                                        id="soc3">
+                                        id="soc3" contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.LookupDTopic1.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.LookupDTopic1.validator}"/>
                     </af:selectOneChoice>
@@ -228,7 +234,7 @@
                                   columns="#{bindings.TblEvalWeightageView2.hints.Topic1Marks.displayWidth}"
                                   maximumLength="#{bindings.TblEvalWeightageView2.hints.Topic1Marks.precision}"
                                   shortDesc="#{bindings.TblEvalWeightageView2.hints.Topic1Marks.tooltip}" id="it7"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.Topic1Marks.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblEvalWeightageView2.hints.Topic1Marks.format}"/>
@@ -244,7 +250,7 @@
                                         label="#{row.bindings.LookupDTopic2.label}"
                                         required="#{bindings.TblEvalWeightageView2.hints.LookupDTopic2.mandatory}"
                                         shortDesc="#{bindings.TblEvalWeightageView2.hints.LookupDTopic2.tooltip}"
-                                        id="soc7">
+                                        id="soc7" contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.LookupDTopic2.items}" id="si7"/>
                       <f:validator binding="#{row.bindings.LookupDTopic2.validator}"/>
                     </af:selectOneChoice>
@@ -263,7 +269,7 @@
                                   columns="#{bindings.TblEvalWeightageView2.hints.Topic2Marks.displayWidth}"
                                   maximumLength="#{bindings.TblEvalWeightageView2.hints.Topic2Marks.precision}"
                                   shortDesc="#{bindings.TblEvalWeightageView2.hints.Topic2Marks.tooltip}" id="it9"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.Topic2Marks.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblEvalWeightageView2.hints.Topic2Marks.format}"/>
@@ -284,7 +290,7 @@
                                   columns="#{bindings.TblEvalWeightageView2.hints.TotalMarks.displayWidth}"
                                   maximumLength="#{bindings.TblEvalWeightageView2.hints.TotalMarks.precision}"
                                   shortDesc="#{bindings.TblEvalWeightageView2.hints.TotalMarks.tooltip}" id="it11"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.TotalMarks.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblEvalWeightageView2.hints.TotalMarks.format}"/>
@@ -299,7 +305,8 @@
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblEvalWeightageView2.hints.Ast.mandatory}"
-                                        shortDesc="#{bindings.TblEvalWeightageView2.hints.Ast.tooltip}" id="soc6">
+                                        shortDesc="#{bindings.TblEvalWeightageView2.hints.Ast.tooltip}" id="soc6"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si6"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>

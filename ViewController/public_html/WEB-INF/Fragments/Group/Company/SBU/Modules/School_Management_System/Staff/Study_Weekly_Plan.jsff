@@ -56,7 +56,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStudyWeekPlanMasterView1.hints.AcadYearId.name}"
                              filterable="true" sortable="true"
-                             headerText="Academic Year" id="c3" align="right">
+                             headerText="Academic Year" id="c3" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.AcadYearId}"
                                    id="it2" placeholder="Search ">
@@ -66,14 +66,14 @@
                                         label="#{row.bindings.AcadYearId.label}"
                                         required="#{bindings.TblStudyWeekPlanMasterView1.hints.AcadYearId.mandatory}"
                                         shortDesc="#{bindings.TblStudyWeekPlanMasterView1.hints.AcadYearId.tooltip}"
-                                        id="soc1">
+                                        id="soc1" contentStyle="text-align: right">
                       <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStudyWeekPlanMasterView1.hints.Dated.name}" filterable="true"
                              sortable="true" headerText="Date"
-                             id="c4" align="right">
+                             id="c4" align="left">
                              
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblStudyWeekPlanMasterView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
@@ -86,7 +86,7 @@
                                   required="#{bindings.TblStudyWeekPlanMasterView1.hints.Dated.mandatory}"
                                   columns="#{bindings.TblStudyWeekPlanMasterView1.hints.Dated.displayWidth}"
                                   shortDesc="#{bindings.TblStudyWeekPlanMasterView1.hints.Dated.tooltip}" id="id2"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblStudyWeekPlanMasterView1.hints.Dated.format}"/>
                     </af:inputDate>
@@ -102,7 +102,7 @@
                     <af:selectOneChoice value="#{row.bindings.StaffId.inputValue}" label="#{row.bindings.StaffId.label}"
                                         required="#{bindings.TblStudyWeekPlanMasterView1.hints.StaffId.mandatory}"
                                         shortDesc="#{bindings.TblStudyWeekPlanMasterView1.hints.StaffId.tooltip}"
-                                        id="soc2">
+                                        id="soc2" contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.StaffId.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.StaffId.validator}"/>
                     </af:selectOneChoice>
@@ -135,7 +135,7 @@
                                         label="#{row.bindings.SubjectId.label}"
                                         required="#{bindings.TblStudyWeekPlanMasterView1.hints.SubjectId.mandatory}"
                                         shortDesc="#{bindings.TblStudyWeekPlanMasterView1.hints.SubjectId.tooltip}"
-                                        id="soc4">
+                                        id="soc4" contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.SubjectId.items}" id="si4"/>
                       <f:validator binding="#{row.bindings.SubjectId.validator}"/>
                     </af:selectOneChoice>
@@ -153,7 +153,8 @@
                                   required="#{bindings.TblStudyWeekPlanMasterView1.hints.Remarks.mandatory}"
                                   columns="#{bindings.TblStudyWeekPlanMasterView1.hints.Remarks.displayWidth}"
                                   maximumLength="#{bindings.TblStudyWeekPlanMasterView1.hints.Remarks.precision}"
-                                  shortDesc="#{bindings.TblStudyWeekPlanMasterView1.hints.Remarks.tooltip}" id="it3">
+                                  shortDesc="#{bindings.TblStudyWeekPlanMasterView1.hints.Remarks.tooltip}" id="it3"
+                                  contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.Remarks.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -194,7 +195,7 @@
                           >
                   <af:column sortProperty="#{bindings.TblStudyWeekPlanDetailView2.hints.Id.name}" filterable="true"
                              sortable="true" headerText="Study Weekly Plan Detail ID"
-                             id="c2" align="right" width="80">
+                             id="c2" align="right" width="80" visible="false">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="it13" placeholder="Search ">
@@ -215,7 +216,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStudyWeekPlanDetailView2.hints.Dated.name}" filterable="true"
                              sortable="true" headerText="Date"
-                             id="c9" align="right">
+                             id="c9" align="left">
                              
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblStudyWeekPlanDetailView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
@@ -228,7 +229,7 @@
                                   required="#{bindings.TblStudyWeekPlanDetailView2.hints.Dated.mandatory}"
                                   columns="#{bindings.TblStudyWeekPlanDetailView2.hints.Dated.displayWidth}"
                                   shortDesc="#{bindings.TblStudyWeekPlanDetailView2.hints.Dated.tooltip}" id="id5"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblStudyWeekPlanDetailView2.hints.Dated.format}"/>
                     </af:inputDate>
@@ -246,13 +247,14 @@
                                   required="#{bindings.TblStudyWeekPlanDetailView2.hints.WeekLesson.mandatory}"
                                   columns="#{bindings.TblStudyWeekPlanDetailView2.hints.WeekLesson.displayWidth}"
                                   maximumLength="#{bindings.TblStudyWeekPlanDetailView2.hints.WeekLesson.precision}"
-                                  shortDesc="#{bindings.TblStudyWeekPlanDetailView2.hints.WeekLesson.tooltip}" id="it9">
+                                  shortDesc="#{bindings.TblStudyWeekPlanDetailView2.hints.WeekLesson.tooltip}" id="it9"
+                                  contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.WeekLesson.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStudyWeekPlanDetailView2.hints.WeekPages.name}"
                              filterable="true" sortable="true"
-                             headerText="Week Pages" id="c11" width="170" align="right">
+                             headerText="Week Pages" id="c11" width="170" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.WeekPages}"
                                    id="it15" placeholder="Search ">
@@ -264,7 +266,7 @@
                                   columns="#{bindings.TblStudyWeekPlanDetailView2.hints.WeekPages.displayWidth}"
                                   maximumLength="#{bindings.TblStudyWeekPlanDetailView2.hints.WeekPages.precision}"
                                   shortDesc="#{bindings.TblStudyWeekPlanDetailView2.hints.WeekPages.tooltip}" id="it10"
-                                  inlineStyle="text-align:right;">
+                                  inlineStyle="text-align:right;" contentStyle="text-align: right">
                       <f:validator binding="#{row.bindings.WeekPages.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -281,7 +283,8 @@
                                   required="#{bindings.TblStudyWeekPlanDetailView2.hints.HomeWork.mandatory}"
                                   columns="#{bindings.TblStudyWeekPlanDetailView2.hints.HomeWork.displayWidth}"
                                   maximumLength="#{bindings.TblStudyWeekPlanDetailView2.hints.HomeWork.precision}"
-                                  shortDesc="#{bindings.TblStudyWeekPlanDetailView2.hints.HomeWork.tooltip}" id="it11">
+                                  shortDesc="#{bindings.TblStudyWeekPlanDetailView2.hints.HomeWork.tooltip}" id="it11"
+                                  contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.HomeWork.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -299,7 +302,7 @@
                                   columns="#{bindings.TblStudyWeekPlanDetailView2.hints.WeekAssessment.displayWidth}"
                                   maximumLength="#{bindings.TblStudyWeekPlanDetailView2.hints.WeekAssessment.precision}"
                                   shortDesc="#{bindings.TblStudyWeekPlanDetailView2.hints.WeekAssessment.tooltip}"
-                                  id="it12">
+                                  id="it12" contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.WeekAssessment.validator}"/>
                     </af:inputText>
                   </af:column>

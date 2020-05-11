@@ -55,7 +55,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLibBooksReturnView1.hints.Dated.name}" filterable="true"
-                             sortable="true" headerText="Date" id="c2" align="right">
+                             sortable="true" headerText="Date" id="c2" align="left">
                     <f:facet name="filter">
                     
                       <af:inputDate value="#{bindings.TblLibBooksReturnView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
@@ -68,7 +68,7 @@
                                   required="#{bindings.TblLibBooksReturnView1.hints.Dated.mandatory}"
                                   columns="#{bindings.TblLibBooksReturnView1.hints.Dated.displayWidth}"
                                   shortDesc="#{bindings.TblLibBooksReturnView1.hints.Dated.tooltip}" id="id2"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblLibBooksReturnView1.hints.Dated.format}"/>
                     </af:inputDate>
@@ -84,14 +84,14 @@
                                         label="#{row.bindings.LibBooksIssueDetailId.label}"
                                         required="#{bindings.TblLibBooksReturnView1.hints.LibBooksIssueDetailId.mandatory}"
                                         shortDesc="#{bindings.TblLibBooksReturnView1.hints.LibBooksIssueDetailId.tooltip}"
-                                        id="soc2">
+                                        id="soc2" contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.LibBooksIssueDetailId.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.LibBooksIssueDetailId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLibBooksReturnView1.hints.FineAmount.name}" filterable="true"
                              sortable="true" headerText="Fine Amount"
-                             id="c4" align="right">
+                             id="c4" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.FineAmount}"
                                    id="it5" placeholder="Search ">
@@ -118,7 +118,8 @@
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblLibBooksReturnView1.hints.Ast.mandatory}"
-                                        shortDesc="#{bindings.TblLibBooksReturnView1.hints.Ast.tooltip}" id="soc1">
+                                        shortDesc="#{bindings.TblLibBooksReturnView1.hints.Ast.tooltip}" id="soc1"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>

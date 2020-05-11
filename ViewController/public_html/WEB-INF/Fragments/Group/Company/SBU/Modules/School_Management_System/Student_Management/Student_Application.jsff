@@ -61,7 +61,8 @@
                     <af:selectOneChoice value="#{row.bindings.StdRegId.inputValue}"
                                         label="#{row.bindings.StdRegId.label}"
                                         required="#{bindings.TblStdApplView1.hints.StdRegId.mandatory}"
-                                        shortDesc="#{bindings.TblStdApplView1.hints.StdRegId.tooltip}" id="soc1">
+                                        shortDesc="#{bindings.TblStdApplView1.hints.StdRegId.tooltip}" id="soc1"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.StdRegId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.StdRegId.validator}"/>
                     </af:selectOneChoice>
@@ -77,7 +78,8 @@
                     <af:selectOneChoice value="#{row.bindings.FeeGenDetailId.inputValue}"
                                         label="#{row.bindings.FeeGenDetailId.label}"
                                         required="#{bindings.TblStdApplView1.hints.FeeGenDetailId.mandatory}"
-                                        shortDesc="#{bindings.TblStdApplView1.hints.FeeGenDetailId.tooltip}" id="soc3">
+                                        shortDesc="#{bindings.TblStdApplView1.hints.FeeGenDetailId.tooltip}" id="soc3"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.FeeGenDetailId.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.FeeGenDetailId.validator}"/>
                     </af:selectOneChoice>
@@ -95,7 +97,7 @@
                                   required="#{bindings.TblStdApplView1.hints.Dated.mandatory}"
                                   columns="#{bindings.TblStdApplView1.hints.Dated.displayWidth}"
                                   shortDesc="#{bindings.TblStdApplView1.hints.Dated.tooltip}" id="id2"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblStdApplView1.hints.Dated.format}"/>
                     </af:inputDate>
@@ -110,14 +112,15 @@
                     <af:selectOneChoice value="#{row.bindings.ApplType.inputValue}"
                                         label="#{row.bindings.ApplType.label}"
                                         required="#{bindings.TblStdApplView1.hints.ApplType.mandatory}"
-                                        shortDesc="#{bindings.TblStdApplView1.hints.ApplType.tooltip}" id="soc2">
+                                        shortDesc="#{bindings.TblStdApplView1.hints.ApplType.tooltip}" id="soc2"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.ApplType.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.ApplType.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   
                   <af:column sortProperty="#{bindings.TblStdApplView1.hints.Amount.name}" filterable="true"
-                             sortable="true" headerText="Amount" id="c6" align="right">
+                             sortable="true" headerText="Amount" id="c6" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Amount}"
                                    id="it9" placeholder="Search ">
@@ -129,7 +132,7 @@
                                   columns="#{bindings.TblStdApplView1.hints.Amount.displayWidth}"
                                   maximumLength="#{bindings.TblStdApplView1.hints.Amount.precision}"
                                   shortDesc="#{bindings.TblStdApplView1.hints.Amount.tooltip}" id="it2"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.Amount.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblStdApplView1.hints.Amount.format}"/>
                     </af:inputText>
@@ -146,7 +149,8 @@
                                   required="#{bindings.TblStdApplView1.hints.ApplStatus.mandatory}"
                                   columns="#{bindings.TblStdApplView1.hints.ApplStatus.displayWidth}"
                                   maximumLength="#{bindings.TblStdApplView1.hints.ApplStatus.precision}"
-                                  shortDesc="#{bindings.TblStdApplView1.hints.ApplStatus.tooltip}" id="it3">
+                                  shortDesc="#{bindings.TblStdApplView1.hints.ApplStatus.tooltip}" id="it3"
+                                  contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.ApplStatus.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -163,7 +167,7 @@
                                   required="#{bindings.TblStdApplView1.hints.FromDate.mandatory}"
                                   columns="#{bindings.TblStdApplView1.hints.FromDate.displayWidth}"
                                   shortDesc="#{bindings.TblStdApplView1.hints.FromDate.tooltip}" id="id7"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.FromDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblStdApplView1.hints.FromDate.format}"/>
                     </af:inputDate>
@@ -181,7 +185,7 @@
                                   required="#{bindings.TblStdApplView1.hints.ToDate.mandatory}"
                                   columns="#{bindings.TblStdApplView1.hints.ToDate.displayWidth}"
                                   shortDesc="#{bindings.TblStdApplView1.hints.ToDate.tooltip}" id="id6"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.ToDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblStdApplView1.hints.ToDate.format}"/>
                     </af:inputDate>
@@ -198,7 +202,8 @@
                                   required="#{bindings.TblStdApplView1.hints.ApplReason.mandatory}"
                                   columns="#{bindings.TblStdApplView1.hints.ApplReason.displayWidth}"
                                   maximumLength="#{bindings.TblStdApplView1.hints.ApplReason.precision}"
-                                  shortDesc="#{bindings.TblStdApplView1.hints.ApplReason.tooltip}" id="it4">
+                                  shortDesc="#{bindings.TblStdApplView1.hints.ApplReason.tooltip}" id="it4"
+                                  contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.ApplReason.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -214,7 +219,8 @@
                                   required="#{bindings.TblStdApplView1.hints.MgtRemarks.mandatory}"
                                   columns="#{bindings.TblStdApplView1.hints.MgtRemarks.displayWidth}"
                                   maximumLength="#{bindings.TblStdApplView1.hints.MgtRemarks.precision}"
-                                  shortDesc="#{bindings.TblStdApplView1.hints.MgtRemarks.tooltip}" id="it5">
+                                  shortDesc="#{bindings.TblStdApplView1.hints.MgtRemarks.tooltip}" id="it5"
+                                  contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.MgtRemarks.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -230,7 +236,8 @@
                                   required="#{bindings.TblStdApplView1.hints.PrincRemarks.mandatory}"
                                   columns="#{bindings.TblStdApplView1.hints.PrincRemarks.displayWidth}"
                                   maximumLength="#{bindings.TblStdApplView1.hints.PrincRemarks.precision}"
-                                  shortDesc="#{bindings.TblStdApplView1.hints.PrincRemarks.tooltip}" id="it6">
+                                  shortDesc="#{bindings.TblStdApplView1.hints.PrincRemarks.tooltip}" id="it6"
+                                  contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.PrincRemarks.validator}"/>
                     </af:inputText>
                   </af:column>

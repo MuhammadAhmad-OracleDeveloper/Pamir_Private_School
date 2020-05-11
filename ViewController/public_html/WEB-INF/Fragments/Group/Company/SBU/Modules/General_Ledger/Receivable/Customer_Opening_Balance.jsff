@@ -36,7 +36,7 @@
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncId.name}" filterable="true"
                              sortable="true" headerText="ID"
-                             id="c1" align="right">
+                             id="c1" align="right" visible="false">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.CustOpenBlncId}"
                                    id="id4" placeholder="Search ">
@@ -89,7 +89,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncDr.name}" filterable="true"
                              sortable="true" headerText="Dr"
-                             id="c4" align="right">
+                             id="c4" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.CustOpenBlncDr}"
                                    id="it5" placeholder="Search ">
@@ -108,7 +108,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncCr.name}" filterable="true"
                              sortable="true" headerText="Cr"
-                             id="c5" align="right">
+                             id="c5" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.CustOpenBlncCr}"
                                    id="it6" placeholder="Search ">

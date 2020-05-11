@@ -64,13 +64,13 @@
                                   required="#{bindings.TblVatView1.hints.Dated.mandatory}"
                                   columns="#{bindings.TblVatView1.hints.Dated.displayWidth}"
                                   shortDesc="#{bindings.TblVatView1.hints.Dated.tooltip}" id="id2"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblVatView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblVatView1.hints.VatPerc.name}" filterable="true" sortable="true"
-                             headerText="VAT Percentage" id="c3" align="right" width="120">
+                             headerText="VAT Percentage" id="c3" align="left" width="120">
                                <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.VatPerc}"
        id="it3" placeholder="Search ">
@@ -82,7 +82,7 @@
                                   columns="#{bindings.TblVatView1.hints.VatPerc.displayWidth}"
                                   maximumLength="#{bindings.TblVatView1.hints.VatPerc.precision}"
                                   shortDesc="#{bindings.TblVatView1.hints.VatPerc.tooltip}" id="it2"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.VatPerc.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblVatView1.hints.VatPerc.format}"/>
                     </af:inputText>
@@ -96,7 +96,8 @@
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblVatView1.hints.Ast.mandatory}"
-                                        shortDesc="#{bindings.TblVatView1.hints.Ast.tooltip}" id="soc1">
+                                        shortDesc="#{bindings.TblVatView1.hints.Ast.tooltip}" id="soc1"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>

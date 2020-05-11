@@ -43,7 +43,7 @@
                     <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
                                         required="#{bindings.TblSectionStaffView3.hints.GradeId.mandatory}"
                                         shortDesc="#{bindings.TblSectionStaffView3.hints.GradeId.tooltip}" id="soc1"
-                                        readOnly="true">
+                                        disabled="true" contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.GradeId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.GradeId.validator}"/>
                     </af:selectOneChoice>
@@ -59,7 +59,7 @@
                                         label="#{row.bindings.SectionId.label}"
                                         required="#{bindings.TblSectionStaffView3.hints.SectionId.mandatory}"
                                         shortDesc="#{bindings.TblSectionStaffView3.hints.SectionId.tooltip}" id="soc2"
-                                        readOnly="true">
+                                        disabled="true" contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.SectionId.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.SectionId.validator}"/>
                     </af:selectOneChoice>
@@ -100,7 +100,7 @@
                                   required="#{bindings.TblSectionStaffView31.hints.Id.mandatory}"
                                   columns="#{bindings.TblSectionStaffView31.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblSectionStaffView31.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblSectionStaffView31.hints.Id.tooltip}" id="it1" readOnly="true"
+                                  shortDesc="#{bindings.TblSectionStaffView31.hints.Id.tooltip}" id="it1" disabled="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false"
@@ -116,7 +116,8 @@
                              </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Type.inputValue}" label="#{row.bindings.Type.label}"
                                         required="#{bindings.TblSectionStaffView31.hints.Type.mandatory}"
-                                        shortDesc="#{bindings.TblSectionStaffView31.hints.Type.tooltip}" id="soc3">
+                                        shortDesc="#{bindings.TblSectionStaffView31.hints.Type.tooltip}" id="soc3"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.Type.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.Type.validator}"/>
                     </af:selectOneChoice>
@@ -130,7 +131,8 @@
                              </f:facet>
                     <af:selectOneChoice value="#{row.bindings.StaffId.inputValue}" label="#{row.bindings.StaffId.label}"
                                         required="#{bindings.TblSectionStaffView31.hints.StaffId.mandatory}"
-                                        shortDesc="#{bindings.TblSectionStaffView31.hints.StaffId.tooltip}" id="soc4">
+                                        shortDesc="#{bindings.TblSectionStaffView31.hints.StaffId.tooltip}" id="soc4"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.StaffId.items}" id="si4"/>
                       <f:validator binding="#{row.bindings.StaffId.validator}"/>
                     </af:selectOneChoice>
@@ -147,7 +149,7 @@
                                         label="#{row.bindings.StaffSubjectId.label}"
                                         required="#{bindings.TblSectionStaffView31.hints.StaffSubjectId.mandatory}"
                                         shortDesc="#{bindings.TblSectionStaffView31.hints.StaffSubjectId.tooltip}"
-                                        id="soc5">
+                                        id="soc5" contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.StaffSubjectId.items}" id="si5"/>
                       <f:validator binding="#{row.bindings.StaffSubjectId.validator}"/>
                     </af:selectOneChoice>
@@ -161,7 +163,8 @@
                              </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblSectionStaffView31.hints.Ast.mandatory}"
-                                        shortDesc="#{bindings.TblSectionStaffView31.hints.Ast.tooltip}" id="soc6">
+                                        shortDesc="#{bindings.TblSectionStaffView31.hints.Ast.tooltip}" id="soc6"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si6"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>

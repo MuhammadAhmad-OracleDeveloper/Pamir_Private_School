@@ -62,7 +62,8 @@
                     <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
                                         label="#{row.bindings.AcadYearId.label}"
                                         required="#{bindings.TblAgePolicyView1.hints.AcadYearId.mandatory}"
-                                        shortDesc="#{bindings.TblAgePolicyView1.hints.AcadYearId.tooltip}" id="soc1">
+                                        shortDesc="#{bindings.TblAgePolicyView1.hints.AcadYearId.tooltip}" id="soc1"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
                     </af:selectOneChoice>
@@ -80,7 +81,8 @@
                                   label="#{bindings.TblAgePolicyView1.hints.Dated.label}"
                                   required="#{bindings.TblAgePolicyView1.hints.Dated.mandatory}"
                                   columns="#{bindings.TblAgePolicyView1.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.TblAgePolicyView1.hints.Dated.tooltip}" id="id2" contentStyle='text-align: center'>
+                                  shortDesc="#{bindings.TblAgePolicyView1.hints.Dated.tooltip}" id="id2"
+                                  contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblAgePolicyView1.hints.Dated.format}"/>
                     </af:inputDate>
@@ -94,7 +96,8 @@
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
                                         required="#{bindings.TblAgePolicyView1.hints.GradeId.mandatory}"
-                                        shortDesc="#{bindings.TblAgePolicyView1.hints.GradeId.tooltip}" id="soc2">
+                                        shortDesc="#{bindings.TblAgePolicyView1.hints.GradeId.tooltip}" id="soc2"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.GradeId.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.GradeId.validator}"/>
                     </af:selectOneChoice>
@@ -147,7 +150,8 @@
                                   required="#{bindings.TblAgePolicyView1.hints.RefDocNo.mandatory}"
                                   columns="#{bindings.TblAgePolicyView1.hints.RefDocNo.displayWidth}"
                                   maximumLength="#{bindings.TblAgePolicyView1.hints.RefDocNo.precision}"
-                                  shortDesc="#{bindings.TblAgePolicyView1.hints.RefDocNo.tooltip}" id="it4" contentStyle='text-align: center'>
+                                  shortDesc="#{bindings.TblAgePolicyView1.hints.RefDocNo.tooltip}" id="it4"
+                                  contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.RefDocNo.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -160,7 +164,8 @@
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblAgePolicyView1.hints.Ast.mandatory}"
-                                        shortDesc="#{bindings.TblAgePolicyView1.hints.Ast.tooltip}" id="soc3">
+                                        shortDesc="#{bindings.TblAgePolicyView1.hints.Ast.tooltip}" id="soc3"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>

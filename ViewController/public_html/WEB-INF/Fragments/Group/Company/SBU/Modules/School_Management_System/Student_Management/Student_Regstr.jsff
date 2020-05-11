@@ -66,7 +66,7 @@
                                   required="#{bindings.TblStdRegView1.hints.RegDate.mandatory}"
                                   columns="#{bindings.TblStdRegView1.hints.RegDate.displayWidth}"
                                   shortDesc="#{bindings.TblStdRegView1.hints.RegDate.tooltip}" id="id2"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.RegDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblStdRegView1.hints.RegDate.format}"/>
                     </af:inputDate>
@@ -81,13 +81,14 @@
                     <af:selectOneChoice value="#{row.bindings.StdEnqId.inputValue}"
                                         label="#{row.bindings.StdEnqId.label}"
                                         required="#{bindings.TblStdRegView1.hints.StdEnqId.mandatory}"
-                                        shortDesc="#{bindings.TblStdRegView1.hints.StdEnqId.tooltip}" id="soc1">
+                                        shortDesc="#{bindings.TblStdRegView1.hints.StdEnqId.tooltip}" id="soc1"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.StdEnqId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.StdEnqId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdRegView1.hints.EnrollNo.name}" filterable="true"
-                             sortable="true" headerText="Enroll No." id="c4" align="right">
+                             sortable="true" headerText="Enroll No." id="c4" align="left">
                       <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.EnrollNo}"
        id="it28" placeholder="Search ">
@@ -99,12 +100,12 @@
                                   columns="#{bindings.TblStdRegView1.hints.EnrollNo.displayWidth}"
                                   maximumLength="#{bindings.TblStdRegView1.hints.EnrollNo.precision}"
                                   shortDesc="#{bindings.TblStdRegView1.hints.EnrollNo.tooltip}" id="it2"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.EnrollNo.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdRegView1.hints.RegNo.name}" filterable="true"
-                             sortable="true" headerText="Student Registration No." id="c5" align="right" width="110">
+                             sortable="true" headerText="Student Registration No." id="c5" align="left" width="110">
                     <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.RegNo}"
        id="it29" placeholder="Search ">
@@ -116,12 +117,12 @@
                                   columns="#{bindings.TblStdRegView1.hints.RegNo.displayWidth}"
                                   maximumLength="#{bindings.TblStdRegView1.hints.RegNo.precision}"
                                   shortDesc="#{bindings.TblStdRegView1.hints.RegNo.tooltip}" id="it3"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.RegNo.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdRegView1.hints.EsisNo.name}" filterable="true"
-                             sortable="true" headerText="ESIS No." id="c6" align="right">
+                             sortable="true" headerText="ESIS No." id="c6" align="left">
                    <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.EsisNo}"
        id="it30" placeholder="Search ">
@@ -133,11 +134,11 @@
                                   columns="#{bindings.TblStdRegView1.hints.EsisNo.displayWidth}"
                                   maximumLength="#{bindings.TblStdRegView1.hints.EsisNo.precision}"
                                   shortDesc="#{bindings.TblStdRegView1.hints.EsisNo.tooltip}" id="it4"
-                                   contentStyle='text-align: center'>
+                                   contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.EsisNo.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Emirates ID" id="c11" align="right" sortable="true" filterable="true">
+                  <af:column headerText="Emirates ID" id="c11" align="left" sortable="true" filterable="true">
                     <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.EmirId}"
        id="it50" placeholder="Search ">
@@ -149,7 +150,7 @@
                                   columns="#{bindings.TblStdRegView1.hints.EmirId.displayWidth}"
                                   maximumLength="#{bindings.TblStdRegView1.hints.EmirId.precision}"
                                   shortDesc="#{bindings.TblStdRegView1.hints.EmirId.tooltip}" id="it41"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.EmirId.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -165,7 +166,8 @@
                                   required="#{bindings.TblStdRegView1.hints.FirstName.mandatory}"
                                   columns="#{bindings.TblStdRegView1.hints.FirstName.displayWidth}"
                                   maximumLength="#{bindings.TblStdRegView1.hints.FirstName.precision}"
-                                  shortDesc="#{bindings.TblStdRegView1.hints.FirstName.tooltip}" id="it43">
+                                  shortDesc="#{bindings.TblStdRegView1.hints.FirstName.tooltip}" id="it43"
+                                  contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.FirstName.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -181,7 +183,8 @@
                                   required="#{bindings.TblStdRegView1.hints.LastName.mandatory}"
                                   columns="#{bindings.TblStdRegView1.hints.LastName.displayWidth}"
                                   maximumLength="#{bindings.TblStdRegView1.hints.LastName.precision}"
-                                  shortDesc="#{bindings.TblStdRegView1.hints.LastName.tooltip}" id="it47">
+                                  shortDesc="#{bindings.TblStdRegView1.hints.LastName.tooltip}" id="it47"
+                                  contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.LastName.validator}"/>
                     </af:inputText>
                  </af:column>
@@ -196,12 +199,12 @@
                                   required="#{bindings.TblStdRegView1.hints.Dob.mandatory}"
                                   columns="#{bindings.TblStdRegView1.hints.Dob.displayWidth}"
                                   shortDesc="#{bindings.TblStdRegView1.hints.Dob.tooltip}" id="id5"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.Dob.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblStdRegView1.hints.Dob.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column headerText="Contact No." id="c17" sortable="true" filterable="true" align="right">
+                  <af:column headerText="Contact No." id="c17" sortable="true" filterable="true" align="left">
                     <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.ContNumber}"
        id="it54" placeholder="Search ">
@@ -213,7 +216,7 @@
                                   columns="#{bindings.TblStdRegView1.hints.ContNumber.displayWidth}"
                                   maximumLength="#{bindings.TblStdRegView1.hints.ContNumber.precision}"
                                   shortDesc="#{bindings.TblStdRegView1.hints.ContNumber.tooltip}" id="it48"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.ContNumber.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -229,7 +232,7 @@
                                   columns="#{bindings.TblStdRegView1.hints.ContPerson.displayWidth}"
                                   maximumLength="#{bindings.TblStdRegView1.hints.ContPerson.precision}"
                                   shortDesc="#{bindings.TblStdRegView1.hints.ContPerson.tooltip}" id="it49"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.ContPerson.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -242,7 +245,8 @@
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
                                         required="#{bindings.TblStdRegView1.hints.GradeId.mandatory}"
-                                        shortDesc="#{bindings.TblStdRegView1.hints.GradeId.tooltip}" id="soc2">
+                                        shortDesc="#{bindings.TblStdRegView1.hints.GradeId.tooltip}" id="soc2"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.GradeId.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.GradeId.validator}"/>
                     </af:selectOneChoice>
@@ -257,7 +261,8 @@
                     <af:selectOneChoice value="#{row.bindings.SectionsId.inputValue}"
                                         label="#{row.bindings.SectionsId.label}"
                                         required="#{bindings.TblStdRegView1.hints.SectionsId.mandatory}"
-                                        shortDesc="#{bindings.TblStdRegView1.hints.SectionsId.tooltip}" id="soc3">
+                                        shortDesc="#{bindings.TblStdRegView1.hints.SectionsId.tooltip}" id="soc3"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.SectionsId.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.SectionsId.validator}"/>
                     </af:selectOneChoice>
@@ -271,7 +276,8 @@
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblStdRegView1.hints.Ast.mandatory}"
-                                        shortDesc="#{bindings.TblStdRegView1.hints.Ast.tooltip}" id="soc20">
+                                        shortDesc="#{bindings.TblStdRegView1.hints.Ast.tooltip}" id="soc20"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si20"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>
@@ -793,7 +799,7 @@
                       </af:inputText>
                     </af:column>
                     <af:column sortProperty="#{bindings.TblStdRegSibView3.hints.GradeId.name}" filterable="true"
-                               sortable="true" headerText="Grade" id="c12" width="150">
+                               sortable="true" headerText="Grade" id="c12" width="150" align="left">
                                <f:facet name="filter">
                                       <af:inputText value="#{vs.filterCriteria.GradeId}"
                                        id="it44" placeholder="Search Grade">
@@ -802,14 +808,15 @@
                       <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}"
                                           label="#{row.bindings.GradeId.label}"
                                           required="#{bindings.TblStdRegSibView3.hints.GradeId.mandatory}"
-                                          shortDesc="#{bindings.TblStdRegSibView3.hints.GradeId.tooltip}" id="soc17">
+                                          shortDesc="#{bindings.TblStdRegSibView3.hints.GradeId.tooltip}" id="soc17"
+                                          contentStyle="text-align: left">
                         <f:selectItems value="#{row.bindings.GradeId.items}" id="si17"/>
                         <f:validator binding="#{row.bindings.GradeId.validator}"/>
                       </af:selectOneChoice>
                     </af:column>
                     <af:column sortProperty="#{bindings.TblStdRegSibView3.hints.SectionsId.name}" filterable="true"
                                sortable="true" headerText="Section"
-                               id="c13" width="150">
+                               id="c13" width="150" align="left">
                                <f:facet name="filter">
                                       <af:inputText value="#{vs.filterCriteria.GradeId}"
                                        id="it45" placeholder="Search Section">
@@ -818,13 +825,14 @@
                       <af:selectOneChoice value="#{row.bindings.SectionsId.inputValue}"
                                           label="#{row.bindings.SectionsId.label}"
                                           required="#{bindings.TblStdRegSibView3.hints.SectionsId.mandatory}"
-                                          shortDesc="#{bindings.TblStdRegSibView3.hints.SectionsId.tooltip}" id="soc18">
+                                          shortDesc="#{bindings.TblStdRegSibView3.hints.SectionsId.tooltip}" id="soc18"
+                                          contentStyle="text-align: left">
                         <f:selectItems value="#{row.bindings.SectionsId.items}" id="si18"/>
                         <f:validator binding="#{row.bindings.SectionsId.validator}"/>
                       </af:selectOneChoice>
                     </af:column>
                     <af:column sortProperty="#{bindings.TblStdRegSibView3.hints.Ast.name}" filterable="true"
-                               sortable="true" headerText="Active" id="c14">
+                               sortable="true" headerText="Active" id="c14" align="left">
                                <f:facet name="filter">
                                       <af:inputText value="#{vs.filterCriteria.Ast}"
                                        id="it46" placeholder="Search Status">
@@ -832,7 +840,8 @@
                                 </f:facet>
                       <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                           required="#{bindings.TblStdRegSibView3.hints.Ast.mandatory}"
-                                          shortDesc="#{bindings.TblStdRegSibView3.hints.Ast.tooltip}" id="soc19">
+                                          shortDesc="#{bindings.TblStdRegSibView3.hints.Ast.tooltip}" id="soc19"
+                                          contentStyle="text-align: left">
                         <f:selectItems value="#{row.bindings.Ast.items}" id="si19"/>
                         <f:validator binding="#{row.bindings.Ast.validator}"/>
                       </af:selectOneChoice>

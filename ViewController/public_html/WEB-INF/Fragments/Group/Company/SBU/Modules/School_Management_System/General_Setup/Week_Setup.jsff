@@ -60,7 +60,8 @@
                     <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
                                         label="#{row.bindings.AcadYearId.label}"
                                         required="#{bindings.TblWeekView1.hints.AcadYearId.mandatory}"
-                                        shortDesc="#{bindings.TblWeekView1.hints.AcadYearId.tooltip}" id="soc1">
+                                        shortDesc="#{bindings.TblWeekView1.hints.AcadYearId.tooltip}" id="soc1"
+                                        contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
                     </af:selectOneChoice>
@@ -79,7 +80,7 @@
                                   required="#{bindings.TblWeekView1.hints.StartDate.mandatory}"
                                   columns="#{bindings.TblWeekView1.hints.StartDate.displayWidth}"
                                   shortDesc="#{bindings.TblWeekView1.hints.StartDate.tooltip}" id="id2"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.StartDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblWeekView1.hints.StartDate.format}"/>
                     </af:inputDate>
@@ -97,13 +98,13 @@
                                   required="#{bindings.TblWeekView1.hints.EndDate.mandatory}"
                                   columns="#{bindings.TblWeekView1.hints.EndDate.displayWidth}"
                                   shortDesc="#{bindings.TblWeekView1.hints.EndDate.tooltip}" id="id5"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.EndDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblWeekView1.hints.EndDate.format}"/>
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblWeekView1.hints.WeekNo.name}" filterable="true" sortable="true"
-                             headerText="Week No." id="c6" align="right">
+                             headerText="Week No." id="c6" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.WeekNo}"
                                    id="it4" placeholder="Search ">
@@ -115,7 +116,7 @@
                                   columns="#{bindings.TblWeekView1.hints.WeekNo.displayWidth}"
                                   maximumLength="#{bindings.TblWeekView1.hints.WeekNo.precision}"
                                   shortDesc="#{bindings.TblWeekView1.hints.WeekNo.tooltip}" id="it3"
-                                  contentStyle='text-align: center'>
+                                  contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.WeekNo.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblWeekView1.hints.WeekNo.format}"/>
                     </af:inputText>
