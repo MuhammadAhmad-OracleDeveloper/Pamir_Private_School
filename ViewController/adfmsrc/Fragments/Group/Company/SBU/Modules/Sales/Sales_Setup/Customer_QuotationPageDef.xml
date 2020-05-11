@@ -4,14 +4,16 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TblQuoMasterView1" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblQuoMasterView1" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblQuoMasterView1Iterator"/>
     <searchRegion Binds="TblQuoMasterView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblQuoMasterView1Query"/>
-    <iterator Binds="TblQuoDetailView2" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblQuoDetailView2" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblQuoDetailView2Iterator"/>
     <searchRegion Binds="TblQuoDetailView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblQuoDetailView2Query"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="TblQuoMasterView1Iterator" id="Id">
@@ -89,5 +91,16 @@
             Action="createInsertRow"/>
     <action IterBinding="TblQuoDetailView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblQuoDetailView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>
