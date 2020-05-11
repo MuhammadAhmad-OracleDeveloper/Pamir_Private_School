@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkComboDetailMasterAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblComboMaster"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.EO.TblComboMaster">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblComboMaster"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblComboMaster.PkComboMasterId"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblComboMaster.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblComboDetail"
+    Cardinality="-1"
+    Owner="model.ERP.EO.TblComboDetail">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblComboDetail"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblComboDetail.FkComboDetailMaster"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblComboDetail.ComboMasterId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>
