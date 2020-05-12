@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
+ 
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
     <af:showDetailItem id="pane1" text="Leave Package">
          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
@@ -32,10 +33,10 @@
                           rowSelection="single" fetchSize="#{bindings.TblLeavePkgMasterView1.rangeSize}"
                           filterModel="#{bindings.TblLeavePkgMasterView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblLeavePkgMasterView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="">
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblLeavePkgMasterView1.hints.Id.name}" filterable="true"
                              sortable="true" headerText="ID" id="c1"
-                             align="right">
+                             align="right" visible="false">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="id4" placeholder="Search ">
@@ -53,8 +54,8 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLeavePkgMasterView1.hints.PkgName.name}" filterable="true"
-                             sortable="true" headerText="Package Name"
-                             id="c2" align="left">
+                             sortable="true" headerText="Package"
+                             id="c2" align="left" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.PkgName}"
                                    id="it8" placeholder="Search ">
@@ -71,7 +72,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLeavePkgMasterView1.hints.Remarks.name}" filterable="true"
                              sortable="true" headerText="Remarks"
-                             id="c3" align="left">
+                             id="c3" align="left" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Remarks}"
                                    id="it9" placeholder="Search ">
@@ -102,6 +103,7 @@
                     </af:selectOneChoice>
                   </af:column>
                 </af:table>
+               
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
@@ -109,7 +111,6 @@
         <af:gridRow marginTop="5px" height="auto" id="gr3">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
              <af:panelGroupLayout id="pgl3" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s4"/>
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -136,10 +137,10 @@
                           rowSelection="single" fetchSize="#{bindings.TblLeavePkgDetailView2.rangeSize}"
                           filterModel="#{bindings.TblLeavePkgDetailView2Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblLeavePkgDetailView2Query.processQuery}" varStatus="vs" id="t2"
-                          partialTriggers="">
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblLeavePkgDetailView2.hints.Id.name}" filterable="true"
                              sortable="true" headerText="ID" id="c5"
-                             align="right">
+                             align="right" visible="false">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="it11" placeholder="Search ">
@@ -175,7 +176,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLeavePkgDetailView2.hints.NoOfDays.name}" filterable="true"
                              sortable="true" headerText="No. of Days"
-                             id="c7" align="right">
+                             id="c7" align="left">
                               <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.NoOfDays}"
                                    id="it13" placeholder="Search ">
@@ -194,7 +195,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLeavePkgDetailView2.hints.PeriodMonths.name}" filterable="true"
                              sortable="true" headerText="Duration (Months)"
-                             id="c8" align="right">
+                             id="c8" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.PeriodMonths}"
                                    id="it14" placeholder="Search ">
@@ -230,7 +231,7 @@
                   <af:column sortProperty="#{bindings.TblLeavePkgDetailView2.hints.ElegAfterDays.name}"
                              filterable="true" sortable="true"
                              headerText="Eligible After Days" id="c10"
-                             align="right">
+                             align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.ElegAfterDays}"
                                    id="it16" placeholder="Search ">
@@ -263,6 +264,7 @@
                     </af:selectOneChoice>
                   </af:column>
                 </af:table>
+                
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
@@ -270,7 +272,6 @@
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
              <af:panelGroupLayout id="pgl2" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s2"/>
                             <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
