@@ -43,7 +43,7 @@
                     <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
                                         required="#{bindings.TblSectionStaffView3.hints.GradeId.mandatory}"
                                         shortDesc="#{bindings.TblSectionStaffView3.hints.GradeId.tooltip}" id="soc1"
-                                        disabled="true" contentStyle="text-align: left">
+                                        readOnly="true" contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.GradeId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.GradeId.validator}"/>
                     </af:selectOneChoice>
@@ -59,7 +59,7 @@
                                         label="#{row.bindings.SectionId.label}"
                                         required="#{bindings.TblSectionStaffView3.hints.SectionId.mandatory}"
                                         shortDesc="#{bindings.TblSectionStaffView3.hints.SectionId.tooltip}" id="soc2"
-                                        disabled="true" contentStyle="text-align: left">
+                                        readOnly="true" contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.SectionId.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.SectionId.validator}"/>
                     </af:selectOneChoice>
