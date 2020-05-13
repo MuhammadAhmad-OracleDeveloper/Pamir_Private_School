@@ -15,6 +15,8 @@
               id="USERS_CRUD_OPERATIONS1Iterator"/>
     <searchRegion Binds="TblStdRegView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStdRegView1Query"/>
+    <searchRegion Binds="TblStdRegGuardView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStdRegGuardView2Query"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="Id">
@@ -25,36 +27,6 @@
     <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="StdRegId">
       <AttrNames>
         <Item Value="StdRegId"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="Name">
-      <AttrNames>
-        <Item Value="Name"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="GuardRelation">
-      <AttrNames>
-        <Item Value="GuardRelation"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="ContactNumber">
-      <AttrNames>
-        <Item Value="ContactNumber"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="Address">
-      <AttrNames>
-        <Item Value="Address"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="Mobile1">
-      <AttrNames>
-        <Item Value="Mobile1"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="Mobile2">
-      <AttrNames>
-        <Item Value="Mobile2"/>
       </AttrNames>
     </attributeValues>
     <list IterBinding="TblStdRegGuardView2Iterator" StaticList="false" Uses="LOV_Ast" id="Ast" DTSupportsMRU="false"
@@ -372,5 +344,19 @@
             Action="createInsertRow"/>
     <action IterBinding="TblStdRegSibView3Iterator" id="Execute2" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblStdRegSibView3Iterator" id="Delete2" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblStdRegGuardView2Iterator" id="TblStdRegGuardView2">
+      <nodeDefinition DefName="model.ERP.VO.TblStdRegGuardView" Name="TblStdRegGuardView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="GuardRelation"/>
+          <Item Value="ContactNumber"/>
+          <Item Value="Address"/>
+          <Item Value="Mobile1"/>
+          <Item Value="Mobile2"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>
