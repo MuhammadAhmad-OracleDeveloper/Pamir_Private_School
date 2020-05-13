@@ -412,15 +412,13 @@
                                             <af:inputText value="#{vs.filterCriteria.KinRel}" id="it27"
                                                           placeholder="Search Relation"></af:inputText>
                                         </f:facet>
-                                        <af:inputText value="#{row.bindings.KinRel.inputValue}"
-                                                      label="#{bindings.TblStaffKinView2.hints.KinRel.label}"
-                                                      required="#{bindings.TblStaffKinView2.hints.KinRel.mandatory}"
-                                                      columns="#{bindings.TblStaffKinView2.hints.KinRel.displayWidth}"
-                                                      maximumLength="#{bindings.TblStaffKinView2.hints.KinRel.precision}"
-                                                      shortDesc="#{bindings.TblStaffKinView2.hints.KinRel.tooltip}"
-                                                      id="it19" contentStyle="text-align: left">
-                                            <f:validator binding="#{row.bindings.KinRel.validator}"/>
-                                        </af:inputText>
+                                        <af:selectOneChoice value="#{bindings.KinRel.inputValue}"
+                                                            label="Relation"
+                                                            required="#{bindings.KinRel.hints.mandatory}"
+                                                            shortDesc="#{bindings.KinRel.hints.tooltip}" id="soc31">
+                                            <f:selectItems value="#{bindings.KinRel.items}" id="si31"/>
+                                            <f:validator binding="#{bindings.KinRel.validator}"/>
+                                        </af:selectOneChoice>
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblStaffKinView2.hints.ContactNo.name}"
                                                filterable="true" sortable="true" headerText="Contact" id="c13"
@@ -554,7 +552,7 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblStaffExprView2.hints.Dated.name}"
                                                filterable="true" sortable="true" headerText="Date" id="c20"
-                                               align="left">
+                                               align="left" width="100">
                                         <f:facet name="filter">
                                             <af:inputDate value="#{bindings.TblStaffExprView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
                                                           id="id9">
@@ -590,7 +588,7 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblStaffExprView2.hints.Position.name}"
                                                filterable="true" sortable="true" headerText="Position" id="c22"
-                                               align="left">
+                                               align="left" width="100">
                                         <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Position}" id="it40"
                                                           placeholder="Search Position"></af:inputText>
@@ -607,7 +605,7 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblStaffExprView2.hints.ExprFrDate.name}"
                                                filterable="true" sortable="true" headerText="From Date" id="c23"
-                                               align="left">
+                                               align="left" width="120">
                                         <f:facet name="filter">
                                             <af:inputDate value="#{bindings.TblStaffExprView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.ExprFrDate.value}"
                                                           id="id11">
@@ -626,7 +624,7 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblStaffExprView2.hints.ExprToDate.name}"
                                                filterable="true" sortable="true" headerText="To Date" id="c24"
-                                               align="left">
+                                               align="left" width="115">
                                         <f:facet name="filter">
                                             <af:inputDate value="#{bindings.TblStaffExprView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.ExprToDate.value}"
                                                           id="id13">
@@ -645,7 +643,7 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblStaffExprView2.hints.Remarks.name}"
                                                filterable="true" sortable="true" headerText="Remarks" id="c25"
-                                               width="200" align="left">
+                                               width="165" align="left">
                                         <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Remarks}" id="it41"
                                                           placeholder="Search Remarks"></af:inputText>
@@ -1556,15 +1554,15 @@
                                                                 <af:inputText value="#{vs.filterCriteria.PaymentMode}"
                                                                               id="it84" placeholder="Search Mode"></af:inputText>
                                                             </f:facet>
-                                                            <af:inputText value="#{row.bindings.PaymentMode.inputValue}"
-                                                                          label="#{bindings.TblStaffSalaryView2.hints.PaymentMode.label}"
-                                                                          required="#{bindings.TblStaffSalaryView2.hints.PaymentMode.mandatory}"
-                                                                          columns="#{bindings.TblStaffSalaryView2.hints.PaymentMode.displayWidth}"
-                                                                          maximumLength="#{bindings.TblStaffSalaryView2.hints.PaymentMode.precision}"
-                                                                          shortDesc="#{bindings.TblStaffSalaryView2.hints.PaymentMode.tooltip}"
-                                                                          id="it77" contentStyle='text-align: left'>
-                                                                <f:validator binding="#{row.bindings.PaymentMode.validator}"/>
-                                                            </af:inputText>
+                                                            <af:selectOneChoice value="#{bindings.PaymentMode.inputValue}"
+                                                                                label="#{bindings.PaymentMode.label}"
+                                                                                required="#{bindings.PaymentMode.hints.mandatory}"
+                                                                                shortDesc="#{bindings.PaymentMode.hints.tooltip}"
+                                                                                id="soc32">
+                                                                <f:selectItems value="#{bindings.PaymentMode.items}"
+                                                                               id="si32"/>
+                                                                <f:validator binding="#{bindings.PaymentMode.validator}"/>
+                                                            </af:selectOneChoice>
                                                         </af:column>
                                                         <af:column sortProperty="#{bindings.TblStaffSalaryView2.hints.Bank.name}"
                                                                    filterable="true" sortable="true" headerText="Bank"
