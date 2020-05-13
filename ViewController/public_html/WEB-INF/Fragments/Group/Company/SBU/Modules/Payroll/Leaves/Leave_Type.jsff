@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
+  
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
     <af:showDetailItem id="pane1" text="Leave Type">
          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
@@ -32,10 +33,10 @@
                           rowSelection="single" fetchSize="#{bindings.TblLeaveTypeView1.rangeSize}"
                           filterModel="#{bindings.TblLeaveTypeView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblLeaveTypeView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="">
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblLeaveTypeView1.hints.Id.name}" filterable="true"
                              sortable="true" headerText="ID" id="c1"
-                             align="right">
+                             align="right" visible="false">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="id4" placeholder="Search ">
@@ -64,13 +65,14 @@
                                   required="#{bindings.TblLeaveTypeView1.hints.LeaveCode.mandatory}"
                                   columns="#{bindings.TblLeaveTypeView1.hints.LeaveCode.displayWidth}"
                                   maximumLength="#{bindings.TblLeaveTypeView1.hints.LeaveCode.precision}"
-                                  shortDesc="#{bindings.TblLeaveTypeView1.hints.LeaveCode.tooltip}" id="it2">
+                                  shortDesc="#{bindings.TblLeaveTypeView1.hints.LeaveCode.tooltip}" id="it2"
+                                  contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.LeaveCode.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLeaveTypeView1.hints.LeaveName.name}" filterable="true"
-                             sortable="true" headerText="Leave Name" id="c3"
-                             align="left">
+                             sortable="true" headerText="Leave" id="c3"
+                             align="left" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.LeaveName}"
                                    id="it5" placeholder="Search ">
@@ -87,7 +89,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLeaveTypeView1.hints.PayType.name}" filterable="true"
                              sortable="true" headerText="Payment Type" id="c4"
-                             align="left">
+                             align="left" width="120">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.PayType}"
                                    id="it6" placeholder="Search ">
@@ -123,7 +125,6 @@
         <af:gridRow marginTop="5px" height="auto" id="gr3">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
              <af:panelGroupLayout id="pgl3" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s4"/>
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"

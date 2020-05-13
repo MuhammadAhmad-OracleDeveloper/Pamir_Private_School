@@ -34,7 +34,7 @@
                           queryListener="#{bindings.TblUomView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblUomView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="ID" id="c1" align="right" width="80">
+                             headerText="ID" id="c1" align="right" width="80" visible="false">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Id}"
        id="id4" placeholder="Search ID">
@@ -54,7 +54,7 @@
                              headerText="Unit of Measurement" id="c2" width="300">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Name}"
-       id="it3" placeholder="Search Measurement">
+       id="it3" placeholder="Search ">
       </af:inputText>
 </f:facet>
                              
@@ -71,7 +71,7 @@
                              headerText="Active" id="c3">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Ast}"
-       id="it4" placeholder="Search Status">
+       id="it4" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"

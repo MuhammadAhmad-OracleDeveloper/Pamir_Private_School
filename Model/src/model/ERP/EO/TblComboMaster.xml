@@ -3,12 +3,12 @@
 <!---->
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="TblCoMaster"
+  Name="TblComboMaster"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   DBObjectType="table"
-  DBObjectName="TBL_CO_MASTER"
-  AliasName="TblCoMaster"
+  DBObjectName="TBL_COMBO_MASTER"
+  AliasName="TblComboMaster"
   BindingStyle="OracleName">
   <Attribute
     Name="Id"
@@ -16,7 +16,7 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_CO_MASTER"
+    TableName="TBL_COMBO_MASTER"
     PrimaryKey="true"
     RetrievedOnInsert="true"
     RetrievedOnUpdate="true"/>
@@ -27,7 +27,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="TBL_CO_MASTER">
+    TableName="TBL_COMBO_MASTER">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="25"/>
     </DesignTime>
@@ -39,7 +39,7 @@
     SQLType="CHAR"
     Type="java.lang.String"
     ColumnType="CHAR"
-    TableName="TBL_CO_MASTER"
+    TableName="TBL_COMBO_MASTER"
     RetrievedOnUpdate="true"
     RetrievedOnInsert="true">
     <DesignTime>
@@ -47,59 +47,41 @@
     </DesignTime>
   </Attribute>
   <Attribute
-    Name="QuoMasterId"
-    ColumnName="QUO_MASTER_ID"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_CO_MASTER"/>
-  <Attribute
     Name="Dated"
     ColumnName="DATED"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_CO_MASTER"/>
+    TableName="TBL_COMBO_MASTER"/>
   <Attribute
-    Name="PblCustId"
-    ColumnName="PBL_CUST_ID"
+    Name="ItemL4Id"
+    IsNotNull="true"
+    ColumnName="ITEM_L4_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_CO_MASTER"/>
+    TableName="TBL_COMBO_MASTER"/>
   <Attribute
-    Name="ContactPerson"
-    Precision="150"
-    ColumnName="CONTACT_PERSON"
-    SQLType="VARCHAR"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    TableName="TBL_CO_MASTER">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="150"/>
-    </DesignTime>
-  </Attribute>
-  <Attribute
-    Name="DiscPerc"
-    ColumnName="DISC_PERC"
+    Name="DepartmentId"
+    ColumnName="DEPARTMENT_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_CO_MASTER"/>
+    TableName="TBL_COMBO_MASTER"/>
   <Attribute
-    Name="DiscAmount"
-    ColumnName="DISC_AMOUNT"
+    Name="Qty"
+    ColumnName="QTY"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_CO_MASTER"/>
+    TableName="TBL_COMBO_MASTER"/>
   <Attribute
-    Name="NetAmt"
-    ColumnName="NET_AMT"
+    Name="Amount"
+    ColumnName="AMOUNT"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_CO_MASTER"/>
+    TableName="TBL_COMBO_MASTER"/>
   <Attribute
     Name="Narration"
     Precision="300"
@@ -107,7 +89,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="TBL_CO_MASTER">
+    TableName="TBL_COMBO_MASTER">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="300"/>
     </DesignTime>
@@ -118,83 +100,83 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_CO_MASTER"/>
+    TableName="TBL_COMBO_MASTER"/>
   <Attribute
     Name="CreatedDate"
     ColumnName="CREATED_DATE"
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_CO_MASTER"/>
+    TableName="TBL_COMBO_MASTER"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_CO_MASTER"/>
+    TableName="TBL_COMBO_MASTER"/>
   <Attribute
     Name="UpdatedDate"
     ColumnName="UPDATED_DATE"
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_CO_MASTER"/>
+    TableName="TBL_COMBO_MASTER"/>
   <Attribute
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_CO_MASTER"/>
+    TableName="TBL_COMBO_MASTER"/>
   <AccessorAttribute
-    Name="TblCoDetail"
-    Association="model.ERP.EO.FkCoDetailMasterAssoc"
-    AssociationEnd="model.ERP.EO.FkCoDetailMasterAssoc.TblCoDetail"
-    AssociationOtherEnd="model.ERP.EO.FkCoDetailMasterAssoc.TblCoMaster"
+    Name="TblComboDetail"
+    Association="model.ERP.EO.FkComboDetailMasterAssoc"
+    AssociationEnd="model.ERP.EO.FkComboDetailMasterAssoc.TblComboDetail"
+    AssociationOtherEnd="model.ERP.EO.FkComboDetailMasterAssoc.TblComboMaster"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <Key
-    Name="PkCoMasterId"
+    Name="PkComboMasterId"
     PrimaryKey="true">
     <DesignTime>
-      <Attr Name="_DBObjectName" Value="PK_CO_MASTER_ID"/>
+      <Attr Name="_DBObjectName" Value="PK_COMBO_MASTER_ID"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblCoMaster.Id"/>
+      <Item Value="model.ERP.EO.TblComboMaster.Id"/>
     </AttrArray>
   </Key>
   <Key
-    Name="FkCoMasterCompany">
+    Name="FkComboMasterCompany">
     <DesignTime>
       <Attr Name="_referencedKey" Value="PK_GROUP_COMPANY"/>
       <Attr Name="_isForeign" Value="true"/>
-      <Attr Name="_DBObjectName" Value="FK_CO_MASTER_COMPANY"/>
+      <Attr Name="_DBObjectName" Value="FK_COMBO_MASTER_COMPANY"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblCoMaster.GroupCompanyId"/>
+      <Item Value="model.ERP.EO.TblComboMaster.GroupCompanyId"/>
     </AttrArray>
   </Key>
   <Key
-    Name="FkCoMasterCustId">
+    Name="FkComboMasterDepartment">
     <DesignTime>
-      <Attr Name="_referencedKey" Value="PK_PBL_CUST_ID"/>
+      <Attr Name="_referencedKey" Value="PK_DEPARTMENT"/>
       <Attr Name="_isForeign" Value="true"/>
-      <Attr Name="_DBObjectName" Value="FK_CO_MASTER_CUST_ID"/>
+      <Attr Name="_DBObjectName" Value="FK_COMBO_MASTER_DEPARTMENT"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblCoMaster.PblCustId"/>
+      <Item Value="model.ERP.EO.TblComboMaster.DepartmentId"/>
     </AttrArray>
   </Key>
   <Key
-    Name="FkCoMasterQuo">
+    Name="FkComboMasterItemL4Id">
     <DesignTime>
-      <Attr Name="_referencedKey" Value="PK_QUO_MASTER_ID"/>
+      <Attr Name="_referencedKey" Value="PK_TBL_ITEM_L4_PK"/>
       <Attr Name="_isForeign" Value="true"/>
-      <Attr Name="_DBObjectName" Value="FK_CO_MASTER_QUO"/>
+      <Attr Name="_DBObjectName" Value="FK_COMBO_MASTER_ITEM_L4_ID"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblCoMaster.QuoMasterId"/>
+      <Item Value="model.ERP.EO.TblComboMaster.ItemL4Id"/>
     </AttrArray>
   </Key>
 </Entity>

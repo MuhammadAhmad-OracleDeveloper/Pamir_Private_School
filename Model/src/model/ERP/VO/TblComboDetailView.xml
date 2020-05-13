@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="TblCoDetailView"
+  Name="TblComboDetailView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -58,33 +58,33 @@
     <DisplayCriteria/>
   </ListBinding>
   <EntityUsage
-    Name="TblCoDetail"
-    Entity="model.ERP.EO.TblCoDetail"/>
+    Name="TblComboDetail"
+    Entity="model.ERP.EO.TblComboDetail"/>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Id"
-    EntityUsage="TblCoDetail"
+    EntityUsage="TblComboDetail"
     AliasName="ID"/>
   <ViewAttribute
-    Name="CoMasterId"
+    Name="ComboMasterId"
     PrecisionRule="true"
-    EntityAttrName="CoMasterId"
-    EntityUsage="TblCoDetail"
-    AliasName="CO_MASTER_ID"/>
+    EntityAttrName="ComboMasterId"
+    EntityUsage="TblComboDetail"
+    AliasName="COMBO_MASTER_ID"/>
   <ViewAttribute
     Name="SrNo"
     PrecisionRule="true"
     EntityAttrName="SrNo"
-    EntityUsage="TblCoDetail"
+    EntityUsage="TblComboDetail"
     AliasName="SR_NO"/>
   <ViewAttribute
     Name="ItemL4Id"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="ItemL4Id"
-    EntityUsage="TblCoDetail"
+    EntityUsage="TblComboDetail"
     AliasName="ITEM_L4_ID"
     LOVName="LOV_ItemL4Id">
     <Properties>
@@ -98,7 +98,7 @@
     Name="UomId"
     PrecisionRule="true"
     EntityAttrName="UomId"
-    EntityUsage="TblCoDetail"
+    EntityUsage="TblComboDetail"
     AliasName="UOM_ID"
     LOVName="LOV_UomId">
     <Properties>
@@ -112,60 +112,48 @@
     Name="Description"
     PrecisionRule="true"
     EntityAttrName="Description"
-    EntityUsage="TblCoDetail"
+    EntityUsage="TblComboDetail"
     AliasName="DESCRIPTION"/>
   <ViewAttribute
     Name="Qty"
     PrecisionRule="true"
     EntityAttrName="Qty"
-    EntityUsage="TblCoDetail"
+    EntityUsage="TblComboDetail"
     AliasName="QTY"/>
   <ViewAttribute
     Name="Rate"
     PrecisionRule="true"
     EntityAttrName="Rate"
-    EntityUsage="TblCoDetail"
+    EntityUsage="TblComboDetail"
     AliasName="RATE"/>
-  <ViewAttribute
-    Name="DiscPerc"
-    PrecisionRule="true"
-    EntityAttrName="DiscPerc"
-    EntityUsage="TblCoDetail"
-    AliasName="DISC_PERC"/>
-  <ViewAttribute
-    Name="DiscAmount"
-    PrecisionRule="true"
-    EntityAttrName="DiscAmount"
-    EntityUsage="TblCoDetail"
-    AliasName="DISC_AMOUNT"/>
   <ViewAttribute
     Name="Amount"
     PrecisionRule="true"
     EntityAttrName="Amount"
-    EntityUsage="TblCoDetail"
+    EntityUsage="TblComboDetail"
     AliasName="AMOUNT"/>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
-    EntityUsage="TblCoDetail"
+    EntityUsage="TblComboDetail"
     AliasName="CREATED_DATE"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
-    EntityUsage="TblCoDetail"
+    EntityUsage="TblComboDetail"
     AliasName="CREATED_BY"/>
   <ViewAttribute
     Name="UpdatedDate"
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
-    EntityUsage="TblCoDetail"
+    EntityUsage="TblComboDetail"
     AliasName="UPDATED_DATE"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
-    EntityUsage="TblCoDetail"
+    EntityUsage="TblComboDetail"
     AliasName="UPDATED_BY"/>
 </ViewObject>

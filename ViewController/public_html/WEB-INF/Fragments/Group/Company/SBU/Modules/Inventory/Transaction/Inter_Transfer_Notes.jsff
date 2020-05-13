@@ -25,7 +25,7 @@
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1" text="Inventory Voucher Master">
                 <af:panelFormLayout id="pfl1" maxColumns="3" rows="6">
-                  <af:inputText value="#{bindings.Id.inputValue}" label="ID"
+                  <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
                                 required="#{bindings.Id.hints.mandatory}" columns="#{bindings.Id.hints.displayWidth}"
                                 maximumLength="#{bindings.Id.hints.precision}" shortDesc="#{bindings.Id.hints.tooltip}"
                                 id="it1" disabled="true">
@@ -35,7 +35,8 @@
                   <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                 required="#{bindings.Vno.hints.mandatory}" columns="#{bindings.Vno.hints.displayWidth}"
                                 maximumLength="#{bindings.Vno.hints.precision}"
-                                shortDesc="#{bindings.Vno.hints.tooltip}" id="it2">
+                                shortDesc="#{bindings.Vno.hints.tooltip}" id="it2" contentStyle='text-align: right'
+>
                     <f:validator binding="#{bindings.Vno.validator}"/>
                   </af:inputText>
                   <af:inputDate value="#{bindings.Dated.inputValue}" label="Date"
@@ -90,7 +91,7 @@
                           id="t2" scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblInvVoucherMasterTransView1.hints.Id.name}" filterable="true"
                              sortable="true" headerText="ID"
-                             id="c17" align="right">
+                             id="c17" align="right" visible="false">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Id}"
        id="id4" placeholder="Search ">
@@ -103,7 +104,7 @@
                                   columns="#{bindings.TblInvVoucherMasterTransView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblInvVoucherMasterTransView1.hints.Id.precision}"
                                   shortDesc="#{bindings.TblInvVoucherMasterTransView1.hints.Id.tooltip}" id="it14"
-                                  readOnly="true">
+                                  disabled="true">
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblInvVoucherMasterTransView1.hints.Id.format}"/>
@@ -111,7 +112,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblInvVoucherMasterTransView1.hints.Vno.name}" filterable="true"
                              sortable="true" headerText="Voucher No."
-                             id="c18" align="right">
+                             id="c18" align="left">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Vno}"
        id="it57" placeholder="Search ">
@@ -123,7 +124,7 @@
                                   columns="#{bindings.TblInvVoucherMasterTransView1.hints.Vno.displayWidth}"
                                   maximumLength="#{bindings.TblInvVoucherMasterTransView1.hints.Vno.precision}"
                                   shortDesc="#{bindings.TblInvVoucherMasterTransView1.hints.Vno.tooltip}" id="it44"
-                                  contentStyle='text-align: right' readOnly="true">
+                                  contentStyle='text-align: right' disabled="true">
                       <f:validator binding="#{row.bindings.Vno.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -141,7 +142,7 @@
                                   required="#{bindings.TblInvVoucherMasterTransView1.hints.Dated.mandatory}"
                                   columns="#{bindings.TblInvVoucherMasterTransView1.hints.Dated.displayWidth}"
                                   shortDesc="#{bindings.TblInvVoucherMasterTransView1.hints.Dated.tooltip}" id="id3"
-                                  readOnly="true">
+                                  disabled="true">
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblInvVoucherMasterTransView1.hints.Dated.format}"/>
                     </af:inputDate>
@@ -158,7 +159,7 @@
                                         label="#{row.bindings.DepartmentId.label}"
                                         required="#{bindings.TblInvVoucherMasterTransView1.hints.DepartmentId.mandatory}"
                                         shortDesc="#{bindings.TblInvVoucherMasterTransView1.hints.DepartmentId.tooltip}"
-                                        id="soc7" readOnly="true">
+                                        id="soc7" disabled="true">
                       <f:selectItems value="#{row.bindings.DepartmentId.items}" id="si7"/>
                       <f:validator binding="#{row.bindings.DepartmentId.validator}"/>
                     </af:selectOneChoice>
@@ -178,7 +179,7 @@
                                   columns="#{bindings.TblInvVoucherMasterTransView1.hints.Narration.displayWidth}"
                                   maximumLength="#{bindings.TblInvVoucherMasterTransView1.hints.Narration.precision}"
                                   shortDesc="#{bindings.TblInvVoucherMasterTransView1.hints.Narration.tooltip}"
-                                  id="it54" readOnly="true">
+                                  id="it54" disabled="true">
                       <f:validator binding="#{row.bindings.Narration.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -220,7 +221,7 @@
                           queryListener="#{bindings.TblInvVoucherDetailView3Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblInvVoucherDetailView3.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="ID" id="c1" align="right">
+                             sortable="true" headerText="ID" id="c1" align="right" visible="false">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Id}"
        id="it56" placeholder="Search ">
@@ -239,7 +240,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblInvVoucherDetailView3.hints.SrNo.name}" filterable="true"
-                             sortable="true" headerText="Serial No." id="c2" align="right">
+                             sortable="true" headerText="Serial No." id="c2" align="left">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.SrNo}"
        id="it29" placeholder="Search ">
@@ -289,7 +290,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblInvVoucherDetailView3.hints.Qty.name}" filterable="true"
-                             sortable="true" headerText="Quantity" id="c6" align="right">
+                             sortable="true" headerText="Quantity" id="c6" align="left">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Qty}"
        id="it33" placeholder="Search ">

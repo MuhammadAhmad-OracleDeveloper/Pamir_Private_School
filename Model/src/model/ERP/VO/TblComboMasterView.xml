@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="TblCoMasterView"
+  Name="TblComboMasterView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -18,12 +18,12 @@
     ViewObjectName="model.LOV.Voucher_Type_LOV"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="Customer_Name_LOV1"
-    ViewObjectName="model.LOV.Customer_Name_LOV"
+    Name="ItemL4_Name_LOV1"
+    ViewObjectName="model.LOV.ItemL4_Name_LOV"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="Quotation_LOV1"
-    ViewObjectName="model.LOV.Quotation_LOV"
+    Name="Deparment_Name_LOV1"
+    ViewObjectName="model.LOV.Deparment_Name_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
@@ -44,13 +44,31 @@
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_PblCustId"
-    ListVOName="Customer_Name_LOV1"
+    Name="LOV_ItemL4Id"
+    ListVOName="ItemL4_Name_LOV1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
     <AttrArray Name="AttrNames">
-      <Item Value="PblCustId"/>
+      <Item Value="ItemL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ItemL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DepartmentId"
+    ListVOName="Deparment_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DepartmentId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -61,62 +79,29 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
-  <ListBinding
-    Name="LOV_QuoMasterId"
-    ListVOName="Quotation_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="QuoMasterId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Vno"/>
-      <Item Value="Dated"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
   <EntityUsage
-    Name="TblCoMaster"
-    Entity="model.ERP.EO.TblCoMaster"/>
+    Name="TblComboMaster"
+    Entity="model.ERP.EO.TblComboMaster"/>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Id"
-    EntityUsage="TblCoMaster"
+    EntityUsage="TblComboMaster"
     AliasName="ID"/>
   <ViewAttribute
     Name="Vno"
     PrecisionRule="true"
     EntityAttrName="Vno"
-    EntityUsage="TblCoMaster"
+    EntityUsage="TblComboMaster"
     AliasName="VNO"/>
   <ViewAttribute
     Name="Vtp"
     PrecisionRule="true"
     EntityAttrName="Vtp"
-    EntityUsage="TblCoMaster"
+    EntityUsage="TblComboMaster"
     AliasName="VTP"
     LOVName="LOV_Vtp">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
-  <ViewAttribute
-    Name="QuoMasterId"
-    PrecisionRule="true"
-    EntityAttrName="QuoMasterId"
-    EntityUsage="TblCoMaster"
-    AliasName="QUO_MASTER_ID"
-    LOVName="LOV_QuoMasterId">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -128,15 +113,16 @@
     Name="Dated"
     PrecisionRule="true"
     EntityAttrName="Dated"
-    EntityUsage="TblCoMaster"
+    EntityUsage="TblComboMaster"
     AliasName="DATED"/>
   <ViewAttribute
-    Name="PblCustId"
+    Name="ItemL4Id"
+    IsNotNull="true"
     PrecisionRule="true"
-    EntityAttrName="PblCustId"
-    EntityUsage="TblCoMaster"
-    AliasName="PBL_CUST_ID"
-    LOVName="LOV_PblCustId">
+    EntityAttrName="ItemL4Id"
+    EntityUsage="TblComboMaster"
+    AliasName="ITEM_L4_ID"
+    LOVName="LOV_ItemL4Id">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -145,68 +131,70 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
-    Name="ContactPerson"
+    Name="DepartmentId"
     PrecisionRule="true"
-    EntityAttrName="ContactPerson"
-    EntityUsage="TblCoMaster"
-    AliasName="CONTACT_PERSON"/>
+    EntityAttrName="DepartmentId"
+    EntityUsage="TblComboMaster"
+    AliasName="DEPARTMENT_ID"
+    LOVName="LOV_DepartmentId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
-    Name="DiscPerc"
+    Name="Qty"
     PrecisionRule="true"
-    EntityAttrName="DiscPerc"
-    EntityUsage="TblCoMaster"
-    AliasName="DISC_PERC"/>
+    EntityAttrName="Qty"
+    EntityUsage="TblComboMaster"
+    AliasName="QTY"/>
   <ViewAttribute
-    Name="DiscAmount"
+    Name="Amount"
     PrecisionRule="true"
-    EntityAttrName="DiscAmount"
-    EntityUsage="TblCoMaster"
-    AliasName="DISC_AMOUNT"/>
-  <ViewAttribute
-    Name="NetAmt"
-    PrecisionRule="true"
-    EntityAttrName="NetAmt"
-    EntityUsage="TblCoMaster"
-    AliasName="NET_AMT"/>
+    EntityAttrName="Amount"
+    EntityUsage="TblComboMaster"
+    AliasName="AMOUNT"/>
   <ViewAttribute
     Name="Narration"
     PrecisionRule="true"
     EntityAttrName="Narration"
-    EntityUsage="TblCoMaster"
+    EntityUsage="TblComboMaster"
     AliasName="NARRATION"/>
   <ViewAttribute
     Name="GroupCompanyId"
     PrecisionRule="true"
     EntityAttrName="GroupCompanyId"
-    EntityUsage="TblCoMaster"
+    EntityUsage="TblComboMaster"
     AliasName="GROUP_COMPANY_ID"/>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
-    EntityUsage="TblCoMaster"
+    EntityUsage="TblComboMaster"
     AliasName="CREATED_DATE"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
-    EntityUsage="TblCoMaster"
+    EntityUsage="TblComboMaster"
     AliasName="CREATED_BY"/>
   <ViewAttribute
     Name="UpdatedDate"
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
-    EntityUsage="TblCoMaster"
+    EntityUsage="TblComboMaster"
     AliasName="UPDATED_DATE"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
-    EntityUsage="TblCoMaster"
+    EntityUsage="TblComboMaster"
     AliasName="UPDATED_BY"/>
   <ViewLinkAccessor
-    Name="TblCoDetailView"
-    ViewLink="model.ERP.VO.FkCoDetailMasterLink"
+    Name="TblComboDetailView"
+    ViewLink="model.ERP.VO.FkComboDetailMasterLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>
