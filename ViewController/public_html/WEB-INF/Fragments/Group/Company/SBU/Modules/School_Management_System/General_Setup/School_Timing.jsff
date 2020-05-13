@@ -268,13 +268,13 @@
                   <f:facet name="footer">
                     <af:panelGroupLayout layout="horizontal" id="pgl3">
                       <af:button actionListener="#{bindings.First.execute}" text="First"
-                                 disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b2"/>
+                                 disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b2" visible="false"/>
                       <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
                                  disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
                       <af:button actionListener="#{bindings.Next.execute}" text="Next"
                                  disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b4"/>
                       <af:button actionListener="#{bindings.Last.execute}" text="Last"
-                                 disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b5"/>
+                                 disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b5" visible="false"/>
                     </af:panelGroupLayout>
                   </f:facet>
                 </af:panelFormLayout>

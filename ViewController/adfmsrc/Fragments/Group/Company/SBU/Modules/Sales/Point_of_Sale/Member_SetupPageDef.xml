@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Member_SetupPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.Sales.Point_of_Sale">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblMemberView1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblMemberView1Iterator"/>
+    <searchRegion Binds="TblMemberView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblMemberView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TblMemberView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblMemberView1Iterator" id="Dated">
+      <AttrNames>
+        <Item Value="Dated"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblMemberView1Iterator" id="Name">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblMemberView1Iterator" id="Phone">
+      <AttrNames>
+        <Item Value="Phone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblMemberView1Iterator" id="Cell">
+      <AttrNames>
+        <Item Value="Cell"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblMemberView1Iterator" id="Fax">
+      <AttrNames>
+        <Item Value="Fax"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblMemberView1Iterator" id="EMail">
+      <AttrNames>
+        <Item Value="EMail"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblMemberView1Iterator" id="Address">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblMemberView1Iterator" id="IssueDate">
+      <AttrNames>
+        <Item Value="IssueDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblMemberView1Iterator" id="ExpDate">
+      <AttrNames>
+        <Item Value="ExpDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblMemberView1Iterator" id="DiscPerc">
+      <AttrNames>
+        <Item Value="DiscPerc"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblMemberView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblMemberView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblMemberView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblMemberView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblMemberView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblMemberView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblMemberView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblMemberView1Iterator" id="TblMemberView1">
+      <nodeDefinition DefName="model.ERP.VO.TblMemberView" Name="TblMemberView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="Name"/>
+          <Item Value="Phone"/>
+          <Item Value="Cell"/>
+          <Item Value="Fax"/>
+          <Item Value="IssueDate"/>
+          <Item Value="ExpDate"/>
+          <Item Value="EMail"/>
+          <Item Value="DiscPerc"/>
+          <Item Value="Address"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

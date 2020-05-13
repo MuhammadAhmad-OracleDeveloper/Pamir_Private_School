@@ -46,5 +46,51 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="TblNoticesView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblNoticesView1Iterator" StaticList="false" Uses="LOV_AcadYearId" id="AcadYearId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblNoticesView1Iterator" id="Dated">
+      <AttrNames>
+        <Item Value="Dated"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblNoticesView1Iterator" id="NoticeDesc">
+      <AttrNames>
+        <Item Value="NoticeDesc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblNoticesView1Iterator" id="StartDate">
+      <AttrNames>
+        <Item Value="StartDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblNoticesView1Iterator" id="EndDate">
+      <AttrNames>
+        <Item Value="EndDate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblNoticesView1Iterator" StaticList="false" Uses="LOV_NoticeType" id="NoticeType"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblNoticesView1Iterator" StaticList="false" Uses="LOV_NoticeAll" id="NoticeAll"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblNoticesView1Iterator" StaticList="false" Uses="LOV_NoticeTeacher" id="NoticeTeacher"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblNoticesView1Iterator" StaticList="false" Uses="LOV_NoticeParent" id="NoticeParent"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblNoticesView1Iterator" StaticList="false" Uses="LOV_NoticeStudent" id="NoticeStudent"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblNoticesView1Iterator" id="NoticeImage">
+      <AttrNames>
+        <Item Value="NoticeImage"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblNoticesView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblNoticesView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblNoticesView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblNoticesView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
   </bindings>
 </pageDefinition>

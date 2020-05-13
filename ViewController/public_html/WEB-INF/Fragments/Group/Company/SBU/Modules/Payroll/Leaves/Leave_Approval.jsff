@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
+ 
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
     <af:showDetailItem id="pane1" text="Leave Application">
          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
@@ -22,7 +23,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Leave Application Form">
+              <af:showDetailItem id="tab1" text="Leave Application">
                 <af:table value="#{bindings.TblLeaveReqView1.collectionModel}" var="row"
                           rows="#{bindings.TblLeaveReqView1.rangeSize}"
                           emptyText="#{bindings.TblLeaveReqView1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -32,9 +33,9 @@
                           rowSelection="single" fetchSize="#{bindings.TblLeaveReqView1.rangeSize}"
                           filterModel="#{bindings.TblLeaveReqView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblLeaveReqView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="">
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblLeaveReqView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="ID" id="c1" align="right">
+                             headerText="ID" id="c1" align="right" visible="false">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="id4" placeholder="Search ">
@@ -118,8 +119,8 @@
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLeaveReqView1.hints.LeaveDays.name}" filterable="true"
-                             sortable="true" headerText="No. of Leave Days" id="c6"
-                             align="right">
+                             sortable="true" headerText="No. of  Leave Days" id="c6"
+                             align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.LeaveDays}"
                                    id="it5" placeholder="Search ">
@@ -137,7 +138,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLeaveReqView1.hints.Remarks.name}" filterable="true"
-                             sortable="true" headerText="Remarks" id="c7">
+                             sortable="true" headerText="Remarks" id="c7" width="200">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Remarks}"
                                    id="it6" placeholder="Search ">
@@ -167,6 +168,7 @@
                     </af:selectOneChoice>
                   </af:column>
                 </af:table>
+                
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
@@ -174,7 +176,6 @@
         <af:gridRow marginTop="5px" height="auto" id="gr3">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
              <af:panelGroupLayout id="pgl3" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s4"/>
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
