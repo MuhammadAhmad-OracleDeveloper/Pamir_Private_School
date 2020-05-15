@@ -92,21 +92,16 @@
     </af:column>
   </af:table>-->
   
-  <af:spacer width="10" height="100" id="sdf3"/>
         
   <!--<af:outputLabel value="listing for the listing..... to the listing.....by the listing" id="ol12"/>-->
   
    <af:panelFormLayout id="pfl3" maxColumns="3" rows="1" fieldWidth="500px;" inlineStyle=" padding-left: 2%;">
         <af:iterator id="i2" value="#{bindings.Role_Company1.collectionModel}" var="item" varStatus="status">
-            <af:panelGroupLayout id="pgl3" layout="horizontal" inlineStyle="padding: 4%;">
-                <af:link id="l6" action="/Company/Company.jsf"/>
-                                        <af:spacer width="10" height="10" id="s1"/>
-                <af:panelGroupLayout id="pgl4" layout="vertical" inlineStyle="margin-top: -15%; width:75%;">
+             <af:panelGroupLayout id="pgl4" layout="vertical" inlineStyle=" width:75%;padding: 4%;">
                     <af:link text="#{item.bindings.Grpcmpnyname.inputValue}" id="l17" 
                              inlineStyle="font-size:x-large; color: Black;font-weight: bold;"
                              action="#{LoginsBean.getCompanyID(item.bindings.Rolcmpnygrpcmpnyid.inputValue)}"/>
                     <af:spacer width="10" height="1" id="s3"/>
-                </af:panelGroupLayout>
             </af:panelGroupLayout>
         </af:iterator>
     </af:panelFormLayout>
