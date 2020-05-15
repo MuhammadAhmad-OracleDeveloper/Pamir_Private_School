@@ -28,7 +28,7 @@
                   <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
                                 required="#{bindings.Id.hints.mandatory}" columns="#{bindings.Id.hints.displayWidth}"
                                 maximumLength="#{bindings.Id.hints.precision}" shortDesc="#{bindings.Id.hints.tooltip}"
-                                id="it1" disabled="true" >
+                                id="it1" readOnly="true" >
                     <f:validator binding="#{bindings.Id.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
                   </af:inputText>
@@ -144,7 +144,7 @@
                                   required="#{bindings.TblCoMasterView1.hints.Id.mandatory}"
                                   columns="#{bindings.TblCoMasterView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblCoMasterView1.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblCoMasterView1.hints.Id.tooltip}" id="it8" disabled="true">
+                                  shortDesc="#{bindings.TblCoMasterView1.hints.Id.tooltip}" id="it8" readOnly="true">
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblCoMasterView1.hints.Id.format}"/>
                     </af:inputText>
@@ -162,7 +162,7 @@
                                   columns="#{bindings.TblCoMasterView1.hints.Vno.displayWidth}"
                                   maximumLength="#{bindings.TblCoMasterView1.hints.Vno.precision}"
                                   shortDesc="#{bindings.TblCoMasterView1.hints.Vno.tooltip}" id="it9" contentStyle='text-align: right'
-                                  disabled="true">
+                                  readOnly="true">
                       <f:validator binding="#{row.bindings.Vno.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -178,7 +178,7 @@
                                   label="#{bindings.TblCoMasterView1.hints.Dated.label}"
                                   required="#{bindings.TblCoMasterView1.hints.Dated.mandatory}"
                                   columns="#{bindings.TblCoMasterView1.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.TblCoMasterView1.hints.Dated.tooltip}" id="id3" disabled="true">
+                                  shortDesc="#{bindings.TblCoMasterView1.hints.Dated.tooltip}" id="id3" readOnly="true">
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblCoMasterView1.hints.Dated.format}"/>
                     </af:inputDate>
@@ -192,7 +192,7 @@
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Vtp.inputValue}" label="#{row.bindings.Vtp.label}"
                                         required="#{bindings.TblCoMasterView1.hints.Vtp.mandatory}"
-                                        shortDesc="#{bindings.TblCoMasterView1.hints.Vtp.tooltip}" id="soc4" disabled="true">
+                                        shortDesc="#{bindings.TblCoMasterView1.hints.Vtp.tooltip}" id="soc4" readOnly="true">
                       <f:selectItems value="#{row.bindings.Vtp.items}" id="si4"/>
                       <f:validator binding="#{row.bindings.Vtp.validator}"/>
                     </af:selectOneChoice>
@@ -211,7 +211,7 @@
                                   columns="#{bindings.TblCoMasterView1.hints.ContactPerson.displayWidth}"
                                   maximumLength="#{bindings.TblCoMasterView1.hints.ContactPerson.precision}"
                                   shortDesc="#{bindings.TblCoMasterView1.hints.ContactPerson.tooltip}" id="it10" contentStyle='text-align: right'
-                                  disabled="true">
+                                  readOnly="true">
                       <f:validator binding="#{row.bindings.ContactPerson.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -225,7 +225,7 @@
                     <af:selectOneChoice value="#{row.bindings.QuoMasterId.inputValue}"
                                         label="#{row.bindings.QuoMasterId.label}"
                                         required="#{bindings.TblCoMasterView1.hints.QuoMasterId.mandatory}"
-                                        shortDesc="#{bindings.TblCoMasterView1.hints.QuoMasterId.tooltip}" id="soc5" disabled="true">
+                                        shortDesc="#{bindings.TblCoMasterView1.hints.QuoMasterId.tooltip}" id="soc5" readOnly="true">
                       <f:selectItems value="#{row.bindings.QuoMasterId.items}" id="si5"/>
                       <f:validator binding="#{row.bindings.QuoMasterId.validator}"/>
                     </af:selectOneChoice>
@@ -240,7 +240,7 @@
                     <af:selectOneChoice value="#{row.bindings.PblCustId.inputValue}"
                                         label="#{row.bindings.PblCustId.label}"
                                         required="#{bindings.TblCoMasterView1.hints.PblCustId.mandatory}"
-                                        shortDesc="#{bindings.TblCoMasterView1.hints.PblCustId.tooltip}" id="soc6" disabled="true">
+                                        shortDesc="#{bindings.TblCoMasterView1.hints.PblCustId.tooltip}" id="soc6" readOnly="true">
                       <f:selectItems value="#{row.bindings.PblCustId.items}" id="si6"/>
                       <f:validator binding="#{row.bindings.PblCustId.validator}"/>
                     </af:selectOneChoice>
@@ -257,7 +257,7 @@
                                   required="#{bindings.TblCoMasterView1.hints.DiscPerc.mandatory}"
                                   columns="#{bindings.TblCoMasterView1.hints.DiscPerc.displayWidth}"
                                   maximumLength="#{bindings.TblCoMasterView1.hints.DiscPerc.precision}"
-                                  shortDesc="#{bindings.TblCoMasterView1.hints.DiscPerc.tooltip}" id="it11" disabled="true">
+                                  shortDesc="#{bindings.TblCoMasterView1.hints.DiscPerc.tooltip}" id="it11" readOnly="true">
                       <f:validator binding="#{row.bindings.DiscPerc.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblCoMasterView1.hints.DiscPerc.format}"/>
@@ -275,7 +275,7 @@
                                   required="#{bindings.TblCoMasterView1.hints.DiscAmount.mandatory}"
                                   columns="#{bindings.TblCoMasterView1.hints.DiscAmount.displayWidth}"
                                   maximumLength="#{bindings.TblCoMasterView1.hints.DiscAmount.precision}"
-                                  shortDesc="#{bindings.TblCoMasterView1.hints.DiscAmount.tooltip}" id="it12" disabled="true">
+                                  shortDesc="#{bindings.TblCoMasterView1.hints.DiscAmount.tooltip}" id="it12" readOnly="true">
                       <f:validator binding="#{row.bindings.DiscAmount.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblCoMasterView1.hints.DiscAmount.format}"/>
@@ -293,7 +293,7 @@
                                   required="#{bindings.TblCoMasterView1.hints.NetAmt.mandatory}"
                                   columns="#{bindings.TblCoMasterView1.hints.NetAmt.displayWidth}"
                                   maximumLength="#{bindings.TblCoMasterView1.hints.NetAmt.precision}"
-                                  shortDesc="#{bindings.TblCoMasterView1.hints.NetAmt.tooltip}" id="it13" disabled="true">
+                                  shortDesc="#{bindings.TblCoMasterView1.hints.NetAmt.tooltip}" id="it13" readOnly="true">
                       <f:validator binding="#{row.bindings.NetAmt.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblCoMasterView1.hints.NetAmt.format}"/>
@@ -311,7 +311,7 @@
                                   required="#{bindings.TblCoMasterView1.hints.Narration.mandatory}"
                                   columns="#{bindings.TblCoMasterView1.hints.Narration.displayWidth}"
                                   maximumLength="#{bindings.TblCoMasterView1.hints.Narration.precision}"
-                                  shortDesc="#{bindings.TblCoMasterView1.hints.Narration.tooltip}" id="it14" disabled="true">
+                                  shortDesc="#{bindings.TblCoMasterView1.hints.Narration.tooltip}" id="it14" readOnly="true">
                       <f:validator binding="#{row.bindings.Narration.validator}"/>
                     </af:inputText>
                   </af:column>

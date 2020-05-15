@@ -26,6 +26,7 @@
           <Item Value="NoticeParent"/>
           <Item Value="NoticeStudent"/>
           <Item Value="NoticeImage"/>
+          <Item Value="NoticeTitle"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -92,5 +93,10 @@
     <action IterBinding="TblNoticesView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
     <action IterBinding="TblNoticesView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
     <action IterBinding="TblNoticesView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <attributeValues IterBinding="TblNoticesView1Iterator" id="NoticeTitle">
+      <AttrNames>
+        <Item Value="NoticeTitle"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

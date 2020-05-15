@@ -39,6 +39,7 @@ public class TblNoticesImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        NoticeTitle,
         TblAcadYear;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -62,6 +63,7 @@ public class TblNoticesImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int GROUPCOMPANYID = AttributesEnum.GroupCompanyId.index();
     public static final int ACADYEARID = AttributesEnum.AcadYearId.index();
@@ -79,12 +81,20 @@ public class TblNoticesImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int NOTICETITLE = AttributesEnum.NoticeTitle.index();
     public static final int TBLACADYEAR = AttributesEnum.TblAcadYear.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblNoticesImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblNotices");
     }
 
     /**
@@ -344,6 +354,22 @@ public class TblNoticesImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for NoticeTitle, using the alias name NoticeTitle.
+     * @return the value of NoticeTitle
+     */
+    public String getNoticeTitle() {
+        return (String) getAttributeInternal(NOTICETITLE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for NoticeTitle.
+     * @param value value to set the NoticeTitle
+     */
+    public void setNoticeTitle(String value) {
+        setAttributeInternal(NOTICETITLE, value);
+    }
+
+    /**
      * @return the associated entity TblAcadYearImpl.
      */
     public TblAcadYearImpl getTblAcadYear() {
@@ -357,6 +383,7 @@ public class TblNoticesImpl extends EntityImpl {
         setAttributeInternal(TBLACADYEAR, value);
     }
 
+
     /**
      * @param id key constituent
 
@@ -364,13 +391,6 @@ public class TblNoticesImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblNotices");
     }
 
     /**

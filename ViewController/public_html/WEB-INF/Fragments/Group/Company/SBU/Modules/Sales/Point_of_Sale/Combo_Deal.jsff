@@ -28,7 +28,7 @@
                   <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
                                 required="#{bindings.Id.hints.mandatory}" columns="#{bindings.Id.hints.displayWidth}"
                                 maximumLength="#{bindings.Id.hints.precision}" shortDesc="#{bindings.Id.hints.tooltip}"
-                                id="it1" disabled="true">
+                                id="it1" readOnly="true">
                     <f:validator binding="#{bindings.Id.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
                   </af:inputText>
@@ -128,7 +128,7 @@
                                   required="#{bindings.TblComboMasterView1.hints.Id.mandatory}"
                                   columns="#{bindings.TblComboMasterView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblComboMasterView1.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblComboMasterView1.hints.Id.tooltip}" id="it6" disabled="true">
+                                  shortDesc="#{bindings.TblComboMasterView1.hints.Id.tooltip}" id="it6" readOnly="true">
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblComboMasterView1.hints.Id.format}"/>
                     </af:inputText>
@@ -146,7 +146,7 @@
                                   columns="#{bindings.TblComboMasterView1.hints.Vno.displayWidth}"
                                   maximumLength="#{bindings.TblComboMasterView1.hints.Vno.precision}"
                                   shortDesc="#{bindings.TblComboMasterView1.hints.Vno.tooltip}" id="it7" contentStyle='text-align: right'
-                                  disabled="true">
+                                  readOnly="true">
                       <f:validator binding="#{row.bindings.Vno.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -159,7 +159,7 @@
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Vtp.inputValue}" label="#{row.bindings.Vtp.label}"
                                         required="#{bindings.TblComboMasterView1.hints.Vtp.mandatory}"
-                                        shortDesc="#{bindings.TblComboMasterView1.hints.Vtp.tooltip}" id="soc4" disabled="true">
+                                        shortDesc="#{bindings.TblComboMasterView1.hints.Vtp.tooltip}" id="soc4" readOnly="true">
                       <f:selectItems value="#{row.bindings.Vtp.items}" id="si4"/>
                       <f:validator binding="#{row.bindings.Vtp.validator}"/>
                     </af:selectOneChoice>
@@ -176,7 +176,7 @@
                                   label="#{bindings.TblComboMasterView1.hints.Dated.label}"
                                   required="#{bindings.TblComboMasterView1.hints.Dated.mandatory}"
                                   columns="#{bindings.TblComboMasterView1.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.TblComboMasterView1.hints.Dated.tooltip}" id="id3" disabled="true">
+                                  shortDesc="#{bindings.TblComboMasterView1.hints.Dated.tooltip}" id="id3" readOnly="true">
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblComboMasterView1.hints.Dated.format}"/>
                     </af:inputDate>
@@ -191,7 +191,7 @@
                     <af:selectOneChoice value="#{row.bindings.ItemL4Id.inputValue}"
                                         label="#{row.bindings.ItemL4Id.label}"
                                         required="#{bindings.TblComboMasterView1.hints.ItemL4Id.mandatory}"
-                                        shortDesc="#{bindings.TblComboMasterView1.hints.ItemL4Id.tooltip}" id="soc5" disabled="true">
+                                        shortDesc="#{bindings.TblComboMasterView1.hints.ItemL4Id.tooltip}" id="soc5" readOnly="true">
                       <f:selectItems value="#{row.bindings.ItemL4Id.items}" id="si5"/>
                       <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
                     </af:selectOneChoice>
@@ -208,7 +208,7 @@
                                         label="#{row.bindings.DepartmentId.label}"
                                         required="#{bindings.TblComboMasterView1.hints.DepartmentId.mandatory}"
                                         shortDesc="#{bindings.TblComboMasterView1.hints.DepartmentId.tooltip}"
-                                        id="soc6" disabled="true">
+                                        id="soc6" readOnly="true">
                       <f:selectItems value="#{row.bindings.DepartmentId.items}" id="si6"/>
                       <f:validator binding="#{row.bindings.DepartmentId.validator}"/>
                     </af:selectOneChoice>
@@ -225,7 +225,7 @@
                                   required="#{bindings.TblComboMasterView1.hints.Qty.mandatory}"
                                   columns="#{bindings.TblComboMasterView1.hints.Qty.displayWidth}"
                                   maximumLength="#{bindings.TblComboMasterView1.hints.Qty.precision}"
-                                  shortDesc="#{bindings.TblComboMasterView1.hints.Qty.tooltip}" id="it8" disabled="true">
+                                  shortDesc="#{bindings.TblComboMasterView1.hints.Qty.tooltip}" id="it8" readOnly="true">
                       <f:validator binding="#{row.bindings.Qty.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblComboMasterView1.hints.Qty.format}"/>
@@ -243,7 +243,7 @@
                                   required="#{bindings.TblComboMasterView1.hints.Amount.mandatory}"
                                   columns="#{bindings.TblComboMasterView1.hints.Amount.displayWidth}"
                                   maximumLength="#{bindings.TblComboMasterView1.hints.Amount.precision}"
-                                  shortDesc="#{bindings.TblComboMasterView1.hints.Amount.tooltip}" id="it9" disabled="true">
+                                  shortDesc="#{bindings.TblComboMasterView1.hints.Amount.tooltip}" id="it9" readOnly="true">
                       <f:validator binding="#{row.bindings.Amount.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblComboMasterView1.hints.Amount.format}"/>
@@ -261,7 +261,7 @@
                                   required="#{bindings.TblComboMasterView1.hints.Narration.mandatory}"
                                   columns="#{bindings.TblComboMasterView1.hints.Narration.displayWidth}"
                                   maximumLength="#{bindings.TblComboMasterView1.hints.Narration.precision}"
-                                  shortDesc="#{bindings.TblComboMasterView1.hints.Narration.tooltip}" id="it10" disabled="true">
+                                  shortDesc="#{bindings.TblComboMasterView1.hints.Narration.tooltip}" id="it10" readOnly="true">
                       <f:validator binding="#{row.bindings.Narration.validator}"/>
                     </af:inputText>
                   </af:column>

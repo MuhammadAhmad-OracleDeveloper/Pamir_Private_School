@@ -199,7 +199,7 @@
                   <af:inputText value="#{bindings.TotAge.inputValue}" label="Total Age"
                                 required="#{bindings.TotAge.hints.mandatory}"
                                 columns="#{bindings.TotAge.hints.displayWidth}"
-                                shortDesc="#{bindings.TotAge.hints.tooltip}" id="id5" contentStyle="width:200px;" disabled="true">
+                                shortDesc="#{bindings.TotAge.hints.tooltip}" id="id5" contentStyle="width:200px;" readOnly="true">
                     <f:validator binding="#{bindings.TotAge.validator}"/>
                     <af:convertDateTime pattern="#{bindings.TotAge.format}"/>
                   </af:inputText>
@@ -234,13 +234,6 @@
                     <f:selectItems value="#{bindings.LookupElecGroup.items}" id="si5"/>
                     <f:validator binding="#{bindings.LookupElecGroup.validator}"/>
                   </af:selectOneChoice>
-                  <af:inputText value="#{bindings.Address.inputValue}" label="Address"
-                                required="#{bindings.Address.hints.mandatory}"
-                                columns="30"
-                                maximumLength="#{bindings.Address.hints.precision}"
-                                shortDesc="#{bindings.Address.hints.tooltip}" id="it13" contentStyle="width:250px;">
-                    <f:validator binding="#{bindings.Address.validator}"/>
-                  </af:inputText>
                   <af:inputText value="#{bindings.EmirArea.inputValue}" label="Emirates Area"
                                 required="#{bindings.EmirArea.hints.mandatory}"
                                 columns="#{bindings.EmirArea.hints.displayWidth}"
@@ -255,6 +248,12 @@
                                 shortDesc="#{bindings.RegFee.hints.tooltip}" id="it15" contentStyle="width:200px;">
                     <f:validator binding="#{bindings.RegFee.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.RegFee.format}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.Address.inputValue}" label="Address"
+                                required="#{bindings.Address.hints.mandatory}" columns="30"
+                                maximumLength="#{bindings.Address.hints.precision}"
+                                shortDesc="#{bindings.Address.hints.tooltip}" id="it13" contentStyle="width:250px;">
+                    <f:validator binding="#{bindings.Address.validator}"/>
                   </af:inputText>
                   <f:facet name="footer">
                     <af:panelGroupLayout layout="horizontal" id="pgl5">

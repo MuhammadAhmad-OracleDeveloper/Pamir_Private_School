@@ -4,9 +4,6 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TblStdEnqView1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblStdEnqView1Iterator"/>
-    <searchRegion Binds="TblStdEnqView1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStdEnqView1Query"/>
     <iterator Binds="TblEnqFollowUpView2" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblEnqFollowUpView2Iterator"/>
     <searchRegion Binds="TblEnqFollowUpView2Iterator" Criteria=""
@@ -15,36 +12,8 @@
               id="USERS_CRUD_OPERATIONS1Iterator"/>
   </executables>
   <bindings>
-    <tree IterBinding="TblStdEnqView1Iterator" id="TblStdEnqView1">
-      <nodeDefinition DefName="model.ERP.VO.TblStdEnqView" Name="TblStdEnqView10">
-        <AttrNames>
-          <Item Value="Id"/>
-          <Item Value="Dated"/>
-          <Item Value="AcadYearId"/>
-          <Item Value="FirstName"/>
-          <Item Value="LastName"/>
-          <Item Value="Gender"/>
-          <Item Value="GradeId"/>
-          <Item Value="LookupElecGroup"/>
-          <Item Value="EmirId"/>
-          <Item Value="EmirArea"/>
-          <Item Value="Address"/>
-          <Item Value="Ast"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="Id">
-      <AttrNames>
-        <Item Value="Id"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="Dated">
-      <AttrNames>
-        <Item Value="Dated"/>
-      </AttrNames>
-    </attributeValues>
-    <list IterBinding="TblEnqFollowUpView2Iterator" StaticList="false" Uses="LOV_Ast" id="Ast" DTSupportsMRU="false"
-          SelectItemValueMode="ListObject"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
     <tree IterBinding="TblEnqFollowUpView2Iterator" id="TblEnqFollowUpView2">
       <nodeDefinition DefName="model.ERP.VO.TblEnqFollowUpView" Name="TblEnqFollowUpView20">
         <AttrNames>
@@ -59,14 +28,10 @@
           <Item Value="CallContactNo"/>
           <Item Value="CallContent"/>
           <Item Value="Ast"/>
+          <Item Value="StdEnqId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="TblStdEnqView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
-    <action IterBinding="TblStdEnqView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
-    <action IterBinding="TblStdEnqView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
-    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
     <action IterBinding="TblEnqFollowUpView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
             Action="createInsertRow"/>
     <action IterBinding="TblEnqFollowUpView2Iterator" id="Execute1" RequiresUpdateModel="true"
@@ -84,38 +49,60 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <list IterBinding="TblStdEnqView1Iterator" StaticList="false" Uses="LOV_AcadYearId" id="AcadYearId"
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="Dated">
+      <AttrNames>
+        <Item Value="Dated"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblEnqFollowUpView2Iterator" StaticList="false" Uses="LOV_StdEnqId" id="StdEnqId"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="TblStdEnqView1Iterator" id="FirstName">
+    <list IterBinding="TblEnqFollowUpView2Iterator" StaticList="false" Uses="LOV_FollowMethod" id="FollowMethod"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="SmsContactNo">
       <AttrNames>
-        <Item Value="FirstName"/>
+        <Item Value="SmsContactNo"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblStdEnqView1Iterator" id="LastName">
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="SmsText">
       <AttrNames>
-        <Item Value="LastName"/>
+        <Item Value="SmsText"/>
       </AttrNames>
     </attributeValues>
-    <list IterBinding="TblStdEnqView1Iterator" StaticList="false" Uses="LOV_Gender" id="Gender" DTSupportsMRU="false"
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="CallContactNo">
+      <AttrNames>
+        <Item Value="CallContactNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="CallContent">
+      <AttrNames>
+        <Item Value="CallContent"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="EmailTo">
+      <AttrNames>
+        <Item Value="EmailTo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="EmailSubject">
+      <AttrNames>
+        <Item Value="EmailSubject"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="EmailBody">
+      <AttrNames>
+        <Item Value="EmailBody"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblEnqFollowUpView2Iterator" StaticList="false" Uses="LOV_Ast" id="Ast" DTSupportsMRU="false"
           SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblStdEnqView1Iterator" StaticList="false" Uses="LOV_GradeId" id="GradeId"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblStdEnqView1Iterator" StaticList="false" Uses="LOV_LookupElecGroup" id="LookupElecGroup"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="TblStdEnqView1Iterator" id="Address">
-      <AttrNames>
-        <Item Value="Address"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblStdEnqView1Iterator" id="EmirId">
-      <AttrNames>
-        <Item Value="EmirId"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblStdEnqView1Iterator" id="EmirArea">
-      <AttrNames>
-        <Item Value="EmirArea"/>
-      </AttrNames>
-    </attributeValues>
+    <action IterBinding="TblEnqFollowUpView2Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblEnqFollowUpView2Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblEnqFollowUpView2Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblEnqFollowUpView2Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
   </bindings>
 </pageDefinition>

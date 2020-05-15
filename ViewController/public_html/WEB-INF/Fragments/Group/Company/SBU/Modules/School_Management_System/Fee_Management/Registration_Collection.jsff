@@ -48,7 +48,7 @@
                                   columns="#{bindings.TblRegFeeRecView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblRegFeeRecView1.hints.Id.precision}"
                                   shortDesc="#{bindings.TblRegFeeRecView1.hints.Id.tooltip}" id="it1" 
-                                  disabled="true" contentStyle='text-align: center'>
+                                  readOnly="true" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblRegFeeRecView1.hints.Id.format}"/>
                     </af:inputText>

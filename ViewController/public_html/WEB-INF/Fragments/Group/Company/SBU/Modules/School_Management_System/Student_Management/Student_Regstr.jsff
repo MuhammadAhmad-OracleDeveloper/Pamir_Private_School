@@ -72,7 +72,7 @@
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdRegView1.hints.StdEnqId.name}" filterable="true"
-                             sortable="true" headerText="Student Enquiry" id="c3" width="110" align="left">
+                             sortable="true" headerText="Student Enquiry" id="c3" width="200" align="left">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.StdEnqId}"
        id="it7" placeholder="Search ">
@@ -105,7 +105,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdRegView1.hints.RegNo.name}" filterable="true"
-                             sortable="true" headerText="Student Registration No." id="c5" align="left" width="110">
+                             sortable="true" headerText="Student Registration No." id="c5" align="left" width="130">
                     <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.RegNo}"
        id="it29" placeholder="Search ">
@@ -581,8 +581,17 @@
                     <f:validator binding="#{bindings.SibDiscValue.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.SibDiscValue.format}"/>
                   </af:inputText>
+                  <af:inputText value="#{bindings.ScholarDiscPerc.inputValue}"
+                                label="Scholarship Discount Percentage"
+                                required="#{bindings.ScholarDiscPerc.hints.mandatory}"
+                                columns="#{bindings.ScholarDiscPerc.hints.displayWidth}"
+                                maximumLength="#{bindings.ScholarDiscPerc.hints.precision}"
+                                shortDesc="#{bindings.ScholarDiscPerc.hints.tooltip}" id="it63">
+                    <f:validator binding="#{bindings.ScholarDiscPerc.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.ScholarDiscPerc.format}"/>
+                  </af:inputText>
                   <af:inputText value="#{bindings.ScholarDiscAmt.inputValue}"
-                                label="Scholarship Discount (Amount)"
+                                label="Scholarship Discount Amount"
                                 required="#{bindings.ScholarDiscAmt.hints.mandatory}"
                                 columns="#{bindings.ScholarDiscAmt.hints.displayWidth}"
                                 maximumLength="#{bindings.ScholarDiscAmt.hints.precision}"
@@ -666,33 +675,7 @@
                 </af:panelFormLayout>
               </af:showDetailItem>
               <af:showDetailItem text="Guardian's Details" id="sdi4">
-                <af:panelFormLayout id="pfl5" maxColumns="2" rows="4">
-                  <af:spacer  id="s14"/>
-                  
-                  
-                    <f:facet name="footer">
-                    <af:panelGroupLayout id="pgl11">
-                    <af:panelGroupLayout layout="horizontal" id="pgl9"/>
-                    
-                     <af:spacer width="200" height="10" id="s15"/>
-                <af:panelGroupLayout id="pgl2" layout="horizontal">
-                            <af:iterator id="i1" var="index" varStatus="status"
-                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
-                                           icon="/sms/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
-                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
-                                </af:button>
-                                <af:spacer width="5" height="10" id="s16"/>
-                            </af:iterator>
-                        </af:panelGroupLayout>
-                      </af:panelGroupLayout>  
-                  </f:facet>
-                    
-                  
-                  
-                   
-                </af:panelFormLayout>
+                
                 <af:table value="#{bindings.TblStdRegGuardView2.collectionModel}" var="row"
                           rows="#{bindings.TblStdRegGuardView2.rangeSize}"
                           emptyText="#{bindings.TblStdRegGuardView2.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -702,22 +685,32 @@
                           rowSelection="single" fetchSize="#{bindings.TblStdRegGuardView2.rangeSize}"
                           filterModel="#{bindings.TblStdRegGuardView2Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblStdRegGuardView2Query.processQuery}" varStatus="vs" id="t3"
-                          partialTriggers="::b2 ::b3 ::b4 ::b5 ::b6 ::b7 ::b8 ::b9 ::b11 ::b12 ::b13 ::b14 ::b15 ::b16 ::b17 ::b18">
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblStdRegGuardView2.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblStdRegGuardView2.hints.Id.label}" id="c20" visible="false">
+                             sortable="true" headerText="ID" id="c20" visible="false">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="it40" placeholder="Search ">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.Id.inputValue}"
                                   label="#{bindings.TblStdRegGuardView2.hints.Id.label}"
                                   required="#{bindings.TblStdRegGuardView2.hints.Id.mandatory}"
                                   columns="#{bindings.TblStdRegGuardView2.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblStdRegGuardView2.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblStdRegGuardView2.hints.Id.tooltip}" id="it34">
+                                  shortDesc="#{bindings.TblStdRegGuardView2.hints.Id.tooltip}" id="it34" readOnly="true">
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblStdRegGuardView2.hints.Id.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdRegGuardView2.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="Name" id="c21"
-                             align="left">
+                             sortable="true" headerText="Guardian" id="c21"
+                             align="left" width="200">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Name}"
+       id="it56" placeholder="Search ">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.Name.inputValue}"
                                   label="#{bindings.TblStdRegGuardView2.hints.Name.label}"
                                   required="#{bindings.TblStdRegGuardView2.hints.Name.mandatory}"
@@ -730,6 +723,11 @@
                   <af:column sortProperty="#{bindings.TblStdRegGuardView2.hints.GuardRelation.name}" filterable="true"
                              sortable="true" headerText="Relation"
                              id="c22" align="left">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.GuardRelation}"
+       id="it57" placeholder="Search ">
+      </af:inputText>
+</f:facet>
                     <af:selectOneChoice value="#{row.bindings.GuardRelation.inputValue}"
                                         label="#{row.bindings.GuardRelation.label}"
                                         required="#{bindings.TblStdRegGuardView2.hints.GuardRelation.mandatory}"
@@ -742,6 +740,11 @@
                   <af:column sortProperty="#{bindings.TblStdRegGuardView2.hints.ContactNumber.name}" filterable="true"
                              sortable="true" headerText="Contact Number"
                              id="c23" align="left">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ContactNumber}"
+       id="it58" placeholder="Search ">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.ContactNumber.inputValue}"
                                   label="#{bindings.TblStdRegGuardView2.hints.ContactNumber.label}"
                                   required="#{bindings.TblStdRegGuardView2.hints.ContactNumber.mandatory}"
@@ -754,6 +757,11 @@
                   <af:column sortProperty="#{bindings.TblStdRegGuardView2.hints.Address.name}" filterable="true"
                              sortable="true" headerText="Address" id="c24"
                              align="left">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Address}"
+       id="it59" placeholder="Search ">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.Address.inputValue}"
                                   label="#{bindings.TblStdRegGuardView2.hints.Address.label}"
                                   required="#{bindings.TblStdRegGuardView2.hints.Address.mandatory}"
@@ -766,6 +774,11 @@
                   <af:column sortProperty="#{bindings.TblStdRegGuardView2.hints.Mobile1.name}" filterable="true"
                              sortable="true" headerText="Mobile 1" id="c25"
                              align="left">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Mobile1}"
+       id="it60" placeholder="Search ">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.Mobile1.inputValue}"
                                   label="#{bindings.TblStdRegGuardView2.hints.Mobile1.label}"
                                   required="#{bindings.TblStdRegGuardView2.hints.Mobile1.mandatory}"
@@ -778,6 +791,11 @@
                   <af:column sortProperty="#{bindings.TblStdRegGuardView2.hints.Mobile2.name}" filterable="true"
                              sortable="true" headerText="Mobile 2" id="c26"
                              align="left">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Mobile2}"
+       id="it61" placeholder="Search ">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.Mobile2.inputValue}"
                                   label="#{bindings.TblStdRegGuardView2.hints.Mobile2.label}"
                                   required="#{bindings.TblStdRegGuardView2.hints.Mobile2.mandatory}"
@@ -790,6 +808,11 @@
                   <af:column sortProperty="#{bindings.TblStdRegGuardView2.hints.Ast.name}" filterable="true"
                              sortable="true" headerText="Active" id="c27"
                              align="left">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ast}"
+       id="it62" placeholder="Search ">
+      </af:inputText>
+</f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblStdRegGuardView2.hints.Ast.mandatory}"
                                         shortDesc="#{bindings.TblStdRegGuardView2.hints.Ast.tooltip}" id="soc21">
@@ -798,6 +821,19 @@
                     </af:selectOneChoice>
                   </af:column>
                 </af:table>
+                <af:spacer width="40" height="40" id="s14"/>
+                <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/sms/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s16"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                      
               </af:showDetailItem>
               <af:showDetailItem text="Sibling's Details" id="sdi5">
                 <af:panelFormLayout id="pfl6">

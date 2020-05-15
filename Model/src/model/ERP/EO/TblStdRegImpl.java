@@ -82,6 +82,7 @@ public class TblStdRegImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         RefDocNo,
+        ScholarDiscPerc,
         TblStdEnq,
         TblGrade,
         TblLookupDetail,
@@ -118,6 +119,7 @@ public class TblStdRegImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int GROUPCOMPANYID = AttributesEnum.GroupCompanyId.index();
     public static final int ENROLLNO = AttributesEnum.EnrollNo.index();
@@ -177,6 +179,7 @@ public class TblStdRegImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int REFDOCNO = AttributesEnum.RefDocNo.index();
+    public static final int SCHOLARDISCPERC = AttributesEnum.ScholarDiscPerc.index();
     public static final int TBLSTDENQ = AttributesEnum.TblStdEnq.index();
     public static final int TBLGRADE = AttributesEnum.TblGrade.index();
     public static final int TBLLOOKUPDETAIL = AttributesEnum.TblLookupDetail.index();
@@ -196,6 +199,13 @@ public class TblStdRegImpl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public TblStdRegImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblStdReg");
     }
 
     /**
@@ -1127,6 +1137,22 @@ public class TblStdRegImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for ScholarDiscPerc, using the alias name ScholarDiscPerc.
+     * @return the value of ScholarDiscPerc
+     */
+    public BigDecimal getScholarDiscPerc() {
+        return (BigDecimal) getAttributeInternal(SCHOLARDISCPERC);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ScholarDiscPerc.
+     * @param value value to set the ScholarDiscPerc
+     */
+    public void setScholarDiscPerc(BigDecimal value) {
+        setAttributeInternal(SCHOLARDISCPERC, value);
+    }
+
+    /**
      * @return the associated entity TblStdEnqImpl.
      */
     public TblStdEnqImpl getTblStdEnq() {
@@ -1301,6 +1327,7 @@ public class TblStdRegImpl extends EntityImpl {
         return (RowIterator) getAttributeInternal(TBLSTDREGSIB1);
     }
 
+
     /**
      * @param id key constituent
 
@@ -1308,13 +1335,6 @@ public class TblStdRegImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblStdReg");
     }
 
     /**

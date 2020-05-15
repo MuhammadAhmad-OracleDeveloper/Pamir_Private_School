@@ -258,6 +258,12 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
+    Name="NoticeTitle"
+    PrecisionRule="true"
+    EntityAttrName="NoticeTitle"
+    EntityUsage="TblNotices"
+    AliasName="NOTICE_TITLE"/>
+  <ViewAttribute
     Name="NoticeImage"
     PrecisionRule="true"
     EntityAttrName="NoticeImage"
@@ -268,7 +274,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblNotices"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -280,7 +287,8 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblNotices"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"

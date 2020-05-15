@@ -112,7 +112,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblTerms"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -124,13 +125,26 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblTerms"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
     EntityUsage="TblTerms"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="StartDate"
+    PrecisionRule="true"
+    EntityAttrName="StartDate"
+    EntityUsage="TblTerms"
+    AliasName="START_DATE"/>
+  <ViewAttribute
+    Name="EndDate"
+    PrecisionRule="true"
+    EntityAttrName="EndDate"
+    EntityUsage="TblTerms"
+    AliasName="END_DATE"/>
   <ViewLinkAccessor
     Name="TblEvalWeightageView"
     ViewLink="model.ERP.VO.FkEvalWeightageTermLink"
