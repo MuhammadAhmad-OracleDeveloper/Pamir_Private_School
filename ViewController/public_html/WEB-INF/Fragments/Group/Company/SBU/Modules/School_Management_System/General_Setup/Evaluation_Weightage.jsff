@@ -44,7 +44,7 @@
                                   columns="#{bindings.TblGradeView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblGradeView1.hints.Id.precision}"
                                   shortDesc="#{bindings.TblGradeView1.hints.Id.tooltip}" id="it1"
-                                  disabled="true"
+                                  readOnly="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblGradeView1.hints.Id.format}"/>
@@ -60,7 +60,7 @@
                     <af:selectOneChoice value="#{row.bindings.AcadGroupId.inputValue}"
                                         label="#{row.bindings.AcadGroupId.label}"
                                         required="#{bindings.TblGradeView1.hints.AcadGroupId.mandatory}"
-                                        shortDesc="#{bindings.TblGradeView1.hints.AcadGroupId.tooltip}" id="soc1" disabled="true"
+                                        shortDesc="#{bindings.TblGradeView1.hints.AcadGroupId.tooltip}" id="soc1" readOnly="true"
                                         contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.AcadGroupId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.AcadGroupId.validator}"/>
@@ -78,7 +78,7 @@
                                   required="#{bindings.TblGradeView1.hints.GradeName.mandatory}"
                                   columns="#{bindings.TblGradeView1.hints.GradeName.displayWidth}"
                                   maximumLength="#{bindings.TblGradeView1.hints.GradeName.precision}"
-                                  shortDesc="#{bindings.TblGradeView1.hints.GradeName.tooltip}" id="it2" disabled="true"
+                                  shortDesc="#{bindings.TblGradeView1.hints.GradeName.tooltip}" id="it2" readOnly="true"
                                   contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.GradeName.validator}"/>
                     </af:inputText>
@@ -95,7 +95,7 @@
                                   required="#{bindings.TblGradeView1.hints.KitName.mandatory}"
                                   columns="#{bindings.TblGradeView1.hints.KitName.displayWidth}"
                                   maximumLength="#{bindings.TblGradeView1.hints.KitName.precision}"
-                                  shortDesc="#{bindings.TblGradeView1.hints.KitName.tooltip}" id="it3" disabled="true"
+                                  shortDesc="#{bindings.TblGradeView1.hints.KitName.tooltip}" id="it3" readOnly="true"
                                   contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.KitName.validator}"/>
                     </af:inputText>
@@ -109,7 +109,7 @@
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblGradeView1.hints.Ast.mandatory}"
-                                        shortDesc="#{bindings.TblGradeView1.hints.Ast.tooltip}" id="soc2" disabled="true"
+                                        shortDesc="#{bindings.TblGradeView1.hints.Ast.tooltip}" id="soc2" readOnly="true"
                                         contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
@@ -151,7 +151,7 @@
                                   columns="#{bindings.TblEvalWeightageView2.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblEvalWeightageView2.hints.Id.precision}"
                                   shortDesc="#{bindings.TblEvalWeightageView2.hints.Id.tooltip}" id="it4"
-                                  disabled="true"
+                                  readOnly="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false"

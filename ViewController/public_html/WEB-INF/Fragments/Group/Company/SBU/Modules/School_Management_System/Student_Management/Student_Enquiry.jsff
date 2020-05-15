@@ -199,7 +199,7 @@
                   <af:inputText value="#{bindings.TotAge.inputValue}" label="Total Age"
                                 required="#{bindings.TotAge.hints.mandatory}"
                                 columns="#{bindings.TotAge.hints.displayWidth}"
-                                shortDesc="#{bindings.TotAge.hints.tooltip}" id="id5" contentStyle="width:200px;" disabled="true">
+                                shortDesc="#{bindings.TotAge.hints.tooltip}" id="id5" contentStyle="width:200px;" readOnly="true">
                     <f:validator binding="#{bindings.TotAge.validator}"/>
                     <af:convertDateTime pattern="#{bindings.TotAge.format}"/>
                   </af:inputText>

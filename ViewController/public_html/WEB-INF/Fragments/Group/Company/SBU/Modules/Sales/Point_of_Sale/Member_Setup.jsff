@@ -28,7 +28,7 @@
                   <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
                                 required="#{bindings.Id.hints.mandatory}" columns="#{bindings.Id.hints.displayWidth}"
                                 maximumLength="#{bindings.Id.hints.precision}" shortDesc="#{bindings.Id.hints.tooltip}"
-                                id="it1" disabled="true">
+                                id="it1" readOnly="true">
                     <f:validator binding="#{bindings.Id.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
                   </af:inputText>
@@ -142,7 +142,7 @@
                                   required="#{bindings.TblMemberView1.hints.Id.mandatory}"
                                   columns="#{bindings.TblMemberView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblMemberView1.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblMemberView1.hints.Id.tooltip}" id="it9" disabled="true">
+                                  shortDesc="#{bindings.TblMemberView1.hints.Id.tooltip}" id="it9" readOnly="true">
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblMemberView1.hints.Id.format}"/>
                     </af:inputText>
@@ -159,7 +159,7 @@
                                   label="#{bindings.TblMemberView1.hints.Dated.label}"
                                   required="#{bindings.TblMemberView1.hints.Dated.mandatory}"
                                   columns="#{bindings.TblMemberView1.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.TblMemberView1.hints.Dated.tooltip}" id="id5"  disabled="true">
+                                  shortDesc="#{bindings.TblMemberView1.hints.Dated.tooltip}" id="id5"  readOnly="true">
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblMemberView1.hints.Dated.format}"/>
                     </af:inputDate>
@@ -176,7 +176,7 @@
                                   required="#{bindings.TblMemberView1.hints.Name.mandatory}"
                                   columns="#{bindings.TblMemberView1.hints.Name.displayWidth}"
                                   maximumLength="#{bindings.TblMemberView1.hints.Name.precision}"
-                                  shortDesc="#{bindings.TblMemberView1.hints.Name.tooltip}" id="it10"  disabled="true">
+                                  shortDesc="#{bindings.TblMemberView1.hints.Name.tooltip}" id="it10"  readOnly="true">
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -192,7 +192,7 @@
                                   required="#{bindings.TblMemberView1.hints.Phone.mandatory}"
                                   columns="#{bindings.TblMemberView1.hints.Phone.displayWidth}"
                                   maximumLength="#{bindings.TblMemberView1.hints.Phone.precision}"
-                                  shortDesc="#{bindings.TblMemberView1.hints.Phone.tooltip}" id="it11"  disabled="true"
+                                  shortDesc="#{bindings.TblMemberView1.hints.Phone.tooltip}" id="it11"  readOnly="true"
                                   contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.Phone.validator}"/>
                     </af:inputText>
@@ -209,7 +209,7 @@
                                   required="#{bindings.TblMemberView1.hints.Cell.mandatory}"
                                   columns="#{bindings.TblMemberView1.hints.Cell.displayWidth}"
                                   maximumLength="#{bindings.TblMemberView1.hints.Cell.precision}"
-                                  shortDesc="#{bindings.TblMemberView1.hints.Cell.tooltip}" id="it12"  disabled="true"
+                                  shortDesc="#{bindings.TblMemberView1.hints.Cell.tooltip}" id="it12"  readOnly="true"
                                   contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.Cell.validator}"/>
                     </af:inputText>
@@ -226,7 +226,7 @@
                                   required="#{bindings.TblMemberView1.hints.Fax.mandatory}"
                                   columns="#{bindings.TblMemberView1.hints.Fax.displayWidth}"
                                   maximumLength="#{bindings.TblMemberView1.hints.Fax.precision}"
-                                  shortDesc="#{bindings.TblMemberView1.hints.Fax.tooltip}" id="it13"  disabled="true"
+                                  shortDesc="#{bindings.TblMemberView1.hints.Fax.tooltip}" id="it13"  readOnly="true"
                                   contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.Fax.validator}"/>
                     </af:inputText>
@@ -243,7 +243,7 @@
                                   label="#{bindings.TblMemberView1.hints.IssueDate.label}"
                                   required="#{bindings.TblMemberView1.hints.IssueDate.mandatory}"
                                   columns="#{bindings.TblMemberView1.hints.IssueDate.displayWidth}"
-                                  shortDesc="#{bindings.TblMemberView1.hints.IssueDate.tooltip}" id="id7"  disabled="true">
+                                  shortDesc="#{bindings.TblMemberView1.hints.IssueDate.tooltip}" id="id7"  readOnly="true">
                       <f:validator binding="#{row.bindings.IssueDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblMemberView1.hints.IssueDate.format}"/>
                     </af:inputDate>
@@ -260,7 +260,7 @@
                                   label="#{bindings.TblMemberView1.hints.ExpDate.label}"
                                   required="#{bindings.TblMemberView1.hints.ExpDate.mandatory}"
                                   columns="#{bindings.TblMemberView1.hints.ExpDate.displayWidth}"
-                                  shortDesc="#{bindings.TblMemberView1.hints.ExpDate.tooltip}" id="id9"  disabled="true">
+                                  shortDesc="#{bindings.TblMemberView1.hints.ExpDate.tooltip}" id="id9"  readOnly="true">
                       <f:validator binding="#{row.bindings.ExpDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblMemberView1.hints.ExpDate.format}"/>
                     </af:inputDate>
@@ -277,7 +277,7 @@
                                   required="#{bindings.TblMemberView1.hints.DiscPerc.mandatory}"
                                   columns="#{bindings.TblMemberView1.hints.DiscPerc.displayWidth}"
                                   maximumLength="#{bindings.TblMemberView1.hints.DiscPerc.precision}"
-                                  shortDesc="#{bindings.TblMemberView1.hints.DiscPerc.tooltip}" id="it15"  disabled="true">
+                                  shortDesc="#{bindings.TblMemberView1.hints.DiscPerc.tooltip}" id="it15"  readOnly="true">
                       <f:validator binding="#{row.bindings.DiscPerc.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblMemberView1.hints.DiscPerc.format}"/>
@@ -295,7 +295,7 @@
                                   required="#{bindings.TblMemberView1.hints.EMail.mandatory}"
                                   columns="#{bindings.TblMemberView1.hints.EMail.displayWidth}"
                                   maximumLength="#{bindings.TblMemberView1.hints.EMail.precision}"
-                                  shortDesc="#{bindings.TblMemberView1.hints.EMail.tooltip}" id="it14"  disabled="true">
+                                  shortDesc="#{bindings.TblMemberView1.hints.EMail.tooltip}" id="it14"  readOnly="true">
                       <f:validator binding="#{row.bindings.EMail.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -311,7 +311,7 @@
                                   required="#{bindings.TblMemberView1.hints.Address.mandatory}"
                                   columns="#{bindings.TblMemberView1.hints.Address.displayWidth}"
                                   maximumLength="#{bindings.TblMemberView1.hints.Address.precision}"
-                                  shortDesc="#{bindings.TblMemberView1.hints.Address.tooltip}" id="it16"  disabled="true">
+                                  shortDesc="#{bindings.TblMemberView1.hints.Address.tooltip}" id="it16"  readOnly="true">
                       <f:validator binding="#{row.bindings.Address.validator}"/>
                     </af:inputText>
                   </af:column>

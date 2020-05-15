@@ -104,7 +104,7 @@
                                   required="#{bindings.TblRdfMasterView1.hints.Id.mandatory}"
                                   columns="#{bindings.TblRdfMasterView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblRdfMasterView1.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblRdfMasterView1.hints.Id.tooltip}" id="it4" disabled="true">
+                                  shortDesc="#{bindings.TblRdfMasterView1.hints.Id.tooltip}" id="it4" readOnly="true">
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblRdfMasterView1.hints.Id.format}"/>
                     </af:inputText>
@@ -121,7 +121,7 @@
                                   required="#{bindings.TblRdfMasterView1.hints.Vno.mandatory}"
                                   columns="#{bindings.TblRdfMasterView1.hints.Vno.displayWidth}"
                                   maximumLength="#{bindings.TblRdfMasterView1.hints.Vno.precision}"
-                                  shortDesc="#{bindings.TblRdfMasterView1.hints.Vno.tooltip}" id="it5" disabled="true"
+                                  shortDesc="#{bindings.TblRdfMasterView1.hints.Vno.tooltip}" id="it5" readOnly="true"
                                   contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.Vno.validator}"/>
                     </af:inputText>
@@ -138,7 +138,7 @@
                                   label="#{bindings.TblRdfMasterView1.hints.Dated.label}"
                                   required="#{bindings.TblRdfMasterView1.hints.Dated.mandatory}"
                                   columns="#{bindings.TblRdfMasterView1.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.TblRdfMasterView1.hints.Dated.tooltip}" id="id3" disabled="true">
+                                  shortDesc="#{bindings.TblRdfMasterView1.hints.Dated.tooltip}" id="id3" readOnly="true">
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblRdfMasterView1.hints.Dated.format}"/>
                     </af:inputDate>
@@ -152,7 +152,7 @@
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Vtp.inputValue}" label="#{row.bindings.Vtp.label}"
                                         required="#{bindings.TblRdfMasterView1.hints.Vtp.mandatory}"
-                                        shortDesc="#{bindings.TblRdfMasterView1.hints.Vtp.tooltip}" id="soc3" disabled="true">
+                                        shortDesc="#{bindings.TblRdfMasterView1.hints.Vtp.tooltip}" id="soc3" readOnly="true">
                       <f:selectItems value="#{row.bindings.Vtp.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.Vtp.validator}"/>
                     </af:selectOneChoice>
@@ -166,7 +166,7 @@
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.GlL3Id.inputValue}" label="#{row.bindings.GlL3Id.label}"
                                         required="#{bindings.TblRdfMasterView1.hints.GlL3Id.mandatory}"
-                                        shortDesc="#{bindings.TblRdfMasterView1.hints.GlL3Id.tooltip}" id="soc4" disabled="true">
+                                        shortDesc="#{bindings.TblRdfMasterView1.hints.GlL3Id.tooltip}" id="soc4" readOnly="true">
                       <f:selectItems value="#{row.bindings.GlL3Id.items}" id="si4"/>
                       <f:validator binding="#{row.bindings.GlL3Id.validator}"/>
                     </af:selectOneChoice>
@@ -183,7 +183,7 @@
                                   required="#{bindings.TblRdfMasterView1.hints.Narration.mandatory}"
                                   columns="#{bindings.TblRdfMasterView1.hints.Narration.displayWidth}"
                                   maximumLength="#{bindings.TblRdfMasterView1.hints.Narration.precision}"
-                                  shortDesc="#{bindings.TblRdfMasterView1.hints.Narration.tooltip}" id="it6" disabled="true">
+                                  shortDesc="#{bindings.TblRdfMasterView1.hints.Narration.tooltip}" id="it6" readOnly="true">
                       <f:validator binding="#{row.bindings.Narration.validator}"/>
                     </af:inputText>
                   </af:column>

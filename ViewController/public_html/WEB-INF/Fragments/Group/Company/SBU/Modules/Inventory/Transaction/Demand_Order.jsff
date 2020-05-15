@@ -3,7 +3,7 @@
                 xmlns:f="http://java.sun.com/jsf/core">
   
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
-    <af:showDetailItem id="pane1" text="Debit Notes">
+    <af:showDetailItem id="pane1" text="Demand Order">
          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
                             <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                                    disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
@@ -23,12 +23,12 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Inventory Voucher Master">
+              <af:showDetailItem id="tab1" text="Demand Order Master">
                 <af:panelFormLayout id="pfl1" maxColumns="2" rows="3">
                   <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
                                 required="#{bindings.Id.hints.mandatory}" columns="#{bindings.Id.hints.displayWidth}"
                                 maximumLength="#{bindings.Id.hints.precision}" shortDesc="#{bindings.Id.hints.tooltip}"
-                                id="it1" disabled="true">
+                                id="it1" readOnly="true">
                     <f:validator binding="#{bindings.Id.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
                   </af:inputText>
@@ -113,7 +113,7 @@
                                   columns="#{bindings.TblInvVoucherMasterTransView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblInvVoucherMasterTransView1.hints.Id.precision}"
                                   shortDesc="#{bindings.TblInvVoucherMasterTransView1.hints.Id.tooltip}" id="it14"
-                                  disabled="true">
+                                  readOnly="true">
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblInvVoucherMasterTransView1.hints.Id.format}"/>
@@ -133,7 +133,7 @@
                                   columns="#{bindings.TblInvVoucherMasterTransView1.hints.Vno.displayWidth}"
                                   maximumLength="#{bindings.TblInvVoucherMasterTransView1.hints.Vno.precision}"
                                   shortDesc="#{bindings.TblInvVoucherMasterTransView1.hints.Vno.tooltip}" id="it44"
-                                  contentStyle='text-align: right' disabled="true">
+                                  contentStyle='text-align: right' readOnly="true">
                       <f:validator binding="#{row.bindings.Vno.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -151,7 +151,7 @@
                                   required="#{bindings.TblInvVoucherMasterTransView1.hints.Dated.mandatory}"
                                   columns="#{bindings.TblInvVoucherMasterTransView1.hints.Dated.displayWidth}"
                                   shortDesc="#{bindings.TblInvVoucherMasterTransView1.hints.Dated.tooltip}" id="id3"
-                                  disabled="true">
+                                  readOnly="true">
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblInvVoucherMasterTransView1.hints.Dated.format}"/>
                     </af:inputDate>
@@ -168,7 +168,7 @@
                                         label="#{row.bindings.DepartmentId.label}"
                                         required="#{bindings.TblInvVoucherMasterTransView1.hints.DepartmentId.mandatory}"
                                         shortDesc="#{bindings.TblInvVoucherMasterTransView1.hints.DepartmentId.tooltip}"
-                                        id="soc7" disabled="true">
+                                        id="soc7" readOnly="true">
                       <f:selectItems value="#{row.bindings.DepartmentId.items}" id="si7"/>
                       <f:validator binding="#{row.bindings.DepartmentId.validator}"/>
                     </af:selectOneChoice>
@@ -184,7 +184,7 @@
                     <af:selectOneChoice value="#{row.bindings.InvType.inputValue}" label="#{row.bindings.InvType.label}"
                                         required="#{bindings.TblInvVoucherMasterTransView1.hints.InvType.mandatory}"
                                         shortDesc="#{bindings.TblInvVoucherMasterTransView1.hints.InvType.tooltip}"
-                                        id="soc9" disabled="true">
+                                        id="soc9" readOnly="true">
                       <f:selectItems value="#{row.bindings.InvType.items}" id="si9"/>
                       <f:validator binding="#{row.bindings.InvType.validator}"/>
                     </af:selectOneChoice>
@@ -204,7 +204,7 @@
                                   columns="#{bindings.TblInvVoucherMasterTransView1.hints.Narration.displayWidth}"
                                   maximumLength="#{bindings.TblInvVoucherMasterTransView1.hints.Narration.precision}"
                                   shortDesc="#{bindings.TblInvVoucherMasterTransView1.hints.Narration.tooltip}"
-                                  id="it54" disabled="true">
+                                  id="it54" readOnly="true">
                       <f:validator binding="#{row.bindings.Narration.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -233,7 +233,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr4">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
             <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab2" text="Inventory Voucher Detail">
+              <af:showDetailItem id="tab2" text="Detail">
                 <af:table value="#{bindings.TblInvVoucherDetailView3.collectionModel}" var="row"
                           rows="#{bindings.TblInvVoucherDetailView3.rangeSize}"
                           emptyText="#{bindings.TblInvVoucherDetailView3.viewable ? 'No data to display.' : 'Access Denied.'}"

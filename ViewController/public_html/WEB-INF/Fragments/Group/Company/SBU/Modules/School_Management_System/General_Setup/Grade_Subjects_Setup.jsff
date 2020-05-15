@@ -47,7 +47,7 @@
                                                       columns="#{bindings.TblSubjectView1.hints.Id.displayWidth}"
                                                       maximumLength="#{bindings.TblSubjectView1.hints.Id.precision}"
                                                       shortDesc="#{bindings.TblSubjectView1.hints.Id.tooltip}" id="it1"
-                                                      disabled="true"
+                                                      readOnly="true"
                                   contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.Id.validator}"/>
                                             <af:convertNumber groupingUsed="false"
@@ -67,7 +67,7 @@
                                                       columns="#{bindings.TblSubjectView1.hints.Name.displayWidth}"
                                                       maximumLength="#{bindings.TblSubjectView1.hints.Name.precision}"
                                                       shortDesc="#{bindings.TblSubjectView1.hints.Name.tooltip}"
-                                                      id="it2" disabled="true" contentStyle="text-align: left">
+                                                      id="it2" readOnly="true" contentStyle="text-align: left">
                                             <f:validator binding="#{row.bindings.Name.validator}"/>
                                         </af:inputText>
                                     </af:column>
@@ -108,7 +108,7 @@
                                                       columns="#{bindings.TblGradeSubjectView3.hints.Id.displayWidth}"
                                                       maximumLength="#{bindings.TblGradeSubjectView3.hints.Id.precision}"
                                                       shortDesc="#{bindings.TblGradeSubjectView3.hints.Id.tooltip}"
-                                                      id="it3" disabled="true"
+                                                      id="it3" readOnly="true"
                                   contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.Id.validator}"/>
                                             <af:convertNumber groupingUsed="false"

@@ -130,7 +130,7 @@
                                   required="#{bindings.TblGradeStaffView2.hints.Id.mandatory}"
                                   columns="#{bindings.TblGradeStaffView2.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblGradeStaffView2.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblGradeStaffView2.hints.Id.tooltip}" id="it3" disabled="true"
+                                  shortDesc="#{bindings.TblGradeStaffView2.hints.Id.tooltip}" id="it3" readOnly="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblGradeStaffView2.hints.Id.format}"/>

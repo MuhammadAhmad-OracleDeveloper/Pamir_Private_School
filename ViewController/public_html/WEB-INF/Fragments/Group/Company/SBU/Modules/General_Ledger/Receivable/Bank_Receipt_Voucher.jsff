@@ -102,7 +102,7 @@
                                   required="#{bindings.TblGlVoucherMasterTransView1.hints.Id.mandatory}"
                                   columns="#{bindings.TblGlVoucherMasterTransView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblGlVoucherMasterTransView1.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblGlVoucherMasterTransView1.hints.Id.tooltip}" id="it8" disabled="true">
+                                  shortDesc="#{bindings.TblGlVoucherMasterTransView1.hints.Id.tooltip}" id="it8" readOnly="true">
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblGlVoucherMasterTransView1.hints.Id.format}"/>
@@ -121,7 +121,7 @@
                                   required="#{bindings.TblGlVoucherMasterTransView1.hints.Vno.mandatory}"
                                   columns="#{bindings.TblGlVoucherMasterTransView1.hints.Vno.displayWidth}"
                                   maximumLength="#{bindings.TblGlVoucherMasterTransView1.hints.Vno.precision}"
-                                  shortDesc="#{bindings.TblGlVoucherMasterTransView1.hints.Vno.tooltip}" id="it9" disabled="true"
+                                  shortDesc="#{bindings.TblGlVoucherMasterTransView1.hints.Vno.tooltip}" id="it9" readOnly="true"
                                   contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.Vno.validator}"/>
                     </af:inputText>
@@ -140,7 +140,7 @@
                                   label="#{bindings.TblGlVoucherMasterTransView1.hints.Dated.label}"
                                   required="#{bindings.TblGlVoucherMasterTransView1.hints.Dated.mandatory}"
                                   columns="#{bindings.TblGlVoucherMasterTransView1.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.TblGlVoucherMasterTransView1.hints.Dated.tooltip}" id="id5" disabled="true">
+                                  shortDesc="#{bindings.TblGlVoucherMasterTransView1.hints.Dated.tooltip}" id="id5" readOnly="true">
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblGlVoucherMasterTransView1.hints.Dated.format}"/>
                     </af:inputDate>
@@ -158,7 +158,7 @@
                                   required="#{bindings.TblGlVoucherMasterTransView1.hints.ChqNo.mandatory}"
                                   columns="#{bindings.TblGlVoucherMasterTransView1.hints.ChqNo.displayWidth}"
                                   maximumLength="#{bindings.TblGlVoucherMasterTransView1.hints.ChqNo.precision}"
-                                  shortDesc="#{bindings.TblGlVoucherMasterTransView1.hints.ChqNo.tooltip}" id="it10" disabled="true"
+                                  shortDesc="#{bindings.TblGlVoucherMasterTransView1.hints.ChqNo.tooltip}" id="it10" readOnly="true"
                                   contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.ChqNo.validator}"/>
                     </af:inputText>
@@ -176,7 +176,7 @@
                                   label="#{bindings.TblGlVoucherMasterTransView1.hints.ChqDate.label}"
                                   required="#{bindings.TblGlVoucherMasterTransView1.hints.ChqDate.mandatory}"
                                   columns="#{bindings.TblGlVoucherMasterTransView1.hints.ChqDate.displayWidth}"
-                                  shortDesc="#{bindings.TblGlVoucherMasterTransView1.hints.ChqDate.tooltip}" id="id7" disabled="true">
+                                  shortDesc="#{bindings.TblGlVoucherMasterTransView1.hints.ChqDate.tooltip}" id="id7" readOnly="true">
                       <f:validator binding="#{row.bindings.ChqDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblGlVoucherMasterTransView1.hints.ChqDate.format}"/>
                     </af:inputDate>
@@ -194,7 +194,7 @@
                                   label="#{bindings.TblGlVoucherMasterTransView1.hints.ClrDate.label}"
                                   required="#{bindings.TblGlVoucherMasterTransView1.hints.ClrDate.mandatory}"
                                   columns="#{bindings.TblGlVoucherMasterTransView1.hints.ClrDate.displayWidth}"
-                                  shortDesc="#{bindings.TblGlVoucherMasterTransView1.hints.ClrDate.tooltip}" id="id9" disabled="true">
+                                  shortDesc="#{bindings.TblGlVoucherMasterTransView1.hints.ClrDate.tooltip}" id="id9" readOnly="true">
                       <f:validator binding="#{row.bindings.ClrDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblGlVoucherMasterTransView1.hints.ClrDate.format}"/>
                     </af:inputDate>
@@ -209,7 +209,7 @@
                                         label="#{row.bindings.PblCustId.label}"
                                         required="#{bindings.TblGlVoucherMasterTransView1.hints.PblCustId.mandatory}"
                                         shortDesc="#{bindings.TblGlVoucherMasterTransView1.hints.PblCustId.tooltip}"
-                                        id="soc2" disabled="true">
+                                        id="soc2" readOnly="true">
                       <f:selectItems value="#{row.bindings.PblCustId.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.PblCustId.validator}"/>
                     </af:selectOneChoice>
@@ -227,7 +227,7 @@
                                   required="#{bindings.TblGlVoucherMasterTransView1.hints.Narration.mandatory}"
                                   columns="#{bindings.TblGlVoucherMasterTransView1.hints.Narration.displayWidth}"
                                   maximumLength="#{bindings.TblGlVoucherMasterTransView1.hints.Narration.precision}"
-                                  shortDesc="#{bindings.TblGlVoucherMasterTransView1.hints.Narration.tooltip}" id="it11" disabled="true">
+                                  shortDesc="#{bindings.TblGlVoucherMasterTransView1.hints.Narration.tooltip}" id="it11" readOnly="true">
                       <f:validator binding="#{row.bindings.Narration.validator}"/>
                     </af:inputText>
                   </af:column>

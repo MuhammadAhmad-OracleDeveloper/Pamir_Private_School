@@ -47,7 +47,7 @@
                                                       columns="#{bindings.TblAcadYearView1.hints.Id.displayWidth}"
                                                       maximumLength="#{bindings.TblAcadYearView1.hints.Id.precision}"
                                                       shortDesc="#{bindings.TblAcadYearView1.hints.Id.tooltip}" id="it1"
-                                                      disabled="true" contentStyle='text-align: center'>
+                                                      readOnly="true" contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.Id.validator}"/>
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.TblAcadYearView1.hints.Id.format}"/>
@@ -66,7 +66,7 @@
                                                       columns="#{bindings.TblAcadYearView1.hints.Name.displayWidth}"
                                                       maximumLength="#{bindings.TblAcadYearView1.hints.Name.precision}"
                                                       shortDesc="#{bindings.TblAcadYearView1.hints.Name.tooltip}"
-                                                      id="it2" disabled="true" contentStyle="text-align: left">
+                                                      id="it2" readOnly="true" contentStyle="text-align: left">
                                             <f:validator binding="#{row.bindings.Name.validator}"/>
                                         </af:inputText>
                                     </af:column>
@@ -84,7 +84,7 @@
                                                       required="#{bindings.TblAcadYearView1.hints.StartDate.mandatory}"
                                                       columns="#{bindings.TblAcadYearView1.hints.StartDate.displayWidth}"
                                                       shortDesc="#{bindings.TblAcadYearView1.hints.StartDate.tooltip}"
-                                                      id="id2" disabled="true" contentStyle='text-align: left'>
+                                                      id="id2" readOnly="true" contentStyle='text-align: left'>
                                             <f:validator binding="#{row.bindings.StartDate.validator}"/>
                                             <af:convertDateTime pattern="#{bindings.TblAcadYearView1.hints.StartDate.format}"/>
                                         </af:inputDate>
@@ -103,7 +103,7 @@
                                                       required="#{bindings.TblAcadYearView1.hints.EndDate.mandatory}"
                                                       columns="#{bindings.TblAcadYearView1.hints.EndDate.displayWidth}"
                                                       shortDesc="#{bindings.TblAcadYearView1.hints.EndDate.tooltip}"
-                                                      id="id5" disabled="true" contentStyle='text-align: left'>
+                                                      id="id5" readOnly="true" contentStyle='text-align: left'>
                                             <f:validator binding="#{row.bindings.EndDate.validator}"/>
                                             <af:convertDateTime pattern="#{bindings.TblAcadYearView1.hints.EndDate.format}"/>
                                         </af:inputDate>
@@ -119,7 +119,7 @@
                                                             label="#{row.bindings.Ast.label}"
                                                             required="#{bindings.TblAcadYearView1.hints.Ast.mandatory}"
                                                             shortDesc="#{bindings.TblAcadYearView1.hints.Ast.tooltip}"
-                                                            id="soc1" disabled="true" contentStyle="text-align: left">
+                                                            id="soc1" readOnly="true" contentStyle="text-align: left">
                                             <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
                                             <f:validator binding="#{row.bindings.Ast.validator}"/>
                                         </af:selectOneChoice>
@@ -159,7 +159,7 @@
                                                       columns="#{bindings.TblTermsView2.hints.Id.displayWidth}"
                                                       maximumLength="#{bindings.TblTermsView2.hints.Id.precision}"
                                                       shortDesc="#{bindings.TblTermsView2.hints.Id.tooltip}" id="it3"
-                                                      disabled="true" contentStyle='text-align: center'>
+                                                      readOnly="true" contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.Id.validator}"/>
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.TblTermsView2.hints.Id.format}"/>

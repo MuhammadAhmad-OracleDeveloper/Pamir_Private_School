@@ -47,7 +47,7 @@
                                   columns="#{bindings.TblAcadGroupView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblAcadGroupView1.hints.Id.precision}"
                                   shortDesc="#{bindings.TblAcadGroupView1.hints.Id.tooltip}" id="it1"
-                                  disabled="true"
+                                  readOnly="true"
                                   contentStyle='text-align: center' >
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblAcadGroupView1.hints.Id.format}"/>
@@ -66,7 +66,7 @@
                                   columns="#{bindings.TblAcadGroupView1.hints.Name.displayWidth}"
                                   maximumLength="#{bindings.TblAcadGroupView1.hints.Name.precision}"
                                   shortDesc="#{bindings.TblAcadGroupView1.hints.Name.tooltip}" id="it2"
-                                 disabled="true" contentStyle="text-align: left">
+                                 readOnly="true" contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -80,7 +80,7 @@
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblAcadGroupView1.hints.Ast.mandatory}"
                                         shortDesc="#{bindings.TblAcadGroupView1.hints.Ast.tooltip}" id="soc1"
-                                        disabled="true" contentStyle="text-align: left">
+                                        readOnly="true" contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>
@@ -118,7 +118,7 @@
                                   columns="#{bindings.TblGradeView2.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblGradeView2.hints.Id.precision}"
                                   shortDesc="#{bindings.TblGradeView2.hints.Id.tooltip}" id="it3"
-                                  disabled="true"
+                                  readOnly="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblGradeView2.hints.Id.format}"/>
@@ -221,7 +221,7 @@
                                   columns="#{bindings.TblSectionsView3.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblSectionsView3.hints.Id.precision}"
                                   shortDesc="#{bindings.TblSectionsView3.hints.Id.tooltip}" id="it9"
-                                  disabled="true"
+                                  readOnly="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblSectionsView3.hints.Id.format}"/>

@@ -119,7 +119,7 @@
                                   required="#{bindings.TblQuoMasterView1.hints.Id.mandatory}"
                                   columns="#{bindings.TblQuoMasterView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblQuoMasterView1.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblQuoMasterView1.hints.Id.tooltip}" id="it6" disabled="true">
+                                  shortDesc="#{bindings.TblQuoMasterView1.hints.Id.tooltip}" id="it6" readOnly="true">
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblQuoMasterView1.hints.Id.format}"/>
                     </af:inputText>
@@ -136,7 +136,7 @@
                                   required="#{bindings.TblQuoMasterView1.hints.Vno.mandatory}"
                                   columns="#{bindings.TblQuoMasterView1.hints.Vno.displayWidth}"
                                   maximumLength="#{bindings.TblQuoMasterView1.hints.Vno.precision}"
-                                  shortDesc="#{bindings.TblQuoMasterView1.hints.Vno.tooltip}" id="it7" disabled="true"
+                                  shortDesc="#{bindings.TblQuoMasterView1.hints.Vno.tooltip}" id="it7" readOnly="true"
                                   contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.Vno.validator}"/>
                     </af:inputText>
@@ -154,7 +154,7 @@
                                   label="#{bindings.TblQuoMasterView1.hints.Dated.label}"
                                   required="#{bindings.TblQuoMasterView1.hints.Dated.mandatory}"
                                   columns="#{bindings.TblQuoMasterView1.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.TblQuoMasterView1.hints.Dated.tooltip}" id="id3" disabled="true">
+                                  shortDesc="#{bindings.TblQuoMasterView1.hints.Dated.tooltip}" id="id3" readOnly="true">
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblQuoMasterView1.hints.Dated.format}"/>
                     </af:inputDate>
@@ -168,7 +168,7 @@
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Vtp.inputValue}" label="#{row.bindings.Vtp.label}"
                                         required="#{bindings.TblQuoMasterView1.hints.Vtp.mandatory}"
-                                        shortDesc="#{bindings.TblQuoMasterView1.hints.Vtp.tooltip}" id="soc3" disabled="true">
+                                        shortDesc="#{bindings.TblQuoMasterView1.hints.Vtp.tooltip}" id="soc3" readOnly="true">
                       <f:selectItems value="#{row.bindings.Vtp.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.Vtp.validator}"/>
                     </af:selectOneChoice>
@@ -183,7 +183,7 @@
                     <af:selectOneChoice value="#{row.bindings.PblCustId.inputValue}"
                                         label="#{row.bindings.PblCustId.label}"
                                         required="#{bindings.TblQuoMasterView1.hints.PblCustId.mandatory}"
-                                        shortDesc="#{bindings.TblQuoMasterView1.hints.PblCustId.tooltip}" id="soc4" disabled="true">
+                                        shortDesc="#{bindings.TblQuoMasterView1.hints.PblCustId.tooltip}" id="soc4" readOnly="true">
                       <f:selectItems value="#{row.bindings.PblCustId.items}" id="si4"/>
                       <f:validator binding="#{row.bindings.PblCustId.validator}"/>
                     </af:selectOneChoice>
@@ -201,7 +201,7 @@
                                   required="#{bindings.TblQuoMasterView1.hints.ContactPerson.mandatory}"
                                   columns="#{bindings.TblQuoMasterView1.hints.ContactPerson.displayWidth}"
                                   maximumLength="#{bindings.TblQuoMasterView1.hints.ContactPerson.precision}"
-                                  shortDesc="#{bindings.TblQuoMasterView1.hints.ContactPerson.tooltip}" id="it8" disabled="true"
+                                  shortDesc="#{bindings.TblQuoMasterView1.hints.ContactPerson.tooltip}" id="it8" readOnly="true"
                                   contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.ContactPerson.validator}"/>
                     </af:inputText>
@@ -218,7 +218,7 @@
                                   required="#{bindings.TblQuoMasterView1.hints.NetAmt.mandatory}"
                                   columns="#{bindings.TblQuoMasterView1.hints.NetAmt.displayWidth}"
                                   maximumLength="#{bindings.TblQuoMasterView1.hints.NetAmt.precision}"
-                                  shortDesc="#{bindings.TblQuoMasterView1.hints.NetAmt.tooltip}" id="it9" disabled="true">
+                                  shortDesc="#{bindings.TblQuoMasterView1.hints.NetAmt.tooltip}" id="it9" readOnly="true">
                       <f:validator binding="#{row.bindings.NetAmt.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblQuoMasterView1.hints.NetAmt.format}"/>
@@ -236,7 +236,7 @@
                                   required="#{bindings.TblQuoMasterView1.hints.Narration.mandatory}"
                                   columns="#{bindings.TblQuoMasterView1.hints.Narration.displayWidth}"
                                   maximumLength="#{bindings.TblQuoMasterView1.hints.Narration.precision}"
-                                  shortDesc="#{bindings.TblQuoMasterView1.hints.Narration.tooltip}" id="it10" disabled="true">
+                                  shortDesc="#{bindings.TblQuoMasterView1.hints.Narration.tooltip}" id="it10" readOnly="true">
                       <f:validator binding="#{row.bindings.Narration.validator}"/>
                     </af:inputText>
                   </af:column>

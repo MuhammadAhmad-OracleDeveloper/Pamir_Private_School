@@ -48,7 +48,7 @@
                                   columns="#{bindings.TblTransFeeGenMasterView1.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblTransFeeGenMasterView1.hints.Id.precision}"
                                   shortDesc="#{bindings.TblTransFeeGenMasterView1.hints.Id.tooltip}" 
-                                  id="it1" disabled="true" contentStyle='text-align: center'>
+                                  id="it1" readOnly="true" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblTransFeeGenMasterView1.hints.Id.format}"/>
