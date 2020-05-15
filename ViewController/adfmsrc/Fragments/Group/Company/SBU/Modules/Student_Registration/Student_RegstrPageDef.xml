@@ -5,7 +5,7 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="TblStdRegView1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblStdRegView1Iterator"/>
-    <iterator Binds="TblStdRegGuardView2" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblStdRegGuardView2" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblStdRegGuardView2Iterator"/>
     <iterator Binds="TblStdRegSibView3" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblStdRegSibView3Iterator"/>
@@ -358,5 +358,10 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="ScholarDiscPerc">
+      <AttrNames>
+        <Item Value="ScholarDiscPerc"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
