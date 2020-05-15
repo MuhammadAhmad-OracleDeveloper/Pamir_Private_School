@@ -135,6 +135,86 @@
                                                   contentStyle="width:200px;">
                                         <f:validator binding="#{bindings.NoticeTitle.validator}"/>
                                     </af:inputText>
+                                                        shortDesc="#{bindings.AcadYearId.hints.tooltip}" id="soc7">
+                                        <f:selectItems value="#{bindings.AcadYearId.items}" id="si7"/>
+                                        <f:validator binding="#{bindings.AcadYearId.validator}"/>
+                                    </af:selectOneChoice>
+                                    <af:spacer width="0" height="0" id="s2"/>
+                                    <af:inputDate value="#{bindings.Dated.inputValue}"
+                                                  label="Date"
+                                                  required="#{bindings.Dated.hints.mandatory}"
+                                                  columns="20"
+                                                  shortDesc="#{bindings.Dated.hints.tooltip}" id="id8">
+                                        <f:validator binding="#{bindings.Dated.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.Dated.format}"/>
+                                    </af:inputDate>
+                                    <af:spacer width="0" height="0" id="s3"/>
+                                    <af:inputText value="#{bindings.NoticeDesc.inputValue}"
+                                                  label="Description"
+                                                  required="#{bindings.NoticeDesc.hints.mandatory}"
+                                                  columns="20"
+                                                  maximumLength="#{bindings.NoticeDesc.hints.precision}"
+                                                  shortDesc="#{bindings.NoticeDesc.hints.tooltip}" id="it4">
+                                        <f:validator binding="#{bindings.NoticeDesc.validator}"/>
+                                    </af:inputText>
+                                    <af:spacer width="0" height="0" id="s4"/>
+                                    <af:inputDate value="#{bindings.StartDate.inputValue}"
+                                                  label="Start Date"
+                                                  required="#{bindings.StartDate.hints.mandatory}"
+                                                  columns="20"
+                                                  shortDesc="#{bindings.StartDate.hints.tooltip}" id="id9">
+                                        <f:validator binding="#{bindings.StartDate.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.StartDate.format}"/>
+                                    </af:inputDate>
+                                    <af:spacer width="0" height="0" id="s6"/>
+                                    <af:inputDate value="#{bindings.EndDate.inputValue}"
+                                                  label="End Date"
+                                                  required="#{bindings.EndDate.hints.mandatory}"
+                                                  columns="20"
+                                                  shortDesc="#{bindings.EndDate.hints.tooltip}" id="id10">
+                                        <f:validator binding="#{bindings.EndDate.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.EndDate.format}"/>
+                                    </af:inputDate>
+                                    <af:spacer width="0" height="0" id="s7"/>
+                                    <af:selectOneChoice value="#{bindings.NoticeType.inputValue}"
+                                                        label="Notice Type"
+                                                        required="#{bindings.NoticeType.hints.mandatory}"
+                                                        shortDesc="#{bindings.NoticeType.hints.tooltip}" id="soc8">
+                                        <f:selectItems value="#{bindings.NoticeType.items}" id="si8"/>
+                                        <f:validator binding="#{bindings.NoticeType.validator}"/>
+                                    </af:selectOneChoice>
+                                    <af:spacer width="0" height="0" id="s8"/>
+                                    <af:selectOneChoice value="#{bindings.NoticeAll.inputValue}"
+                                                        label="Notice All"
+                                                        required="#{bindings.NoticeAll.hints.mandatory}"
+                                                        shortDesc="#{bindings.NoticeAll.hints.tooltip}" id="soc9">
+                                        <f:selectItems value="#{bindings.NoticeAll.items}" id="si9"/>
+                                        <f:validator binding="#{bindings.NoticeAll.validator}"/>
+                                    </af:selectOneChoice>
+                                    <af:spacer width="0" height="0" id="s10"/>
+                                    <af:selectOneChoice value="#{bindings.NoticeTeacher.inputValue}"
+                                                        label="Notice Teacher"
+                                                        required="#{bindings.NoticeTeacher.hints.mandatory}"
+                                                        shortDesc="#{bindings.NoticeTeacher.hints.tooltip}" id="soc10">
+                                        <f:selectItems value="#{bindings.NoticeTeacher.items}" id="si10"/>
+                                        <f:validator binding="#{bindings.NoticeTeacher.validator}"/>
+                                    </af:selectOneChoice>
+                                    <af:spacer width="0" height="0" id="s11"/>
+                                    <af:selectOneChoice value="#{bindings.NoticeParent.inputValue}"
+                                                        label="Notice Parent"
+                                                        required="#{bindings.NoticeParent.hints.mandatory}"
+                                                        shortDesc="#{bindings.NoticeParent.hints.tooltip}" id="soc11">
+                                        <f:selectItems value="#{bindings.NoticeParent.items}" id="si11"/>
+                                        <f:validator binding="#{bindings.NoticeParent.validator}"/>
+                                    </af:selectOneChoice>
+                                    <af:spacer width="0" height="0" id="s12"/>
+                                    <af:selectOneChoice value="#{bindings.NoticeStudent.inputValue}"
+                                                        label="Notice Student"
+                                                        required="#{bindings.NoticeStudent.hints.mandatory}"
+                                                        shortDesc="#{bindings.NoticeStudent.hints.tooltip}" id="soc12">
+                                        <f:selectItems value="#{bindings.NoticeStudent.items}" id="si12"/>
+                                        <f:validator binding="#{bindings.NoticeStudent.validator}"/>
+                                    </af:selectOneChoice>
                                     <!--<af:inputText value="#{bindings.NoticeImage.inputValue}"
                                                   label="#{bindings.NoticeImage.hints.label}"
                                                   required="#{bindings.NoticeImage.hints.mandatory}"
