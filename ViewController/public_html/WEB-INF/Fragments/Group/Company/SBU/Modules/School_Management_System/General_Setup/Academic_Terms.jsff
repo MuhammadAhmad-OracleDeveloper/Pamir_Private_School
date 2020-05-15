@@ -182,6 +182,30 @@
                                             <f:validator binding="#{row.bindings.TermName.validator}"/>
                                         </af:inputText>
                                     </af:column>
+                                    <af:column headerText="Term Start Date " id="c7"
+                                               sortable="true" filterable="true">
+                                        <af:inputDate value="#{row.bindings.StartDate.inputValue}"
+                                                      label="#{bindings.TblTermsView2.hints.StartDate.label}"
+                                                      required="#{bindings.TblTermsView2.hints.StartDate.mandatory}"
+                                                      columns="#{bindings.TblTermsView2.hints.StartDate.displayWidth}"
+                                                      shortDesc="#{bindings.TblTermsView2.hints.StartDate.tooltip}"
+                                                      id="id6">
+                                            <f:validator binding="#{row.bindings.StartDate.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.TblTermsView2.hints.StartDate.format}"/>
+                                        </af:inputDate>
+                                    </af:column>
+                                    <af:column headerText="Term End Date " id="c10"
+                                               sortable="true" filterable="true">
+                                        <af:inputDate value="#{row.bindings.EndDate.inputValue}"
+                                                      label="#{bindings.TblTermsView2.hints.EndDate.label}"
+                                                      required="#{bindings.TblTermsView2.hints.EndDate.mandatory}"
+                                                      columns="#{bindings.TblTermsView2.hints.EndDate.displayWidth}"
+                                                      shortDesc="#{bindings.TblTermsView2.hints.EndDate.tooltip}"
+                                                      id="id7">
+                                            <f:validator binding="#{row.bindings.EndDate.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.TblTermsView2.hints.EndDate.format}"/>
+                                        </af:inputDate>
+                                    </af:column>
                                     <af:column sortProperty="#{bindings.TblTermsView2.hints.Ast.name}" filterable="true"
                                                sortable="true" headerText="Active" id="c9" align="left">
                                                 <f:facet name="filter">

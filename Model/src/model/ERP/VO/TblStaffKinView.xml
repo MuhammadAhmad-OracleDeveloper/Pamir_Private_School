@@ -21,6 +21,10 @@
     Name="Active_Name_LOV1"
     ViewObjectName="model.LOV.Active_Name_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Relationship_LOV1"
+    ViewObjectName="model.LOV.Lookup_Relationship_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_StaffId"
     ListVOName="Staff_Name_LOV1"
@@ -55,6 +59,21 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_KinRel"
+    ListVOName="Lookup_Relationship_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="KinRel"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -99,7 +118,15 @@
     PrecisionRule="true"
     EntityAttrName="KinRel"
     EntityUsage="TblStaffKin"
-    AliasName="KIN_REL"/>
+    AliasName="KIN_REL"
+    LOVName="LOV_KinRel">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ContactNo"
     PrecisionRule="true"
@@ -143,7 +170,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblStaffKin"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -155,7 +183,8 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblStaffKin"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"

@@ -53,6 +53,10 @@
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStaffSubjectView3Query"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblStaffKinView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblStaffKinView1Iterator"/>
+    <iterator Binds="TblStaffSalaryView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblStaffSalaryView1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="TblStaffView1Iterator" id="TblStaffView1">
@@ -352,5 +356,9 @@
     </attributeValues>
     <list IterBinding="TblStaffView1Iterator" StaticList="false" Uses="LOV_Gender" id="Gender" DTSupportsMRU="true"
           SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStaffKinView1Iterator" StaticList="false" Uses="LOV_KinRel" id="KinRel" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStaffSalaryView1Iterator" StaticList="false" Uses="LOV_PaymentMode" id="PaymentMode"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

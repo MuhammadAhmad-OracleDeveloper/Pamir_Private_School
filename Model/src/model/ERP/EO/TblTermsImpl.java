@@ -32,6 +32,8 @@ public class TblTermsImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        StartDate,
+        EndDate,
         TblEvalWeightage,
         TblAcadYear,
         TblTermWorkDays;
@@ -57,6 +59,7 @@ public class TblTermsImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int GROUPCOMPANYID = AttributesEnum.GroupCompanyId.index();
     public static final int ACADYEARID = AttributesEnum.AcadYearId.index();
@@ -66,6 +69,8 @@ public class TblTermsImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int STARTDATE = AttributesEnum.StartDate.index();
+    public static final int ENDDATE = AttributesEnum.EndDate.index();
     public static final int TBLEVALWEIGHTAGE = AttributesEnum.TblEvalWeightage.index();
     public static final int TBLACADYEAR = AttributesEnum.TblAcadYear.index();
     public static final int TBLTERMWORKDAYS = AttributesEnum.TblTermWorkDays.index();
@@ -74,6 +79,13 @@ public class TblTermsImpl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public TblTermsImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblTerms");
     }
 
     /**
@@ -205,6 +217,38 @@ public class TblTermsImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for StartDate, using the alias name StartDate.
+     * @return the value of StartDate
+     */
+    public Timestamp getStartDate() {
+        return (Timestamp) getAttributeInternal(STARTDATE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for StartDate.
+     * @param value value to set the StartDate
+     */
+    public void setStartDate(Timestamp value) {
+        setAttributeInternal(STARTDATE, value);
+    }
+
+    /**
+     * Gets the attribute value for EndDate, using the alias name EndDate.
+     * @return the value of EndDate
+     */
+    public Timestamp getEndDate() {
+        return (Timestamp) getAttributeInternal(ENDDATE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for EndDate.
+     * @param value value to set the EndDate
+     */
+    public void setEndDate(Timestamp value) {
+        setAttributeInternal(ENDDATE, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getTblEvalWeightage() {
@@ -232,6 +276,7 @@ public class TblTermsImpl extends EntityImpl {
         return (RowIterator) getAttributeInternal(TBLTERMWORKDAYS);
     }
 
+
     /**
      * @param id key constituent
 
@@ -239,13 +284,6 @@ public class TblTermsImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblTerms");
     }
 
     /**

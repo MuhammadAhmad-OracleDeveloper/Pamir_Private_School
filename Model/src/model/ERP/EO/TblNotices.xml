@@ -185,6 +185,18 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_NOTICES"/>
+  <Attribute
+    Name="NoticeTitle"
+    Precision="100"
+    ColumnName="NOTICE_TITLE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_NOTICES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblAcadYear"
     Association="model.ERP.EO.FkNoticesAcadYearAssoc"
