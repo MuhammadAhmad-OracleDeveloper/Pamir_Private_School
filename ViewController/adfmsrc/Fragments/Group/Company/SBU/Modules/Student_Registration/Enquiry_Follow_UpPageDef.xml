@@ -104,5 +104,38 @@
     <action IterBinding="TblEnqFollowUpView2Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
     <action IterBinding="TblEnqFollowUpView2Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
     <action IterBinding="TblEnqFollowUpView2Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <list IterBinding="TblStdEnqView1Iterator" StaticList="false" Uses="LOV_AcadYearId" id="AcadYearId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblStdEnqView1Iterator" id="FirstName">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdEnqView1Iterator" id="LastName">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblStdEnqView1Iterator" StaticList="false" Uses="LOV_Gender" id="Gender" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStdEnqView1Iterator" StaticList="false" Uses="LOV_GradeId" id="GradeId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStdEnqView1Iterator" StaticList="false" Uses="LOV_LookupElecGroup" id="LookupElecGroup"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblStdEnqView1Iterator" id="Address">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdEnqView1Iterator" id="EmirId">
+      <AttrNames>
+        <Item Value="EmirId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdEnqView1Iterator" id="EmirArea">
+      <AttrNames>
+        <Item Value="EmirArea"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
