@@ -24,24 +24,31 @@
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="Inventory_Transaction_Pages"/>
   </Variable>
-  <SQLQuery><![CDATA[SELECT                                    
-TP.ID, TP.NAME, TP.AST, TP.PAGE_ICON, TP.PAGE_LINK, TP.SR_NO,                        
-RP.ROLE_ID, RP.COMPANY_PAGES_ID, RP.ROLE_ID, RP.R_VIEW, RP.R_ADD, RP.R_EDIT, RP.R_DELETE, RP.R_PRINT                                   
-FROM                                    
-TBL_PAGES TP, TBL_ROLE_PAGES RP                                  
-Where                                    
-TP.ID = RP.COMPANY_PAGES_ID                                   
-AND                                   
-RP.R_VIEW = 'Y'                                   
-AND                                   
-TP.AST = 'Y'                                   
-AND                                   
-RP.COMPANY_SUB_MODULE_ID = 15                             
-AND                                   
-RP.ROLE_ID = :get_role_id                       
+  <Variable
+    Name="get_Cmpny_ID"
+    Kind="where"
+    Type="java.math.BigDecimal"/>
+  <SQLQuery><![CDATA[SELECT                                       
+TP.ID, TP.NAME, TP.AST, TP.PAGE_ICON, TP.PAGE_LINK, TP.SR_NO,                           
+RP.ROLE_ID, RP.COMPANY_PAGES_ID, RP.ROLE_ID, RP.R_VIEW, RP.R_ADD, RP.R_EDIT, RP.R_DELETE, RP.R_PRINT                                      
+FROM                                       
+TBL_PAGES TP, TBL_ROLE_PAGES RP, TBL_COMPANY_PAGES CP                                     
+Where                                       
+TP.ID = RP.COMPANY_PAGES_ID        
+AND    
+CP.ID = RP.COMPANY_PAGES_ID                                    
+AND                                      
+RP.R_VIEW = 'Y'                                      
+AND                                      
+TP.AST = 'Y'                                      
+AND                                      
+RP.COMPANY_SUB_MODULE_ID = 15                                
+AND                                      
+RP.ROLE_ID = :get_role_id     
+AND   
+CP.GROUP_COMPANY_ID = :get_Cmpny_ID                        
 ORDER BY TP.SR_NO ASC]]></SQLQuery>
   <ViewAttribute
     Name="Id"
@@ -78,7 +85,7 @@ ORDER BY TP.SR_NO ASC]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="AST"
     Expression="AST"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -163,7 +170,7 @@ ORDER BY TP.SR_NO ASC]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="R_VIEW"
     Expression="R_VIEW"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -178,7 +185,7 @@ ORDER BY TP.SR_NO ASC]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="R_ADD"
     Expression="R_ADD"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -193,7 +200,7 @@ ORDER BY TP.SR_NO ASC]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="R_EDIT"
     Expression="R_EDIT"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -208,7 +215,7 @@ ORDER BY TP.SR_NO ASC]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="R_DELETE"
     Expression="R_DELETE"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -223,7 +230,7 @@ ORDER BY TP.SR_NO ASC]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="R_PRINT"
     Expression="R_PRINT"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>

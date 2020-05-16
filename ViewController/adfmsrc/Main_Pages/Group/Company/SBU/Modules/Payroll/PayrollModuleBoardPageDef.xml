@@ -6,8 +6,10 @@
     <variableIterator id="variables"/>
     <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.PayrollModuleBoard_SidebarBean.dynamicTaskFlowId}"
               activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
-    <iterator Binds="Payroll_Pages1" RangeSize="25" DataControl="AppModuleDataControl" id="Payroll_Pages1Iterator"/>
-    <iterator Binds="Leaves_Pages1" RangeSize="25" DataControl="AppModuleDataControl" id="Leaves_Pages1Iterator"/>
+    <iterator Binds="Payroll_Pages1" DataControl="AppModuleDataControl" id="Payroll_Pages1Iterator" Refresh="always"
+              CacheResults="false"/>
+    <iterator Binds="Leaves_Pages1" DataControl="AppModuleDataControl" id="Leaves_Pages1Iterator" Refresh="always"
+              CacheResults="false"/>
   </executables>
   <bindings>
     <tree IterBinding="Payroll_Pages1Iterator" id="Payroll_Pages1">

@@ -4,14 +4,16 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="Payable_Pages1" RangeSize="25" DataControl="AppModuleDataControl" id="Payable_Pages1Iterator"/>
-    <iterator Binds="Receivable_Pages1" RangeSize="25" DataControl="AppModuleDataControl"
-              id="Receivable_Pages1Iterator"/>
+    <iterator Binds="Payable_Pages1" DataControl="AppModuleDataControl" id="Payable_Pages1Iterator" Refresh="always"
+              CacheResults="false"/>
+    <iterator Binds="Receivable_Pages1" DataControl="AppModuleDataControl"
+              id="Receivable_Pages1Iterator" Refresh="always" CacheResults="false"/>
     <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.GLModuleBoard_SidebarBean.dynamicTaskFlowId}"
               activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
-    <iterator Binds="GL_Setup_Pages1" RangeSize="25" DataControl="AppModuleDataControl" id="GL_Setup_Pages1Iterator"/>
-    <iterator Binds="GL_Transaction_Pages1" RangeSize="25" DataControl="AppModuleDataControl"
-              id="GL_Transaction_Pages1Iterator"/>
+    <iterator Binds="GL_Setup_Pages1" DataControl="AppModuleDataControl" id="GL_Setup_Pages1Iterator" Refresh="always"
+              CacheResults="false"/>
+    <iterator Binds="GL_Transaction_Pages1" DataControl="AppModuleDataControl"
+              id="GL_Transaction_Pages1Iterator" Refresh="always" CacheResults="false"/>
   </executables>
   <bindings>
     <tree IterBinding="Payable_Pages1Iterator" id="Payable_Pages1">

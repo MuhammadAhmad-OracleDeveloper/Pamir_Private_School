@@ -4,12 +4,12 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="Inventory_Setup_Pages1" RangeSize="25" DataControl="AppModuleDataControl"
-              id="Inventory_Setup_Pages1Iterator"/>
+    <iterator Binds="Inventory_Setup_Pages1" DataControl="AppModuleDataControl"
+              id="Inventory_Setup_Pages1Iterator" Refresh="always" CacheResults="false"/>
     <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.InventoryModuleBoard_SidebarBean.dynamicTaskFlowId}"
               activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
-    <iterator Binds="Inventory_Transaction_Pages1" RangeSize="25" DataControl="AppModuleDataControl"
-              id="Inventory_Transaction_Pages1Iterator"/>
+    <iterator Binds="Inventory_Transaction_Pages1" DataControl="AppModuleDataControl"
+              id="Inventory_Transaction_Pages1Iterator" Refresh="always" CacheResults="false"/>
   </executables>
   <bindings>
     <tree IterBinding="Inventory_Setup_Pages1Iterator" id="Inventory_Setup_Pages1">
