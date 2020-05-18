@@ -1,2 +1,514 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"></ui:composition>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+ 
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Sale Return">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Sale Return Master">
+                <af:panelFormLayout id="pfl1" maxColumns="3" rows="6">
+                  <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
+                                required="#{bindings.Id.hints.mandatory}" columns="#{bindings.Id.hints.displayWidth}"
+                                maximumLength="#{bindings.Id.hints.precision}" shortDesc="#{bindings.Id.hints.tooltip}"
+                                id="it1" disabled="true">
+                    <f:validator binding="#{bindings.Id.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
+                                required="#{bindings.Vno.hints.mandatory}" columns="20"
+                                maximumLength="#{bindings.Vno.hints.precision}"
+                                shortDesc="#{bindings.Vno.hints.tooltip}" id="it2" contentStyle='text-align: right'>
+                    <f:validator binding="#{bindings.Vno.validator}"/>
+                  </af:inputText>
+                  <af:inputDate value="#{bindings.Dated.inputValue}" label="Date"
+                                required="#{bindings.Dated.hints.mandatory}"
+                                columns="17"
+                                shortDesc="#{bindings.Dated.hints.tooltip}" id="id1">
+                    <f:validator binding="#{bindings.Dated.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.Dated.format}"/>
+                  </af:inputDate>
+                  <af:spacer  id="s6"/>
+                  <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type"
+                                      required="#{bindings.Vtp.hints.mandatory}"
+                                      shortDesc="#{bindings.Vtp.hints.tooltip}" id="soc1" contentStyle="width:138px;">
+                    <f:selectItems value="#{bindings.Vtp.items}" id="si1"/>
+                    <f:validator binding="#{bindings.Vtp.validator}"/>
+                  </af:selectOneChoice>
+                  <af:spacer  id="s2"/>
+                  <af:selectOneChoice value="#{bindings.SaleInvMasterId.inputValue}"
+                                      label="Sale Invoice"
+                                      required="#{bindings.SaleInvMasterId.hints.mandatory}"
+                                      shortDesc="#{bindings.SaleInvMasterId.hints.tooltip}" id="soc2"
+                                      contentStyle="width:138px;">
+                    <f:selectItems value="#{bindings.SaleInvMasterId.items}" id="si2"/>
+                    <f:validator binding="#{bindings.SaleInvMasterId.validator}"/>
+                  </af:selectOneChoice>
+                  
+                  <af:inputText value="#{bindings.DiscPerc.inputValue}" label="Discount Percentage"
+                                required="#{bindings.DiscPerc.hints.mandatory}"
+                                columns="#{bindings.DiscPerc.hints.displayWidth}"
+                                maximumLength="#{bindings.DiscPerc.hints.precision}"
+                                shortDesc="#{bindings.DiscPerc.hints.tooltip}" id="it3">
+                    <f:validator binding="#{bindings.DiscPerc.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.DiscPerc.format}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.DiscAmount.inputValue}" label="Discount Amount"
+                                required="#{bindings.DiscAmount.hints.mandatory}"
+                                columns="#{bindings.DiscAmount.hints.displayWidth}"
+                                maximumLength="#{bindings.DiscAmount.hints.precision}"
+                                shortDesc="#{bindings.DiscAmount.hints.tooltip}" id="it4">
+                    <f:validator binding="#{bindings.DiscAmount.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.DiscAmount.format}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.NetAmt.inputValue}" label="Net Amount"
+                                required="#{bindings.NetAmt.hints.mandatory}"
+                                columns="#{bindings.NetAmt.hints.displayWidth}"
+                                maximumLength="#{bindings.NetAmt.hints.precision}"
+                                shortDesc="#{bindings.NetAmt.hints.tooltip}" id="it5">
+                    <f:validator binding="#{bindings.NetAmt.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.NetAmt.format}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.Narration.inputValue}" label="Narration"
+                                required="#{bindings.Narration.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.Narration.hints.precision}"
+                                shortDesc="#{bindings.Narration.hints.tooltip}" id="it6">
+                    <f:validator binding="#{bindings.Narration.validator}"/>
+                  </af:inputText>
+                  <f:facet name="footer">
+                    <af:panelGroupLayout layout="horizontal" id="pgl5">
+                      <af:button actionListener="#{bindings.First.execute}" text="First"
+                                 disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b2"/>
+                      <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                 disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
+                      <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                 disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b4"/>
+                      <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                 disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b5"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                </af:panelFormLayout>
+               
+              </af:showDetailItem>
+              <af:showDetailItem text="Search" id="sdi1">
+                <af:table value="#{bindings.TblSaleRetMasterView1.collectionModel}" var="row"
+                          rows="#{bindings.TblSaleRetMasterView1.rangeSize}"
+                          emptyText="#{bindings.TblSaleRetMasterView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblSaleRetMasterView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblSaleRetMasterView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblSaleRetMasterView1.rangeSize}"
+                          filterModel="#{bindings.TblSaleRetMasterView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblSaleRetMasterView1Query.processQuery}" varStatus="vs" id="t2"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblSaleRetMasterView1.hints.Id.name}" filterable="true"
+                             sortable="true" headerText="ID" id="c11" visible="false">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="id4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblSaleRetMasterView1.hints.Id.label}"
+                                  required="#{bindings.TblSaleRetMasterView1.hints.Id.mandatory}"
+                                  columns="#{bindings.TblSaleRetMasterView1.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleRetMasterView1.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblSaleRetMasterView1.hints.Id.tooltip}" id="it24" readOnly="true">
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblSaleRetMasterView1.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSaleRetMasterView1.hints.Vno.name}" filterable="true"
+                             sortable="true" headerText="Voucher No." id="c12" >
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Vno}"
+       id="it30" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Vno.inputValue}"
+                                  label="#{bindings.TblSaleRetMasterView1.hints.Vno.label}"
+                                  required="#{bindings.TblSaleRetMasterView1.hints.Vno.mandatory}"
+                                  columns="#{bindings.TblSaleRetMasterView1.hints.Vno.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleRetMasterView1.hints.Vno.precision}"
+                                  shortDesc="#{bindings.TblSaleRetMasterView1.hints.Vno.tooltip}" id="it25" readOnly="true">
+                      <f:validator binding="#{row.bindings.Vno.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSaleRetMasterView1.hints.Dated.name}" filterable="true"
+                             sortable="true" headerText="Date" id="c13">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblSaleRetMasterView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                    id="id2">
+                        <af:convertDateTime pattern="#{bindings.TblSaleRetMasterView1.hints.Dated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                  label="#{bindings.TblSaleRetMasterView1.hints.Dated.label}"
+                                  required="#{bindings.TblSaleRetMasterView1.hints.Dated.mandatory}"
+                                  columns="#{bindings.TblSaleRetMasterView1.hints.Dated.displayWidth}"
+                                  shortDesc="#{bindings.TblSaleRetMasterView1.hints.Dated.tooltip}" id="id3" readOnly="true">
+                      <f:validator binding="#{row.bindings.Dated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblSaleRetMasterView1.hints.Dated.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSaleRetMasterView1.hints.Vtp.name}" filterable="true"
+                             sortable="true" headerText="Voucher Type" id="c14">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Vtp}"
+       id="it31" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Vtp.inputValue}" label="#{row.bindings.Vtp.label}"
+                                        required="#{bindings.TblSaleRetMasterView1.hints.Vtp.mandatory}"
+                                        shortDesc="#{bindings.TblSaleRetMasterView1.hints.Vtp.tooltip}" id="soc5" readOnly="true">
+                      <f:selectItems value="#{row.bindings.Vtp.items}" id="si5"/>
+                      <f:validator binding="#{row.bindings.Vtp.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSaleRetMasterView1.hints.SaleInvMasterId.name}"
+                             filterable="true" sortable="true"
+                             headerText="Sale Invoice" id="c15" width="120">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.SaleInvMasterId}"
+       id="it32" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.SaleInvMasterId.inputValue}"
+                                        label="#{row.bindings.SaleInvMasterId.label}"
+                                        required="#{bindings.TblSaleRetMasterView1.hints.SaleInvMasterId.mandatory}"
+                                        shortDesc="#{bindings.TblSaleRetMasterView1.hints.SaleInvMasterId.tooltip}"
+                                        id="soc6" readOnly="true">
+                      <f:selectItems value="#{row.bindings.SaleInvMasterId.items}" id="si6"/>
+                      <f:validator binding="#{row.bindings.SaleInvMasterId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSaleRetMasterView1.hints.DiscPerc.name}" filterable="true"
+                             sortable="true" headerText="Discount Percentage"
+                             id="c16" width="120">
+                               <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.DiscPerc}"
+       id="it33" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.DiscPerc.inputValue}"
+                                  label="#{bindings.TblSaleRetMasterView1.hints.DiscPerc.label}"
+                                  required="#{bindings.TblSaleRetMasterView1.hints.DiscPerc.mandatory}"
+                                  columns="#{bindings.TblSaleRetMasterView1.hints.DiscPerc.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleRetMasterView1.hints.DiscPerc.precision}"
+                                  shortDesc="#{bindings.TblSaleRetMasterView1.hints.DiscPerc.tooltip}" id="it26" readOnly="true">
+                      <f:validator binding="#{row.bindings.DiscPerc.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblSaleRetMasterView1.hints.DiscPerc.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSaleRetMasterView1.hints.DiscAmount.name}" filterable="true"
+                             sortable="true" headerText="Discount Amount"
+                             id="c17">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.DiscAmount}"
+       id="it34" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.DiscAmount.inputValue}"
+                                  label="#{bindings.TblSaleRetMasterView1.hints.DiscAmount.label}"
+                                  required="#{bindings.TblSaleRetMasterView1.hints.DiscAmount.mandatory}"
+                                  columns="#{bindings.TblSaleRetMasterView1.hints.DiscAmount.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleRetMasterView1.hints.DiscAmount.precision}"
+                                  shortDesc="#{bindings.TblSaleRetMasterView1.hints.DiscAmount.tooltip}" id="it27" readOnly="true">
+                      <f:validator binding="#{row.bindings.DiscAmount.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblSaleRetMasterView1.hints.DiscAmount.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSaleRetMasterView1.hints.NetAmt.name}" filterable="true"
+                             sortable="true" headerText="Net Amount" id="c18">
+                               <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.NetAmt}"
+       id="it35" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.NetAmt.inputValue}"
+                                  label="#{bindings.TblSaleRetMasterView1.hints.NetAmt.label}"
+                                  required="#{bindings.TblSaleRetMasterView1.hints.NetAmt.mandatory}"
+                                  columns="#{bindings.TblSaleRetMasterView1.hints.NetAmt.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleRetMasterView1.hints.NetAmt.precision}"
+                                  shortDesc="#{bindings.TblSaleRetMasterView1.hints.NetAmt.tooltip}" id="it28" readOnly="true">
+                      <f:validator binding="#{row.bindings.NetAmt.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblSaleRetMasterView1.hints.NetAmt.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSaleRetMasterView1.hints.Narration.name}" filterable="true"
+                             sortable="true" headerText="Narration"
+                             id="c19" width="200">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Narration}"
+       id="it36" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Narration.inputValue}"
+                                  label="#{bindings.TblSaleRetMasterView1.hints.Narration.label}"
+                                  required="#{bindings.TblSaleRetMasterView1.hints.Narration.mandatory}"
+                                  columns="#{bindings.TblSaleRetMasterView1.hints.Narration.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleRetMasterView1.hints.Narration.precision}"
+                                  shortDesc="#{bindings.TblSaleRetMasterView1.hints.Narration.tooltip}" id="it29" readOnly="true">
+                      <f:validator binding="#{row.bindings.Narration.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+             <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s5"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr4">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+            <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab2" text="Detail">
+                <af:table value="#{bindings.TblSaleRetDetailView2.collectionModel}" var="row"
+                          rows="#{bindings.TblSaleRetDetailView2.rangeSize}"
+                          emptyText="#{bindings.TblSaleRetDetailView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblSaleRetDetailView2.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblSaleRetDetailView2.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblSaleRetDetailView2.rangeSize}"
+                          filterModel="#{bindings.TblSaleRetDetailView2Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblSaleRetDetailView2Query.processQuery}" varStatus="vs" id="t1"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblSaleRetDetailView2.hints.Id.name}" filterable="true"
+                             sortable="true" headerText="ID" id="c1" visible="false">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="it37" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblSaleRetDetailView2.hints.Id.label}"
+                                  required="#{bindings.TblSaleRetDetailView2.hints.Id.mandatory}"
+                                  columns="#{bindings.TblSaleRetDetailView2.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleRetDetailView2.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblSaleRetDetailView2.hints.Id.tooltip}" id="it7" readOnly="true">
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblSaleRetDetailView2.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSaleRetDetailView2.hints.SrNo.name}" filterable="true"
+                             sortable="true" headerText="Serial No." id="c2">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.SrNo}"
+       id="it15" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+
+                    <af:inputText value="#{row.bindings.SrNo.inputValue}"
+                                  label="#{bindings.TblSaleRetDetailView2.hints.SrNo.label}"
+                                  required="#{bindings.TblSaleRetDetailView2.hints.SrNo.mandatory}"
+                                  columns="#{bindings.TblSaleRetDetailView2.hints.SrNo.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleRetDetailView2.hints.SrNo.precision}"
+                                  shortDesc="#{bindings.TblSaleRetDetailView2.hints.SrNo.tooltip}" id="it8">
+                      <f:validator binding="#{row.bindings.SrNo.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblSaleRetDetailView2.hints.SrNo.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSaleRetDetailView2.hints.ItemL4Id.name}" filterable="true"
+                             sortable="true" headerText="Item"
+                             id="c3" width="200">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ItemL4Id}"
+       id="it16" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.ItemL4Id.inputValue}"
+                                        label="#{row.bindings.ItemL4Id.label}"
+                                        required="#{bindings.TblSaleRetDetailView2.hints.ItemL4Id.mandatory}"
+                                        shortDesc="#{bindings.TblSaleRetDetailView2.hints.ItemL4Id.tooltip}" id="soc3">
+                      <f:selectItems value="#{row.bindings.ItemL4Id.items}" id="si3"/>
+                      <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSaleRetDetailView2.hints.UomId.name}" filterable="true"
+                             sortable="true" headerText="Unit of Measurement" id="c4" width="200">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.UomId}"
+       id="it17" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.UomId.inputValue}" label="#{row.bindings.UomId.label}"
+                                        required="#{bindings.TblSaleRetDetailView2.hints.UomId.mandatory}"
+                                        shortDesc="#{bindings.TblSaleRetDetailView2.hints.UomId.tooltip}" id="soc4">
+                      <f:selectItems value="#{row.bindings.UomId.items}" id="si4"/>
+                      <f:validator binding="#{row.bindings.UomId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSaleRetDetailView2.hints.Qty.name}" filterable="true"
+                             sortable="true" headerText="Quantity" id="c5">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Qty}"
+       id="it18" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Qty.inputValue}"
+                                  label="#{bindings.TblSaleRetDetailView2.hints.Qty.label}"
+                                  required="#{bindings.TblSaleRetDetailView2.hints.Qty.mandatory}"
+                                  columns="#{bindings.TblSaleRetDetailView2.hints.Qty.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleRetDetailView2.hints.Qty.precision}"
+                                  shortDesc="#{bindings.TblSaleRetDetailView2.hints.Qty.tooltip}" id="it9">
+                      <f:validator binding="#{row.bindings.Qty.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblSaleRetDetailView2.hints.Qty.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSaleRetDetailView2.hints.Rate.name}" filterable="true"
+                             sortable="true" headerText="Rate" id="c6">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Rate}"
+       id="it19" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Rate.inputValue}"
+                                  label="#{bindings.TblSaleRetDetailView2.hints.Rate.label}"
+                                  required="#{bindings.TblSaleRetDetailView2.hints.Rate.mandatory}"
+                                  columns="#{bindings.TblSaleRetDetailView2.hints.Rate.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleRetDetailView2.hints.Rate.precision}"
+                                  shortDesc="#{bindings.TblSaleRetDetailView2.hints.Rate.tooltip}" id="it10">
+                      <f:validator binding="#{row.bindings.Rate.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblSaleRetDetailView2.hints.Rate.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSaleRetDetailView2.hints.Amount.name}" filterable="true"
+                             sortable="true" headerText="Amount" id="c7">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Amount}"
+       id="it20" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Amount.inputValue}"
+                                  label="#{bindings.TblSaleRetDetailView2.hints.Amount.label}"
+                                  required="#{bindings.TblSaleRetDetailView2.hints.Amount.mandatory}"
+                                  columns="#{bindings.TblSaleRetDetailView2.hints.Amount.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleRetDetailView2.hints.Amount.precision}"
+                                  shortDesc="#{bindings.TblSaleRetDetailView2.hints.Amount.tooltip}" id="it11">
+                      <f:validator binding="#{row.bindings.Amount.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblSaleRetDetailView2.hints.Amount.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSaleRetDetailView2.hints.DiscPerc.name}" filterable="true"
+                             sortable="true" headerText="Discount Percentage"
+                             id="c8" width="120">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.DiscPerc}"
+       id="it21" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.DiscPerc.inputValue}"
+                                  label="#{bindings.TblSaleRetDetailView2.hints.DiscPerc.label}"
+                                  required="#{bindings.TblSaleRetDetailView2.hints.DiscPerc.mandatory}"
+                                  columns="#{bindings.TblSaleRetDetailView2.hints.DiscPerc.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleRetDetailView2.hints.DiscPerc.precision}"
+                                  shortDesc="#{bindings.TblSaleRetDetailView2.hints.DiscPerc.tooltip}" id="it12">
+                      <f:validator binding="#{row.bindings.DiscPerc.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblSaleRetDetailView2.hints.DiscPerc.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSaleRetDetailView2.hints.DiscAmount.name}" filterable="true"
+                             sortable="true" headerText="Discount Amount"
+                             id="c9">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.DiscAmount}"
+       id="it22" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.DiscAmount.inputValue}"
+                                  label="#{bindings.TblSaleRetDetailView2.hints.DiscAmount.label}"
+                                  required="#{bindings.TblSaleRetDetailView2.hints.DiscAmount.mandatory}"
+                                  columns="#{bindings.TblSaleRetDetailView2.hints.DiscAmount.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleRetDetailView2.hints.DiscAmount.precision}"
+                                  shortDesc="#{bindings.TblSaleRetDetailView2.hints.DiscAmount.tooltip}" id="it13">
+                      <f:validator binding="#{row.bindings.DiscAmount.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblSaleRetDetailView2.hints.DiscAmount.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSaleRetDetailView2.hints.Description.name}" filterable="true"
+                             sortable="true" headerText="Description"
+                             id="c10">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Description}"
+       id="it23" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Description.inputValue}"
+                                  label="#{bindings.TblSaleRetDetailView2.hints.Description.label}"
+                                  required="#{bindings.TblSaleRetDetailView2.hints.Description.mandatory}"
+                                  columns="#{bindings.TblSaleRetDetailView2.hints.Description.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleRetDetailView2.hints.Description.precision}"
+                                  shortDesc="#{bindings.TblSaleRetDetailView2.hints.Description.tooltip}" id="it14">
+                      <f:validator binding="#{row.bindings.Description.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+                
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+             <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+           </af:gridCell>
+        </af:gridRow>
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>

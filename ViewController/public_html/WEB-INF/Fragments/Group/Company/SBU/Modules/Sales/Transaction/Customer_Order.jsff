@@ -33,7 +33,7 @@
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
                   </af:inputText>
                   <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
-                                required="#{bindings.Vno.hints.mandatory}" columns="#{bindings.Vno.hints.displayWidth}"
+                                required="#{bindings.Vno.hints.mandatory}" columns="20"
                                 maximumLength="#{bindings.Vno.hints.precision}"
                                 shortDesc="#{bindings.Vno.hints.tooltip}" id="it2" contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.Vno.validator}"/>
@@ -55,7 +55,7 @@
                   <af:inputText value="#{bindings.ContactPerson.inputValue}"
                                 label="Contact Person"
                                 required="#{bindings.ContactPerson.hints.mandatory}"
-                                columns="#{bindings.ContactPerson.hints.displayWidth}"
+                                columns="20"
                                 maximumLength="#{bindings.ContactPerson.hints.precision}"
                                 shortDesc="#{bindings.ContactPerson.hints.tooltip}" id="it3" contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.ContactPerson.validator}"/>
