@@ -30,26 +30,27 @@
     Name="get_page_id"
     Kind="where"
     Type="java.math.BigDecimal"/>
-  <SQLQuery><![CDATA[Select             
-Tbl_Role_Pages_Crud.Crud_ID as CrudId,             
-Tbl_Crud.CRUD_NAME as operation,             
-Tbl_Crud.CRUD_ICON as icon,             
-Tbl_Crud.CRUD_BINDING as bindingName,             
-Tbl_Crud.CRUD_DISABLED as btnDisabled          
-     
-From tbl_role_Pages,Tbl_Role_Pages_Crud,Tbl_Crud        
-     
-Where Tbl_Role_Pages_Crud.ROLE_PAGES_ID = tbl_role_Pages.ID             
-And Tbl_Crud.CRUD_ID = Tbl_Role_Pages_Crud.CRUD_ID             
-And tbl_role_Pages.R_VIEW = 'Y'             
-AND (             
-tbl_role_Pages.R_Add =  Tbl_Crud.Crud_ID OR              
-tbl_role_Pages.R_Edit =  Tbl_Crud.Crud_ID OR              
-tbl_role_Pages.R_Delete = Tbl_Crud.Crud_ID          
-)             
-And tbl_role_Pages.Role_ID = :get_role_id          
-And tbl_role_Pages.ID = :get_page_id 
- 
+  <SQLQuery><![CDATA[Select distinct              
+Tbl_Role_Pages_Crud.Crud_ID as CrudId,               
+Tbl_Crud.CRUD_NAME as operation,               
+Tbl_Crud.CRUD_ICON as icon,               
+Tbl_Crud.CRUD_BINDING as bindingName,               
+Tbl_Crud.CRUD_DISABLED as btnDisabled            
+       
+From tbl_role_Pages,Tbl_Role_Pages_Crud,Tbl_Crud , TBL_COMPANY_PAGES          
+       
+Where Tbl_Role_Pages_Crud.ROLE_PAGES_ID = tbl_role_Pages.ID               
+And Tbl_Crud.CRUD_ID = Tbl_Role_Pages_Crud.CRUD_ID       
+AND TBL_COMPANY_PAGES.ID = tbl_role_Pages.COMPANY_PAGES_ID  
+And tbl_role_Pages.R_VIEW = 'Y'               
+AND (               
+tbl_role_Pages.R_Add =  Tbl_Crud.Crud_ID OR                
+tbl_role_Pages.R_Edit =  Tbl_Crud.Crud_ID OR                
+tbl_role_Pages.R_Delete = Tbl_Crud.Crud_ID            
+)               
+And tbl_role_Pages.Role_ID = :get_role_id            
+And TBL_COMPANY_PAGES.PAGE_ID = :get_page_id   
+   
 Order By Tbl_Role_Pages_Crud.Crud_ID ASC]]></SQLQuery>
   <ViewAttribute
     Name="Crudid"
