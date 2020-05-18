@@ -763,6 +763,9 @@
   <ViewUsage
     Name="TblSaleInvMasterView2"
     ViewObjectName="model.ERP.VO.TblSaleInvMasterView"/>
+  <ViewUsage
+    Name="TblShipPlanDetailDView3"
+    ViewObjectName="model.ERP.VO.TblShipPlanDetailDView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -1536,5 +1539,11 @@
     ViewLinkObjectName="model.ERP.VO.FkSaleInvMasterShipLink"
     SrcViewUsageName="model.ERP.AppModule.TblShipPlanMasterView1"
     DstViewUsageName="model.ERP.AppModule.TblSaleInvMasterView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkShipPlanDetailDDetailLink2"
+    ViewLinkObjectName="model.ERP.VO.FkShipPlanDetailDDetailLink"
+    SrcViewUsageName="model.ERP.AppModule.TblShipPlanDetailView2"
+    DstViewUsageName="model.ERP.AppModule.TblShipPlanDetailDView3"
     Reversed="false"/>
 </AppModule>
