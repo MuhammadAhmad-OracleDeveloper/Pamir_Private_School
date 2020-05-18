@@ -23,7 +23,60 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Grade Fee Master">
+              <af:showDetailItem id="sdi1" text="Grade Fee Master">
+                <af:panelFormLayout id="pfl2" maxColumns="3" rows="6">
+                  <af:inputText value="#{bindings.Id1.inputValue}" label="ID" visible="false"
+                                required="#{bindings.Id1.hints.mandatory}" columns="#{bindings.Id1.hints.displayWidth}"
+                                maximumLength="#{bindings.Id1.hints.precision}"
+                                shortDesc="#{bindings.Id1.hints.tooltip}" id="it12" disabled="true">
+                    <f:validator binding="#{bindings.Id1.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Id1.format}"/>
+                  </af:inputText>
+                  <af:selectOneChoice value="#{bindings.AcadYearId.inputValue}" label="Academic Year"
+                                      required="#{bindings.AcadYearId.hints.mandatory}"
+                                      shortDesc="#{bindings.AcadYearId.hints.tooltip}" id="soc7"
+                                      contentStyle="width:200px;">
+                    <f:selectItems value="#{bindings.AcadYearId.items}" id="si7"/>
+                    <f:validator binding="#{bindings.AcadYearId.validator}"/>
+                  </af:selectOneChoice>
+                  <af:spacer  id="s2"/>
+                  <af:selectOneChoice value="#{bindings.GradeId.inputValue}" label="Grade"
+                                      required="#{bindings.GradeId.hints.mandatory}"
+                                      shortDesc="#{bindings.GradeId.hints.tooltip}" id="soc8"
+                                      contentStyle="width:200px;">
+                    <f:selectItems value="#{bindings.GradeId.items}" id="si8"/>
+                    <f:validator binding="#{bindings.GradeId.validator}"/>
+                  </af:selectOneChoice>
+                  <af:spacer  id="s4"/>
+                  <af:selectOneChoice value="#{bindings.FeeTypeId.inputValue}" label="Fee Type"
+                                      required="#{bindings.FeeTypeId.hints.mandatory}"
+                                      shortDesc="#{bindings.FeeTypeId.hints.tooltip}" id="soc9"
+                                      contentStyle="width:200px;">
+                    <f:selectItems value="#{bindings.FeeTypeId.items}" id="si9"/>
+                    <f:validator binding="#{bindings.FeeTypeId.validator}"/>
+                  </af:selectOneChoice>
+                  <af:spacer  id="s6"/>
+                  <af:selectOneChoice value="#{bindings.Ast1.inputValue}" label="Active"
+                                      required="#{bindings.Ast1.hints.mandatory}"
+                                      shortDesc="#{bindings.Ast1.hints.tooltip}" id="soc10" contentStyle="width:200px;">
+                    <f:selectItems value="#{bindings.Ast1.items}" id="si10"/>
+                    <f:validator binding="#{bindings.Ast1.validator}"/>
+                  </af:selectOneChoice>
+                  <f:facet name="footer">
+                    <af:panelGroupLayout layout="horizontal" id="pgl5">
+                      <af:button actionListener="#{bindings.First.execute}" text="First"
+                                 disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b2"/>
+                      <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                 disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
+                      <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                 disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b4"/>
+                      <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                 disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b5"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                </af:panelFormLayout>
+              </af:showDetailItem>
+              <af:showDetailItem id="tab1" text="Search">
                 <af:table value="#{bindings.TblGradeFeeMasterView1.collectionModel}" var="row"
                           rows="#{bindings.TblGradeFeeMasterView1.rangeSize}"
                           emptyText="#{bindings.TblGradeFeeMasterView1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -33,7 +86,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblGradeFeeMasterView1.rangeSize}"
                           filterModel="#{bindings.TblGradeFeeMasterView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblGradeFeeMasterView1Query.processQuery}" varStatus="vs" id="t1"
-                          scrollPolicy="page" autoHeightRows="0">
+                          scrollPolicy="page" autoHeightRows="0" partialTriggers="::b2 ::b3 ::b4 ::b5">
                   <af:column sortProperty="#{bindings.TblGradeFeeMasterView1.hints.Id.name}" filterable="true"
                              sortable="true" headerText="Grade Fee Master ID" id="c1" align="right" width="80" visible="false">
                              <f:facet name="filter">
@@ -66,7 +119,7 @@
                                         label="#{row.bindings.AcadYearId.label}"
                                         required="#{bindings.TblGradeFeeMasterView1.hints.AcadYearId.mandatory}"
                                         shortDesc="#{bindings.TblGradeFeeMasterView1.hints.AcadYearId.tooltip}"
-                                        id="soc1" contentStyle="text-align: left">
+                                        id="soc1"  readOnly="true">
                       <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
                     </af:selectOneChoice>
@@ -82,7 +135,7 @@
                     <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
                                         required="#{bindings.TblGradeFeeMasterView1.hints.GradeId.mandatory}"
                                         shortDesc="#{bindings.TblGradeFeeMasterView1.hints.GradeId.tooltip}" id="soc2"
-                                        contentStyle="text-align: left">
+                                        readOnly="true">
                       <f:selectItems value="#{row.bindings.GradeId.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.GradeId.validator}"/>
                     </af:selectOneChoice>
@@ -99,7 +152,7 @@
                                         label="#{row.bindings.FeeTypeId.label}"
                                         required="#{bindings.TblGradeFeeMasterView1.hints.FeeTypeId.mandatory}"
                                         shortDesc="#{bindings.TblGradeFeeMasterView1.hints.FeeTypeId.tooltip}"
-                                        id="soc3" contentStyle="text-align: left">
+                                        id="soc3"  readOnly="true">
                       <f:selectItems value="#{row.bindings.FeeTypeId.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.FeeTypeId.validator}"/>
                     </af:selectOneChoice>
@@ -114,7 +167,7 @@
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblGradeFeeMasterView1.hints.Ast.mandatory}"
                                         shortDesc="#{bindings.TblGradeFeeMasterView1.hints.Ast.tooltip}" id="soc4"
-                                        contentStyle="text-align: left">
+                                         readOnly="true">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si4"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>

@@ -76,5 +76,22 @@
             Action="iteratorExecute"/>
     <action IterBinding="TblGradeFeeDetailView2Iterator" id="Delete1" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <attributeValues IterBinding="TblGradeFeeMasterView1Iterator" id="Id1">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblGradeFeeMasterView1Iterator" StaticList="false" Uses="LOV_AcadYearId" id="AcadYearId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblGradeFeeMasterView1Iterator" StaticList="false" Uses="LOV_GradeId" id="GradeId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblGradeFeeMasterView1Iterator" StaticList="false" Uses="LOV_FeeTypeId" id="FeeTypeId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblGradeFeeMasterView1Iterator" StaticList="false" Uses="LOV_Ast" id="Ast1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action IterBinding="TblGradeFeeMasterView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblGradeFeeMasterView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblGradeFeeMasterView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblGradeFeeMasterView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
   </bindings>
 </pageDefinition>
