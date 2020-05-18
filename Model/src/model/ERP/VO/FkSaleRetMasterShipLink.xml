@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkSaleRetMasterShipLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.ERP.EO.FkSaleRetMasterShipAssoc">
+  <ViewLinkDefEnd
+    Name="TblSaleInvMasterView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.VO.TblSaleInvMasterView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblSaleInvMasterView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblSaleInvMasterView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblSaleRetMasterView"
+    Cardinality="-1"
+    Owner="model.ERP.VO.TblSaleRetMasterView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblSaleRetMasterView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblSaleRetMasterView.SaleInvMasterId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

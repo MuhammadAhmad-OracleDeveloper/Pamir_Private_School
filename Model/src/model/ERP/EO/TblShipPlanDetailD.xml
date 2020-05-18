@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblShipPlanDetailD"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_SHIP_PLAN_DETAIL_D"
+  AliasName="TblShipPlanDetailD"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_SHIP_PLAN_DETAIL_D"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="ShipPlanDetailId"
+    ColumnName="SHIP_PLAN_DETAIL_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_SHIP_PLAN_DETAIL_D"/>
+  <Attribute
+    Name="SrNo"
+    Precision="3"
+    Scale="0"
+    ColumnName="SR_NO"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="TBL_SHIP_PLAN_DETAIL_D"/>
+  <Attribute
+    Name="Description"
+    Precision="100"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_SHIP_PLAN_DETAIL_D">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Qty"
+    ColumnName="QTY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_SHIP_PLAN_DETAIL_D"/>
+  <Attribute
+    Name="ShipDate"
+    ColumnName="SHIP_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_SHIP_PLAN_DETAIL_D"/>
+  <Attribute
+    Name="ShipArea"
+    Precision="150"
+    ColumnName="SHIP_AREA"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_SHIP_PLAN_DETAIL_D">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_SHIP_PLAN_DETAIL_D"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_SHIP_PLAN_DETAIL_D"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_SHIP_PLAN_DETAIL_D"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_SHIP_PLAN_DETAIL_D"/>
+  <AccessorAttribute
+    Name="TblShipPlanDetail"
+    Association="model.ERP.EO.FkShipPlanDetailDDetailAssoc"
+    AssociationEnd="model.ERP.EO.FkShipPlanDetailDDetailAssoc.TblShipPlanDetail"
+    AssociationOtherEnd="model.ERP.EO.FkShipPlanDetailDDetailAssoc.TblShipPlanDetailD"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkShipPlanDetailDId"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_SHIP_PLAN_DETAIL_D_ID"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblShipPlanDetailD.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkShipPlanDetailDDetail">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_SHIP_PLAN_DETAIL_ID"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_SHIP_PLAN_DETAIL_D_DETAIL"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblShipPlanDetailD.ShipPlanDetailId"/>
+    </AttrArray>
+  </Key>
+</Entity>

@@ -724,6 +724,45 @@
   <ViewUsage
     Name="TblComboDetailView2"
     ViewObjectName="model.ERP.VO.TblComboDetailView"/>
+  <ViewUsage
+    Name="TblSaleInvDetailView1"
+    ViewObjectName="model.ERP.VO.TblSaleInvDetailView"/>
+  <ViewUsage
+    Name="TblSaleInvMasterView1"
+    ViewObjectName="model.ERP.VO.TblSaleInvMasterView"/>
+  <ViewUsage
+    Name="TblSaleRetDetailView1"
+    ViewObjectName="model.ERP.VO.TblSaleRetDetailView"/>
+  <ViewUsage
+    Name="TblSaleRetMasterView1"
+    ViewObjectName="model.ERP.VO.TblSaleRetMasterView"/>
+  <ViewUsage
+    Name="TblShipPlanDetailDView1"
+    ViewObjectName="model.ERP.VO.TblShipPlanDetailDView"/>
+  <ViewUsage
+    Name="TblShipPlanDetailView1"
+    ViewObjectName="model.ERP.VO.TblShipPlanDetailView"/>
+  <ViewUsage
+    Name="TblShipPlanMasterView1"
+    ViewObjectName="model.ERP.VO.TblShipPlanMasterView"/>
+  <ViewUsage
+    Name="TblSaleInvDetailView2"
+    ViewObjectName="model.ERP.VO.TblSaleInvDetailView"/>
+  <ViewUsage
+    Name="TblSaleRetDetailView2"
+    ViewObjectName="model.ERP.VO.TblSaleRetDetailView"/>
+  <ViewUsage
+    Name="TblSaleRetMasterView2"
+    ViewObjectName="model.ERP.VO.TblSaleRetMasterView"/>
+  <ViewUsage
+    Name="TblShipPlanDetailDView2"
+    ViewObjectName="model.ERP.VO.TblShipPlanDetailDView"/>
+  <ViewUsage
+    Name="TblShipPlanDetailView2"
+    ViewObjectName="model.ERP.VO.TblShipPlanDetailView"/>
+  <ViewUsage
+    Name="TblSaleInvMasterView2"
+    ViewObjectName="model.ERP.VO.TblSaleInvMasterView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -1461,5 +1500,41 @@
     ViewLinkObjectName="model.ERP.VO.FkComboDetailMasterLink"
     SrcViewUsageName="model.ERP.AppModule.TblComboMasterView1"
     DstViewUsageName="model.ERP.AppModule.TblComboDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkSaleInvDetailMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkSaleInvDetailMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblSaleInvMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblSaleInvDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkSaleRetDetailMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkSaleRetDetailMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblSaleRetMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblSaleRetDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkSaleRetMasterShipLink1"
+    ViewLinkObjectName="model.ERP.VO.FkSaleRetMasterShipLink"
+    SrcViewUsageName="model.ERP.AppModule.TblSaleInvMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblSaleRetMasterView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkShipPlanDetailDDetailLink1"
+    ViewLinkObjectName="model.ERP.VO.FkShipPlanDetailDDetailLink"
+    SrcViewUsageName="model.ERP.AppModule.TblShipPlanDetailView1"
+    DstViewUsageName="model.ERP.AppModule.TblShipPlanDetailDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkShipPlanDetailMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkShipPlanDetailMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblShipPlanMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblShipPlanDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkSaleInvMasterShipLink1"
+    ViewLinkObjectName="model.ERP.VO.FkSaleInvMasterShipLink"
+    SrcViewUsageName="model.ERP.AppModule.TblShipPlanMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblSaleInvMasterView2"
     Reversed="false"/>
 </AppModule>
