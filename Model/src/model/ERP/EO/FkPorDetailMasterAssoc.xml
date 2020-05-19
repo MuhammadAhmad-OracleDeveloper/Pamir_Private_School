@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkPorDetailMasterAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblPorMaster"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.EO.TblPorMaster">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblPorMaster"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblPorMaster.PkPorMasterId"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblPorMaster.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblPorDetail"
+    Cardinality="-1"
+    Owner="model.ERP.EO.TblPorDetail">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblPorDetail"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblPorDetail.FkPorDetailMaster"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblPorDetail.PorMasterId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

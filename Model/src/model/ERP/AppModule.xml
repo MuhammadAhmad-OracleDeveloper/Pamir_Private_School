@@ -766,6 +766,24 @@
   <ViewUsage
     Name="TblShipPlanDetailDView3"
     ViewObjectName="model.ERP.VO.TblShipPlanDetailDView"/>
+  <ViewUsage
+    Name="TblBoqDetailView1"
+    ViewObjectName="model.ERP.VO.TblBoqDetailView"/>
+  <ViewUsage
+    Name="TblBoqMasterView1"
+    ViewObjectName="model.ERP.VO.TblBoqMasterView"/>
+  <ViewUsage
+    Name="TblPorDetailView1"
+    ViewObjectName="model.ERP.VO.TblPorDetailView"/>
+  <ViewUsage
+    Name="TblPorMasterView1"
+    ViewObjectName="model.ERP.VO.TblPorMasterView"/>
+  <ViewUsage
+    Name="TblBoqDetailView2"
+    ViewObjectName="model.ERP.VO.TblBoqDetailView"/>
+  <ViewUsage
+    Name="TblPorDetailView2"
+    ViewObjectName="model.ERP.VO.TblPorDetailView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -1545,5 +1563,17 @@
     ViewLinkObjectName="model.ERP.VO.FkShipPlanDetailDDetailLink"
     SrcViewUsageName="model.ERP.AppModule.TblShipPlanDetailView2"
     DstViewUsageName="model.ERP.AppModule.TblShipPlanDetailDView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkBoqDetailMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkBoqDetailMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblBoqMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblBoqDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkPorDetailMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkPorDetailMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblPorMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblPorDetailView2"
     Reversed="false"/>
 </AppModule>
