@@ -13,6 +13,50 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Voucher_Type_LOV1"
+    ViewObjectName="model.LOV.Voucher_Type_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ItemL4_Name_LOV1"
+    ViewObjectName="model.LOV.ItemL4_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Vtp"
+    ListVOName="Voucher_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Vtp"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ItemL4Id"
+    ListVOName="ItemL4_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ItemL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ItemL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblBoqMaster"
     Entity="model.ERP.EO.TblBoqMaster"/>
@@ -34,7 +78,15 @@
     PrecisionRule="true"
     EntityAttrName="Vtp"
     EntityUsage="TblBoqMaster"
-    AliasName="VTP"/>
+    AliasName="VTP"
+    LOVName="LOV_Vtp">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Dated"
     PrecisionRule="true"
@@ -47,7 +99,15 @@
     PrecisionRule="true"
     EntityAttrName="ItemL4Id"
     EntityUsage="TblBoqMaster"
-    AliasName="ITEM_L4_ID"/>
+    AliasName="ITEM_L4_ID"
+    LOVName="LOV_ItemL4Id">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Qty"
     PrecisionRule="true"

@@ -13,6 +13,50 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="ItemL4_Name_LOV1"
+    ViewObjectName="model.LOV.ItemL4_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Unit_of_Measurement_LOV1"
+    ViewObjectName="model.LOV.Unit_of_Measurement_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ItemL4Id"
+    ListVOName="ItemL4_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ItemL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ItemL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_UomId"
+    ListVOName="Unit_of_Measurement_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="UomId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblPorDetail"
     Entity="model.ERP.EO.TblPorDetail"/>
@@ -41,13 +85,29 @@
     PrecisionRule="true"
     EntityAttrName="ItemL4Id"
     EntityUsage="TblPorDetail"
-    AliasName="ITEM_L4_ID"/>
+    AliasName="ITEM_L4_ID"
+    LOVName="LOV_ItemL4Id">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="UomId"
     PrecisionRule="true"
     EntityAttrName="UomId"
     EntityUsage="TblPorDetail"
-    AliasName="UOM_ID"/>
+    AliasName="UOM_ID"
+    LOVName="LOV_UomId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Description"
     PrecisionRule="true"

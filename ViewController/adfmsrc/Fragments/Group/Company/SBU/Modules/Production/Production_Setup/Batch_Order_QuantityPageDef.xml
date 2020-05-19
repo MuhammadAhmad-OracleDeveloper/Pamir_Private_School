@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Batch_Order_QuantityPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.Production.Production_Setup">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblBoqMasterView1" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblBoqMasterView1Iterator"/>
+    <iterator Binds="TblBoqDetailView2" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblBoqDetailView2Iterator"/>
+    <searchRegion Binds="TblBoqDetailView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblBoqDetailView2Query"/>
+    <searchRegion Binds="TblBoqMasterView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblBoqMasterView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TblBoqMasterView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblBoqMasterView1Iterator" id="Vno">
+      <AttrNames>
+        <Item Value="Vno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblBoqMasterView1Iterator" id="Dated">
+      <AttrNames>
+        <Item Value="Dated"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblBoqMasterView1Iterator" StaticList="false" Uses="LOV_Vtp" id="Vtp" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblBoqMasterView1Iterator" StaticList="false" Uses="LOV_ItemL4Id" id="ItemL4Id"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblBoqMasterView1Iterator" id="Qty">
+      <AttrNames>
+        <Item Value="Qty"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblBoqMasterView1Iterator" id="Narration">
+      <AttrNames>
+        <Item Value="Narration"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblBoqMasterView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblBoqMasterView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblBoqMasterView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblBoqMasterView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblBoqMasterView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblBoqMasterView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblBoqMasterView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblBoqDetailView2Iterator" id="TblBoqDetailView2">
+      <nodeDefinition DefName="model.ERP.VO.TblBoqDetailView" Name="TblBoqDetailView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="SrNo"/>
+          <Item Value="ItemL4Id"/>
+          <Item Value="UomId"/>
+          <Item Value="Qty"/>
+          <Item Value="BoqMasterId"/>
+          <Item Value="Description"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblBoqDetailView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblBoqDetailView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblBoqDetailView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblBoqMasterView1Iterator" id="TblBoqMasterView1">
+      <nodeDefinition DefName="model.ERP.VO.TblBoqMasterView" Name="TblBoqMasterView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Vno"/>
+          <Item Value="Dated"/>
+          <Item Value="Vtp"/>
+          <Item Value="ItemL4Id"/>
+          <Item Value="Qty"/>
+          <Item Value="Narration"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
