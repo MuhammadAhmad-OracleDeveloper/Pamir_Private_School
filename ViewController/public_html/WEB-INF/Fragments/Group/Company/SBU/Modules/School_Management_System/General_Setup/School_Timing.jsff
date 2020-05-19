@@ -9,11 +9,11 @@
                                    icon="#{resource['images:cancel.png']}" iconPosition="top">
                             <af:resetActionListener/>
                         </af:button>
-                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:spacer id="s9"/>
                         <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
                                    disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
                                    iconPosition="top"/>
-                        <af:spacer width="10" height="10" id="s1"/>
+                        <af:spacer id="s1"/>
                         </af:panelGroupLayout>
       <af:panelGridLayout id="pgl1">
         <af:gridRow marginTop="5px" height="auto" id="gr1">
@@ -146,6 +146,7 @@
                     <af:convertDateTime pattern="#{bindings.StartTime.format}"/>
                     <af:convertDateTime pattern="HH:mm"/>
                   </af:inputDate>
+                  <af:spacer id="s2"/>
                   <af:inputDate value="#{bindings.EndTime.inputValue}" label="End Time"
                                 required="#{bindings.EndTime.hints.mandatory}"
                                 columns="15"
@@ -154,6 +155,7 @@
                     <af:convertDateTime pattern="#{bindings.EndTime.format}"/>
                     <af:convertDateTime pattern="HH:mm"/>
                   </af:inputDate>
+                  <af:spacer id="s6"/>
                   <af:inputDate value="#{bindings.ZeroPrdStartTime.inputValue}"
                                 label="Zero Period Start Time"
                                 required="#{bindings.ZeroPrdStartTime.hints.mandatory}"
@@ -164,6 +166,7 @@
                     <af:convertDateTime pattern="#{bindings.ZeroPrdStartTime.format}"/>
                     <af:convertDateTime pattern="HH:mm"/>
                   </af:inputDate>
+                  <af:spacer id="s7"/>
                   <af:inputDate value="#{bindings.ZeroPrdEndTime.inputValue}"
                                 label="Zero Period End Time"
                                 required="#{bindings.ZeroPrdEndTime.hints.mandatory}"
@@ -174,6 +177,7 @@
                     <af:convertDateTime pattern="#{bindings.ZeroPrdEndTime.format}"/>
                     <af:convertDateTime pattern="HH:mm"/>
                   </af:inputDate>
+                  <af:spacer id="s8"/>
                   <af:inputText value="#{bindings.ZeroPrdDuration.inputValue}"
                                 label="Period Duration"
                                 required="#{bindings.ZeroPrdDuration.hints.mandatory}"
@@ -185,6 +189,7 @@
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.ZeroPrdDuration.format}"/>
                     
                   </af:inputText>
+                  <af:spacer id="s10"/>
                   <af:inputDate value="#{bindings.BreakStartTime.inputValue}"
                                 label="Break Start Time"
                                 required="#{bindings.BreakStartTime.hints.mandatory}"
@@ -195,6 +200,7 @@
                     <af:convertDateTime pattern="#{bindings.BreakStartTime.format}"/>
                     <af:convertDateTime pattern="HH:mm"/>
                   </af:inputDate>
+                  <af:spacer id="s11"/>
                   <af:inputDate value="#{bindings.BreakEndTime.inputValue}" label="Break End Time"
                                 required="#{bindings.BreakEndTime.hints.mandatory}"
                                 columns="15"
@@ -203,6 +209,7 @@
                     <af:convertDateTime pattern="#{bindings.BreakEndTime.format}"/>
                     <af:convertDateTime pattern="HH:mm"/>
                   </af:inputDate>
+                  <af:spacer id="s12"/>
                   <af:inputText value="#{bindings.NoOfPerDay.inputValue}" label="No.of Periods"
                                 required="#{bindings.NoOfPerDay.hints.mandatory}"
                                 columns="18"
@@ -211,6 +218,7 @@
                     <f:validator binding="#{bindings.NoOfPerDay.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.NoOfPerDay.format}"/>
                   </af:inputText>
+                  <af:spacer id="s13"/>
                   <af:inputDate value="#{bindings.PrayStartTime.inputValue}"
                                 label="Pray Start Time"
                                 required="#{bindings.PrayStartTime.hints.mandatory}"
@@ -221,6 +229,7 @@
                     <af:convertDateTime pattern="#{bindings.PrayStartTime.format}"/>
                     <af:convertDateTime pattern="HH:mm"/>
                   </af:inputDate>
+                  <af:spacer id="s14"/>
                   <af:inputDate value="#{bindings.PrayEndTime.inputValue}" label="Pray End Time"
                                 required="#{bindings.PrayEndTime.hints.mandatory}"
                                 columns="15"
@@ -229,6 +238,7 @@
                     <af:convertDateTime pattern="#{bindings.PrayEndTime.format}"/>
                     <af:convertDateTime pattern="HH:mm"/>
                   </af:inputDate>
+                  <af:spacer id="s15"/>
                   <af:inputText value="#{bindings.WeeklyOff.inputValue}" label="Weekly Off"
                                 required="#{bindings.WeeklyOff.hints.mandatory}"
                                 columns="18"
@@ -236,6 +246,7 @@
                                 shortDesc="#{bindings.WeeklyOff.hints.tooltip}" id="it7" contentStyle="Width:100px;">
                     <f:validator binding="#{bindings.WeeklyOff.validator}"/>
                   </af:inputText>
+                  <af:spacer id="s16"/>
                   <af:inputDate value="#{bindings.FrDate.inputValue}" label="From Date"
                                 required="#{bindings.FrDate.hints.mandatory}"
                                 columns="15"
@@ -243,6 +254,7 @@
                     <f:validator binding="#{bindings.FrDate.validator}"/>
                     <af:convertDateTime pattern="#{bindings.FrDate.format}"/>
                   </af:inputDate>
+                  <af:spacer id="s17"/>
                   <af:inputDate value="#{bindings.ToDate.inputValue}" label="To Date"
                                 required="#{bindings.ToDate.hints.mandatory}"
                                 columns="15"

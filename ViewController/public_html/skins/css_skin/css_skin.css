@@ -48,9 +48,27 @@
 
 
 .AFDefaultFontFamily:alias {
-       font-family: serif !important;
+    font-family: serif !important;
 }
 
+
+/*af|panelFormLayout af|inputText::label{
+    border:10px solid black; 
+    text-align:left;
+}*/
+
+af|panelFormLayout af|inputDate::label, af|inputText::label, af|selectOneChoice::label{
+    /*border:1px solid black;*/ 
+    text-align:left !important;
+    width:150px !important;
+    color: #14739e;
+    background-color: #e8f4f8 !important;
+}
+
+/*af|panelFormLayout af|selectOneChoice::label{
+    border:10px solid black; 
+    text-align:left;
+}*/
 
 /*af|table {
 background: none;
