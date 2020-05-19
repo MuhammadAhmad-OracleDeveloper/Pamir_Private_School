@@ -143,7 +143,13 @@ public class Login {
     public String getCompanyID(String CmpnyID){
         System.out.println("oooooooooooo Company oooooooooo"+CmpnyID);
         storeOnSession("sessCmpnyID", CmpnyID);
-//        getCmpnyImg(CmpnyID);
+        try {
+           getCmpnyImg(CmpnyID);
+       } catch (Exception e) {
+            // TODO: Add catch code
+            e.printStackTrace();
+        }
+        
         return "/faces/Main_Pages/Group/Company/SBU/Sbu.jsf?faces-redirect=true";
     }
 
