@@ -3,25 +3,26 @@
 <!---->
 <Association
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="FkProIssDetailDMasterAssoc"
+  Name="FKTblProIssDetailDFKAssoc"
   Version="12.2.1.11.57"
   InheritPersonalization="merge">
   <DesignTime>
     <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <AssociationEnd
-    Name="TblProIssMaster"
+    Name="TblProIssDetail"
     Cardinality="1"
     Source="true"
-    Owner="model.ERP.EO.TblProIssMaster">
+    Owner="model.ERP.EO.TblProIssDetail"
+    LockLevel="NONE">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_aggregation" Value="0"/>
-      <Attr Name="_finderName" Value="TblProIssMaster"/>
-      <Attr Name="_foreignKey" Value="model.ERP.EO.TblProIssMaster.PkProIssMasterId"/>
+      <Attr Name="_finderName" Value="TblProIssDetail"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblProIssDetail.PkProIssDetailId"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblProIssMaster.Id"/>
+      <Item Value="model.ERP.EO.TblProIssDetail.Id"/>
     </AttrArray>
   </AssociationEnd>
   <AssociationEnd
@@ -32,7 +33,7 @@
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="TblProIssDetailD"/>
-      <Attr Name="_foreignKey" Value="model.ERP.EO.TblProIssDetailD.FkProIssDetailDMaster"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblProIssDetailD.fk_TblProIssDetailD"/>
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.ERP.EO.TblProIssDetailD.ProIssDetailId"/>

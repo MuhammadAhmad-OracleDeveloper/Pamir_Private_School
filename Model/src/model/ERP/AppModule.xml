@@ -823,6 +823,9 @@
   <ViewUsage
     Name="TblProIssMasterView2"
     ViewObjectName="model.ERP.VO.TblProIssMasterView"/>
+  <ViewUsage
+    Name="TblProIssDetailDView3"
+    ViewObjectName="model.ERP.VO.TblProIssDetailDView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -1640,15 +1643,15 @@
     DstViewUsageName="model.ERP.AppModule.TblProIssDetailView2"
     Reversed="false"/>
   <ViewLinkUsage
-    Name="FkProIssDetailDMasterLink1"
-    ViewLinkObjectName="model.ERP.VO.FkProIssDetailDMasterLink"
-    SrcViewUsageName="model.ERP.AppModule.TblProIssMasterView1"
-    DstViewUsageName="model.ERP.AppModule.TblProIssDetailDView2"
-    Reversed="false"/>
-  <ViewLinkUsage
     Name="FkProIssMasterPorLink1"
     ViewLinkObjectName="model.ERP.VO.FkProIssMasterPorLink"
     SrcViewUsageName="model.ERP.AppModule.TblPorMaster1View1"
     DstViewUsageName="model.ERP.AppModule.TblProIssMasterView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKTblProIssDetailDFKLink1"
+    ViewLinkObjectName="model.ERP.VO.FKTblProIssDetailDFKLink"
+    SrcViewUsageName="model.ERP.AppModule.TblProIssDetailView2"
+    DstViewUsageName="model.ERP.AppModule.TblProIssDetailDView3"
     Reversed="false"/>
 </AppModule>

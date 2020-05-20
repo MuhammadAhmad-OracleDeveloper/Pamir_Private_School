@@ -104,6 +104,13 @@
     AssociationOtherEnd="model.ERP.EO.FkProIssDetailMasterAssoc.TblProIssDetail"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblProIssDetailD"
+    Association="model.ERP.EO.FKTblProIssDetailDFKAssoc"
+    AssociationEnd="model.ERP.EO.FKTblProIssDetailDFKAssoc.TblProIssDetailD"
+    AssociationOtherEnd="model.ERP.EO.FKTblProIssDetailDFKAssoc.TblProIssDetail"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkProIssDetailId"
     PrimaryKey="true">

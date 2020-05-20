@@ -3,21 +3,27 @@
 <!---->
 <ViewLink
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="FkProIssDetailDMasterLink"
+  Name="FKTblProIssDetailDFKLink"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  EntityAssociation="model.ERP.EO.FkProIssDetailDMasterAssoc">
+  EntityAssociation="model.ERP.EO.FKTblProIssDetailDFKAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.ERP.VO.FKTblProIssDetailDFKLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
   <ViewLinkDefEnd
-    Name="TblProIssMasterView"
+    Name="TblProIssDetailView"
     Cardinality="1"
     Source="true"
-    Owner="model.ERP.VO.TblProIssMasterView">
+    Owner="model.ERP.VO.TblProIssDetailView">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="TblProIssMasterView"/>
+      <Attr Name="_finderName" Value="TblProIssDetailView"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.VO.TblProIssMasterView.Id"/>
+      <Item Value="model.ERP.VO.TblProIssDetailView.Id"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ViewLinkDefEnd
@@ -32,4 +38,8 @@
       <Item Value="model.ERP.VO.TblProIssDetailDView.ProIssDetailId"/>
     </AttrArray>
   </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewLink>
