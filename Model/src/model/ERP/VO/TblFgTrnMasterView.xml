@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="TblPorMaster1View"
+  Name="TblFgTrnMasterView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -14,95 +14,84 @@
   SelectAllAttributes="false"
   PageIterMode="Full">
   <EntityUsage
-    Name="TblPorMaster1"
-    Entity="model.ERP.EO.TblPorMaster1"/>
+    Name="TblFgTrnMaster"
+    Entity="model.ERP.EO.TblFgTrnMaster"/>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Id"
-    EntityUsage="TblPorMaster1"
+    EntityUsage="TblFgTrnMaster"
     AliasName="ID"/>
   <ViewAttribute
     Name="Vno"
     PrecisionRule="true"
     EntityAttrName="Vno"
-    EntityUsage="TblPorMaster1"
+    EntityUsage="TblFgTrnMaster"
     AliasName="VNO"/>
   <ViewAttribute
     Name="Vtp"
     PrecisionRule="true"
     EntityAttrName="Vtp"
-    EntityUsage="TblPorMaster1"
+    EntityUsage="TblFgTrnMaster"
     AliasName="VTP"/>
   <ViewAttribute
     Name="Dated"
     PrecisionRule="true"
     EntityAttrName="Dated"
-    EntityUsage="TblPorMaster1"
+    EntityUsage="TblFgTrnMaster"
     AliasName="DATED"/>
   <ViewAttribute
-    Name="ItemL3Id"
-    IsNotNull="true"
+    Name="ProFgMasterId"
     PrecisionRule="true"
-    EntityAttrName="ItemL3Id"
-    EntityUsage="TblPorMaster1"
-    AliasName="ITEM_L3_ID"/>
-  <ViewAttribute
-    Name="Qty"
-    PrecisionRule="true"
-    EntityAttrName="Qty"
-    EntityUsage="TblPorMaster1"
-    AliasName="QTY"/>
+    EntityAttrName="ProFgMasterId"
+    EntityUsage="TblFgTrnMaster"
+    AliasName="PRO_FG_MASTER_ID"/>
   <ViewAttribute
     Name="Narration"
     PrecisionRule="true"
     EntityAttrName="Narration"
-    EntityUsage="TblPorMaster1"
+    EntityUsage="TblFgTrnMaster"
     AliasName="NARRATION"/>
   <ViewAttribute
     Name="GroupCompanyId"
     PrecisionRule="true"
     EntityAttrName="GroupCompanyId"
-    EntityUsage="TblPorMaster1"
+    EntityUsage="TblFgTrnMaster"
     AliasName="GROUP_COMPANY_ID"/>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
-    EntityUsage="TblPorMaster1"
+    EntityUsage="TblFgTrnMaster"
     AliasName="CREATED_DATE"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
-    EntityUsage="TblPorMaster1"
+    EntityUsage="TblFgTrnMaster"
     AliasName="CREATED_BY"/>
   <ViewAttribute
     Name="UpdatedDate"
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
-    EntityUsage="TblPorMaster1"
+    EntityUsage="TblFgTrnMaster"
     AliasName="UPDATED_DATE"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
-    EntityUsage="TblPorMaster1"
+    EntityUsage="TblFgTrnMaster"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblFgTrnMaster"
+    AliasName="COMPANY_SBU_ID"/>
   <ViewLinkAccessor
-    Name="TblPorDetail1View"
-    ViewLink="model.ERP.VO.FkPorDetailMasterAssoc1Link"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
-  <ViewLinkAccessor
-    Name="TblProFgMasterView"
-    ViewLink="model.ERP.VO.FkProFgMasterPorLink"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
-  <ViewLinkAccessor
-    Name="TblProIssMasterView"
-    ViewLink="model.ERP.VO.FkProIssMasterPorLink"
+    Name="TblFgTrnDetailView"
+    ViewLink="model.ERP.VO.FkFgTrnDetailMasterLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

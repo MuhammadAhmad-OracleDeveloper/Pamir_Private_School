@@ -3,12 +3,12 @@
 <!---->
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="TblPorMaster1"
+  Name="TblFgTrnMaster"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   DBObjectType="table"
-  DBObjectName="TBL_POR_MASTER"
-  AliasName="TblPorMaster1"
+  DBObjectName="TBL_FG_TRN_MASTER"
+  AliasName="TblFgTrnMaster"
   BindingStyle="OracleName">
   <Attribute
     Name="Id"
@@ -17,7 +17,7 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_POR_MASTER"
+    TableName="TBL_FG_TRN_MASTER"
     PrimaryKey="true"/>
   <Attribute
     Name="Vno"
@@ -26,7 +26,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="TBL_POR_MASTER">
+    TableName="TBL_FG_TRN_MASTER">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="25"/>
     </DesignTime>
@@ -38,7 +38,7 @@
     SQLType="CHAR"
     Type="java.lang.String"
     ColumnType="CHAR"
-    TableName="TBL_POR_MASTER"
+    TableName="TBL_FG_TRN_MASTER"
     RetrievedOnUpdate="true"
     RetrievedOnInsert="true">
     <DesignTime>
@@ -51,22 +51,14 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_POR_MASTER"/>
+    TableName="TBL_FG_TRN_MASTER"/>
   <Attribute
-    Name="ItemL3Id"
-    IsNotNull="true"
-    ColumnName="ITEM_L3_ID"
+    Name="ProFgMasterId"
+    ColumnName="PRO_FG_MASTER_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_POR_MASTER"/>
-  <Attribute
-    Name="Qty"
-    ColumnName="QTY"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_POR_MASTER"/>
+    TableName="TBL_FG_TRN_MASTER"/>
   <Attribute
     Name="Narration"
     Precision="300"
@@ -74,7 +66,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="TBL_POR_MASTER">
+    TableName="TBL_FG_TRN_MASTER">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="300"/>
     </DesignTime>
@@ -85,86 +77,90 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_POR_MASTER"/>
+    TableName="TBL_FG_TRN_MASTER"/>
   <Attribute
     Name="CreatedDate"
     ColumnName="CREATED_DATE"
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_POR_MASTER"/>
+    TableName="TBL_FG_TRN_MASTER"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_POR_MASTER"/>
+    TableName="TBL_FG_TRN_MASTER"/>
   <Attribute
     Name="UpdatedDate"
     ColumnName="UPDATED_DATE"
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_POR_MASTER"/>
+    TableName="TBL_FG_TRN_MASTER"/>
   <Attribute
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_POR_MASTER"/>
+    TableName="TBL_FG_TRN_MASTER"/>
+  <Attribute
+    Name="CompanySbuId"
+    ColumnName="COMPANY_SBU_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FG_TRN_MASTER"/>
   <AccessorAttribute
-    Name="TblPorDetail1"
-    Association="model.ERP.EO.FkPorDetailMasterAssoc1"
-    AssociationEnd="model.ERP.EO.FkPorDetailMasterAssoc1.TblPorDetail1"
-    AssociationOtherEnd="model.ERP.EO.FkPorDetailMasterAssoc1.TblPorMaster1"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
-  <AccessorAttribute
-    Name="TblProFgMaster"
-    Association="model.ERP.EO.FkProFgMasterPorAssoc"
-    AssociationEnd="model.ERP.EO.FkProFgMasterPorAssoc.TblProFgMaster"
-    AssociationOtherEnd="model.ERP.EO.FkProFgMasterPorAssoc.TblPorMaster1"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
-  <AccessorAttribute
-    Name="TblProIssMaster"
-    Association="model.ERP.EO.FkProIssMasterPorAssoc"
-    AssociationEnd="model.ERP.EO.FkProIssMasterPorAssoc.TblProIssMaster"
-    AssociationOtherEnd="model.ERP.EO.FkProIssMasterPorAssoc.TblPorMaster1"
+    Name="TblFgTrnDetail"
+    Association="model.ERP.EO.FkFgTrnDetailMasterAssoc"
+    AssociationEnd="model.ERP.EO.FkFgTrnDetailMasterAssoc.TblFgTrnDetail"
+    AssociationOtherEnd="model.ERP.EO.FkFgTrnDetailMasterAssoc.TblFgTrnMaster"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <Key
-    Name="PkPorMasterId"
+    Name="PkFgTrnMasterId"
     PrimaryKey="true">
     <DesignTime>
-      <Attr Name="_DBObjectName" Value="PK_POR_MASTER_ID"/>
+      <Attr Name="_DBObjectName" Value="PK_FG_TRN_MASTER_ID"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblPorMaster1.Id"/>
+      <Item Value="model.ERP.EO.TblFgTrnMaster.Id"/>
     </AttrArray>
   </Key>
   <Key
-    Name="FkPorMasterCompany">
+    Name="FkFgTrnMasterCompany">
     <DesignTime>
       <Attr Name="_referencedKey" Value="PK_GROUP_COMPANY"/>
       <Attr Name="_isForeign" Value="true"/>
-      <Attr Name="_DBObjectName" Value="FK_POR_MASTER_COMPANY"/>
+      <Attr Name="_DBObjectName" Value="FK_FG_TRN_MASTER_COMPANY"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblPorMaster1.GroupCompanyId"/>
+      <Item Value="model.ERP.EO.TblFgTrnMaster.GroupCompanyId"/>
     </AttrArray>
   </Key>
   <Key
-    Name="FkPorMasterL3">
+    Name="FkFgTrnMasterPor">
     <DesignTime>
-      <Attr Name="_referencedKey" Value="PK_TBL_ITEM_L3_PK"/>
+      <Attr Name="_referencedKey" Value="PK_PRO_FG_MASTER_ID"/>
       <Attr Name="_isForeign" Value="true"/>
-      <Attr Name="_DBObjectName" Value="FK_POR_MASTER_L3"/>
+      <Attr Name="_DBObjectName" Value="FK_FG_TRN_MASTER_POR"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblPorMaster1.ItemL3Id"/>
+      <Item Value="model.ERP.EO.TblFgTrnMaster.ProFgMasterId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkFgTrnMasterSbu">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_COMPANY_SBU"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_FG_TRN_MASTER_SBU"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblFgTrnMaster.CompanySbuId"/>
     </AttrArray>
   </Key>
 </Entity>

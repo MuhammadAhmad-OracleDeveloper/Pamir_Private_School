@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="TblPorDetail1View"
+  Name="TblFgTrnDetailView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -14,74 +14,86 @@
   SelectAllAttributes="false"
   PageIterMode="Full">
   <EntityUsage
-    Name="TblPorDetail1"
-    Entity="model.ERP.EO.TblPorDetail1"/>
+    Name="TblFgTrnDetail"
+    Entity="model.ERP.EO.TblFgTrnDetail"/>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Id"
-    EntityUsage="TblPorDetail1"
+    EntityUsage="TblFgTrnDetail"
     AliasName="ID"/>
   <ViewAttribute
-    Name="PorMasterId"
+    Name="FgTrnMasterId"
     PrecisionRule="true"
-    EntityAttrName="PorMasterId"
-    EntityUsage="TblPorDetail1"
-    AliasName="POR_MASTER_ID"/>
+    EntityAttrName="FgTrnMasterId"
+    EntityUsage="TblFgTrnDetail"
+    AliasName="FG_TRN_MASTER_ID"/>
   <ViewAttribute
     Name="SrNo"
     PrecisionRule="true"
     EntityAttrName="SrNo"
-    EntityUsage="TblPorDetail1"
+    EntityUsage="TblFgTrnDetail"
     AliasName="SR_NO"/>
   <ViewAttribute
     Name="ItemL4Id"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="ItemL4Id"
-    EntityUsage="TblPorDetail1"
+    EntityUsage="TblFgTrnDetail"
     AliasName="ITEM_L4_ID"/>
   <ViewAttribute
     Name="UomId"
     PrecisionRule="true"
     EntityAttrName="UomId"
-    EntityUsage="TblPorDetail1"
+    EntityUsage="TblFgTrnDetail"
     AliasName="UOM_ID"/>
   <ViewAttribute
     Name="Description"
     PrecisionRule="true"
     EntityAttrName="Description"
-    EntityUsage="TblPorDetail1"
+    EntityUsage="TblFgTrnDetail"
     AliasName="DESCRIPTION"/>
   <ViewAttribute
     Name="Qty"
     PrecisionRule="true"
     EntityAttrName="Qty"
-    EntityUsage="TblPorDetail1"
+    EntityUsage="TblFgTrnDetail"
     AliasName="QTY"/>
+  <ViewAttribute
+    Name="Rate"
+    PrecisionRule="true"
+    EntityAttrName="Rate"
+    EntityUsage="TblFgTrnDetail"
+    AliasName="RATE"/>
+  <ViewAttribute
+    Name="Amount"
+    PrecisionRule="true"
+    EntityAttrName="Amount"
+    EntityUsage="TblFgTrnDetail"
+    AliasName="AMOUNT"/>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
-    EntityUsage="TblPorDetail1"
+    EntityUsage="TblFgTrnDetail"
     AliasName="CREATED_DATE"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
-    EntityUsage="TblPorDetail1"
+    EntityUsage="TblFgTrnDetail"
     AliasName="CREATED_BY"/>
   <ViewAttribute
     Name="UpdatedDate"
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
-    EntityUsage="TblPorDetail1"
+    EntityUsage="TblFgTrnDetail"
     AliasName="UPDATED_DATE"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
-    EntityUsage="TblPorDetail1"
+    EntityUsage="TblFgTrnDetail"
     AliasName="UPDATED_BY"/>
 </ViewObject>

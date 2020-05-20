@@ -3,33 +3,33 @@
 <!---->
 <ViewLink
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="FkProIssMasterPorLink"
+  Name="FkFgTrnDetailMasterLink"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  EntityAssociation="model.ERP.EO.FkProIssMasterPorAssoc">
+  EntityAssociation="model.ERP.EO.FkFgTrnDetailMasterAssoc">
   <ViewLinkDefEnd
-    Name="TblPorMaster1View"
+    Name="TblFgTrnMasterView"
     Cardinality="1"
     Source="true"
-    Owner="model.ERP.VO.TblPorMaster1View">
+    Owner="model.ERP.VO.TblFgTrnMasterView">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="TblPorMaster1View"/>
+      <Attr Name="_finderName" Value="TblFgTrnMasterView"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.VO.TblPorMaster1View.Id"/>
+      <Item Value="model.ERP.VO.TblFgTrnMasterView.Id"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ViewLinkDefEnd
-    Name="TblProIssMasterView"
+    Name="TblFgTrnDetailView"
     Cardinality="-1"
-    Owner="model.ERP.VO.TblProIssMasterView">
+    Owner="model.ERP.VO.TblFgTrnDetailView">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="TblProIssMasterView"/>
+      <Attr Name="_finderName" Value="TblFgTrnDetailView"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.VO.TblProIssMasterView.PorMasterId"/>
+      <Item Value="model.ERP.VO.TblFgTrnDetailView.FgTrnMasterId"/>
     </AttrArray>
   </ViewLinkDefEnd>
 </ViewLink>

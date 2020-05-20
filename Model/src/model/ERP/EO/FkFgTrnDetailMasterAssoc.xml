@@ -3,39 +3,39 @@
 <!---->
 <Association
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="FkPorDetailMasterAssoc1"
+  Name="FkFgTrnDetailMasterAssoc"
   Version="12.2.1.11.57"
   InheritPersonalization="merge">
   <DesignTime>
     <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <AssociationEnd
-    Name="TblPorMaster1"
+    Name="TblFgTrnMaster"
     Cardinality="1"
     Source="true"
-    Owner="model.ERP.EO.TblPorMaster1">
+    Owner="model.ERP.EO.TblFgTrnMaster">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_aggregation" Value="0"/>
-      <Attr Name="_finderName" Value="TblPorMaster1"/>
-      <Attr Name="_foreignKey" Value="model.ERP.EO.TblPorMaster1.PkPorMasterId"/>
+      <Attr Name="_finderName" Value="TblFgTrnMaster"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblFgTrnMaster.PkFgTrnMasterId"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblPorMaster1.Id"/>
+      <Item Value="model.ERP.EO.TblFgTrnMaster.Id"/>
     </AttrArray>
   </AssociationEnd>
   <AssociationEnd
-    Name="TblPorDetail1"
+    Name="TblFgTrnDetail"
     Cardinality="-1"
-    Owner="model.ERP.EO.TblPorDetail1">
+    Owner="model.ERP.EO.TblFgTrnDetail">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_aggregation" Value="0"/>
-      <Attr Name="_finderName" Value="TblPorDetail1"/>
-      <Attr Name="_foreignKey" Value="model.ERP.EO.TblPorDetail1.FkPorDetailMaster"/>
+      <Attr Name="_finderName" Value="TblFgTrnDetail"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblFgTrnDetail.FkFgTrnDetailMaster"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblPorDetail1.PorMasterId"/>
+      <Item Value="model.ERP.EO.TblFgTrnDetail.FgTrnMasterId"/>
     </AttrArray>
   </AssociationEnd>
 </Association>
