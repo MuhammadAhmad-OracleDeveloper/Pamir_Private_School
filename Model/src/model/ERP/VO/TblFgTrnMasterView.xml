@@ -13,6 +13,51 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Voucher_Type_LOV1"
+    ViewObjectName="model.LOV.Voucher_Type_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ProFG_Master_LOV1"
+    ViewObjectName="model.LOV.ProFG_Master_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Vtp"
+    ListVOName="Voucher_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Vtp"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ProFgMasterId"
+    ListVOName="ProFG_Master_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ProFgMasterId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Vno"/>
+      <Item Value="Dated"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblFgTrnMaster"
     Entity="model.ERP.EO.TblFgTrnMaster"/>
@@ -34,7 +79,15 @@
     PrecisionRule="true"
     EntityAttrName="Vtp"
     EntityUsage="TblFgTrnMaster"
-    AliasName="VTP"/>
+    AliasName="VTP"
+    LOVName="LOV_Vtp">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Dated"
     PrecisionRule="true"
@@ -46,7 +99,15 @@
     PrecisionRule="true"
     EntityAttrName="ProFgMasterId"
     EntityUsage="TblFgTrnMaster"
-    AliasName="PRO_FG_MASTER_ID"/>
+    AliasName="PRO_FG_MASTER_ID"
+    LOVName="LOV_ProFgMasterId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Narration"
     PrecisionRule="true"

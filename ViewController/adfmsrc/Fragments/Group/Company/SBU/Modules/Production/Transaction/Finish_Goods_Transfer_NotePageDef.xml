@@ -7,6 +7,14 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblFgTrnMasterView1" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblFgTrnMasterView1Iterator"/>
+    <iterator Binds="TblFgTrnDetailView2" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblFgTrnDetailView2Iterator"/>
+    <searchRegion Binds="TblFgTrnDetailView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFgTrnDetailView2Query"/>
+    <searchRegion Binds="TblFgTrnMasterView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFgTrnMasterView1Query"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -17,6 +25,73 @@
           <Item Value="Icon"/>
           <Item Value="Bindingname"/>
           <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TblFgTrnMasterView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFgTrnMasterView1Iterator" id="Vno">
+      <AttrNames>
+        <Item Value="Vno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFgTrnMasterView1Iterator" id="Dated">
+      <AttrNames>
+        <Item Value="Dated"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblFgTrnMasterView1Iterator" StaticList="false" Uses="LOV_Vtp" id="Vtp" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblFgTrnMasterView1Iterator" StaticList="false" Uses="LOV_ProFgMasterId" id="ProFgMasterId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblFgTrnMasterView1Iterator" id="Narration">
+      <AttrNames>
+        <Item Value="Narration"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblFgTrnMasterView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblFgTrnMasterView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblFgTrnMasterView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblFgTrnMasterView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblFgTrnMasterView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFgTrnMasterView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblFgTrnMasterView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblFgTrnDetailView2Iterator" id="TblFgTrnDetailView2">
+      <nodeDefinition DefName="model.ERP.VO.TblFgTrnDetailView" Name="TblFgTrnDetailView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="SrNo"/>
+          <Item Value="ItemL4Id"/>
+          <Item Value="UomId"/>
+          <Item Value="Description"/>
+          <Item Value="Qty"/>
+          <Item Value="Rate"/>
+          <Item Value="Amount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFgTrnDetailView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFgTrnDetailView2Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblFgTrnDetailView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblFgTrnMasterView1Iterator" id="TblFgTrnMasterView1">
+      <nodeDefinition DefName="model.ERP.VO.TblFgTrnMasterView" Name="TblFgTrnMasterView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Vno"/>
+          <Item Value="Dated"/>
+          <Item Value="Vtp"/>
+          <Item Value="ProFgMasterId"/>
+          <Item Value="Narration"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
