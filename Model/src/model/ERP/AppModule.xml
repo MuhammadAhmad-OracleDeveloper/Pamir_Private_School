@@ -826,6 +826,15 @@
   <ViewUsage
     Name="TblProIssDetailDView3"
     ViewObjectName="model.ERP.VO.TblProIssDetailDView"/>
+  <ViewUsage
+    Name="TblFgTrnDetailView1"
+    ViewObjectName="model.ERP.VO.TblFgTrnDetailView"/>
+  <ViewUsage
+    Name="TblFgTrnMasterView1"
+    ViewObjectName="model.ERP.VO.TblFgTrnMasterView"/>
+  <ViewUsage
+    Name="TblFgTrnDetailView2"
+    ViewObjectName="model.ERP.VO.TblFgTrnDetailView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -1653,5 +1662,11 @@
     ViewLinkObjectName="model.ERP.VO.FKTblProIssDetailDFKLink"
     SrcViewUsageName="model.ERP.AppModule.TblProIssDetailView2"
     DstViewUsageName="model.ERP.AppModule.TblProIssDetailDView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkFgTrnDetailMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkFgTrnDetailMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblFgTrnMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblFgTrnDetailView2"
     Reversed="false"/>
 </AppModule>
