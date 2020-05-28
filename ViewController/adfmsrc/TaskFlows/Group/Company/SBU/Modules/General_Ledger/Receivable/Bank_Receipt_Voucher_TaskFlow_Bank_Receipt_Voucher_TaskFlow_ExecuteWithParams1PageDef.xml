@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57"
+                id="Bank_Receipt_Voucher_TaskFlow_Bank_Receipt_Voucher_TaskFlow_ExecuteWithParams1PageDef"
+                Package="TaskFlows.Group.Company.SBU.Modules.General_Ledger.Receivable" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="TblGlVoucherMasterTransView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblGlVoucherMasterTransView1Iterator" Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="TblGlVoucherMasterTransView1Iterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="get_VTP" NDValue="RBR" NDType="java.lang.String"/>
+    </action>
+  </bindings>
+</pageDefinition>

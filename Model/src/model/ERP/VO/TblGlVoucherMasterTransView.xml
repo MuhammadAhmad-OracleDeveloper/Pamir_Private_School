@@ -6,23 +6,36 @@
   Name="TblGlVoucherMasterTransView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblGlVoucherMaster.CHQ_DATE, 
+       TblGlVoucherMaster.CHQ_NO, 
+       TblGlVoucherMaster.CLR_DATE, 
+       TblGlVoucherMaster.CREATED_BY, 
+       TblGlVoucherMaster.CREATED_DATE, 
+       TblGlVoucherMaster.DATED, 
+       TblGlVoucherMaster.GROUP_COMPANY_ID, 
+       TblGlVoucherMaster.ID, 
+       TblGlVoucherMaster.NARRATION, 
+       TblGlVoucherMaster.PBL_SUPP_ID, 
+       TblGlVoucherMaster.UPDATED_BY, 
+       TblGlVoucherMaster.UPDATED_DATE, 
+       TblGlVoucherMaster.VNO, 
+       TblGlVoucherMaster.VTP, 
+       TblGlVoucherMaster.PBL_CUST_ID"
+  FromList="TBL_GL_VOUCHER_MASTER TblGlVoucherMaster"
+  Where="TblGlVoucherMaster.VTP =  :get_VTP">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
         ResId="model.ERP.VO.TblGlVoucherMasterTransView_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <ViewAccessor
-    Name="Gl_Trans_Vtp_LOV1"
-    ViewObjectName="model.LOV.Gl_Trans_Vtp_LOV"
-    RowLevelBinds="true"/>
+  <Variable
+    Name="get_VTP"
+    Kind="where"
+    Type="java.lang.String"/>
   <ViewAccessor
     Name="Supp_Name_LOV1"
     ViewObjectName="model.LOV.Supp_Name_LOV"
@@ -31,24 +44,6 @@
     Name="Customer_Name_LOV1"
     ViewObjectName="model.LOV.Customer_Name_LOV"
     RowLevelBinds="true"/>
-  <ListBinding
-    Name="LOV_Vtp"
-    ListVOName="Gl_Trans_Vtp_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Vtp"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="DBAttr"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="ViewAttr"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
   <ListBinding
     Name="LOV_PblSuppId"
     ListVOName="Supp_Name_LOV1"
@@ -182,15 +177,7 @@
     PrecisionRule="true"
     EntityAttrName="Vtp"
     EntityUsage="TblGlVoucherMaster"
-    AliasName="VTP"
-    LOVName="LOV_Vtp">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="VTP"/>
   <ViewAttribute
     Name="PblCustId"
     PrecisionRule="true"

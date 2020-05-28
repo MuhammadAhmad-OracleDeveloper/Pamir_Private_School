@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
   <task-flow-definition id="Bank_Payment_Voucher_TaskFlow">
-    <default-activity>ExecuteWithParams</default-activity>
+    <default-activity>ExecuteWithParams1</default-activity>
     <data-control-scope>
       <shared/>
     </data-control-scope>
+    <managed-bean id="__5">
+      <managed-bean-name>GLvoucherTypeBean</managed-bean-name>
+      <managed-bean-class>view.VoucherType.GLvoucherType</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
     <view id="Bank_Payment_Voucher">
       <page>/WEB-INF/Fragments/Group/Company/SBU/Modules/General_Ledger/Payable/Bank_Payment_Voucher.jsff</page>
     </view>
     <method-call id="ExecuteWithParams">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ExecuteWithParams</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="ExecuteWithParams1">
       <method>#{bindings.ExecuteWithParams.execute}</method>
       <outcome>
         <fixed-outcome>ExecuteWithParams</fixed-outcome>
@@ -19,6 +30,13 @@
       <control-flow-case id="__2">
         <from-outcome>ExecuteWithParams</from-outcome>
         <to-activity-id>Bank_Payment_Voucher</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__3">
+      <from-activity-id>ExecuteWithParams1</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>ExecuteWithParams</from-outcome>
+        <to-activity-id>ExecuteWithParams</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <use-page-fragments/>
