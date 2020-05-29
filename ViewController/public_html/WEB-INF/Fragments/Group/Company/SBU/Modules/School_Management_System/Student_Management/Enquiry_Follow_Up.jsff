@@ -38,6 +38,7 @@
                     <f:validator binding="#{bindings.Id.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
                   </af:inputText>
+                  <af:spacer id="s14"/>
                   <af:inputDate value="#{bindings.Dated.inputValue}" label="Follow up Date"
                                 required="#{bindings.Dated.hints.mandatory}"
                                 columns="#{bindings.Dated.hints.displayWidth}"
@@ -61,6 +62,7 @@
                     <f:selectItems value="#{bindings.FollowMethod.items}" id="si2"/>
                     <f:validator binding="#{bindings.FollowMethod.validator}"/>
                   </af:selectOneChoice>
+                  <af:spacer  id="s6"/>
                   <af:inputText value="#{bindings.SmsContactNo.inputValue}" label="Sms Contact No."
                                 required="#{bindings.SmsContactNo.hints.mandatory}"
                                 columns="30"
@@ -68,6 +70,7 @@
                                 shortDesc="#{bindings.SmsContactNo.hints.tooltip}" id="it3" contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.SmsContactNo.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s7"/>
                   <af:inputText value="#{bindings.SmsText.inputValue}" label="Sms Text"
                                 required="#{bindings.SmsText.hints.mandatory}"
                                 columns="30"
@@ -75,6 +78,7 @@
                                 shortDesc="#{bindings.SmsText.hints.tooltip}" id="it4">
                     <f:validator binding="#{bindings.SmsText.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s8"/>
                   <af:inputText value="#{bindings.CallContactNo.inputValue}"
                                 label="Call Contact No."
                                 required="#{bindings.CallContactNo.hints.mandatory}"
@@ -83,6 +87,7 @@
                                 shortDesc="#{bindings.CallContactNo.hints.tooltip}" id="it6" contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.CallContactNo.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s10"/>
                   <af:inputText value="#{bindings.CallContent.inputValue}" label="Call Content"
                                 required="#{bindings.CallContent.hints.mandatory}"
                                 columns="30"
@@ -90,6 +95,7 @@
                                 shortDesc="#{bindings.CallContent.hints.tooltip}" id="it15">
                     <f:validator binding="#{bindings.CallContent.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s11"/>
                   <af:inputText value="#{bindings.EmailTo.inputValue}" label="Email To"
                                 required="#{bindings.EmailTo.hints.mandatory}"
                                 columns="30"
@@ -97,6 +103,7 @@
                                 shortDesc="#{bindings.EmailTo.hints.tooltip}" id="it17">
                     <f:validator binding="#{bindings.EmailTo.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s12"/>
                   <af:inputText value="#{bindings.EmailSubject.inputValue}" label="Email Subject"
                                 required="#{bindings.EmailSubject.hints.mandatory}"
                                 columns="30"
@@ -104,6 +111,7 @@
                                 shortDesc="#{bindings.EmailSubject.hints.tooltip}" id="it18">
                     <f:validator binding="#{bindings.EmailSubject.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s13"/>
                   <af:inputText value="#{bindings.EmailBody.inputValue}" label="Email Body"
                                 required="#{bindings.EmailBody.hints.mandatory}"
                                 columns="#{bindings.EmailBody.hints.displayWidth}"

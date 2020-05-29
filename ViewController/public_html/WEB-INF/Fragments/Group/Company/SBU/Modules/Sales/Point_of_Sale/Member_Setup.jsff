@@ -24,7 +24,7 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1" text="Member Setup">
-                <af:panelFormLayout id="pfl1" maxColumns="6" rows="3">
+                <af:panelFormLayout id="pfl1" maxColumns="3" rows="6">
                   <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
                                 required="#{bindings.Id.hints.mandatory}" columns="#{bindings.Id.hints.displayWidth}"
                                 maximumLength="#{bindings.Id.hints.precision}" shortDesc="#{bindings.Id.hints.tooltip}"
@@ -32,6 +32,7 @@
                     <f:validator binding="#{bindings.Id.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
                   </af:inputText>
+                  <af:spacer  id="s2"/>
                   <af:inputDate value="#{bindings.Dated.inputValue}" label="Date"
                                 required="#{bindings.Dated.hints.mandatory}"
                                 columns="#{bindings.Dated.hints.displayWidth}"
@@ -39,28 +40,31 @@
                     <f:validator binding="#{bindings.Dated.validator}"/>
                     <af:convertDateTime pattern="#{bindings.Dated.format}"/>
                   </af:inputDate>
+                  <af:spacer  id="s3"/>
                   <af:inputText value="#{bindings.Name.inputValue}" label="Member"
                                 required="#{bindings.Name.hints.mandatory}"
-                                columns="#{bindings.Name.hints.displayWidth}"
+                                columns="20"
                                 maximumLength="#{bindings.Name.hints.precision}"
                                 shortDesc="#{bindings.Name.hints.tooltip}" id="it2">
                     <f:validator binding="#{bindings.Name.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s4"/>
                   <af:inputText value="#{bindings.Phone.inputValue}" label="Phone"
                                 required="#{bindings.Phone.hints.mandatory}"
-                                columns="#{bindings.Phone.hints.displayWidth}"
+                                columns="20"
                                 maximumLength="#{bindings.Phone.hints.precision}"
                                 shortDesc="#{bindings.Phone.hints.tooltip}" id="it3" contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.Phone.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s6"/>
                   <af:inputText value="#{bindings.Cell.inputValue}" label="Cell"
                                 required="#{bindings.Cell.hints.mandatory}"
-                                columns="#{bindings.Cell.hints.displayWidth}"
+                                columns="20"
                                 maximumLength="#{bindings.Cell.hints.precision}"
                                 shortDesc="#{bindings.Cell.hints.tooltip}" id="it4" contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.Cell.validator}"/>
                   </af:inputText>
-                
+                  <af:spacer  id="s7"/>
                   <af:inputDate value="#{bindings.IssueDate.inputValue}" label="Issue Date"
                                 required="#{bindings.IssueDate.hints.mandatory}"
                                 columns="#{bindings.IssueDate.hints.displayWidth}"
@@ -68,6 +72,7 @@
                     <f:validator binding="#{bindings.IssueDate.validator}"/>
                     <af:convertDateTime pattern="#{bindings.IssueDate.format}"/>
                   </af:inputDate>
+                  <af:spacer  id="s8"/>
                   <af:inputDate value="#{bindings.ExpDate.inputValue}" label="Expiry Date"
                                 required="#{bindings.ExpDate.hints.mandatory}"
                                 columns="#{bindings.ExpDate.hints.displayWidth}"
@@ -75,31 +80,35 @@
                     <f:validator binding="#{bindings.ExpDate.validator}"/>
                     <af:convertDateTime pattern="#{bindings.ExpDate.format}"/>
                   </af:inputDate>
+                  <af:spacer  id="s10"/>
                   <af:inputText value="#{bindings.DiscPerc.inputValue}" label="Discount Percentage"
                                 required="#{bindings.DiscPerc.hints.mandatory}"
-                                columns="#{bindings.DiscPerc.hints.displayWidth}"
+                                columns="20"
                                 maximumLength="#{bindings.DiscPerc.hints.precision}"
                                 shortDesc="#{bindings.DiscPerc.hints.tooltip}" id="it8">
                     <f:validator binding="#{bindings.DiscPerc.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.DiscPerc.format}"/>
                   </af:inputText>
-                    <af:inputText value="#{bindings.Fax.inputValue}" label="Fax"
-                                required="#{bindings.Fax.hints.mandatory}" columns="#{bindings.Fax.hints.displayWidth}"
+                  <af:spacer  id="s11"/>
+                  <af:inputText value="#{bindings.Fax.inputValue}" label="Fax"
+                                required="#{bindings.Fax.hints.mandatory}" columns="20"
                                 maximumLength="#{bindings.Fax.hints.precision}"
                                 shortDesc="#{bindings.Fax.hints.tooltip}" id="it5" contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.Fax.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s12"/>
                   <af:inputText value="#{bindings.EMail.inputValue}" label="Email"
                                 required="#{bindings.EMail.hints.mandatory}"
-                                columns="#{bindings.EMail.hints.displayWidth}"
+                                columns="20"
                                 maximumLength="#{bindings.EMail.hints.precision}"
                                 shortDesc="#{bindings.EMail.hints.tooltip}" id="it6"
                                 contentStyle='width:200px;'>
                     <f:validator binding="#{bindings.EMail.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s13"/>
                   <af:inputText value="#{bindings.Address.inputValue}" label="Address"
                                 required="#{bindings.Address.hints.mandatory}"
-                                columns="#{bindings.Address.hints.displayWidth}"
+                                columns="20"
                                 maximumLength="#{bindings.Address.hints.precision}"
                                 shortDesc="#{bindings.Address.hints.tooltip}" id="it7" contentStyle="width:200px;">
                     <f:validator binding="#{bindings.Address.validator}"/>

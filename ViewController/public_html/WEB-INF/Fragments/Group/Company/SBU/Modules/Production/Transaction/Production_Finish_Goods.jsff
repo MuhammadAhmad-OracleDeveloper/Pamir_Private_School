@@ -32,12 +32,14 @@
                     <f:validator binding="#{bindings.Id.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
                   </af:inputText>
+                  <af:spacer  id="s6"/>
                   <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                 required="#{bindings.Vno.hints.mandatory}" columns="20"
                                 maximumLength="#{bindings.Vno.hints.precision}"
                                 shortDesc="#{bindings.Vno.hints.tooltip}" id="it2" contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.Vno.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s7"/>
                   <af:inputDate value="#{bindings.Dated.inputValue}" label="Date"
                                 required="#{bindings.Dated.hints.mandatory}"
                                 columns="#{bindings.Dated.hints.displayWidth}"
@@ -60,6 +62,7 @@
                     <f:selectItems value="#{bindings.PorMasterId.items}" id="si2"/>
                     <f:validator binding="#{bindings.PorMasterId.validator}"/>
                   </af:selectOneChoice>
+                  <af:spacer  id="s8"/>
                   <af:inputText value="#{bindings.Narration.inputValue}" label="Narration"
                                 required="#{bindings.Narration.hints.mandatory}"
                                 columns="20"

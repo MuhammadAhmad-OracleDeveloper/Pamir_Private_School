@@ -38,7 +38,8 @@
                 <f:validator binding="#{bindings.GlL1Id2.validator}"/>
                 <af:convertNumber groupingUsed="false" pattern="#{bindings.GlL1Id2.format}"/>
               </af:inputText>
-              <af:inputText value="#{bindings.GlL1Name.inputValue}" label="Level 1"
+                            <af:spacer  id="s4"/>
+                            <af:inputText value="#{bindings.GlL1Name.inputValue}" label="Level 1"
                             required="#{bindings.GlL1Name.hints.mandatory}"
                             columns="#{bindings.GlL1Name.hints.displayWidth}"
                             maximumLength="#{bindings.GlL1Name.hints.precision}"
@@ -160,6 +161,7 @@
                               <f:selectItems value="#{bindings.GlL1Id1.items}" id="si6"/>
                               <f:validator binding="#{bindings.GlL1Id1.validator}"/>
                             </af:selectOneChoice>
+                            <af:spacer  id="s7"/>
                             <af:inputText value="#{bindings.GlL2Id.inputValue}" label="ID" 
                                           required="#{bindings.GlL2Id.hints.mandatory}"
                                           columns="#{bindings.GlL2Id.hints.displayWidth}"
@@ -169,6 +171,7 @@
                               <f:validator binding="#{bindings.GlL2Id.validator}"/>
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.GlL2Id.format}"/>
                             </af:inputText>
+                            <af:spacer  id="s10"/>
                             <af:inputText value="#{bindings.GlL2Name.inputValue}"
                                           label="Level 2"
                                           required="#{bindings.GlL2Name.hints.mandatory}"
@@ -312,6 +315,7 @@
                           <f:selectItems value="#{bindings.GlL2Id1.items}" id="si8"/>
                           <f:validator binding="#{bindings.GlL2Id1.validator}"/>
                         </af:selectOneChoice>
+                        <af:spacer  id="s12"/>
                         <af:inputText value="#{bindings.GlL3Id.inputValue}" label="ID"
                                       required="#{bindings.GlL3Id.hints.mandatory}"
                                       columns="#{bindings.GlL3Id.hints.displayWidth}"
@@ -321,6 +325,7 @@
                           <f:validator binding="#{bindings.GlL3Id.validator}"/>
                           <af:convertNumber groupingUsed="false" pattern="#{bindings.GlL3Id.format}"/>
                         </af:inputText>
+                        <af:spacer  id="s15"/>
                         <af:inputText value="#{bindings.GlL3Name.inputValue}" label="Level 3"
                                       required="#{bindings.GlL3Name.hints.mandatory}"
                                       columns="#{bindings.GlL3Name.hints.displayWidth}"
@@ -453,6 +458,7 @@
                           <f:selectItems value="#{bindings.GlL3Id1.items}" id="si11"/>
                           <f:validator binding="#{bindings.GlL3Id1.validator}"/>
                         </af:selectOneChoice>
+                        <af:spacer  id="s16"/>
                         <af:inputText value="#{bindings.GlL4Id.inputValue}" label="ID"
                                       required="#{bindings.GlL4Id.hints.mandatory}"
                                       columns="#{bindings.GlL4Id.hints.displayWidth}"
@@ -462,6 +468,7 @@
                           <f:validator binding="#{bindings.GlL4Id.validator}"/>
                           <af:convertNumber groupingUsed="false" pattern="#{bindings.GlL4Id.format}"/>
                         </af:inputText>
+                        <af:spacer  id="s17"/>
                         <af:inputText value="#{bindings.GlL4Name.inputValue}" label="Level 4"
                                       required="#{bindings.GlL4Name.hints.mandatory}"
                                       columns="#{bindings.GlL4Name.hints.displayWidth}"

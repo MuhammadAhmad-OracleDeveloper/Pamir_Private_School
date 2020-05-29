@@ -365,7 +365,7 @@
                     <f:selectItems value="#{bindings.LookupMotherTounge.items}" id="si8"/>
                     <f:validator binding="#{bindings.LookupMotherTounge.validator}"/>
                   </af:selectOneChoice>
-               
+                  <af:spacer  id="s15"/>
                   <af:inputDate value="#{bindings.JoinDate.inputValue}" label="Joining Date"
                                 required="#{bindings.JoinDate.hints.mandatory}"
                                 columns="#{bindings.JoinDate.hints.displayWidth}"
@@ -412,6 +412,7 @@
                                 shortDesc="#{bindings.FatherName.hints.tooltip}" id="it8" contentStyle="width:200px;">
                     <f:validator binding="#{bindings.FatherName.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s19"/>
                   <af:inputText value="#{bindings.FatherOccup.inputValue}" label="Father's Occupation"
                                 required="#{bindings.FatherOccup.hints.mandatory}"
                                 columns="#{bindings.FatherOccup.hints.displayWidth}"
@@ -419,6 +420,7 @@
                                 shortDesc="#{bindings.FatherOccup.hints.tooltip}" id="it9" contentStyle="width:200px;">
                     <f:validator binding="#{bindings.FatherOccup.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s20"/>
                   <af:inputText value="#{bindings.FatherMobile.inputValue}" label="Father's Mobile"
                                 required="#{bindings.FatherMobile.hints.mandatory}"
                                 columns="#{bindings.FatherMobile.hints.displayWidth}"
@@ -427,6 +429,7 @@
                                 contentStyle="width:200px;">
                     <f:validator binding="#{bindings.FatherMobile.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s21"/>
                   <af:inputText value="#{bindings.FatherEmail.inputValue}" label="Father's Email"
                                 required="#{bindings.FatherEmail.hints.mandatory}"
                                 columns="#{bindings.FatherEmail.hints.displayWidth}"
@@ -434,6 +437,7 @@
                                 shortDesc="#{bindings.FatherEmail.hints.tooltip}" id="it11" contentStyle="width:200px;">
                     <f:validator binding="#{bindings.FatherEmail.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s22"/>
                   <af:inputText value="#{bindings.FatherHomeTel.inputValue}"
                                 label="Father's Home Tel"
                                 required="#{bindings.FatherHomeTel.hints.mandatory}"
@@ -443,6 +447,7 @@
                                 contentStyle="width:200px;">
                     <f:validator binding="#{bindings.FatherHomeTel.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s23"/>
                   <af:inputText value="#{bindings.FatherOffTel.inputValue}" label="Father's Office Tel"
                                 required="#{bindings.FatherOffTel.hints.mandatory}"
                                 columns="#{bindings.FatherOffTel.hints.displayWidth}"
@@ -451,6 +456,7 @@
                                 contentStyle="width:200px;">
                     <f:validator binding="#{bindings.FatherOffTel.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s24"/>
                   <af:inputText value="#{bindings.MotherName.inputValue}" label="Mother's Name"
                                 required="#{bindings.MotherName.hints.mandatory}"
                                 columns="#{bindings.MotherName.hints.displayWidth}"
@@ -458,6 +464,7 @@
                                 shortDesc="#{bindings.MotherName.hints.tooltip}" id="it14" contentStyle="width:200px;">
                     <f:validator binding="#{bindings.MotherName.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s25"/>
                   <af:inputText value="#{bindings.MotherOccup.inputValue}" label="Mother's Occupation"
                                 required="#{bindings.MotherOccup.hints.mandatory}"
                                 columns="#{bindings.MotherOccup.hints.displayWidth}"
@@ -465,6 +472,7 @@
                                 shortDesc="#{bindings.MotherOccup.hints.tooltip}" id="it15" contentStyle="width:200px;">
                     <f:validator binding="#{bindings.MotherOccup.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s26"/>
                   <af:inputText value="#{bindings.MotherMobile.inputValue}" label="Mother's Mobile"
                                 required="#{bindings.MotherMobile.hints.mandatory}"
                                 columns="#{bindings.MotherMobile.hints.displayWidth}"
@@ -473,6 +481,7 @@
                                 contentStyle="width:200px;">
                     <f:validator binding="#{bindings.MotherMobile.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s27"/>
                   <af:inputText value="#{bindings.MotherEmail.inputValue}" label="Mother's Email"
                                 required="#{bindings.MotherEmail.hints.mandatory}"
                                 columns="#{bindings.MotherEmail.hints.displayWidth}"
@@ -480,6 +489,7 @@
                                 shortDesc="#{bindings.MotherEmail.hints.tooltip}" id="it17" contentStyle="width:200px;">
                     <f:validator binding="#{bindings.MotherEmail.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s28"/>
                   <af:inputText value="#{bindings.MotherOffTel.inputValue}" label="Mother's Office Tel"
                                 required="#{bindings.MotherOffTel.hints.mandatory}"
                                 columns="#{bindings.MotherOffTel.hints.displayWidth}"
@@ -488,6 +498,7 @@
                                 contentStyle="width:200px;">
                     <f:validator binding="#{bindings.MotherOffTel.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s29"/>
                   <af:inputText value="#{bindings.ParMonIncome.inputValue}" label="Per Month Income"
                                 required="#{bindings.ParMonIncome.hints.mandatory}"
                                 columns="#{bindings.ParMonIncome.hints.displayWidth}"
@@ -496,6 +507,7 @@
                                 contentStyle="width:200px;">
                     <f:validator binding="#{bindings.ParMonIncome.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s30"/>
                   <af:inputText value="#{bindings.FatherIncAnn.inputValue}" label="Father's Annual Income"
                                 required="#{bindings.FatherIncAnn.hints.mandatory}"
                                 columns="#{bindings.FatherIncAnn.hints.displayWidth}"
@@ -505,6 +517,7 @@
                     <f:validator binding="#{bindings.FatherIncAnn.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.FatherIncAnn.format}"/>
                   </af:inputText>
+                  <af:spacer  id="s31"/>
                   <af:inputText value="#{bindings.MotherIncAnn.inputValue}" label="Mother's Annual Income"
                                 required="#{bindings.MotherIncAnn.hints.mandatory}"
                                 columns="#{bindings.MotherIncAnn.hints.displayWidth}"
@@ -514,6 +527,7 @@
                     <f:validator binding="#{bindings.MotherIncAnn.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.MotherIncAnn.format}"/>
                   </af:inputText>
+                  <af:spacer  id="s32"/>
                   <af:inputText value="#{bindings.PerAddress.inputValue}" label="Permanent Address"
                                 required="#{bindings.PerAddress.hints.mandatory}"
                                 columns="#{bindings.PerAddress.hints.displayWidth}"
@@ -545,6 +559,7 @@
                     <f:selectItems value="#{bindings.MgtDiscType.items}" id="si9"/>
                     <f:validator binding="#{bindings.MgtDiscType.validator}"/>
                   </af:selectOneChoice>
+                  <af:spacer  id="s33"/>
                   <af:inputText value="#{bindings.MgtDiscValue.inputValue}" label="Management Discount Value"
                                 required="#{bindings.MgtDiscValue.hints.mandatory}"
                                 columns="#{bindings.MgtDiscValue.hints.displayWidth}"
@@ -554,6 +569,7 @@
                     <f:validator binding="#{bindings.MgtDiscValue.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.MgtDiscValue.format}"/>
                   </af:inputText>
+                  <af:spacer  id="s34"/>
                   <af:inputText value="#{bindings.FoundMemDiscPerc.inputValue}"
                                 label="Founding Member Discount (%)"
                                 required="#{bindings.FoundMemDiscPerc.hints.mandatory}"
@@ -572,6 +588,7 @@
                     <f:selectItems value="#{bindings.SibDiscType.items}" id="si10"/>
                     <f:validator binding="#{bindings.SibDiscType.validator}"/>
                   </af:selectOneChoice>
+                  <af:spacer  id="s35"/>
                   <af:inputText value="#{bindings.SibDiscValue.inputValue}" label="Sibling Discount Value"
                                 required="#{bindings.SibDiscValue.hints.mandatory}"
                                 columns="#{bindings.SibDiscValue.hints.displayWidth}"
@@ -581,6 +598,7 @@
                     <f:validator binding="#{bindings.SibDiscValue.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.SibDiscValue.format}"/>
                   </af:inputText>
+                  <af:spacer  id="s36"/>
                   <af:inputText value="#{bindings.ScholarDiscPerc.inputValue}"
                                 label="Scholarship Discount Percentage"
                                 required="#{bindings.ScholarDiscPerc.hints.mandatory}"
@@ -590,6 +608,7 @@
                     <f:validator binding="#{bindings.ScholarDiscPerc.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.ScholarDiscPerc.format}"/>
                   </af:inputText>
+                  <af:spacer  id="s37"/>
                   <af:inputText value="#{bindings.ScholarDiscAmt.inputValue}"
                                 label="Scholarship Discount Amount"
                                 required="#{bindings.ScholarDiscAmt.hints.mandatory}"
@@ -609,6 +628,7 @@
                     <f:selectItems value="#{bindings.StaffDiscType.items}" id="si11"/>
                     <f:validator binding="#{bindings.StaffDiscType.validator}"/>
                   </af:selectOneChoice>
+                  <af:spacer  id="s38"/>
                   <af:inputText value="#{bindings.StaffDiscValue.inputValue}"
                                 label="Staff Discount Value"
                                 required="#{bindings.StaffDiscValue.hints.mandatory}"

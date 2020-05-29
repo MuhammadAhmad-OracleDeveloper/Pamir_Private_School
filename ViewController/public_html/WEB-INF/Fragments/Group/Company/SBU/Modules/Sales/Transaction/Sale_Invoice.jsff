@@ -32,12 +32,14 @@
                     <f:validator binding="#{bindings.Id.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
                   </af:inputText>
+                  <af:spacer  id="s6"/>
                   <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                 required="#{bindings.Vno.hints.mandatory}" columns="20"
                                 maximumLength="#{bindings.Vno.hints.precision}"
                                 shortDesc="#{bindings.Vno.hints.tooltip}" id="it2" contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.Vno.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s7"/>
                   <af:inputDate value="#{bindings.Dated.inputValue}" label="Date"
                                 required="#{bindings.Dated.hints.mandatory}"
                                 columns="17"
@@ -61,6 +63,7 @@
                     <f:selectItems value="#{bindings.ShipPlanMasterId.items}" id="si2"/>
                     <f:validator binding="#{bindings.ShipPlanMasterId.validator}"/>
                   </af:selectOneChoice>
+                  <af:spacer  id="s8"/>
                   <af:inputText value="#{bindings.DiscPerc.inputValue}" label="Discount Percentage"
                                 required="#{bindings.DiscPerc.hints.mandatory}"
                                 columns="#{bindings.DiscPerc.hints.displayWidth}"
@@ -69,6 +72,7 @@
                     <f:validator binding="#{bindings.DiscPerc.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.DiscPerc.format}"/>
                   </af:inputText>
+                  <af:spacer  id="s10"/>
                   <af:inputText value="#{bindings.DiscAmount.inputValue}" label="Discount Amounty"
                                 required="#{bindings.DiscAmount.hints.mandatory}"
                                 columns="#{bindings.DiscAmount.hints.displayWidth}"
@@ -77,6 +81,7 @@
                     <f:validator binding="#{bindings.DiscAmount.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.DiscAmount.format}"/>
                   </af:inputText>
+                  <af:spacer  id="s11"/>
                   <af:inputText value="#{bindings.NetAmt.inputValue}" label="Net Amount"
                                 required="#{bindings.NetAmt.hints.mandatory}"
                                 columns="#{bindings.NetAmt.hints.displayWidth}"
@@ -85,6 +90,7 @@
                     <f:validator binding="#{bindings.NetAmt.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.NetAmt.format}"/>
                   </af:inputText>
+                  <af:spacer  id="s12"/>
                   <af:inputText value="#{bindings.Narration.inputValue}" label="Narration"
                                 required="#{bindings.Narration.hints.mandatory}"
                                 columns="20"

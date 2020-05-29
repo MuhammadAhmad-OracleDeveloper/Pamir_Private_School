@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
+  
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
     <af:showDetailItem id="pane1" text="Rate Definition">
          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
@@ -46,6 +47,7 @@
                     <f:validator binding="#{bindings.Dated.validator}"/>
                     <af:convertDateTime pattern="#{bindings.Dated.format}"/>
                   </af:inputDate>
+                  <af:spacer  id="s7"/>
                   <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type"
                                       required="#{bindings.Vtp.hints.mandatory}"
                                       shortDesc="#{bindings.Vtp.hints.tooltip}" id="soc1" contentStyle="width:150px;">
@@ -60,6 +62,7 @@
                     <f:selectItems value="#{bindings.GlL3Id.items}" id="si2"/>
                     <f:validator binding="#{bindings.GlL3Id.validator}"/>
                   </af:selectOneChoice>
+                  <af:spacer  id="s6"/>
                   <af:inputText value="#{bindings.Narration.inputValue}" label="Narration"
                                 required="#{bindings.Narration.hints.mandatory}"
                                 columns="#{bindings.Narration.hints.displayWidth}"

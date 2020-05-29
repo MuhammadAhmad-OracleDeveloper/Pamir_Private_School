@@ -32,12 +32,14 @@
                     <f:validator binding="#{bindings.Id.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
                   </af:inputText>
+                  <af:spacer  id="s6"/>
                   <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
-                                required="#{bindings.Vno.hints.mandatory}" columns="#{bindings.Vno.hints.displayWidth}"
+                                required="#{bindings.Vno.hints.mandatory}" columns="20"
                                 maximumLength="#{bindings.Vno.hints.precision}"
                                 shortDesc="#{bindings.Vno.hints.tooltip}" id="it2" contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.Vno.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s4"/>
                   <af:inputDate value="#{bindings.Dated.inputValue}" label="Date"
                                 required="#{bindings.Dated.hints.mandatory}"
                                 columns="#{bindings.Dated.hints.displayWidth}"
@@ -52,6 +54,7 @@
                     <f:selectItems value="#{bindings.Vtp.items}" id="si1"/>
                     <f:validator binding="#{bindings.Vtp.validator}"/>
                   </af:selectOneChoice>
+                  <af:spacer id="s7"/>
                   <af:selectOneChoice value="#{bindings.PblCustId.inputValue}" label="Customer"
                                       required="#{bindings.PblCustId.hints.mandatory}"
                                       shortDesc="#{bindings.PblCustId.hints.tooltip}" id="soc2"
@@ -59,25 +62,28 @@
                     <f:selectItems value="#{bindings.PblCustId.items}" id="si2"/>
                     <f:validator binding="#{bindings.PblCustId.validator}"/>
                   </af:selectOneChoice>
+                  <af:spacer  id="s8"/>
                   <af:inputText value="#{bindings.ContactPerson.inputValue}"
                                 label="Contact Person"
                                 required="#{bindings.ContactPerson.hints.mandatory}"
-                                columns="#{bindings.ContactPerson.hints.displayWidth}"
+                                columns="20"
                                 maximumLength="#{bindings.ContactPerson.hints.precision}"
                                 shortDesc="#{bindings.ContactPerson.hints.tooltip}" id="it3" contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.ContactPerson.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s10"/>
                   <af:inputText value="#{bindings.NetAmt.inputValue}" label="Net Amount"
                                 required="#{bindings.NetAmt.hints.mandatory}"
-                                columns="#{bindings.NetAmt.hints.displayWidth}"
+                                columns="20"
                                 maximumLength="#{bindings.NetAmt.hints.precision}"
                                 shortDesc="#{bindings.NetAmt.hints.tooltip}" id="it4">
                     <f:validator binding="#{bindings.NetAmt.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.NetAmt.format}"/>
                   </af:inputText>
+                  <af:spacer  id="s11"/>
                   <af:inputText value="#{bindings.Narration.inputValue}" label="Narration"
                                 required="#{bindings.Narration.hints.mandatory}"
-                                columns="#{bindings.Narration.hints.displayWidth}"
+                                columns="20"
                                 maximumLength="#{bindings.Narration.hints.precision}"
                                 shortDesc="#{bindings.Narration.hints.tooltip}" id="it5">
                     <f:validator binding="#{bindings.Narration.validator}"/>
