@@ -29,7 +29,12 @@
   <Variable
     Name="get_Cmpny_ID"
     Kind="where"
-    Type="java.math.BigDecimal"/>
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="Inventory_Transaction_Pages"/>
+  </Variable>
   <SQLQuery><![CDATA[SELECT                                        
 TP.ID, TP.NAME, TP.AST, TP.PAGE_ICON, TP.PAGE_LINK, TP.SR_NO,                            
 RP.ROLE_ID, RP.COMPANY_PAGES_ID, RP.ROLE_ID, RP.R_VIEW, RP.R_ADD, RP.R_EDIT, RP.R_DELETE, RP.R_PRINT                                       
