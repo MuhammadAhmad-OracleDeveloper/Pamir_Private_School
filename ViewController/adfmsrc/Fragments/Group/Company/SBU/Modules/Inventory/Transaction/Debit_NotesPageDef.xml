@@ -145,8 +145,6 @@
             Action="iteratorExecute"/>
     <action IterBinding="TblInvVoucherDetailView3Iterator" id="Delete1" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
-    <list IterBinding="TblInvVoucherMasterTransView1Iterator" StaticList="false" Uses="LOV_Vtp" id="Vtp"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <tree IterBinding="TblInvVoucherMasterTransView1Iterator" id="TblInvVoucherMasterTransView1">
       <nodeDefinition DefName="model.ERP.VO.TblInvVoucherMasterTransView" Name="TblInvVoucherMasterTransView10">
         <AttrNames>
@@ -171,5 +169,10 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="TblInvVoucherMasterTransView1Iterator" id="Vtp">
+      <AttrNames>
+        <Item Value="Vtp"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

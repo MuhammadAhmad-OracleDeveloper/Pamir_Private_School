@@ -25,6 +25,12 @@
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1" text="Demand Order Master">
                 <af:panelFormLayout id="pfl1" maxColumns="2" rows="3">
+                  <af:inputText value="#{bindings.Vtp.inputValue}" label="#{bindings.Vtp.hints.label}"
+                                required="#{bindings.Vtp.hints.mandatory}" columns="#{bindings.Vtp.hints.displayWidth}"
+                                maximumLength="#{bindings.Vtp.hints.precision}" visible="false"
+                                shortDesc="#{bindings.Vtp.hints.tooltip}" id="it3">
+                    <f:validator binding="#{bindings.Vtp.validator}"/>
+                  </af:inputText>
                   <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
                                 required="#{bindings.Id.hints.mandatory}" columns="#{bindings.Id.hints.displayWidth}"
                                 maximumLength="#{bindings.Id.hints.precision}" shortDesc="#{bindings.Id.hints.tooltip}"
@@ -218,9 +224,21 @@
         <af:gridRow marginTop="5px" height="auto" id="gr3">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
              <af:panelGroupLayout id="pgl3" layout="horizontal">
+              <af:iterator id="i3" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="b6" clientComponent="true" text="Add"
+                                           rendered="#{index.bindings.Crudid.inputValue =='1'}"
+                                           icon="#{resource['images:add.png']}"
+                                           disabled="#{!bindings.CreateInsert.enabled}"
+                                           actionListener="#{InventoryVtpBean.SaveVTP}">
+                                    <f:attribute name="sendVTP" value="DOR"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s8"/>
+                            </af:iterator>
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           rendered="#{index.bindings.Crudid.inputValue !='1'}"
                                            icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
                                     <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>

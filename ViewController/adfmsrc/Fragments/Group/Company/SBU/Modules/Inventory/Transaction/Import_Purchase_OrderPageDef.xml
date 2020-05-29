@@ -118,8 +118,6 @@
         <Item Value="Vno"/>
       </AttrNames>
     </attributeValues>
-    <list IterBinding="TblInvVoucherMasterTransView1Iterator" StaticList="false" Uses="LOV_Vtp" id="Vtp"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <action IterBinding="TblInvVoucherMasterTransView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
     <action IterBinding="TblInvVoucherMasterTransView1Iterator" id="Previous" RequiresUpdateModel="true"
             Action="previous"/>
@@ -206,5 +204,10 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="TblInvVoucherMasterTransView1Iterator" id="Vtp">
+      <AttrNames>
+        <Item Value="Vtp"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

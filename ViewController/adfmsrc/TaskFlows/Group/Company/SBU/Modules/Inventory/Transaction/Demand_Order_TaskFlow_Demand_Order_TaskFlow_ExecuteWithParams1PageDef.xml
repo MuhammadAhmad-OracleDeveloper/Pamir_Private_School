@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57"
+                id="Demand_Order_TaskFlow_Demand_Order_TaskFlow_ExecuteWithParams1PageDef"
+                Package="TaskFlows.Group.Company.SBU.Modules.Inventory.Transaction" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="TblInvVoucherMasterTransView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblInvVoucherMasterTransView1Iterator" Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="TblInvVoucherMasterTransView1Iterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="getVtp" NDValue="DOR" NDType="java.lang.String"/>
+    </action>
+  </bindings>
+</pageDefinition>

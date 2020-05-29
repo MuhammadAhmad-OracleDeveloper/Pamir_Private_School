@@ -6,19 +6,44 @@
   Name="TblInvVoucherMasterTransView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblInvVoucherMaster.CARRIER, 
+       TblInvVoucherMaster.CLR_DOC_NO, 
+       TblInvVoucherMaster.CONV_RATE, 
+       TblInvVoucherMaster.CREATED_BY, 
+       TblInvVoucherMaster.CREATED_DATE, 
+       TblInvVoucherMaster.DATED, 
+       TblInvVoucherMaster.DEPARTMENT_ID, 
+       TblInvVoucherMaster.DO_NO, 
+       TblInvVoucherMaster.GROUP_COMPANY_ID, 
+       TblInvVoucherMaster.ID, 
+       TblInvVoucherMaster.IGP_NO, 
+       TblInvVoucherMaster.IMPORT_CURRENCY, 
+       TblInvVoucherMaster.INV_TYPE, 
+       TblInvVoucherMaster.LC_NO, 
+       TblInvVoucherMaster.NARRATION, 
+       TblInvVoucherMaster.NET_AMOUNT, 
+       TblInvVoucherMaster.PBL_SUPP_ID, 
+       TblInvVoucherMaster.PO_NO, 
+       TblInvVoucherMaster.QC_NO, 
+       TblInvVoucherMaster.UPDATED_BY, 
+       TblInvVoucherMaster.UPDATED_DATE, 
+       TblInvVoucherMaster.VNO, 
+       TblInvVoucherMaster.VTP"
+  FromList="TBL_INV_VOUCHER_MASTER TblInvVoucherMaster"
+  Where="TblInvVoucherMaster.VTP = :getVtp">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
         ResId="model.ERP.VO.TblInvVoucherMasterTransView_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <Variable
+    Name="getVtp"
+    Kind="where"
+    Type="java.lang.String"/>
   <ViewAccessor
     Name="Deparment_Name_LOV1"
     ViewObjectName="model.LOV.Deparment_Name_LOV"
@@ -30,10 +55,6 @@
   <ViewAccessor
     Name="Inventory_Type1"
     ViewObjectName="model.LOV.Inventory_Type"
-    RowLevelBinds="true"/>
-  <ViewAccessor
-    Name="Voucher_Type_LOV1"
-    ViewObjectName="model.LOV.Voucher_Type_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_DepartmentId"
@@ -79,24 +100,6 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="InvType"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="DBAttr"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="ViewAttr"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_Vtp"
-    ListVOName="Voucher_Type_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Vtp"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -272,15 +275,7 @@
     PrecisionRule="true"
     EntityAttrName="Vtp"
     EntityUsage="TblInvVoucherMaster"
-    AliasName="VTP"
-    LOVName="LOV_Vtp">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="VTP"/>
   <ViewLinkAccessor
     Name="TblInvVoucherDetailView"
     ViewLink="model.ERP.VO.FkInvVoucherDetailMasterTransLink"
