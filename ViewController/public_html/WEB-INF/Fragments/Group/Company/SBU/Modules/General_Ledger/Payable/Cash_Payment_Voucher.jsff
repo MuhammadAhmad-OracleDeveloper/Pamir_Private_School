@@ -32,12 +32,14 @@
                                 shortDesc="#{bindings.Vtp1.hints.tooltip}" id="it2">
                     <f:validator binding="#{bindings.Vtp1.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s4"/>
                   <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                 required="#{bindings.Vno.hints.mandatory}" columns="#{bindings.Vno.hints.displayWidth}"
                                 maximumLength="#{bindings.Vno.hints.precision}"
                                 shortDesc="#{bindings.Vno.hints.tooltip}" id="it1" contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.Vno.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s6"/>
                   <af:inputDate value="#{bindings.Dated.inputValue}" label="Date"
                                 required="#{bindings.Dated.hints.mandatory}"
                                 columns="#{bindings.Dated.hints.displayWidth}"
@@ -45,6 +47,7 @@
                     <f:validator binding="#{bindings.Dated.validator}"/>
                     <af:convertDateTime pattern="#{bindings.Dated.format}"/>
                   </af:inputDate>
+                  <af:spacer  id="s7"/>
                   <af:selectOneChoice value="#{bindings.PblSuppId.inputValue}" label="Supplier"
                                       required="#{bindings.PblSuppId.hints.mandatory}"
                                       shortDesc="#{bindings.PblSuppId.hints.tooltip}" id="soc2"
@@ -52,6 +55,7 @@
                     <f:selectItems value="#{bindings.PblSuppId.items}" id="si2"/>
                     <f:validator binding="#{bindings.PblSuppId.validator}"/>
                   </af:selectOneChoice>
+                  <af:spacer  id="s8"/>
                   <af:inputText value="#{bindings.Narration.inputValue}" label="Narration"
                                 required="#{bindings.Narration.hints.mandatory}"
                                 columns="#{bindings.Narration.hints.displayWidth}"

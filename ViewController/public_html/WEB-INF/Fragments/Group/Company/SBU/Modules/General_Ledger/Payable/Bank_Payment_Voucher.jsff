@@ -32,6 +32,7 @@
                                 shortDesc="#{bindings.Vtp1.hints.tooltip}" id="it6">
                     <f:validator binding="#{bindings.Vtp1.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s4"/>
                   <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                 required="#{bindings.Vno.hints.mandatory}" columns="#{bindings.Vno.hints.displayWidth}"
                                 maximumLength="#{bindings.Vno.hints.precision}"
@@ -39,6 +40,7 @@
                                 >
                     <f:validator binding="#{bindings.Vno.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s6"/>
                   <af:inputDate value="#{bindings.Dated.inputValue}" label="Date"
                                 required="#{bindings.Dated.hints.mandatory}"
                                 columns="#{bindings.Dated.hints.displayWidth}"
@@ -46,6 +48,7 @@
                     <f:validator binding="#{bindings.Dated.validator}"/>
                     <af:convertDateTime pattern="#{bindings.Dated.format}"/>
                   </af:inputDate>
+                  <af:spacer  id="s7"/>
                   <af:inputText value="#{bindings.ChqNo.inputValue}" label="Cheque No."
                                 required="#{bindings.ChqNo.hints.mandatory}"
                                 columns="#{bindings.ChqNo.hints.displayWidth}"
@@ -53,6 +56,7 @@
                                 shortDesc="#{bindings.ChqNo.hints.tooltip}" id="it2" contentStyle="width:136px;">
                     <f:validator binding="#{bindings.ChqNo.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s8"/>
                   <af:inputDate value="#{bindings.ChqDate.inputValue}" label="Cheque Date"
                                 required="#{bindings.ChqDate.hints.mandatory}"
                                 columns="#{bindings.ChqDate.hints.displayWidth}"
@@ -60,6 +64,7 @@
                     <f:validator binding="#{bindings.ChqDate.validator}"/>
                     <af:convertDateTime pattern="#{bindings.ChqDate.format}"/>
                   </af:inputDate>
+                  <af:spacer  id="s10"/>
                   <af:inputDate value="#{bindings.ClrDate.inputValue}" label="Clear Date"
                                 required="#{bindings.ClrDate.hints.mandatory}"
                                 columns="#{bindings.ClrDate.hints.displayWidth}"
@@ -75,6 +80,7 @@
                     <f:selectItems value="#{bindings.PblSuppId.items}" id="si2"/>
                     <f:validator binding="#{bindings.PblSuppId.validator}"/>
                   </af:selectOneChoice>
+                  <af:spacer  id="s11"/>
                   <af:inputText value="#{bindings.Narration.inputValue}" label="Narration"
                                 required="#{bindings.Narration.hints.mandatory}"
                                 columns="#{bindings.Narration.hints.displayWidth}"

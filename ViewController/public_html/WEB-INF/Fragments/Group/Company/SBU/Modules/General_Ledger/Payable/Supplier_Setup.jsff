@@ -47,6 +47,7 @@
                     <f:selectItems value="#{bindings.GlL4Id.items}" id="si2"/>
                     <f:validator binding="#{bindings.GlL4Id.validator}"/>
                   </af:selectOneChoice>
+                  <af:spacer  id="s2"/>
                   <af:inputText value="#{bindings.SuppBuss.inputValue}" label="Business"
                                 required="#{bindings.SuppBuss.hints.mandatory}"
                                 columns="#{bindings.SuppBuss.hints.displayWidth}"
@@ -54,14 +55,16 @@
                                 shortDesc="#{bindings.SuppBuss.hints.tooltip}" id="it3" contentStyle="width:150px;">
                     <f:validator binding="#{bindings.SuppBuss.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s4"/>
                   <af:inputText value="#{bindings.ContactPer.inputValue}" label="Contact Person"
                                 required="#{bindings.ContactPer.hints.mandatory}"
-                                columns="#{bindings.ContactPer.hints.displayWidth}"
+                                columns="20"
                                 maximumLength="#{bindings.ContactPer.hints.precision}"
                                 shortDesc="#{bindings.ContactPer.hints.tooltip}" id="it4"
                                 contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.ContactPer.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s8"/>
                   <af:inputText value="#{bindings.Phone.inputValue}" label="Phone"
                                 required="#{bindings.Phone.hints.mandatory}"
                                 columns="#{bindings.Phone.hints.displayWidth}"
@@ -70,13 +73,15 @@
                                 contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.Phone.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s10"/>
                   <af:inputText value="#{bindings.Designation.inputValue}" label="Designation"
                                 required="#{bindings.Designation.hints.mandatory}"
-                                columns="#{bindings.Designation.hints.displayWidth}"
+                                columns="20"
                                 maximumLength="#{bindings.Designation.hints.precision}"
                                 shortDesc="#{bindings.Designation.hints.tooltip}" id="it6">
                     <f:validator binding="#{bindings.Designation.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s11"/>
                   <af:inputText value="#{bindings.Cnic.inputValue}" label="CNIC"
                                 required="#{bindings.Cnic.hints.mandatory}"
                                 columns="#{bindings.Cnic.hints.displayWidth}"
@@ -86,6 +91,7 @@
                     <f:validator binding="#{bindings.Cnic.validator}"/>
                     <f:validateRegex pattern="(^[0-9]{5}-[0-9]{7}-[0-9]$)"/>
                   </af:inputText>
+                  <af:spacer  id="s12"/>
                   <af:inputText value="#{bindings.Cell.inputValue}" label="Cell"
                                 required="#{bindings.Cell.hints.mandatory}"
                                 columns="#{bindings.Cell.hints.displayWidth}"
@@ -94,6 +100,7 @@
                                 contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.Cell.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s13"/>
                   <af:inputText value="#{bindings.Ntn.inputValue}" label="NTN"
                                 required="#{bindings.Ntn.hints.mandatory}" columns="#{bindings.Ntn.hints.displayWidth}"
                                 maximumLength="#{bindings.Ntn.hints.precision}"
@@ -101,6 +108,7 @@
                                 contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.Ntn.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s14"/>
                   <af:inputText value="#{bindings.Strn.inputValue}" label="STRN"
                                 required="#{bindings.Strn.hints.mandatory}"
                                 columns="#{bindings.Strn.hints.displayWidth}"
@@ -108,12 +116,14 @@
                                 shortDesc="#{bindings.Strn.hints.tooltip}" id="it11" contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.Strn.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s15"/>
                   <af:inputText value="#{bindings.Fax.inputValue}" label="Fax"
                                 required="#{bindings.Fax.hints.mandatory}" columns="#{bindings.Fax.hints.displayWidth}"
                                 maximumLength="#{bindings.Fax.hints.precision}"
                                 shortDesc="#{bindings.Fax.hints.tooltip}" id="it9" contentStyle="width:200px;">
                     <f:validator binding="#{bindings.Fax.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s16"/>
                   <af:inputText value="#{bindings.EMail.inputValue}" label="Email"
                                 required="#{bindings.EMail.hints.mandatory}"
                                 columns="#{bindings.EMail.hints.displayWidth}"
@@ -121,6 +131,7 @@
                                 shortDesc="#{bindings.EMail.hints.tooltip}" id="it12" contentStyle="width:200px;">
                     <f:validator binding="#{bindings.EMail.validator}"/>
                   </af:inputText>
+                  <af:spacer  id="s17"/>
                   <af:inputText value="#{bindings.Url.inputValue}" label="URL"
                                 required="#{bindings.Url.hints.mandatory}" columns="#{bindings.Url.hints.displayWidth}"
                                 maximumLength="#{bindings.Url.hints.precision}"
