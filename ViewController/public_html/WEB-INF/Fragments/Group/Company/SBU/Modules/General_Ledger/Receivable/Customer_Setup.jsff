@@ -27,7 +27,7 @@
                 <af:panelFormLayout id="pfl1" maxColumns="3" rows="6">
                   <af:inputText value="#{bindings.Name.inputValue}" label="Customer"
                                 required="#{bindings.Name.hints.mandatory}"
-                                columns="#{bindings.Name.hints.displayWidth}"
+                                columns="20"
                                 maximumLength="#{bindings.Name.hints.precision}"
                                 shortDesc="#{bindings.Name.hints.tooltip}" id="it2">
                     <f:validator binding="#{bindings.Name.validator}"/>
@@ -49,21 +49,21 @@
                   </af:selectOneChoice>
                   <af:inputText value="#{bindings.CustBuss.inputValue}" label="Business"
                                 required="#{bindings.CustBuss.hints.mandatory}"
-                                columns="#{bindings.CustBuss.hints.displayWidth}"
+                                columns="20"
                                 maximumLength="#{bindings.CustBuss.hints.precision}"
                                 shortDesc="#{bindings.CustBuss.hints.tooltip}" id="it41">
                     <f:validator binding="#{bindings.CustBuss.validator}"/>
                   </af:inputText>
                   <af:inputText value="#{bindings.Designation.inputValue}" label="Designation"
                                 required="#{bindings.Designation.hints.mandatory}"
-                                columns="#{bindings.Designation.hints.displayWidth}"
+                                columns="20"
                                 maximumLength="#{bindings.Designation.hints.precision}"
                                 shortDesc="#{bindings.Designation.hints.tooltip}" id="it6">
                     <f:validator binding="#{bindings.Designation.validator}"/>
                   </af:inputText>
                   <af:inputText value="#{bindings.ContactPer.inputValue}" label="Contact Person"
                                 required="#{bindings.ContactPer.hints.mandatory}"
-                                columns="#{bindings.ContactPer.hints.displayWidth}"
+                                columns="20"
                                 maximumLength="#{bindings.ContactPer.hints.precision}"
                                 shortDesc="#{bindings.ContactPer.hints.tooltip}" id="it4" contentStyle='text-align: right'>
                     <f:validator binding="#{bindings.ContactPer.validator}"/>

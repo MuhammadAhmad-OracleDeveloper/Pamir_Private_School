@@ -76,6 +76,7 @@
                     <f:validator binding="#{bindings.DoNo.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.DoNo.format}"/>
                   </af:inputText>
+                  <af:spacer  id="s6"/>
                   <af:selectOneChoice value="#{bindings.DepartmentId.inputValue}" label="Department"
                                       required="#{bindings.DepartmentId.hints.mandatory}"
                                       shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="soc1"
@@ -83,7 +84,7 @@
                     <f:selectItems value="#{bindings.DepartmentId.items}" id="si1"/>
                     <f:validator binding="#{bindings.DepartmentId.validator}"/>
                   </af:selectOneChoice>
-                  <af:spacer  id="s6"/>
+                  <af:spacer  id="s11"/>
                   <af:selectOneChoice value="#{bindings.PblSuppId.inputValue}" label="Supplier"
                                       required="#{bindings.PblSuppId.hints.mandatory}"
                                       shortDesc="#{bindings.PblSuppId.hints.tooltip}" id="soc3"
@@ -95,7 +96,7 @@
                   <af:spacer  id="s7"/>
                   <af:inputText value="#{bindings.Carrier.inputValue}" label="Carrier"
                                 required="#{bindings.Carrier.hints.mandatory}"
-                                columns="#{bindings.Carrier.hints.displayWidth}"
+                                columns="20"
                                 maximumLength="#{bindings.Carrier.hints.precision}"
                                 shortDesc="#{bindings.Carrier.hints.tooltip}" id="it3">
                     <f:validator binding="#{bindings.Carrier.validator}"/>
@@ -106,7 +107,7 @@
                   
                   <af:inputText value="#{bindings.Narration.inputValue}" label="Narration"
                                 required="#{bindings.Narration.hints.mandatory}"
-                                columns="#{bindings.Narration.hints.displayWidth}"
+                                columns="50"
                                 maximumLength="#{bindings.Narration.hints.precision}"
                                 shortDesc="#{bindings.Narration.hints.tooltip}" id="it10">
                     <f:validator binding="#{bindings.Narration.validator}"/>
