@@ -194,6 +194,13 @@
     AssociationOtherEnd="model.UserRoles.EO.FkGroupModuleCoProfAssoc.TblGroupCompany"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblCompanyReports"
+    Association="model.UserRoles.EO.FkTblCompanyReportsFk2Assoc"
+    AssociationEnd="model.UserRoles.EO.FkTblCompanyReportsFk2Assoc.TblCompanyReports"
+    AssociationOtherEnd="model.UserRoles.EO.FkTblCompanyReportsFk2Assoc.TblGroupCompany"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkGroupCompany"
     PrimaryKey="true">

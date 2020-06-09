@@ -3,40 +3,40 @@
 <!---->
 <Association
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="Fk2TblCompanyReportsFkAssoc"
+  Name="FkTblRoleReportsFk1Assoc"
   Version="12.2.1.11.57"
   InheritPersonalization="merge">
   <DesignTime>
     <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <AssociationEnd
-    Name="TblCompanyModule"
+    Name="TblCompanySubModule"
     Cardinality="1"
     Source="true"
-    Owner="model.UserRoles.EO.TblCompanyModule"
+    Owner="model.UserRoles.EO.TblCompanySubModule"
     LockLevel="NONE">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_aggregation" Value="0"/>
-      <Attr Name="_finderName" Value="TblCompanyModule"/>
-      <Attr Name="_foreignKey" Value="model.UserRoles.EO.TblCompanyModule.PkGroupModule"/>
+      <Attr Name="_finderName" Value="TblCompanySubModule"/>
+      <Attr Name="_foreignKey" Value="model.UserRoles.EO.TblCompanySubModule.PkCompanySubModule"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.UserRoles.EO.TblCompanyModule.Id"/>
+      <Item Value="model.UserRoles.EO.TblCompanySubModule.Id"/>
     </AttrArray>
   </AssociationEnd>
   <AssociationEnd
-    Name="TblCompanyReports"
+    Name="TblRoleReports"
     Cardinality="-1"
-    Owner="model.UserRoles.EO.TblCompanyReports">
+    Owner="model.UserRoles.EO.TblRoleReports">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_aggregation" Value="0"/>
-      <Attr Name="_finderName" Value="TblCompanyReports"/>
-      <Attr Name="_foreignKey" Value="model.UserRoles.EO.TblCompanyReports.fk_TblCompanyReports1"/>
+      <Attr Name="_finderName" Value="TblRoleReports"/>
+      <Attr Name="_foreignKey" Value="model.UserRoles.EO.TblRoleReports.fk_TblRoleReports1"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.UserRoles.EO.TblCompanyReports.CompanyModuleId"/>
+      <Item Value="model.UserRoles.EO.TblRoleReports.CompanySubModuleId"/>
     </AttrArray>
   </AssociationEnd>
 </Association>

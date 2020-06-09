@@ -25,6 +25,9 @@ import view.DatabaseConnection.DatabaseConnection;
 
 public class Login {
 
+    private static int grpCount = 0;
+    private static int cmpnyCount = 0;
+    private static int sbuCount = 0;
     private RichInputText it1;
     private RichInputText it2;
     
@@ -33,6 +36,12 @@ public class Login {
     private static String sessUName;
     private static String sessImage;
     private static String sessCmpnyName;
+    
+    private static String grp_id;    
+    private static String cmpny_id;    
+    private static String sbu_id;
+
+
 
     public Login() {
     }
@@ -72,6 +81,10 @@ public class Login {
 
     //user logging in
     public String login_action() {
+
+        grpCount=0;
+        cmpnyCount=0;
+        sbuCount=0;
         // Add event code here...
         //SETTING VALUE PROGRAMMATICALLY IN PASSWORD FIELD,,,,ONLY TESTING
         //  //          it2.setValue("bla bla bla");
@@ -113,8 +126,79 @@ public class Login {
                 storeOnSession("sessRMID", role_id);                
                 storeOnSession("sessUMID", user_id);       
                 
+                
+//                ResultSet rgset = stmt.executeQuery("SELECT COUNT(*) FROM tbl_role_group where role_id = '" + role_id + "'");
+//                rgset.next();
+//                int grpCount = rgset.getInt(1);
+//                System.out.println("Total groups assigned to role " + role_id + " are " + grpCount);
+                                
+                
+                ResultSet rgset = stmt.executeQuery("SELECT * FROM tbl_role_group where role_id = '" + role_id + "'");
+                while (rgset.next()) {
+                    grp_id = (rgset.getString("group_id")).toString();
+                    System.out.println("got it grp id " + grp_id);
+                ++grpCount;
+                }
+                System.out.println("Total groups assigned to role " + role_id + " are " + grpCount);                
+                
+                
+                
+                ResultSet rcset = stmt.executeQuery("SELECT * FROM tbl_role_company where role_id = '" + role_id + "'");
+                while (rcset.next()) {
+                    cmpny_id = (rcset.getString("group_company_id")).toString();
+                    System.out.println("got it cmpny id " + cmpny_id);
+                ++cmpnyCount;
+                }
+                System.out.println("Total Companies assigned to role " + role_id + " are " + cmpnyCount);                
+                
+                
+                
+                ResultSet rsset = stmt.executeQuery("SELECT * FROM tbl_role_sbu where role_id = '" + role_id + "'");
+                while (rsset.next()) {
+                    sbu_id = (rsset.getString("company_sbu_id")).toString();
+                    System.out.println("got it sbu id " + sbu_id);
+                ++sbuCount;
+                }
+                System.out.println("Total Sbu assigned to role " + role_id + " are " + sbuCount);
+                
+                
+                if(grpCount <= 1){
+                    storeOnSession("sessGrpID", grp_id);
+                    
+                    if (cmpnyCount <= 1){
+                        storeOnSession("sessCmpnyID", cmpny_id);
+                        try {
+                           getCmpnyImg(cmpny_id);
+                        } catch (Exception e) {
+                            // TODO: Add catch code
+                            e.printStackTrace();
+                        }
+                        
+                        if (sbuCount <= 1){
+                           return getSBUID(sbu_id);
+                        }
+                        if (sbuCount > 1){
+                           return getCompanyID(cmpny_id);
+                        }
+                    }
+                    else{
+                        
+                        return getGroupID(grp_id);
+                    }
+                }
+                else{
+                    return "/faces/Main_Pages/Group/Group.jsf?faces-redirect=true";
+                }
+                
+                
+                
+                
+                
+//                rgset.close();
+                stmt.close();
                 conn.close();
-                return "/faces/Main_Pages/Group/Group.jsf?faces-redirect=true";
+                
+// return "/faces/Main_Pages/Group/Group.jsf?faces-redirect=true";
             } else {
                 showMessage("Wrong Login Credentials");
                 conn.close();
