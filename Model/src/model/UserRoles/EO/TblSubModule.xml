@@ -138,6 +138,13 @@
     AssociationOtherEnd="model.UserRoles.EO.FkTblPagesFkAssoc.TblSubModule"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblReports"
+    Association="model.UserRoles.EO.FkTblReportsFkAssoc"
+    AssociationEnd="model.UserRoles.EO.FkTblReportsFkAssoc.TblReports"
+    AssociationOtherEnd="model.UserRoles.EO.FkTblReportsFkAssoc.TblSubModule"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkSubModule"
     PrimaryKey="true">

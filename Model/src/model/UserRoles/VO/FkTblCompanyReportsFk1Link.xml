@@ -3,27 +3,27 @@
 <!---->
 <ViewLink
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="Fk2TblCompanyReportsFkLink"
+  Name="FkTblCompanyReportsFk1Link"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  EntityAssociation="model.UserRoles.EO.Fk2TblCompanyReportsFkAssoc">
+  EntityAssociation="model.UserRoles.EO.FkTblCompanyReportsFk1Assoc">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.UserRoles.VO.Fk2TblCompanyReportsFkLink_LABEL"/>
+        ResId="model.UserRoles.VO.FkTblCompanyReportsFk1Link_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <ViewLinkDefEnd
-    Name="TblCompanyModuleView"
+    Name="TblCompanySubModuleView"
     Cardinality="1"
     Source="true"
-    Owner="model.UserRoles.VO.TblCompanyModuleView">
+    Owner="model.UserRoles.VO.TblCompanySubModuleView">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="TblCompanyModuleView"/>
+      <Attr Name="_finderName" Value="TblCompanySubModuleView"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.UserRoles.VO.TblCompanyModuleView.Id"/>
+      <Item Value="model.UserRoles.VO.TblCompanySubModuleView.Id"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ViewLinkDefEnd
@@ -35,7 +35,7 @@
       <Attr Name="_finderName" Value="TblCompanyReportsView"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.UserRoles.VO.TblCompanyReportsView.CompanyModuleId"/>
+      <Item Value="model.UserRoles.VO.TblCompanyReportsView.CompanySubModuleId"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ResourceBundle>

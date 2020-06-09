@@ -24,12 +24,6 @@
     EntityUsage="TblCompanyReports"
     AliasName="ID"/>
   <ViewAttribute
-    Name="CompanyModuleId"
-    PrecisionRule="true"
-    EntityAttrName="CompanyModuleId"
-    EntityUsage="TblCompanyReports"
-    AliasName="COMPANY_MODULE_ID"/>
-  <ViewAttribute
     Name="ReportId"
     PrecisionRule="true"
     EntityAttrName="ReportId"
@@ -65,6 +59,18 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblCompanyReports"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CompanySubModuleId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySubModuleId"
+    EntityUsage="TblCompanyReports"
+    AliasName="COMPANY_SUB_MODULE_ID"/>
+  <ViewAttribute
+    Name="GroupCompanyId"
+    PrecisionRule="true"
+    EntityAttrName="GroupCompanyId"
+    EntityUsage="TblCompanyReports"
+    AliasName="GROUP_COMPANY_ID"/>
   <ViewLinkAccessor
     Name="TblRoleReportsView"
     ViewLink="model.UserRoles.VO.Fk2TblRoleReportsFkLink"

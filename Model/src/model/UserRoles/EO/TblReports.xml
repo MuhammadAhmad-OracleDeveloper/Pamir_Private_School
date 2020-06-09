@@ -20,13 +20,6 @@
     TableName="TBL_REPORTS"
     PrimaryKey="true"/>
   <Attribute
-    Name="ModuleId"
-    ColumnName="MODULE_ID"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_REPORTS"/>
-  <Attribute
     Name="Name"
     IsNotNull="true"
     Precision="150"
@@ -112,13 +105,13 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_REPORTS"/>
-  <AccessorAttribute
-    Name="TblModule"
-    Association="model.UserRoles.EO.FkReportsModuleAssoc"
-    AssociationEnd="model.UserRoles.EO.FkReportsModuleAssoc.TblModule"
-    AssociationOtherEnd="model.UserRoles.EO.FkReportsModuleAssoc.TblReports"
-    Type="oracle.jbo.server.EntityImpl"
-    IsUpdateable="true"/>
+  <Attribute
+    Name="SubModuleId"
+    ColumnName="SUB_MODULE_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_REPORTS"/>
   <AccessorAttribute
     Name="TblCompanyReports"
     Association="model.UserRoles.EO.FKTblCompanyReportsFKAssoc"
@@ -126,6 +119,13 @@
     AssociationOtherEnd="model.UserRoles.EO.FKTblCompanyReportsFKAssoc.TblReports"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblSubModule"
+    Association="model.UserRoles.EO.FkTblReportsFkAssoc"
+    AssociationEnd="model.UserRoles.EO.FkTblReportsFkAssoc.TblSubModule"
+    AssociationOtherEnd="model.UserRoles.EO.FkTblReportsFkAssoc.TblReports"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="PkReports"
     PrimaryKey="true">
@@ -137,14 +137,14 @@
     </AttrArray>
   </Key>
   <Key
-    Name="FkReportsModule">
+    Name="fk_TblReports">
     <DesignTime>
-      <Attr Name="_referencedKey" Value="PK_MODULE"/>
+      <Attr Name="_referencedKey" Value="PK_SUB_MODULE"/>
       <Attr Name="_isForeign" Value="true"/>
-      <Attr Name="_DBObjectName" Value="FK_REPORTS_MODULE"/>
+      <Attr Name="_DBObjectName" Value="FK_TBL_REPORTS"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.UserRoles.EO.TblReports.ModuleId"/>
+      <Item Value="model.UserRoles.EO.TblReports.SubModuleId"/>
     </AttrArray>
   </Key>
 </Entity>

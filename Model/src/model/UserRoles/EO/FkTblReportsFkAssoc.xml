@@ -3,25 +3,26 @@
 <!---->
 <Association
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="FkReportsModuleAssoc"
+  Name="FkTblReportsFkAssoc"
   Version="12.2.1.11.57"
   InheritPersonalization="merge">
   <DesignTime>
     <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <AssociationEnd
-    Name="TblModule"
+    Name="TblSubModule"
     Cardinality="1"
     Source="true"
-    Owner="model.UserRoles.EO.TblModule">
+    Owner="model.UserRoles.EO.TblSubModule"
+    LockLevel="NONE">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_aggregation" Value="0"/>
-      <Attr Name="_finderName" Value="TblModule"/>
-      <Attr Name="_foreignKey" Value="model.UserRoles.EO.TblModule.PkModule"/>
+      <Attr Name="_finderName" Value="TblSubModule"/>
+      <Attr Name="_foreignKey" Value="model.UserRoles.EO.TblSubModule.PkSubModule"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.UserRoles.EO.TblModule.Id"/>
+      <Item Value="model.UserRoles.EO.TblSubModule.Id"/>
     </AttrArray>
   </AssociationEnd>
   <AssociationEnd
@@ -32,10 +33,10 @@
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="TblReports"/>
-      <Attr Name="_foreignKey" Value="model.UserRoles.EO.TblReports.FkReportsModule"/>
+      <Attr Name="_foreignKey" Value="model.UserRoles.EO.TblReports.fk_TblReports"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.UserRoles.EO.TblReports.ModuleId"/>
+      <Item Value="model.UserRoles.EO.TblReports.SubModuleId"/>
     </AttrArray>
   </AssociationEnd>
 </Association>

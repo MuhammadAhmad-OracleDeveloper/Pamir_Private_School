@@ -103,6 +103,20 @@
     AssociationOtherEnd="model.UserRoles.EO.FkTblRolePagesFkAssoc.TblCompanySubModule"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblRoleReports"
+    Association="model.UserRoles.EO.FkTblRoleReportsFk1Assoc"
+    AssociationEnd="model.UserRoles.EO.FkTblRoleReportsFk1Assoc.TblRoleReports"
+    AssociationOtherEnd="model.UserRoles.EO.FkTblRoleReportsFk1Assoc.TblCompanySubModule"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblCompanyReports"
+    Association="model.UserRoles.EO.FkTblCompanyReportsFk1Assoc"
+    AssociationEnd="model.UserRoles.EO.FkTblCompanyReportsFk1Assoc.TblCompanyReports"
+    AssociationOtherEnd="model.UserRoles.EO.FkTblCompanyReportsFk1Assoc.TblCompanySubModule"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkCompanySubModule"
     PrimaryKey="true">
