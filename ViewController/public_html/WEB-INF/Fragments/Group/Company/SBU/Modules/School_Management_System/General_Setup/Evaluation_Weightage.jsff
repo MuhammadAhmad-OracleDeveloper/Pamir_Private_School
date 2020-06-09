@@ -1,9 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
+                <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
+    <af:dialog id="d1" title="User Guide">
+      here the guide will be shown !!!!!!
+    </af:dialog>
+  </af:popup>
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
     <af:showDetailItem id="pane1" text="Evaluation Weightage Setup">
          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+         <af:button id="b2" text="Help" icon="#{resource['images:info.png']}" iconPosition="top"
+                   inlineStyle="background-color:InfoBackground;">
+          <af:showPopupBehavior popupId="p1"/>
+        </af:button>
+        <af:spacer width="10" height="10" id="s12"/>
                             <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                                    disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
                                    icon="#{resource['images:cancel.png']}" iconPosition="top">
