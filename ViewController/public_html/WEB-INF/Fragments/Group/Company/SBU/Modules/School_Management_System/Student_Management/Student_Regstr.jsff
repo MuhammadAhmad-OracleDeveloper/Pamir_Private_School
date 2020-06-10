@@ -1,9 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
+                <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
+    <af:dialog id="d1" title="User Guide">
+      here the guide will be shown !!!!!!
+    </af:dialog>
+  </af:popup>
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
     <af:showDetailItem id="pane1" text="Student Registration">
          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+         <af:button id="b2" text="Help" icon="#{resource['images:info.png']}" iconPosition="top"
+                   inlineStyle="background-color:InfoBackground;">
+          <af:showPopupBehavior popupId="p1"/>
+        </af:button>
+        <af:spacer width="10" height="10" id="s12"/>
                             <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                                    disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
                                    icon="#{resource['images:cancel.png']}" iconPosition="top">
@@ -384,7 +394,7 @@
                   <f:facet name="footer">
                     <af:panelGroupLayout layout="horizontal" id="pgl5">
                       <af:button actionListener="#{bindings.First.execute}" text="First"
-                                 disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b2"/>
+                                 disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b19"/>
                       <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
                                  disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
                       <af:button actionListener="#{bindings.Next.execute}" text="Next"
@@ -663,7 +673,7 @@
                       <f:selectItems value="#{bindings.LookupSecondLang.items}" id="si12"/>
                       <f:validator binding="#{bindings.LookupSecondLang.validator}"/>
                     </af:selectOneChoice>
-                  <af:spacer  id="s12"/>
+                  <af:spacer  id="s39"/>
                   <af:selectOneChoice value="#{bindings.LookupThirdLang.inputValue}"
                                         label="Third Language"
                                         required="#{bindings.LookupThirdLang.hints.mandatory}"
@@ -705,7 +715,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblStdRegGuardView2.rangeSize}"
                           filterModel="#{bindings.TblStdRegGuardView2Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblStdRegGuardView2Query.processQuery}" varStatus="vs" id="t3"
-                          scrollPolicy="page" autoHeightRows="0">
+                          scrollPolicy="page" autoHeightRows="0" partialTriggers="::b19">
                   <af:column sortProperty="#{bindings.TblStdRegGuardView2.hints.Id.name}" filterable="true"
                              sortable="true" headerText="ID" id="c20" visible="false">
                              <f:facet name="filter">
