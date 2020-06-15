@@ -73,4 +73,14 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblRoleSubModules"
     AliasName="UPDATED_BY"/>
+  <ViewLinkAccessor
+    Name="TblRolePagesView"
+    ViewLink="model.UserRoles.VO.FK_Tbl_Role_Pages_FkLink_Role_Sub_Modules"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblRoleReportsView"
+    ViewLink="model.UserRoles.VO.FK_Tbl_Role_Reports_FkLink_Role_Sub_Modules"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

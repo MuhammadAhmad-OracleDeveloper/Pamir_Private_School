@@ -16,7 +16,8 @@
        TblRoleModules.CREATED_BY, 
        TblRoleModules.UPDATED_DATE, 
        TblRoleModules.UPDATED_BY, 
-       TblRoleModules.COMPANY_MODULE_ID"
+       TblRoleModules.COMPANY_MODULE_ID, 
+       TblRoleModules.ROLE_COMPANY_ID"
   FromList="TBL_ROLE_MODULES TblRoleModules">
   <EntityUsage
     Name="TblRoleModules"
@@ -71,6 +72,12 @@
     EntityAttrName="CompanyModuleId"
     EntityUsage="TblRoleModules"
     AliasName="COMPANY_MODULE_ID"/>
+  <ViewAttribute
+    Name="RoleCompanyId"
+    PrecisionRule="true"
+    EntityAttrName="RoleCompanyId"
+    EntityUsage="TblRoleModules"
+    AliasName="ROLE_COMPANY_ID"/>
   <ViewLinkAccessor
     Name="TblRoleSubModulesView"
     ViewLink="model.UserRoles.VO.FkTblRoleSubModuleFkLink"

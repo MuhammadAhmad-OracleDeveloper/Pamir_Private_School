@@ -65,9 +65,20 @@
     EntityAttrName="RView"
     EntityUsage="TblRoleCompany"
     AliasName="R_VIEW"/>
+  <ViewAttribute
+    Name="RoleGroupId"
+    PrecisionRule="true"
+    EntityAttrName="RoleGroupId"
+    EntityUsage="TblRoleCompany"
+    AliasName="ROLE_GROUP_ID"/>
   <ViewLinkAccessor
     Name="TblRoleSbuView"
     ViewLink="model.UserRoles.VO.FkRoleSbuUserCompanyLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblRoleModulesView"
+    ViewLink="model.UserRoles.VO.FK_Tbl_Role_Modules_FkLink_Role_Company"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

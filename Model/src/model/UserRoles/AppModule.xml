@@ -260,20 +260,47 @@
     Name="Sales_Transaction_Pages1"
     ViewObjectName="model.UserRoles.VO.Sales_Transaction_Pages"/>
   <ViewUsage
-    Name="Production_Transaction_Pages1"
-    ViewObjectName="model.UserRoles.VO.Production_Transaction_Pages"/>
-  <ViewUsage
     Name="Production_Setup_Pages1"
     ViewObjectName="model.UserRoles.VO.Production_Setup_Pages"/>
   <ViewUsage
-    Name="GL_Transaction_Pages1"
-    ViewObjectName="model.UserRoles.VO.GL_Transaction_Pages"/>
+    Name="Production_Transaction_Pages1"
+    ViewObjectName="model.UserRoles.VO.Production_Transaction_Pages"/>
   <ViewUsage
     Name="TblRoleModulesView4"
     ViewObjectName="model.UserRoles.VO.TblRoleModulesView"/>
   <ViewUsage
+    Name="GL_Transaction_Pages1"
+    ViewObjectName="model.UserRoles.VO.GL_Transaction_Pages"/>
+  <ViewUsage
     Name="Inventory_Transaction_Pages1"
     ViewObjectName="model.UserRoles.VO.Inventory_Transaction_Pages"/>
+  <ViewUsage
+    Name="Cstm_Tbl_Role_Group_Role1"
+    ViewObjectName="model.UserRoles.VO.Cstm_Tbl_Role_Group_Role"/>
+  <ViewUsage
+    Name="TblRoleCompanyView4"
+    ViewObjectName="model.UserRoles.VO.TblRoleCompanyView"/>
+  <ViewUsage
+    Name="TblRoleGroupView4"
+    ViewObjectName="model.UserRoles.VO.TblRoleGroupView"/>
+  <ViewUsage
+    Name="TblUserView3"
+    ViewObjectName="model.UserRoles.VO.TblUserView"/>
+  <ViewUsage
+    Name="TblRoleSbuView5"
+    ViewObjectName="model.UserRoles.VO.TblRoleSbuView"/>
+  <ViewUsage
+    Name="TblRoleModulesView2"
+    ViewObjectName="model.UserRoles.VO.TblRoleModulesView"/>
+  <ViewUsage
+    Name="TblRoleSubModulesView3"
+    ViewObjectName="model.UserRoles.VO.TblRoleSubModulesView"/>
+  <ViewUsage
+    Name="TblRoleReportsView2"
+    ViewObjectName="model.UserRoles.VO.TblRoleReportsView"/>
+  <ViewUsage
+    Name="TblRolePagesView2"
+    ViewObjectName="model.UserRoles.VO.TblRolePagesView"/>
   <ViewLinkUsage
     Name="FkCompanySbuCoCompanyLink1"
     ViewLinkObjectName="model.UserRoles.VO.FkCompanySbuCoCompanyLink"
@@ -459,5 +486,53 @@
     ViewLinkObjectName="model.UserRoles.VO.FkTblRoleModulesFkLink"
     SrcViewUsageName="model.UserRoles.AppModule.TblRoleView1"
     DstViewUsageName="model.UserRoles.AppModule.TblRoleModulesView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FK_Cstm_Role_Group_Role_FkLink_Role_Group1"
+    ViewLinkObjectName="model.UserRoles.VO.FK_Cstm_Role_Group_Role_FkLink_Role_Group"
+    SrcViewUsageName="model.UserRoles.AppModule.Cstm_Tbl_Role_Group_Role1"
+    DstViewUsageName="model.UserRoles.AppModule.TblRoleGroupView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="Fk_Tbl_Role_Company_Role_Group_FkLink1"
+    ViewLinkObjectName="model.UserRoles.VO.Fk_Tbl_Role_Company_Role_Group_FkLink"
+    SrcViewUsageName="model.UserRoles.AppModule.TblRoleGroupView4"
+    DstViewUsageName="model.UserRoles.AppModule.TblRoleCompanyView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkRoleSbuUserCompanyLink2"
+    ViewLinkObjectName="model.UserRoles.VO.FkRoleSbuUserCompanyLink"
+    SrcViewUsageName="model.UserRoles.AppModule.TblRoleCompanyView4"
+    DstViewUsageName="model.UserRoles.AppModule.TblRoleSbuView5"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FK_Cstm_Role_Group_User_FkLink1"
+    ViewLinkObjectName="model.UserRoles.VO.FK_Cstm_Role_Group_User_FkLink"
+    SrcViewUsageName="model.UserRoles.AppModule.Cstm_Tbl_Role_Group_Role1"
+    DstViewUsageName="model.UserRoles.AppModule.TblUserView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FK_Tbl_Role_Modules_FkLink_Role_Company1"
+    ViewLinkObjectName="model.UserRoles.VO.FK_Tbl_Role_Modules_FkLink_Role_Company"
+    SrcViewUsageName="model.UserRoles.AppModule.TblRoleCompanyView4"
+    DstViewUsageName="model.UserRoles.AppModule.TblRoleModulesView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblRoleSubModuleFkLink1"
+    ViewLinkObjectName="model.UserRoles.VO.FkTblRoleSubModuleFkLink"
+    SrcViewUsageName="model.UserRoles.AppModule.TblRoleModulesView2"
+    DstViewUsageName="model.UserRoles.AppModule.TblRoleSubModulesView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FK_Tbl_Role_Pages_FkLink_Role_Sub_Modules1"
+    ViewLinkObjectName="model.UserRoles.VO.FK_Tbl_Role_Pages_FkLink_Role_Sub_Modules"
+    SrcViewUsageName="model.UserRoles.AppModule.TblRoleSubModulesView3"
+    DstViewUsageName="model.UserRoles.AppModule.TblRolePagesView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FK_Tbl_Role_Reports_FkLink_Role_Sub_Modules1"
+    ViewLinkObjectName="model.UserRoles.VO.FK_Tbl_Role_Reports_FkLink_Role_Sub_Modules"
+    SrcViewUsageName="model.UserRoles.AppModule.TblRoleSubModulesView3"
+    DstViewUsageName="model.UserRoles.AppModule.TblRoleReportsView2"
     Reversed="false"/>
 </AppModule>
