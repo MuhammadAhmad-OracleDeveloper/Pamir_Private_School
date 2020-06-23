@@ -4,9 +4,220 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
+    <iterator Binds="Cstm_Tbl_Role_Group_Role1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Cstm_Tbl_Role_Group_Role1Iterator"/>
+    <searchRegion Binds="Cstm_Tbl_Role_Group_Role1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="Cstm_Tbl_Role_Group_Role1Query"/>
+    <iterator Binds="TblUserView3" RangeSize="25" DataControl="AppModuleDataControl" id="TblUserView3Iterator"/>
+    <searchRegion Binds="TblUserView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblUserView3Query"/>
+    <iterator Binds="TblRoleGroupView4" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblRoleGroupView4Iterator"/>
+    <searchRegion Binds="TblRoleGroupView4Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblRoleGroupView4Query"/>
+    <iterator Binds="TblRoleCompanyView4" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblRoleCompanyView4Iterator"/>
+    <searchRegion Binds="TblRoleCompanyView4Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblRoleCompanyView4Query"/>
+    <iterator Binds="TblRoleSbuView5" RangeSize="25" DataControl="AppModuleDataControl" id="TblRoleSbuView5Iterator"/>
+    <searchRegion Binds="TblRoleSbuView5Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblRoleSbuView5Query"/>
+    <iterator Binds="TblRoleModulesView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblRoleModulesView2Iterator"/>
+    <searchRegion Binds="TblRoleModulesView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblRoleModulesView2Query"/>
+    <iterator Binds="TblRoleSubModulesView3" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblRoleSubModulesView3Iterator"/>
+    <searchRegion Binds="TblRoleSubModulesView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblRoleSubModulesView3Query"/>
+    <iterator Binds="TblRolePagesView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblRolePagesView2Iterator"/>
+    <searchRegion Binds="TblRolePagesView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblRolePagesView2Query"/>
+    <iterator Binds="TblRoleReportsView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblRoleReportsView2Iterator"/>
+    <searchRegion Binds="TblRoleReportsView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblRoleReportsView2Query"/>
   </executables>
   <bindings>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="Cstm_Tbl_Role_Group_Role1Iterator" id="Cstm_Tbl_Role_Group_Role1">
+      <nodeDefinition DefName="model.UserRoles.VO.Cstm_Tbl_Role_Group_Role" Name="Cstm_Tbl_Role_Group_Role10">
+        <AttrNames>
+          <Item Value="Ast"/>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="RoleGroupRoleId"/>
+          <Item Value="RoleGroupId"/>
+          <Item Value="GroupId"/>
+          <Item Value="RView"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblUserView3Iterator" id="TblUserView3">
+      <nodeDefinition DefName="model.UserRoles.VO.TblUserView" Name="TblUserView30">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="RoleId"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="Email"/>
+          <Item Value="Pwd"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="UpdatedDate"/>
+          <Item Value="UpdatedBy"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="Cstm_Tbl_Role_Group_Role1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="Cstm_Tbl_Role_Group_Role1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="Cstm_Tbl_Role_Group_Role1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="TblUserView3Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblUserView3Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblUserView3Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblRoleGroupView4Iterator" id="TblRoleGroupView4">
+      <nodeDefinition DefName="model.UserRoles.VO.TblRoleGroupView" Name="TblRoleGroupView40">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="GroupId"/>
+          <Item Value="RoleId"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="UpdatedDate"/>
+          <Item Value="UpdatedBy"/>
+          <Item Value="RView"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblRoleGroupView4Iterator" id="CreateInsert2" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblRoleGroupView4Iterator" id="Execute2" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblRoleGroupView4Iterator" id="Delete2" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblRoleCompanyView4Iterator" id="TblRoleCompanyView4">
+      <nodeDefinition DefName="model.UserRoles.VO.TblRoleCompanyView" Name="TblRoleCompanyView40">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="GroupCompanyId"/>
+          <Item Value="RoleId"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="UpdatedDate"/>
+          <Item Value="UpdatedBy"/>
+          <Item Value="RView"/>
+          <Item Value="RoleGroupId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblRoleCompanyView4Iterator" id="CreateInsert3" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblRoleCompanyView4Iterator" id="Execute3" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblRoleCompanyView4Iterator" id="Delete3" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblRoleSbuView5Iterator" id="TblRoleSbuView5">
+      <nodeDefinition DefName="model.UserRoles.VO.TblRoleSbuView" Name="TblRoleSbuView50">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="CompanySbuId"/>
+          <Item Value="RoleCompanyId"/>
+          <Item Value="RoleId"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="UpdatedDate"/>
+          <Item Value="UpdatedBy"/>
+          <Item Value="RView"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblRoleSbuView5Iterator" id="CreateInsert4" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblRoleSbuView5Iterator" id="Execute4" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblRoleSbuView5Iterator" id="Delete4" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblRoleModulesView2Iterator" id="TblRoleModulesView2">
+      <nodeDefinition DefName="model.UserRoles.VO.TblRoleModulesView" Name="TblRoleModulesView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="RoleId"/>
+          <Item Value="RView"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="UpdatedDate"/>
+          <Item Value="UpdatedBy"/>
+          <Item Value="CompanyModuleId"/>
+          <Item Value="RoleCompanyId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblRoleModulesView2Iterator" id="CreateInsert5" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblRoleModulesView2Iterator" id="Execute5" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblRoleModulesView2Iterator" id="Delete5" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblRoleSubModulesView3Iterator" id="TblRoleSubModulesView3">
+      <nodeDefinition DefName="model.UserRoles.VO.TblRoleSubModulesView" Name="TblRoleSubModulesView30">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="RoleId"/>
+          <Item Value="RoleModuleId"/>
+          <Item Value="CompanySubModuleId"/>
+          <Item Value="RView"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="UpdatedDate"/>
+          <Item Value="UpdatedBy"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblRoleSubModulesView3Iterator" id="CreateInsert6" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblRoleSubModulesView3Iterator" id="Execute6" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblRoleSubModulesView3Iterator" id="Delete6" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblRolePagesView2Iterator" id="TblRolePagesView2">
+      <nodeDefinition DefName="model.UserRoles.VO.TblRolePagesView" Name="TblRolePagesView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="RoleId"/>
+          <Item Value="RView"/>
+          <Item Value="RAdd"/>
+          <Item Value="REdit"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
+          <Item Value="RPost"/>
+          <Item Value="CompanyPagesId"/>
+          <Item Value="CompanySubModuleId"/>
+          <Item Value="RoleSubModulesId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblRolePagesView2Iterator" id="CreateInsert7" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblRolePagesView2Iterator" id="Execute7" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblRolePagesView2Iterator" id="Delete7" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblRoleReportsView2Iterator" id="TblRoleReportsView2">
+      <nodeDefinition DefName="model.UserRoles.VO.TblRoleReportsView" Name="TblRoleReportsView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="RoleId"/>
+          <Item Value="RView"/>
+          <Item Value="CompanyReportId"/>
+          <Item Value="CompanySubModuleId"/>
+          <Item Value="RoleSubModulesId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblRoleReportsView2Iterator" id="CreateInsert8" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblRoleReportsView2Iterator" id="Execute8" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblRoleReportsView2Iterator" id="Delete8" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>
