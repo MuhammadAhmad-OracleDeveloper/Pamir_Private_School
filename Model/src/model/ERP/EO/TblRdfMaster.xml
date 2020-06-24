@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="TBL_RDF_MASTER"
   AliasName="TblRdfMaster"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.ERP.EO.TblRdfMasterImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="Id"
     IsNotNull="true"
@@ -75,7 +80,7 @@
     Name="GroupCompanyId"
     ColumnName="GROUP_COMPANY_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_RDF_MASTER"/>
   <Attribute
@@ -89,7 +94,7 @@
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_RDF_MASTER"/>
   <Attribute
@@ -103,7 +108,14 @@
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="TBL_RDF_MASTER"/>
+  <Attribute
+    Name="CompanySbuId"
+    ColumnName="COMPANY_SBU_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_RDF_MASTER"/>
   <AccessorAttribute

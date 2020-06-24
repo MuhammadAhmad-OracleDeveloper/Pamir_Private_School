@@ -322,19 +322,31 @@ public class TblAcadYearImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        Number loginId = null;
-                 try {
-                     loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessRID"));
-                 } catch(Exception ex) {
-                     ex.printStackTrace();
-                 }
-                 
-                 if (operation == DML_INSERT) {
-                     setCreatedBy(loginId);
-                     setUpdatedBy(loginId);
-                     } else if(operation == DML_UPDATE) {
-                     setUpdatedBy(loginId);
-                 }
+        Number userId = null;
+        Number cmpnyId = null;
+        Number sbuId = null;
+         try {
+             userId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUMID"));
+             cmpnyId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessCmpnyID"));
+             sbuId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessSBUID"));
+         } catch(Exception ex) {
+             ex.printStackTrace();
+         }
+         
+         if (operation == DML_INSERT) {
+
+             setGroupCompanyId(cmpnyId);
+             setCompanySbuId(sbuId);
+
+             setCreatedBy(userId);
+             setUpdatedBy(userId);
+             } else if(operation == DML_UPDATE) {
+             
+             setGroupCompanyId(cmpnyId);
+             setCompanySbuId(sbuId);
+             
+             setUpdatedBy(userId);
+         }
         super.doDML(operation, e);
     }
 }

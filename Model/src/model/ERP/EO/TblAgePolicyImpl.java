@@ -36,6 +36,7 @@ public class TblAgePolicyImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        CompanySbuId,
         TblAcadYear,
         TblGrade;
         private static AttributesEnum[] vals = null;
@@ -75,6 +76,7 @@ public class TblAgePolicyImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int COMPANYSBUID = AttributesEnum.CompanySbuId.index();
     public static final int TBLACADYEAR = AttributesEnum.TblAcadYear.index();
     public static final int TBLGRADE = AttributesEnum.TblGrade.index();
 
@@ -112,15 +114,15 @@ public class TblAgePolicyImpl extends EntityImpl {
      * Gets the attribute value for GroupCompanyId, using the alias name GroupCompanyId.
      * @return the value of GroupCompanyId
      */
-    public BigDecimal getGroupCompanyId() {
-        return (BigDecimal) getAttributeInternal(GROUPCOMPANYID);
+    public Number getGroupCompanyId() {
+        return (Number) getAttributeInternal(GROUPCOMPANYID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for GroupCompanyId.
      * @param value value to set the GroupCompanyId
      */
-    public void setGroupCompanyId(BigDecimal value) {
+    public void setGroupCompanyId(Number value) {
         setAttributeInternal(GROUPCOMPANYID, value);
     }
 
@@ -287,6 +289,22 @@ public class TblAgePolicyImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for CompanySbuId, using the alias name CompanySbuId.
+     * @return the value of CompanySbuId
+     */
+    public Number getCompanySbuId() {
+        return (Number) getAttributeInternal(COMPANYSBUID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CompanySbuId.
+     * @param value value to set the CompanySbuId
+     */
+    public void setCompanySbuId(Number value) {
+        setAttributeInternal(COMPANYSBUID, value);
+    }
+
+    /**
      * @return the associated entity TblAcadYearImpl.
      */
     public TblAcadYearImpl getTblAcadYear() {
@@ -303,14 +321,14 @@ public class TblAgePolicyImpl extends EntityImpl {
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblGrade() {
-        return (EntityImpl) getAttributeInternal(TBLGRADE);
+    public TblGradeImpl getTblGrade() {
+        return (TblGradeImpl) getAttributeInternal(TBLGRADE);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblGrade(EntityImpl value) {
+    public void setTblGrade(TblGradeImpl value) {
         setAttributeInternal(TBLGRADE, value);
     }
 
@@ -337,19 +355,31 @@ public class TblAgePolicyImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        Number loginId = null;
-                 try {
-                     loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessRID"));
-                 } catch(Exception ex) {
-                     ex.printStackTrace();
-                 }
-                 
-                 if (operation == DML_INSERT) {
-                     setCreatedBy(loginId);
-                     setUpdatedBy(loginId);
-                     } else if(operation == DML_UPDATE) {
-                     setUpdatedBy(loginId);
-                 }
+        Number userId = null;
+        Number cmpnyId = null;
+        Number sbuId = null;
+         try {
+             userId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUMID"));
+             cmpnyId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessCmpnyID"));
+             sbuId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessSBUID"));
+         } catch(Exception ex) {
+             ex.printStackTrace();
+         }
+         
+         if (operation == DML_INSERT) {
+
+             setGroupCompanyId(cmpnyId);
+             setCompanySbuId(sbuId);
+
+             setCreatedBy(userId);
+             setUpdatedBy(userId);
+             } else if(operation == DML_UPDATE) {
+             
+             setGroupCompanyId(cmpnyId);
+             setCompanySbuId(sbuId);
+             
+             setUpdatedBy(userId);
+         }
         super.doDML(operation, e);
     }
 }

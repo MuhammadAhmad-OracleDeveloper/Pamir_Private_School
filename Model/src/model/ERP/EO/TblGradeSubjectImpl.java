@@ -30,6 +30,7 @@ public class TblGradeSubjectImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        CompanySbuId,
         TblGrade,
         TblSubject;
         private static AttributesEnum[] vals = null;
@@ -54,6 +55,8 @@ public class TblGradeSubjectImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int GROUPCOMPANYID = AttributesEnum.GroupCompanyId.index();
     public static final int GRADEID = AttributesEnum.GradeId.index();
@@ -62,6 +65,7 @@ public class TblGradeSubjectImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int COMPANYSBUID = AttributesEnum.CompanySbuId.index();
     public static final int TBLGRADE = AttributesEnum.TblGrade.index();
     public static final int TBLSUBJECT = AttributesEnum.TblSubject.index();
 
@@ -70,6 +74,14 @@ public class TblGradeSubjectImpl extends EntityImpl {
      */
     public TblGradeSubjectImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblGradeSubject");
+    }
+
 
     /**
      * Gets the attribute value for Id, using the alias name Id.
@@ -91,15 +103,15 @@ public class TblGradeSubjectImpl extends EntityImpl {
      * Gets the attribute value for GroupCompanyId, using the alias name GroupCompanyId.
      * @return the value of GroupCompanyId
      */
-    public BigDecimal getGroupCompanyId() {
-        return (BigDecimal) getAttributeInternal(GROUPCOMPANYID);
+    public Number getGroupCompanyId() {
+        return (Number) getAttributeInternal(GROUPCOMPANYID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for GroupCompanyId.
      * @param value value to set the GroupCompanyId
      */
-    public void setGroupCompanyId(BigDecimal value) {
+    public void setGroupCompanyId(Number value) {
         setAttributeInternal(GROUPCOMPANYID, value);
     }
 
@@ -184,6 +196,22 @@ public class TblGradeSubjectImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for CompanySbuId, using the alias name CompanySbuId.
+     * @return the value of CompanySbuId
+     */
+    public Number getCompanySbuId() {
+        return (Number) getAttributeInternal(COMPANYSBUID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CompanySbuId.
+     * @param value value to set the CompanySbuId
+     */
+    public void setCompanySbuId(Number value) {
+        setAttributeInternal(COMPANYSBUID, value);
+    }
+
+    /**
      * @return the associated entity TblGradeImpl.
      */
     public TblGradeImpl getTblGrade() {
@@ -200,16 +228,17 @@ public class TblGradeSubjectImpl extends EntityImpl {
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblSubject() {
-        return (EntityImpl) getAttributeInternal(TBLSUBJECT);
+    public TblSubjectImpl getTblSubject() {
+        return (TblSubjectImpl) getAttributeInternal(TBLSUBJECT);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblSubject(EntityImpl value) {
+    public void setTblSubject(TblSubjectImpl value) {
         setAttributeInternal(TBLSUBJECT, value);
     }
+
 
     /**
      * @param id key constituent
@@ -218,13 +247,6 @@ public class TblGradeSubjectImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblGradeSubject");
     }
 
     /**
@@ -240,19 +262,31 @@ public class TblGradeSubjectImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        Number loginId = null;
-                 try {
-                     loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessRID"));
-                 } catch(Exception ex) {
-                     ex.printStackTrace();
-                 }
-                 
-                 if (operation == DML_INSERT) {
-                     setCreatedBy(loginId);
-                     setUpdatedBy(loginId);
-                     } else if(operation == DML_UPDATE) {
-                     setUpdatedBy(loginId);
-                 }
+        Number userId = null;
+        Number cmpnyId = null;
+        Number sbuId = null;
+         try {
+             userId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUMID"));
+             cmpnyId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessCmpnyID"));
+             sbuId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessSBUID"));
+         } catch(Exception ex) {
+             ex.printStackTrace();
+         }
+         
+         if (operation == DML_INSERT) {
+
+             setGroupCompanyId(cmpnyId);
+             setCompanySbuId(sbuId);
+
+             setCreatedBy(userId);
+             setUpdatedBy(userId);
+             } else if(operation == DML_UPDATE) {
+             
+             setGroupCompanyId(cmpnyId);
+             setCompanySbuId(sbuId);
+             
+             setUpdatedBy(userId);
+         }
         super.doDML(operation, e);
     }
 }

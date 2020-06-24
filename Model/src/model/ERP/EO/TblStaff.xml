@@ -29,7 +29,7 @@
     Name="GroupCompanyId"
     ColumnName="GROUP_COMPANY_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_STAFF"/>
   <Attribute
@@ -300,6 +300,13 @@
       <Attr Name="_DisplaySize" Value="25"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="CompanySbuId"
+    ColumnName="COMPANY_SBU_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="TBL_STAFF"/>
   <AccessorAttribute
     Name="TblLookupDetail"
     Association="model.ERP.EO.FkStaffLookupNationalityAssoc"

@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="TBL_QUO_MASTER"
   AliasName="TblQuoMaster"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.ERP.EO.TblQuoMasterImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="Id"
     IsNotNull="true"
@@ -94,7 +99,7 @@
     Name="GroupCompanyId"
     ColumnName="GROUP_COMPANY_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_QUO_MASTER"/>
   <Attribute
@@ -108,7 +113,7 @@
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_QUO_MASTER"/>
   <Attribute
@@ -122,7 +127,14 @@
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="TBL_QUO_MASTER"/>
+  <Attribute
+    Name="CompanySbuId"
+    ColumnName="COMPANY_SBU_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_QUO_MASTER"/>
   <AccessorAttribute
