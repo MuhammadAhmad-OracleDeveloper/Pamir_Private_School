@@ -60,6 +60,7 @@ public class TblSectionTimetableDetailImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int STAFFID = AttributesEnum.StaffId.index();
     public static final int STAFFSUBJECTID = AttributesEnum.StaffSubjectId.index();
@@ -81,6 +82,13 @@ public class TblSectionTimetableDetailImpl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public TblSectionTimetableDetailImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblSectionTimetableDetail");
     }
 
     /**
@@ -135,15 +143,15 @@ public class TblSectionTimetableDetailImpl extends EntityImpl {
      * Gets the attribute value for GroupCompanyId, using the alias name GroupCompanyId.
      * @return the value of GroupCompanyId
      */
-    public BigDecimal getGroupCompanyId() {
-        return (BigDecimal) getAttributeInternal(GROUPCOMPANYID);
+    public Number getGroupCompanyId() {
+        return (Number) getAttributeInternal(GROUPCOMPANYID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for GroupCompanyId.
      * @param value value to set the GroupCompanyId
      */
-    public void setGroupCompanyId(BigDecimal value) {
+    public void setGroupCompanyId(Number value) {
         setAttributeInternal(GROUPCOMPANYID, value);
     }
 
@@ -294,30 +302,31 @@ public class TblSectionTimetableDetailImpl extends EntityImpl {
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblStaffSubject() {
-        return (EntityImpl) getAttributeInternal(TBLSTAFFSUBJECT);
+    public TblStaffSubjectImpl getTblStaffSubject() {
+        return (TblStaffSubjectImpl) getAttributeInternal(TBLSTAFFSUBJECT);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblStaffSubject(EntityImpl value) {
+    public void setTblStaffSubject(TblStaffSubjectImpl value) {
         setAttributeInternal(TBLSTAFFSUBJECT, value);
     }
 
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblSectionTimetableMaster() {
-        return (EntityImpl) getAttributeInternal(TBLSECTIONTIMETABLEMASTER);
+    public TblSectionTimetableMasterImpl getTblSectionTimetableMaster() {
+        return (TblSectionTimetableMasterImpl) getAttributeInternal(TBLSECTIONTIMETABLEMASTER);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblSectionTimetableMaster(EntityImpl value) {
+    public void setTblSectionTimetableMaster(TblSectionTimetableMasterImpl value) {
         setAttributeInternal(TBLSECTIONTIMETABLEMASTER, value);
     }
+
 
     /**
      * @param id key constituent
@@ -326,13 +335,6 @@ public class TblSectionTimetableDetailImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblSectionTimetableDetail");
     }
 
     /**
@@ -348,19 +350,31 @@ public class TblSectionTimetableDetailImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        Number loginId = null;
-                 try {
-                     loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessRID"));
-                 } catch(Exception ex) {
-                     ex.printStackTrace();
-                 }
-                 
-                 if (operation == DML_INSERT) {
-                     setCreatedBy(loginId);
-                     setUpdatedBy(loginId);
-                     } else if(operation == DML_UPDATE) {
-                     setUpdatedBy(loginId);
-                 }
+        Number userId = null;
+        Number cmpnyId = null;
+        Number sbuId = null;
+         try {
+             userId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUMID"));
+             cmpnyId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessCmpnyID"));
+             sbuId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessSBUID"));
+         } catch(Exception ex) {
+             ex.printStackTrace();
+         }
+         
+         if (operation == DML_INSERT) {
+
+             setGroupCompanyId(cmpnyId);
+             setCompanySbuId(sbuId);
+
+             setCreatedBy(userId);
+             setUpdatedBy(userId);
+             } else if(operation == DML_UPDATE) {
+             
+             setGroupCompanyId(cmpnyId);
+             setCompanySbuId(sbuId);
+             
+             setUpdatedBy(userId);
+         }
         super.doDML(operation, e);
     }
 }

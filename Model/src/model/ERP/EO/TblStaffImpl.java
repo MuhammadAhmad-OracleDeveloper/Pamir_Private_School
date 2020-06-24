@@ -52,6 +52,7 @@ public class TblStaffImpl extends EntityImpl {
         UpdatedBy,
         LicenseExp,
         LicenseNo,
+        CompanySbuId,
         TblLookupDetail,
         TblLookupDetail1,
         TblLookupDetail2,
@@ -90,6 +91,7 @@ public class TblStaffImpl extends EntityImpl {
         }
     }
 
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int GROUPCOMPANYID = AttributesEnum.GroupCompanyId.index();
     public static final int DATED = AttributesEnum.Dated.index();
@@ -119,6 +121,7 @@ public class TblStaffImpl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int LICENSEEXP = AttributesEnum.LicenseExp.index();
     public static final int LICENSENO = AttributesEnum.LicenseNo.index();
+    public static final int COMPANYSBUID = AttributesEnum.CompanySbuId.index();
     public static final int TBLLOOKUPDETAIL = AttributesEnum.TblLookupDetail.index();
     public static final int TBLLOOKUPDETAIL1 = AttributesEnum.TblLookupDetail1.index();
     public static final int TBLLOOKUPDETAIL2 = AttributesEnum.TblLookupDetail2.index();
@@ -148,6 +151,7 @@ public class TblStaffImpl extends EntityImpl {
         return EntityDefImpl.findDefObject("model.ERP.EO.TblStaff");
     }
 
+
     /**
      * Gets the attribute value for Id, using the alias name Id.
      * @return the value of Id
@@ -168,15 +172,15 @@ public class TblStaffImpl extends EntityImpl {
      * Gets the attribute value for GroupCompanyId, using the alias name GroupCompanyId.
      * @return the value of GroupCompanyId
      */
-    public BigDecimal getGroupCompanyId() {
-        return (BigDecimal) getAttributeInternal(GROUPCOMPANYID);
+    public Number getGroupCompanyId() {
+        return (Number) getAttributeInternal(GROUPCOMPANYID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for GroupCompanyId.
      * @param value value to set the GroupCompanyId
      */
-    public void setGroupCompanyId(BigDecimal value) {
+    public void setGroupCompanyId(Number value) {
         setAttributeInternal(GROUPCOMPANYID, value);
     }
 
@@ -597,6 +601,22 @@ public class TblStaffImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for CompanySbuId, using the alias name CompanySbuId.
+     * @return the value of CompanySbuId
+     */
+    public Number getCompanySbuId() {
+        return (Number) getAttributeInternal(COMPANYSBUID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CompanySbuId.
+     * @param value value to set the CompanySbuId
+     */
+    public void setCompanySbuId(Number value) {
+        setAttributeInternal(COMPANYSBUID, value);
+    }
+
+    /**
      * @return the associated entity TblLookupDetailImpl.
      */
     public TblLookupDetailImpl getTblLookupDetail() {
@@ -759,19 +779,31 @@ public class TblStaffImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        Number loginId = null;
-                 try {
-                     loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessRID"));
-                 } catch(Exception ex) {
-                     ex.printStackTrace();
-                 }
-                 
-                 if (operation == DML_INSERT) {
-                     setCreatedBy(loginId);
-                     setUpdatedBy(loginId);
-                     } else if(operation == DML_UPDATE) {
-                     setUpdatedBy(loginId);
-                 }
+        Number userId = null;
+        Number cmpnyId = null;
+        Number sbuId = null;
+         try {
+             userId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUMID"));
+             cmpnyId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessCmpnyID"));
+             sbuId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessSBUID"));
+         } catch(Exception ex) {
+             ex.printStackTrace();
+         }
+         
+         if (operation == DML_INSERT) {
+
+             setGroupCompanyId(cmpnyId);
+             setCompanySbuId(sbuId);
+
+             setCreatedBy(userId);
+             setUpdatedBy(userId);
+             } else if(operation == DML_UPDATE) {
+             
+             setGroupCompanyId(cmpnyId);
+             setCompanySbuId(sbuId);
+             
+             setUpdatedBy(userId);
+         }
         super.doDML(operation, e);
     }
 }
