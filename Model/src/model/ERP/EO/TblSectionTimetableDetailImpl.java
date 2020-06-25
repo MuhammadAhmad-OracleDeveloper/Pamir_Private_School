@@ -361,20 +361,20 @@ public class TblSectionTimetableDetailImpl extends EntityImpl {
              ex.printStackTrace();
          }
          
-         if (operation == DML_INSERT) {
-
-             setGroupCompanyId(cmpnyId);
-             setCompanySbuId(sbuId);
-
-             setCreatedBy(userId);
-             setUpdatedBy(userId);
-             } else if(operation == DML_UPDATE) {
-             
-             setGroupCompanyId(cmpnyId);
-             setCompanySbuId(sbuId);
-             
-             setUpdatedBy(userId);
-         }
+//         if (operation == DML_INSERT) {
+//
+//             setGroupCompanyId(cmpnyId);
+//             setCompanySbuId(sbuId);
+//
+//             setCreatedBy(userId);
+//             setUpdatedBy(userId);
+//             } else if(operation == DML_UPDATE) {
+//             
+//             setGroupCompanyId(cmpnyId);
+//             setCompanySbuId(sbuId);
+//             
+//             setUpdatedBy(userId);
+//         }
         super.doDML(operation, e);
     }
 }
