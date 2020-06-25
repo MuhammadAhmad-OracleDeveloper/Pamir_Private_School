@@ -64,7 +64,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdRegView1.hints.RegDate.name}" filterable="true"
-                             sortable="true" headerText="Date" id="c2" align="left">
+                             sortable="true" headerText="Registration Date" id="c2" align="left">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblStdRegView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.RegDate.value}"
                                     id="id1" placeholder="Search ">
@@ -76,10 +76,38 @@
                                   required="#{bindings.TblStdRegView1.hints.RegDate.mandatory}"
                                   columns="#{bindings.TblStdRegView1.hints.RegDate.displayWidth}"
                                   shortDesc="#{bindings.TblStdRegView1.hints.RegDate.tooltip}" id="id2"
-                                  contentStyle='text-align: left'>
+                                  contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.RegDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblStdRegView1.hints.RegDate.format}"/>
                     </af:inputDate>
+                  </af:column>
+                  <af:column headerText="Registration Type" id="c18" sortable="true" filterable="true">
+                   <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.AdmissionType}"
+       id="it74" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.AdmissionType.inputValue}"
+                                        label="#{row.bindings.AdmissionType.label}"
+                                        required="#{bindings.TblStdRegView1.hints.AdmissionType.mandatory}"
+                                        shortDesc="#{bindings.TblStdRegView1.hints.AdmissionType.tooltip}" id="soc25">
+                      <f:selectItems value="#{row.bindings.AdmissionType.items}" id="si25"/>
+                      <f:validator binding="#{row.bindings.AdmissionType.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="Academic Year" id="c28" align="center" sortable="true" filterable="true">
+                  <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.AcadYearId}"
+       id="it64" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
+                                        label="#{row.bindings.AcadYearId.label}"
+                                        required="#{bindings.TblStdRegView1.hints.AcadYearId.mandatory}"
+                                        shortDesc="#{bindings.TblStdRegView1.hints.AcadYearId.tooltip}" id="soc22">
+                      <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si22"/>
+                      <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
+                    </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdRegView1.hints.StdEnqId.name}" filterable="true"
                              sortable="true" headerText="Student Enquiry" id="c3" width="200" align="left">
@@ -148,8 +176,9 @@
                       <f:validator binding="#{row.bindings.EsisNo.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Emirates ID" id="c11" align="left" sortable="true" filterable="true">
-                    <f:facet name="filter">
+                  <af:column headerText="Emirates ID" id="c11" align="left"
+                             sortable="true" filterable="true">
+                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.EmirId}"
        id="it50" placeholder="Search ">
       </af:inputText>
@@ -160,13 +189,13 @@
                                   columns="#{bindings.TblStdRegView1.hints.EmirId.displayWidth}"
                                   maximumLength="#{bindings.TblStdRegView1.hints.EmirId.precision}"
                                   shortDesc="#{bindings.TblStdRegView1.hints.EmirId.tooltip}" id="it41"
-                                  contentStyle='text-align: left'>
+                                  contentStyle='text-align: right'>
                       <f:validator binding="#{row.bindings.EmirId.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="First Name" id="c15" sortable="true" filterable="true" width="200"
-                             align="left">
-                    <f:facet name="filter">
+                  <af:column headerText="First Name" id="c29" align="left" sortable="true" filterable="true"
+                             width="200">
+                   <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.FirstName}"
        id="it51" placeholder="Search ">
       </af:inputText>
@@ -176,14 +205,13 @@
                                   required="#{bindings.TblStdRegView1.hints.FirstName.mandatory}"
                                   columns="#{bindings.TblStdRegView1.hints.FirstName.displayWidth}"
                                   maximumLength="#{bindings.TblStdRegView1.hints.FirstName.precision}"
-                                  shortDesc="#{bindings.TblStdRegView1.hints.FirstName.tooltip}" id="it43"
-                                  contentStyle="text-align: left">
+                                  shortDesc="#{bindings.TblStdRegView1.hints.FirstName.tooltip}" id="it65"
+                                  contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.FirstName.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Last Name" id="c16" sortable="true"
-                             filterable="true" width="200" align="left">
-                              <f:facet name="filter">
+                  <af:column headerText="Last Name" id="c15" align="left" sortable="true" filterable="true" width="200">
+                   <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.LastName}"
        id="it52" placeholder="Search ">
       </af:inputText>
@@ -193,13 +221,13 @@
                                   required="#{bindings.TblStdRegView1.hints.LastName.mandatory}"
                                   columns="#{bindings.TblStdRegView1.hints.LastName.displayWidth}"
                                   maximumLength="#{bindings.TblStdRegView1.hints.LastName.precision}"
-                                  shortDesc="#{bindings.TblStdRegView1.hints.LastName.tooltip}" id="it47"
-                                  contentStyle="text-align: left">
+                                  shortDesc="#{bindings.TblStdRegView1.hints.LastName.tooltip}" id="it43"
+                                  contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.LastName.validator}"/>
                     </af:inputText>
-                 </af:column>
-                  <af:column headerText="DOB" id="c19" align="left" sortable="true" filterable="true">
-                     <f:facet name="filter">
+                  </af:column>
+                  <af:column headerText="Date of Birth" id="c16" align="left" sortable="true" filterable="true">
+                   <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Dob}"
        id="it53" placeholder="Search ">
       </af:inputText>
@@ -209,42 +237,24 @@
                                   required="#{bindings.TblStdRegView1.hints.Dob.mandatory}"
                                   columns="#{bindings.TblStdRegView1.hints.Dob.displayWidth}"
                                   shortDesc="#{bindings.TblStdRegView1.hints.Dob.tooltip}" id="id5"
-                                  contentStyle='text-align: left'>
+                                  >
                       <f:validator binding="#{row.bindings.Dob.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblStdRegView1.hints.Dob.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column headerText="Contact No." id="c17" sortable="true" filterable="true" align="left">
-                    <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.ContNumber}"
-       id="it54" placeholder="Search ">
+                  <af:column headerText="Gender" id="c17" align="left"
+                             sortable="true" filterable="true">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Gender}"
+       id="it47" placeholder="Search ">
       </af:inputText>
 </f:facet>
-                    <af:inputText value="#{row.bindings.ContNumber.inputValue}"
-                                  label="#{bindings.TblStdRegView1.hints.ContNumber.label}"
-                                  required="#{bindings.TblStdRegView1.hints.ContNumber.mandatory}"
-                                  columns="#{bindings.TblStdRegView1.hints.ContNumber.displayWidth}"
-                                  maximumLength="#{bindings.TblStdRegView1.hints.ContNumber.precision}"
-                                  shortDesc="#{bindings.TblStdRegView1.hints.ContNumber.tooltip}" id="it48"
-                                  contentStyle='text-align: right'>
-                      <f:validator binding="#{row.bindings.ContNumber.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column headerText="Contact Person" id="c18" sortable="true" filterable="true" align="left">
-                    <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.ContPerson}"
-       id="it55" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                    <af:inputText value="#{row.bindings.ContPerson.inputValue}"
-                                  label="#{bindings.TblStdRegView1.hints.ContPerson.label}"
-                                  required="#{bindings.TblStdRegView1.hints.ContPerson.mandatory}"
-                                  columns="#{bindings.TblStdRegView1.hints.ContPerson.displayWidth}"
-                                  maximumLength="#{bindings.TblStdRegView1.hints.ContPerson.precision}"
-                                  shortDesc="#{bindings.TblStdRegView1.hints.ContPerson.tooltip}" id="it49"
-                                  contentStyle='text-align: left'>
-                      <f:validator binding="#{row.bindings.ContPerson.validator}"/>
-                    </af:inputText>
+                    <af:selectOneChoice value="#{row.bindings.Gender.inputValue}" label="#{row.bindings.Gender.label}"
+                                        required="#{bindings.TblStdRegView1.hints.Gender.mandatory}"
+                                        shortDesc="#{bindings.TblStdRegView1.hints.Gender.tooltip}" id="soc23">
+                      <f:selectItems value="#{row.bindings.Gender.items}" id="si23"/>
+                      <f:validator binding="#{row.bindings.Gender.validator}"/>
+                    </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdRegView1.hints.GradeId.name}" filterable="true"
                              sortable="true" headerText="Grade" id="c7" align="left">
@@ -319,10 +329,81 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
             <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab2" text="Student Details">
-                <af:panelFormLayout id="pfl1" maxColumns="2" rows="4">
-                
-                
-                
+                <af:panelFormLayout id="pfl1" maxColumns="3" rows="8">
+                  <af:inputText value="#{bindings.TotAge.inputValue}" label="Total Age"
+                                required="#{bindings.TotAge.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.TotAge.hints.precision}"
+                                shortDesc="#{bindings.TotAge.hints.tooltip}" id="it73" contentStyle="width:200px;">
+                    <f:validator binding="#{bindings.TotAge.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s53"/>
+                  <af:inputText value="#{bindings.RegFee.inputValue}" label="Registration Fee"
+                                required="#{bindings.RegFee.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.RegFee.hints.precision}"
+                                shortDesc="#{bindings.RegFee.hints.tooltip}" id="it72" contentStyle="width:200px;">
+                    <f:validator binding="#{bindings.RegFee.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.RegFee.format}"/>
+                  </af:inputText>
+                  <af:spacer  id="s52"/>
+                  <af:inputText value="#{bindings.Address.inputValue}" label="Address"
+                                required="#{bindings.Address.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.Address.hints.precision}"
+                                shortDesc="#{bindings.Address.hints.tooltip}" id="it66" contentStyle="width:200px;">
+                    <f:validator binding="#{bindings.Address.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s48"/>
+                  <af:inputText value="#{bindings.EmirArea.inputValue}" label="Emirates Area"
+                                required="#{bindings.EmirArea.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.EmirArea.hints.precision}"
+                                shortDesc="#{bindings.EmirArea.hints.tooltip}" id="it68" contentStyle="width:200px;">
+                    <f:validator binding="#{bindings.EmirArea.validator}"/>
+                  </af:inputText>
+                  <af:spacer id="s45"/>
+                  <af:inputText value="#{bindings.ContNumber.inputValue}" label="Contact No."
+                                required="#{bindings.ContNumber.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.ContNumber.hints.precision}"
+                                shortDesc="#{bindings.ContNumber.hints.tooltip}" id="it67" contentStyle="width:200px;">
+                    <f:validator binding="#{bindings.ContNumber.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s46"/>
+                  <af:inputText value="#{bindings.ContPerson.inputValue}" label="Contact Person"
+                                required="#{bindings.ContPerson.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.ContPerson.hints.precision}"
+                                shortDesc="#{bindings.ContPerson.hints.tooltip}" id="it69" contentStyle="width:200px;">
+                    <f:validator binding="#{bindings.ContPerson.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s47"/>
+                  <af:inputText value="#{bindings.ContRelation.inputValue}" label="Contact Relation"
+                                required="#{bindings.ContRelation.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.ContRelation.hints.precision}"
+                                shortDesc="#{bindings.ContRelation.hints.tooltip}" id="it70"
+                                contentStyle="width:200px;">
+                    <f:validator binding="#{bindings.ContRelation.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s49"/>
+                  <af:inputText value="#{bindings.ContEmail.inputValue}" label="Contact Email"
+                                required="#{bindings.ContEmail.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.ContEmail.hints.precision}"
+                                shortDesc="#{bindings.ContEmail.hints.tooltip}" id="it71" contentStyle="width:200px;">
+                    <f:validator binding="#{bindings.ContEmail.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s51"/>
+                  <af:selectOneChoice value="#{bindings.LookupElecGroup.inputValue}"
+                                      label="Elective Group"
+                                      required="#{bindings.LookupElecGroup.hints.mandatory}"
+                                      shortDesc="#{bindings.LookupElecGroup.hints.tooltip}" id="soc8">
+                    <f:selectItems value="#{bindings.LookupElecGroup.items}" id="si8"/>
+                    <f:validator binding="#{bindings.LookupElecGroup.validator}"/>
+                  </af:selectOneChoice>
+                  <af:spacer  id="s50"/>
                   <af:inputText value="#{bindings.BirthPlace.inputValue}" label="Birth Place"
                                 required="#{bindings.BirthPlace.hints.mandatory}"
                                 columns="#{bindings.BirthPlace.hints.displayWidth}"
@@ -367,14 +448,6 @@
                     <f:validator binding="#{bindings.LookupBloodGroup.validator}"/>
                   </af:selectOneChoice>
                   <af:spacer  id="s7"/>
-                  <af:selectOneChoice value="#{bindings.LookupMotherTounge.inputValue}"
-                                      label="Mother Tongue"
-                                      required="#{bindings.LookupMotherTounge.hints.mandatory}"
-                                      shortDesc="#{bindings.LookupMotherTounge.hints.tooltip}" id="soc8"
-                                      contentStyle="width:200px;">
-                    <f:selectItems value="#{bindings.LookupMotherTounge.items}" id="si8"/>
-                    <f:validator binding="#{bindings.LookupMotherTounge.validator}"/>
-                  </af:selectOneChoice>
                   <af:spacer  id="s15"/>
                   <af:inputDate value="#{bindings.JoinDate.inputValue}" label="Joining Date"
                                 required="#{bindings.JoinDate.hints.mandatory}"
@@ -423,6 +496,24 @@
                     <f:validator binding="#{bindings.FatherName.validator}"/>
                   </af:inputText>
                   <af:spacer  id="s19"/>
+                  <af:inputText value="#{bindings.FatherEmirId.inputValue}" label="Father Emirates ID"
+                                required="#{bindings.FatherEmirId.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.FatherEmirId.hints.precision}"
+                                shortDesc="#{bindings.FatherEmirId.hints.tooltip}" id="it48"
+                                contentStyle="width:200px;">
+                    <f:validator binding="#{bindings.FatherEmirId.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s41"/>
+                  <af:inputText value="#{bindings.FatherPassNo.inputValue}" label="Father Passport No."
+                                required="#{bindings.FatherPassNo.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.FatherPassNo.hints.precision}"
+                                shortDesc="#{bindings.FatherPassNo.hints.tooltip}" id="it49"
+                                contentStyle="width:200px;">
+                    <f:validator binding="#{bindings.FatherPassNo.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s42"/>
                   <af:inputText value="#{bindings.FatherOccup.inputValue}" label="Father's Occupation"
                                 required="#{bindings.FatherOccup.hints.mandatory}"
                                 columns="#{bindings.FatherOccup.hints.displayWidth}"
@@ -475,6 +566,24 @@
                     <f:validator binding="#{bindings.MotherName.validator}"/>
                   </af:inputText>
                   <af:spacer  id="s25"/>
+                  <af:inputText value="#{bindings.MotherEmirId.inputValue}" label="Mother Emirates ID"
+                                required="#{bindings.MotherEmirId.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.MotherEmirId.hints.precision}"
+                                shortDesc="#{bindings.MotherEmirId.hints.tooltip}" id="it54"
+                                contentStyle="width:200px;">
+                    <f:validator binding="#{bindings.MotherEmirId.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s43"/>
+                  <af:inputText value="#{bindings.MotherPassNo.inputValue}" label="Mother Passport No."
+                                required="#{bindings.MotherPassNo.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.MotherPassNo.hints.precision}"
+                                shortDesc="#{bindings.MotherPassNo.hints.tooltip}" id="it55"
+                                contentStyle="width:200px;">
+                    <f:validator binding="#{bindings.MotherPassNo.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s44"/>
                   <af:inputText value="#{bindings.MotherOccup.inputValue}" label="Mother's Occupation"
                                 required="#{bindings.MotherOccup.hints.mandatory}"
                                 columns="#{bindings.MotherOccup.hints.displayWidth}"
@@ -665,6 +774,15 @@
               </af:showDetailItem>
               <af:showDetailItem text="Other Details" id="sdi3">
                 <af:panelFormLayout id="pfl4" maxColumns="1" rows="1">
+                  <af:selectOneChoice value="#{bindings.LookupMotherTounge.inputValue}"
+                                      label="Mother Language"
+                                      required="#{bindings.LookupMotherTounge.hints.mandatory}"
+                                      shortDesc="#{bindings.LookupMotherTounge.hints.tooltip}" id="soc24"
+                                      contentStyle="width:200px;">
+                    <f:selectItems value="#{bindings.LookupMotherTounge.items}" id="si24"/>
+                    <f:validator binding="#{bindings.LookupMotherTounge.validator}"/>
+                  </af:selectOneChoice>
+                  <af:spacer  id="s40"/>
                   <af:selectOneChoice value="#{bindings.LookupSecondLang.inputValue}"
                                         label="Second Language"
                                         required="#{bindings.LookupSecondLang.hints.mandatory}"

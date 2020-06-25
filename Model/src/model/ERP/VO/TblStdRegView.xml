@@ -73,6 +73,22 @@
     Name="Active_Name_LOV3"
     ViewObjectName="model.LOV.Active_Name_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Academic_Year_LOV1"
+    ViewObjectName="model.LOV.Academic_Year_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Elective_Group_LOV1"
+    ViewObjectName="model.LOV.Lookup_Elective_Group_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Gender_Name_LOV1"
+    ViewObjectName="model.LOV.Gender_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Registration_Type_LOV1"
+    ViewObjectName="model.LOV.Registration_Type_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_StdEnqId"
     ListVOName="Student_Enquiry_LOV1"
@@ -371,6 +387,78 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="Ast"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_AcadYearId"
+    ListVOName="Academic_Year_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AcadYearId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LookupElecGroup"
+    ListVOName="Lookup_Elective_Group_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LookupElecGroup"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Gender"
+    ListVOName="Gender_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Gender"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_AdmissionType"
+    ListVOName="Registration_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AdmissionType"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -897,53 +985,169 @@
     EntityUsage="TblStdReg"
     AliasName="REF_DOC_NO"/>
   <ViewAttribute
-    Name="FirstName"
-    PrecisionRule="true"
-    EntityAttrName="FirstName"
-    EntityUsage="TblStdEnq"
-    AliasName="FIRST_NAME"/>
-  <ViewAttribute
-    Name="Id1"
-    PrecisionRule="true"
-    EntityAttrName="Id"
-    EntityUsage="TblStdEnq"
-    AliasName="ID1"/>
-  <ViewAttribute
-    Name="LastName"
-    PrecisionRule="true"
-    EntityAttrName="LastName"
-    EntityUsage="TblStdEnq"
-    AliasName="LAST_NAME"/>
-  <ViewAttribute
-    Name="EmirId"
-    PrecisionRule="true"
-    EntityAttrName="EmirId"
-    EntityUsage="TblStdEnq"
-    AliasName="EMIR_ID"/>
-  <ViewAttribute
-    Name="ContNumber"
-    PrecisionRule="true"
-    EntityAttrName="ContNumber"
-    EntityUsage="TblStdEnq"
-    AliasName="CONT_NUMBER"/>
-  <ViewAttribute
-    Name="ContPerson"
-    PrecisionRule="true"
-    EntityAttrName="ContPerson"
-    EntityUsage="TblStdEnq"
-    AliasName="CONT_PERSON"/>
-  <ViewAttribute
-    Name="Dob"
-    PrecisionRule="true"
-    EntityAttrName="Dob"
-    EntityUsage="TblStdEnq"
-    AliasName="DOB"/>
-  <ViewAttribute
     Name="ScholarDiscPerc"
     PrecisionRule="true"
     EntityAttrName="ScholarDiscPerc"
     EntityUsage="TblStdReg"
     AliasName="SCHOLAR_DISC_PERC"/>
+  <ViewAttribute
+    Name="AcadYearId"
+    PrecisionRule="true"
+    EntityAttrName="AcadYearId"
+    EntityUsage="TblStdReg"
+    AliasName="ACAD_YEAR_ID"
+    LOVName="LOV_AcadYearId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Address"
+    PrecisionRule="true"
+    EntityAttrName="Address"
+    EntityUsage="TblStdReg"
+    AliasName="ADDRESS"/>
+  <ViewAttribute
+    Name="ContEmail"
+    PrecisionRule="true"
+    EntityAttrName="ContEmail"
+    EntityUsage="TblStdReg"
+    AliasName="CONT_EMAIL"/>
+  <ViewAttribute
+    Name="ContNumber"
+    PrecisionRule="true"
+    EntityAttrName="ContNumber"
+    EntityUsage="TblStdReg"
+    AliasName="CONT_NUMBER"/>
+  <ViewAttribute
+    Name="ContPerson"
+    PrecisionRule="true"
+    EntityAttrName="ContPerson"
+    EntityUsage="TblStdReg"
+    AliasName="CONT_PERSON"/>
+  <ViewAttribute
+    Name="ContRelation"
+    PrecisionRule="true"
+    EntityAttrName="ContRelation"
+    EntityUsage="TblStdReg"
+    AliasName="CONT_RELATION"/>
+  <ViewAttribute
+    Name="Dob"
+    PrecisionRule="true"
+    EntityAttrName="Dob"
+    EntityUsage="TblStdReg"
+    AliasName="DOB"/>
+  <ViewAttribute
+    Name="EligStatus"
+    PrecisionRule="true"
+    EntityAttrName="EligStatus"
+    EntityUsage="TblStdReg"
+    AliasName="ELIG_STATUS"/>
+  <ViewAttribute
+    Name="EmirArea"
+    PrecisionRule="true"
+    EntityAttrName="EmirArea"
+    EntityUsage="TblStdReg"
+    AliasName="EMIR_AREA"/>
+  <ViewAttribute
+    Name="EmirId"
+    PrecisionRule="true"
+    EntityAttrName="EmirId"
+    EntityUsage="TblStdReg"
+    AliasName="EMIR_ID"/>
+  <ViewAttribute
+    Name="FatherEmirId"
+    PrecisionRule="true"
+    EntityAttrName="FatherEmirId"
+    EntityUsage="TblStdReg"
+    AliasName="FATHER_EMIR_ID"/>
+  <ViewAttribute
+    Name="FatherPassNo"
+    PrecisionRule="true"
+    EntityAttrName="FatherPassNo"
+    EntityUsage="TblStdReg"
+    AliasName="FATHER_PASS_NO"/>
+  <ViewAttribute
+    Name="FirstName"
+    PrecisionRule="true"
+    EntityAttrName="FirstName"
+    EntityUsage="TblStdReg"
+    AliasName="FIRST_NAME"/>
+  <ViewAttribute
+    Name="LastName"
+    PrecisionRule="true"
+    EntityAttrName="LastName"
+    EntityUsage="TblStdReg"
+    AliasName="LAST_NAME"/>
+  <ViewAttribute
+    Name="Gender"
+    PrecisionRule="true"
+    EntityAttrName="Gender"
+    EntityUsage="TblStdReg"
+    AliasName="GENDER"
+    LOVName="LOV_Gender">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LookupElecGroup"
+    PrecisionRule="true"
+    EntityAttrName="LookupElecGroup"
+    EntityUsage="TblStdReg"
+    AliasName="LOOKUP_ELEC_GROUP"
+    LOVName="LOV_LookupElecGroup">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MotherEmirId"
+    PrecisionRule="true"
+    EntityAttrName="MotherEmirId"
+    EntityUsage="TblStdReg"
+    AliasName="MOTHER_EMIR_ID"/>
+  <ViewAttribute
+    Name="MotherPassNo"
+    PrecisionRule="true"
+    EntityAttrName="MotherPassNo"
+    EntityUsage="TblStdReg"
+    AliasName="MOTHER_PASS_NO"/>
+  <ViewAttribute
+    Name="RegFee"
+    PrecisionRule="true"
+    EntityAttrName="RegFee"
+    EntityUsage="TblStdReg"
+    AliasName="REG_FEE"/>
+  <ViewAttribute
+    Name="TotAge"
+    PrecisionRule="true"
+    EntityAttrName="TotAge"
+    EntityUsage="TblStdReg"
+    AliasName="TOT_AGE"/>
+  <ViewAttribute
+    Name="AdmissionType"
+    PrecisionRule="true"
+    EntityAttrName="AdmissionType"
+    EntityUsage="TblStdReg"
+    AliasName="ADMISSION_TYPE"
+    LOVName="LOV_AdmissionType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>

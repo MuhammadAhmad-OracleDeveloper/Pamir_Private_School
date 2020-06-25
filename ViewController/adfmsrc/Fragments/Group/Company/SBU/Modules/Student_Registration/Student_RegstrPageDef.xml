@@ -78,8 +78,6 @@
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_LookupBloodGroup" id="LookupBloodGroup"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_LookupMotherTounge"
-          id="LookupMotherTounge" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="TblStdRegView1Iterator" id="JoinDate">
       <AttrNames>
         <Item Value="JoinDate"/>
@@ -326,11 +324,12 @@
           <Item Value="SectionsId"/>
           <Item Value="Ast"/>
           <Item Value="EmirId"/>
+          <Item Value="AcadYearId"/>
           <Item Value="FirstName"/>
           <Item Value="LastName"/>
           <Item Value="Dob"/>
-          <Item Value="ContNumber"/>
-          <Item Value="ContPerson"/>
+          <Item Value="Gender"/>
+          <Item Value="AdmissionType"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -361,6 +360,70 @@
     <attributeValues IterBinding="TblStdRegView1Iterator" id="ScholarDiscPerc">
       <AttrNames>
         <Item Value="ScholarDiscPerc"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_LookupMotherTounge"
+          id="LookupMotherTounge" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="FatherEmirId">
+      <AttrNames>
+        <Item Value="FatherEmirId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="FatherPassNo">
+      <AttrNames>
+        <Item Value="FatherPassNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="MotherEmirId">
+      <AttrNames>
+        <Item Value="MotherEmirId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="MotherPassNo">
+      <AttrNames>
+        <Item Value="MotherPassNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="Address">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="ContNumber">
+      <AttrNames>
+        <Item Value="ContNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="EmirArea">
+      <AttrNames>
+        <Item Value="EmirArea"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="ContPerson">
+      <AttrNames>
+        <Item Value="ContPerson"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="ContRelation">
+      <AttrNames>
+        <Item Value="ContRelation"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="ContEmail">
+      <AttrNames>
+        <Item Value="ContEmail"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_LookupElecGroup" id="LookupElecGroup"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="RegFee">
+      <AttrNames>
+        <Item Value="RegFee"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="TotAge">
+      <AttrNames>
+        <Item Value="TotAge"/>
       </AttrNames>
     </attributeValues>
   </bindings>

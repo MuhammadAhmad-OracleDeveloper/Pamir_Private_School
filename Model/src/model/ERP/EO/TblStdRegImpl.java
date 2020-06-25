@@ -84,6 +84,27 @@ public class TblStdRegImpl extends EntityImpl {
         RefDocNo,
         ScholarDiscPerc,
         CompanySbuId,
+        AcadYearId,
+        Address,
+        ContEmail,
+        ContNumber,
+        ContPerson,
+        ContRelation,
+        Dob,
+        EligStatus,
+        EmirArea,
+        EmirId,
+        FatherEmirId,
+        FatherPassNo,
+        FirstName,
+        Gender,
+        LastName,
+        LookupElecGroup,
+        MotherEmirId,
+        MotherPassNo,
+        RegFee,
+        TotAge,
+        AdmissionType,
         TblStdEnq,
         TblGrade,
         TblLookupDetail,
@@ -183,6 +204,27 @@ public class TblStdRegImpl extends EntityImpl {
     public static final int REFDOCNO = AttributesEnum.RefDocNo.index();
     public static final int SCHOLARDISCPERC = AttributesEnum.ScholarDiscPerc.index();
     public static final int COMPANYSBUID = AttributesEnum.CompanySbuId.index();
+    public static final int ACADYEARID = AttributesEnum.AcadYearId.index();
+    public static final int ADDRESS = AttributesEnum.Address.index();
+    public static final int CONTEMAIL = AttributesEnum.ContEmail.index();
+    public static final int CONTNUMBER = AttributesEnum.ContNumber.index();
+    public static final int CONTPERSON = AttributesEnum.ContPerson.index();
+    public static final int CONTRELATION = AttributesEnum.ContRelation.index();
+    public static final int DOB = AttributesEnum.Dob.index();
+    public static final int ELIGSTATUS = AttributesEnum.EligStatus.index();
+    public static final int EMIRAREA = AttributesEnum.EmirArea.index();
+    public static final int EMIRID = AttributesEnum.EmirId.index();
+    public static final int FATHEREMIRID = AttributesEnum.FatherEmirId.index();
+    public static final int FATHERPASSNO = AttributesEnum.FatherPassNo.index();
+    public static final int FIRSTNAME = AttributesEnum.FirstName.index();
+    public static final int GENDER = AttributesEnum.Gender.index();
+    public static final int LASTNAME = AttributesEnum.LastName.index();
+    public static final int LOOKUPELECGROUP = AttributesEnum.LookupElecGroup.index();
+    public static final int MOTHEREMIRID = AttributesEnum.MotherEmirId.index();
+    public static final int MOTHERPASSNO = AttributesEnum.MotherPassNo.index();
+    public static final int REGFEE = AttributesEnum.RegFee.index();
+    public static final int TOTAGE = AttributesEnum.TotAge.index();
+    public static final int ADMISSIONTYPE = AttributesEnum.AdmissionType.index();
     public static final int TBLSTDENQ = AttributesEnum.TblStdEnq.index();
     public static final int TBLGRADE = AttributesEnum.TblGrade.index();
     public static final int TBLLOOKUPDETAIL = AttributesEnum.TblLookupDetail.index();
@@ -1170,6 +1212,343 @@ public class TblStdRegImpl extends EntityImpl {
      */
     public void setCompanySbuId(Number value) {
         setAttributeInternal(COMPANYSBUID, value);
+    }
+
+    /**
+     * Gets the attribute value for AcadYearId, using the alias name AcadYearId.
+     * @return the value of AcadYearId
+     */
+    public BigDecimal getAcadYearId() {
+        return (BigDecimal) getAttributeInternal(ACADYEARID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for AcadYearId.
+     * @param value value to set the AcadYearId
+     */
+    public void setAcadYearId(BigDecimal value) {
+        setAttributeInternal(ACADYEARID, value);
+    }
+
+    /**
+     * Gets the attribute value for Address, using the alias name Address.
+     * @return the value of Address
+     */
+    public String getAddress() {
+        return (String) getAttributeInternal(ADDRESS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Address.
+     * @param value value to set the Address
+     */
+    public void setAddress(String value) {
+        setAttributeInternal(ADDRESS, value);
+    }
+
+    /**
+     * Gets the attribute value for ContEmail, using the alias name ContEmail.
+     * @return the value of ContEmail
+     */
+    public String getContEmail() {
+        return (String) getAttributeInternal(CONTEMAIL);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ContEmail.
+     * @param value value to set the ContEmail
+     */
+    public void setContEmail(String value) {
+        setAttributeInternal(CONTEMAIL, value);
+    }
+
+    /**
+     * Gets the attribute value for ContNumber, using the alias name ContNumber.
+     * @return the value of ContNumber
+     */
+    public String getContNumber() {
+        return (String) getAttributeInternal(CONTNUMBER);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ContNumber.
+     * @param value value to set the ContNumber
+     */
+    public void setContNumber(String value) {
+        setAttributeInternal(CONTNUMBER, value);
+    }
+
+    /**
+     * Gets the attribute value for ContPerson, using the alias name ContPerson.
+     * @return the value of ContPerson
+     */
+    public String getContPerson() {
+        return (String) getAttributeInternal(CONTPERSON);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ContPerson.
+     * @param value value to set the ContPerson
+     */
+    public void setContPerson(String value) {
+        setAttributeInternal(CONTPERSON, value);
+    }
+
+    /**
+     * Gets the attribute value for ContRelation, using the alias name ContRelation.
+     * @return the value of ContRelation
+     */
+    public String getContRelation() {
+        return (String) getAttributeInternal(CONTRELATION);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ContRelation.
+     * @param value value to set the ContRelation
+     */
+    public void setContRelation(String value) {
+        setAttributeInternal(CONTRELATION, value);
+    }
+
+    /**
+     * Gets the attribute value for Dob, using the alias name Dob.
+     * @return the value of Dob
+     */
+    public Timestamp getDob() {
+        return (Timestamp) getAttributeInternal(DOB);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Dob.
+     * @param value value to set the Dob
+     */
+    public void setDob(Timestamp value) {
+        setAttributeInternal(DOB, value);
+    }
+
+    /**
+     * Gets the attribute value for EligStatus, using the alias name EligStatus.
+     * @return the value of EligStatus
+     */
+    public String getEligStatus() {
+        return (String) getAttributeInternal(ELIGSTATUS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for EligStatus.
+     * @param value value to set the EligStatus
+     */
+    public void setEligStatus(String value) {
+        setAttributeInternal(ELIGSTATUS, value);
+    }
+
+    /**
+     * Gets the attribute value for EmirArea, using the alias name EmirArea.
+     * @return the value of EmirArea
+     */
+    public String getEmirArea() {
+        return (String) getAttributeInternal(EMIRAREA);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for EmirArea.
+     * @param value value to set the EmirArea
+     */
+    public void setEmirArea(String value) {
+        setAttributeInternal(EMIRAREA, value);
+    }
+
+    /**
+     * Gets the attribute value for EmirId, using the alias name EmirId.
+     * @return the value of EmirId
+     */
+    public String getEmirId() {
+        return (String) getAttributeInternal(EMIRID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for EmirId.
+     * @param value value to set the EmirId
+     */
+    public void setEmirId(String value) {
+        setAttributeInternal(EMIRID, value);
+    }
+
+    /**
+     * Gets the attribute value for FatherEmirId, using the alias name FatherEmirId.
+     * @return the value of FatherEmirId
+     */
+    public String getFatherEmirId() {
+        return (String) getAttributeInternal(FATHEREMIRID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FatherEmirId.
+     * @param value value to set the FatherEmirId
+     */
+    public void setFatherEmirId(String value) {
+        setAttributeInternal(FATHEREMIRID, value);
+    }
+
+    /**
+     * Gets the attribute value for FatherPassNo, using the alias name FatherPassNo.
+     * @return the value of FatherPassNo
+     */
+    public String getFatherPassNo() {
+        return (String) getAttributeInternal(FATHERPASSNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FatherPassNo.
+     * @param value value to set the FatherPassNo
+     */
+    public void setFatherPassNo(String value) {
+        setAttributeInternal(FATHERPASSNO, value);
+    }
+
+    /**
+     * Gets the attribute value for FirstName, using the alias name FirstName.
+     * @return the value of FirstName
+     */
+    public String getFirstName() {
+        return (String) getAttributeInternal(FIRSTNAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FirstName.
+     * @param value value to set the FirstName
+     */
+    public void setFirstName(String value) {
+        setAttributeInternal(FIRSTNAME, value);
+    }
+
+    /**
+     * Gets the attribute value for Gender, using the alias name Gender.
+     * @return the value of Gender
+     */
+    public String getGender() {
+        return (String) getAttributeInternal(GENDER);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Gender.
+     * @param value value to set the Gender
+     */
+    public void setGender(String value) {
+        setAttributeInternal(GENDER, value);
+    }
+
+    /**
+     * Gets the attribute value for LastName, using the alias name LastName.
+     * @return the value of LastName
+     */
+    public String getLastName() {
+        return (String) getAttributeInternal(LASTNAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for LastName.
+     * @param value value to set the LastName
+     */
+    public void setLastName(String value) {
+        setAttributeInternal(LASTNAME, value);
+    }
+
+    /**
+     * Gets the attribute value for LookupElecGroup, using the alias name LookupElecGroup.
+     * @return the value of LookupElecGroup
+     */
+    public BigDecimal getLookupElecGroup() {
+        return (BigDecimal) getAttributeInternal(LOOKUPELECGROUP);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for LookupElecGroup.
+     * @param value value to set the LookupElecGroup
+     */
+    public void setLookupElecGroup(BigDecimal value) {
+        setAttributeInternal(LOOKUPELECGROUP, value);
+    }
+
+    /**
+     * Gets the attribute value for MotherEmirId, using the alias name MotherEmirId.
+     * @return the value of MotherEmirId
+     */
+    public String getMotherEmirId() {
+        return (String) getAttributeInternal(MOTHEREMIRID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for MotherEmirId.
+     * @param value value to set the MotherEmirId
+     */
+    public void setMotherEmirId(String value) {
+        setAttributeInternal(MOTHEREMIRID, value);
+    }
+
+    /**
+     * Gets the attribute value for MotherPassNo, using the alias name MotherPassNo.
+     * @return the value of MotherPassNo
+     */
+    public String getMotherPassNo() {
+        return (String) getAttributeInternal(MOTHERPASSNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for MotherPassNo.
+     * @param value value to set the MotherPassNo
+     */
+    public void setMotherPassNo(String value) {
+        setAttributeInternal(MOTHERPASSNO, value);
+    }
+
+    /**
+     * Gets the attribute value for RegFee, using the alias name RegFee.
+     * @return the value of RegFee
+     */
+    public BigDecimal getRegFee() {
+        return (BigDecimal) getAttributeInternal(REGFEE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for RegFee.
+     * @param value value to set the RegFee
+     */
+    public void setRegFee(BigDecimal value) {
+        setAttributeInternal(REGFEE, value);
+    }
+
+    /**
+     * Gets the attribute value for TotAge, using the alias name TotAge.
+     * @return the value of TotAge
+     */
+    public String getTotAge() {
+        return (String) getAttributeInternal(TOTAGE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TotAge.
+     * @param value value to set the TotAge
+     */
+    public void setTotAge(String value) {
+        setAttributeInternal(TOTAGE, value);
+    }
+
+
+    /**
+     * Gets the attribute value for AdmissionType, using the alias name AdmissionType.
+     * @return the value of AdmissionType
+     */
+    public String getAdmissionType() {
+        return (String) getAttributeInternal(ADMISSIONTYPE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for AdmissionType.
+     * @param value value to set the AdmissionType
+     */
+    public void setAdmissionType(String value) {
+        setAttributeInternal(ADMISSIONTYPE, value);
     }
 
     /**
