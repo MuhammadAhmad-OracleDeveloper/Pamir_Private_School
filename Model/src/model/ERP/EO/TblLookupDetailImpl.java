@@ -415,18 +415,18 @@ public class TblLookupDetailImpl extends EntityImpl {
      */
     protected void doDML(int operation, TransactionEvent e) {
         Number loginId = null;
-                 try {
-                     loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessRID"));
-                 } catch(Exception ex) {
-                     ex.printStackTrace();
-                 }
-                 
-                 if (operation == DML_INSERT) {
-                     setCreatedBy(loginId);
-                     setUpdatedBy(loginId);
-                     } else if(operation == DML_UPDATE) {
-                     setUpdatedBy(loginId);
-                 }
+         try {
+             loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessRID"));
+         } catch(Exception ex) {
+             ex.printStackTrace();
+         }
+         
+         if (operation == DML_INSERT) {
+             setCreatedBy(loginId);
+             setUpdatedBy(loginId);
+             } else if(operation == DML_UPDATE) {
+             setUpdatedBy(loginId);
+         }
         super.doDML(operation, e);
     }
 }

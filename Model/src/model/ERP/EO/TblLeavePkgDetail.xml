@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="TBL_LEAVE_PKG_DETAIL"
   AliasName="TblLeavePkgDetail"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.ERP.EO.TblLeavePkgDetailImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="Id"
     IsNotNull="true"
@@ -93,7 +98,7 @@
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_LEAVE_PKG_DETAIL"/>
   <Attribute
@@ -107,7 +112,7 @@
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_LEAVE_PKG_DETAIL"/>
   <AccessorAttribute

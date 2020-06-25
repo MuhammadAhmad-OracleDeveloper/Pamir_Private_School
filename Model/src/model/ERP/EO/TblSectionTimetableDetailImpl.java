@@ -350,31 +350,19 @@ public class TblSectionTimetableDetailImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        Number userId = null;
-        Number cmpnyId = null;
-        Number sbuId = null;
+        Number loginId = null;
          try {
-             userId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUMID"));
-             cmpnyId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessCmpnyID"));
-             sbuId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessSBUID"));
+             loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessRID"));
          } catch(Exception ex) {
              ex.printStackTrace();
          }
          
-//         if (operation == DML_INSERT) {
-//
-//             setGroupCompanyId(cmpnyId);
-//             setCompanySbuId(sbuId);
-//
-//             setCreatedBy(userId);
-//             setUpdatedBy(userId);
-//             } else if(operation == DML_UPDATE) {
-//             
-//             setGroupCompanyId(cmpnyId);
-//             setCompanySbuId(sbuId);
-//             
-//             setUpdatedBy(userId);
-//         }
+         if (operation == DML_INSERT) {
+             setCreatedBy(loginId);
+             setUpdatedBy(loginId);
+             } else if(operation == DML_UPDATE) {
+             setUpdatedBy(loginId);
+         }
         super.doDML(operation, e);
     }
 }

@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="TBL_PRO_ISS_DETAIL_D"
   AliasName="TblProIssDetailD"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.ERP.EO.TblProIssDetailDImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="Id"
     ColumnName="ID"
@@ -95,7 +100,7 @@
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_PRO_ISS_DETAIL_D"/>
   <Attribute
@@ -109,7 +114,7 @@
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_PRO_ISS_DETAIL_D"/>
   <AccessorAttribute
