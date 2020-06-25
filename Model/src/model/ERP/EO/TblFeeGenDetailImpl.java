@@ -342,20 +342,22 @@ public class TblFeeGenDetailImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        Number loginId = null;
+        Number userId = null;
          try {
-             loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessRID"));
+             userId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUMID"));
          } catch(Exception ex) {
              ex.printStackTrace();
          }
          
          if (operation == DML_INSERT) {
-             setCreatedBy(loginId);
-             setUpdatedBy(loginId);
+             
+             setCreatedBy(userId);
+             setUpdatedBy(userId);
              } else if(operation == DML_UPDATE) {
-             setUpdatedBy(loginId);
+             
+             setUpdatedBy(userId);
          }
         super.doDML(operation, e);
-    }
+        }
 }
 

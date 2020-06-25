@@ -252,15 +252,15 @@ public class TblStdEnqImpl extends EntityImpl {
      * Gets the attribute value for TotAge, using the alias name TotAge.
      * @return the value of TotAge
      */
-    public Timestamp getTotAge() {
-        return (Timestamp) getAttributeInternal(TOTAGE);
+    public String getTotAge() {
+        return (String) getAttributeInternal(TOTAGE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for TotAge.
      * @param value value to set the TotAge
      */
-    public void setTotAge(Timestamp value) {
+    public void setTotAge(String value) {
         setAttributeInternal(TOTAGE, value);
     }
 

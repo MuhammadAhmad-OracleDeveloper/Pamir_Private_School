@@ -471,25 +471,6 @@
   <EntityUsage
     Name="TblStdReg"
     Entity="model.ERP.EO.TblStdReg"/>
-  <EntityUsage
-    Name="TblStdEnq"
-    Entity="model.ERP.EO.TblStdEnq"
-    Association="model.ERP.EO.FkStdRegEnqAssoc"
-    AssociationEnd="model.ERP.EO.FkStdRegEnqAssoc.TblStdEnq"
-    SourceUsage="model.ERP.VO.TblStdRegView.TblStdReg"
-    ReadOnly="true"
-    Reference="true"
-    DeleteParticipant="false"
-    JoinType="LEFT OUTER JOIN">
-    <DesignTime>
-      <AttrArray Name="_dstAttributes">
-        <Item Value="model.ERP.EO.TblStdEnq.Id"/>
-      </AttrArray>
-      <AttrArray Name="_srcAttributes">
-        <Item Value="model.ERP.EO.TblStdReg.StdEnqId"/>
-      </AttrArray>
-    </DesignTime>
-  </EntityUsage>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
