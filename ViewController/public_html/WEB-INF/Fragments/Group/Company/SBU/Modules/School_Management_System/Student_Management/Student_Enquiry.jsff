@@ -80,7 +80,7 @@
                       <af:convertDateTime pattern="#{bindings.TblStdEnqView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>-->
-                  <af:column headerText="#{bindings.TblStdEnqView1.hints.Dated.label}" id="c2">
+                  <af:column headerText="Dated" id="c2">
                     <af:inputDate value="#{row.bindings.Dated.inputValue}"
                                   label="#{bindings.TblStdEnqView1.hints.Dated.label}"
                                   required="#{bindings.TblStdEnqView1.hints.Dated.mandatory}"
@@ -218,11 +218,11 @@
                     <af:convertDateTime pattern="#{bindings.Dob.format}"/>
                   </af:inputDate>
                   <af:spacer  id="s4"/>
-                  <af:inputText value="#{bindings.TotAge.inputValue}" label="#{bindings.TotAge.hints.label}"
+                  <af:inputText value="#{bindings.TotAge.inputValue}" label="Total Age"
                                 required="#{bindings.TotAge.hints.mandatory}"
-                                columns="#{bindings.TotAge.hints.displayWidth}"
+                                columns="20"
                                 maximumLength="#{bindings.TotAge.hints.precision}"
-                                shortDesc="#{bindings.TotAge.hints.tooltip}" id="it16">
+                                shortDesc="#{bindings.TotAge.hints.tooltip}" id="it16" contentStyle="width:200px;" disabled="true">
                     <f:validator binding="#{bindings.TotAge.validator}"/>
                   </af:inputText>
                   <af:spacer  id="s6"/>

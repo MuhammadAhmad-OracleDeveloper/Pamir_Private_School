@@ -832,8 +832,7 @@
     Type="java.lang.String"
     ColumnType="CHAR"
     TableName="TBL_STD_REG"
-    RetrievedOnUpdate="true"
-    RetrievedOnInsert="true">
+    IsNotNull="true">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="3"/>
     </DesignTime>
@@ -944,6 +943,18 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.ERP.EO.TblStdReg.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="TblStdRegAdmissionTypeCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"ADMISSION_TYPE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TBL_STD_REG_ADMISSION_TYPE_CHE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblStdReg.AdmissionType"/>
     </AttrArray>
   </Key>
   <Key

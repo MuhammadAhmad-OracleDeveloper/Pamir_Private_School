@@ -334,7 +334,7 @@
                                 required="#{bindings.TotAge.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.TotAge.hints.precision}"
-                                shortDesc="#{bindings.TotAge.hints.tooltip}" id="it73" contentStyle="width:200px;">
+                                shortDesc="#{bindings.TotAge.hints.tooltip}" id="it73" contentStyle="width:200px;" disabled="true">
                     <f:validator binding="#{bindings.TotAge.validator}"/>
                   </af:inputText>
                   <af:spacer  id="s53"/>
@@ -447,8 +447,7 @@
                     <f:selectItems value="#{bindings.LookupBloodGroup.items}" id="si7"/>
                     <f:validator binding="#{bindings.LookupBloodGroup.validator}"/>
                   </af:selectOneChoice>
-                  <af:spacer  id="s7"/>
-                  <af:spacer  id="s15"/>
+                 <af:spacer  id="s15"/>
                   <af:inputDate value="#{bindings.JoinDate.inputValue}" label="Joining Date"
                                 required="#{bindings.JoinDate.hints.mandatory}"
                                 columns="#{bindings.JoinDate.hints.displayWidth}"
