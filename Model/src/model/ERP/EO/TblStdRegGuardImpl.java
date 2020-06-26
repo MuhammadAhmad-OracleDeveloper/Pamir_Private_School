@@ -35,6 +35,8 @@ public class TblStdRegGuardImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        GuardianEmirId,
+        GuardianPassNo,
         TblStdReg;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -58,6 +60,7 @@ public class TblStdRegGuardImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int STDREGID = AttributesEnum.StdRegId.index();
     public static final int NAME = AttributesEnum.Name.index();
@@ -71,12 +74,21 @@ public class TblStdRegGuardImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int GUARDIANEMIRID = AttributesEnum.GuardianEmirId.index();
+    public static final int GUARDIANPASSNO = AttributesEnum.GuardianPassNo.index();
     public static final int TBLSTDREG = AttributesEnum.TblStdReg.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblStdRegGuardImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblStdRegGuard");
     }
 
     /**
@@ -272,6 +284,38 @@ public class TblStdRegGuardImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for GuardianEmirId, using the alias name GuardianEmirId.
+     * @return the value of GuardianEmirId
+     */
+    public String getGuardianEmirId() {
+        return (String) getAttributeInternal(GUARDIANEMIRID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GuardianEmirId.
+     * @param value value to set the GuardianEmirId
+     */
+    public void setGuardianEmirId(String value) {
+        setAttributeInternal(GUARDIANEMIRID, value);
+    }
+
+    /**
+     * Gets the attribute value for GuardianPassNo, using the alias name GuardianPassNo.
+     * @return the value of GuardianPassNo
+     */
+    public String getGuardianPassNo() {
+        return (String) getAttributeInternal(GUARDIANPASSNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GuardianPassNo.
+     * @param value value to set the GuardianPassNo
+     */
+    public void setGuardianPassNo(String value) {
+        setAttributeInternal(GUARDIANPASSNO, value);
+    }
+
+    /**
      * @return the associated entity TblStdRegImpl.
      */
     public TblStdRegImpl getTblStdReg() {
@@ -285,6 +329,7 @@ public class TblStdRegGuardImpl extends EntityImpl {
         setAttributeInternal(TBLSTDREG, value);
     }
 
+
     /**
      * @param id key constituent
 
@@ -292,13 +337,6 @@ public class TblStdRegGuardImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblStdRegGuard");
     }
 
     /**

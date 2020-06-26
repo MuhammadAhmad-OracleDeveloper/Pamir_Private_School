@@ -151,6 +151,30 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_STD_REG_GUARD"/>
+  <Attribute
+    Name="GuardianEmirId"
+    Precision="150"
+    ColumnName="GUARDIAN_EMIR_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_STD_REG_GUARD">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="GuardianPassNo"
+    Precision="150"
+    ColumnName="GUARDIAN_PASS_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_STD_REG_GUARD">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblStdReg"
     Association="model.ERP.EO.FkStdRegGuardRegAssoc"

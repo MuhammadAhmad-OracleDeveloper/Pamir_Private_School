@@ -884,6 +884,38 @@
                       <f:validator binding="#{row.bindings.GuardRelation.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
+                  <af:column headerText="Emirates ID" id="c19" sortable="true" filterable="true">
+                   <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.GuardianEmirId}"
+       id="it76" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.GuardianEmirId.inputValue}"
+                                  label="#{bindings.TblStdRegGuardView2.hints.GuardianEmirId.label}"
+                                  required="#{bindings.TblStdRegGuardView2.hints.GuardianEmirId.mandatory}"
+                                  columns="#{bindings.TblStdRegGuardView2.hints.GuardianEmirId.displayWidth}"
+                                  maximumLength="#{bindings.TblStdRegGuardView2.hints.GuardianEmirId.precision}"
+                                  shortDesc="#{bindings.TblStdRegGuardView2.hints.GuardianEmirId.tooltip}" id="it75"
+                                  contentStyle="text-align:right;">
+                      <f:validator binding="#{row.bindings.GuardianEmirId.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="Passport No." id="c30" sortable="true" filterable="true">
+                   <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.GuardianPassNo}"
+       id="it78" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.GuardianPassNo.inputValue}"
+                                  label="#{bindings.TblStdRegGuardView2.hints.GuardianPassNo.label}"
+                                  required="#{bindings.TblStdRegGuardView2.hints.GuardianPassNo.mandatory}"
+                                  columns="#{bindings.TblStdRegGuardView2.hints.GuardianPassNo.displayWidth}"
+                                  maximumLength="#{bindings.TblStdRegGuardView2.hints.GuardianPassNo.precision}"
+                                  shortDesc="#{bindings.TblStdRegGuardView2.hints.GuardianPassNo.tooltip}" id="it77"
+                                  contentStyle="text-align:right;">
+                      <f:validator binding="#{row.bindings.GuardianPassNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
                   <af:column sortProperty="#{bindings.TblStdRegGuardView2.hints.ContactNumber.name}" filterable="true"
                              sortable="true" headerText="Contact Number"
                              id="c23" align="left">
@@ -899,23 +931,6 @@
                                   maximumLength="#{bindings.TblStdRegGuardView2.hints.ContactNumber.precision}"
                                   shortDesc="#{bindings.TblStdRegGuardView2.hints.ContactNumber.tooltip}" id="it36" contentStyle="text-align:right;">
                       <f:validator binding="#{row.bindings.ContactNumber.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblStdRegGuardView2.hints.Address.name}" filterable="true"
-                             sortable="true" headerText="Address" id="c24"
-                             align="left">
-                             <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.Address}"
-       id="it59" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                    <af:inputText value="#{row.bindings.Address.inputValue}"
-                                  label="#{bindings.TblStdRegGuardView2.hints.Address.label}"
-                                  required="#{bindings.TblStdRegGuardView2.hints.Address.mandatory}"
-                                  columns="#{bindings.TblStdRegGuardView2.hints.Address.displayWidth}"
-                                  maximumLength="#{bindings.TblStdRegGuardView2.hints.Address.precision}"
-                                  shortDesc="#{bindings.TblStdRegGuardView2.hints.Address.tooltip}" id="it37">
-                      <f:validator binding="#{row.bindings.Address.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdRegGuardView2.hints.Mobile1.name}" filterable="true"
@@ -950,6 +965,20 @@
                                   maximumLength="#{bindings.TblStdRegGuardView2.hints.Mobile2.precision}"
                                   shortDesc="#{bindings.TblStdRegGuardView2.hints.Mobile2.tooltip}" id="it39" contentStyle="text-align:right;">
                       <f:validator binding="#{row.bindings.Mobile2.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStdRegGuardView2.hints.Address.name}" filterable="true"
+                             sortable="true" headerText="Address" id="c24" align="left" width="200">
+                    <f:facet name="filter">
+                      <af:inputText value="#{vs.filterCriteria.Address}" id="it59" placeholder="Search "/>
+                    </f:facet>
+                    <af:inputText value="#{row.bindings.Address.inputValue}"
+                                  label="#{bindings.TblStdRegGuardView2.hints.Address.label}"
+                                  required="#{bindings.TblStdRegGuardView2.hints.Address.mandatory}"
+                                  columns="#{bindings.TblStdRegGuardView2.hints.Address.displayWidth}"
+                                  maximumLength="#{bindings.TblStdRegGuardView2.hints.Address.precision}"
+                                  shortDesc="#{bindings.TblStdRegGuardView2.hints.Address.tooltip}" id="it37">
+                      <f:validator binding="#{row.bindings.Address.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdRegGuardView2.hints.Ast.name}" filterable="true"
