@@ -30,7 +30,7 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr2">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2" halign="center">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1" text="Registration">
                 <af:table value="#{bindings.TblStdRegView1.collectionModel}" var="row"
@@ -264,7 +264,7 @@
       </af:inputText>
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
-                                        required="#{bindings.TblStdRegView1.hints.GradeId.mandatory}"
+                                        required="#{bindings.TblStdRegView1.hints.GradeId.mandatory}" autoSubmit="true"
                                         shortDesc="#{bindings.TblStdRegView1.hints.GradeId.tooltip}" id="soc2"
                                         contentStyle="text-align: left">
                       <f:selectItems value="#{row.bindings.GradeId.items}" id="si2"/>
@@ -303,16 +303,7 @@
                     </af:selectOneChoice>
                   </af:column>
                 </af:table>
-               
-              </af:showDetailItem>
-              
-            </af:panelTabbed>
-           
-          </af:gridCell>
-        </af:gridRow>
-        <af:gridRow marginTop="5px" height="auto" id="gr3">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
-            <af:panelGroupLayout id="pgl3" layout="horizontal">
+                <af:panelGroupLayout id="pgl3" layout="horizontal" halign="center">
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -323,6 +314,15 @@
                                 <af:spacer width="5" height="10" id="s5"/>
                             </af:iterator>
                         </af:panelGroupLayout>
+              </af:showDetailItem>
+              
+            </af:panelTabbed>
+           
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3" halign="center">
+          
           </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr4">
@@ -463,7 +463,7 @@
                     <f:validator binding="#{bindings.SpecialNeed.validator}"/>
                   </af:selectOneChoice>
                   <f:facet name="footer">
-                    <af:panelGroupLayout layout="horizontal" id="pgl5">
+                    <af:panelGroupLayout layout="horizontal" id="pgl5" halign="center">
                       <af:button actionListener="#{bindings.First.execute}" text="First"
                                  disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b19"/>
                       <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
@@ -653,7 +653,7 @@
                     <f:validator binding="#{bindings.PerAddress.validator}"/>
                   </af:inputText>
                   <f:facet name="footer">
-                    <af:panelGroupLayout layout="horizontal" id="pgl6">
+                    <af:panelGroupLayout layout="horizontal" id="pgl6" halign="center">
                       <af:button actionListener="#{bindings.First.execute}" text="First"
                                  disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b6"/>
                       <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
@@ -757,7 +757,7 @@
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.StaffDiscValue.format}"/>
                   </af:inputText>
                   <f:facet name="footer">
-                    <af:panelGroupLayout layout="horizontal" id="pgl7">
+                    <af:panelGroupLayout layout="horizontal" id="pgl7" halign="center">
                       <af:button actionListener="#{bindings.First.execute}" text="First"
                                  disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b11"/>
                       <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
@@ -807,7 +807,7 @@
                     <f:validator binding="#{bindings.TransReq.validator}"/>
                   </af:selectOneChoice>
                   <f:facet name="footer">
-                      <af:panelGroupLayout layout="horizontal" id="pgl8">
+                      <af:panelGroupLayout layout="horizontal" id="pgl8" halign="center">
                         <af:button actionListener="#{bindings.First.execute}" text="First"
                                    disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b15"/>
                         <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
@@ -997,7 +997,7 @@
                   </af:column>
                 </af:table>
                 <af:spacer width="40" height="40" id="s14"/>
-                <af:panelGroupLayout id="pgl2" layout="horizontal">
+                <af:panelGroupLayout id="pgl2" layout="horizontal" halign="center">
                             <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -1049,7 +1049,7 @@
                                       </af:inputText>
                                 </f:facet>
                       <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}"
-                                          label="#{row.bindings.GradeId.label}"
+                                          label="#{row.bindings.GradeId.label}" autoSubmit="true"
                                           required="#{bindings.TblStdRegSibView3.hints.GradeId.mandatory}"
                                           shortDesc="#{bindings.TblStdRegSibView3.hints.GradeId.tooltip}" id="soc17"
                                           contentStyle="text-align: left">
@@ -1091,7 +1091,7 @@
                     </af:column>
                   </af:table>
                   <af:spacer width="10" height="40" id="s17"/>
-                  <af:panelGroupLayout id="pgl10" layout="horizontal">
+                  <af:panelGroupLayout id="pgl10" layout="horizontal" halign="center">
                             <af:iterator id="i3" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"

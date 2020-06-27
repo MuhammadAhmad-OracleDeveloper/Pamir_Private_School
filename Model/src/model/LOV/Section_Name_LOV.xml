@@ -8,9 +8,11 @@
   InheritPersonalization="merge"
   SelectList="TblSections.ID, 
        TblSections.NAME, 
-       TblSections.AST"
+       TblSections.AST, 
+       TblSections.GRADE_ID"
   FromList="TBL_SECTIONS TblSections"
-  Where="AST='Y'"
+  Where="AST='Y'  
+and TblSections.GRADE_ID = :getGrade"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full">
@@ -20,6 +22,10 @@
         ResId="model.LOV.Section_Name_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <Variable
+    Name="getGrade"
+    Kind="where"
+    Type="java.math.BigDecimal"/>
   <EntityUsage
     Name="TblSections"
     Entity="model.ERP.EO.TblSections"/>
@@ -42,6 +48,12 @@
     EntityAttrName="Ast"
     EntityUsage="TblSections"
     AliasName="AST"/>
+  <ViewAttribute
+    Name="GradeId"
+    PrecisionRule="true"
+    EntityAttrName="GradeId"
+    EntityUsage="TblSections"
+    AliasName="GRADE_ID"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
