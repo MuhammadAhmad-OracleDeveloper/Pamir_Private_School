@@ -63,6 +63,37 @@
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblStdRegView1.hints.Id.format}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column sortProperty="#{bindings.TblStdRegView1.hints.GradeId.name}" filterable="true"
+                             sortable="true" headerText="Grade" id="c7" align="left">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.GradeId}"
+       id="it31" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
+                                        required="#{bindings.TblStdRegView1.hints.GradeId.mandatory}" autoSubmit="true"
+                                        shortDesc="#{bindings.TblStdRegView1.hints.GradeId.tooltip}" id="soc2"
+                                        contentStyle="text-align: left">
+                      <f:selectItems value="#{row.bindings.GradeId.items}" id="si2"/>
+                      <f:validator binding="#{row.bindings.GradeId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStdRegView1.hints.SectionsId.name}" filterable="true"
+                             sortable="true" headerText="Section" id="c8" align="left">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.SectionsId}"
+       id="it32" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.SectionsId.inputValue}"
+                                        label="#{row.bindings.SectionsId.label}"
+                                        required="#{bindings.TblStdRegView1.hints.SectionsId.mandatory}"
+                                        shortDesc="#{bindings.TblStdRegView1.hints.SectionsId.tooltip}" id="soc3"
+                                        contentStyle="text-align: left">
+                      <f:selectItems value="#{row.bindings.SectionsId.items}" id="si3"/>
+                      <f:validator binding="#{row.bindings.SectionsId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
                   <af:column sortProperty="#{bindings.TblStdRegView1.hints.RegDate.name}" filterable="true"
                              sortable="true" headerText="Registration Date" id="c2" align="left">
                     <f:facet name="filter">
@@ -256,37 +287,7 @@
                       <f:validator binding="#{row.bindings.Gender.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblStdRegView1.hints.GradeId.name}" filterable="true"
-                             sortable="true" headerText="Grade" id="c7" align="left">
-                              <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.GradeId}"
-       id="it31" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                    <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
-                                        required="#{bindings.TblStdRegView1.hints.GradeId.mandatory}" autoSubmit="true"
-                                        shortDesc="#{bindings.TblStdRegView1.hints.GradeId.tooltip}" id="soc2"
-                                        contentStyle="text-align: left">
-                      <f:selectItems value="#{row.bindings.GradeId.items}" id="si2"/>
-                      <f:validator binding="#{row.bindings.GradeId.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblStdRegView1.hints.SectionsId.name}" filterable="true"
-                             sortable="true" headerText="Section" id="c8" align="left">
-                              <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.SectionsId}"
-       id="it32" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                    <af:selectOneChoice value="#{row.bindings.SectionsId.inputValue}"
-                                        label="#{row.bindings.SectionsId.label}"
-                                        required="#{bindings.TblStdRegView1.hints.SectionsId.mandatory}"
-                                        shortDesc="#{bindings.TblStdRegView1.hints.SectionsId.tooltip}" id="soc3"
-                                        contentStyle="text-align: left">
-                      <f:selectItems value="#{row.bindings.SectionsId.items}" id="si3"/>
-                      <f:validator binding="#{row.bindings.SectionsId.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
+                  
                   <af:column sortProperty="#{bindings.TblStdRegView1.hints.Ast.name}" filterable="true" sortable="true"
                              headerText="Active" id="c9" width="80" align="left">
                               <f:facet name="filter">
