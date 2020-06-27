@@ -89,6 +89,10 @@
     Name="Registration_Type_LOV1"
     ViewObjectName="model.LOV.Registration_Type_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Relationship_LOV1"
+    ViewObjectName="model.LOV.Lookup_Relationship_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_StdEnqId"
     ListVOName="Student_Enquiry_LOV1"
@@ -465,6 +469,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ContRelation"
+    ListVOName="Lookup_Relationship_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ContRelation"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -1013,7 +1035,15 @@
     PrecisionRule="true"
     EntityAttrName="ContRelation"
     EntityUsage="TblStdReg"
-    AliasName="CONT_RELATION"/>
+    AliasName="CONT_RELATION"
+    LOVName="LOV_ContRelation">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Dob"
     PrecisionRule="true"

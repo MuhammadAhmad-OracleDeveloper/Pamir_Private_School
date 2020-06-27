@@ -379,14 +379,13 @@
                     <f:validator binding="#{bindings.ContPerson.validator}"/>
                   </af:inputText>
                   <af:spacer  id="s47"/>
-                  <af:inputText value="#{bindings.ContRelation.inputValue}" label="Contact Relation"
-                                required="#{bindings.ContRelation.hints.mandatory}"
-                                columns="20"
-                                maximumLength="#{bindings.ContRelation.hints.precision}"
-                                shortDesc="#{bindings.ContRelation.hints.tooltip}" id="it70"
-                                contentStyle="width:200px;">
-                    <f:validator binding="#{bindings.ContRelation.validator}"/>
-                  </af:inputText>
+                  <af:selectOneChoice value="#{bindings.ContRelation1.inputValue}"
+                                      label="#{bindings.ContRelation1.label}"
+                                      required="#{bindings.ContRelation1.hints.mandatory}"
+                                      shortDesc="#{bindings.ContRelation1.hints.tooltip}" id="soc26">
+                    <f:selectItems value="#{bindings.ContRelation1.items}" id="si26"/>
+                    <f:validator binding="#{bindings.ContRelation1.validator}"/>
+                  </af:selectOneChoice>
                   <af:spacer  id="s49"/>
                   <af:inputText value="#{bindings.ContEmail.inputValue}" label="Contact Email"
                                 required="#{bindings.ContEmail.hints.mandatory}"
