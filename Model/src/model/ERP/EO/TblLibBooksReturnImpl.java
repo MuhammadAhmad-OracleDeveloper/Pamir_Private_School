@@ -31,6 +31,8 @@ public class TblLibBooksReturnImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        CompanySbuId,
+        GroupCompanyId,
         TblLibBooksIssueDetail;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -54,6 +56,8 @@ public class TblLibBooksReturnImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int DATED = AttributesEnum.Dated.index();
     public static final int LIBBOOKSISSUEDETAILID = AttributesEnum.LibBooksIssueDetailId.index();
@@ -63,6 +67,8 @@ public class TblLibBooksReturnImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int COMPANYSBUID = AttributesEnum.CompanySbuId.index();
+    public static final int GROUPCOMPANYID = AttributesEnum.GroupCompanyId.index();
     public static final int TBLLIBBOOKSISSUEDETAIL = AttributesEnum.TblLibBooksIssueDetail.index();
 
     /**
@@ -70,6 +76,14 @@ public class TblLibBooksReturnImpl extends EntityImpl {
      */
     public TblLibBooksReturnImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblLibBooksReturn");
+    }
+
 
     /**
      * Gets the attribute value for Id, using the alias name Id.
@@ -200,6 +214,38 @@ public class TblLibBooksReturnImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for CompanySbuId, using the alias name CompanySbuId.
+     * @return the value of CompanySbuId
+     */
+    public Number getCompanySbuId() {
+        return (Number) getAttributeInternal(COMPANYSBUID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CompanySbuId.
+     * @param value value to set the CompanySbuId
+     */
+    public void setCompanySbuId(Number value) {
+        setAttributeInternal(COMPANYSBUID, value);
+    }
+
+    /**
+     * Gets the attribute value for GroupCompanyId, using the alias name GroupCompanyId.
+     * @return the value of GroupCompanyId
+     */
+    public Number getGroupCompanyId() {
+        return (Number) getAttributeInternal(GROUPCOMPANYID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GroupCompanyId.
+     * @param value value to set the GroupCompanyId
+     */
+    public void setGroupCompanyId(Number value) {
+        setAttributeInternal(GROUPCOMPANYID, value);
+    }
+
+    /**
      * @return the associated entity TblLibBooksIssueDetailImpl.
      */
     public TblLibBooksIssueDetailImpl getTblLibBooksIssueDetail() {
@@ -213,6 +259,7 @@ public class TblLibBooksReturnImpl extends EntityImpl {
         setAttributeInternal(TBLLIBBOOKSISSUEDETAIL, value);
     }
 
+
     /**
      * @param id key constituent
 
@@ -220,13 +267,6 @@ public class TblLibBooksReturnImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblLibBooksReturn");
     }
 
     /**
@@ -242,18 +282,30 @@ public class TblLibBooksReturnImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        Number loginId = null;
+        Number userId = null;
+        Number cmpnyId = null;
+        Number sbuId = null;
          try {
-             loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessRID"));
+             userId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUMID"));
+             cmpnyId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessCmpnyID"));
+             sbuId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessSBUID"));
          } catch(Exception ex) {
              ex.printStackTrace();
          }
          
          if (operation == DML_INSERT) {
-             setCreatedBy(loginId);
-             setUpdatedBy(loginId);
+
+             setGroupCompanyId(cmpnyId);
+             setCompanySbuId(sbuId);
+
+             setCreatedBy(userId);
+             setUpdatedBy(userId);
              } else if(operation == DML_UPDATE) {
-             setUpdatedBy(loginId);
+             
+             setGroupCompanyId(cmpnyId);
+             setCompanySbuId(sbuId);
+             
+             setUpdatedBy(userId);
          }
         super.doDML(operation, e);
     }

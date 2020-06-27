@@ -42,6 +42,8 @@ public class TblLibBooksImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        CompanySbuId,
+        GroupCompanyId,
         TblLibAuthor,
         TblLibBooksCopy,
         TblLibBooksGrade,
@@ -71,6 +73,8 @@ public class TblLibBooksImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int DATED = AttributesEnum.Dated.index();
     public static final int NAME = AttributesEnum.Name.index();
@@ -90,6 +94,8 @@ public class TblLibBooksImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int COMPANYSBUID = AttributesEnum.CompanySbuId.index();
+    public static final int GROUPCOMPANYID = AttributesEnum.GroupCompanyId.index();
     public static final int TBLLIBAUTHOR = AttributesEnum.TblLibAuthor.index();
     public static final int TBLLIBBOOKSCOPY = AttributesEnum.TblLibBooksCopy.index();
     public static final int TBLLIBBOOKSGRADE = AttributesEnum.TblLibBooksGrade.index();
@@ -103,6 +109,14 @@ public class TblLibBooksImpl extends EntityImpl {
      */
     public TblLibBooksImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblLibBooks");
+    }
+
 
     /**
      * Gets the attribute value for Id, using the alias name Id.
@@ -393,6 +407,38 @@ public class TblLibBooksImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for CompanySbuId, using the alias name CompanySbuId.
+     * @return the value of CompanySbuId
+     */
+    public Number getCompanySbuId() {
+        return (Number) getAttributeInternal(COMPANYSBUID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CompanySbuId.
+     * @param value value to set the CompanySbuId
+     */
+    public void setCompanySbuId(Number value) {
+        setAttributeInternal(COMPANYSBUID, value);
+    }
+
+    /**
+     * Gets the attribute value for GroupCompanyId, using the alias name GroupCompanyId.
+     * @return the value of GroupCompanyId
+     */
+    public Number getGroupCompanyId() {
+        return (Number) getAttributeInternal(GROUPCOMPANYID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GroupCompanyId.
+     * @param value value to set the GroupCompanyId
+     */
+    public void setGroupCompanyId(Number value) {
+        setAttributeInternal(GROUPCOMPANYID, value);
+    }
+
+    /**
      * @return the associated entity TblLibAuthorImpl.
      */
     public TblLibAuthorImpl getTblLibAuthor() {
@@ -423,58 +469,59 @@ public class TblLibBooksImpl extends EntityImpl {
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblLibCategory() {
-        return (EntityImpl) getAttributeInternal(TBLLIBCATEGORY);
+    public TblLibCategoryImpl getTblLibCategory() {
+        return (TblLibCategoryImpl) getAttributeInternal(TBLLIBCATEGORY);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblLibCategory(EntityImpl value) {
+    public void setTblLibCategory(TblLibCategoryImpl value) {
         setAttributeInternal(TBLLIBCATEGORY, value);
     }
 
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblLibLanguage() {
-        return (EntityImpl) getAttributeInternal(TBLLIBLANGUAGE);
+    public TblLibLanguageImpl getTblLibLanguage() {
+        return (TblLibLanguageImpl) getAttributeInternal(TBLLIBLANGUAGE);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblLibLanguage(EntityImpl value) {
+    public void setTblLibLanguage(TblLibLanguageImpl value) {
         setAttributeInternal(TBLLIBLANGUAGE, value);
     }
 
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblLibPublisher() {
-        return (EntityImpl) getAttributeInternal(TBLLIBPUBLISHER);
+    public TblLibPublisherImpl getTblLibPublisher() {
+        return (TblLibPublisherImpl) getAttributeInternal(TBLLIBPUBLISHER);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblLibPublisher(EntityImpl value) {
+    public void setTblLibPublisher(TblLibPublisherImpl value) {
         setAttributeInternal(TBLLIBPUBLISHER, value);
     }
 
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblLibSubCategory() {
-        return (EntityImpl) getAttributeInternal(TBLLIBSUBCATEGORY);
+    public TblLibSubCategoryImpl getTblLibSubCategory() {
+        return (TblLibSubCategoryImpl) getAttributeInternal(TBLLIBSUBCATEGORY);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblLibSubCategory(EntityImpl value) {
+    public void setTblLibSubCategory(TblLibSubCategoryImpl value) {
         setAttributeInternal(TBLLIBSUBCATEGORY, value);
     }
+
 
     /**
      * @param id key constituent
@@ -483,13 +530,6 @@ public class TblLibBooksImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblLibBooks");
     }
 
     /**
@@ -505,18 +545,30 @@ public class TblLibBooksImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        Number loginId = null;
+        Number userId = null;
+        Number cmpnyId = null;
+        Number sbuId = null;
          try {
-             loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessRID"));
+             userId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUMID"));
+             cmpnyId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessCmpnyID"));
+             sbuId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessSBUID"));
          } catch(Exception ex) {
              ex.printStackTrace();
          }
          
          if (operation == DML_INSERT) {
-             setCreatedBy(loginId);
-             setUpdatedBy(loginId);
+
+             setGroupCompanyId(cmpnyId);
+             setCompanySbuId(sbuId);
+
+             setCreatedBy(userId);
+             setUpdatedBy(userId);
              } else if(operation == DML_UPDATE) {
-             setUpdatedBy(loginId);
+             
+             setGroupCompanyId(cmpnyId);
+             setCompanySbuId(sbuId);
+             
+             setUpdatedBy(userId);
          }
         super.doDML(operation, e);
     }
