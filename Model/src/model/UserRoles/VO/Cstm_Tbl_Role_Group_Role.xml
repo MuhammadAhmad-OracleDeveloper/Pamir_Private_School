@@ -14,10 +14,10 @@
        TblRoleGroup.GROUP_ID, 
        TblRoleGroup.R_VIEW"
   FromList="TBL_ROLE TblRole, TBL_ROLE_GROUP TblRoleGroup"
-  Where="TblRole.ID = TblRoleGroup.ROLE_ID(+) 
-AND TblRole.AST = 'Y' 
-AND TblRoleGroup.R_VIEW = 'Y' 
-AND TblRoleGroup.GROUP_ID = 1"
+  Where="TblRole.ID = TblRoleGroup.ROLE_ID(+)          
+AND TblRole.AST = 'Y'      
+--AND TblRoleGroup.R_VIEW = 'Y'          
+--AND TblRoleGroup.GROUP_ID = 1"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full">
@@ -42,10 +42,10 @@ AND TblRoleGroup.GROUP_ID = 1"
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
-      <Item Value="ViewAttr"/>
+      <Item Value="DBAttr"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="DBAttr"/>
+      <Item Value="ViewAttr"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>

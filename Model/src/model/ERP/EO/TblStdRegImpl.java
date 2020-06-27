@@ -8,6 +8,8 @@ import oracle.adf.share.ADFContext;
 
 import oracle.jbo.Key;
 import oracle.jbo.RowIterator;
+import oracle.jbo.domain.BFileDomain;
+import oracle.jbo.domain.NClobDomain;
 import oracle.jbo.domain.Number;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.EntityImpl;
@@ -1298,15 +1300,15 @@ public class TblStdRegImpl extends EntityImpl {
      * Gets the attribute value for ContRelation, using the alias name ContRelation.
      * @return the value of ContRelation
      */
-    public String getContRelation() {
-        return (String) getAttributeInternal(CONTRELATION);
+    public BigDecimal getContRelation() {
+        return (BigDecimal) getAttributeInternal(CONTRELATION);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ContRelation.
      * @param value value to set the ContRelation
      */
-    public void setContRelation(String value) {
+    public void setContRelation(BigDecimal value) {
         setAttributeInternal(CONTRELATION, value);
     }
 
