@@ -159,7 +159,6 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_STD_REG"
-    IsNotNull="true"
     RetrievedOnInsert="true"
     RetrievedOnUpdate="true"/>
   <Attribute
@@ -844,8 +843,7 @@
     SQLType="CHAR"
     Type="java.lang.String"
     ColumnType="CHAR"
-    TableName="TBL_STD_REG"
-    IsNotNull="true">
+    TableName="TBL_STD_REG">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="3"/>
     </DesignTime>
@@ -959,18 +957,6 @@
     </AttrArray>
   </Key>
   <Key
-    Name="TblStdRegAdmissionTypeCheck">
-    <DesignTime>
-      <Attr Name="_isNotNull" Value="true"/>
-      <Attr Name="_checkCondition" Value='"ADMISSION_TYPE" IS NOT NULL'/>
-      <Attr Name="_isCheck" Value="true"/>
-      <Attr Name="_DBObjectName" Value="TBL_STD_REG_ADMISSION_TYPE_CHE"/>
-    </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblStdReg.AdmissionType"/>
-    </AttrArray>
-  </Key>
-  <Key
     Name="TblStdRegGradeIdCheck">
     <DesignTime>
       <Attr Name="_isNotNull" Value="true"/>
@@ -980,18 +966,6 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.ERP.EO.TblStdReg.GradeId"/>
-    </AttrArray>
-  </Key>
-  <Key
-    Name="TblStdRegSectionsIdCheck">
-    <DesignTime>
-      <Attr Name="_isNotNull" Value="true"/>
-      <Attr Name="_checkCondition" Value='"SECTIONS_ID" IS NOT NULL'/>
-      <Attr Name="_isCheck" Value="true"/>
-      <Attr Name="_DBObjectName" Value="TBL_STD_REG_SECTIONS_ID_CHECK"/>
-    </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblStdReg.SectionsId"/>
     </AttrArray>
   </Key>
   <Key
