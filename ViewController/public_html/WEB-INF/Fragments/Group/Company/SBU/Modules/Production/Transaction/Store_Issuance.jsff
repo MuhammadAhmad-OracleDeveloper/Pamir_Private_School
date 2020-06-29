@@ -79,7 +79,7 @@
                     <f:validator binding="#{bindings.Narration.validator}"/>
                   </af:inputText>
                   <f:facet name="footer">
-                    <af:panelGroupLayout layout="horizontal" id="pgl5">
+                    <af:panelGroupLayout layout="horizontal" halign="center"  id="pgl5">
                       <af:button actionListener="#{bindings.First.execute}" text="First"
                                  disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b7"/>
                       <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
@@ -209,8 +209,8 @@
           </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr3">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
-             <af:panelGroupLayout id="pgl3" layout="horizontal">
+          <af:gridCell marginStart="5px" width="100%" halign="center"  marginEnd="5px" id="gc3">
+             <af:panelGroupLayout id="pgl3" halign="center"  layout="horizontal">
                             
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
@@ -345,8 +345,8 @@
           </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
-             <af:panelGroupLayout id="pgl2" layout="horizontal">
+          <af:gridCell marginStart="5px" width="100%" halign="center"  marginEnd="5px" id="gc5">
+             <af:panelGroupLayout id="pgl2" halign="center"  layout="horizontal">
                             
                             <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
@@ -513,7 +513,7 @@
                   </af:column>
                 </af:table>
                 <af:spacer width="10" height="40" id="s2"/>
-                <af:panelGroupLayout id="pgl6" layout="horizontal">
+                <af:panelGroupLayout id="pgl6" halign="center"  layout="horizontal">
                             
                             <af:iterator id="i3" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">

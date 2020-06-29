@@ -31,6 +31,7 @@ public class TblSubjectImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         CompanySbuId,
+        Ast,
         TblGradeSubject;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -64,6 +65,7 @@ public class TblSubjectImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int COMPANYSBUID = AttributesEnum.CompanySbuId.index();
+    public static final int AST = AttributesEnum.Ast.index();
     public static final int TBLGRADESUBJECT = AttributesEnum.TblGradeSubject.index();
 
     /**
@@ -190,6 +192,22 @@ public class TblSubjectImpl extends EntityImpl {
      */
     public void setCompanySbuId(Number value) {
         setAttributeInternal(COMPANYSBUID, value);
+    }
+
+    /**
+     * Gets the attribute value for Ast, using the alias name Ast.
+     * @return the value of Ast
+     */
+    public String getAst() {
+        return (String) getAttributeInternal(AST);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Ast.
+     * @param value value to set the Ast
+     */
+    public void setAst(String value) {
+        setAttributeInternal(AST, value);
     }
 
     /**

@@ -4,34 +4,17 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TblSubjectView1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblSubjectView1Iterator"/>
-    <searchRegion Binds="TblSubjectView1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblSubjectView1Query"/>
-    <iterator Binds="TblGradeSubjectView3" RangeSize="8" DataControl="AppModuleDataControl1"
-              id="TblGradeSubjectView3Iterator"/>
-    <searchRegion Binds="TblGradeSubjectView3Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGradeSubjectView3Query"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblGradeSubjectView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblGradeSubjectView2Iterator"/>
+    <iterator Binds="TblGradeView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblGradeView1Iterator"/>
+    <searchRegion Binds="TblGradeView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGradeView1Query"/>
+    <searchRegion Binds="TblGradeSubjectView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGradeSubjectView2Query"/>
   </executables>
   <bindings>
-    <tree IterBinding="TblSubjectView1Iterator" id="TblSubjectView1">
-      <nodeDefinition DefName="model.ERP.VO.TblSubjectView" Name="TblSubjectView10">
-        <AttrNames>
-          <Item Value="Id"/>
-          <Item Value="Name"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <tree IterBinding="TblGradeSubjectView3Iterator" id="TblGradeSubjectView3">
-      <nodeDefinition DefName="model.ERP.VO.TblGradeSubjectView" Name="TblGradeSubjectView30">
-        <AttrNames>
-          <Item Value="Id"/>
-          <Item Value="GradeId"/>
-          <Item Value="SubjectId"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -45,11 +28,54 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="TblGradeSubjectView3Iterator" id="CreateInsert" RequiresUpdateModel="true"
+    <tree IterBinding="TblGradeView1Iterator" id="TblGradeView1">
+      <nodeDefinition DefName="model.ERP.VO.TblGradeView" Name="TblGradeView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="AcadGroupId"/>
+          <Item Value="GradeName"/>
+          <Item Value="KitName"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblGradeSubjectView2Iterator" id="CreateInsert" RequiresUpdateModel="true"
             Action="createInsertRow"/>
-    <action IterBinding="TblGradeSubjectView3Iterator" id="Execute" RequiresUpdateModel="true"
+    <action IterBinding="TblGradeSubjectView2Iterator" id="Execute" RequiresUpdateModel="true"
             Action="iteratorExecute"/>
-    <action IterBinding="TblGradeSubjectView3Iterator" id="Delete" RequiresUpdateModel="false"
+    <action IterBinding="TblGradeSubjectView2Iterator" id="Delete" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <tree IterBinding="TblGradeView1Iterator" id="TblGradeView11">
+      <nodeDefinition DefName="model.ERP.VO.TblGradeView" Name="TblGradeView110">
+        <AttrNames>
+          <Item Value="GradeName"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblGradeSubjectView2Iterator" id="TblGradeSubjectView2">
+      <nodeDefinition DefName="model.ERP.VO.TblGradeSubjectView" Name="TblGradeSubjectView20">
+        <AttrNames>
+          <Item Value="SubjectId"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblGradeView1Iterator" id="TblGradeView12">
+      <nodeDefinition DefName="model.ERP.VO.TblGradeView" Name="TblGradeView120">
+        <AttrNames>
+          <Item Value="GradeName"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblGradeSubjectView2Iterator" id="TblGradeSubjectView21">
+      <nodeDefinition DefName="model.ERP.VO.TblGradeSubjectView" Name="TblGradeSubjectView210">
+        <AttrNames>
+          <Item Value="SubjectId"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

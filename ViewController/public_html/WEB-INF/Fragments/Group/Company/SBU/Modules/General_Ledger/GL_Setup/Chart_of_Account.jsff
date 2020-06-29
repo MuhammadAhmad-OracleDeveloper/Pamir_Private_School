@@ -70,8 +70,8 @@
                     </af:gridCell>
                   </af:gridRow>
                   <af:gridRow marginTop="5px" height="auto" id="gr27">
-                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc27">
-                       <af:panelGroupLayout id="pgl3" layout="horizontal">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc27" halign="center">
+                       <af:panelGroupLayout id="pgl3" layout="horizontal" halign="center">
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
