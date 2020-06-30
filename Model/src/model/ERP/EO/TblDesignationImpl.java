@@ -35,7 +35,8 @@ public class TblDesignationImpl extends EntityImpl {
         DepartmentId,
         TblStaffDesignation,
         TblDepartment;
-        private static AttributesEnum[] vals = null;
+        static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         public int index() {
@@ -251,6 +252,7 @@ public class TblDesignationImpl extends EntityImpl {
     public void setTblDepartment(TblDepartmentImpl value) {
         setAttributeInternal(TBLDEPARTMENT, value);
     }
+
 
     /**
      * @param id key constituent
