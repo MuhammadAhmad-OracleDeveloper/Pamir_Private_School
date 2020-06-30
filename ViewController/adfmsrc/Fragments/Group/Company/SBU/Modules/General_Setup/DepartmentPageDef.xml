@@ -3,21 +3,44 @@
                 Package="Fragments.Group.Company.SBU.Modules.General_Setup">
   <parameters/>
   <executables>
-    <variableIterator id="variables"/>
     <iterator Binds="TblDepartmentView1" RangeSize="25" DataControl="AppModuleDataControl1"
               id="TblDepartmentView1Iterator"/>
     <searchRegion Binds="TblDepartmentView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblDepartmentView1Query"/>
+    <iterator Binds="TblDesignationView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblDesignationView2Iterator"/>
+    <searchRegion Binds="TblDesignationView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblDesignationView2Query"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <searchRegion Binds="USERS_CRUD_OPERATIONS1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="USERS_CRUD_OPERATIONS1Query"/>
   </executables>
   <bindings>
     <tree IterBinding="TblDepartmentView1Iterator" id="TblDepartmentView1">
       <nodeDefinition DefName="model.ERP.VO.TblDepartmentView" Name="TblDepartmentView10">
         <AttrNames>
-          <Item Value="Id"/>
           <Item Value="Name"/>
           <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblDesignationView2Iterator" id="TblDesignationView2">
+      <nodeDefinition DefName="model.ERP.VO.TblDesignationView" Name="TblDesignationView20">
+        <AttrNames>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -27,14 +50,25 @@
     <action IterBinding="TblDepartmentView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
-    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
-      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+    <action IterBinding="TblDesignationView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblDesignationView2Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblDesignationView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblDepartmentView1Iterator" id="TblDepartmentView11">
+      <nodeDefinition DefName="model.ERP.VO.TblDepartmentView" Name="TblDepartmentView110">
         <AttrNames>
-          <Item Value="Crudid"/>
-          <Item Value="Operation"/>
-          <Item Value="Icon"/>
-          <Item Value="Bindingname"/>
-          <Item Value="Btndisabled"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblDesignationView2Iterator" id="TblDesignationView21">
+      <nodeDefinition DefName="model.ERP.VO.TblDesignationView" Name="TblDesignationView210">
+        <AttrNames>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
