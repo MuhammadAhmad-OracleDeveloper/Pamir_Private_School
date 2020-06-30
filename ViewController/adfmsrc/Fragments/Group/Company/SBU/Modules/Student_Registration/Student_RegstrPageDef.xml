@@ -17,6 +17,10 @@
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStdRegView1Query"/>
     <searchRegion Binds="TblStdRegGuardView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStdRegGuardView2Query"/>
+    <iterator Binds="StdRegSiblingsDetail2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="StdRegSiblingsDetail2Iterator"/>
+    <searchRegion Binds="StdRegSiblingsDetail2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="StdRegSiblingsDetail2Query"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="Id">
@@ -430,5 +434,20 @@
     </attributeValues>
     <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_ContRelation" id="ContRelation1"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="StdRegSiblingsDetail2Iterator" id="StdRegSiblingsDetail2">
+      <nodeDefinition DefName="model.ERP.VO.StdRegSiblingsDetail" Name="StdRegSiblingsDetail20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="RegDate"/>
+          <Item Value="RegNo"/>
+          <Item Value="EnrollNo"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="EmirId"/>
+          <Item Value="FatherEmirId"/>
+          <Item Value="MotherEmirId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>
