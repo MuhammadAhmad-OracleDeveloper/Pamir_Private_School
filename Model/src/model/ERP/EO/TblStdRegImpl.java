@@ -1348,15 +1348,15 @@ public class TblStdRegImpl extends EntityImpl {
      * Gets the attribute value for EmirArea, using the alias name EmirArea.
      * @return the value of EmirArea
      */
-    public String getEmirArea() {
-        return (String) getAttributeInternal(EMIRAREA);
+    public Number getEmirArea() {
+        return (Number) getAttributeInternal(EMIRAREA);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for EmirArea.
      * @param value value to set the EmirArea
      */
-    public void setEmirArea(String value) {
+    public void setEmirArea(Number value) {
         setAttributeInternal(EMIRAREA, value);
     }
 

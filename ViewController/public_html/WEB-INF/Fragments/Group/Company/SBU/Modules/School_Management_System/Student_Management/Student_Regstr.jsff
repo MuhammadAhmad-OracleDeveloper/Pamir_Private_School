@@ -339,14 +339,13 @@
                     <f:validator binding="#{bindings.TotAge.validator}"/>
                   </af:inputText>
                   <af:spacer  id="s53"/>
-                  <af:inputText value="#{bindings.RegFee.inputValue}" label="Registration Fee"
-                                required="#{bindings.RegFee.hints.mandatory}"
-                                columns="20"
-                                maximumLength="#{bindings.RegFee.hints.precision}"
-                                shortDesc="#{bindings.RegFee.hints.tooltip}" id="it72" contentStyle="width:200px;">
-                    <f:validator binding="#{bindings.RegFee.validator}"/>
-                    <af:convertNumber groupingUsed="false" pattern="#{bindings.RegFee.format}"/>
-                  </af:inputText>
+                  <af:selectOneChoice value="#{bindings.EmirArea.inputValue}" label="Emirates Area"
+                                      required="#{bindings.EmirArea.hints.mandatory}"
+                                      shortDesc="#{bindings.EmirArea.hints.tooltip}" id="soc27"
+                                      contentStyle="width:200px;">
+                    <f:selectItems value="#{bindings.EmirArea.items}" id="si27"/>
+                    <f:validator binding="#{bindings.EmirArea.validator}"/>
+                  </af:selectOneChoice>
                   <af:spacer  id="s52"/>
                   <af:inputText value="#{bindings.Address.inputValue}" label="Address"
                                 required="#{bindings.Address.hints.mandatory}"
@@ -355,14 +354,7 @@
                                 shortDesc="#{bindings.Address.hints.tooltip}" id="it66" contentStyle="width:200px;">
                     <f:validator binding="#{bindings.Address.validator}"/>
                   </af:inputText>
-                  <af:spacer  id="s48"/>
-                  <af:inputText value="#{bindings.EmirArea.inputValue}" label="Emirates Area"
-                                required="#{bindings.EmirArea.hints.mandatory}"
-                                columns="20"
-                                maximumLength="#{bindings.EmirArea.hints.precision}"
-                                shortDesc="#{bindings.EmirArea.hints.tooltip}" id="it68" contentStyle="width:200px;">
-                    <f:validator binding="#{bindings.EmirArea.validator}"/>
-                  </af:inputText>
+                  
                   <af:spacer id="s45"/>
                   <af:inputText value="#{bindings.ContNumber.inputValue}" label="Contact No."
                                 required="#{bindings.ContNumber.hints.mandatory}"
@@ -807,6 +799,15 @@
                     <f:selectItems value="#{bindings.TransReq.items}" id="si15"/>
                     <f:validator binding="#{bindings.TransReq.validator}"/>
                   </af:selectOneChoice>
+                  <af:spacer  id="s55"/>
+                  <af:inputText value="#{bindings.RegFee.inputValue}" label="Confirmation Fee"
+                                required="#{bindings.RegFee.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.RegFee.hints.precision}"
+                                shortDesc="#{bindings.RegFee.hints.tooltip}" id="it72" contentStyle="width:200px;">
+                    <f:validator binding="#{bindings.RegFee.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.RegFee.format}"/>
+                  </af:inputText>
                   <f:facet name="footer">
                       <af:panelGroupLayout layout="horizontal" id="pgl8" halign="center">
                         <af:button actionListener="#{bindings.First.execute}" text="First"

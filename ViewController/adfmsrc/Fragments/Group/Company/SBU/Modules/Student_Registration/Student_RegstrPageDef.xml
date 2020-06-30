@@ -400,11 +400,6 @@
         <Item Value="ContNumber"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblStdRegView1Iterator" id="EmirArea">
-      <AttrNames>
-        <Item Value="EmirArea"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="TblStdRegView1Iterator" id="ContPerson">
       <AttrNames>
         <Item Value="ContPerson"/>
@@ -449,5 +444,7 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_EmirArea" id="EmirArea"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
