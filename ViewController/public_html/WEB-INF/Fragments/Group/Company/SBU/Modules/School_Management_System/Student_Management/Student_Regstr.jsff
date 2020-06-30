@@ -1114,7 +1114,7 @@
 
                 </af:panelGroupLayout>
                 <af:spacer width="10" height="10" id="s7"/>
-                <af:table value="#{bindings.StdRegSiblingsDetail2.collectionModel}" var="row"
+                <!--<af:table value="#{bindings.StdRegSiblingsDetail2.collectionModel}" var="row"
                           rows="#{bindings.StdRegSiblingsDetail2.rangeSize}"
                           emptyText="#{bindings.StdRegSiblingsDetail2.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="0"
@@ -1233,6 +1233,116 @@
                                   columns="#{bindings.StdRegSiblingsDetail2.hints.MotherEmirId.displayWidth}"
                                   maximumLength="#{bindings.StdRegSiblingsDetail2.hints.MotherEmirId.precision}"
                                   shortDesc="#{bindings.StdRegSiblingsDetail2.hints.MotherEmirId.tooltip}" id="it85">
+                      <f:validator binding="#{row.bindings.MotherEmirId.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>-->
+              <af:table value="#{bindings.StdRegSiblingsDetail2.collectionModel}" var="row"
+                          rows="#{bindings.StdRegSiblingsDetail2.rangeSize}"
+                          emptyText="#{bindings.StdRegSiblingsDetail2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.StdRegSiblingsDetail2.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.StdRegSiblingsDetail2.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.StdRegSiblingsDetail2.rangeSize}"
+                          filterModel="#{bindings.StdRegSiblingsDetail2Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.StdRegSiblingsDetail2Query.processQuery}" varStatus="vs" id="t4">
+                  <af:column sortProperty="#{bindings.StdRegSiblingsDetail2.hints.RegDate.name}" filterable="true"
+                             sortable="true" headerText="Registration Date"
+                             id="c32">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.StdRegSiblingsDetail2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.RegDate.value}"
+                                    id="id6">
+                        <af:convertDateTime pattern="#{bindings.StdRegSiblingsDetail2.hints.RegDate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.RegDate.inputValue}"
+                                  label="#{bindings.StdRegSiblingsDetail2.hints.RegDate.label}"
+                                  required="#{bindings.StdRegSiblingsDetail2.hints.RegDate.mandatory}"
+                                  columns="#{bindings.StdRegSiblingsDetail2.hints.RegDate.displayWidth}"
+                                  shortDesc="#{bindings.StdRegSiblingsDetail2.hints.RegDate.tooltip}" id="id7" readOnly="true">
+                      <f:validator binding="#{row.bindings.RegDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.StdRegSiblingsDetail2.hints.RegDate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.StdRegSiblingsDetail2.hints.RegNo.name}" filterable="true"
+                             sortable="true" headerText="Registration Number" id="c33">
+                    <af:inputText value="#{row.bindings.RegNo.inputValue}"
+                                  label="#{bindings.StdRegSiblingsDetail2.hints.RegNo.label}"
+                                  required="#{bindings.StdRegSiblingsDetail2.hints.RegNo.mandatory}"
+                                  columns="#{bindings.StdRegSiblingsDetail2.hints.RegNo.displayWidth}"
+                                  maximumLength="#{bindings.StdRegSiblingsDetail2.hints.RegNo.precision}"
+                                  shortDesc="#{bindings.StdRegSiblingsDetail2.hints.RegNo.tooltip}" id="it79" readOnly="true">
+                      <f:validator binding="#{row.bindings.RegNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.StdRegSiblingsDetail2.hints.EnrollNo.name}" filterable="true"
+                             sortable="true" headerText="Enrollment Number"
+                             id="c34">
+                    <af:inputText value="#{row.bindings.EnrollNo.inputValue}"
+                                  label="#{bindings.StdRegSiblingsDetail2.hints.EnrollNo.label}"
+                                  required="#{bindings.StdRegSiblingsDetail2.hints.EnrollNo.mandatory}"
+                                  columns="#{bindings.StdRegSiblingsDetail2.hints.EnrollNo.displayWidth}"
+                                  maximumLength="#{bindings.StdRegSiblingsDetail2.hints.EnrollNo.precision}"
+                                  shortDesc="#{bindings.StdRegSiblingsDetail2.hints.EnrollNo.tooltip}" id="it80" readOnly="true">
+                      <f:validator binding="#{row.bindings.EnrollNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.StdRegSiblingsDetail2.hints.FirstName.name}" filterable="true"
+                             sortable="true" headerText="First Name"
+                             id="c35">
+                    <af:inputText value="#{row.bindings.FirstName.inputValue}"
+                                  label="#{bindings.StdRegSiblingsDetail2.hints.FirstName.label}"
+                                  required="#{bindings.StdRegSiblingsDetail2.hints.FirstName.mandatory}"
+                                  columns="#{bindings.StdRegSiblingsDetail2.hints.FirstName.displayWidth}"
+                                  maximumLength="#{bindings.StdRegSiblingsDetail2.hints.FirstName.precision}"
+                                  shortDesc="#{bindings.StdRegSiblingsDetail2.hints.FirstName.tooltip}" id="it81" readOnly="true">
+                      <f:validator binding="#{row.bindings.FirstName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.StdRegSiblingsDetail2.hints.LastName.name}" filterable="true"
+                             sortable="true" headerText="Last Name"
+                             id="c36">
+                    <af:inputText value="#{row.bindings.LastName.inputValue}"
+                                  label="#{bindings.StdRegSiblingsDetail2.hints.LastName.label}"
+                                  required="#{bindings.StdRegSiblingsDetail2.hints.LastName.mandatory}"
+                                  columns="#{bindings.StdRegSiblingsDetail2.hints.LastName.displayWidth}"
+                                  maximumLength="#{bindings.StdRegSiblingsDetail2.hints.LastName.precision}"
+                                  shortDesc="#{bindings.StdRegSiblingsDetail2.hints.LastName.tooltip}" id="it82" readOnly="true">
+                      <f:validator binding="#{row.bindings.LastName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.StdRegSiblingsDetail2.hints.EmirId.name}" filterable="true"
+                             sortable="true" headerText="Emirates ID" id="c37">
+                    <af:inputText value="#{row.bindings.EmirId.inputValue}"
+                                  label="#{bindings.StdRegSiblingsDetail2.hints.EmirId.label}"
+                                  required="#{bindings.StdRegSiblingsDetail2.hints.EmirId.mandatory}"
+                                  columns="#{bindings.StdRegSiblingsDetail2.hints.EmirId.displayWidth}"
+                                  maximumLength="#{bindings.StdRegSiblingsDetail2.hints.EmirId.precision}"
+                                  shortDesc="#{bindings.StdRegSiblingsDetail2.hints.EmirId.tooltip}" id="it83" readOnly="true">
+                      <f:validator binding="#{row.bindings.EmirId.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.StdRegSiblingsDetail2.hints.FatherEmirId.name}" filterable="true"
+                             sortable="true" headerText="Father's Emirates ID"
+                             id="c38">
+                    <af:inputText value="#{row.bindings.FatherEmirId.inputValue}"
+                                  label="#{bindings.StdRegSiblingsDetail2.hints.FatherEmirId.label}"
+                                  required="#{bindings.StdRegSiblingsDetail2.hints.FatherEmirId.mandatory}"
+                                  columns="#{bindings.StdRegSiblingsDetail2.hints.FatherEmirId.displayWidth}"
+                                  maximumLength="#{bindings.StdRegSiblingsDetail2.hints.FatherEmirId.precision}"
+                                  shortDesc="#{bindings.StdRegSiblingsDetail2.hints.FatherEmirId.tooltip}" id="it84" readOnly="true">
+                      <f:validator binding="#{row.bindings.FatherEmirId.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.StdRegSiblingsDetail2.hints.MotherEmirId.name}" filterable="true"
+                             sortable="true" headerText="Mother's Emirates ID"
+                             id="c39">
+                    <af:inputText value="#{row.bindings.MotherEmirId.inputValue}"
+                                  label="#{bindings.StdRegSiblingsDetail2.hints.MotherEmirId.label}"
+                                  required="#{bindings.StdRegSiblingsDetail2.hints.MotherEmirId.mandatory}"
+                                  columns="#{bindings.StdRegSiblingsDetail2.hints.MotherEmirId.displayWidth}"
+                                  maximumLength="#{bindings.StdRegSiblingsDetail2.hints.MotherEmirId.precision}"
+                                  shortDesc="#{bindings.StdRegSiblingsDetail2.hints.MotherEmirId.tooltip}" id="it85" readOnly="true">
                       <f:validator binding="#{row.bindings.MotherEmirId.validator}"/>
                     </af:inputText>
                   </af:column>

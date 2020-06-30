@@ -433,7 +433,12 @@
                                             <f:validator binding="#{bindings.KinRel.validator}"/>
                                         </af:selectOneChoice>
                                     </af:column>-->
-                                    <af:column headerText="#{bindings.TblStaffKinView2.hints.KinRel.label}" id="c12">
+                                    <af:column id="c12"
+                                    filterable="true" sortable="true" headerText="Relation" >
+                                    <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.KinRel}" id="it27"
+                                                          placeholder="Search Relation"></af:inputText>
+                                        </f:facet>
                                         <af:selectOneChoice value="#{row.bindings.KinRel.inputValue}"
                                                             label="#{row.bindings.KinRel.label}"
                                                             required="#{bindings.TblStaffKinView2.hints.KinRel.mandatory}"
