@@ -327,7 +327,7 @@
           </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr4">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4" halign="center">
             <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab2" text="Student Details">
                 <af:panelFormLayout id="pfl1" maxColumns="3" rows="8">
@@ -1091,7 +1091,7 @@
                       </af:selectOneChoice>
                     </af:column>
                   </af:table>
-                  <af:spacer width="10" height="40" id="s17"/>
+                  <af:spacer width="10" height="20" id="s17"/>
                   <af:panelGroupLayout id="pgl10" layout="horizontal" halign="center">
                             <af:iterator id="i3" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
@@ -1105,6 +1105,14 @@
                         </af:panelGroupLayout>
 
                 </af:panelFormLayout>
+                
+                
+                <af:spacer width="10" height="20" id="s54"/>
+                <af:panelGroupLayout id="pgl9" halign="center" layout="horizontal">
+                  <af:outputText inlineStyle="font-size: 20px;font-weight: bold;" value="Siblings Already Enrolled" id="ot1"/>
+
+                </af:panelGroupLayout>
+                <af:spacer width="10" height="10" id="s7"/>
                 <af:table value="#{bindings.StdRegSiblingsDetail2.collectionModel}" var="row"
                           rows="#{bindings.StdRegSiblingsDetail2.rangeSize}"
                           emptyText="#{bindings.StdRegSiblingsDetail2.viewable ? 'No data to display.' : 'Access Denied.'}"
