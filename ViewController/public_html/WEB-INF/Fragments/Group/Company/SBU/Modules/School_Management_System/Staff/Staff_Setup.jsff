@@ -418,7 +418,7 @@
                                             <f:validator binding="#{row.bindings.Name.validator}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column sortProperty="#{bindings.TblStaffKinView2.hints.KinRel.name}"
+                                    <!--<af:column sortProperty="#{bindings.TblStaffKinView2.hints.KinRel.name}"
                                                filterable="true" sortable="true" headerText="Relation" id="c12"
                                                align="left">
                                         <f:facet name="filter">
@@ -431,6 +431,16 @@
                                                             shortDesc="#{bindings.KinRel.hints.tooltip}" id="soc31">
                                             <f:selectItems value="#{bindings.KinRel.items}" id="si31"/>
                                             <f:validator binding="#{bindings.KinRel.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>-->
+                                    <af:column headerText="#{bindings.TblStaffKinView2.hints.KinRel.label}" id="c12">
+                                        <af:selectOneChoice value="#{row.bindings.KinRel.inputValue}"
+                                                            label="#{row.bindings.KinRel.label}"
+                                                            required="#{bindings.TblStaffKinView2.hints.KinRel.mandatory}"
+                                                            shortDesc="#{bindings.TblStaffKinView2.hints.KinRel.tooltip}"
+                                                            id="soc31">
+                                            <f:selectItems value="#{row.bindings.KinRel.items}" id="si31"/>
+                                            <f:validator binding="#{row.bindings.KinRel.validator}"/>
                                         </af:selectOneChoice>
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblStaffKinView2.hints.ContactNo.name}"

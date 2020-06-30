@@ -7,6 +7,7 @@ import java.sql.Timestamp;
 import oracle.adf.share.ADFContext;
 
 import oracle.jbo.Key;
+import oracle.jbo.domain.NClobDomain;
 import oracle.jbo.domain.Number;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.EntityImpl;
@@ -59,6 +60,8 @@ public class TblStaffKinImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int STAFFID = AttributesEnum.StaffId.index();
     public static final int DATED = AttributesEnum.Dated.index();
@@ -80,6 +83,14 @@ public class TblStaffKinImpl extends EntityImpl {
      */
     public TblStaffKinImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblStaffKin");
+    }
+
 
     /**
      * Gets the attribute value for Id, using the alias name Id.
@@ -149,15 +160,15 @@ public class TblStaffKinImpl extends EntityImpl {
      * Gets the attribute value for KinRel, using the alias name KinRel.
      * @return the value of KinRel
      */
-    public String getKinRel() {
-        return (String) getAttributeInternal(KINREL);
+    public Number getKinRel() {
+        return (Number) getAttributeInternal(KINREL);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for KinRel.
      * @param value value to set the KinRel
      */
-    public void setKinRel(String value) {
+    public void setKinRel(Number value) {
         setAttributeInternal(KINREL, value);
     }
 
@@ -303,6 +314,7 @@ public class TblStaffKinImpl extends EntityImpl {
         setAttributeInternal(TBLSTAFF, value);
     }
 
+
     /**
      * @param id key constituent
 
@@ -310,13 +322,6 @@ public class TblStaffKinImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblStaffKin");
     }
 
     /**
