@@ -32,7 +32,9 @@ public class TblDesignationImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         CompanySbuId,
-        TblStaffDesignation;
+        DepartmentId,
+        TblStaffDesignation,
+        TblDepartment;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -66,7 +68,9 @@ public class TblDesignationImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int COMPANYSBUID = AttributesEnum.CompanySbuId.index();
+    public static final int DEPARTMENTID = AttributesEnum.DepartmentId.index();
     public static final int TBLSTAFFDESIGNATION = AttributesEnum.TblStaffDesignation.index();
+    public static final int TBLDEPARTMENT = AttributesEnum.TblDepartment.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -211,12 +215,42 @@ public class TblDesignationImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for DepartmentId, using the alias name DepartmentId.
+     * @return the value of DepartmentId
+     */
+    public BigDecimal getDepartmentId() {
+        return (BigDecimal) getAttributeInternal(DEPARTMENTID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for DepartmentId.
+     * @param value value to set the DepartmentId
+     */
+    public void setDepartmentId(BigDecimal value) {
+        setAttributeInternal(DEPARTMENTID, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getTblStaffDesignation() {
         return (RowIterator) getAttributeInternal(TBLSTAFFDESIGNATION);
     }
 
+
+    /**
+     * @return the associated entity TblDepartmentImpl.
+     */
+    public TblDepartmentImpl getTblDepartment() {
+        return (TblDepartmentImpl) getAttributeInternal(TBLDEPARTMENT);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity TblDepartmentImpl.
+     */
+    public void setTblDepartment(TblDepartmentImpl value) {
+        setAttributeInternal(TBLDEPARTMENT, value);
+    }
 
     /**
      * @param id key constituent

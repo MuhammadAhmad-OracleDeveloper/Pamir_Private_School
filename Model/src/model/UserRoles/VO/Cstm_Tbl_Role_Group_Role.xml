@@ -12,7 +12,10 @@
        TblRoleGroup.ROLE_ID, 
        TblRoleGroup.ID AS ID1, 
        TblRoleGroup.GROUP_ID, 
-       TblRoleGroup.R_VIEW"
+       TblRoleGroup.R_VIEW, 
+       TblRole.TEMP_COMPANY, 
+       TblRole.TEMP_GROUP, 
+       TblRole.TEMP_SBU"
   FromList="TBL_ROLE TblRole, TBL_ROLE_GROUP TblRoleGroup"
   Where="TblRole.ID = TblRoleGroup.ROLE_ID(+)          
 AND TblRole.AST = 'Y'      
@@ -125,6 +128,24 @@ AND TblRole.AST = 'Y'
     EntityAttrName="RView"
     EntityUsage="TblRoleGroup"
     AliasName="R_VIEW"/>
+  <ViewAttribute
+    Name="TempCompany"
+    PrecisionRule="true"
+    EntityAttrName="TempCompany"
+    EntityUsage="TblRole"
+    AliasName="TEMP_COMPANY"/>
+  <ViewAttribute
+    Name="TempGroup"
+    PrecisionRule="true"
+    EntityAttrName="TempGroup"
+    EntityUsage="TblRole"
+    AliasName="TEMP_GROUP"/>
+  <ViewAttribute
+    Name="TempSbu"
+    PrecisionRule="true"
+    EntityAttrName="TempSbu"
+    EntityUsage="TblRole"
+    AliasName="TEMP_SBU"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>

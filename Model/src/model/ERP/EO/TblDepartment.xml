@@ -104,6 +104,13 @@
     AssociationOtherEnd="model.ERP.EO.FkStaffDepartmentDepartmentAssoc.TblDepartment"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblDesignation"
+    Association="model.ERP.EO.FkTblDesignationFKAssoc"
+    AssociationEnd="model.ERP.EO.FkTblDesignationFKAssoc.TblDesignation"
+    AssociationOtherEnd="model.ERP.EO.FkTblDesignationFKAssoc.TblDepartment"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkDepartment"
     PrimaryKey="true">

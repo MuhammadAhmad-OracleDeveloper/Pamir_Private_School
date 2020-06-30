@@ -32,7 +32,8 @@ public class TblDepartmentImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         CompanySbuId,
-        TblStaffDepartment;
+        TblStaffDepartment,
+        TblDesignation;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -67,6 +68,7 @@ public class TblDepartmentImpl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int COMPANYSBUID = AttributesEnum.CompanySbuId.index();
     public static final int TBLSTAFFDEPARTMENT = AttributesEnum.TblStaffDepartment.index();
+    public static final int TBLDESIGNATION = AttributesEnum.TblDesignation.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -215,6 +217,14 @@ public class TblDepartmentImpl extends EntityImpl {
      */
     public RowIterator getTblStaffDepartment() {
         return (RowIterator) getAttributeInternal(TBLSTAFFDEPARTMENT);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblDesignation() {
+        return (RowIterator) getAttributeInternal(TBLDESIGNATION);
     }
 
 

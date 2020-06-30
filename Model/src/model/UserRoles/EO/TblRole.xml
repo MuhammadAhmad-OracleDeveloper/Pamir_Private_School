@@ -74,6 +74,42 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_ROLE"/>
+  <Attribute
+    Name="TempCompany"
+    ColumnName="TEMP_COMPANY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ROLE">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblRoleRow"/>
+  </Attribute>
+  <Attribute
+    Name="TempGroup"
+    ColumnName="TEMP_GROUP"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ROLE">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblRoleRow"/>
+  </Attribute>
+  <Attribute
+    Name="TempSbu"
+    ColumnName="TEMP_SBU"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ROLE">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblRoleRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblRoleCompany"
     Association="model.UserRoles.EO.FkRoleCompanyUserAssoc"
