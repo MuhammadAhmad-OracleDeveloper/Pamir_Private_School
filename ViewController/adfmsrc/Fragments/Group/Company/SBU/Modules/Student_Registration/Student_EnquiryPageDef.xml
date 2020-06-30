@@ -50,11 +50,6 @@
         <Item Value="Address"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblStdEnqView1Iterator" id="EmirArea">
-      <AttrNames>
-        <Item Value="EmirArea"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="TblStdEnqView1Iterator" id="RegFee">
       <AttrNames>
         <Item Value="RegFee"/>
@@ -116,6 +111,8 @@
     <list IterBinding="TblStdEnqView1Iterator" StaticList="false" Uses="LOV_ContRelation" id="ContRelation"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="TblStdEnqView1Iterator" StaticList="false" Uses="LOV_LookupRefBy" id="LookupRefBy"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStdEnqView1Iterator" StaticList="false" Uses="LOV_EmirArea" id="EmirArea"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

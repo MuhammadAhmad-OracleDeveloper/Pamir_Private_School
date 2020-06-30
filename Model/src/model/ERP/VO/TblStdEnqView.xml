@@ -41,6 +41,10 @@
     Name="Lookup_Ref_By_LOV1"
     ViewObjectName="model.LOV.Lookup_Ref_By_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Emirates_Area_LOV1"
+    ViewObjectName="model.LOV.Lookup_Emirates_Area_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_AcadYearId"
     ListVOName="Academic_Year_LOV1"
@@ -157,6 +161,24 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="LookupRefBy"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_EmirArea"
+    ListVOName="Lookup_Emirates_Area_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="EmirArea"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -312,7 +334,15 @@
     PrecisionRule="true"
     EntityAttrName="EmirArea"
     EntityUsage="TblStdEnq"
-    AliasName="EMIR_AREA"/>
+    AliasName="EMIR_AREA"
+    LOVName="LOV_EmirArea">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="RegFee"
     PrecisionRule="true"

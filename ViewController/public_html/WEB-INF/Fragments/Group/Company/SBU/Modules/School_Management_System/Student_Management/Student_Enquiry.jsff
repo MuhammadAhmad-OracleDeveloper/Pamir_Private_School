@@ -196,7 +196,7 @@
                     <f:validator binding="#{bindings.Dob.validator}"/>
                     <af:convertDateTime pattern="#{bindings.Dob.format}"/>
                   </af:inputDate>
-                  <af:spacer  id="s4"/>
+                  
                   <af:spacer  id="s6"/>
                   <af:inputText value="#{bindings.ContPerson.inputValue}" label="Contact Person"
                                 required="#{bindings.ContPerson.hints.mandatory}"
@@ -237,13 +237,12 @@
                     <f:validator binding="#{bindings.LookupElecGroup.validator}"/>
                   </af:selectOneChoice>
                   <af:spacer id="s10"/>
-                  <af:inputText value="#{bindings.EmirArea.inputValue}" label="Emirates Area"
-                                required="#{bindings.EmirArea.hints.mandatory}"
-                                columns="#{bindings.EmirArea.hints.displayWidth}"
-                                maximumLength="#{bindings.EmirArea.hints.precision}"
-                                shortDesc="#{bindings.EmirArea.hints.tooltip}" id="it14" contentStyle="width:200px;">
+                  <af:selectOneChoice value="#{bindings.EmirArea.inputValue}" label="Emirates Area"
+                                      required="#{bindings.EmirArea.hints.mandatory}"
+                                      shortDesc="#{bindings.EmirArea.hints.tooltip}" id="soc7" contentStyle=" width:200px;">
+                    <f:selectItems value="#{bindings.EmirArea.items}" id="si7"/>
                     <f:validator binding="#{bindings.EmirArea.validator}"/>
-                  </af:inputText>
+                  </af:selectOneChoice>
                   <af:spacer  id="s11"/>
                   <af:inputText value="#{bindings.RegFee.inputValue}" label="Registeration Fee"
                                 required="#{bindings.RegFee.hints.mandatory}"

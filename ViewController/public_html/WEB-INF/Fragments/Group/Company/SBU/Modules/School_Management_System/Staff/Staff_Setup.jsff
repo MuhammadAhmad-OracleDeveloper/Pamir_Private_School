@@ -45,7 +45,7 @@
                                           queryListener="#{bindings.TblStaffView1Query.processQuery}" varStatus="vs"
                                           id="t1" scrollPolicy="page" autoHeightRows="0" partialTriggers="::b6">
                                     <af:column sortProperty="#{bindings.TblStaffView1.hints.Id.name}" filterable="true"
-                                               sortable="true" headerText="Staff ID" id="c1" width="80" align="right" visible="false">
+                                               sortable="true" headerText="Staff ID" id="c1" width="80" align="right" >
                                         <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Id}" id="id4"
                                                           placeholder="Search "></af:inputText>
