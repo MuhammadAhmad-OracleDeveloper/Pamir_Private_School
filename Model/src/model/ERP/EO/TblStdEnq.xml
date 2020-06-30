@@ -179,11 +179,10 @@
   </Attribute>
   <Attribute
     Name="EmirArea"
-    Precision="150"
     ColumnName="EMIR_AREA"
     SQLType="VARCHAR"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
     TableName="TBL_STD_ENQ">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="150"/>
@@ -246,6 +245,13 @@
     ColumnName="COMPANY_SBU_ID"
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="TBL_STD_ENQ"/>
+  <Attribute
+    Name="LookupRefBy"
+    ColumnName="LOOKUP_REF_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_STD_ENQ"/>
   <AccessorAttribute

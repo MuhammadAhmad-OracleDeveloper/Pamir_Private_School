@@ -150,23 +150,6 @@
                       <f:validator binding="#{row.bindings.GradeName.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblGradeView2.hints.KitName.name}" filterable="true"
-                             sortable="true" headerText="Kit" id="c7" width="300" align="left">
-                             <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.KitName}"
-       id="it11" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                    <af:inputText value="#{row.bindings.KitName.inputValue}"
-                                  label="#{bindings.TblGradeView2.hints.KitName.label}"
-                                  required="#{bindings.TblGradeView2.hints.KitName.mandatory}"
-                                  columns="#{bindings.TblGradeView2.hints.KitName.displayWidth}"
-                                  maximumLength="#{bindings.TblGradeView2.hints.KitName.precision}"
-                                  shortDesc="#{bindings.TblGradeView2.hints.KitName.tooltip}" id="it4"
-                                  contentStyle="text-align: left">
-                      <f:validator binding="#{row.bindings.KitName.validator}"/>
-                    </af:inputText>
-                  </af:column>
                   <af:column sortProperty="#{bindings.TblGradeView2.hints.Ast.name}" filterable="true" sortable="true"
                              headerText="Active" id="c8" align="left">
                              <f:facet name="filter">

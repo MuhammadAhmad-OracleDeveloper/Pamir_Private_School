@@ -80,16 +80,7 @@
                       <af:convertDateTime pattern="#{bindings.TblStdEnqView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>-->
-                  <af:column headerText="Dated" id="c2">
-                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
-                                  label="#{bindings.TblStdEnqView1.hints.Dated.label}"
-                                  required="#{bindings.TblStdEnqView1.hints.Dated.mandatory}"
-                                  columns="#{bindings.TblStdEnqView1.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.TblStdEnqView1.hints.Dated.tooltip}" id="id1">
-                      <f:validator binding="#{row.bindings.Dated.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.TblStdEnqView1.hints.Dated.format}"/>
-                    </af:inputDate>
-                  </af:column>
+                  
                   <af:column headerText="Academic Year" id="c3" sortable="true" filterable="true" align="left">
                   <f:facet name="filter">
                         <af:inputText value="#{vs.filterCriteria.AcadYearId}"
@@ -165,19 +156,6 @@
                       <f:validator binding="#{row.bindings.EmirId.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Active" id="c8" sortable="true" filterable="true" align="left">
-                  <f:facet name="filter">
-                                    <af:inputText value="#{vs.filterCriteria.Ast}"
-                                    id="it12" placeholder="Search ">
-                                    </af:inputText>
-                            </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
-                                        required="#{bindings.TblStdEnqView1.hints.Ast.mandatory}"
-                                        shortDesc="#{bindings.TblStdEnqView1.hints.Ast.tooltip}" id="soc3" contentStyle='text-align: left'>
-                      <f:selectItems value="#{row.bindings.Ast.items}" id="si3"/>
-                      <f:validator binding="#{row.bindings.Ast.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
                 </af:table>
                  <af:panelGroupLayout id="pgl3" layout="horizontal" halign="center">
                             <af:iterator id="i2" var="index" varStatus="status"
@@ -218,14 +196,7 @@
                     <f:validator binding="#{bindings.Dob.validator}"/>
                     <af:convertDateTime pattern="#{bindings.Dob.format}"/>
                   </af:inputDate>
-                  <af:spacer  id="s4"/>
-                  <af:inputText value="#{bindings.TotAge.inputValue}" label="Total Age"
-                                required="#{bindings.TotAge.hints.mandatory}"
-                                columns="20"
-                                maximumLength="#{bindings.TotAge.hints.precision}"
-                                shortDesc="#{bindings.TotAge.hints.tooltip}" id="it16" contentStyle="width:200px;" disabled="true">
-                    <f:validator binding="#{bindings.TotAge.validator}"/>
-                  </af:inputText>
+                  
                   <af:spacer  id="s6"/>
                   <af:inputText value="#{bindings.ContPerson.inputValue}" label="Contact Person"
                                 required="#{bindings.ContPerson.hints.mandatory}"
@@ -243,15 +214,20 @@
                     <f:validator binding="#{bindings.ContNumber.validator}"/>
                   </af:inputText>
                   <af:spacer  id="s8"/>
-                  <af:inputText value="#{bindings.ContRelation.inputValue}" label="Contact Relation"
-                                required="#{bindings.ContRelation.hints.mandatory}"
-                                columns="#{bindings.ContRelation.hints.displayWidth}"
-                                maximumLength="#{bindings.ContRelation.hints.precision}"
-                                shortDesc="#{bindings.ContRelation.hints.tooltip}" id="it11"
-                                contentStyle="width:200px;">
+                  <af:selectOneChoice value="#{bindings.ContRelation.inputValue}" label="Contact Relation"
+                                      required="#{bindings.ContRelation.hints.mandatory}"
+                                      shortDesc="#{bindings.ContRelation.hints.tooltip}" id="soc3" contentStyle=" width:200px;">
+                    <f:selectItems value="#{bindings.ContRelation.items}" id="si3"/>
                     <f:validator binding="#{bindings.ContRelation.validator}"/>
-                  </af:inputText>
+                  </af:selectOneChoice>
                   <af:spacer  id="s2"/>
+                  <af:selectOneChoice value="#{bindings.LookupRefBy.inputValue}" label="Refrence By"
+                                      required="#{bindings.LookupRefBy.hints.mandatory}"
+                                      shortDesc="#{bindings.LookupRefBy.hints.tooltip}" id="soc6" contentStyle=" width:200px;">
+                    <f:selectItems value="#{bindings.LookupRefBy.items}" id="si6"/>
+                    <f:validator binding="#{bindings.LookupRefBy.validator}"/>
+                  </af:selectOneChoice>
+                  <af:spacer id="s14"/>
                   <af:selectOneChoice value="#{bindings.LookupElecGroup.inputValue}"
                                       label="Elective Group"
                                       required="#{bindings.LookupElecGroup.hints.mandatory}"
@@ -261,13 +237,12 @@
                     <f:validator binding="#{bindings.LookupElecGroup.validator}"/>
                   </af:selectOneChoice>
                   <af:spacer id="s10"/>
-                  <af:inputText value="#{bindings.EmirArea.inputValue}" label="Emirates Area"
-                                required="#{bindings.EmirArea.hints.mandatory}"
-                                columns="#{bindings.EmirArea.hints.displayWidth}"
-                                maximumLength="#{bindings.EmirArea.hints.precision}"
-                                shortDesc="#{bindings.EmirArea.hints.tooltip}" id="it14" contentStyle="width:200px;">
+                  <af:selectOneChoice value="#{bindings.EmirArea.inputValue}" label="Emirates Area"
+                                      required="#{bindings.EmirArea.hints.mandatory}"
+                                      shortDesc="#{bindings.EmirArea.hints.tooltip}" id="soc7" contentStyle=" width:200px;">
+                    <f:selectItems value="#{bindings.EmirArea.items}" id="si7"/>
                     <f:validator binding="#{bindings.EmirArea.validator}"/>
-                  </af:inputText>
+                  </af:selectOneChoice>
                   <af:spacer  id="s11"/>
                   <af:inputText value="#{bindings.RegFee.inputValue}" label="Registeration Fee"
                                 required="#{bindings.RegFee.hints.mandatory}"

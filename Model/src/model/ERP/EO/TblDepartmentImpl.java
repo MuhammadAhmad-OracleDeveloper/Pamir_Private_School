@@ -34,7 +34,8 @@ public class TblDepartmentImpl extends EntityImpl {
         CompanySbuId,
         TblStaffDepartment,
         TblDesignation;
-        private static AttributesEnum[] vals = null;
+        static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         public int index() {
