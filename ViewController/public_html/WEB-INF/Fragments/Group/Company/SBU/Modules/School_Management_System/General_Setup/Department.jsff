@@ -13,12 +13,13 @@
                    inlineStyle="background-color:InfoBackground;">
           <af:showPopupBehavior popupId="p1"/>
         </af:button>
+        <af:spacer width="10" height="10" id="s9"/>
                             <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                                    disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
                                    icon="#{resource['images:cancel.png']}" iconPosition="top">
                             <af:resetActionListener/>
                         </af:button>
-                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:spacer width="10" height="10" id="s6"/>
                         <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
                                    disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
                                    iconPosition="top"/>
