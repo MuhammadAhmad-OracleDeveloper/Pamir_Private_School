@@ -47,6 +47,7 @@ public class TblStdEnqImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         CompanySbuId,
+        LookupRefBy,
         TblEnqFollowUp,
         TblAcadYear,
         TblGrade,
@@ -100,6 +101,7 @@ public class TblStdEnqImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int COMPANYSBUID = AttributesEnum.CompanySbuId.index();
+    public static final int LOOKUPREFBY = AttributesEnum.LookupRefBy.index();
     public static final int TBLENQFOLLOWUP = AttributesEnum.TblEnqFollowUp.index();
     public static final int TBLACADYEAR = AttributesEnum.TblAcadYear.index();
     public static final int TBLGRADE = AttributesEnum.TblGrade.index();
@@ -486,6 +488,22 @@ public class TblStdEnqImpl extends EntityImpl {
      */
     public void setCompanySbuId(Number value) {
         setAttributeInternal(COMPANYSBUID, value);
+    }
+
+    /**
+     * Gets the attribute value for LookupRefBy, using the alias name LookupRefBy.
+     * @return the value of LookupRefBy
+     */
+    public BigDecimal getLookupRefBy() {
+        return (BigDecimal) getAttributeInternal(LOOKUPREFBY);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for LookupRefBy.
+     * @param value value to set the LookupRefBy
+     */
+    public void setLookupRefBy(BigDecimal value) {
+        setAttributeInternal(LOOKUPREFBY, value);
     }
 
     /**

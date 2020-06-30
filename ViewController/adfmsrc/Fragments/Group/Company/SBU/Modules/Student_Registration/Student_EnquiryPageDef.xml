@@ -35,11 +35,6 @@
         <Item Value="Dob"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblStdEnqView1Iterator" id="TotAge">
-      <AttrNames>
-        <Item Value="TotAge"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="TblStdEnqView1Iterator" id="ContPerson">
       <AttrNames>
         <Item Value="ContPerson"/>
@@ -48,11 +43,6 @@
     <attributeValues IterBinding="TblStdEnqView1Iterator" id="ContNumber">
       <AttrNames>
         <Item Value="ContNumber"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblStdEnqView1Iterator" id="ContRelation">
-      <AttrNames>
-        <Item Value="ContRelation"/>
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="TblStdEnqView1Iterator" id="Address">
@@ -107,7 +97,7 @@
           <Item Value="GradeId"/>
           <Item Value="ContPerson"/>
           <Item Value="ContNumber"/>
-          <Item Value="ContRelation"/>
+         
           <Item Value="LookupElecGroup"/>
           <Item Value="Address"/>
           <Item Value="EmirId"/>
@@ -122,6 +112,10 @@
       </nodeDefinition>
     </tree>
     <list IterBinding="TblStdEnqView1Iterator" StaticList="false" Uses="LOV_LookupElecGroup" id="LookupElecGroup"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStdEnqView1Iterator" StaticList="false" Uses="LOV_ContRelation" id="ContRelation"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStdEnqView1Iterator" StaticList="false" Uses="LOV_LookupRefBy" id="LookupRefBy"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
