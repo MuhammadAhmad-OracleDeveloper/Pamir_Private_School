@@ -6,24 +6,38 @@
     <variableIterator id="variables"/>
     <iterator Binds="TblSectionStaffView3" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblSectionStaffView3Iterator"/>
-    <searchRegion Binds="TblSectionStaffView3Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblSectionStaffView3Query"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblSectionsView1" RangeSize="10" DataControl="AppModuleDataControl1"
+              id="TblSectionsView1Iterator"/>
+    <searchRegion Binds="TblSectionsView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblSectionsView1Query"/>
+    <searchRegion Binds="TblSectionStaffView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblSectionStaffView3Query"/>
   </executables>
   <bindings>
-    <tree IterBinding="TblSectionStaffView3Iterator" id="TblSectionStaffView3">
-      <nodeDefinition DefName="model.ERP.VO.TblSectionStaffView" Name="TblSectionStaffView30">
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
         <AttrNames>
-          <Item Value="GradeId"/>
-          <Item Value="SectionId"/>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <tree IterBinding="TblSectionStaffView3Iterator" id="TblSectionStaffView31">
-      <nodeDefinition DefName="model.ERP.VO.TblSectionStaffView" Name="TblSectionStaffView310">
+    <tree IterBinding="TblSectionsView1Iterator" id="TblSectionsView1">
+      <nodeDefinition DefName="model.ERP.VO.TblSectionsView" Name="TblSectionsView10">
         <AttrNames>
-          <Item Value="Id"/>
+          <Item Value="GradeId"/>
+          <Item Value="Name"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblSectionStaffView3Iterator" id="TblSectionStaffView3">
+      <nodeDefinition DefName="model.ERP.VO.TblSectionStaffView" Name="TblSectionStaffView30">
+        <AttrNames>
           <Item Value="Type"/>
           <Item Value="StaffId"/>
           <Item Value="StaffSubjectId"/>
@@ -39,16 +53,5 @@
             Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
-    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
-      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
-        <AttrNames>
-          <Item Value="Crudid"/>
-          <Item Value="Operation"/>
-          <Item Value="Icon"/>
-          <Item Value="Bindingname"/>
-          <Item Value="Btndisabled"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
   </bindings>
 </pageDefinition>
