@@ -21,6 +21,10 @@
     Name="Book_Copy_Name_LOV1"
     ViewObjectName="model.LOV.Book_Copy_Name_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Book_Copy_Status1"
+    ViewObjectName="model.LOV.Book_Copy_Status"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Ast"
     ListVOName="Active_Name_LOV1"
@@ -47,6 +51,24 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="BookcopyType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CopyStatus"
+    ListVOName="Book_Copy_Status1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CopyStatus"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -84,7 +106,15 @@
     PrecisionRule="true"
     EntityAttrName="CopyStatus"
     EntityUsage="TblLibBooksCopy"
-    AliasName="COPY_STATUS"/>
+    AliasName="COPY_STATUS"
+    LOVName="LOV_CopyStatus">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CopyBarcode"
     PrecisionRule="true"
