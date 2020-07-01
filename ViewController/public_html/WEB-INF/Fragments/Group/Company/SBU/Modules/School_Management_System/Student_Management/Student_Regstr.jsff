@@ -1014,85 +1014,57 @@
               </af:showDetailItem>
               <af:showDetailItem text="Sibling's Details" id="sdi5">
                 <af:panelFormLayout id="pfl6">
-                
-                  <af:table value="#{bindings.TblStdRegSibView3.collectionModel}" var="row"
-                            rows="#{bindings.TblStdRegSibView3.rangeSize}"
-                            emptyText="#{bindings.TblStdRegSibView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  <af:table value="#{bindings.TblStdRegSibView1.collectionModel}" var="row"
+                            rows="#{bindings.TblStdRegSibView1.rangeSize}"
+                            emptyText="#{bindings.TblStdRegSibView1.viewable ? 'No data to display.' : 'Access Denied.'}"
                             rowBandingInterval="0"
-                            selectedRowKeys="#{bindings.TblStdRegSibView3.collectionModel.selectedRow}"
-                            selectionListener="#{bindings.TblStdRegSibView3.collectionModel.makeCurrent}"
-                            rowSelection="single" fetchSize="#{bindings.TblStdRegSibView3.rangeSize}"
-                            filterModel="#{bindings.TblStdRegSibView3Query.queryDescriptor}" filterVisible="true"
-                            queryListener="#{bindings.TblStdRegSibView3Query.processQuery}" varStatus="vs" id="t2"
-                            scrollPolicy="page" autoHeightRows="0" >
-                    <af:column sortProperty="#{bindings.TblStdRegSibView3.hints.Id.name}" filterable="true"
-                               sortable="true" headerText="Sibling ID" id="c10" align="center" width="80" visible="false">
-                               <f:facet name="filter">
-                                      <af:inputText value="#{vs.filterCriteria.Id}"
-                                       id="it42" placeholder="Search ID">
-                                      </af:inputText>
-                                </f:facet>
-                      <af:inputText value="#{row.bindings.Id.inputValue}"
-                                    label="#{bindings.TblStdRegSibView3.hints.Id.label}"
-                                    required="#{bindings.TblStdRegSibView3.hints.Id.mandatory}"
-                                    columns="#{bindings.TblStdRegSibView3.hints.Id.displayWidth}"
-                                    maximumLength="#{bindings.TblStdRegSibView3.hints.Id.precision}"
-                                    shortDesc="#{bindings.TblStdRegSibView3.hints.Id.tooltip}" id="it5" readOnly="true"
-                                    contentStyle='text-align: center'>
-                        <f:validator binding="#{row.bindings.Id.validator}"/>
-                        <af:convertNumber groupingUsed="false" pattern="#{bindings.TblStdRegSibView3.hints.Id.format}"/>
+                            selectedRowKeys="#{bindings.TblStdRegSibView1.collectionModel.selectedRow}"
+                            selectionListener="#{bindings.TblStdRegSibView1.collectionModel.makeCurrent}"
+                            rowSelection="single" fetchSize="#{bindings.TblStdRegSibView1.rangeSize}"
+                            filterModel="#{bindings.TblStdRegSibView1Query.queryDescriptor}" filterVisible="true"
+                            queryListener="#{bindings.TblStdRegSibView1Query.processQuery}" varStatus="vs" id="t2">
+                    <af:column sortProperty="#{bindings.TblStdRegSibView1.hints.Dob.name}" filterable="true"
+                               sortable="true" headerText="D.O.B" id="c10">
+                      <f:facet name="filter">
+                        <af:inputDate value="#{bindings.TblStdRegSibView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dob.value}"
+                                      id="id8">
+                          <af:convertDateTime pattern="#{bindings.TblStdRegSibView1.hints.Dob.format}"/>
+                        </af:inputDate>
+                      </f:facet>
+                      <af:inputDate value="#{row.bindings.Dob.inputValue}"
+                                    label="#{bindings.TblStdRegSibView1.hints.Dob.label}"
+                                    required="#{bindings.TblStdRegSibView1.hints.Dob.mandatory}"
+                                    columns="#{bindings.TblStdRegSibView1.hints.Dob.displayWidth}"
+                                    shortDesc="#{bindings.TblStdRegSibView1.hints.Dob.tooltip}" id="id9">
+                        <f:validator binding="#{row.bindings.Dob.validator}"/>
+                        <af:convertDateTime pattern="#{bindings.TblStdRegSibView1.hints.Dob.format}"/>
+                      </af:inputDate>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.TblStdRegSibView1.hints.SibName.name}" filterable="true"
+                               sortable="true" headerText="Name" id="c13">
+                      <af:inputText value="#{row.bindings.SibName.inputValue}"
+                                    label="#{bindings.TblStdRegSibView1.hints.SibName.label}"
+                                    required="#{bindings.TblStdRegSibView1.hints.SibName.mandatory}"
+                                    columns="#{bindings.TblStdRegSibView1.hints.SibName.displayWidth}"
+                                    maximumLength="#{bindings.TblStdRegSibView1.hints.SibName.precision}"
+                                    shortDesc="#{bindings.TblStdRegSibView1.hints.SibName.tooltip}" id="it42">
+                        <f:validator binding="#{row.bindings.SibName.validator}"/>
                       </af:inputText>
                     </af:column>
-                    <af:column sortProperty="#{bindings.TblStdRegSibView3.hints.GradeId.name}" filterable="true"
-                               sortable="true" headerText="Grade" id="c12" width="150" align="left">
-                               <f:facet name="filter">
-                                      <af:inputText value="#{vs.filterCriteria.GradeId}"
-                                       id="it44" placeholder="Search Grade">
-                                      </af:inputText>
-                                </f:facet>
-                      <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}"
-                                          label="#{row.bindings.GradeId.label}" autoSubmit="true"
-                                          required="#{bindings.TblStdRegSibView3.hints.GradeId.mandatory}"
-                                          shortDesc="#{bindings.TblStdRegSibView3.hints.GradeId.tooltip}" id="soc17"
-                                          contentStyle="text-align: left">
-                        <f:selectItems value="#{row.bindings.GradeId.items}" id="si17"/>
-                        <f:validator binding="#{row.bindings.GradeId.validator}"/>
-                      </af:selectOneChoice>
+                    <af:column sortProperty="#{bindings.TblStdRegSibView1.hints.SchoolName.name}" filterable="true"
+                               sortable="true" headerText="School"
+                               id="c12">
+                      <af:inputText value="#{row.bindings.SchoolName.inputValue}"
+                                    label="#{bindings.TblStdRegSibView1.hints.SchoolName.label}"
+                                    required="#{bindings.TblStdRegSibView1.hints.SchoolName.mandatory}"
+                                    columns="#{bindings.TblStdRegSibView1.hints.SchoolName.displayWidth}"
+                                    maximumLength="#{bindings.TblStdRegSibView1.hints.SchoolName.precision}"
+                                    shortDesc="#{bindings.TblStdRegSibView1.hints.SchoolName.tooltip}" id="it5">
+                        <f:validator binding="#{row.bindings.SchoolName.validator}"/>
+                      </af:inputText>
                     </af:column>
-                    <af:column sortProperty="#{bindings.TblStdRegSibView3.hints.SectionsId.name}" filterable="true"
-                               sortable="true" headerText="Section"
-                               id="c13" width="150" align="left">
-                               <f:facet name="filter">
-                                      <af:inputText value="#{vs.filterCriteria.GradeId}"
-                                       id="it45" placeholder="Search Section">
-                                      </af:inputText>
-                                </f:facet>
-                      <af:selectOneChoice value="#{row.bindings.SectionsId.inputValue}"
-                                          label="#{row.bindings.SectionsId.label}"
-                                          required="#{bindings.TblStdRegSibView3.hints.SectionsId.mandatory}"
-                                          shortDesc="#{bindings.TblStdRegSibView3.hints.SectionsId.tooltip}" id="soc18"
-                                          contentStyle="text-align: left">
-                        <f:selectItems value="#{row.bindings.SectionsId.items}" id="si18"/>
-                        <f:validator binding="#{row.bindings.SectionsId.validator}"/>
-                      </af:selectOneChoice>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.TblStdRegSibView3.hints.Ast.name}" filterable="true"
-                               sortable="true" headerText="Active" id="c14" align="left">
-                               <f:facet name="filter">
-                                      <af:inputText value="#{vs.filterCriteria.Ast}"
-                                       id="it46" placeholder="Search Status">
-                                      </af:inputText>
-                                </f:facet>
-                      <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
-                                          required="#{bindings.TblStdRegSibView3.hints.Ast.mandatory}"
-                                          shortDesc="#{bindings.TblStdRegSibView3.hints.Ast.tooltip}" id="soc19"
-                                          contentStyle="text-align: left">
-                        <f:selectItems value="#{row.bindings.Ast.items}" id="si19"/>
-                        <f:validator binding="#{row.bindings.Ast.validator}"/>
-                      </af:selectOneChoice>
-                    </af:column>
+                    
                   </af:table>
-                  <af:spacer width="10" height="20" id="s17"/>
                   <af:panelGroupLayout id="pgl10" layout="horizontal" halign="center">
                             <af:iterator id="i3" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">

@@ -9,8 +9,6 @@
               id="TblStdRegGuardView2Iterator"/>
     <iterator Binds="TblStdRegSibView3" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblStdRegSibView3Iterator"/>
-    <searchRegion Binds="TblStdRegSibView3Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStdRegSibView3Query"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
     <searchRegion Binds="TblStdRegView1Iterator" Criteria=""
@@ -21,6 +19,10 @@
               id="StdRegSiblingsDetail2Iterator"/>
     <searchRegion Binds="StdRegSiblingsDetail2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="StdRegSiblingsDetail2Query"/>
+    <iterator Binds="TblStdRegSibView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblStdRegSibView1Iterator"/>
+    <searchRegion Binds="TblStdRegSibView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStdRegSibView1Query"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="Id">
@@ -283,22 +285,6 @@
     <action IterBinding="TblStdRegView1Iterator" id="Previous1" RequiresUpdateModel="true" Action="previous"/>
     <action IterBinding="TblStdRegView1Iterator" id="Next1" RequiresUpdateModel="true" Action="next"/>
     <action IterBinding="TblStdRegView1Iterator" id="Last1" RequiresUpdateModel="true" Action="last"/>
-    <tree IterBinding="TblStdRegSibView3Iterator" id="TblStdRegSibView3">
-      <nodeDefinition DefName="model.ERP.VO.TblStdRegSibView" Name="TblStdRegSibView30">
-        <AttrNames>
-          <Item Value="Id"/>
-          <Item Value="StdRegId"/>
-          <Item Value="SibStdRegId"/>
-          <Item Value="GradeId"/>
-          <Item Value="SectionsId"/>
-          <Item Value="Ast"/>
-          <Item Value="CreatedDate"/>
-          <Item Value="CreatedBy"/>
-          <Item Value="UpdatedDate"/>
-          <Item Value="UpdatedBy"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <action IterBinding="TblStdRegView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="TblStdRegView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblStdRegView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
@@ -446,5 +432,14 @@
     </tree>
     <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_EmirArea" id="EmirArea"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="TblStdRegSibView1Iterator" id="TblStdRegSibView1">
+      <nodeDefinition DefName="model.ERP.VO.TblStdRegSibView" Name="TblStdRegSibView10">
+        <AttrNames>
+          <Item Value="Dob"/>
+          <Item Value="SchoolName"/>
+          <Item Value="SibName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

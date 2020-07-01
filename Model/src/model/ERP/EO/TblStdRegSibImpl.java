@@ -32,6 +32,9 @@ public class TblStdRegSibImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        Dob,
+        SchoolName,
+        SibName,
         TblGrade,
         TblStdReg,
         TblSections,
@@ -58,6 +61,7 @@ public class TblStdRegSibImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int STDREGID = AttributesEnum.StdRegId.index();
     public static final int SIBSTDREGID = AttributesEnum.SibStdRegId.index();
@@ -68,6 +72,9 @@ public class TblStdRegSibImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int DOB = AttributesEnum.Dob.index();
+    public static final int SCHOOLNAME = AttributesEnum.SchoolName.index();
+    public static final int SIBNAME = AttributesEnum.SibName.index();
     public static final int TBLGRADE = AttributesEnum.TblGrade.index();
     public static final int TBLSTDREG = AttributesEnum.TblStdReg.index();
     public static final int TBLSECTIONS = AttributesEnum.TblSections.index();
@@ -77,6 +84,13 @@ public class TblStdRegSibImpl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public TblStdRegSibImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblStdRegSib");
     }
 
     /**
@@ -224,6 +238,54 @@ public class TblStdRegSibImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for Dob, using the alias name Dob.
+     * @return the value of Dob
+     */
+    public Timestamp getDob() {
+        return (Timestamp) getAttributeInternal(DOB);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Dob.
+     * @param value value to set the Dob
+     */
+    public void setDob(Timestamp value) {
+        setAttributeInternal(DOB, value);
+    }
+
+    /**
+     * Gets the attribute value for SchoolName, using the alias name SchoolName.
+     * @return the value of SchoolName
+     */
+    public String getSchoolName() {
+        return (String) getAttributeInternal(SCHOOLNAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for SchoolName.
+     * @param value value to set the SchoolName
+     */
+    public void setSchoolName(String value) {
+        setAttributeInternal(SCHOOLNAME, value);
+    }
+
+    /**
+     * Gets the attribute value for SibName, using the alias name SibName.
+     * @return the value of SibName
+     */
+    public String getSibName() {
+        return (String) getAttributeInternal(SIBNAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for SibName.
+     * @param value value to set the SibName
+     */
+    public void setSibName(String value) {
+        setAttributeInternal(SIBNAME, value);
+    }
+
+    /**
      * @return the associated entity TblGradeImpl.
      */
     public TblGradeImpl getTblGrade() {
@@ -279,6 +341,7 @@ public class TblStdRegSibImpl extends EntityImpl {
         setAttributeInternal(TBLSTDREG1, value);
     }
 
+
     /**
      * @param id key constituent
 
@@ -286,13 +349,6 @@ public class TblStdRegSibImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblStdRegSib");
     }
 
     /**

@@ -98,6 +98,37 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_STD_REG_SIB"/>
+  <Attribute
+    Name="Dob"
+    ColumnName="DOB"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_STD_REG_SIB"/>
+  <Attribute
+    Name="SchoolName"
+    Precision="250"
+    ColumnName="SCHOOL_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_STD_REG_SIB">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SibName"
+    Precision="250"
+    ColumnName="SIB_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_STD_REG_SIB">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblGrade"
     Association="model.ERP.EO.FkStdRegSibGradeAssoc"

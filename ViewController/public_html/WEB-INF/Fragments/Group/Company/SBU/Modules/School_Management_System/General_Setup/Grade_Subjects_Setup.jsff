@@ -31,7 +31,8 @@
                           selectionListener="#{bindings.TblGradeView12.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.TblGradeView12.rangeSize}"
                           filterModel="#{bindings.TblGradeView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblGradeView1Query.processQuery}" varStatus="vs" id="t1">
+                          queryListener="#{bindings.TblGradeView1Query.processQuery}" varStatus="vs" id="t1"
+                          scrollPolicy="page">
                   <af:column sortProperty="#{bindings.TblGradeView12.hints.GradeName.name}" filterable="true"
                              sortable="true" headerText="Grade" id="c1" width="225">
                     <f:facet name="filter">
@@ -87,7 +88,8 @@
                           selectionListener="#{bindings.TblGradeSubjectView21.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.TblGradeSubjectView21.rangeSize}"
                           filterModel="#{bindings.TblGradeSubjectView2Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblGradeSubjectView2Query.processQuery}" varStatus="vs" id="t2">
+                          queryListener="#{bindings.TblGradeSubjectView2Query.processQuery}" varStatus="vs" id="t2"
+                          scrollPolicy="page">
                   <af:column sortProperty="#{bindings.TblGradeSubjectView21.hints.SubjectId.name}" filterable="true"
                              sortable="true" headerText="Subject" width="225"
                              id="c3">
