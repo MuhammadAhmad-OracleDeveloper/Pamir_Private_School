@@ -375,7 +375,8 @@
                   <af:selectOneChoice value="#{bindings.ContRelation1.inputValue}"
                                       label="Contact Relation"
                                       required="#{bindings.ContRelation1.hints.mandatory}"
-                                      shortDesc="#{bindings.ContRelation1.hints.tooltip}" id="soc26">
+                                      shortDesc="#{bindings.ContRelation1.hints.tooltip}" id="soc26"
+                                      contentStyle="width:200px;">
                     <f:selectItems value="#{bindings.ContRelation1.items}" id="si26"/>
                     <f:validator binding="#{bindings.ContRelation1.validator}"/>
                   </af:selectOneChoice>
@@ -391,7 +392,8 @@
                   <af:selectOneChoice value="#{bindings.LookupElecGroup.inputValue}"
                                       label="Elective Group"
                                       required="#{bindings.LookupElecGroup.hints.mandatory}"
-                                      shortDesc="#{bindings.LookupElecGroup.hints.tooltip}" id="soc8">
+                                      shortDesc="#{bindings.LookupElecGroup.hints.tooltip}" id="soc8"
+                                      contentStyle="width:200px;">
                     <f:selectItems value="#{bindings.LookupElecGroup.items}" id="si8"/>
                     <f:validator binding="#{bindings.LookupElecGroup.validator}"/>
                   </af:selectOneChoice>
@@ -800,14 +802,6 @@
                     <f:validator binding="#{bindings.TransReq.validator}"/>
                   </af:selectOneChoice>
                   <af:spacer  id="s55"/>
-                  <af:inputText value="#{bindings.RegFee.inputValue}" label="Confirmation Fee"
-                                required="#{bindings.RegFee.hints.mandatory}"
-                                columns="20"
-                                maximumLength="#{bindings.RegFee.hints.precision}"
-                                shortDesc="#{bindings.RegFee.hints.tooltip}" id="it72" contentStyle="width:200px;">
-                    <f:validator binding="#{bindings.RegFee.validator}"/>
-                    <af:convertNumber groupingUsed="false" pattern="#{bindings.RegFee.format}"/>
-                  </af:inputText>
                   <f:facet name="footer">
                       <af:panelGroupLayout layout="horizontal" id="pgl8" halign="center">
                         <af:button actionListener="#{bindings.First.execute}" text="First"

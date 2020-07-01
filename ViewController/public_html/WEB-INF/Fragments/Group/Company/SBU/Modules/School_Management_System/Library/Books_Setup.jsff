@@ -349,23 +349,21 @@
                                         pattern="#{bindings.TblLibBooksCopyView2.hints.Id.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblLibBooksCopyView2.hints.CopyStatus.name}" filterable="true"
-                             sortable="true" headerText="Copy Status"
-                             id="c17" width="200" align="left">
-                             <f:facet name="filter">
+                  <af:column headerText="Copy Status" id="c17"
+                             sortable="true" filterable="true">
+                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.CopyStatus}"
                                    id="it25" placeholder="Search Copy Status">
                                   </af:inputText>
                             </f:facet>
-                    <af:inputText value="#{row.bindings.CopyStatus.inputValue}"
-                                  label="#{bindings.TblLibBooksCopyView2.hints.CopyStatus.label}"
-                                  required="#{bindings.TblLibBooksCopyView2.hints.CopyStatus.mandatory}"
-                                  columns="30"
-                                  maximumLength="#{bindings.TblLibBooksCopyView2.hints.CopyStatus.precision}"
-                                  shortDesc="#{bindings.TblLibBooksCopyView2.hints.CopyStatus.tooltip}" id="it22"
-                                  contentStyle="text-align: left">
+                    <af:selectOneChoice value="#{row.bindings.CopyStatus.inputValue}"
+                                        label="#{row.bindings.CopyStatus.label}"
+                                        required="#{bindings.TblLibBooksCopyView2.hints.CopyStatus.mandatory}"
+                                        shortDesc="#{bindings.TblLibBooksCopyView2.hints.CopyStatus.tooltip}"
+                                        id="soc11">
+                      <f:selectItems value="#{row.bindings.CopyStatus.items}" id="si11"/>
                       <f:validator binding="#{row.bindings.CopyStatus.validator}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
                   <af:column headerText="Book Copy" id="c23"
                              sortable="true" filterable="true">
