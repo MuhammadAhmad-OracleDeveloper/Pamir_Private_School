@@ -14,18 +14,6 @@
   SelectAllAttributes="false"
   PageIterMode="Full">
   <ViewAccessor
-    Name="Staff_Name_LOV1"
-    ViewObjectName="model.LOV.Staff_Name_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
-    Name="Grade_Name_LOV1"
-    ViewObjectName="model.LOV.Grade_Name_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
-    Name="Section_Name_LOV1"
-    ViewObjectName="model.LOV.Section_Name_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
     Name="Active_Name_LOV1"
     ViewObjectName="model.LOV.Active_Name_LOV"
     RowLevelBinds="true"/>
@@ -37,61 +25,6 @@
     Name="Teacher_Type_LOV1"
     ViewObjectName="model.LOV.Teacher_Type_LOV"
     RowLevelBinds="true"/>
-  <ListBinding
-    Name="LOV_StaffId"
-    ListVOName="Staff_Name_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="StaffId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FirstName"/>
-      <Item Value="LastName"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_GradeId"
-    ListVOName="Grade_Name_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="GradeId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="GradeName"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_SectionId"
-    ListVOName="Section_Name_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="SectionId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
   <ListBinding
     Name="LOV_Ast"
     ListVOName="Active_Name_LOV1"
@@ -172,20 +105,6 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
-    Name="StaffId"
-    PrecisionRule="true"
-    EntityAttrName="StaffId"
-    EntityUsage="TblSectionStaff"
-    AliasName="STAFF_ID"
-    LOVName="LOV_StaffId">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
-  <ViewAttribute
     Name="StaffSubjectId"
     PrecisionRule="true"
     EntityAttrName="StaffSubjectId"
@@ -206,33 +125,11 @@
     EntityUsage="TblSectionStaff"
     AliasName="GROUP_COMPANY_ID"/>
   <ViewAttribute
-    Name="GradeId"
-    PrecisionRule="true"
-    EntityAttrName="GradeId"
-    EntityUsage="TblSectionStaff"
-    AliasName="GRADE_ID"
-    LOVName="LOV_GradeId">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
-  <ViewAttribute
     Name="SectionId"
     PrecisionRule="true"
     EntityAttrName="SectionId"
     EntityUsage="TblSectionStaff"
-    AliasName="SECTION_ID"
-    LOVName="LOV_SectionId">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="SECTION_ID"/>
   <ViewAttribute
     Name="Ast"
     PrecisionRule="true"
@@ -252,7 +149,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblSectionStaff"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -264,7 +162,8 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblSectionStaff"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"

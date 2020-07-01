@@ -96,15 +96,6 @@
                       <f:validator binding="#{row.bindings.Type.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblSectionStaffView3.hints.StaffId.name}" filterable="true"
-                             sortable="true" headerText="Teacher" id="c4" width="225">
-                    <af:selectOneChoice value="#{row.bindings.StaffId.inputValue}" label="#{row.bindings.StaffId.label}"
-                                        required="#{bindings.TblSectionStaffView3.hints.StaffId.mandatory}"
-                                        shortDesc="#{bindings.TblSectionStaffView3.hints.StaffId.tooltip}" id="soc3">
-                      <f:selectItems value="#{row.bindings.StaffId.items}" id="si3"/>
-                      <f:validator binding="#{row.bindings.StaffId.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
                   <af:column sortProperty="#{bindings.TblSectionStaffView3.hints.StaffSubjectId.name}" filterable="true"
                              sortable="true" headerText="Subject"
                              id="c5" width="150">

@@ -24,10 +24,8 @@ public class TblSectionStaffImpl extends EntityImpl {
     public enum AttributesEnum {
         Id,
         Type,
-        StaffId,
         StaffSubjectId,
         GroupCompanyId,
-        GradeId,
         SectionId,
         Ast,
         CreatedDate,
@@ -37,7 +35,8 @@ public class TblSectionStaffImpl extends EntityImpl {
         CompanySbuId,
         TblStaffSubject,
         TblSections;
-        private static AttributesEnum[] vals = null;
+        static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         public int index() {
@@ -63,10 +62,8 @@ public class TblSectionStaffImpl extends EntityImpl {
 
     public static final int ID = AttributesEnum.Id.index();
     public static final int TYPE = AttributesEnum.Type.index();
-    public static final int STAFFID = AttributesEnum.StaffId.index();
     public static final int STAFFSUBJECTID = AttributesEnum.StaffSubjectId.index();
     public static final int GROUPCOMPANYID = AttributesEnum.GroupCompanyId.index();
-    public static final int GRADEID = AttributesEnum.GradeId.index();
     public static final int SECTIONID = AttributesEnum.SectionId.index();
     public static final int AST = AttributesEnum.Ast.index();
     public static final int CREATEDDATE = AttributesEnum.CreatedDate.index();
@@ -123,21 +120,6 @@ public class TblSectionStaffImpl extends EntityImpl {
         setAttributeInternal(TYPE, value);
     }
 
-    /**
-     * Gets the attribute value for StaffId, using the alias name StaffId.
-     * @return the value of StaffId
-     */
-    public BigDecimal getStaffId() {
-        return (BigDecimal) getAttributeInternal(STAFFID);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for StaffId.
-     * @param value value to set the StaffId
-     */
-    public void setStaffId(BigDecimal value) {
-        setAttributeInternal(STAFFID, value);
-    }
 
     /**
      * Gets the attribute value for StaffSubjectId, using the alias name StaffSubjectId.
@@ -171,21 +153,6 @@ public class TblSectionStaffImpl extends EntityImpl {
         setAttributeInternal(GROUPCOMPANYID, value);
     }
 
-    /**
-     * Gets the attribute value for GradeId, using the alias name GradeId.
-     * @return the value of GradeId
-     */
-    public BigDecimal getGradeId() {
-        return (BigDecimal) getAttributeInternal(GRADEID);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for GradeId.
-     * @param value value to set the GradeId
-     */
-    public void setGradeId(BigDecimal value) {
-        setAttributeInternal(GRADEID, value);
-    }
 
     /**
      * Gets the attribute value for SectionId, using the alias name SectionId.
