@@ -32,6 +32,7 @@ public class TblLibBooksCopyImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        BookcopyType,
         TblLibBooks;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -55,6 +56,7 @@ public class TblLibBooksCopyImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int LIBBOOKSID = AttributesEnum.LibBooksId.index();
     public static final int USERTYPE = AttributesEnum.UserType.index();
@@ -65,12 +67,20 @@ public class TblLibBooksCopyImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int BOOKCOPYTYPE = AttributesEnum.BookcopyType.index();
     public static final int TBLLIBBOOKS = AttributesEnum.TblLibBooks.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblLibBooksCopyImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblLibBooksCopy");
     }
 
     /**
@@ -218,6 +228,22 @@ public class TblLibBooksCopyImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for BookcopyType, using the alias name BookcopyType.
+     * @return the value of BookcopyType
+     */
+    public String getBookcopyType() {
+        return (String) getAttributeInternal(BOOKCOPYTYPE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for BookcopyType.
+     * @param value value to set the BookcopyType
+     */
+    public void setBookcopyType(String value) {
+        setAttributeInternal(BOOKCOPYTYPE, value);
+    }
+
+    /**
      * @return the associated entity TblLibBooksImpl.
      */
     public TblLibBooksImpl getTblLibBooks() {
@@ -231,6 +257,7 @@ public class TblLibBooksCopyImpl extends EntityImpl {
         setAttributeInternal(TBLLIBBOOKS, value);
     }
 
+
     /**
      * @param id key constituent
 
@@ -238,13 +265,6 @@ public class TblLibBooksCopyImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblLibBooksCopy");
     }
 
     /**

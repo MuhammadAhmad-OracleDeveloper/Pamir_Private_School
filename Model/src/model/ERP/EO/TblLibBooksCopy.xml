@@ -117,6 +117,20 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_LIB_BOOKS_COPY"/>
+  <Attribute
+    Name="BookcopyType"
+    Precision="3"
+    ColumnName="BOOKCOPY_TYPE"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_LIB_BOOKS_COPY"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblLibBooks"
     Association="model.ERP.EO.FkLibBooksCopyBooksAssoc"

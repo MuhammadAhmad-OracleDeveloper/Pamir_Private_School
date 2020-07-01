@@ -360,12 +360,28 @@
                     <af:inputText value="#{row.bindings.CopyStatus.inputValue}"
                                   label="#{bindings.TblLibBooksCopyView2.hints.CopyStatus.label}"
                                   required="#{bindings.TblLibBooksCopyView2.hints.CopyStatus.mandatory}"
-                                  columns="#{bindings.TblLibBooksCopyView2.hints.CopyStatus.displayWidth}"
+                                  columns="30"
                                   maximumLength="#{bindings.TblLibBooksCopyView2.hints.CopyStatus.precision}"
                                   shortDesc="#{bindings.TblLibBooksCopyView2.hints.CopyStatus.tooltip}" id="it22"
                                   contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.CopyStatus.validator}"/>
                     </af:inputText>
+                  </af:column>
+                  <af:column headerText="Book Copy" id="c23"
+                             sortable="true" filterable="true">
+                              <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.BookcopyType}"
+                                   id="it32" placeholder="Search Status">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.BookcopyType.inputValue}"
+                                        label="#{row.bindings.BookcopyType.label}"
+                                        required="#{bindings.TblLibBooksCopyView2.hints.BookcopyType.mandatory}"
+                                        shortDesc="#{bindings.TblLibBooksCopyView2.hints.BookcopyType.tooltip}"
+                                        id="soc10">
+                      <f:selectItems value="#{row.bindings.BookcopyType.items}" id="si10"/>
+                      <f:validator binding="#{row.bindings.BookcopyType.validator}"/>
+                    </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLibBooksCopyView2.hints.CopyBarcode.name}" filterable="true"
                              sortable="true" headerText="Copy BarCode"

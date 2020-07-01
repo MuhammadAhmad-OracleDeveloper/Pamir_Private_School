@@ -119,7 +119,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLibBooksIssueMasterView1.hints.ReturnDate.name}"
                              filterable="true" sortable="true"
-                             headerText="Return Date" id="c5" align="left">
+                             headerText="Return Date" id="c5" align="left" width="150">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblLibBooksIssueMasterView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.ReturnDate.value}"
                                     id="id3" placeholder="Search ">
@@ -129,7 +129,7 @@
                     <af:inputDate value="#{row.bindings.ReturnDate.inputValue}"
                                   label="#{bindings.TblLibBooksIssueMasterView1.hints.ReturnDate.label}"
                                   required="#{bindings.TblLibBooksIssueMasterView1.hints.ReturnDate.mandatory}"
-                                  columns="#{bindings.TblLibBooksIssueMasterView1.hints.ReturnDate.displayWidth}"
+                                  columns="20"
                                   shortDesc="#{bindings.TblLibBooksIssueMasterView1.hints.ReturnDate.tooltip}" id="id5"
                                   contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.ReturnDate.validator}"/>
