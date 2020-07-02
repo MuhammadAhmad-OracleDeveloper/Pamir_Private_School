@@ -850,6 +850,9 @@
   <ViewUsage
     Name="TblAssessDetailView2"
     ViewObjectName="model.ERP.VO.TblAssessDetailView"/>
+  <ViewUsage
+    Name="TblAssessDetailDView3"
+    ViewObjectName="model.ERP.VO.TblAssessDetailDView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -1689,5 +1692,11 @@
     ViewLinkObjectName="model.ERP.VO.FkAssessDetailMasterLink"
     SrcViewUsageName="model.ERP.AppModule.TblAssessMasterView1"
     DstViewUsageName="model.ERP.AppModule.TblAssessDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkAssessDetailDDetailLink2"
+    ViewLinkObjectName="model.ERP.VO.FkAssessDetailDDetailLink"
+    SrcViewUsageName="model.ERP.AppModule.TblAssessDetailView2"
+    DstViewUsageName="model.ERP.AppModule.TblAssessDetailDView3"
     Reversed="false"/>
 </AppModule>
