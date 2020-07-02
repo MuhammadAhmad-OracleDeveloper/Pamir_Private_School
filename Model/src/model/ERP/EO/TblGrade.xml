@@ -192,6 +192,20 @@
     AssociationOtherEnd="model.ERP.EO.FKTblGradeStaffGradeAssoc.TblGrade"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblTransFeeGenMaster"
+    Association="model.ERP.EO.FkTblTransFeeGenMasterGradeFkAssoc"
+    AssociationEnd="model.ERP.EO.FkTblTransFeeGenMasterGradeFkAssoc.TblTransFeeGenMaster"
+    AssociationOtherEnd="model.ERP.EO.FkTblTransFeeGenMasterGradeFkAssoc.TblGrade"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblTransFeeGenMaster1"
+    Association="model.ERP.EO.FkTblTransFeeGenMasterGradeFkAssoc"
+    AssociationEnd="model.ERP.EO.FkTblTransFeeGenMasterGradeFkAssoc.TblTransFeeGenMaster1"
+    AssociationOtherEnd="model.ERP.EO.FkTblTransFeeGenMasterGradeFkAssoc.TblGrade1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkGrade"
     PrimaryKey="true">

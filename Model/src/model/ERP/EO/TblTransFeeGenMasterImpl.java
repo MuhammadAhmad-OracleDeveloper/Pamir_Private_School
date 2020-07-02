@@ -33,7 +33,13 @@ public class TblTransFeeGenMasterImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         TblTransFeeGenDetail,
-        TblTransFeeRec;
+        TblTransFeeRec,
+        TblAcadYear,
+        TblGrade,
+        TblTerms,
+        TblAcadYear1,
+        TblGrade1,
+        TblTerms1;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -56,6 +62,8 @@ public class TblTransFeeGenMasterImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int ACADYEARID = AttributesEnum.AcadYearId.index();
     public static final int GRADEID = AttributesEnum.GradeId.index();
@@ -67,12 +75,26 @@ public class TblTransFeeGenMasterImpl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int TBLTRANSFEEGENDETAIL = AttributesEnum.TblTransFeeGenDetail.index();
     public static final int TBLTRANSFEEREC = AttributesEnum.TblTransFeeRec.index();
+    public static final int TBLACADYEAR = AttributesEnum.TblAcadYear.index();
+    public static final int TBLGRADE = AttributesEnum.TblGrade.index();
+    public static final int TBLTERMS = AttributesEnum.TblTerms.index();
+    public static final int TBLACADYEAR1 = AttributesEnum.TblAcadYear1.index();
+    public static final int TBLGRADE1 = AttributesEnum.TblGrade1.index();
+    public static final int TBLTERMS1 = AttributesEnum.TblTerms1.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblTransFeeGenMasterImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblTransFeeGenMaster");
+    }
+
 
     /**
      * Gets the attribute value for Id, using the alias name Id.
@@ -217,6 +239,48 @@ public class TblTransFeeGenMasterImpl extends EntityImpl {
     }
 
     /**
+     * @return the associated entity TblAcadYearImpl.
+     */
+    public TblAcadYearImpl getTblAcadYear1() {
+        return (TblAcadYearImpl) getAttributeInternal(TBLACADYEAR1);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity TblAcadYearImpl.
+     */
+    public void setTblAcadYear1(TblAcadYearImpl value) {
+        setAttributeInternal(TBLACADYEAR1, value);
+    }
+
+    /**
+     * @return the associated entity TblGradeImpl.
+     */
+    public TblGradeImpl getTblGrade1() {
+        return (TblGradeImpl) getAttributeInternal(TBLGRADE1);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity TblGradeImpl.
+     */
+    public void setTblGrade1(TblGradeImpl value) {
+        setAttributeInternal(TBLGRADE1, value);
+    }
+
+    /**
+     * @return the associated entity TblTermsImpl.
+     */
+    public TblTermsImpl getTblTerms1() {
+        return (TblTermsImpl) getAttributeInternal(TBLTERMS1);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity TblTermsImpl.
+     */
+    public void setTblTerms1(TblTermsImpl value) {
+        setAttributeInternal(TBLTERMS1, value);
+    }
+
+    /**
      * @param id key constituent
 
      * @return a Key object based on given key constituents.
@@ -226,11 +290,48 @@ public class TblTransFeeGenMasterImpl extends EntityImpl {
     }
 
     /**
-     * @return the definition object for this instance class.
+     * @return the associated entity TblAcadYearImpl.
      */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblTransFeeGenMaster");
+    public TblAcadYearImpl getTblAcadYear() {
+        return (TblAcadYearImpl) getAttributeInternal(TBLACADYEAR);
     }
+
+    /**
+     * Sets <code>value</code> as the associated entity TblAcadYearImpl.
+     */
+    public void setTblAcadYear(TblAcadYearImpl value) {
+        setAttributeInternal(TBLACADYEAR, value);
+    }
+
+
+    /**
+     * @return the associated entity TblGradeImpl.
+     */
+    public TblGradeImpl getTblGrade() {
+        return (TblGradeImpl) getAttributeInternal(TBLGRADE);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity TblGradeImpl.
+     */
+    public void setTblGrade(TblGradeImpl value) {
+        setAttributeInternal(TBLGRADE, value);
+    }
+
+    /**
+     * @return the associated entity TblTermsImpl.
+     */
+    public TblTermsImpl getTblTerms() {
+        return (TblTermsImpl) getAttributeInternal(TBLTERMS);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity TblTermsImpl.
+     */
+    public void setTblTerms(TblTermsImpl value) {
+        setAttributeInternal(TBLTERMS, value);
+    }
+
 
     /**
      * Add locking logic here.

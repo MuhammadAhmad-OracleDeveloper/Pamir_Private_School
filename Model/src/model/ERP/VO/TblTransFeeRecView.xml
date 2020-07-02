@@ -98,9 +98,9 @@
       <Item Value="Id"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="AcadYearId"/>
-      <Item Value="GradeId"/>
-      <Item Value="TermsId"/>
+      <Item Value="Name"/>
+      <Item Value="GradeName"/>
+      <Item Value="TermName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -187,7 +187,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblTransFeeRec"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -199,7 +200,8 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblTransFeeRec"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"

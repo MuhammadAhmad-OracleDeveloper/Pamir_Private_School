@@ -105,6 +105,48 @@
     AssociationOtherEnd="model.ERP.EO.FkTransFeeRecFeeGenAssoc.TblTransFeeGenMaster"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblAcadYear"
+    Association="model.ERP.EO.FkTblTransFeeGenMasterAcadYearFkAssoc"
+    AssociationEnd="model.ERP.EO.FkTblTransFeeGenMasterAcadYearFkAssoc.TblAcadYear"
+    AssociationOtherEnd="model.ERP.EO.FkTblTransFeeGenMasterAcadYearFkAssoc.TblTransFeeGenMaster"
+    Type="model.ERP.EO.TblAcadYearImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblGrade"
+    Association="model.ERP.EO.FkTblTransFeeGenMasterGradeFkAssoc"
+    AssociationEnd="model.ERP.EO.FkTblTransFeeGenMasterGradeFkAssoc.TblGrade"
+    AssociationOtherEnd="model.ERP.EO.FkTblTransFeeGenMasterGradeFkAssoc.TblTransFeeGenMaster"
+    Type="model.ERP.EO.TblGradeImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblTerms"
+    Association="model.ERP.EO.FkTblTransFeeGenMasterTermFkAssoc"
+    AssociationEnd="model.ERP.EO.FkTblTransFeeGenMasterTermFkAssoc.TblTerms"
+    AssociationOtherEnd="model.ERP.EO.FkTblTransFeeGenMasterTermFkAssoc.TblTransFeeGenMaster"
+    Type="model.ERP.EO.TblTermsImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblAcadYear1"
+    Association="model.ERP.EO.FkTblTransFeeGenMasterAcadYearFkAssoc"
+    AssociationEnd="model.ERP.EO.FkTblTransFeeGenMasterAcadYearFkAssoc.TblAcadYear1"
+    AssociationOtherEnd="model.ERP.EO.FkTblTransFeeGenMasterAcadYearFkAssoc.TblTransFeeGenMaster1"
+    Type="model.ERP.EO.TblAcadYearImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblGrade1"
+    Association="model.ERP.EO.FkTblTransFeeGenMasterGradeFkAssoc"
+    AssociationEnd="model.ERP.EO.FkTblTransFeeGenMasterGradeFkAssoc.TblGrade1"
+    AssociationOtherEnd="model.ERP.EO.FkTblTransFeeGenMasterGradeFkAssoc.TblTransFeeGenMaster1"
+    Type="model.ERP.EO.TblGradeImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblTerms1"
+    Association="model.ERP.EO.FkTblTransFeeGenMasterTermFkAssoc"
+    AssociationEnd="model.ERP.EO.FkTblTransFeeGenMasterTermFkAssoc.TblTerms1"
+    AssociationOtherEnd="model.ERP.EO.FkTblTransFeeGenMasterTermFkAssoc.TblTransFeeGenMaster1"
+    Type="model.ERP.EO.TblTermsImpl"
+    IsUpdateable="true"/>
   <Key
     Name="PkTransFeeGenMaster"
     PrimaryKey="true">
@@ -143,6 +185,72 @@
       <Attr Name="_referencedKey" Value="PK_TERMS"/>
       <Attr Name="_isForeign" Value="true"/>
       <Attr Name="_DBObjectName" Value="FK_TRANS_FEE_GEN_MASTER_TERMS"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblTransFeeGenMaster.TermsId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_TblTransFeeGenMaster">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_ACAD_YEAR"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_TBL_TRANS_FEE_GEN_MASTER"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblTransFeeGenMaster.AcadYearId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_TblTransFeeGenMaster1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_GRADE"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_TBL_TRANS_FEE_GEN_MASTER1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblTransFeeGenMaster.GradeId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_TblTransFeeGenMaster2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_TERMS"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_TBL_TRANS_FEE_GEN_MASTER2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblTransFeeGenMaster.TermsId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_TblTransFeeGenMaster3">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_ACAD_YEAR"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_TBL_TRANS_FEE_GEN_MASTER3"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblTransFeeGenMaster.AcadYearId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_TblTransFeeGenMaster4">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_GRADE"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_TBL_TRANS_FEE_GEN_MASTER4"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblTransFeeGenMaster.GradeId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_TblTransFeeGenMaster5">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_TERMS"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_TBL_TRANS_FEE_GEN_MASTER5"/>
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.ERP.EO.TblTransFeeGenMaster.TermsId"/>

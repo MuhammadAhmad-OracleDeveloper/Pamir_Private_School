@@ -37,7 +37,9 @@ public class TblTermsImpl extends EntityImpl {
         CompanySbuId,
         TblEvalWeightage,
         TblAcadYear,
-        TblTermWorkDays;
+        TblTermWorkDays,
+        TblTransFeeGenMaster,
+        TblTransFeeGenMaster1;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -77,6 +79,8 @@ public class TblTermsImpl extends EntityImpl {
     public static final int TBLEVALWEIGHTAGE = AttributesEnum.TblEvalWeightage.index();
     public static final int TBLACADYEAR = AttributesEnum.TblAcadYear.index();
     public static final int TBLTERMWORKDAYS = AttributesEnum.TblTermWorkDays.index();
+    public static final int TBLTRANSFEEGENMASTER = AttributesEnum.TblTransFeeGenMaster.index();
+    public static final int TBLTRANSFEEGENMASTER1 = AttributesEnum.TblTransFeeGenMaster1.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -298,6 +302,13 @@ public class TblTermsImpl extends EntityImpl {
 
 
     /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblTransFeeGenMaster1() {
+        return (RowIterator) getAttributeInternal(TBLTRANSFEEGENMASTER1);
+    }
+
+    /**
      * @param id key constituent
 
      * @return a Key object based on given key constituents.
@@ -305,6 +316,14 @@ public class TblTermsImpl extends EntityImpl {
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
     }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblTransFeeGenMaster() {
+        return (RowIterator) getAttributeInternal(TBLTRANSFEEGENMASTER);
+    }
+
 
     /**
      * Add locking logic here.
