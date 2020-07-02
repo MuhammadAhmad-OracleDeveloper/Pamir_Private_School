@@ -835,6 +835,21 @@
   <ViewUsage
     Name="StdRegSiblingsDetail2"
     ViewObjectName="model.ERP.VO.StdRegSiblingsDetail"/>
+  <ViewUsage
+    Name="TblAssessDetailDView1"
+    ViewObjectName="model.ERP.VO.TblAssessDetailDView"/>
+  <ViewUsage
+    Name="TblAssessDetailView1"
+    ViewObjectName="model.ERP.VO.TblAssessDetailView"/>
+  <ViewUsage
+    Name="TblAssessMasterView1"
+    ViewObjectName="model.ERP.VO.TblAssessMasterView"/>
+  <ViewUsage
+    Name="TblAssessDetailDView2"
+    ViewObjectName="model.ERP.VO.TblAssessDetailDView"/>
+  <ViewUsage
+    Name="TblAssessDetailView2"
+    ViewObjectName="model.ERP.VO.TblAssessDetailView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -1662,5 +1677,17 @@
     ViewLinkObjectName="model.ERP.VO.FKStdRegSiblingsDetailFKLink"
     SrcViewUsageName="model.ERP.AppModule.TblStdRegView1"
     DstViewUsageName="model.ERP.AppModule.StdRegSiblingsDetail2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkAssessDetailDDetailLink1"
+    ViewLinkObjectName="model.ERP.VO.FkAssessDetailDDetailLink"
+    SrcViewUsageName="model.ERP.AppModule.TblAssessDetailView1"
+    DstViewUsageName="model.ERP.AppModule.TblAssessDetailDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkAssessDetailMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkAssessDetailMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblAssessMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblAssessDetailView2"
     Reversed="false"/>
 </AppModule>

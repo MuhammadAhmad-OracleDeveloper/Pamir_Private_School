@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblAssessMaster"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_ASSESS_MASTER"
+  AliasName="TblAssessMaster"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ASSESS_MASTER"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="AcadYearId"
+    ColumnName="ACAD_YEAR_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ASSESS_MASTER"/>
+  <Attribute
+    Name="GradeId"
+    ColumnName="GRADE_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ASSESS_MASTER"/>
+  <Attribute
+    Name="SubjectId"
+    ColumnName="SUBJECT_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ASSESS_MASTER"/>
+  <Attribute
+    Name="GroupCompanyId"
+    ColumnName="GROUP_COMPANY_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ASSESS_MASTER"/>
+  <Attribute
+    Name="CompanySbuId"
+    ColumnName="COMPANY_SBU_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ASSESS_MASTER"/>
+  <Attribute
+    Name="Ast"
+    Precision="1"
+    ColumnName="AST"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_ASSESS_MASTER"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_ASSESS_MASTER"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ASSESS_MASTER"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_ASSESS_MASTER"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ASSESS_MASTER"/>
+  <AccessorAttribute
+    Name="TblAssessDetail"
+    Association="model.ERP.EO.FkAssessDetailMasterAssoc"
+    AssociationEnd="model.ERP.EO.FkAssessDetailMasterAssoc.TblAssessDetail"
+    AssociationOtherEnd="model.ERP.EO.FkAssessDetailMasterAssoc.TblAssessMaster"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="PkAssessMaster"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_ASSESS_MASTER"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblAssessMaster.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkAssessMasterAcadYear">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_ACAD_YEAR"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_ASSESS_MASTER_ACAD_YEAR"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblAssessMaster.AcadYearId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkAssessMasterCompany">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_GROUP_COMPANY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_ASSESS_MASTER_COMPANY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblAssessMaster.GroupCompanyId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkAssessMasterGrade">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_GRADE"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_ASSESS_MASTER_GRADE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblAssessMaster.GradeId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkAssessMasterSbu">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_COMPANY_SBU"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_ASSESS_MASTER_SBU"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblAssessMaster.CompanySbuId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkAssessMasterSubject">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_SUBJECT"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_ASSESS_MASTER_SUBJECT"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblAssessMaster.SubjectId"/>
+    </AttrArray>
+  </Key>
+</Entity>
