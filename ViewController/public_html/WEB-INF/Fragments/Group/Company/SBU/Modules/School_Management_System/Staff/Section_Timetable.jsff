@@ -313,7 +313,7 @@
                                   columns="#{bindings.TblSectionTimetableDetailView3.hints.TimeDiff.displayWidth}"
                                   maximumLength="#{bindings.TblSectionTimetableDetailView3.hints.TimeDiff.precision}"
                                   shortDesc="#{bindings.TblSectionTimetableDetailView3.hints.TimeDiff.tooltip}"
-                                  id="it3" contentStyle='text-align: right'>
+                                  id="it3" contentStyle='text-align: right' disabled="true">
                       <f:validator binding="#{row.bindings.TimeDiff.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblSectionTimetableDetailView3.hints.TimeDiff.format}"/>

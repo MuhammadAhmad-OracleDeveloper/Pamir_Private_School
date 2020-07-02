@@ -1018,7 +1018,7 @@
                             filterModel="#{bindings.TblStdRegSibView1Query.queryDescriptor}" filterVisible="true"
                             queryListener="#{bindings.TblStdRegSibView1Query.processQuery}" varStatus="vs" id="t2">
                     <af:column sortProperty="#{bindings.TblStdRegSibView1.hints.Dob.name}" filterable="true"
-                               sortable="true" headerText="D.O.B" id="c10">
+                               sortable="true" headerText="D.O.B" id="c10" width="106">
                       <f:facet name="filter">
                         <af:inputDate value="#{bindings.TblStdRegSibView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dob.value}"
                                       id="id8">
@@ -1035,7 +1035,7 @@
                       </af:inputDate>
                     </af:column>
                     <af:column sortProperty="#{bindings.TblStdRegSibView1.hints.SibName.name}" filterable="true"
-                               sortable="true" headerText="Name" id="c13">
+                               sortable="true" headerText="Name" id="c13" width="225">
                       <af:inputText value="#{row.bindings.SibName.inputValue}"
                                     label="#{bindings.TblStdRegSibView1.hints.SibName.label}"
                                     required="#{bindings.TblStdRegSibView1.hints.SibName.mandatory}"
@@ -1047,7 +1047,7 @@
                     </af:column>
                     <af:column sortProperty="#{bindings.TblStdRegSibView1.hints.SchoolName.name}" filterable="true"
                                sortable="true" headerText="School"
-                               id="c12">
+                               id="c12" width="225">
                       <af:inputText value="#{row.bindings.SchoolName.inputValue}"
                                     label="#{bindings.TblStdRegSibView1.hints.SchoolName.label}"
                                     required="#{bindings.TblStdRegSibView1.hints.SchoolName.mandatory}"
