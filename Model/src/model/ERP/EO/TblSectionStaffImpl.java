@@ -33,10 +33,10 @@ public class TblSectionStaffImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         CompanySbuId,
+        StaffId,
         TblStaffSubject,
         TblSections;
-        static AttributesEnum[] vals = null;
-        ;
+        private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
         public int index() {
@@ -71,6 +71,7 @@ public class TblSectionStaffImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int COMPANYSBUID = AttributesEnum.CompanySbuId.index();
+    public static final int STAFFID = AttributesEnum.StaffId.index();
     public static final int TBLSTAFFSUBJECT = AttributesEnum.TblStaffSubject.index();
     public static final int TBLSECTIONS = AttributesEnum.TblSections.index();
 
@@ -248,6 +249,22 @@ public class TblSectionStaffImpl extends EntityImpl {
      */
     public void setCompanySbuId(Number value) {
         setAttributeInternal(COMPANYSBUID, value);
+    }
+
+    /**
+     * Gets the attribute value for StaffId, using the alias name StaffId.
+     * @return the value of StaffId
+     */
+    public BigDecimal getStaffId() {
+        return (BigDecimal) getAttributeInternal(STAFFID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for StaffId.
+     * @param value value to set the StaffId
+     */
+    public void setStaffId(BigDecimal value) {
+        setAttributeInternal(STAFFID, value);
     }
 
     /**

@@ -13,6 +13,50 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Lookup_Assessment_Category_LOV1"
+    ViewObjectName="model.LOV.Lookup_Assessment_Category_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Active_Name_LOV1"
+    ViewObjectName="model.LOV.Active_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_LookupAssessCatId"
+    ListVOName="Lookup_Assessment_Category_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LookupAssessCatId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Ast"
+    ListVOName="Active_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Ast"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblAssessDetailD"
     Entity="model.ERP.EO.TblAssessDetailD"/>
@@ -34,7 +78,15 @@
     PrecisionRule="true"
     EntityAttrName="LookupAssessCatId"
     EntityUsage="TblAssessDetailD"
-    AliasName="LOOKUP_ASSESS_CAT_ID"/>
+    AliasName="LOOKUP_ASSESS_CAT_ID"
+    LOVName="LOV_LookupAssessCatId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="TotalMarks"
     PrecisionRule="true"
@@ -46,7 +98,15 @@
     PrecisionRule="true"
     EntityAttrName="Ast"
     EntityUsage="TblAssessDetailD"
-    AliasName="AST"/>
+    AliasName="AST"
+    LOVName="LOV_Ast">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"

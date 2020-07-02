@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Assessment_SetupPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.School_Management_System.General_Setup">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblAssessMasterView1" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblAssessMasterView1Iterator"/>
+    <searchRegion Binds="TblAssessMasterView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblAssessMasterView1Query"/>
+    <iterator Binds="TblAssessDetailView2" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblAssessDetailView2Iterator"/>
+    <searchRegion Binds="TblAssessDetailView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblAssessDetailView2Query"/>
+    <iterator Binds="TblAssessDetailDView3" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblAssessDetailDView3Iterator"/>
+    <searchRegion Binds="TblAssessDetailDView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblAssessDetailDView3Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblAssessMasterView1Iterator" id="TblAssessMasterView1">
+      <nodeDefinition DefName="model.ERP.VO.TblAssessMasterView" Name="TblAssessMasterView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="AcadYearId"/>
+          <Item Value="GradeId"/>
+          <Item Value="SubjectId"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblAssessMasterView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblAssessMasterView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblAssessMasterView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblAssessDetailView2Iterator" id="TblAssessDetailView2">
+      <nodeDefinition DefName="model.ERP.VO.TblAssessDetailView" Name="TblAssessDetailView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="LookupAssessTypeId"/>
+          <Item Value="TotalMarks"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblAssessDetailView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblAssessDetailView2Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblAssessDetailView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblAssessDetailDView3Iterator" id="TblAssessDetailDView3">
+      <nodeDefinition DefName="model.ERP.VO.TblAssessDetailDView" Name="TblAssessDetailDView30">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="LookupAssessCatId"/>
+          <Item Value="TotalMarks"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblAssessDetailDView3Iterator" id="CreateInsert2" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblAssessDetailDView3Iterator" id="Execute2" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblAssessDetailDView3Iterator" id="Delete2" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>
