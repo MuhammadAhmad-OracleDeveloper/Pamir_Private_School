@@ -21,9 +21,9 @@ public class DatabaseConnection {
     public static Connection getConnection() throws SQLException {
         
         /* Database credentials >> username , password , hostname , port , SID  */
-        setUNamee("dummy_ppss");
-        setUpasss("dummy_ppss");
-        setUipp("207.180.246.67");
+        setUNamee("ppss");
+        setUpasss("ppss");
+        setUipp("192.168.1.2");
         setUportADF("1521");
         setUSID("orcl");
         /* END  */
