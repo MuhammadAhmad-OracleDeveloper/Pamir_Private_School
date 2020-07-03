@@ -1702,7 +1702,7 @@
                                                         <af:column sortProperty="#{bindings.TblStaffSalElemView4.hints.Id.name}"
                                                                    filterable="true" sortable="true"
                                                                    headerText="Staff Salary Element ID" id="c69"
-                                                                   align="center" width="80">
+                                                                   align="center" width="80" visible="false">
                                                             <f:facet name="filter">
                                                                 <af:inputText value="#{vs.filterCriteria.Id}" id="it91"
                                                                               placeholder="Search "></af:inputText>
@@ -1719,23 +1719,6 @@
                                                                 <af:convertNumber groupingUsed="false"
                                                                                   pattern="#{bindings.TblStaffSalElemView4.hints.Id.format}"/>
                                                             </af:inputText>
-                                                        </af:column>
-                                                        <af:column sortProperty="#{bindings.TblStaffSalElemView4.hints.StaffSalaryId.name}"
-                                                                   filterable="true" sortable="true"
-                                                                   headerText="Staff Salary" id="c70" width="200">
-                                                            <f:facet name="filter">
-                                                                <af:inputText value="#{vs.filterCriteria.StaffSalaryId}"
-                                                                              id="it92" placeholder="Search "></af:inputText>
-                                                            </f:facet>
-                                                            <af:selectOneChoice value="#{row.bindings.StaffSalaryId.inputValue}"
-                                                                                label="#{row.bindings.StaffSalaryId.label}"
-                                                                                required="#{bindings.TblStaffSalElemView4.hints.StaffSalaryId.mandatory}"
-                                                                                shortDesc="#{bindings.TblStaffSalElemView4.hints.StaffSalaryId.tooltip}"
-                                                                                id="soc24">
-                                                                <f:selectItems value="#{row.bindings.StaffSalaryId.items}"
-                                                                               id="si24"/>
-                                                                <f:validator binding="#{row.bindings.StaffSalaryId.validator}"/>
-                                                            </af:selectOneChoice>
                                                         </af:column>
                                                         <af:column sortProperty="#{bindings.TblStaffSalElemView4.hints.SalaryElementId.name}"
                                                                    filterable="true" sortable="true"
