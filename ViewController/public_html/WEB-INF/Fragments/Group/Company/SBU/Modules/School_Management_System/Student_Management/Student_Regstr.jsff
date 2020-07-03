@@ -339,6 +339,14 @@
                     <f:validator binding="#{bindings.TotAge.validator}"/>
                   </af:inputText>
                   <af:spacer  id="s53"/>
+                  <af:inputText value="#{bindings.EligStatus.inputValue}" label="Eligibility Status" 
+                                required="#{bindings.EligStatus.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.EligStatus.hints.precision}"
+                                shortDesc="#{bindings.EligStatus.hints.tooltip}" contentStyle="width:200px;" id="it44" disabled="true">
+                    <f:validator binding="#{bindings.EligStatus.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s17"/>
                   <af:selectOneChoice value="#{bindings.EmirArea.inputValue}" label="Emirates Area"
                                       required="#{bindings.EmirArea.hints.mandatory}"
                                       shortDesc="#{bindings.EmirArea.hints.tooltip}" id="soc27"
