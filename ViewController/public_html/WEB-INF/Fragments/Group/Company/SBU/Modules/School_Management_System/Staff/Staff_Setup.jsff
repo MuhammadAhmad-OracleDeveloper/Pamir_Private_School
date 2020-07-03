@@ -1556,25 +1556,6 @@
                                                                                   pattern="#{bindings.TblStaffSalaryView2.hints.Id.format}"/>
                                                             </af:inputText>
                                                         </af:column>
-                                                        <af:column sortProperty="#{bindings.TblStaffSalaryView2.hints.Dated.name}"
-                                                                   filterable="true" sortable="true" headerText="Date"
-                                                                   id="c62" align="left">
-                                                            <f:facet name="filter">
-                                                                <af:inputDate value="#{bindings.TblStaffSalaryView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
-                                                                              id="id39">
-                                                                    <af:convertDateTime pattern="#{bindings.TblStaffSalaryView2.hints.Dated.format}"/>
-                                                                </af:inputDate>
-                                                            </f:facet>
-                                                            <af:inputDate value="#{row.bindings.Dated.inputValue}"
-                                                                          label="#{bindings.TblStaffSalaryView2.hints.Dated.label}"
-                                                                          required="#{bindings.TblStaffSalaryView2.hints.Dated.mandatory}"
-                                                                          columns="#{bindings.TblStaffSalaryView2.hints.Dated.displayWidth}"
-                                                                          shortDesc="#{bindings.TblStaffSalaryView2.hints.Dated.tooltip}"
-                                                                          id="id40" contentStyle='text-align: left'>
-                                                                <f:validator binding="#{row.bindings.Dated.validator}"/>
-                                                                <af:convertDateTime pattern="#{bindings.TblStaffSalaryView2.hints.Dated.format}"/>
-                                                            </af:inputDate>
-                                                        </af:column>
                                                         <af:column headerText="Payment Mode" d="c63" align="left" filterable="true" sortable="true" >
                                                                     <f:facet name="filter">
                                                                 <af:inputText value="#{vs.filterCriteria.PaymentMode}"
@@ -1637,7 +1618,7 @@
                                                                           columns="#{bindings.TblStaffSalaryView2.hints.NetSalary.displayWidth}"
                                                                           maximumLength="#{bindings.TblStaffSalaryView2.hints.NetSalary.precision}"
                                                                           shortDesc="#{bindings.TblStaffSalaryView2.hints.NetSalary.tooltip}"
-                                                                          id="it80" contentStyle='text-align: right'>
+                                                                          id="it80" contentStyle='text-align: right' readOnly="true">
                                                                 <f:validator binding="#{row.bindings.NetSalary.validator}"/>
                                                                 <af:convertNumber groupingUsed="false"
                                                                                   pattern="#{bindings.TblStaffSalaryView2.hints.NetSalary.format}"/>
