@@ -853,6 +853,15 @@
   <ViewUsage
     Name="TblAssessDetailDView3"
     ViewObjectName="model.ERP.VO.TblAssessDetailDView"/>
+  <ViewUsage
+    Name="TblMarksEntryDetailView1"
+    ViewObjectName="model.ERP.VO.TblMarksEntryDetailView"/>
+  <ViewUsage
+    Name="TblMarksEntryMasterView1"
+    ViewObjectName="model.ERP.VO.TblMarksEntryMasterView"/>
+  <ViewUsage
+    Name="TblMarksEntryDetailView2"
+    ViewObjectName="model.ERP.VO.TblMarksEntryDetailView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -1698,5 +1707,11 @@
     ViewLinkObjectName="model.ERP.VO.FkAssessDetailDDetailLink"
     SrcViewUsageName="model.ERP.AppModule.TblAssessDetailView2"
     DstViewUsageName="model.ERP.AppModule.TblAssessDetailDView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkMarksEntryDetailMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkMarksEntryDetailMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblMarksEntryMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblMarksEntryDetailView2"
     Reversed="false"/>
 </AppModule>

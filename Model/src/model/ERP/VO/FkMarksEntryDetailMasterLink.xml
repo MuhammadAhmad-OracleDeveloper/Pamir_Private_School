@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkMarksEntryDetailMasterLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.ERP.EO.FkMarksEntryDetailMasterAssoc">
+  <ViewLinkDefEnd
+    Name="TblMarksEntryMasterView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.VO.TblMarksEntryMasterView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblMarksEntryMasterView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblMarksEntryMasterView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblMarksEntryDetailView"
+    Cardinality="-1"
+    Owner="model.ERP.VO.TblMarksEntryDetailView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblMarksEntryDetailView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblMarksEntryDetailView.MarksEntryMasterId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>
