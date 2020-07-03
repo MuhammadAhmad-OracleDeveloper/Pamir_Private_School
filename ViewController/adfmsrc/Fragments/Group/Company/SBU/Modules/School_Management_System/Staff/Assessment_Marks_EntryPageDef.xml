@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Assessment_Marks_EntryPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.School_Management_System.Staff">
+  <parameters/>
+  <executables>
+    <iterator Binds="TblMarksEntryMasterView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblMarksEntryMasterView1Iterator"/>
+    <searchRegion Binds="TblMarksEntryMasterView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblMarksEntryMasterView1Query"/>
+    <iterator Binds="TblMarksEntryDetailView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblMarksEntryDetailView2Iterator"/>
+    <searchRegion Binds="TblMarksEntryDetailView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblMarksEntryDetailView2Query"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <searchRegion Binds="USERS_CRUD_OPERATIONS1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="USERS_CRUD_OPERATIONS1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblMarksEntryMasterView1Iterator" id="TblMarksEntryMasterView1">
+      <nodeDefinition DefName="model.ERP.VO.TblMarksEntryMasterView" Name="TblMarksEntryMasterView10">
+        <AttrNames>
+          <Item Value="AcadYearId"/>
+          <Item Value="GradeId"/>
+          <Item Value="SubjectId"/>
+          <Item Value="SectionsId"/>
+          <Item Value="AssessDetailId"/>
+          <Item Value="AssessDetailDId"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblMarksEntryDetailView2Iterator" id="TblMarksEntryDetailView2">
+      <nodeDefinition DefName="model.ERP.VO.TblMarksEntryDetailView" Name="TblMarksEntryDetailView20">
+        <AttrNames>
+          <Item Value="StdRegId"/>
+          <Item Value="TotalMarks"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
