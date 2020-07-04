@@ -20,6 +20,30 @@
         ResId="model.LOV.Grade_Name_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <ViewAccessor
+    Name="Grade_Subject_Dep_LOV1"
+    ViewObjectName="model.LOV.Grade_Subject_Dep_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getgradeid">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[Id]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="Section_Name_LOV1"
+    ViewObjectName="model.LOV.Section_Name_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getGrade">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[Id]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <EntityUsage
     Name="TblGrade"
     Entity="model.ERP.EO.TblGrade"/>

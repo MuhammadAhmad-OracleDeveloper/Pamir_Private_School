@@ -50,5 +50,19 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action IterBinding="TblMarksEntryMasterView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblMarksEntryMasterView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblMarksEntryMasterView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <action IterBinding="TblMarksEntryDetailView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblMarksEntryDetailView2Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblMarksEntryDetailView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>
