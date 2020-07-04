@@ -18,14 +18,6 @@
     ViewObjectName="model.LOV.Academic_Year_LOV"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="Grade_Name_LOV1"
-    ViewObjectName="model.LOV.Grade_Name_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
-    Name="Subject_Name_LOV1"
-    ViewObjectName="model.LOV.Subject_Name_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
     Name="Section_Name_LOV1"
     ViewObjectName="model.LOV.Section_Name_LOV"
     RowLevelBinds="true">
@@ -38,14 +30,50 @@
     </ParameterMap>
   </ViewAccessor>
   <ViewAccessor
-    Name="Grade_Subject_Dep_LOV1"
-    ViewObjectName="model.LOV.Grade_Subject_Dep_LOV"
+    Name="Assessment_AccadYear_Grade_Dep_LOV1"
+    ViewObjectName="model.LOV.Assessment_AccadYear_Grade_Dep_LOV"
     RowLevelBinds="true">
     <ParameterMap>
-      <PIMap Variable="getgradeid">
+      <PIMap Variable="getAcadYear">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[AcadYearId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="Assessment_Grade_Subject_Dep_LOV1"
+    ViewObjectName="model.LOV.Assessment_Grade_Subject_Dep_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getGradeID">
         <TransientExpression
           trustMode="untrusted"
           Name="ExpressionScript"><![CDATA[GradeId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="Assessment_Subject_Assess_Type_Dep_LOV1"
+    ViewObjectName="model.LOV.AssessmentD_Subject_Assess_Type_Dep_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getsubjectID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[SubjectId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="AssessD_AssessDDCat_Loockup_Cat_Dep_LOV1"
+    ViewObjectName="model.ERP.VO.AssessD_AssessDDCat_Loockup_Cat_Dep_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getAssesstypeID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[AssessDetailId]]></TransientExpression>
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
@@ -68,24 +96,6 @@
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_GradeId"
-    ListVOName="Grade_Name_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="GradeId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="GradeName"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
     Name="LOV_SectionsId"
     ListVOName="Section_Name_LOV1"
     ListRangeSize="-1"
@@ -104,8 +114,27 @@
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
+    Name="LOV_GradeId1"
+    ListVOName="Assessment_AccadYear_Grade_Dep_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GradeId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GradeId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GradeName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
     Name="LOV_SubjectId"
-    ListVOName="Grade_Subject_Dep_LOV1"
+    ListVOName="Assessment_Grade_Subject_Dep_LOV1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
@@ -115,6 +144,42 @@
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
       <Item Value="SubjectId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_AssessDetailId"
+    ListVOName="Assessment_Subject_Assess_Type_Dep_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AssessDetailId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LookupAssessTypeId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_AssessDetailDId"
+    ListVOName="AssessD_AssessDDCat_Loockup_Cat_Dep_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AssessDetailDId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LookupAssessCatId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
@@ -151,7 +216,7 @@
     EntityAttrName="GradeId"
     EntityUsage="TblMarksEntryMaster"
     AliasName="GRADE_ID"
-    LOVName="LOV_GradeId">
+    LOVName="LOV_GradeId1">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -192,13 +257,29 @@
     PrecisionRule="true"
     EntityAttrName="AssessDetailId"
     EntityUsage="TblMarksEntryMaster"
-    AliasName="ASSESS_DETAIL_ID"/>
+    AliasName="ASSESS_DETAIL_ID"
+    LOVName="LOV_AssessDetailId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="AssessDetailDId"
     PrecisionRule="true"
     EntityAttrName="AssessDetailDId"
     EntityUsage="TblMarksEntryMaster"
-    AliasName="ASSESS_DETAIL_D_ID"/>
+    AliasName="ASSESS_DETAIL_D_ID"
+    LOVName="LOV_AssessDetailDId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="GroupCompanyId"
     PrecisionRule="true"
