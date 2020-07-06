@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkStdDiscPolDetailMasterAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblStdDiscPolMaster"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.EO.TblStdDiscPolMaster">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblStdDiscPolMaster"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblStdDiscPolMaster.PkStdDiscPolMaster"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblStdDiscPolMaster.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblStdDiscPolDetail"
+    Cardinality="-1"
+    Owner="model.ERP.EO.TblStdDiscPolDetail">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblStdDiscPolDetail"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblStdDiscPolDetail.FkStdDiscPolDetailMaster"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblStdDiscPolDetail.StdDiscPolMasterId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>
