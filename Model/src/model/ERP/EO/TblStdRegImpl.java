@@ -107,6 +107,10 @@ public class TblStdRegImpl extends EntityImpl {
         RegFee,
         TotAge,
         AdmissionType,
+        SibControlBy,
+        GuardEmirId,
+        GuardName,
+        SibDiscBases,
         TblStdEnq,
         TblGrade,
         TblLookupDetail,
@@ -227,6 +231,10 @@ public class TblStdRegImpl extends EntityImpl {
     public static final int REGFEE = AttributesEnum.RegFee.index();
     public static final int TOTAGE = AttributesEnum.TotAge.index();
     public static final int ADMISSIONTYPE = AttributesEnum.AdmissionType.index();
+    public static final int SIBCONTROLBY = AttributesEnum.SibControlBy.index();
+    public static final int GUARDEMIRID = AttributesEnum.GuardEmirId.index();
+    public static final int GUARDNAME = AttributesEnum.GuardName.index();
+    public static final int SIBDISCBASES = AttributesEnum.SibDiscBases.index();
     public static final int TBLSTDENQ = AttributesEnum.TblStdEnq.index();
     public static final int TBLGRADE = AttributesEnum.TblGrade.index();
     public static final int TBLLOOKUPDETAIL = AttributesEnum.TblLookupDetail.index();
@@ -1551,6 +1559,70 @@ public class TblStdRegImpl extends EntityImpl {
      */
     public void setAdmissionType(String value) {
         setAttributeInternal(ADMISSIONTYPE, value);
+    }
+
+    /**
+     * Gets the attribute value for SibControlBy, using the alias name SibControlBy.
+     * @return the value of SibControlBy
+     */
+    public String getSibControlBy() {
+        return (String) getAttributeInternal(SIBCONTROLBY);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for SibControlBy.
+     * @param value value to set the SibControlBy
+     */
+    public void setSibControlBy(String value) {
+        setAttributeInternal(SIBCONTROLBY, value);
+    }
+
+    /**
+     * Gets the attribute value for GuardEmirId, using the alias name GuardEmirId.
+     * @return the value of GuardEmirId
+     */
+    public String getGuardEmirId() {
+        return (String) getAttributeInternal(GUARDEMIRID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GuardEmirId.
+     * @param value value to set the GuardEmirId
+     */
+    public void setGuardEmirId(String value) {
+        setAttributeInternal(GUARDEMIRID, value);
+    }
+
+    /**
+     * Gets the attribute value for GuardName, using the alias name GuardName.
+     * @return the value of GuardName
+     */
+    public String getGuardName() {
+        return (String) getAttributeInternal(GUARDNAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GuardName.
+     * @param value value to set the GuardName
+     */
+    public void setGuardName(String value) {
+        setAttributeInternal(GUARDNAME, value);
+    }
+
+    /**
+     * Gets the attribute value for SibDiscBases, using the alias name SibDiscBases.
+     * @return the value of SibDiscBases
+     */
+    public String getSibDiscBases() {
+        return (String) getAttributeInternal(SIBDISCBASES);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for SibDiscBases.
+     * @param value value to set the SibDiscBases
+     */
+    public void setSibDiscBases(String value) {
+        setAttributeInternal(SIBDISCBASES, value);
     }
 
     /**

@@ -105,6 +105,14 @@
     Name="Lookup_Emirates_Area_LOV1"
     ViewObjectName="model.LOV.Lookup_Emirates_Area_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Sib_Control_By_LOV1"
+    ViewObjectName="model.LOV.Sib_Control_By_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Sib_Disc_Bases_LOV1"
+    ViewObjectName="model.LOV.Sib_Disc_Bases_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_StdEnqId"
     ListVOName="Student_Enquiry_LOV1"
@@ -518,6 +526,42 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SibControlBy"
+    ListVOName="Sib_Control_By_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SibControlBy"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SibDiscBases"
+    ListVOName="Sib_Disc_Bases_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SibDiscBases"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -1190,6 +1234,46 @@
     EntityUsage="TblStdReg"
     AliasName="ADMISSION_TYPE"
     LOVName="LOV_AdmissionType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SibControlBy"
+    PrecisionRule="true"
+    EntityAttrName="SibControlBy"
+    EntityUsage="TblStdReg"
+    AliasName="SIB_CONTROL_BY"
+    LOVName="LOV_SibControlBy">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="GuardEmirId"
+    PrecisionRule="true"
+    EntityAttrName="GuardEmirId"
+    EntityUsage="TblStdReg"
+    AliasName="GUARD_EMIR_ID"/>
+  <ViewAttribute
+    Name="GuardName"
+    PrecisionRule="true"
+    EntityAttrName="GuardName"
+    EntityUsage="TblStdReg"
+    AliasName="GUARD_NAME"/>
+  <ViewAttribute
+    Name="SibDiscBases"
+    PrecisionRule="true"
+    EntityAttrName="SibDiscBases"
+    EntityUsage="TblStdReg"
+    AliasName="SIB_DISC_BASES"
+    LOVName="LOV_SibDiscBases">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

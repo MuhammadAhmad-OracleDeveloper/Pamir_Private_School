@@ -209,8 +209,8 @@
                                             <f:validator binding="#{row.bindings.EsisNo.validator}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column headerText="Emirates ID" id="c11" align="left" sortable="true"
-                                               filterable="true">
+                                    <af:column headerText="Student Emirates ID" id="c11" align="left" sortable="true"
+                                               filterable="true" width="150">
                                         <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.EmirId}" id="it50"
                                                           placeholder="Search "></af:inputText>
@@ -223,6 +223,22 @@
                                                       shortDesc="#{bindings.TblStdRegView1.hints.EmirId.tooltip}"
                                                       id="it41" contentStyle='text-align: right'>
                                             <f:validator binding="#{row.bindings.EmirId.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="Father's Emirates ID"
+                                               id="c14" width="150" filterable="true" sortable="true">
+                                               <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.FatherEmirId}" id="it46"
+                                                          placeholder="Search "></af:inputText>
+                                        </f:facet>
+                                        <af:inputText value="#{row.bindings.FatherEmirId.inputValue}"
+                                                      label="#{bindings.TblStdRegView1.hints.FatherEmirId.label}"
+                                                      required="#{bindings.TblStdRegView1.hints.FatherEmirId.mandatory}"
+                                                      columns="#{bindings.TblStdRegView1.hints.FatherEmirId.displayWidth}"
+                                                      maximumLength="#{bindings.TblStdRegView1.hints.FatherEmirId.precision}"
+                                                      shortDesc="#{bindings.TblStdRegView1.hints.FatherEmirId.tooltip}"
+                                                      id="it45" readOnly="true">
+                                            <f:validator binding="#{row.bindings.FatherEmirId.validator}"/>
                                         </af:inputText>
                                     </af:column>
                                     <af:column headerText="First Name" id="c29" align="left" sortable="true"
@@ -481,6 +497,44 @@
                                                     <f:selectItems value="#{bindings.SpecialNeed.items}" id="si14"/>
                                                     <f:validator binding="#{bindings.SpecialNeed.validator}"/>
                                                 </af:selectOneChoice>
+                                                 <af:spacer id="s10"/>
+                                                <af:selectOneChoice value="#{bindings.SibControlBy.inputValue}"
+                                                                    label="#{bindings.SibControlBy.label}"
+                                                                    required="#{bindings.SibControlBy.hints.mandatory}"
+                                                                    shortDesc="#{bindings.SibControlBy.hints.tooltip}"
+                                                                    id="soc9" contentStyle="width:200px;">
+                                                    <f:selectItems value="#{bindings.SibControlBy.items}" id="si9"/>
+                                                    <f:validator binding="#{bindings.SibControlBy.validator}"/>
+                                                </af:selectOneChoice>
+                                                <af:spacer id="s11"/>
+                                                <af:inputText value="#{bindings.GuardEmirId.inputValue}"
+                                                              label="Guardian Emirates ID"
+                                                              required="#{bindings.GuardEmirId.hints.mandatory}"
+                                                              columns="#{bindings.GuardEmirId.hints.displayWidth}"
+                                                              maximumLength="#{bindings.GuardEmirId.hints.precision}"
+                                                              shortDesc="#{bindings.GuardEmirId.hints.tooltip}"
+                                                              id="it23" contentStyle="width:200px;">
+                                                    <f:validator binding="#{bindings.GuardEmirId.validator}"/>
+                                                </af:inputText>
+                                                <af:spacer id="s33"/>
+                                                <af:inputText value="#{bindings.GuardName.inputValue}"
+                                                              label="Guardian Name"
+                                                              required="#{bindings.GuardName.hints.mandatory}"
+                                                              columns="#{bindings.GuardName.hints.displayWidth}"
+                                                              maximumLength="#{bindings.GuardName.hints.precision}"
+                                                              shortDesc="#{bindings.GuardName.hints.tooltip}" id="it24"
+                                                              contentStyle="width:200px;">
+                                                    <f:validator binding="#{bindings.GuardName.validator}"/>
+                                                </af:inputText>
+                                                <af:spacer id="s34"/>
+                                                <af:selectOneChoice value="#{bindings.SibDiscBases.inputValue}"
+                                                                    label="Sibling Discount Bases"
+                                                                    required="#{bindings.SibDiscBases.hints.mandatory}"
+                                                                    shortDesc="#{bindings.SibDiscBases.hints.tooltip}"
+                                                                    id="soc10" contentStyle="width:200px;">
+                                                    <f:selectItems value="#{bindings.SibDiscBases.items}" id="si10"/>
+                                                    <f:validator binding="#{bindings.SibDiscBases.validator}"/>
+                                                </af:selectOneChoice>
                                                 <f:facet name="footer">
                                                     <af:panelGroupLayout layout="horizontal" id="pgl5" halign="center">
                                                         <af:button actionListener="#{bindings.First.execute}"
@@ -715,7 +769,7 @@
                                     </f:facet>
                                 </af:panelFormLayout>
                             </af:showDetailItem>
-                            <af:showDetailItem text="Discount Detail" id="sdi2">
+                            <!--<af:showDetailItem text="Discount Detail" id="sdi2">
                                 <af:panelFormLayout id="pfl3" maxColumns="2" rows="4">
                                     <af:selectOneChoice value="#{bindings.MgtDiscType.inputValue}"
                                                         label="Management Discount Type"
@@ -831,7 +885,7 @@
                                         </af:panelGroupLayout>
                                     </f:facet>
                                 </af:panelFormLayout>
-                            </af:showDetailItem>
+                            </af:showDetailItem>-->
                             <af:showDetailItem text="Other Details" id="sdi3">
                                 <af:panelFormLayout id="pfl4" maxColumns="1" rows="1">
                                     <af:selectOneChoice value="#{bindings.LookupMotherTounge.inputValue}"
