@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Discount_PolicyPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.School_Management_System.Fee_Management">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblStdDiscPolMasterView1" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblStdDiscPolMasterView1Iterator"/>
+    <searchRegion Binds="TblStdDiscPolMasterView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStdDiscPolMasterView1Query"/>
+    <iterator Binds="TblStdDiscPolDetailView2" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblStdDiscPolDetailView2Iterator"/>
+    <searchRegion Binds="TblStdDiscPolDetailView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStdDiscPolDetailView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TblStdDiscPolMasterView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdDiscPolMasterView1Iterator" id="Dated">
+      <AttrNames>
+        <Item Value="Dated"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblStdDiscPolMasterView1Iterator" StaticList="false" Uses="LOV_StdRegId" id="StdRegId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblStdDiscPolMasterView1Iterator" id="StdOrderNo">
+      <AttrNames>
+        <Item Value="StdOrderNo"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblStdDiscPolMasterView1Iterator" StaticList="false" Uses="LOV_Ast" id="Ast"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action IterBinding="TblStdDiscPolMasterView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblStdDiscPolMasterView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblStdDiscPolMasterView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblStdDiscPolMasterView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblStdDiscPolMasterView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblStdDiscPolMasterView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblStdDiscPolMasterView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblStdDiscPolMasterView1Iterator" id="TblStdDiscPolMasterView1">
+      <nodeDefinition DefName="model.ERP.VO.TblStdDiscPolMasterView" Name="TblStdDiscPolMasterView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="StdRegId"/>
+          <Item Value="StdOrderNo"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblStdDiscPolDetailView2Iterator" id="TblStdDiscPolDetailView2">
+      <nodeDefinition DefName="model.ERP.VO.TblStdDiscPolDetailView" Name="TblStdDiscPolDetailView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="DiscSetupDetailId"/>
+          <Item Value="DiscOrderNo"/>
+          <Item Value="DiscPerc"/>
+          <Item Value="DiscAmount"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblStdDiscPolDetailView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblStdDiscPolDetailView2Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblStdDiscPolDetailView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>
