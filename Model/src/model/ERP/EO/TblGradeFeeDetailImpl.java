@@ -24,13 +24,13 @@ public class TblGradeFeeDetailImpl extends EntityImpl {
     public enum AttributesEnum {
         Id,
         GradeFeeMasterId,
-        TermsId,
         Amount,
         Ast,
         CreatedDate,
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        FeeTypeId,
         TblGradeFeeMaster;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -54,15 +54,17 @@ public class TblGradeFeeDetailImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int GRADEFEEMASTERID = AttributesEnum.GradeFeeMasterId.index();
-    public static final int TERMSID = AttributesEnum.TermsId.index();
     public static final int AMOUNT = AttributesEnum.Amount.index();
     public static final int AST = AttributesEnum.Ast.index();
     public static final int CREATEDDATE = AttributesEnum.CreatedDate.index();
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int FEETYPEID = AttributesEnum.FeeTypeId.index();
     public static final int TBLGRADEFEEMASTER = AttributesEnum.TblGradeFeeMaster.index();
 
     /**
@@ -70,6 +72,14 @@ public class TblGradeFeeDetailImpl extends EntityImpl {
      */
     public TblGradeFeeDetailImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblGradeFeeDetail");
+    }
+
 
     /**
      * Gets the attribute value for Id, using the alias name Id.
@@ -103,21 +113,6 @@ public class TblGradeFeeDetailImpl extends EntityImpl {
         setAttributeInternal(GRADEFEEMASTERID, value);
     }
 
-    /**
-     * Gets the attribute value for TermsId, using the alias name TermsId.
-     * @return the value of TermsId
-     */
-    public BigDecimal getTermsId() {
-        return (BigDecimal) getAttributeInternal(TERMSID);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for TermsId.
-     * @param value value to set the TermsId
-     */
-    public void setTermsId(BigDecimal value) {
-        setAttributeInternal(TERMSID, value);
-    }
 
     /**
      * Gets the attribute value for Amount, using the alias name Amount.
@@ -200,18 +195,35 @@ public class TblGradeFeeDetailImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for FeeTypeId, using the alias name FeeTypeId.
+     * @return the value of FeeTypeId
+     */
+    public BigDecimal getFeeTypeId() {
+        return (BigDecimal) getAttributeInternal(FEETYPEID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FeeTypeId.
+     * @param value value to set the FeeTypeId
+     */
+    public void setFeeTypeId(BigDecimal value) {
+        setAttributeInternal(FEETYPEID, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblGradeFeeMaster() {
-        return (EntityImpl) getAttributeInternal(TBLGRADEFEEMASTER);
+    public TblGradeFeeMasterImpl getTblGradeFeeMaster() {
+        return (TblGradeFeeMasterImpl) getAttributeInternal(TBLGRADEFEEMASTER);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblGradeFeeMaster(EntityImpl value) {
+    public void setTblGradeFeeMaster(TblGradeFeeMasterImpl value) {
         setAttributeInternal(TBLGRADEFEEMASTER, value);
     }
+
 
     /**
      * @param id key constituent
@@ -220,13 +232,6 @@ public class TblGradeFeeDetailImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblGradeFeeDetail");
     }
 
     /**

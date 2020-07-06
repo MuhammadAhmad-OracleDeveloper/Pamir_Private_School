@@ -14,31 +14,13 @@
   SelectAllAttributes="false"
   PageIterMode="Full">
   <ViewAccessor
-    Name="Terms_Name_LOV1"
-    ViewObjectName="model.LOV.Terms_Name_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
     Name="Active_Name_LOV1"
     ViewObjectName="model.LOV.Active_Name_LOV"
     RowLevelBinds="true"/>
-  <ListBinding
-    Name="LOV_TermsId"
-    ListVOName="Terms_Name_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="TermsId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="TermName"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
+  <ViewAccessor
+    Name="Fee_Type_LOV1"
+    ViewObjectName="model.LOV.Fee_Type_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Ast"
     ListVOName="Active_Name_LOV1"
@@ -54,6 +36,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_FeeTypeId"
+    ListVOName="Fee_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FeeTypeId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -74,12 +74,12 @@
     EntityUsage="TblGradeFeeDetail"
     AliasName="GRADE_FEE_MASTER_ID"/>
   <ViewAttribute
-    Name="TermsId"
+    Name="FeeTypeId"
     PrecisionRule="true"
-    EntityAttrName="TermsId"
+    EntityAttrName="FeeTypeId"
     EntityUsage="TblGradeFeeDetail"
-    AliasName="TERMS_ID"
-    LOVName="LOV_TermsId">
+    AliasName="FEE_TYPE_ID"
+    LOVName="LOV_FeeTypeId">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -112,7 +112,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblGradeFeeDetail"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -124,7 +125,8 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblGradeFeeDetail"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"

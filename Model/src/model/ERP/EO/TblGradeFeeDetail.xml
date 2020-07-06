@@ -33,13 +33,6 @@
     ColumnType="NUMBER"
     TableName="TBL_GRADE_FEE_DETAIL"/>
   <Attribute
-    Name="TermsId"
-    ColumnName="TERMS_ID"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_GRADE_FEE_DETAIL"/>
-  <Attribute
     Name="Amount"
     ColumnName="AMOUNT"
     SQLType="NUMERIC"
@@ -91,6 +84,13 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRADE_FEE_DETAIL"/>
+  <Attribute
+    Name="FeeTypeId"
+    ColumnName="FEE_TYPE_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRADE_FEE_DETAIL"/>
   <AccessorAttribute
     Name="TblGradeFeeMaster"
     Association="model.ERP.EO.FkGradeFeeDetailFeeMasterAssoc"
@@ -126,8 +126,5 @@
       <Attr Name="_isForeign" Value="true"/>
       <Attr Name="_DBObjectName" Value="FK_GRADE_FEE_DETAIL_TERMS"/>
     </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblGradeFeeDetail.TermsId"/>
-    </AttrArray>
   </Key>
 </Entity>

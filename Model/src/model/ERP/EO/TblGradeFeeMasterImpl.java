@@ -26,7 +26,6 @@ public class TblGradeFeeMasterImpl extends EntityImpl {
         Id,
         AcadYearId,
         GradeId,
-        FeeTypeId,
         GroupCompanyId,
         Ast,
         CreatedDate,
@@ -34,6 +33,7 @@ public class TblGradeFeeMasterImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         CompanySbuId,
+        TermsId,
         TblGradeFeeDetail;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -62,7 +62,6 @@ public class TblGradeFeeMasterImpl extends EntityImpl {
     public static final int ID = AttributesEnum.Id.index();
     public static final int ACADYEARID = AttributesEnum.AcadYearId.index();
     public static final int GRADEID = AttributesEnum.GradeId.index();
-    public static final int FEETYPEID = AttributesEnum.FeeTypeId.index();
     public static final int GROUPCOMPANYID = AttributesEnum.GroupCompanyId.index();
     public static final int AST = AttributesEnum.Ast.index();
     public static final int CREATEDDATE = AttributesEnum.CreatedDate.index();
@@ -70,6 +69,7 @@ public class TblGradeFeeMasterImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int COMPANYSBUID = AttributesEnum.CompanySbuId.index();
+    public static final int TERMSID = AttributesEnum.TermsId.index();
     public static final int TBLGRADEFEEDETAIL = AttributesEnum.TblGradeFeeDetail.index();
 
     /**
@@ -134,21 +134,6 @@ public class TblGradeFeeMasterImpl extends EntityImpl {
         setAttributeInternal(GRADEID, value);
     }
 
-    /**
-     * Gets the attribute value for FeeTypeId, using the alias name FeeTypeId.
-     * @return the value of FeeTypeId
-     */
-    public BigDecimal getFeeTypeId() {
-        return (BigDecimal) getAttributeInternal(FEETYPEID);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for FeeTypeId.
-     * @param value value to set the FeeTypeId
-     */
-    public void setFeeTypeId(BigDecimal value) {
-        setAttributeInternal(FEETYPEID, value);
-    }
 
     /**
      * Gets the attribute value for GroupCompanyId, using the alias name GroupCompanyId.
@@ -244,6 +229,22 @@ public class TblGradeFeeMasterImpl extends EntityImpl {
      */
     public void setCompanySbuId(Number value) {
         setAttributeInternal(COMPANYSBUID, value);
+    }
+
+    /**
+     * Gets the attribute value for TermsId, using the alias name TermsId.
+     * @return the value of TermsId
+     */
+    public BigDecimal getTermsId() {
+        return (BigDecimal) getAttributeInternal(TERMSID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TermsId.
+     * @param value value to set the TermsId
+     */
+    public void setTermsId(BigDecimal value) {
+        setAttributeInternal(TERMSID, value);
     }
 
     /**

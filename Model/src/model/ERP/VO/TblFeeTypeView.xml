@@ -26,8 +26,8 @@
     ViewObjectName="model.LOV.Active_Name_LOV"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="Value_Type_LOV1"
-    ViewObjectName="model.LOV.Value_Type_LOV"
+    Name="Fee_Cycle_LOV1"
+    ViewObjectName="model.LOV.Fee_Cycle_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_AcadYearId"
@@ -121,10 +121,9 @@
   </ListBinding>
   <ListBinding
     Name="LOV_Type"
-    ListVOName="Value_Type_LOV1"
+    ListVOName="Fee_Cycle_LOV1"
     ListRangeSize="-1"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    NullValueFlag="none"
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="Type"/>
