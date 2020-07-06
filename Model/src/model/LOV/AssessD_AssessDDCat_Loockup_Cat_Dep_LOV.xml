@@ -19,15 +19,27 @@
     </SchemaBasedProperties>
   </Properties>
   <Variable
-    Name="getAssesstypeID"
+    Name="getAssessDetailId"
     Kind="where"
     Type="java.math.BigDecimal"/>
-  <SQLQuery><![CDATA[Select Tbl_Assess_Detail_D.LOOKUP_ASSESS_CAT_ID,  
-tbl_lookup_detail.Name  
-From Tbl_Assess_Detail_D,Tbl_Assess_Detail,tbl_lookup_detail  
-Where Tbl_Assess_Detail.ID=Tbl_Assess_Detail_D.ASSESS_DETAIL_ID  
-And tbl_lookup_detail.ID=Tbl_Assess_Detail_D.LOOKUP_ASSESS_CAT_ID  
-And Tbl_Assess_Detail.LOOKUP_ASSESS_TYPE_ID=:getAssesstypeID]]></SQLQuery>
+  <SQLQuery><![CDATA[Select    
+tbl_assess_detail_d.id,   
+Tbl_Assess_Detail_D.LOOKUP_ASSESS_CAT_ID,     
+tbl_lookup_detail.Name     
+From Tbl_Assess_Detail_D,Tbl_Assess_Detail,tbl_lookup_detail     
+Where Tbl_Assess_Detail.ID=Tbl_Assess_Detail_D.ASSESS_DETAIL_ID     
+And tbl_lookup_detail.ID=Tbl_Assess_Detail_D.LOOKUP_ASSESS_CAT_ID     
+And Tbl_Assess_Detail_D.ASSESS_DETAIL_ID= :getAssessDetailId]]></SQLQuery>
+  <ViewAttribute
+    Name="Id"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ID"
+    Expression="ID"
+    SQLType="NUMERIC"/>
   <ViewAttribute
     Name="LookupAssessCatId"
     IsUpdateable="false"

@@ -156,7 +156,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblMarksEntryDetailView2.rangeSize}"
                           filterModel="#{bindings.TblMarksEntryDetailView2Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblMarksEntryDetailView2Query.processQuery}" varStatus="vs" id="t2"
-                          >
+                          scrollPolicy="page">
                   <af:column sortProperty="#{bindings.TblMarksEntryDetailView2.hints.StdRegId.name}" filterable="true"
                              sortable="true" headerText="Student"
                              id="c8" width="200">

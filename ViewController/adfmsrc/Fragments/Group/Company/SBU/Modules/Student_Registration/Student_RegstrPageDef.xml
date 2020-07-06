@@ -320,6 +320,7 @@
           <Item Value="Dob"/>
           <Item Value="Gender"/>
           <Item Value="AdmissionType"/>
+          <Item Value="FatherEmirId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -441,5 +442,19 @@
         <Item Value="EligStatus"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_SibControlBy" id="SibControlBy"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="GuardEmirId">
+      <AttrNames>
+        <Item Value="GuardEmirId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdRegView1Iterator" id="GuardName">
+      <AttrNames>
+        <Item Value="GuardName"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_SibDiscBases" id="SibDiscBases"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
