@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Discount_SetupPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.School_Management_System.Fee_Management">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblDiscSetupMasterView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblDiscSetupMasterView1Iterator"/>
+    <searchRegion Binds="TblDiscSetupMasterView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblDiscSetupMasterView1Query"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <searchRegion Binds="USERS_CRUD_OPERATIONS1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="USERS_CRUD_OPERATIONS1Query"/>
+    <iterator Binds="TblDiscSetupDetailView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblDiscSetupDetailView2Iterator"/>
+    <searchRegion Binds="TblDiscSetupDetailView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblDiscSetupDetailView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblDiscSetupMasterView1Iterator" id="TblDiscSetupMasterView1">
+      <nodeDefinition DefName="model.ERP.VO.TblDiscSetupMasterView" Name="TblDiscSetupMasterView10">
+        <AttrNames>
+          <Item Value="Name"/>
+          <Item Value="AcadYearId"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblDiscSetupDetailView2Iterator" id="TblDiscSetupDetailView2">
+      <nodeDefinition DefName="model.ERP.VO.TblDiscSetupDetailView" Name="TblDiscSetupDetailView20">
+        <AttrNames>
+          <Item Value="Name"/>
+          <Item Value="FeeTypeId"/>
+          <Item Value="OrderNo"/>
+          <Item Value="MinPerc"/>
+          <Item Value="MaxPerc"/>
+          <Item Value="MinAmount"/>
+          <Item Value="MaxAmount"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblDiscSetupMasterView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblDiscSetupMasterView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblDiscSetupMasterView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <action IterBinding="TblDiscSetupDetailView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblDiscSetupDetailView2Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblDiscSetupDetailView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>
