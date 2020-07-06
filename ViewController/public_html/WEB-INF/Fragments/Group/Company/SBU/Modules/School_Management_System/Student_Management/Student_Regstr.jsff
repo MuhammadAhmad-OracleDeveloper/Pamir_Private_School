@@ -560,11 +560,12 @@
                                                 <af:image id="i1"
                                                           shortDesc="Upload image or refresh page to render properly"
                                                           inlineStyle="height:100px;"
-                                                          source="/imageservlet?imageNameParam=#{bindings.Image.inputValue}"
+                                                          source="/stud_regstr_servlet?getPath=aaa&getImage;bbb"
                                                           partialTriggers="it66"/>
-                                                <af:inputFile id="if1" value="#{pageFlowScope.FileManagingBean.file}"/>
+                                                --><!--<af:inputFile id="if1" value="#{pageFlowScope.FileManagingBean.file}"/>
                                                 <af:button text="Save Image" id="b20" partialSubmit="true"
-                                                           actionListener="#{pageFlowScope.FileManagingBean.UploadFarmerImage}"/>
+                                                source="/imageservlet?imageNameParam=Pamiir_Logo.png"
+                                                           actionListener="#{pageFlowScope.FileManagingBean.UploadFarmerImage}"/>--><!--
                                             </af:panelGroupLayout>-->
                                         </af:gridCell>
                                     </af:gridRow>

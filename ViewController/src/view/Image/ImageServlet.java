@@ -23,7 +23,7 @@ public class ImageServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String path = "E:\\Pamir_Private_School\\ViewController\\src\\META-INF\\resources\\images\\";
-
+//        C:\\Meta_Data\\Pamir_Data\\student_regstr\\
 
         String var0 = "";
         try {
@@ -36,6 +36,7 @@ public class ImageServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        
 //        response.setContentType(CONTENT_TYPE);
 //        PrintWriter out = response.getWriter();
 //        out.println("<html>");
