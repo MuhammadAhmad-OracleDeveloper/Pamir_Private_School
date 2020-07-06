@@ -35,6 +35,11 @@
                           >
                   <af:column sortProperty="#{bindings.TblDiscSetupMasterView1.hints.Name.name}" filterable="true"
                              sortable="true" headerText="Discount Name" id="c1" width="200">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Name}"
+                                   id="id4" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
                     <af:inputText value="#{row.bindings.Name.inputValue}"
                                   label="#{bindings.TblDiscSetupMasterView1.hints.Name.label}"
                                   required="#{bindings.TblDiscSetupMasterView1.hints.Name.mandatory}"
@@ -47,6 +52,11 @@
                   <af:column sortProperty="#{bindings.TblDiscSetupMasterView1.hints.AcadYearId.name}" filterable="true"
                              sortable="true" headerText="Acadamic Year"
                              id="c2" width="150">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.AcadYearId}"
+                                   id="it8" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
                     <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
                                         label="#{row.bindings.AcadYearId.label}"
                                         required="#{bindings.TblDiscSetupMasterView1.hints.AcadYearId.mandatory}"
@@ -58,6 +68,11 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblDiscSetupMasterView1.hints.Ast.name}" filterable="true"
                              sortable="true" headerText="Active" id="c3">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Ast}"
+                                   id="it9" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblDiscSetupMasterView1.hints.Ast.mandatory}"
                                         shortDesc="#{bindings.TblDiscSetupMasterView1.hints.Ast.tooltip}" id="soc2">
@@ -104,6 +119,11 @@
                           >
                   <af:column sortProperty="#{bindings.TblDiscSetupDetailView2.hints.Name.name}" filterable="true"
                              sortable="true" headerText="Discount Category" id="c4" width="200">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Name}"
+                                   id="it10" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
                     <af:inputText value="#{row.bindings.Name.inputValue}"
                                   label="#{bindings.TblDiscSetupDetailView2.hints.Name.label}"
                                   required="#{bindings.TblDiscSetupDetailView2.hints.Name.mandatory}"
@@ -116,6 +136,11 @@
                   <af:column sortProperty="#{bindings.TblDiscSetupDetailView2.hints.FeeTypeId.name}" filterable="true"
                              sortable="true" headerText="Fee Type"
                              id="c5" width="150">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.FeeTypeId}"
+                                   id="it11" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
                     <af:selectOneChoice value="#{row.bindings.FeeTypeId.inputValue}"
                                         label="#{row.bindings.FeeTypeId.label}"
                                         required="#{bindings.TblDiscSetupDetailView2.hints.FeeTypeId.mandatory}"
@@ -128,6 +153,11 @@
                   <af:column sortProperty="#{bindings.TblDiscSetupDetailView2.hints.OrderNo.name}" filterable="true"
                              sortable="true" headerText="Order No."
                              id="c6">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.OrderNo}"
+                                   id="it12" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
                     <af:inputText value="#{row.bindings.OrderNo.inputValue}"
                                   label="#{bindings.TblDiscSetupDetailView2.hints.OrderNo.label}"
                                   required="#{bindings.TblDiscSetupDetailView2.hints.OrderNo.mandatory}"
@@ -142,6 +172,11 @@
                   <af:column sortProperty="#{bindings.TblDiscSetupDetailView2.hints.MinPerc.name}" filterable="true"
                              sortable="true" headerText="Min Percentage"
                              id="c7">
+                              <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.MinPerc}"
+                                   id="it13" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
                     <af:inputText value="#{row.bindings.MinPerc.inputValue}"
                                   label="#{bindings.TblDiscSetupDetailView2.hints.MinPerc.label}"
                                   required="#{bindings.TblDiscSetupDetailView2.hints.MinPerc.mandatory}"
@@ -156,6 +191,11 @@
                   <af:column sortProperty="#{bindings.TblDiscSetupDetailView2.hints.MaxPerc.name}" filterable="true"
                              sortable="true" headerText="Max Percentage"
                              id="c8">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.MaxPerc}"
+                                   id="it14" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
                     <af:inputText value="#{row.bindings.MaxPerc.inputValue}"
                                   label="#{bindings.TblDiscSetupDetailView2.hints.MaxPerc.label}"
                                   required="#{bindings.TblDiscSetupDetailView2.hints.MaxPerc.mandatory}"
@@ -170,6 +210,11 @@
                   <af:column sortProperty="#{bindings.TblDiscSetupDetailView2.hints.MinAmount.name}" filterable="true"
                              sortable="true" headerText="Min Amount"
                              id="c9">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.MinAmount}"
+                                   id="it15" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
                     <af:inputText value="#{row.bindings.MinAmount.inputValue}"
                                   label="#{bindings.TblDiscSetupDetailView2.hints.MinAmount.label}"
                                   required="#{bindings.TblDiscSetupDetailView2.hints.MinAmount.mandatory}"
@@ -184,6 +229,11 @@
                   <af:column sortProperty="#{bindings.TblDiscSetupDetailView2.hints.MaxAmount.name}" filterable="true"
                              sortable="true" headerText="Max Amount"
                              id="c10">
+                              <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.MaxAmount}"
+                                   id="it16" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
                     <af:inputText value="#{row.bindings.MaxAmount.inputValue}"
                                   label="#{bindings.TblDiscSetupDetailView2.hints.MaxAmount.label}"
                                   required="#{bindings.TblDiscSetupDetailView2.hints.MaxAmount.mandatory}"
@@ -197,6 +247,11 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblDiscSetupDetailView2.hints.Ast.name}" filterable="true"
                              sortable="true" headerText="Active" id="c11">
+                              <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Ast}"
+                                   id="it17" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblDiscSetupDetailView2.hints.Ast.mandatory}"
                                         shortDesc="#{bindings.TblDiscSetupDetailView2.hints.Ast.tooltip}" id="soc4">
