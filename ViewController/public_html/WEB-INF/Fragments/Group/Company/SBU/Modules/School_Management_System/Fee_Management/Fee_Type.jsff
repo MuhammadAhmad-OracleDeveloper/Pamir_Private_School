@@ -62,21 +62,7 @@
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblFeeTypeView1.hints.Id.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFeeTypeView1.hints.Type.name}" filterable="true"
-                             sortable="true" headerText="Fee Cycle" id="c2" align="left">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.Type}"
-                                   id="it3" placeholder="Search Cycle">
-                                  </af:inputText>
-                            </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.Type.inputValue}" label="#{row.bindings.Type.label}"
-                                        required="#{bindings.TblFeeTypeView1.hints.Type.mandatory}"
-                                        shortDesc="#{bindings.TblFeeTypeView1.hints.Type.tooltip}" id="soc1"
-                                        contentStyle="text-align: left">
-                      <f:selectItems value="#{row.bindings.Type.items}" id="si1"/>
-                      <f:validator binding="#{row.bindings.Type.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
+                  
                   <af:column sortProperty="#{bindings.TblFeeTypeView1.hints.Name.name}" filterable="true"
                              sortable="true" headerText="Fee Title" id="c3" width="200" align="left">
                              <f:facet name="filter">
@@ -93,6 +79,21 @@
                                   contentStyle="text-align: left">
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblFeeTypeView1.hints.Type.name}" filterable="true"
+                             sortable="true" headerText="Fee Type" id="c2" align="left">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Type}"
+                                   id="it3" placeholder="Search Cycle">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Type.inputValue}" label="#{row.bindings.Type.label}"
+                                        required="#{bindings.TblFeeTypeView1.hints.Type.mandatory}"
+                                        shortDesc="#{bindings.TblFeeTypeView1.hints.Type.tooltip}" id="soc1"
+                                        contentStyle="text-align: left">
+                      <f:selectItems value="#{row.bindings.Type.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.Type.validator}"/>
+                    </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFeeTypeView1.hints.DiscountAllow.name}" filterable="true"
                              sortable="true" headerText="Discount Allowed" id="c4" width="120" align="left">

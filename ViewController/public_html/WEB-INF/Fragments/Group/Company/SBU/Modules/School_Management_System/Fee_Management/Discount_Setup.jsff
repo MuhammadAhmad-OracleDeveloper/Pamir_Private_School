@@ -33,23 +33,7 @@
                           filterModel="#{bindings.TblDiscSetupMasterView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblDiscSetupMasterView1Query.processQuery}" varStatus="vs" id="t1"
                           >
-                  <af:column sortProperty="#{bindings.TblDiscSetupMasterView1.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="Discount Name" id="c1" width="200">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.Name}"
-                                   id="id4" placeholder="Search ">
-                                  </af:inputText>
-                            </f:facet>
-                    <af:inputText value="#{row.bindings.Name.inputValue}"
-                                  label="#{bindings.TblDiscSetupMasterView1.hints.Name.label}"
-                                  required="#{bindings.TblDiscSetupMasterView1.hints.Name.mandatory}"
-                                  columns="#{bindings.TblDiscSetupMasterView1.hints.Name.displayWidth}"
-                                  maximumLength="#{bindings.TblDiscSetupMasterView1.hints.Name.precision}"
-                                  shortDesc="#{bindings.TblDiscSetupMasterView1.hints.Name.tooltip}" id="it1">
-                      <f:validator binding="#{row.bindings.Name.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblDiscSetupMasterView1.hints.AcadYearId.name}" filterable="true"
+                          <af:column sortProperty="#{bindings.TblDiscSetupMasterView1.hints.AcadYearId.name}" filterable="true"
                              sortable="true" headerText="Acadamic Year"
                              id="c2" width="150">
                              <f:facet name="filter">
@@ -66,6 +50,23 @@
                       <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
+                  <af:column sortProperty="#{bindings.TblDiscSetupMasterView1.hints.Name.name}" filterable="true"
+                             sortable="true" headerText="Discount Name" id="c1" width="200">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Name}"
+                                   id="id4" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.Name.inputValue}"
+                                  label="#{bindings.TblDiscSetupMasterView1.hints.Name.label}"
+                                  required="#{bindings.TblDiscSetupMasterView1.hints.Name.mandatory}"
+                                  columns="#{bindings.TblDiscSetupMasterView1.hints.Name.displayWidth}"
+                                  maximumLength="#{bindings.TblDiscSetupMasterView1.hints.Name.precision}"
+                                  shortDesc="#{bindings.TblDiscSetupMasterView1.hints.Name.tooltip}" id="it1">
+                      <f:validator binding="#{row.bindings.Name.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  
                   <af:column sortProperty="#{bindings.TblDiscSetupMasterView1.hints.Ast.name}" filterable="true"
                              sortable="true" headerText="Active" id="c3">
                              <f:facet name="filter">
