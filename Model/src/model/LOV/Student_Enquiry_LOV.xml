@@ -11,8 +11,7 @@
        TblStdEnq.AST, 
        TblStdEnq.LAST_NAME"
   FromList="TBL_STD_ENQ TblStdEnq"
-  Where="TblStdEnq.ID not in(Select Std_Enq_ID from tbl_Std_Reg) 
-And AST='Y'"
+  Where="TblStdEnq.ID not in(Select Std_Enq_ID from tbl_Std_Reg where Std_Enq_ID is not null)"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full">
