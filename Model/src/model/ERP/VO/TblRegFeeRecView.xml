@@ -29,6 +29,10 @@
     Name="Student_Reg_LOV1"
     ViewObjectName="model.LOV.Student_Reg_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Student_Registration_LOV1"
+    ViewObjectName="model.LOV.Student_Registration_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_RecType"
     ListVOName="Recieve_Type_LOV1"
@@ -67,10 +71,9 @@
   </ListBinding>
   <ListBinding
     Name="LOV_StdRegId"
-    ListVOName="Student_Reg_LOV1"
+    ListVOName="Student_Registration_LOV1"
     ListRangeSize="-1"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    NullValueFlag="none"
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="StdRegId"/>
@@ -111,7 +114,7 @@
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
-          Value="choice"/>
+          Value="combo"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
