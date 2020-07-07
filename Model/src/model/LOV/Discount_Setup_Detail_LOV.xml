@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Discount_Setup_Detail_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblDiscSetupDetail.ID, 
+       TblDiscSetupDetail.NAME, 
+       TblDiscSetupDetail.ORDER_NO, 
+       TblDiscSetupDetail.AST"
+  FromList="TBL_DISC_SETUP_DETAIL TblDiscSetupDetail"
+  Where="AST='Y'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Discount_Setup_Detail_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblDiscSetupDetail"
+    Entity="model.ERP.EO.TblDiscSetupDetail"/>
+  <ViewAttribute
+    Name="Id"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblDiscSetupDetail"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Name"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblDiscSetupDetail"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="OrderNo"
+    PrecisionRule="true"
+    EntityAttrName="OrderNo"
+    EntityUsage="TblDiscSetupDetail"
+    AliasName="ORDER_NO"/>
+  <ViewAttribute
+    Name="Ast"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblDiscSetupDetail"
+    AliasName="AST"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

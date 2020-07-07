@@ -17,6 +17,10 @@
     Name="Active_Name_LOV1"
     ViewObjectName="model.LOV.Active_Name_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Discount_Setup_Detail_LOV1"
+    ViewObjectName="model.LOV.Discount_Setup_Detail_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Ast"
     ListVOName="Active_Name_LOV1"
@@ -32,6 +36,25 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DiscSetupDetailId"
+    ListVOName="Discount_Setup_Detail_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DiscSetupDetailId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+      <Item Value="OrderNo"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -56,7 +79,15 @@
     PrecisionRule="true"
     EntityAttrName="DiscSetupDetailId"
     EntityUsage="TblStdDiscPolDetail"
-    AliasName="DISC_SETUP_DETAIL_ID"/>
+    AliasName="DISC_SETUP_DETAIL_ID"
+    LOVName="LOV_DiscSetupDetailId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="DiscOrderNo"
     PrecisionRule="true"
