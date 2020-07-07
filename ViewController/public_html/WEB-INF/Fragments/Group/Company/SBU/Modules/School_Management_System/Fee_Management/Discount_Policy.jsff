@@ -242,25 +242,20 @@
                                         pattern="#{bindings.TblStdDiscPolDetailView2.hints.Id.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblStdDiscPolDetailView2.hints.DiscSetupDetailId.name}"
-                             filterable="true" sortable="true"
-                             headerText="Discount Setup Detail" id="c7" width="120">
-                              <f:facet name="filter">
+                  <af:column headerText="Discount Setup Detail" id="c7" sortable="true" filterable="true" width="150">
+                   <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.DiscSetupDetailId}"
        id="it14" placeholder="Search ">
       </af:inputText>
 </f:facet>
-                    <af:inputText value="#{row.bindings.DiscSetupDetailId.inputValue}"
-                                  label="#{bindings.TblStdDiscPolDetailView2.hints.DiscSetupDetailId.label}"
-                                  required="#{bindings.TblStdDiscPolDetailView2.hints.DiscSetupDetailId.mandatory}"
-                                  columns="#{bindings.TblStdDiscPolDetailView2.hints.DiscSetupDetailId.displayWidth}"
-                                  maximumLength="#{bindings.TblStdDiscPolDetailView2.hints.DiscSetupDetailId.precision}"
-                                  shortDesc="#{bindings.TblStdDiscPolDetailView2.hints.DiscSetupDetailId.tooltip}"
-                                  id="it9">
+                    <af:selectOneChoice value="#{row.bindings.DiscSetupDetailId.inputValue}"
+                                        label="#{row.bindings.DiscSetupDetailId.label}"
+                                        required="#{bindings.TblStdDiscPolDetailView2.hints.DiscSetupDetailId.mandatory}"
+                                        shortDesc="#{bindings.TblStdDiscPolDetailView2.hints.DiscSetupDetailId.tooltip}"
+                                        id="soc6">
+                      <f:selectItems value="#{row.bindings.DiscSetupDetailId.items}" id="si6"/>
                       <f:validator binding="#{row.bindings.DiscSetupDetailId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblStdDiscPolDetailView2.hints.DiscSetupDetailId.format}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdDiscPolDetailView2.hints.DiscOrderNo.name}"
                              filterable="true" sortable="true"
