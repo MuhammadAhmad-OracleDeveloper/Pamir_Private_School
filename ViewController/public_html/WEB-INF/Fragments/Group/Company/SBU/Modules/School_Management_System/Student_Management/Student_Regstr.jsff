@@ -540,7 +540,7 @@
                                                               required="#{bindings.Image.hints.mandatory}"
                                                               columns="#{bindings.Image.hints.displayWidth}"
                                                             binding="#{pageFlowScope.FileManagingBean.db_Image_Value}"
-                                                             partialTriggers="b20"
+                                                             partialTriggers="b20" visible="false"
                                                               maximumLength="#{bindings.Image.hints.precision}"
                                                               shortDesc="#{bindings.Image.hints.tooltip}" id="it25">
                                                     <f:validator binding="#{bindings.Image.validator}"/>
@@ -572,9 +572,13 @@
                                                           inlineStyle="height:100px;"
                                                           source="/viewimageservlet?getPath=C:\\Meta_Data\\Pamir_Data\\student_regstr_images\\&amp;getImage=#{bindings.Image.inputValue}"
                                                           partialTriggers="it66"/>
-                                                <af:inputFile id="if1" value="#{backingBeanScope.FileManagingBean.file}"/>
+                                          
+                                                <af:inputFile label="Label 1" id="if2"
+                                                              value="#{pageFlowScope.FileManagingBean.file}"/>
+                                                      
+                                                <!--<af:inputFile id="if1"/>-->
                                                 <af:button text="Save Image" id="b20" partialSubmit="true"
-                                                           actionListener="#{backingBeanScope.FileManagingBean.UploadImage}">
+                                                           actionListener="#{pageFlowScope.FileManagingBean.UploadImage}">
                                                   <f:attribute name="path" value="C://Meta_Data//Pamir_Data//student_regstr_images//"/>
                                                 </af:button>
                                             </af:panelGroupLayout>

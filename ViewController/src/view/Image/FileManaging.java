@@ -8,6 +8,8 @@ import java.util.Random;
 
 import javax.faces.event.ActionEvent;
 
+import javax.faces.event.ValueChangeEvent;
+
 import oracle.adf.view.rich.component.rich.input.RichInputText;
 
 import org.apache.myfaces.trinidad.model.UploadedFile;
@@ -20,14 +22,6 @@ public class FileManaging {
     private static String UniFileName;
     private RichInputText db_Image_Value;
 
-    public void setFile(UploadedFile file) {
-        this.file = file;
-    }
-
-    public UploadedFile getFile() {
-        System.out.println("popopopopoopopopp"+file);
-        return file;
-    }
 
     public void UploadImage(ActionEvent actionEvent) {
         // Add event code here...
@@ -88,5 +82,13 @@ public class FileManaging {
 
     public RichInputText getDb_Image_Value() {
         return db_Image_Value;
+    }
+
+    public void setFile(UploadedFile file) {
+        this.file = file;
+    }
+
+    public UploadedFile getFile() {
+        return file;
     }
 }
