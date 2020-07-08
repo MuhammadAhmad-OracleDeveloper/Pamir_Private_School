@@ -100,6 +100,35 @@
                       <af:convertDateTime pattern="#{bindings.TblStudyWeekPlanMasterView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
+                  <af:column headerText="Grade" id="c14" width="150">
+                  <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.GradeId}"
+                                   id="it18" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
+                                        required="#{bindings.TblStudyWeekPlanMasterView1.hints.GradeId.mandatory}"
+                                        shortDesc="#{bindings.TblStudyWeekPlanMasterView1.hints.GradeId.tooltip}"
+                                        id="soc5" autoSubmit="true">
+                      <f:selectItems value="#{row.bindings.GradeId.items}" id="si5"/>
+                      <f:validator binding="#{row.bindings.GradeId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="Sections" id="c15" width="150">
+                  <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.SectionsId}"
+                                   id="it19" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.SectionsId.inputValue}"
+                                        label="#{row.bindings.SectionsId.label}"
+                                        required="#{bindings.TblStudyWeekPlanMasterView1.hints.SectionsId.mandatory}"
+                                        shortDesc="#{bindings.TblStudyWeekPlanMasterView1.hints.SectionsId.tooltip}"
+                                        id="soc6" autoSubmit="true">
+                      <f:selectItems value="#{row.bindings.SectionsId.items}" id="si6"/>
+                      <f:validator binding="#{row.bindings.SectionsId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
                   <af:column sortProperty="#{bindings.TblStudyWeekPlanMasterView1.hints.StaffId.name}" filterable="true"
                              sortable="true" headerText="Staff"
                              id="c5" width="150" align="left">
@@ -111,7 +140,7 @@
                     <af:selectOneChoice value="#{row.bindings.StaffId.inputValue}" label="#{row.bindings.StaffId.label}"
                                         required="#{bindings.TblStudyWeekPlanMasterView1.hints.StaffId.mandatory}"
                                         shortDesc="#{bindings.TblStudyWeekPlanMasterView1.hints.StaffId.tooltip}"
-                                        id="soc2" contentStyle="text-align: left">
+                                        id="soc2" contentStyle="text-align: left" autoSubmit="true">
                       <f:selectItems value="#{row.bindings.StaffId.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.StaffId.validator}"/>
                     </af:selectOneChoice>
@@ -127,7 +156,7 @@
                     <af:selectOneChoice value="#{row.bindings.WeekId.inputValue}" label="#{row.bindings.WeekId.label}"
                                         required="#{bindings.TblStudyWeekPlanMasterView1.hints.WeekId.mandatory}"
                                         shortDesc="#{bindings.TblStudyWeekPlanMasterView1.hints.WeekId.tooltip}"
-                                        id="soc3" contentStyle='text-align: right'>
+                                        id="soc3" contentStyle="text-align:right">
                       <f:selectItems value="#{row.bindings.WeekId.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.WeekId.validator}"/>
                     </af:selectOneChoice>

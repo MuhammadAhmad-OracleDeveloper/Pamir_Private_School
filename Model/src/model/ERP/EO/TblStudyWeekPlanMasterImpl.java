@@ -36,6 +36,8 @@ public class TblStudyWeekPlanMasterImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         CompanySbuId,
+        SectionsId,
+        GradeId,
         TblStudyWeekPlanDetail,
         TblWeek;
         private static AttributesEnum[] vals = null;
@@ -75,6 +77,8 @@ public class TblStudyWeekPlanMasterImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int COMPANYSBUID = AttributesEnum.CompanySbuId.index();
+    public static final int SECTIONSID = AttributesEnum.SectionsId.index();
+    public static final int GRADEID = AttributesEnum.GradeId.index();
     public static final int TBLSTUDYWEEKPLANDETAIL = AttributesEnum.TblStudyWeekPlanDetail.index();
     public static final int TBLWEEK = AttributesEnum.TblWeek.index();
 
@@ -282,6 +286,38 @@ public class TblStudyWeekPlanMasterImpl extends EntityImpl {
      */
     public void setCompanySbuId(Number value) {
         setAttributeInternal(COMPANYSBUID, value);
+    }
+
+    /**
+     * Gets the attribute value for SectionsId, using the alias name SectionsId.
+     * @return the value of SectionsId
+     */
+    public BigDecimal getSectionsId() {
+        return (BigDecimal) getAttributeInternal(SECTIONSID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for SectionsId.
+     * @param value value to set the SectionsId
+     */
+    public void setSectionsId(BigDecimal value) {
+        setAttributeInternal(SECTIONSID, value);
+    }
+
+    /**
+     * Gets the attribute value for GradeId, using the alias name GradeId.
+     * @return the value of GradeId
+     */
+    public BigDecimal getGradeId() {
+        return (BigDecimal) getAttributeInternal(GRADEID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GradeId.
+     * @param value value to set the GradeId
+     */
+    public void setGradeId(BigDecimal value) {
+        setAttributeInternal(GRADEID, value);
     }
 
     /**
