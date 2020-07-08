@@ -534,7 +534,7 @@
                                     </af:column>
                                 </af:table>
                                 <af:spacer width="10" height="40" id="s2"/>
-                                <af:panelGroupLayout id="pgl2" layout="horizontal">
+                                <af:panelGroupLayout id="pgl2" halign="center" layout="horizontal">
                                     <af:iterator id="i1" var="index" varStatus="status"
                                                  value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                         <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -704,7 +704,7 @@
                                     </af:column>
                                 </af:table>
                                 <af:spacer width="10" height="40" id="s4"/>
-                                <af:panelGroupLayout id="pgl6" layout="horizontal">
+                                <af:panelGroupLayout id="pgl6" halign="center" layout="horizontal">
                                     <af:iterator id="i3" var="index" varStatus="status"
                                                  value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                         <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -802,7 +802,7 @@
                                     </af:column>
                                 </af:table>
                                 <af:spacer width="10" height="40" id="s14"/>
-                                <af:panelGroupLayout id="pgl7" layout="horizontal">
+                                <af:panelGroupLayout id="pgl7" halign="center" layout="horizontal">
                                     <af:iterator id="i4" var="index" varStatus="status"
                                                  value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                         <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -900,7 +900,7 @@
                                     </af:column>
                                 </af:table>
                                 <af:spacer width="10" height="40" id="s16"/>
-                                <af:panelGroupLayout id="pgl8" layout="horizontal">
+                                <af:panelGroupLayout id="pgl8" halign="center" layout="horizontal">
                                     <af:iterator id="i5" var="index" varStatus="status"
                                                  value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                         <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -1068,7 +1068,7 @@
                                     </af:column>
                                 </af:table>
                                 <af:spacer width="10" height="40" id="s18"/>
-                                <af:panelGroupLayout id="pgl9" layout="horizontal">
+                                <af:panelGroupLayout id="pgl9" halign="center" layout="horizontal">
                                     <af:iterator id="i6" var="index" varStatus="status"
                                                  value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                         <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -1220,7 +1220,7 @@
                                     </af:column>
                                 </af:table>
                                 <af:spacer width="10" height="40" id="s20"/>
-                                <af:panelGroupLayout id="pgl10" layout="horizontal">
+                                <af:panelGroupLayout id="pgl10" halign="center" layout="horizontal">
                                     <af:iterator id="i7" var="index" varStatus="status"
                                                  value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                         <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -1317,7 +1317,7 @@
                                     </af:column>
                                 </af:table>
                                 <af:spacer width="10" height="40" id="s22"/>
-                                <af:panelGroupLayout id="pgl11" layout="horizontal">
+                                <af:panelGroupLayout id="pgl11" halign="center" layout="horizontal">
                                     <af:iterator id="i8" var="index" varStatus="status"
                                                  value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                         <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -1503,7 +1503,7 @@
                                     </af:column>
                                 </af:table>
                                 <af:spacer width="10" height="40" id="s24"/>
-                                <af:panelGroupLayout id="pgl12" layout="horizontal">
+                                <af:panelGroupLayout id="pgl12" halign="center" layout="horizontal">
                                     <af:iterator id="i9" var="index" varStatus="status"
                                                  value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                         <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -1666,7 +1666,7 @@
                                         </af:gridCell>
                                     </af:gridRow>
                                     <af:gridRow marginTop="5px" height="auto" id="gr7">
-                                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
+                                        <af:gridCell marginStart="5px" width="100%" halign="center" marginEnd="5px" id="gc7">
                                             <af:panelGroupLayout id="pgl14" layout="horizontal">
                                                 <af:iterator id="i10" var="index" varStatus="status"
                                                              value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
@@ -1779,7 +1779,7 @@
                                         </af:gridCell>
                                     </af:gridRow>
                                     <af:gridRow marginTop="5px" height="auto" id="gr9">
-                                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9">
+                                        <af:gridCell marginStart="5px" width="100%" halign="center" marginEnd="5px" id="gc9">
                                             <af:panelGroupLayout id="pgl15" layout="horizontal">
                                                 <af:iterator id="i11" var="index" varStatus="status"
                                                              value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
@@ -1864,7 +1864,7 @@
                                     </af:column>
                                 </af:table>
                                 <af:spacer width="10" height="40" id="s28"/>
-                                <af:panelGroupLayout id="pgl16" layout="horizontal">
+                                <af:panelGroupLayout id="pgl16" halign="center" layout="horizontal">
                                     <af:iterator id="i12" var="index" varStatus="status"
                                                  value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                         <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -1877,7 +1877,89 @@
                                     </af:iterator>
                                 </af:panelGroupLayout>
                             </af:showDetailItem>
+                            <af:showDetailItem text="Miscellaneous Documents" id="sdi11">
+                                <af:panelFormLayout id="pfl2" maxColumns="2" rows="3">
+                                    <af:selectOneChoice value="#{bindings.LookupDocType.inputValue}"
+                                                        label="Document Type"
+                                                        required="#{bindings.LookupDocType.hints.mandatory}"
+                                                        shortDesc="#{bindings.LookupDocType.hints.tooltip}" id="soc24"
+                                                        contentStyle="width:150px;">
+                                        <f:selectItems value="#{bindings.LookupDocType.items}" id="si24"/>
+                                        <f:validator binding="#{bindings.LookupDocType.validator}"/>
+                                    </af:selectOneChoice>
+                                    <af:inputText value="#{bindings.DocNo.inputValue}"
+                                                  label="Document No."
+                                                  required="#{bindings.DocNo.hints.mandatory}"
+                                                  columns="#{bindings.DocNo.hints.displayWidth}"
+                                                  maximumLength="#{bindings.DocNo.hints.precision}"
+                                                  shortDesc="#{bindings.DocNo.hints.tooltip}" id="it19"
+                                                  contentStyle="width:150px;">
+                                        <f:validator binding="#{bindings.DocNo.validator}"/>
+                                    </af:inputText>
+                                    <af:inputDate value="#{bindings.DocIssDate.inputValue}"
+                                                  label="Document Issue Date"
+                                                  required="#{bindings.DocIssDate.hints.mandatory}"
+                                                  columns="#{bindings.DocIssDate.hints.displayWidth}"
+                                                  shortDesc="#{bindings.DocIssDate.hints.tooltip}" id="id39"
+                                                  contentStyle="width:150px;">
+                                        <f:validator binding="#{bindings.DocIssDate.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.DocIssDate.format}"/>
+                                    </af:inputDate>
+                                    <af:inputDate value="#{bindings.DocExpDate.inputValue}"
+                                                  label="Document Expire Date"
+                                                  required="#{bindings.DocExpDate.hints.mandatory}"
+                                                  columns="#{bindings.DocExpDate.hints.displayWidth}"
+                                                  shortDesc="#{bindings.DocExpDate.hints.tooltip}" id="id40"
+                                                  contentStyle="width:150px;">
+                                        <f:validator binding="#{bindings.DocExpDate.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.DocExpDate.format}"/>
+                                    </af:inputDate>
+                                    <af:selectOneChoice value="#{bindings.Ast.inputValue}" label="Active"
+                                                        required="#{bindings.Ast.hints.mandatory}"
+                                                        shortDesc="#{bindings.Ast.hints.tooltip}" id="soc33"
+                                                        contentStyle="width:150px;">
+                                        <f:selectItems value="#{bindings.Ast.items}" id="si33"/>
+                                        <f:validator binding="#{bindings.Ast.validator}"/>
+                                    </af:selectOneChoice>
+                                    <f:facet name="footer">
+                                        <af:panelGroupLayout layout="horizontal" halign="center" id="pgl17">
+                                            <af:spacer width="10" height="10" id="s41"/>
+                                            <af:button actionListener="#{bindings.First1.execute}" text="First"
+                                                       disabled="#{!bindings.First1.enabled}" partialSubmit="true"
+                                                       id="b7"/>
+                                                       <af:spacer width="10" height="10" id="s42"/>
+                                            <af:button actionListener="#{bindings.Previous1.execute}" text="Previous"
+                                                       disabled="#{!bindings.Previous1.enabled}" partialSubmit="true"
+                                                       id="b8"/>
+                                                       <af:spacer width="10" height="10" id="s43"/>
+                                            <af:button actionListener="#{bindings.Next1.execute}" text="Next"
+                                                       disabled="#{!bindings.Next1.enabled}" partialSubmit="true"
+                                                       id="b9"/>
+                                                       <af:spacer width="10" height="10" id="s44"/>
+                                            <af:button actionListener="#{bindings.Last1.execute}" text="Last"
+                                                       disabled="#{!bindings.Last1.enabled}" partialSubmit="true"
+                                                       id="b11"/>
+                                                       <af:spacer width="10" height="10" id="s45"/>
+                                        </af:panelGroupLayout>
+                                    </f:facet>
+                                </af:panelFormLayout>
+                                <af:spacer width="10" height="40" id="s47"/>
+                               <af:panelGroupLayout id="pgl18" halign="center" layout="horizontal">
+                                    <af:iterator id="i13" var="index" varStatus="status"
+                                                 value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                        <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                                   icon="/sms/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                                   actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                            <f:attribute name="AcLslink"
+                                                         value="#{index.bindings.Bindingname.inputValue}12"/>
+                                        </af:button>
+                                        <af:spacer width="5" height="10" id="s46"/>
+                                    </af:iterator>
+                                </af:panelGroupLayout>
+                            </af:showDetailItem>
+                            
                         </af:panelTabbed>
+                        
                     </af:gridCell>
                 </af:gridRow>
                 <af:gridRow marginTop="5px" height="auto" id="gr5">

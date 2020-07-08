@@ -6,9 +6,6 @@
     <variableIterator id="variables"/>
     <iterator Binds="TblSectionTimetableMasterView1" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblSectionTimetableMasterView1Iterator"/>
-    <searchRegion Binds="TblSectionTimetableMasterView1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
-                  id="TblSectionTimetableMasterView1Query"/>
     <iterator Binds="TblSectionTimetableDetailView3" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblSectionTimetableDetailView3Iterator"/>
     <searchRegion Binds="TblSectionTimetableDetailView3Iterator" Criteria=""
@@ -16,20 +13,11 @@
                   id="TblSectionTimetableDetailView3Query"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <searchRegion Binds="TblSectionTimetableMasterView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="TblSectionTimetableMasterView1Query"/>
   </executables>
   <bindings>
-    <tree IterBinding="TblSectionTimetableMasterView1Iterator" id="TblSectionTimetableMasterView1">
-      <nodeDefinition DefName="model.ERP.VO.TblSectionTimetableMasterView" Name="TblSectionTimetableMasterView10">
-        <AttrNames>
-          <Item Value="Id"/>
-          <Item Value="Dated"/>
-          <Item Value="GradeId"/>
-          <Item Value="SectionId"/>
-          <Item Value="AcadYearId"/>
-          <Item Value="Ast"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <tree IterBinding="TblSectionTimetableDetailView3Iterator" id="TblSectionTimetableDetailView3">
       <nodeDefinition DefName="model.ERP.VO.TblSectionTimetableDetailView" Name="TblSectionTimetableDetailView30">
         <AttrNames>
@@ -69,5 +57,16 @@
             Action="iteratorExecute"/>
     <action IterBinding="TblSectionTimetableDetailView3Iterator" id="Delete1" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <tree IterBinding="TblSectionTimetableMasterView1Iterator" id="TblSectionTimetableMasterView1">
+      <nodeDefinition DefName="model.ERP.VO.TblSectionTimetableMasterView" Name="TblSectionTimetableMasterView10">
+        <AttrNames>
+          <Item Value="Dated"/>
+          <Item Value="GradeId"/>
+          <Item Value="SectionId"/>
+          <Item Value="AcadYearId"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

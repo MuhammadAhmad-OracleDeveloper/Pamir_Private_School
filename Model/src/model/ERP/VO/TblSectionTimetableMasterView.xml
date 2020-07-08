@@ -18,10 +18,6 @@
     ViewObjectName="model.LOV.Grade_Name_LOV"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="Section_Name_LOV1"
-    ViewObjectName="model.LOV.Section_Name_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
     Name="Academic_Year_LOV1"
     ViewObjectName="model.LOV.Academic_Year_LOV"
     RowLevelBinds="true"/>
@@ -29,6 +25,18 @@
     Name="Active_Name_LOV1"
     ViewObjectName="model.LOV.Active_Name_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Section_Name_LOV1"
+    ViewObjectName="model.LOV.Section_Name_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getGrade">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[GradeId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_GradeId"
     ListVOName="Grade_Name_LOV1"
@@ -44,24 +52,6 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="GradeName"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_SectionId"
-    ListVOName="Section_Name_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="SectionId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -101,6 +91,24 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+ <ListBinding
+    Name="LOV_SectionId"
+    ListVOName="Section_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SectionId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblSectionTimetableMaster"
     Entity="model.ERP.EO.TblSectionTimetableMaster"/>
@@ -110,7 +118,15 @@
     PrecisionRule="true"
     EntityAttrName="Id"
     EntityUsage="TblSectionTimetableMaster"
-    AliasName="ID"/>
+    AliasName="ID"
+    LOVName="LOV_Id">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Dated"
     PrecisionRule="true"
@@ -184,7 +200,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblSectionTimetableMaster"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -196,13 +213,20 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblSectionTimetableMaster"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
     EntityUsage="TblSectionTimetableMaster"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblSectionTimetableMaster"
+    AliasName="COMPANY_SBU_ID"/>
   <ViewLinkAccessor
     Name="TblSectionTimetableDetailView"
     ViewLink="model.ERP.VO.FkSectionTimetableMasterSectionTimetableDetailLink"
