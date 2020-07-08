@@ -564,8 +564,6 @@
                                 <af:spacer width="10" height="40" id="s2"/>
                                 <af:panelGroupLayout id="pgl2" layout="horizontal">
                                     <af:iterator id="i13" var="index" varStatus="status"
-                                <af:panelGroupLayout id="pgl2" halign="center" layout="horizontal">
-                                    <af:iterator id="i1" var="index" varStatus="status"
                                                  value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                         <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                                    icon="/sms/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
@@ -1533,8 +1531,7 @@
                                     </af:column>
                                 </af:table>
                                 <af:spacer width="10" height="40" id="s24"/>
-                                <af:panelGroupLayout id="pgl18" layout="horizontal">
-                                <af:panelGroupLayout id="pgl12" halign="center" layout="horizontal">
+                                <af:panelGroupLayout id="pgl19" halign="center" layout="horizontal">
                                     <af:iterator id="i9" var="index" varStatus="status"
                                                  value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                         <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -1953,7 +1950,7 @@
                                         <f:validator binding="#{bindings.Ast.validator}"/>
                                     </af:selectOneChoice>
                                     <f:facet name="footer">
-                                        <af:panelGroupLayout layout="horizontal" halign="center" id="pgl17">
+                                        <af:panelGroupLayout layout="horizontal" halign="center" id="pgl20">
                                             <af:spacer width="10" height="10" id="s41"/>
                                             <af:button actionListener="#{bindings.First1.execute}" text="First"
                                                        disabled="#{!bindings.First1.enabled}" partialSubmit="true"
@@ -1976,7 +1973,7 @@
                                 </af:panelFormLayout>
                                 <af:spacer width="10" height="40" id="s47"/>
                                <af:panelGroupLayout id="pgl18" halign="center" layout="horizontal">
-                                    <af:iterator id="i13" var="index" varStatus="status"
+                                    <af:iterator id="i14" var="index" varStatus="status"
                                                  value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                         <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                                    icon="/sms/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
