@@ -67,7 +67,8 @@ public class TblStaffImpl extends EntityImpl {
         TblStaffRole,
         TblStaffSalary,
         TblStaffVisa,
-        TblStaffSubject;
+        TblStaffSubject,
+        TblStaffDocs;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -137,6 +138,7 @@ public class TblStaffImpl extends EntityImpl {
     public static final int TBLSTAFFSALARY = AttributesEnum.TblStaffSalary.index();
     public static final int TBLSTAFFVISA = AttributesEnum.TblStaffVisa.index();
     public static final int TBLSTAFFSUBJECT = AttributesEnum.TblStaffSubject.index();
+    public static final int TBLSTAFFDOCS = AttributesEnum.TblStaffDocs.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -754,6 +756,14 @@ public class TblStaffImpl extends EntityImpl {
      */
     public RowIterator getTblStaffSubject() {
         return (RowIterator) getAttributeInternal(TBLSTAFFSUBJECT);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblStaffDocs() {
+        return (RowIterator) getAttributeInternal(TBLSTAFFDOCS);
     }
 
 

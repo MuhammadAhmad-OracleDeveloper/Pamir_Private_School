@@ -880,6 +880,12 @@
   <ViewUsage
     Name="TblStdDiscPolDetailView2"
     ViewObjectName="model.ERP.VO.TblStdDiscPolDetailView"/>
+  <ViewUsage
+    Name="TblStaffDocsView1"
+    ViewObjectName="model.ERP.VO.TblStaffDocsView"/>
+  <ViewUsage
+    Name="TblStaffDocsView2"
+    ViewObjectName="model.ERP.VO.TblStaffDocsView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -1743,5 +1749,11 @@
     ViewLinkObjectName="model.ERP.VO.FkStdDiscPolDetailMasterLink"
     SrcViewUsageName="model.ERP.AppModule.TblStdDiscPolMasterView1"
     DstViewUsageName="model.ERP.AppModule.TblStdDiscPolDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblStaffDocsFkLink1"
+    ViewLinkObjectName="model.ERP.VO.FkTblStaffDocsFkLink"
+    SrcViewUsageName="model.ERP.AppModule.TblStaffView1"
+    DstViewUsageName="model.ERP.AppModule.TblStaffDocsView2"
     Reversed="false"/>
 </AppModule>
