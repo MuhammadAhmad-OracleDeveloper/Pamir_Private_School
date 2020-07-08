@@ -62,24 +62,7 @@
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblLeaveTypeView1.hints.Id.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblLeaveTypeView1.hints.LeaveCode.name}" filterable="true"
-                             sortable="true" headerText="Leave Code" id="c2"
-                             align="left">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.LeaveCode}"
-                                   id="it4" placeholder="Search ">
-                                  </af:inputText>
-                            </f:facet>
-                    <af:inputText value="#{row.bindings.LeaveCode.inputValue}"
-                                  label="#{bindings.TblLeaveTypeView1.hints.LeaveCode.label}"
-                                  required="#{bindings.TblLeaveTypeView1.hints.LeaveCode.mandatory}"
-                                  columns="#{bindings.TblLeaveTypeView1.hints.LeaveCode.displayWidth}"
-                                  maximumLength="#{bindings.TblLeaveTypeView1.hints.LeaveCode.precision}"
-                                  shortDesc="#{bindings.TblLeaveTypeView1.hints.LeaveCode.tooltip}" id="it2"
-                                  contentStyle='text-align: right'>
-                      <f:validator binding="#{row.bindings.LeaveCode.validator}"/>
-                    </af:inputText>
-                  </af:column>
+                  
                   <af:column sortProperty="#{bindings.TblLeaveTypeView1.hints.LeaveName.name}" filterable="true"
                              sortable="true" headerText="Leave" id="c3"
                              align="left" width="200">
@@ -97,20 +80,23 @@
                       <f:validator binding="#{row.bindings.LeaveName.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblLeaveTypeView1.hints.PayType.name}" filterable="true"
-                             sortable="true" headerText="Payment Type" id="c4"
-                             align="left" width="120">
+                  <af:column sortProperty="#{bindings.TblLeaveTypeView1.hints.LeaveCode.name}" filterable="true"
+                             sortable="true" headerText="Leave Code" id="c2"
+                             align="left">
                              <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.PayType}"
-                                   id="it6" placeholder="Search ">
+                                  <af:inputText value="#{vs.filterCriteria.LeaveCode}"
+                                   id="it4" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.PayType.inputValue}" label="#{row.bindings.PayType.label}"
-                                        required="#{bindings.TblLeaveTypeView1.hints.PayType.mandatory}"
-                                        shortDesc="#{bindings.TblLeaveTypeView1.hints.PayType.tooltip}" id="soc1">
-                      <f:selectItems value="#{row.bindings.PayType.items}" id="si1"/>
-                      <f:validator binding="#{row.bindings.PayType.validator}"/>
-                    </af:selectOneChoice>
+                    <af:inputText value="#{row.bindings.LeaveCode.inputValue}"
+                                  label="#{bindings.TblLeaveTypeView1.hints.LeaveCode.label}"
+                                  required="#{bindings.TblLeaveTypeView1.hints.LeaveCode.mandatory}"
+                                  columns="#{bindings.TblLeaveTypeView1.hints.LeaveCode.displayWidth}"
+                                  maximumLength="#{bindings.TblLeaveTypeView1.hints.LeaveCode.precision}"
+                                  shortDesc="#{bindings.TblLeaveTypeView1.hints.LeaveCode.tooltip}" id="it2"
+                                  contentStyle='text-align: right'>
+                      <f:validator binding="#{row.bindings.LeaveCode.validator}"/>
+                    </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLeaveTypeView1.hints.Ast.name}" filterable="true"
                              sortable="true" headerText="Active" id="c5"

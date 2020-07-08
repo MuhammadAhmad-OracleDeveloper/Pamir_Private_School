@@ -3,52 +3,51 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="Student_Enquiry_LOV"
+  Name="Discount_Setup_Detail_LOV"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectList="TblStdEnq.ID, 
-       TblStdEnq.FIRST_NAME, 
-       TblStdEnq.AST, 
-       TblStdEnq.LAST_NAME"
-  FromList="TBL_STD_ENQ TblStdEnq"
-  Where="TblStdEnq.ID not in(Select Std_Enq_ID from tbl_Std_Reg where Std_Enq_ID is not null)"
+  SelectList="TblDiscSetupDetail.ID, 
+       TblDiscSetupDetail.NAME, 
+       TblDiscSetupDetail.ORDER_NO, 
+       TblDiscSetupDetail.AST"
+  FromList="TBL_DISC_SETUP_DETAIL TblDiscSetupDetail"
+  Where="AST='Y'"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.LOV.Student_Enquiry_LOV_LABEL"/>
+        ResId="model.LOV.Discount_Setup_Detail_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <EntityUsage
-    Name="TblStdEnq"
-    Entity="model.ERP.EO.TblStdEnq"/>
+    Name="TblDiscSetupDetail"
+    Entity="model.ERP.EO.TblDiscSetupDetail"/>
   <ViewAttribute
     Name="Id"
-    IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Id"
-    EntityUsage="TblStdEnq"
+    EntityUsage="TblDiscSetupDetail"
     AliasName="ID"/>
   <ViewAttribute
-    Name="FirstName"
+    Name="Name"
     PrecisionRule="true"
-    EntityAttrName="FirstName"
-    EntityUsage="TblStdEnq"
-    AliasName="FIRST_NAME"/>
+    EntityAttrName="Name"
+    EntityUsage="TblDiscSetupDetail"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="OrderNo"
+    PrecisionRule="true"
+    EntityAttrName="OrderNo"
+    EntityUsage="TblDiscSetupDetail"
+    AliasName="ORDER_NO"/>
   <ViewAttribute
     Name="Ast"
     PrecisionRule="true"
     EntityAttrName="Ast"
-    EntityUsage="TblStdEnq"
+    EntityUsage="TblDiscSetupDetail"
     AliasName="AST"/>
-  <ViewAttribute
-    Name="LastName"
-    PrecisionRule="true"
-    EntityAttrName="LastName"
-    EntityUsage="TblStdEnq"
-    AliasName="LAST_NAME"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
