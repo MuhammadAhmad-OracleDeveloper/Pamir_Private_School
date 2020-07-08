@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="Subject_Staff_Dep_LOV"
+  Name="Section_Staff_Subject_Dep_LOV"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   BindingStyle="OracleName"
@@ -15,18 +15,18 @@
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.LOV.Subject_Staff_Dep_LOV_LABEL"/>
+        ResId="model.LOV.Section_Staff_Subject_Dep_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <Variable
     Name="getStaffID"
     Kind="where"
     Type="java.math.BigDecimal"/>
-  <SQLQuery><![CDATA[Select   tbl_staff_Subject.Subject_ID staffsubjectid,    
-Tbl_Subject.Name    
-From tbl_staff_Subject, Tbl_Subject    
-Where Tbl_Subject.ID=tbl_staff_subject.subject_id    
-And STaff_ID=:getStaffID]]></SQLQuery>
+  <SQLQuery><![CDATA[Select   tbl_section_staff.staff_subject_id,      
+Tbl_Subject.Name      
+From tbl_section_staff, Tbl_Subject      
+Where Tbl_Subject.ID=tbl_section_staff.staff_subject_id  
+And STaff_ID= :getStaffID]]></SQLQuery>
   <ViewAttribute
     Name="Staffsubjectid"
     IsUpdateable="false"
@@ -34,7 +34,7 @@ And STaff_ID=:getStaffID]]></SQLQuery>
     PrecisionRule="true"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    AliasName="STAFFSUBJECTID"
+    AliasName="STAFF_SUBJECT_ID"
     Expression="STAFFSUBJECTID"
     SQLType="NUMERIC"/>
   <ViewAttribute
