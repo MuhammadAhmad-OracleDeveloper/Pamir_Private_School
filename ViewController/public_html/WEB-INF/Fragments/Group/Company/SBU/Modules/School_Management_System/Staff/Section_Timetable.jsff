@@ -25,7 +25,7 @@
                                    iconPosition="top"/>
                         <af:spacer width="10" height="10" id="s1"/>
                         </af:panelGroupLayout>
-      <af:panelGridLayout id="pgl1">
+     <af:panelGridLayout id="pgl1">
         <af:gridRow marginTop="5px" height="auto" id="gr1">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
         </af:gridRow>
@@ -43,33 +43,25 @@
                           filterModel="#{bindings.TblSectionTimetableMasterView1Query.queryDescriptor}"
                           filterVisible="true"
                           queryListener="#{bindings.TblSectionTimetableMasterView1Query.processQuery}" varStatus="vs"
-                          id="t1" scrollPolicy="page" autoHeightRows="0" >
-                  <af:column sortProperty="#{bindings.TblSectionTimetableMasterView1.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Time Table Master ID"
-                             id="c1" align="right" width="80" visible="false">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.Id}"
-                                   id="id4" placeholder="Search ">
-                                  </af:inputText>
-                            </f:facet>
-                    <af:inputText value="#{row.bindings.Id.inputValue}"
-                                  label="#{bindings.TblSectionTimetableMasterView1.hints.Id.label}"
-                                  required="#{bindings.TblSectionTimetableMasterView1.hints.Id.mandatory}"
-                                  columns="#{bindings.TblSectionTimetableMasterView1.hints.Id.displayWidth}"
-                                  maximumLength="#{bindings.TblSectionTimetableMasterView1.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblSectionTimetableMasterView1.hints.Id.tooltip}" id="it1" readOnly="true"
-                                  contentStyle='text-align: center'>
-                      <f:validator binding="#{row.bindings.Id.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblSectionTimetableMasterView1.hints.Id.format}"/>
-                    </af:inputText>
+                          id="t1">
+                          <af:column sortProperty="#{bindings.TblSectionTimetableMasterView1.hints.AcadYearId.name}"
+                             filterable="true" sortable="true"
+                             headerText="Academic Year" id="c4">
+                    <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
+                                        label="#{row.bindings.AcadYearId.label}"
+                                        required="#{bindings.TblSectionTimetableMasterView1.hints.AcadYearId.mandatory}"
+                                        shortDesc="#{bindings.TblSectionTimetableMasterView1.hints.AcadYearId.tooltip}"
+                                        id="soc3">
+                      <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si3"/>
+                      <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
+                    </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionTimetableMasterView1.hints.Dated.name}"
                              filterable="true" sortable="true"
-                             headerText="Date" id="c2" align="left">
+                             headerText="Date" id="c1">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblSectionTimetableMasterView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
-                                    id="id1" placeholder="Search ">
+                                    id="id1">
                         <af:convertDateTime pattern="#{bindings.TblSectionTimetableMasterView1.hints.Dated.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -77,80 +69,50 @@
                                   label="#{bindings.TblSectionTimetableMasterView1.hints.Dated.label}"
                                   required="#{bindings.TblSectionTimetableMasterView1.hints.Dated.mandatory}"
                                   columns="#{bindings.TblSectionTimetableMasterView1.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.TblSectionTimetableMasterView1.hints.Dated.tooltip}" id="id2"
-                                  contentStyle='text-align: left'>
+                                  shortDesc="#{bindings.TblSectionTimetableMasterView1.hints.Dated.tooltip}" id="id2">
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblSectionTimetableMasterView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
+                  
                   <af:column sortProperty="#{bindings.TblSectionTimetableMasterView1.hints.GradeId.name}"
                              filterable="true" sortable="true"
-                             headerText="Grade" id="c3" width="200" align="left">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.GradeId}"
-                                   id="it4" placeholder="Search ">
-                                  </af:inputText>
-                            </f:facet>
+                             headerText="Grade" id="c2"
+                             width="200">
                     <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
                                         required="#{bindings.TblSectionTimetableMasterView1.hints.GradeId.mandatory}"
                                         shortDesc="#{bindings.TblSectionTimetableMasterView1.hints.GradeId.tooltip}"
-                                        id="soc1" contentStyle="text-align: left">
+                                        id="soc1">
                       <f:selectItems value="#{row.bindings.GradeId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.GradeId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSectionTimetableMasterView1.hints.SectionId.name}"
                              filterable="true" sortable="true"
-                             headerText="Section" id="c4" width="200" align="left">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.SectionId}"
-                                   id="it6" placeholder="Search ">
-                                  </af:inputText>
-                            </f:facet>
+                             headerText="Section" id="c3"
+                             width="150">
                     <af:selectOneChoice value="#{row.bindings.SectionId.inputValue}"
                                         label="#{row.bindings.SectionId.label}"
                                         required="#{bindings.TblSectionTimetableMasterView1.hints.SectionId.mandatory}"
                                         shortDesc="#{bindings.TblSectionTimetableMasterView1.hints.SectionId.tooltip}"
-                                        id="soc2" contentStyle="text-align: left">
+                                        id="soc2">
                       <f:selectItems value="#{row.bindings.SectionId.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.SectionId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblSectionTimetableMasterView1.hints.AcadYearId.name}"
-                             filterable="true" sortable="true"
-                             headerText="Academic Year" id="c5" align="left">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.AcadYearId}"
-                                   id="it5" placeholder="Search ">
-                                  </af:inputText>
-                            </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
-                                        label="#{row.bindings.AcadYearId.label}"
-                                        required="#{bindings.TblSectionTimetableMasterView1.hints.AcadYearId.mandatory}"
-                                        shortDesc="#{bindings.TblSectionTimetableMasterView1.hints.AcadYearId.tooltip}"
-                                        id="soc3" contentStyle="text-align: left">
-                      <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si3"/>
-                      <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
+                  
                   <af:column sortProperty="#{bindings.TblSectionTimetableMasterView1.hints.Ast.name}" filterable="true"
                              sortable="true" headerText="Active"
-                             id="c6" align="left">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.Ast}"
-                                   id="it7" placeholder="Search ">
-                                  </af:inputText>
-                            </f:facet>
+                             id="c5">
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblSectionTimetableMasterView1.hints.Ast.mandatory}"
                                         shortDesc="#{bindings.TblSectionTimetableMasterView1.hints.Ast.tooltip}"
-                                        id="soc4" contentStyle="text-align: left">
+                                        id="soc4">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si4"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                 </af:table>
-                
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
@@ -240,6 +202,8 @@
                       <f:validator binding="#{row.bindings.StaffSubjectId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
+                 
+                  
                   <af:column sortProperty="#{bindings.TblSectionTimetableDetailView3.hints.WeekDays.name}"
                              filterable="true" sortable="true"
                              headerText="Week Days" id="c10" align="left">
@@ -257,6 +221,7 @@
                       <f:validator binding="#{row.bindings.WeekDays.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
+                 
                   <af:column sortProperty="#{bindings.TblSectionTimetableDetailView3.hints.FromTime.name}"
                              filterable="true" sortable="true"
                              headerText="From Time" id="c11" align="left">

@@ -57,6 +57,8 @@
               id="TblStaffKinView1Iterator"/>
     <iterator Binds="TblStaffSalaryView1" RangeSize="25" DataControl="AppModuleDataControl1"
               id="TblStaffSalaryView1Iterator"/>
+    <iterator Binds="TblStaffDocsView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblStaffDocsView2Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="TblStaffView1Iterator" id="TblStaffView1">
@@ -360,5 +362,33 @@
           SelectItemValueMode="ListObject"/>
     <list IterBinding="TblStaffSalaryView1Iterator" StaticList="false" Uses="LOV_PaymentMode" id="PaymentMode"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStaffDocsView2Iterator" StaticList="false" Uses="LOV_LookupDocType" id="LookupDocType"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblStaffDocsView2Iterator" id="DocNo">
+      <AttrNames>
+        <Item Value="DocNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStaffDocsView2Iterator" id="DocIssDate">
+      <AttrNames>
+        <Item Value="DocIssDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStaffDocsView2Iterator" id="DocExpDate">
+      <AttrNames>
+        <Item Value="DocExpDate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblStaffDocsView2Iterator" StaticList="false" Uses="LOV_Ast" id="Ast" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <action IterBinding="TblStaffDocsView2Iterator" id="First1" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblStaffDocsView2Iterator" id="Previous1" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblStaffDocsView2Iterator" id="Next1" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblStaffDocsView2Iterator" id="Last1" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblStaffDocsView2Iterator" id="CreateInsert12" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblStaffDocsView2Iterator" id="Execute12" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblStaffDocsView2Iterator" id="Delete12" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

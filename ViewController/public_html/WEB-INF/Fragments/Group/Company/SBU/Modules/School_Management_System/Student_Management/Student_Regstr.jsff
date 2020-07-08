@@ -535,6 +535,16 @@
                                                     <f:selectItems value="#{bindings.SibDiscBases.items}" id="si10"/>
                                                     <f:validator binding="#{bindings.SibDiscBases.validator}"/>
                                                 </af:selectOneChoice>
+                                                <af:inputText value="#{bindings.Image.inputValue}"
+                                                              label="#{bindings.Image.hints.label}"
+                                                              required="#{bindings.Image.hints.mandatory}"
+                                                              columns="#{bindings.Image.hints.displayWidth}"
+                                                            binding="#{pageFlowScope.FileManagingBean.db_Image_Value}"
+                                                             partialTriggers="b20"
+                                                              maximumLength="#{bindings.Image.hints.precision}"
+                                                              shortDesc="#{bindings.Image.hints.tooltip}" id="it25">
+                                                    <f:validator binding="#{bindings.Image.validator}"/>
+                                                </af:inputText>
                                                 <f:facet name="footer">
                                                     <af:panelGroupLayout layout="horizontal" id="pgl5" halign="center">
                                                         <af:button actionListener="#{bindings.First.execute}"
@@ -555,18 +565,19 @@
                                             </af:panelFormLayout>
                                         </af:gridCell>
                                         <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc8">
-                                            <!--<af:panelGroupLayout id="pgl12" layout="vertical"
+                                            <af:panelGroupLayout id="pgl12" layout="vertical"
                                                                  inlineStyle="margin-top: 20%; margin-left: 5%;">
                                                 <af:image id="i1"
                                                           shortDesc="Upload image or refresh page to render properly"
                                                           inlineStyle="height:100px;"
-                                                          source="/stud_regstr_servlet?getPath=aaa&getImage;bbb"
+                                                          source="/viewimageservlet?getPath=C:\\Meta_Data\\Pamir_Data\\student_regstr_images\\&amp;getImage=#{bindings.Image.inputValue}"
                                                           partialTriggers="it66"/>
-                                                --><!--<af:inputFile id="if1" value="#{pageFlowScope.FileManagingBean.file}"/>
+                                                <af:inputFile id="if1" value="#{backingBeanScope.FileManagingBean.file}"/>
                                                 <af:button text="Save Image" id="b20" partialSubmit="true"
-                                                source="/imageservlet?imageNameParam=Pamiir_Logo.png"
-                                                           actionListener="#{pageFlowScope.FileManagingBean.UploadFarmerImage}"/>--><!--
-                                            </af:panelGroupLayout>-->
+                                                           actionListener="#{backingBeanScope.FileManagingBean.UploadImage}">
+                                                  <f:attribute name="path" value="C://Meta_Data//Pamir_Data//student_regstr_images//"/>
+                                                </af:button>
+                                            </af:panelGroupLayout>
                                         </af:gridCell>
                                     </af:gridRow>
                                 </af:panelGridLayout>
