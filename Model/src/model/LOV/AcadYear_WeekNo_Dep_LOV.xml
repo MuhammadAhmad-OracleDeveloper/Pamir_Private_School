@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="Lookup_Staff_Doc_Type_LOV"
+  Name="AcadYear_WeekNo_Dep_LOV"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   BindingStyle="OracleName"
@@ -15,30 +15,14 @@
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.LOV.Lookup_Staff_Doc_Type_LOV_LABEL"/>
+        ResId="model.LOV.AcadYear_WeekNo_Dep_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <SQLQuery><![CDATA[Select         
-tbl_lookup_detail.name,        
-tbl_lookup_detail.ID        
-From tbl_lookup_detail,tbl_lookup_master        
-where tbl_lookup_detail.lookup_master_id=tbl_lookup_master.id        
-And tbl_lookup_master.Name='Misc Documents']]></SQLQuery>
-  <ViewAttribute
-    Name="Name"
-    IsUpdateable="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Precision="255"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    AliasName="NAME"
-    Expression="NAME"
-    SQLType="VARCHAR">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="150"/>
-    </DesignTime>
-  </ViewAttribute>
+  <Variable
+    Name="getAcadYear"
+    Kind="where"
+    Type="java.math.BigDecimal"/>
+  <SQLQuery><![CDATA[select ID, WEEK_NO from tbl_week where ACAD_YEAR_ID = :getAcadYear]]></SQLQuery>
   <ViewAttribute
     Name="Id"
     IsUpdateable="false"
@@ -48,6 +32,16 @@ And tbl_lookup_master.Name='Misc Documents']]></SQLQuery>
     ColumnType="NUMBER"
     AliasName="ID"
     Expression="ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="WeekNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="WEEK_NO"
+    Expression="WEEK_NO"
     SQLType="NUMERIC"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>

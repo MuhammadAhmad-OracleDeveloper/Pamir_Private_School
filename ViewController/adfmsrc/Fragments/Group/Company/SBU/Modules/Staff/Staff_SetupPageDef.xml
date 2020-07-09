@@ -59,6 +59,8 @@
               id="TblStaffSalaryView1Iterator"/>
     <iterator Binds="TblStaffDocsView2" RangeSize="25" DataControl="AppModuleDataControl1"
               id="TblStaffDocsView2Iterator"/>
+    <searchRegion Binds="TblStaffDocsView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStaffDocsView2Query"/>
   </executables>
   <bindings>
     <tree IterBinding="TblStaffView1Iterator" id="TblStaffView1">
@@ -362,33 +364,23 @@
           SelectItemValueMode="ListObject"/>
     <list IterBinding="TblStaffSalaryView1Iterator" StaticList="false" Uses="LOV_PaymentMode" id="PaymentMode"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblStaffDocsView2Iterator" StaticList="false" Uses="LOV_LookupDocType" id="LookupDocType"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="TblStaffDocsView2Iterator" id="DocNo">
-      <AttrNames>
-        <Item Value="DocNo"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblStaffDocsView2Iterator" id="DocIssDate">
-      <AttrNames>
-        <Item Value="DocIssDate"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblStaffDocsView2Iterator" id="DocExpDate">
-      <AttrNames>
-        <Item Value="DocExpDate"/>
-      </AttrNames>
-    </attributeValues>
     <list IterBinding="TblStaffDocsView2Iterator" StaticList="false" Uses="LOV_Ast" id="Ast" DTSupportsMRU="false"
           SelectItemValueMode="ListObject"/>
-    <action IterBinding="TblStaffDocsView2Iterator" id="First1" RequiresUpdateModel="true" Action="first"/>
-    <action IterBinding="TblStaffDocsView2Iterator" id="Previous1" RequiresUpdateModel="true" Action="previous"/>
-    <action IterBinding="TblStaffDocsView2Iterator" id="Next1" RequiresUpdateModel="true" Action="next"/>
-    <action IterBinding="TblStaffDocsView2Iterator" id="Last1" RequiresUpdateModel="true" Action="last"/>
     <action IterBinding="TblStaffDocsView2Iterator" id="CreateInsert12" RequiresUpdateModel="true"
             Action="createInsertRow"/>
     <action IterBinding="TblStaffDocsView2Iterator" id="Execute12" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblStaffDocsView2Iterator" id="Delete12" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <tree IterBinding="TblStaffDocsView2Iterator" id="TblStaffDocsView2">
+      <nodeDefinition DefName="model.ERP.VO.TblStaffDocsView" Name="TblStaffDocsView20">
+        <AttrNames>
+          <Item Value="LookupDocType"/>
+          <Item Value="DocNo"/>
+          <Item Value="DocIssDate"/>
+          <Item Value="DocExpDate"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>
