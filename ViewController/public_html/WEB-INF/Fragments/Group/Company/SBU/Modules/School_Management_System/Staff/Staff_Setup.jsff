@@ -1906,6 +1906,71 @@
                                 </af:panelGroupLayout>
                             </af:showDetailItem>
                             <af:showDetailItem text="Miscellaneous Documents" id="sdi11">
+                                <af:panelFormLayout id="pfl2" maxColumns="2" rows="3">
+                                    <af:selectOneChoice value="#{bindings.LookupDocType.inputValue}"
+                                                        label="Document Type"
+                                                        required="#{bindings.LookupDocType.hints.mandatory}"
+                                                        shortDesc="#{bindings.LookupDocType.hints.tooltip}" id="soc24"
+                                                        contentStyle="width:150px;">
+                                        <f:selectItems value="#{bindings.LookupDocType.items}" id="si24"/>
+                                        <f:validator binding="#{bindings.LookupDocType.validator}"/>
+                                    </af:selectOneChoice>
+                                    <af:inputText value="#{bindings.DocNo.inputValue}"
+                                                  label="Document No."
+                                                  required="#{bindings.DocNo.hints.mandatory}"
+                                                  columns="#{bindings.DocNo.hints.displayWidth}"
+                                                  maximumLength="#{bindings.DocNo.hints.precision}"
+                                                  shortDesc="#{bindings.DocNo.hints.tooltip}" id="it19"
+                                                  contentStyle="width:150px;">
+                                        <f:validator binding="#{bindings.DocNo.validator}"/>
+                                    </af:inputText>
+                                    <af:inputDate value="#{bindings.DocIssDate.inputValue}"
+                                                  label="Document Issue Date"
+                                                  required="#{bindings.DocIssDate.hints.mandatory}"
+                                                  columns="#{bindings.DocIssDate.hints.displayWidth}"
+                                                  shortDesc="#{bindings.DocIssDate.hints.tooltip}" id="id39"
+                                                  contentStyle="width:150px;">
+                                        <f:validator binding="#{bindings.DocIssDate.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.DocIssDate.format}"/>
+                                    </af:inputDate>
+                                    <af:inputDate value="#{bindings.DocExpDate.inputValue}"
+                                                  label="Document Expire Date"
+                                                  required="#{bindings.DocExpDate.hints.mandatory}"
+                                                  columns="#{bindings.DocExpDate.hints.displayWidth}"
+                                                  shortDesc="#{bindings.DocExpDate.hints.tooltip}" id="id40"
+                                                  contentStyle="width:150px;">
+                                        <f:validator binding="#{bindings.DocExpDate.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.DocExpDate.format}"/>
+                                    </af:inputDate>
+                                    <af:selectOneChoice value="#{bindings.Ast.inputValue}" label="Active"
+                                                        required="#{bindings.Ast.hints.mandatory}"
+                                                        shortDesc="#{bindings.Ast.hints.tooltip}" id="soc33"
+                                                        contentStyle="width:150px;">
+                                        <f:selectItems value="#{bindings.Ast.items}" id="si33"/>
+                                        <f:validator binding="#{bindings.Ast.validator}"/>
+                                    </af:selectOneChoice>
+                                    <f:facet name="footer">
+                                        <af:panelGroupLayout layout="horizontal" halign="center" id="pgl20">
+                                            <af:spacer width="10" height="10" id="s41"/>
+                                            <af:button actionListener="#{bindings.First1.execute}" text="First"
+                                                       disabled="#{!bindings.First1.enabled}" partialSubmit="true"
+                                                       id="b7"/>
+                                                       <af:spacer width="10" height="10" id="s42"/>
+                                            <af:button actionListener="#{bindings.Previous1.execute}" text="Previous"
+                                                       disabled="#{!bindings.Previous1.enabled}" partialSubmit="true"
+                                                       id="b8"/>
+                                                       <af:spacer width="10" height="10" id="s43"/>
+                                            <af:button actionListener="#{bindings.Next1.execute}" text="Next"
+                                                       disabled="#{!bindings.Next1.enabled}" partialSubmit="true"
+                                                       id="b9"/>
+                                                       <af:spacer width="10" height="10" id="s44"/>
+                                            <af:button actionListener="#{bindings.Last1.execute}" text="Last"
+                                                       disabled="#{!bindings.Last1.enabled}" partialSubmit="true"
+                                                       id="b11"/>
+                                                       <af:spacer width="10" height="10" id="s45"/>
+                                        </af:panelGroupLayout>
+                                    </f:facet>
+                                </af:panelFormLayout>
 
                                 <af:table value="#{bindings.TblStaffDocsView2.collectionModel}" var="row"
                                           rows="#{bindings.TblStaffDocsView2.rangeSize}"
