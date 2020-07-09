@@ -1906,71 +1906,114 @@
                                 </af:panelGroupLayout>
                             </af:showDetailItem>
                             <af:showDetailItem text="Miscellaneous Documents" id="sdi11">
-                                <af:panelFormLayout id="pfl2" maxColumns="2" rows="3">
-                                    <af:selectOneChoice value="#{bindings.LookupDocType.inputValue}"
-                                                        label="Document Type"
-                                                        required="#{bindings.LookupDocType.hints.mandatory}"
-                                                        shortDesc="#{bindings.LookupDocType.hints.tooltip}" id="soc24"
-                                                        contentStyle="width:150px;">
-                                        <f:selectItems value="#{bindings.LookupDocType.items}" id="si24"/>
-                                        <f:validator binding="#{bindings.LookupDocType.validator}"/>
-                                    </af:selectOneChoice>
-                                    <af:inputText value="#{bindings.DocNo.inputValue}"
-                                                  label="Document No."
-                                                  required="#{bindings.DocNo.hints.mandatory}"
-                                                  columns="#{bindings.DocNo.hints.displayWidth}"
-                                                  maximumLength="#{bindings.DocNo.hints.precision}"
-                                                  shortDesc="#{bindings.DocNo.hints.tooltip}" id="it19"
-                                                  contentStyle="width:150px;">
-                                        <f:validator binding="#{bindings.DocNo.validator}"/>
-                                    </af:inputText>
-                                    <af:inputDate value="#{bindings.DocIssDate.inputValue}"
-                                                  label="Document Issue Date"
-                                                  required="#{bindings.DocIssDate.hints.mandatory}"
-                                                  columns="#{bindings.DocIssDate.hints.displayWidth}"
-                                                  shortDesc="#{bindings.DocIssDate.hints.tooltip}" id="id39"
-                                                  contentStyle="width:150px;">
-                                        <f:validator binding="#{bindings.DocIssDate.validator}"/>
-                                        <af:convertDateTime pattern="#{bindings.DocIssDate.format}"/>
-                                    </af:inputDate>
-                                    <af:inputDate value="#{bindings.DocExpDate.inputValue}"
-                                                  label="Document Expire Date"
-                                                  required="#{bindings.DocExpDate.hints.mandatory}"
-                                                  columns="#{bindings.DocExpDate.hints.displayWidth}"
-                                                  shortDesc="#{bindings.DocExpDate.hints.tooltip}" id="id40"
-                                                  contentStyle="width:150px;">
-                                        <f:validator binding="#{bindings.DocExpDate.validator}"/>
-                                        <af:convertDateTime pattern="#{bindings.DocExpDate.format}"/>
-                                    </af:inputDate>
-                                    <af:selectOneChoice value="#{bindings.Ast.inputValue}" label="Active"
-                                                        required="#{bindings.Ast.hints.mandatory}"
-                                                        shortDesc="#{bindings.Ast.hints.tooltip}" id="soc33"
-                                                        contentStyle="width:150px;">
-                                        <f:selectItems value="#{bindings.Ast.items}" id="si33"/>
-                                        <f:validator binding="#{bindings.Ast.validator}"/>
-                                    </af:selectOneChoice>
-                                    <f:facet name="footer">
-                                        <af:panelGroupLayout layout="horizontal" halign="center" id="pgl20">
-                                            <af:spacer width="10" height="10" id="s41"/>
-                                            <af:button actionListener="#{bindings.First1.execute}" text="First"
-                                                       disabled="#{!bindings.First1.enabled}" partialSubmit="true"
-                                                       id="b7"/>
-                                                       <af:spacer width="10" height="10" id="s42"/>
-                                            <af:button actionListener="#{bindings.Previous1.execute}" text="Previous"
-                                                       disabled="#{!bindings.Previous1.enabled}" partialSubmit="true"
-                                                       id="b8"/>
-                                                       <af:spacer width="10" height="10" id="s43"/>
-                                            <af:button actionListener="#{bindings.Next1.execute}" text="Next"
-                                                       disabled="#{!bindings.Next1.enabled}" partialSubmit="true"
-                                                       id="b9"/>
-                                                       <af:spacer width="10" height="10" id="s44"/>
-                                            <af:button actionListener="#{bindings.Last1.execute}" text="Last"
-                                                       disabled="#{!bindings.Last1.enabled}" partialSubmit="true"
-                                                       id="b11"/>
-                                                       <af:spacer width="10" height="10" id="s45"/>
-                                        </af:panelGroupLayout>
-                                    </f:facet>
-                                </af:panelFormLayout>
+                             <af:table value="#{bindings.TblStaffDocsView2.collectionModel}" var="row"
+                                          rows="#{bindings.TblStaffDocsView2.rangeSize}"
+                                          emptyText="#{bindings.TblStaffDocsView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.TblStaffDocsView2.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.TblStaffDocsView2.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.TblStaffDocsView2.rangeSize}"
+                                          filterModel="#{bindings.TblStaffDocsView2Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.TblStaffDocsView2Query.processQuery}" varStatus="vs"
+                                          id="t13">
+                                    <af:column sortProperty="#{bindings.TblStaffDocsView2.hints.LookupDocType.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Document Type"
+                                               id="c62" width="200">
+                                               <f:facet name="filter">
+                                                  <af:inputText value="#{vs.filterCriteria.LookupDocType}"
+                                                   id="it77" placeholder="Search ">
+                                                  </af:inputText>
+                                            </f:facet>
+
+                                        <af:selectOneChoice value="#{row.bindings.LookupDocType.inputValue}"
+                                                            label="#{row.bindings.LookupDocType.label}"
+                                                            required="#{bindings.TblStaffDocsView2.hints.LookupDocType.mandatory}"
+                                                            shortDesc="#{bindings.TblStaffDocsView2.hints.LookupDocType.tooltip}"
+                                                            id="soc35">
+                                            <f:selectItems value="#{row.bindings.LookupDocType.items}" id="si35"/>
+                                            <f:validator binding="#{row.bindings.LookupDocType.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblStaffDocsView2.hints.DocNo.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Document No." id="c63" width="150">
+                                               <f:facet name="filter">
+                                                  <af:inputText value="#{vs.filterCriteria.DocNo}"
+                                                   id="it100" placeholder="Search ">
+                                                  </af:inputText>
+                                            </f:facet>
+                                        <af:inputText value="#{row.bindings.DocNo.inputValue}"
+                                                      label="#{bindings.TblStaffDocsView2.hints.DocNo.label}"
+                                                      required="#{bindings.TblStaffDocsView2.hints.DocNo.mandatory}"
+                                                      columns="#{bindings.TblStaffDocsView2.hints.DocNo.displayWidth}"
+                                                      maximumLength="#{bindings.TblStaffDocsView2.hints.DocNo.precision}"
+                                                      shortDesc="#{bindings.TblStaffDocsView2.hints.DocNo.tooltip}"
+                                                      id="it92">
+                                            <f:validator binding="#{row.bindings.DocNo.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblStaffDocsView2.hints.DocIssDate.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Issue Date"
+                                               id="c70">
+                                               
+                                        <f:facet name="filter">
+                                            <af:inputDate value="#{bindings.TblStaffDocsView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.DocIssDate.value}"
+                                                          id="id45" placeholder="Search " >
+                                                <af:convertDateTime pattern="#{bindings.TblStaffDocsView2.hints.DocIssDate.format}"/>
+                                            </af:inputDate>
+                                        </f:facet>
+                                        <af:inputDate value="#{row.bindings.DocIssDate.inputValue}"
+                                                      label="#{bindings.TblStaffDocsView2.hints.DocIssDate.label}"
+                                                      required="#{bindings.TblStaffDocsView2.hints.DocIssDate.mandatory}"
+                                                      columns="#{bindings.TblStaffDocsView2.hints.DocIssDate.displayWidth}"
+                                                      shortDesc="#{bindings.TblStaffDocsView2.hints.DocIssDate.tooltip}"
+                                                      id="id46">
+                                            <f:validator binding="#{row.bindings.DocIssDate.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.TblStaffDocsView2.hints.DocIssDate.format}"/>
+                                        </af:inputDate>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblStaffDocsView2.hints.DocExpDate.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Expire Date"
+                                               id="c77">
+                                        <f:facet name="filter">
+                                            <af:inputDate value="#{bindings.TblStaffDocsView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.DocExpDate.value}"
+                                                          id="id42" placeholder="Search ">
+                                                <af:convertDateTime pattern="#{bindings.TblStaffDocsView2.hints.DocExpDate.format}"/>
+                                            </af:inputDate>
+                                        </f:facet>
+                                        <af:inputDate value="#{row.bindings.DocExpDate.inputValue}"
+                                                      label="#{bindings.TblStaffDocsView2.hints.DocExpDate.label}"
+                                                      required="#{bindings.TblStaffDocsView2.hints.DocExpDate.mandatory}"
+                                                      columns="#{bindings.TblStaffDocsView2.hints.DocExpDate.displayWidth}"
+                                                      shortDesc="#{bindings.TblStaffDocsView2.hints.DocExpDate.tooltip}"
+                                                      id="id43">
+                                            <f:validator binding="#{row.bindings.DocExpDate.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.TblStaffDocsView2.hints.DocExpDate.format}"/>
+                                        </af:inputDate>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblStaffDocsView2.hints.Ast.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Active" id="c78">
+                                               <f:facet name="filter">
+                                                  <af:inputText value="#{vs.filterCriteria.Ast}"
+                                                   id="it84" placeholder="Search ">
+                                                  </af:inputText>
+                                            </f:facet>
+
+                                        <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                            label="#{row.bindings.Ast.label}"
+                                                            required="#{bindings.TblStaffDocsView2.hints.Ast.mandatory}"
+                                                            shortDesc="#{bindings.TblStaffDocsView2.hints.Ast.tooltip}"
+                                                            id="soc34">
+                                            <f:selectItems value="#{row.bindings.Ast.items}" id="si34"/>
+                                            <f:validator binding="#{row.bindings.Ast.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                </af:table>
                                 <af:spacer width="10" height="40" id="s47"/>
                                <af:panelGroupLayout id="pgl18" halign="center" layout="horizontal">
                                     <af:iterator id="i14" var="index" varStatus="status"

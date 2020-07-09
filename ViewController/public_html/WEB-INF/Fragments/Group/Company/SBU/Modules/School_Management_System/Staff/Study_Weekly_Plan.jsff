@@ -75,31 +75,12 @@
                                         label="#{row.bindings.AcadYearId.label}"
                                         required="#{bindings.TblStudyWeekPlanMasterView1.hints.AcadYearId.mandatory}"
                                         shortDesc="#{bindings.TblStudyWeekPlanMasterView1.hints.AcadYearId.tooltip}"
-                                        id="soc1" contentStyle="text-align: right">
+                                        id="soc1" contentStyle="text-align: right" autoSubmit="true">
                       <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblStudyWeekPlanMasterView1.hints.Dated.name}" filterable="true"
-                             sortable="true" headerText="Date"
-                             id="c4" align="left">
-                             
-                    <f:facet name="filter">
-                      <af:inputDate value="#{bindings.TblStudyWeekPlanMasterView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
-                                    id="id1" placeholder="Search ">
-                        <af:convertDateTime pattern="#{bindings.TblStudyWeekPlanMasterView1.hints.Dated.format}"/>
-                      </af:inputDate>
-                    </f:facet>
-                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
-                                  label="#{bindings.TblStudyWeekPlanMasterView1.hints.Dated.label}"
-                                  required="#{bindings.TblStudyWeekPlanMasterView1.hints.Dated.mandatory}"
-                                  columns="#{bindings.TblStudyWeekPlanMasterView1.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.TblStudyWeekPlanMasterView1.hints.Dated.tooltip}" id="id2"
-                                  contentStyle='text-align: left'>
-                      <f:validator binding="#{row.bindings.Dated.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.TblStudyWeekPlanMasterView1.hints.Dated.format}"/>
-                    </af:inputDate>
-                  </af:column>
+                 
                   <af:column headerText="Grade" id="c14" width="150">
                   <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.GradeId}"
@@ -177,6 +158,26 @@
                       <f:selectItems value="#{row.bindings.SubjectId.items}" id="si4"/>
                       <f:validator binding="#{row.bindings.SubjectId.validator}"/>
                     </af:selectOneChoice>
+                  </af:column>
+                   <af:column sortProperty="#{bindings.TblStudyWeekPlanMasterView1.hints.Dated.name}" filterable="true"
+                             sortable="true" headerText="Date"
+                             id="c4" align="left">
+                             
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblStudyWeekPlanMasterView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                    id="id1" placeholder="Search ">
+                        <af:convertDateTime pattern="#{bindings.TblStudyWeekPlanMasterView1.hints.Dated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                  label="#{bindings.TblStudyWeekPlanMasterView1.hints.Dated.label}"
+                                  required="#{bindings.TblStudyWeekPlanMasterView1.hints.Dated.mandatory}"
+                                  columns="#{bindings.TblStudyWeekPlanMasterView1.hints.Dated.displayWidth}"
+                                  shortDesc="#{bindings.TblStudyWeekPlanMasterView1.hints.Dated.tooltip}" id="id2"
+                                  contentStyle='text-align: left'>
+                      <f:validator binding="#{row.bindings.Dated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblStudyWeekPlanMasterView1.hints.Dated.format}"/>
+                    </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStudyWeekPlanMasterView1.hints.Remarks.name}" filterable="true"
                              sortable="true" headerText="Remarks"
@@ -267,7 +268,7 @@
                                   required="#{bindings.TblStudyWeekPlanDetailView2.hints.Dated.mandatory}"
                                   columns="#{bindings.TblStudyWeekPlanDetailView2.hints.Dated.displayWidth}"
                                   shortDesc="#{bindings.TblStudyWeekPlanDetailView2.hints.Dated.tooltip}" id="id5"
-                                  contentStyle='text-align: left'>
+                                  contentStyle='text-align: left' readOnly="true">
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblStudyWeekPlanDetailView2.hints.Dated.format}"/>
                     </af:inputDate>
