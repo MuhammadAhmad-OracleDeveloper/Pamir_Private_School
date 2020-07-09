@@ -42,7 +42,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblLibBooksView1.rangeSize}"
                           filterModel="#{bindings.TblLibBooksView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblLibBooksView1Query.processQuery}" varStatus="vs" id="t1"
-                          scrollPolicy="page" autoHeightRows="0">
+                          scrollPolicy="page" autoHeightRows="0" partialTriggers="::b3 ::b4 ::b5 ::b6">
                   <af:column sortProperty="#{bindings.TblLibBooksView1.hints.Id.name}" filterable="true" sortable="true"
                              headerText="Library Book ID" id="c1" align="right" width="80" visible="false">
                              <f:facet name="filter">
@@ -314,9 +314,98 @@
           </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr4">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4"/>
-        </af:gridRow>
-        <af:gridRow marginTop="5px" height="auto" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+            <af:panelTabbed position="above" id="pt4">
+              <af:showDetailItem id="tab2" text="Book Detail">
+                <af:panelGridLayout id="pgl8">
+                  <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr10">
+                    <af:gridCell marginStart="5px" width="auto" id="gc10">
+                       <af:panelFormLayout id="pfl1">
+                  <af:inputText value="#{bindings.IsbnNo.inputValue}" label="#{bindings.IsbnNo.hints.label}"
+                                required="#{bindings.IsbnNo.hints.mandatory}"
+                                columns="#{bindings.IsbnNo.hints.displayWidth}"
+                                maximumLength="#{bindings.IsbnNo.hints.precision}"
+                                shortDesc="#{bindings.IsbnNo.hints.tooltip}" id="it22">
+                    <f:validator binding="#{bindings.IsbnNo.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.BlockNo.inputValue}" label="#{bindings.BlockNo.hints.label}"
+                                required="#{bindings.BlockNo.hints.mandatory}"
+                                columns="#{bindings.BlockNo.hints.displayWidth}"
+                                maximumLength="#{bindings.BlockNo.hints.precision}"
+                                shortDesc="#{bindings.BlockNo.hints.tooltip}" id="it33">
+                    <f:validator binding="#{bindings.BlockNo.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.RowNo.inputValue}" label="#{bindings.RowNo.hints.label}"
+                                required="#{bindings.RowNo.hints.mandatory}"
+                                columns="#{bindings.RowNo.hints.displayWidth}"
+                                maximumLength="#{bindings.RowNo.hints.precision}"
+                                shortDesc="#{bindings.RowNo.hints.tooltip}" id="it34">
+                    <f:validator binding="#{bindings.RowNo.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.ShelfNo.inputValue}" label="#{bindings.ShelfNo.hints.label}"
+                                required="#{bindings.ShelfNo.hints.mandatory}"
+                                columns="#{bindings.ShelfNo.hints.displayWidth}"
+                                maximumLength="#{bindings.ShelfNo.hints.precision}"
+                                shortDesc="#{bindings.ShelfNo.hints.tooltip}" id="it35">
+                    <f:validator binding="#{bindings.ShelfNo.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.Remarks.inputValue}" label="#{bindings.Remarks.hints.label}"
+                                required="#{bindings.Remarks.hints.mandatory}"
+                                columns="50"
+                                maximumLength="#{bindings.Remarks.hints.precision}"
+                                shortDesc="#{bindings.Remarks.hints.tooltip}" id="it36" rows="2">
+                    <f:validator binding="#{bindings.Remarks.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.Image.inputValue}" label="#{bindings.Image.hints.label}"
+                                required="#{bindings.Image.hints.mandatory}"
+                                columns="#{bindings.Image.hints.displayWidth}"
+                                binding="#{pageFlowScope.FileManagingBean.db_Image_Value}"
+                               partialTriggers="b20" visible="false"
+                                maximumLength="#{bindings.Image.hints.precision}"
+                                shortDesc="#{bindings.Image.hints.tooltip}" id="it37">
+                    <f:validator binding="#{bindings.Image.validator}"/>
+                  </af:inputText>
+                  <f:facet name="footer">
+                    <af:panelGroupLayout layout="horizontal" id="pgl7">
+                      <af:button actionListener="#{bindings.First.execute}" text="First"
+                                 disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b3"/>
+                      <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                 disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b4"/>
+                      <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                 disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b5"/>
+                      <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                 disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b6"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                </af:panelFormLayout>
+               
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc11">
+                       <af:panelGroupLayout id="pgl12" layout="vertical"
+                                                                 inlineStyle="margin-top: 5%; margin-left: 5%; padding:8%; border: 1px solid black;">
+                                                <af:image id="i1"
+                                                          shortDesc="Upload image or refresh page to render properly"
+                                                          inlineStyle="height:200px; width:169px;"
+                                                          source="/viewimageservlet?getPath=C:\\Meta_Data\\Pamir_Data\\libr_books_images\\&amp;getImage=#{bindings.Image.inputValue}"
+                                                          partialTriggers="it37"/>
+                                          
+                                                <af:inputFile id="if2" inlineStyle="margin: 2%;"
+                                                              value="#{pageFlowScope.FileManagingBean.file}"/>
+                                                      
+                                                <!--<af:inputFile id="if1"/>-->
+                                                <af:button text="Save Image" id="b20" partialSubmit="true" inlineStyle="margin-left: 28%;margin-top: 6%;"
+                                                           actionListener="#{pageFlowScope.FileManagingBean.UploadImage}">
+                                                  <f:attribute name="path" value="C://Meta_Data//Pamir_Data//libr_books_images//"/>
+                                                </af:button>
+                                            </af:panelGroupLayout>
+                    </af:gridCell>
+                  </af:gridRow>
+                </af:panelGridLayout>
+              </af:showDetailItem>
+              
+              <af:showDetailItem id="sdi3" text="Copy / Grade">
+                <af:panelGridLayout id="pgl6">
+                    <af:gridRow marginTop="5px" height="auto" id="gr5">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
             <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="sdi1" text="Library Books Copy">
@@ -422,7 +511,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr6">
           <af:gridCell marginStart="5px" width="100%"  halign="center" marginEnd="5px" id="gc6">
              <af:panelGroupLayout id="pgl2" layout="horizontal">
-                            <af:iterator id="i1" var="index" varStatus="status"
+                            <af:iterator id="i4" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/sms/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
@@ -524,7 +613,14 @@
                         </af:panelGroupLayout>
           </af:gridCell>
         </af:gridRow>
-      </af:panelGridLayout>
+     
+                </af:panelGridLayout>
+              </af:showDetailItem>
+              
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+       </af:panelGridLayout>
     </af:showDetailItem>
     
   </af:panelAccordion>

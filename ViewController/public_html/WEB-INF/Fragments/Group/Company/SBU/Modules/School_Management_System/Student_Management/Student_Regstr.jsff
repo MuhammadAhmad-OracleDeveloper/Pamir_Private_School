@@ -346,7 +346,7 @@
                                 <af:panelGridLayout id="pgl11">
                                     <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">
                                         <af:gridCell marginStart="5px" width="auto" id="gc7">
-                                            <af:panelFormLayout id="pfl1" maxColumns="2" rows="14">
+                                            <af:panelFormLayout id="pfl1" maxColumns="3" rows="10">
                                                 <af:inputText value="#{bindings.TotAge.inputValue}" label="Total Age"
                                                               required="#{bindings.TotAge.hints.mandatory}" columns="20"
                                                               maximumLength="#{bindings.TotAge.hints.precision}"
@@ -540,7 +540,7 @@
                                                               required="#{bindings.Image.hints.mandatory}"
                                                               columns="#{bindings.Image.hints.displayWidth}"
                                                             binding="#{pageFlowScope.FileManagingBean.db_Image_Value}"
-                                                             partialTriggers="b20"
+                                                             partialTriggers="b20" visible="false"
                                                               maximumLength="#{bindings.Image.hints.precision}"
                                                               shortDesc="#{bindings.Image.hints.tooltip}" id="it25">
                                                     <f:validator binding="#{bindings.Image.validator}"/>
@@ -564,17 +564,21 @@
                                                 </f:facet>
                                             </af:panelFormLayout>
                                         </af:gridCell>
-                                        <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc8">
+                                        <af:gridCell marginStart="100px" width="auto" marginEnd="5px" id="gc8">
                                             <af:panelGroupLayout id="pgl12" layout="vertical"
-                                                                 inlineStyle="margin-top: 20%; margin-left: 5%;">
+                                                                 inlineStyle="margin-top: 5%; margin-left: 5%; padding:8%; border: 1px solid black;">
                                                 <af:image id="i1"
                                                           shortDesc="Upload image or refresh page to render properly"
-                                                          inlineStyle="height:100px;"
+                                                          inlineStyle="height:200px; width:169px;"
                                                           source="/viewimageservlet?getPath=C:\\Meta_Data\\Pamir_Data\\student_regstr_images\\&amp;getImage=#{bindings.Image.inputValue}"
-                                                          partialTriggers="it66"/>
-                                                <af:inputFile id="if1" value="#{backingBeanScope.FileManagingBean.file}"/>
-                                                <af:button text="Save Image" id="b20" partialSubmit="true"
-                                                           actionListener="#{backingBeanScope.FileManagingBean.UploadImage}">
+                                                          partialTriggers="it25"/>
+                                          
+                                                <af:inputFile id="if2" inlineStyle="margin: 2%;"
+                                                              value="#{pageFlowScope.FileManagingBean.file}"/>
+                                                      
+                                                <!--<af:inputFile id="if1"/>-->
+                                                <af:button text="Save Image" id="b20" partialSubmit="true" inlineStyle="margin-left: 28%;margin-top: 6%;"
+                                                           actionListener="#{pageFlowScope.FileManagingBean.UploadImage}">
                                                   <f:attribute name="path" value="C://Meta_Data//Pamir_Data//student_regstr_images//"/>
                                                 </af:button>
                                             </af:panelGroupLayout>

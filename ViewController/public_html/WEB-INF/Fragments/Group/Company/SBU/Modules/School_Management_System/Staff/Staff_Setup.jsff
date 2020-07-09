@@ -189,7 +189,10 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
                         <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
                             <af:showDetailItem id="tab2" text="Staff Detail">
-                                <af:panelFormLayout id="pfl1" maxColumns="3" rows="8">
+                                <af:panelGridLayout id="pgl17">
+                                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr11">
+                                        <af:gridCell marginStart="5px" width="auto" id="gc11">
+                                             <af:panelFormLayout id="pfl1" maxColumns="3" rows="8">
                                     <af:inputDate value="#{bindings.Dob.inputValue}" label="DOB"
                                                   required="#{bindings.Dob.hints.mandatory}"
                                                   columns="#{bindings.Dob.hints.displayWidth}"
@@ -329,6 +332,8 @@
                                                   required="#{bindings.Image.hints.mandatory}"
                                                   columns="#{bindings.Image.hints.displayWidth}"
                                                   maximumLength="#{bindings.Image.hints.precision}"
+                                                  binding="#{pageFlowScope.FileManagingBean.db_Image_Value}"
+                                                             partialTriggers="b20" visible="false"
                                                   shortDesc="#{bindings.Image.hints.tooltip}" id="it13"
                                                   contentStyle="width:200px;">
                                         <f:validator binding="#{bindings.Image.validator}"/>
@@ -350,6 +355,29 @@
                                         </af:panelGroupLayout>
                                     </f:facet>
                                 </af:panelFormLayout>
+                               
+                                        </af:gridCell>
+                                        <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc12">
+                                             <af:panelGroupLayout id="pgl12" layout="vertical"
+                                                                 inlineStyle="margin-top: 5%; margin-left: 5%; padding:8%; border: 1px solid black;">
+                                                <af:image id="i1"
+                                                          shortDesc="Upload image or refresh page to render properly"
+                                                          inlineStyle="height:200px; width:169px;"
+                                                          source="/viewimageservlet?getPath=C:\\Meta_Data\\Pamir_Data\\staff_setup_images\\&amp;getImage=#{bindings.Image.inputValue}"
+                                                          partialTriggers="it13"/>
+                                          
+                                                <af:inputFile id="if2" inlineStyle="margin: 2%;"
+                                                              value="#{pageFlowScope.FileManagingBean.file}"/>
+                                                      
+                                                <!--<af:inputFile id="if1"/>-->
+                                                <af:button text="Save Image" id="b20" partialSubmit="true" inlineStyle="margin-left: 28%;margin-top: 6%;"
+                                                           actionListener="#{pageFlowScope.FileManagingBean.UploadImage}">
+                                                  <f:attribute name="path" value="C://Meta_Data//Pamir_Data//staff_setup_images//"/>
+                                                </af:button>
+                                            </af:panelGroupLayout>
+                                        </af:gridCell>
+                                    </af:gridRow>
+                                </af:panelGridLayout>
                             </af:showDetailItem>
                             <af:showDetailItem text="Kith &amp; Kin" id="sdi1">
                                 <af:table value="#{bindings.TblStaffKinView2.collectionModel}" var="row"
@@ -534,8 +562,8 @@
                                     </af:column>
                                 </af:table>
                                 <af:spacer width="10" height="40" id="s2"/>
-                                <af:panelGroupLayout id="pgl2" halign="center" layout="horizontal">
-                                    <af:iterator id="i1" var="index" varStatus="status"
+                                <af:panelGroupLayout id="pgl2" layout="horizontal">
+                                    <af:iterator id="i13" var="index" varStatus="status"
                                                  value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                         <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                                    icon="/sms/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
@@ -1503,7 +1531,7 @@
                                     </af:column>
                                 </af:table>
                                 <af:spacer width="10" height="40" id="s24"/>
-                                <af:panelGroupLayout id="pgl12" halign="center" layout="horizontal">
+                                <af:panelGroupLayout id="pgl19" halign="center" layout="horizontal">
                                     <af:iterator id="i9" var="index" varStatus="status"
                                                  value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                         <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -1878,6 +1906,7 @@
                                 </af:panelGroupLayout>
                             </af:showDetailItem>
                             <af:showDetailItem text="Miscellaneous Documents" id="sdi11">
+
                                 <af:table value="#{bindings.TblStaffDocsView2.collectionModel}" var="row"
                                           rows="#{bindings.TblStaffDocsView2.rangeSize}"
                                           emptyText="#{bindings.TblStaffDocsView2.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -1988,7 +2017,7 @@
                                 </af:table>
                                 <af:spacer width="10" height="40" id="s47"/>
                                <af:panelGroupLayout id="pgl18" halign="center" layout="horizontal">
-                                    <af:iterator id="i13" var="index" varStatus="status"
+                                    <af:iterator id="i14" var="index" varStatus="status"
                                                  value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                         <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                                    icon="/sms/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"

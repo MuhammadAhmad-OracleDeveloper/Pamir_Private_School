@@ -30,7 +30,7 @@ public class ViewImageServlet extends HttpServlet {
                 getImage = request.getParameter("getImage");
             } else {
                 getPath = "E:\\Pamir_Private_School\\ViewController\\src\\META-INF\\resources\\images\\";
-                getImage = "no_image.jpg";
+                getImage = "photo_not_available.png";
             }
             
        
