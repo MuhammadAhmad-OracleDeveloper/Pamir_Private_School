@@ -53,6 +53,9 @@ public class TblStaffImpl extends EntityImpl {
         LicenseExp,
         LicenseNo,
         CompanySbuId,
+        LookupDetailArea,
+        LookupDetailCity,
+        LookupDetailCntry,
         TblLookupDetail,
         TblLookupDetail1,
         TblLookupDetail2,
@@ -123,6 +126,9 @@ public class TblStaffImpl extends EntityImpl {
     public static final int LICENSEEXP = AttributesEnum.LicenseExp.index();
     public static final int LICENSENO = AttributesEnum.LicenseNo.index();
     public static final int COMPANYSBUID = AttributesEnum.CompanySbuId.index();
+    public static final int LOOKUPDETAILAREA = AttributesEnum.LookupDetailArea.index();
+    public static final int LOOKUPDETAILCITY = AttributesEnum.LookupDetailCity.index();
+    public static final int LOOKUPDETAILCNTRY = AttributesEnum.LookupDetailCntry.index();
     public static final int TBLLOOKUPDETAIL = AttributesEnum.TblLookupDetail.index();
     public static final int TBLLOOKUPDETAIL1 = AttributesEnum.TblLookupDetail1.index();
     public static final int TBLLOOKUPDETAIL2 = AttributesEnum.TblLookupDetail2.index();
@@ -616,6 +622,54 @@ public class TblStaffImpl extends EntityImpl {
      */
     public void setCompanySbuId(Number value) {
         setAttributeInternal(COMPANYSBUID, value);
+    }
+
+    /**
+     * Gets the attribute value for LookupDetailArea, using the alias name LookupDetailArea.
+     * @return the value of LookupDetailArea
+     */
+    public BigDecimal getLookupDetailArea() {
+        return (BigDecimal) getAttributeInternal(LOOKUPDETAILAREA);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for LookupDetailArea.
+     * @param value value to set the LookupDetailArea
+     */
+    public void setLookupDetailArea(BigDecimal value) {
+        setAttributeInternal(LOOKUPDETAILAREA, value);
+    }
+
+    /**
+     * Gets the attribute value for LookupDetailCity, using the alias name LookupDetailCity.
+     * @return the value of LookupDetailCity
+     */
+    public BigDecimal getLookupDetailCity() {
+        return (BigDecimal) getAttributeInternal(LOOKUPDETAILCITY);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for LookupDetailCity.
+     * @param value value to set the LookupDetailCity
+     */
+    public void setLookupDetailCity(BigDecimal value) {
+        setAttributeInternal(LOOKUPDETAILCITY, value);
+    }
+
+    /**
+     * Gets the attribute value for LookupDetailCntry, using the alias name LookupDetailCntry.
+     * @return the value of LookupDetailCntry
+     */
+    public BigDecimal getLookupDetailCntry() {
+        return (BigDecimal) getAttributeInternal(LOOKUPDETAILCNTRY);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for LookupDetailCntry.
+     * @param value value to set the LookupDetailCntry
+     */
+    public void setLookupDetailCntry(BigDecimal value) {
+        setAttributeInternal(LOOKUPDETAILCNTRY, value);
     }
 
     /**
