@@ -14,10 +14,6 @@
   SelectAllAttributes="false"
   PageIterMode="Full">
   <ViewAccessor
-    Name="Student_Enquiry_LOV1"
-    ViewObjectName="model.LOV.Student_Enquiry_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
     Name="Lookup_Country_Name_LOV1"
     ViewObjectName="model.LOV.Lookup_Country_Name_LOV"
     RowLevelBinds="true"/>
@@ -117,25 +113,10 @@
     Name="Marital_Status_LOV1"
     ViewObjectName="model.LOV.Marital_Status_LOV"
     RowLevelBinds="true"/>
-  <ListBinding
-    Name="LOV_StdEnqId"
-    ListVOName="Student_Enquiry_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="StdEnqId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FirstName"/>
-      <Item Value="LastName"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
+  <ViewAccessor
+    Name="Enquiry_FollowUp_Final_LOV1"
+    ViewObjectName="model.LOV.Enquiry_FollowUp_Final_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_LookupBirthCountry"
     ListVOName="Lookup_Country_Name_LOV1"
@@ -620,6 +601,25 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_StdEnqId"
+    ListVOName="Enquiry_FollowUp_Final_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StdEnqId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="StdEnqId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>

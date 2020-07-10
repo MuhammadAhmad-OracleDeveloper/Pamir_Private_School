@@ -40,7 +40,10 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
             <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
               <af:showDetailItem text="Follow Up" id="sdi1">
-                <af:panelFormLayout id="pfl1" maxColumns="3" rows="6">
+                <af:panelGridLayout id="pgl6">
+                  <af:gridRow marginTop="5px" height="auto" id="gr6">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
+                      <af:panelFormLayout id="pfl1" maxColumns="3" rows="6">
                   <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
                                 required="#{bindings.Id.hints.mandatory}" columns="#{bindings.Id.hints.displayWidth}"
                                 maximumLength="#{bindings.Id.hints.precision}" shortDesc="#{bindings.Id.hints.tooltip}"
@@ -130,16 +133,17 @@
                     <f:validator binding="#{bindings.EmailBody.validator}"/>
                   </af:inputText>
                   <af:spacer  id="s5"/>
-                  <af:selectOneChoice value="#{bindings.Ast.inputValue}" label="Active"
+                  <af:selectOneChoice value="#{bindings.Ast.inputValue}" label="Ready for Registration"
                                       required="#{bindings.Ast.hints.mandatory}"
                                       shortDesc="#{bindings.Ast.hints.tooltip}" id="soc3" contentStyle="width:250px;">
                     <f:selectItems value="#{bindings.Ast.items}" id="si3"/>
                     <f:validator binding="#{bindings.Ast.validator}"/>
                   </af:selectOneChoice>
+                  
                   <f:facet name="footer">
                     <af:panelGroupLayout layout="horizontal" halign="center"  id="pgl3">
                       <af:button actionListener="#{bindings.First.execute}" text="First"
-                                 disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b6"/>
+                                 disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b7"/>
                       <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
                                  disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
                       <af:button actionListener="#{bindings.Next.execute}" text="Next"
@@ -147,10 +151,32 @@
                       <af:button actionListener="#{bindings.Last.execute}" text="Last"
                                  disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b5"/>
                     </af:panelGroupLayout>
+                    
                   </f:facet>
+                 
                 </af:panelFormLayout>
-                
+               
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7" halign="center">
+                      
+                  <af:panelGroupLayout id="pgl2"   layout="horizontal" halign="center">
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/sms/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s2"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                  </af:gridRow>
+                </af:panelGridLayout>
               </af:showDetailItem>
+              
               <af:showDetailItem id="tab2" text="Search">
                 <af:table value="#{bindings.TblEnqFollowUpView2.collectionModel}" var="row"
                           rows="#{bindings.TblEnqFollowUpView2.rangeSize}"
@@ -161,7 +187,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblEnqFollowUpView2.rangeSize}"
                           filterModel="#{bindings.TblEnqFollowUpView2Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblEnqFollowUpView2Query.processQuery}" varStatus="vs" id="t2"
-                          scrollPolicy="page" autoHeightRows="0" partialTriggers="::b6">
+                          scrollPolicy="page" autoHeightRows="0" >
                   <af:column sortProperty="#{bindings.TblEnqFollowUpView2.hints.Id.name}" filterable="true"
                              sortable="true" headerText="Follow Up ID" id="c13" align="right" width="80" visible="false">
                              <f:facet name="filter">
@@ -364,16 +390,9 @@
                     </af:selectOneChoice>
                   </af:column>
                 </af:table>
-                <af:panelGroupLayout id="pgl2" halign="center" layout="horizontal">
+                <af:panelGroupLayout id="pgl5" halign="center" layout="horizontal">
                             <af:iterator id="i1" var="index" varStatus="status"
-                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
-                                           icon="/sms/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
-                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
-                                </af:button>
-                                <af:spacer width="5" height="10" id="s2"/>
-                            </af:iterator>
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}"/>
                         </af:panelGroupLayout>
               </af:showDetailItem>
             </af:panelTabbed>
