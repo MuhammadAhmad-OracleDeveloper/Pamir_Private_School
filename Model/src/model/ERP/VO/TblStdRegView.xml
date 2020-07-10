@@ -113,6 +113,10 @@
     Name="Sib_Disc_Bases_LOV1"
     ViewObjectName="model.LOV.Sib_Disc_Bases_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Marital_Status_LOV1"
+    ViewObjectName="model.LOV.Marital_Status_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_StdEnqId"
     ListVOName="Student_Enquiry_LOV1"
@@ -555,6 +559,60 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="SibDiscBases"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_FatherMaritalStatus"
+    ListVOName="Marital_Status_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FatherMaritalStatus"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_MotherMaritalStatus"
+    ListVOName="Marital_Status_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="MotherMaritalStatus"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_GuardMaritalStatus"
+    ListVOName="Marital_Status_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GuardMaritalStatus"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -1274,6 +1332,48 @@
     EntityUsage="TblStdReg"
     AliasName="SIB_DISC_BASES"
     LOVName="LOV_SibDiscBases">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FatherMaritalStatus"
+    PrecisionRule="true"
+    EntityAttrName="FatherMaritalStatus"
+    EntityUsage="TblStdReg"
+    AliasName="FATHER_MARITAL_STATUS"
+    LOVName="LOV_FatherMaritalStatus">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MotherMaritalStatus"
+    PrecisionRule="true"
+    EntityAttrName="MotherMaritalStatus"
+    EntityUsage="TblStdReg"
+    AliasName="MOTHER_MARITAL_STATUS"
+    LOVName="LOV_MotherMaritalStatus">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="GuardMaritalStatus"
+    PrecisionRule="true"
+    EntityAttrName="GuardMaritalStatus"
+    EntityUsage="TblStdReg"
+    AliasName="GUARD_MARITAL_STATUS"
+    LOVName="LOV_GuardMaritalStatus">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

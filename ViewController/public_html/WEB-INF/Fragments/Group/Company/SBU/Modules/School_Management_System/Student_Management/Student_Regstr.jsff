@@ -498,14 +498,14 @@
                                                     <f:validator binding="#{bindings.SpecialNeed.validator}"/>
                                                 </af:selectOneChoice>
                                                  <af:spacer id="s10"/>
-                                                <af:selectOneChoice value="#{bindings.SibControlBy.inputValue}"
+                                                <!--<af:selectOneChoice value="#{bindings.SibControlBy.inputValue}"
                                                                     label="#{bindings.SibControlBy.label}"
                                                                     required="#{bindings.SibControlBy.hints.mandatory}"
                                                                     shortDesc="#{bindings.SibControlBy.hints.tooltip}"
                                                                     id="soc9" contentStyle="width:200px;">
                                                     <f:selectItems value="#{bindings.SibControlBy.items}" id="si9"/>
                                                     <f:validator binding="#{bindings.SibControlBy.validator}"/>
-                                                </af:selectOneChoice>
+                                                </af:selectOneChoice>-->
                                                 <af:spacer id="s11"/>
                                                 <af:inputText value="#{bindings.GuardEmirId.inputValue}"
                                                               label="Guardian Emirates ID"
@@ -527,6 +527,16 @@
                                                     <f:validator binding="#{bindings.GuardName.validator}"/>
                                                 </af:inputText>
                                                 <af:spacer id="s34"/>
+                                                <af:selectOneChoice value="#{bindings.GuardMaritalStatus.inputValue}"
+                                                                    label="Guardian Marital Status"
+                                                                    required="#{bindings.GuardMaritalStatus.hints.mandatory}"
+                                                                    shortDesc="#{bindings.GuardMaritalStatus.hints.tooltip}"
+                                                                    id="soc9" contentStyle="width:200px;">
+                                                    <f:selectItems value="#{bindings.GuardMaritalStatus.items}"
+                                                                   id="si9"/>
+                                                    <f:validator binding="#{bindings.GuardMaritalStatus.validator}"/>
+                                                </af:selectOneChoice>
+                                                <af:spacer id="s37"/>
                                                 <af:selectOneChoice value="#{bindings.SibDiscBases.inputValue}"
                                                                     label="Sibling Discount Bases"
                                                                     required="#{bindings.SibDiscBases.hints.mandatory}"
@@ -600,6 +610,15 @@
                                         <f:validator binding="#{bindings.FatherName.validator}"/>
                                     </af:inputText>
                                     <af:spacer id="s19"/>
+                                    <af:selectOneChoice value="#{bindings.FatherMaritalStatus.inputValue}"
+                                                        label="Father's Marital Status"
+                                                        required="#{bindings.FatherMaritalStatus.hints.mandatory}"
+                                                        shortDesc="#{bindings.FatherMaritalStatus.hints.tooltip}"
+                                                        id="soc11" contentStyle="width:200px;">
+                                        <f:selectItems value="#{bindings.FatherMaritalStatus.items}" id="si11"/>
+                                        <f:validator binding="#{bindings.FatherMaritalStatus.validator}"/>
+                                    </af:selectOneChoice>
+                                     <af:spacer id="s35"/>
                                     <af:inputText value="#{bindings.FatherEmirId.inputValue}" label="Father Emirates ID"
                                                   required="#{bindings.FatherEmirId.hints.mandatory}" columns="20"
                                                   maximumLength="#{bindings.FatherEmirId.hints.precision}"
@@ -671,6 +690,15 @@
                                                   contentStyle="width:200px;">
                                         <f:validator binding="#{bindings.MotherName.validator}"/>
                                     </af:inputText>
+                                    <af:spacer id="s36"/>
+                                    <af:selectOneChoice value="#{bindings.MotherMaritalStatus.inputValue}"
+                                                        label="Mother's Marital Status"
+                                                        required="#{bindings.MotherMaritalStatus.hints.mandatory}"
+                                                        shortDesc="#{bindings.MotherMaritalStatus.hints.tooltip}"
+                                                        id="soc17" contentStyle="width:200px;">
+                                        <f:selectItems value="#{bindings.MotherMaritalStatus.items}" id="si17"/>
+                                        <f:validator binding="#{bindings.MotherMaritalStatus.validator}"/>
+                                    </af:selectOneChoice>
                                     <af:spacer id="s25"/>
                                     <af:inputText value="#{bindings.MotherEmirId.inputValue}" label="Mother Emirates ID"
                                                   required="#{bindings.MotherEmirId.hints.mandatory}" columns="20"

@@ -111,6 +111,9 @@ public class TblStdRegImpl extends EntityImpl {
         GuardEmirId,
         GuardName,
         SibDiscBases,
+        FatherMaritalStatus,
+        MotherMaritalStatus,
+        GuardMaritalStatus,
         TblStdEnq,
         TblGrade,
         TblLookupDetail,
@@ -235,6 +238,9 @@ public class TblStdRegImpl extends EntityImpl {
     public static final int GUARDEMIRID = AttributesEnum.GuardEmirId.index();
     public static final int GUARDNAME = AttributesEnum.GuardName.index();
     public static final int SIBDISCBASES = AttributesEnum.SibDiscBases.index();
+    public static final int FATHERMARITALSTATUS = AttributesEnum.FatherMaritalStatus.index();
+    public static final int MOTHERMARITALSTATUS = AttributesEnum.MotherMaritalStatus.index();
+    public static final int GUARDMARITALSTATUS = AttributesEnum.GuardMaritalStatus.index();
     public static final int TBLSTDENQ = AttributesEnum.TblStdEnq.index();
     public static final int TBLGRADE = AttributesEnum.TblGrade.index();
     public static final int TBLLOOKUPDETAIL = AttributesEnum.TblLookupDetail.index();
@@ -1623,6 +1629,54 @@ public class TblStdRegImpl extends EntityImpl {
      */
     public void setSibDiscBases(String value) {
         setAttributeInternal(SIBDISCBASES, value);
+    }
+
+    /**
+     * Gets the attribute value for FatherMaritalStatus, using the alias name FatherMaritalStatus.
+     * @return the value of FatherMaritalStatus
+     */
+    public String getFatherMaritalStatus() {
+        return (String) getAttributeInternal(FATHERMARITALSTATUS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FatherMaritalStatus.
+     * @param value value to set the FatherMaritalStatus
+     */
+    public void setFatherMaritalStatus(String value) {
+        setAttributeInternal(FATHERMARITALSTATUS, value);
+    }
+
+    /**
+     * Gets the attribute value for MotherMaritalStatus, using the alias name MotherMaritalStatus.
+     * @return the value of MotherMaritalStatus
+     */
+    public String getMotherMaritalStatus() {
+        return (String) getAttributeInternal(MOTHERMARITALSTATUS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for MotherMaritalStatus.
+     * @param value value to set the MotherMaritalStatus
+     */
+    public void setMotherMaritalStatus(String value) {
+        setAttributeInternal(MOTHERMARITALSTATUS, value);
+    }
+
+    /**
+     * Gets the attribute value for GuardMaritalStatus, using the alias name GuardMaritalStatus.
+     * @return the value of GuardMaritalStatus
+     */
+    public String getGuardMaritalStatus() {
+        return (String) getAttributeInternal(GUARDMARITALSTATUS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GuardMaritalStatus.
+     * @param value value to set the GuardMaritalStatus
+     */
+    public void setGuardMaritalStatus(String value) {
+        setAttributeInternal(GUARDMARITALSTATUS, value);
     }
 
     /**
