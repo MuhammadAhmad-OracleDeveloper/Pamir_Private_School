@@ -45,6 +45,18 @@
     Name="Gender_Name_LOV1"
     ViewObjectName="model.LOV.Gender_Name_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Country_Name_LOV1"
+    ViewObjectName="model.LOV.Lookup_Country_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_City_Name_LOV1"
+    ViewObjectName="model.LOV.Lookup_City_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Area_Name_LOV1"
+    ViewObjectName="model.LOV.Lookup_Area_Name_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Ast"
     ListVOName="Active_Name_LOV1"
@@ -186,6 +198,60 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LookupDetailCntry"
+    ListVOName="Lookup_Country_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LookupDetailCntry"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LookupDetailCity"
+    ListVOName="Lookup_City_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LookupDetailCity"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LookupDetailArea"
+    ListVOName="Lookup_Area_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LookupDetailArea"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -433,6 +499,48 @@
     EntityAttrName="LicenseNo"
     EntityUsage="TblStaff"
     AliasName="LICENSE_NO"/>
+  <ViewAttribute
+    Name="LookupDetailCntry"
+    PrecisionRule="true"
+    EntityAttrName="LookupDetailCntry"
+    EntityUsage="TblStaff"
+    AliasName="LOOKUP_DETAIL_CNTRY"
+    LOVName="LOV_LookupDetailCntry">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LookupDetailCity"
+    PrecisionRule="true"
+    EntityAttrName="LookupDetailCity"
+    EntityUsage="TblStaff"
+    AliasName="LOOKUP_DETAIL_CITY"
+    LOVName="LOV_LookupDetailCity">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LookupDetailArea"
+    PrecisionRule="true"
+    EntityAttrName="LookupDetailArea"
+    EntityUsage="TblStaff"
+    AliasName="LOOKUP_DETAIL_AREA"
+    LOVName="LOV_LookupDetailArea">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblStaffBenefitView"
     ViewLink="model.ERP.VO.FkStaffBenefitStaffLink"
