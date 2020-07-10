@@ -98,10 +98,6 @@
     ViewObjectName="model.LOV.Lookup_Relationship_LOV"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="Lookup_Emirates_Area_LOV1"
-    ViewObjectName="model.LOV.Lookup_Emirates_Area_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
     Name="Sib_Control_By_LOV1"
     ViewObjectName="model.LOV.Sib_Control_By_LOV"
     RowLevelBinds="true"/>
@@ -116,6 +112,14 @@
   <ViewAccessor
     Name="Enquiry_FollowUp_Final_LOV1"
     ViewObjectName="model.LOV.Enquiry_FollowUp_Final_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_City_Name_LOV1"
+    ViewObjectName="model.LOV.Lookup_City_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Area_Name_LOV1"
+    ViewObjectName="model.LOV.Lookup_Area_Name_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_LookupBirthCountry"
@@ -497,24 +501,6 @@
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_EmirArea"
-    ListVOName="Lookup_Emirates_Area_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="EmirArea"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
     Name="LOV_SibControlBy"
     ListVOName="Sib_Control_By_LOV1"
     ListRangeSize="-1"
@@ -620,6 +606,42 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="FirstName"/>
       <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LookupDetailCity"
+    ListVOName="Lookup_City_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LookupDetailCity"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_EmirArea"
+    ListVOName="Lookup_Area_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="EmirArea"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -1374,6 +1396,20 @@
     EntityUsage="TblStdReg"
     AliasName="GUARD_MARITAL_STATUS"
     LOVName="LOV_GuardMaritalStatus">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LookupDetailCity"
+    PrecisionRule="true"
+    EntityAttrName="LookupDetailCity"
+    EntityUsage="TblStdReg"
+    AliasName="LOOKUP_DETAIL_CITY"
+    LOVName="LOV_LookupDetailCity">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

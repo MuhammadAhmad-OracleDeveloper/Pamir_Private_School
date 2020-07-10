@@ -114,6 +114,7 @@ public class TblStdRegImpl extends EntityImpl {
         FatherMaritalStatus,
         MotherMaritalStatus,
         GuardMaritalStatus,
+        LookupDetailCity,
         TblStdEnq,
         TblGrade,
         TblLookupDetail,
@@ -241,6 +242,7 @@ public class TblStdRegImpl extends EntityImpl {
     public static final int FATHERMARITALSTATUS = AttributesEnum.FatherMaritalStatus.index();
     public static final int MOTHERMARITALSTATUS = AttributesEnum.MotherMaritalStatus.index();
     public static final int GUARDMARITALSTATUS = AttributesEnum.GuardMaritalStatus.index();
+    public static final int LOOKUPDETAILCITY = AttributesEnum.LookupDetailCity.index();
     public static final int TBLSTDENQ = AttributesEnum.TblStdEnq.index();
     public static final int TBLGRADE = AttributesEnum.TblGrade.index();
     public static final int TBLLOOKUPDETAIL = AttributesEnum.TblLookupDetail.index();
@@ -1677,6 +1679,22 @@ public class TblStdRegImpl extends EntityImpl {
      */
     public void setGuardMaritalStatus(String value) {
         setAttributeInternal(GUARDMARITALSTATUS, value);
+    }
+
+    /**
+     * Gets the attribute value for LookupDetailCity, using the alias name LookupDetailCity.
+     * @return the value of LookupDetailCity
+     */
+    public BigDecimal getLookupDetailCity() {
+        return (BigDecimal) getAttributeInternal(LOOKUPDETAILCITY);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for LookupDetailCity.
+     * @param value value to set the LookupDetailCity
+     */
+    public void setLookupDetailCity(BigDecimal value) {
+        setAttributeInternal(LOOKUPDETAILCITY, value);
     }
 
     /**

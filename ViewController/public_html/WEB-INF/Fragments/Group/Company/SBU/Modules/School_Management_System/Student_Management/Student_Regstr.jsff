@@ -364,15 +364,6 @@
                                                               contentStyle="width:200px;" id="it44" disabled="true">
                                                     <f:validator binding="#{bindings.EligStatus.validator}"/>
                                                 </af:inputText>
-                                                <af:spacer id="s17"/>
-                                                <af:selectOneChoice value="#{bindings.EmirArea.inputValue}"
-                                                                    label="Area"
-                                                                    required="#{bindings.EmirArea.hints.mandatory}"
-                                                                    shortDesc="#{bindings.EmirArea.hints.tooltip}"
-                                                                    id="soc27" contentStyle="width:200px;">
-                                                    <f:selectItems value="#{bindings.EmirArea.items}" id="si27"/>
-                                                    <f:validator binding="#{bindings.EmirArea.validator}"/>
-                                                </af:selectOneChoice>
                                                 <af:spacer id="s52"/>
                                                 <af:inputText value="#{bindings.Address.inputValue}" label="Address"
                                                               required="#{bindings.Address.hints.mandatory}"
@@ -450,7 +441,27 @@
                                                                    id="si4"/>
                                                     <f:validator binding="#{bindings.LookupBirthCountry.validator}"/>
                                                 </af:selectOneChoice>
+                                                
                                                 <af:spacer id="s3"/>
+                                                <af:selectOneChoice value="#{bindings.LookupDetailCity.inputValue}"
+                                                                    label="City"
+                                                                    required="#{bindings.LookupDetailCity.hints.mandatory}"
+                                                                    shortDesc="#{bindings.LookupDetailCity.hints.tooltip}"
+                                                                    id="soc18" contentStyle="width:200px;">
+                                                    <f:selectItems value="#{bindings.LookupDetailCity.items}"
+                                                                   id="si18"/>
+                                                    <f:validator binding="#{bindings.LookupDetailCity.validator}"/>
+                                                </af:selectOneChoice>
+                                                 <af:spacer id="s17"/>
+                                                <af:selectOneChoice value="#{bindings.EmirArea.inputValue}"
+                                                                    label="Area"
+                                                                    required="#{bindings.EmirArea.hints.mandatory}"
+                                                                    shortDesc="#{bindings.EmirArea.hints.tooltip}"
+                                                                    id="soc27" contentStyle="width:200px;">
+                                                    <f:selectItems value="#{bindings.EmirArea.items}" id="si27"/>
+                                                    <f:validator binding="#{bindings.EmirArea.validator}"/>
+                                                </af:selectOneChoice>
+                                                <af:spacer  id="s38"/>
                                                 <af:selectOneChoice value="#{bindings.LookupNationality.inputValue}"
                                                                     label="Nationality"
                                                                     required="#{bindings.LookupNationality.hints.mandatory}"
