@@ -12,8 +12,6 @@
               id="USERS_CRUD_OPERATIONS1Iterator"/>
   </executables>
   <bindings>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
-    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
     <tree IterBinding="TblEnqFollowUpView2Iterator" id="TblEnqFollowUpView2">
       <nodeDefinition DefName="model.ERP.VO.TblEnqFollowUpView" Name="TblEnqFollowUpView20">
         <AttrNames>
@@ -32,12 +30,6 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="TblEnqFollowUpView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
-    <action IterBinding="TblEnqFollowUpView2Iterator" id="Execute1" RequiresUpdateModel="true"
-            Action="iteratorExecute"/>
-    <action IterBinding="TblEnqFollowUpView2Iterator" id="Delete1" RequiresUpdateModel="false"
-            Action="removeCurrentRow"/>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
       <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
         <AttrNames>
@@ -104,5 +96,12 @@
     <action IterBinding="TblEnqFollowUpView2Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
     <action IterBinding="TblEnqFollowUpView2Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
     <action IterBinding="TblEnqFollowUpView2Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblEnqFollowUpView2Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblEnqFollowUpView2Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblEnqFollowUpView2Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
   </bindings>
 </pageDefinition>
