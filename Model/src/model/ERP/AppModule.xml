@@ -886,6 +886,12 @@
   <ViewUsage
     Name="TblStaffDocsView2"
     ViewObjectName="model.ERP.VO.TblStaffDocsView"/>
+  <ViewUsage
+    Name="TblLookupDetailDDView1"
+    ViewObjectName="model.ERP.VO.TblLookupDetailDDView"/>
+  <ViewUsage
+    Name="TblLookupDetailDDView2"
+    ViewObjectName="model.ERP.VO.TblLookupDetailDDView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -1755,5 +1761,11 @@
     ViewLinkObjectName="model.ERP.VO.FkTblStaffDocsFkLink"
     SrcViewUsageName="model.ERP.AppModule.TblStaffView1"
     DstViewUsageName="model.ERP.AppModule.TblStaffDocsView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblLookupDetailDDFkLink1"
+    ViewLinkObjectName="model.ERP.VO.FkTblLookupDetailDDFkLink"
+    SrcViewUsageName="model.ERP.AppModule.TblLookupDetailDView3"
+    DstViewUsageName="model.ERP.AppModule.TblLookupDetailDDView2"
     Reversed="false"/>
 </AppModule>

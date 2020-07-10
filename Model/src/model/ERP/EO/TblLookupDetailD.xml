@@ -113,6 +113,13 @@
     AssociationOtherEnd="model.ERP.EO.FkLookupDetailDDetailAssoc.TblLookupDetailD"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblLookupDetailDD"
+    Association="model.ERP.EO.FkTblLookupDetailDDFkAssoc"
+    AssociationEnd="model.ERP.EO.FkTblLookupDetailDDFkAssoc.TblLookupDetailDD"
+    AssociationOtherEnd="model.ERP.EO.FkTblLookupDetailDDFkAssoc.TblLookupDetailD"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkLookupDetailD"
     PrimaryKey="true">

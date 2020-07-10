@@ -33,7 +33,8 @@ public class TblLookupDetailDImpl extends EntityImpl {
         UpdatedBy,
         TblEvalWeightage,
         TblEvalWeightage1,
-        TblLookupDetail;
+        TblLookupDetail,
+        TblLookupDetailDD;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -56,6 +57,8 @@ public class TblLookupDetailDImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int LOOKUPDETAILID = AttributesEnum.LookupDetailId.index();
     public static final int NAME = AttributesEnum.Name.index();
@@ -67,12 +70,21 @@ public class TblLookupDetailDImpl extends EntityImpl {
     public static final int TBLEVALWEIGHTAGE = AttributesEnum.TblEvalWeightage.index();
     public static final int TBLEVALWEIGHTAGE1 = AttributesEnum.TblEvalWeightage1.index();
     public static final int TBLLOOKUPDETAIL = AttributesEnum.TblLookupDetail.index();
+    public static final int TBLLOOKUPDETAILDD = AttributesEnum.TblLookupDetailDD.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblLookupDetailDImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblLookupDetailD");
+    }
+
 
     /**
      * Gets the attribute value for Id, using the alias name Id.
@@ -215,19 +227,20 @@ public class TblLookupDetailDImpl extends EntityImpl {
     }
 
     /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblLookupDetailDD() {
+        return (RowIterator) getAttributeInternal(TBLLOOKUPDETAILDD);
+    }
+
+
+    /**
      * @param id key constituent
 
      * @return a Key object based on given key constituents.
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblLookupDetailD");
     }
 
     /**
