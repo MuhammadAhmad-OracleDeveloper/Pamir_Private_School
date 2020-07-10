@@ -263,7 +263,38 @@
                                         <f:validator binding="#{bindings.LookupNationality.validator}"/>
                                     </af:selectOneChoice>
                                     <af:spacer id="s10"/>
-                                    <af:selectOneChoice value="#{bindings.LookupReligion.inputValue}" label="Religion"
+                                                <af:selectOneChoice value="#{bindings.LookupDetailCntry.inputValue}"
+                                                                    label="Country"
+                                                                    required="#{bindings.LookupDetailCntry.hints.mandatory}"
+                                                                    shortDesc="#{bindings.LookupDetailCntry.hints.tooltip}"
+                                                                    id="soc24" contentStyle="width:150px;">
+                                                    <f:selectItems value="#{bindings.LookupDetailCntry.items}"
+                                                                   id="si24"/>
+                                                    <f:validator binding="#{bindings.LookupDetailCntry.validator}"/>
+                                                </af:selectOneChoice>
+                                                <af:spacer  id="s41"/>
+                                   
+                                                <af:selectOneChoice value="#{bindings.LookupDetailCity.inputValue}"
+                                                                    label="City"
+                                                                    required="#{bindings.LookupDetailCity.hints.mandatory}"
+                                                                    shortDesc="#{bindings.LookupDetailCity.hints.tooltip}"
+                                                                    id="soc33" contentStyle="width:150px;">
+                                                    <f:selectItems value="#{bindings.LookupDetailCity.items}"
+                                                                   id="si33"/>
+                                                    <f:validator binding="#{bindings.LookupDetailCity.validator}"/>
+                                                </af:selectOneChoice>
+                                                <af:spacer  id="s43"/>
+                                                <af:selectOneChoice value="#{bindings.LookupDetailArea.inputValue}"
+                                                                    label="Area"
+                                                                    required="#{bindings.LookupDetailArea.hints.mandatory}"
+                                                                    shortDesc="#{bindings.LookupDetailArea.hints.tooltip}"
+                                                                    id="soc36" contentStyle="width:150px;">
+                                                    <f:selectItems value="#{bindings.LookupDetailArea.items}"
+                                                                   id="si36"/>
+                                                    <f:validator binding="#{bindings.LookupDetailArea.validator}"/>
+                                                </af:selectOneChoice>
+                                                <af:spacer  id="s44"/>
+                                                <af:selectOneChoice value="#{bindings.LookupReligion.inputValue}" label="Religion"
                                                         required="#{bindings.LookupReligion.hints.mandatory}"
                                                         shortDesc="#{bindings.LookupReligion.hints.tooltip}" id="soc4"
                                                         contentStyle="width:150px;">
