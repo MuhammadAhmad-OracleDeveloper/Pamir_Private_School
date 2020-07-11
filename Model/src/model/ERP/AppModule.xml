@@ -895,6 +895,9 @@
   <ViewUsage
     Name="TblStaffLeavePkgView1"
     ViewObjectName="model.ERP.VO.TblStaffLeavePkgView"/>
+  <ViewUsage
+    Name="TblStaffLeavePkgView2"
+    ViewObjectName="model.ERP.VO.TblStaffLeavePkgView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -1770,5 +1773,11 @@
     ViewLinkObjectName="model.ERP.VO.FkTblLookupDetailDDFkLink"
     SrcViewUsageName="model.ERP.AppModule.TblLookupDetailDView3"
     DstViewUsageName="model.ERP.AppModule.TblLookupDetailDDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblStaffLeavePkgFkLink1"
+    ViewLinkObjectName="model.ERP.VO.FkTblStaffLeavePkgFkLink"
+    SrcViewUsageName="model.ERP.AppModule.TblStaffView1"
+    DstViewUsageName="model.ERP.AppModule.TblStaffLeavePkgView2"
     Reversed="false"/>
 </AppModule>
