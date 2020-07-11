@@ -2059,7 +2059,105 @@
                                     </af:iterator>
                                 </af:panelGroupLayout>
                             </af:showDetailItem>
-                            
+                            <af:showDetailItem text="Leave Package" id="sdi12">
+                                <af:panelGridLayout id="pgl20">
+                                    <af:gridRow marginTop="5px" height="auto" id="gr12">
+                                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc13">
+                                        <af:panelGroupLayout>
+                                        <af:table value="#{bindings.TblStaffLeavePkgView2.collectionModel}"
+                                                      var="row" rows="#{bindings.TblStaffLeavePkgView2.rangeSize}"
+                                                      emptyText="#{bindings.TblStaffLeavePkgView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                      rowBandingInterval="0"
+                                                      selectedRowKeys="#{bindings.TblStaffLeavePkgView2.collectionModel.selectedRow}"
+                                                      selectionListener="#{bindings.TblStaffLeavePkgView2.collectionModel.makeCurrent}"
+                                                      rowSelection="single"
+                                                      fetchSize="#{bindings.TblStaffLeavePkgView2.rangeSize}"
+                                                      filterModel="#{bindings.TblStaffLeavePkgView2Query.queryDescriptor}"
+                                                      filterVisible="true"
+                                                      queryListener="#{bindings.TblStaffLeavePkgView2Query.processQuery}"
+                                                      varStatus="vs" id="t14">
+                                                <af:column sortProperty="#{bindings.TblStaffLeavePkgView2.hints.Dated.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="Date"
+                                                           id="c79">
+                                                           
+                                                    <f:facet name="filter">
+                                                        <af:inputDate value="#{bindings.TblStaffLeavePkgView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                                                      id="id39" placeholder="Search">
+                                                            <af:convertDateTime pattern="#{bindings.TblStaffLeavePkgView2.hints.Dated.format}"/>
+                                                        </af:inputDate>
+                                                    </f:facet>
+                                                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                                                  label="#{bindings.TblStaffLeavePkgView2.hints.Dated.label}"
+                                                                  required="#{bindings.TblStaffLeavePkgView2.hints.Dated.mandatory}"
+                                                                  columns="#{bindings.TblStaffLeavePkgView2.hints.Dated.displayWidth}"
+                                                                  shortDesc="#{bindings.TblStaffLeavePkgView2.hints.Dated.tooltip}"
+                                                                  id="id40">
+                                                        <f:validator binding="#{row.bindings.Dated.validator}"/>
+                                                        <af:convertDateTime pattern="#{bindings.TblStaffLeavePkgView2.hints.Dated.format}"/>
+                                                    </af:inputDate>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.TblStaffLeavePkgView2.hints.LeavePkgMasterId.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="Leave Package"
+                                                           id="c80" width="250">
+                                                           <f:facet name="filter">
+                                                              <af:inputText value="#{vs.filterCriteria.LeavePkgMasterId}"
+                                                               id="it101" placeholder="Search ">
+                                                              </af:inputText>
+                                                        </f:facet>
+                                                    <af:selectOneChoice value="#{row.bindings.LeavePkgMasterId.inputValue}"
+                                                                        label="#{row.bindings.LeavePkgMasterId.label}"
+                                                                        required="#{bindings.TblStaffLeavePkgView2.hints.LeavePkgMasterId.mandatory}"
+                                                                        shortDesc="#{bindings.TblStaffLeavePkgView2.hints.LeavePkgMasterId.tooltip}"
+                                                                        id="soc37">
+                                                        <f:selectItems value="#{row.bindings.LeavePkgMasterId.items}"
+                                                                       id="si37"/>
+                                                        <f:validator binding="#{row.bindings.LeavePkgMasterId.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.TblStaffLeavePkgView2.hints.Ast.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="Active"
+                                                           id="c81">
+                                                           <f:facet name="filter">
+                                                              <af:inputText value="#{vs.filterCriteria.Ast}"
+                                                               id="it19" placeholder="Search ">
+                                                              </af:inputText>
+                                                        </f:facet>
+                                                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                                        label="#{row.bindings.Ast.label}"
+                                                                        required="#{bindings.TblStaffLeavePkgView2.hints.Ast.mandatory}"
+                                                                        shortDesc="#{bindings.TblStaffLeavePkgView2.hints.Ast.tooltip}"
+                                                                        id="soc38">
+                                                        <f:selectItems value="#{row.bindings.Ast.items}" id="si38"/>
+                                                        <f:validator binding="#{row.bindings.Ast.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                            </af:table>
+                                       
+                                        </af:panelGroupLayout>
+                                        </af:gridCell>                                        
+                                    </af:gridRow>
+                                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr13">
+                                        <af:gridCell marginStart="5px" halign="center" width="100%" marginEnd="5px" id="gc14">
+                                        <af:panelGroupLayout id="pgl21" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s42"/>
+                            <af:iterator id="i15" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}13"/>
+                                </af:button>
+                        
+                                                    <af:spacer width="5" height="10" id="s45"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                                        </af:gridCell>
+                                    </af:gridRow>
+                                </af:panelGridLayout>
+                            </af:showDetailItem>
                         </af:panelTabbed>
                         
                     </af:gridCell>

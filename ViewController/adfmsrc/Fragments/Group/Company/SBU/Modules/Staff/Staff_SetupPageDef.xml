@@ -61,6 +61,10 @@
               id="TblStaffDocsView2Iterator"/>
     <searchRegion Binds="TblStaffDocsView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStaffDocsView2Query"/>
+    <iterator Binds="TblStaffLeavePkgView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblStaffLeavePkgView2Iterator"/>
+    <searchRegion Binds="TblStaffLeavePkgView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStaffLeavePkgView2Query"/>
   </executables>
   <bindings>
     <tree IterBinding="TblStaffView1Iterator" id="TblStaffView1">
@@ -388,5 +392,20 @@
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="TblStaffView1Iterator" StaticList="false" Uses="LOV_LookupDetailArea" id="LookupDetailArea"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="TblStaffLeavePkgView2Iterator" id="TblStaffLeavePkgView2">
+      <nodeDefinition DefName="model.ERP.VO.TblStaffLeavePkgView" Name="TblStaffLeavePkgView20">
+        <AttrNames>
+          <Item Value="Dated"/>
+          <Item Value="LeavePkgMasterId"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblStaffLeavePkgView2Iterator" id="CreateInsert13" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblStaffLeavePkgView2Iterator" id="Execute13" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblStaffLeavePkgView2Iterator" id="Delete13" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>
