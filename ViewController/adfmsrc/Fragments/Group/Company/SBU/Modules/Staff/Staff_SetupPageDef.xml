@@ -153,12 +153,13 @@
           <Item Value="StaffId"/>
           <Item Value="Dated"/>
           <Item Value="Name"/>
-          <Item Value="KinRel"/>
+          
           <Item Value="ContactNo"/>
           <Item Value="Address"/>
           <Item Value="Mobile1"/>
           <Item Value="Mobile2"/>
           <Item Value="Ast"/>
+          <Item Value="KinRel"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -364,8 +365,7 @@
     </attributeValues>
     <list IterBinding="TblStaffView1Iterator" StaticList="false" Uses="LOV_Gender" id="Gender" DTSupportsMRU="true"
           SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblStaffKinView1Iterator" StaticList="false" Uses="LOV_KinRel" id="KinRel" DTSupportsMRU="true"
-          SelectItemValueMode="ListObject"/>
+    
     <list IterBinding="TblStaffSalaryView1Iterator" StaticList="false" Uses="LOV_PaymentMode" id="PaymentMode"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="TblStaffDocsView2Iterator" StaticList="false" Uses="LOV_Ast" id="Ast" DTSupportsMRU="false"
