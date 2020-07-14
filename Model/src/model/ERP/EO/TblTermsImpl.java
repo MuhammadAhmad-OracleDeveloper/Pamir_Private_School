@@ -35,10 +35,10 @@ public class TblTermsImpl extends EntityImpl {
         StartDate,
         EndDate,
         CompanySbuId,
+        NoDaysOff,
         TblEvalWeightage,
         TblAcadYear,
         TblTermWorkDays,
-        TblTransFeeGenMaster,
         TblTransFeeGenMaster1;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -76,10 +76,10 @@ public class TblTermsImpl extends EntityImpl {
     public static final int STARTDATE = AttributesEnum.StartDate.index();
     public static final int ENDDATE = AttributesEnum.EndDate.index();
     public static final int COMPANYSBUID = AttributesEnum.CompanySbuId.index();
+    public static final int NODAYSOFF = AttributesEnum.NoDaysOff.index();
     public static final int TBLEVALWEIGHTAGE = AttributesEnum.TblEvalWeightage.index();
     public static final int TBLACADYEAR = AttributesEnum.TblAcadYear.index();
     public static final int TBLTERMWORKDAYS = AttributesEnum.TblTermWorkDays.index();
-    public static final int TBLTRANSFEEGENMASTER = AttributesEnum.TblTransFeeGenMaster.index();
     public static final int TBLTRANSFEEGENMASTER1 = AttributesEnum.TblTransFeeGenMaster1.index();
 
     /**
@@ -273,6 +273,22 @@ public class TblTermsImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for NoDaysOff, using the alias name NoDaysOff.
+     * @return the value of NoDaysOff
+     */
+    public BigDecimal getNoDaysOff() {
+        return (BigDecimal) getAttributeInternal(NODAYSOFF);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for NoDaysOff.
+     * @param value value to set the NoDaysOff
+     */
+    public void setNoDaysOff(BigDecimal value) {
+        setAttributeInternal(NODAYSOFF, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getTblEvalWeightage() {
@@ -307,6 +323,7 @@ public class TblTermsImpl extends EntityImpl {
     public RowIterator getTblTransFeeGenMaster1() {
         return (RowIterator) getAttributeInternal(TBLTRANSFEEGENMASTER1);
     }
+
 
     /**
      * @param id key constituent

@@ -117,6 +117,13 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TERMS"/>
+  <Attribute
+    Name="NoDaysOff"
+    ColumnName="NO_DAYS_OFF"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_TERMS"/>
   <AccessorAttribute
     Name="TblEvalWeightage"
     Association="model.ERP.EO.FkEvalWeightageTermAssoc"
@@ -141,8 +148,8 @@
   <AccessorAttribute
     Name="TblTransFeeGenMaster"
     Association="model.ERP.EO.FkTblTransFeeGenMasterTermFkAssoc"
-    AssociationEnd="model.ERP.EO.FkTblTransFeeGenMasterTermFkAssoc.TblTransFeeGenMaster"
-    AssociationOtherEnd="model.ERP.EO.FkTblTransFeeGenMasterTermFkAssoc.TblTerms"
+    AssociationEnd="model.ERP.EO.FkTblTransFeeGenMasterTermFkAssoc.TblTransFeeGenMaster1"
+    AssociationOtherEnd="model.ERP.EO.FkTblTransFeeGenMasterTermFkAssoc.TblTerms1"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <AccessorAttribute
