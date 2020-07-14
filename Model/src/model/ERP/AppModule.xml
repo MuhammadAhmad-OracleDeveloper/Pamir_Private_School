@@ -898,6 +898,9 @@
   <ViewUsage
     Name="TblStaffLeavePkgView2"
     ViewObjectName="model.ERP.VO.TblStaffLeavePkgView"/>
+  <ViewUsage
+    Name="TblWeekView2"
+    ViewObjectName="model.ERP.VO.TblWeekView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -1779,5 +1782,11 @@
     ViewLinkObjectName="model.ERP.VO.FkTblStaffLeavePkgFkLink"
     SrcViewUsageName="model.ERP.AppModule.TblStaffView1"
     DstViewUsageName="model.ERP.AppModule.TblStaffLeavePkgView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblWeekTermFkLink1"
+    ViewLinkObjectName="model.ERP.VO.FkTblWeekTermFkLink"
+    SrcViewUsageName="model.ERP.AppModule.TblTermsView2"
+    DstViewUsageName="model.ERP.AppModule.TblWeekView2"
     Reversed="false"/>
 </AppModule>

@@ -159,6 +159,13 @@
     AssociationOtherEnd="model.ERP.EO.FkTblTransFeeGenMasterTermFkAssoc.TblTerms1"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblWeek"
+    Association="model.ERP.EO.FkTblWeekTermFkAssoc"
+    AssociationEnd="model.ERP.EO.FkTblWeekTermFkAssoc.TblWeek"
+    AssociationOtherEnd="model.ERP.EO.FkTblWeekTermFkAssoc.TblTerms"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkTerms"
     PrimaryKey="true">

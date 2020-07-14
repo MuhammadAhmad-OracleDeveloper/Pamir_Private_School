@@ -39,7 +39,8 @@ public class TblTermsImpl extends EntityImpl {
         TblEvalWeightage,
         TblAcadYear,
         TblTermWorkDays,
-        TblTransFeeGenMaster1;
+        TblTransFeeGenMaster1,
+        TblWeek;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -81,6 +82,7 @@ public class TblTermsImpl extends EntityImpl {
     public static final int TBLACADYEAR = AttributesEnum.TblAcadYear.index();
     public static final int TBLTERMWORKDAYS = AttributesEnum.TblTermWorkDays.index();
     public static final int TBLTRANSFEEGENMASTER1 = AttributesEnum.TblTransFeeGenMaster1.index();
+    public static final int TBLWEEK = AttributesEnum.TblWeek.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -322,6 +324,14 @@ public class TblTermsImpl extends EntityImpl {
      */
     public RowIterator getTblTransFeeGenMaster1() {
         return (RowIterator) getAttributeInternal(TBLTRANSFEEGENMASTER1);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblWeek() {
+        return (RowIterator) getAttributeInternal(TBLWEEK);
     }
 
 

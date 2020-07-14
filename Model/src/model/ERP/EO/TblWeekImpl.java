@@ -35,7 +35,8 @@ public class TblWeekImpl extends EntityImpl {
         UpdatedBy,
         CompanySbuId,
         TermsId,
-        TblStudyWeekPlanMaster;
+        TblStudyWeekPlanMaster,
+        TblTerms;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -73,6 +74,7 @@ public class TblWeekImpl extends EntityImpl {
     public static final int COMPANYSBUID = AttributesEnum.CompanySbuId.index();
     public static final int TERMSID = AttributesEnum.TermsId.index();
     public static final int TBLSTUDYWEEKPLANMASTER = AttributesEnum.TblStudyWeekPlanMaster.index();
+    public static final int TBLTERMS = AttributesEnum.TblTerms.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -271,6 +273,20 @@ public class TblWeekImpl extends EntityImpl {
         return (RowIterator) getAttributeInternal(TBLSTUDYWEEKPLANMASTER);
     }
 
+
+    /**
+     * @return the associated entity TblTermsImpl.
+     */
+    public TblTermsImpl getTblTerms() {
+        return (TblTermsImpl) getAttributeInternal(TBLTERMS);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity TblTermsImpl.
+     */
+    public void setTblTerms(TblTermsImpl value) {
+        setAttributeInternal(TBLTERMS, value);
+    }
 
     /**
      * @param id key constituent
