@@ -87,7 +87,8 @@
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
                                         required="#{bindings.TblFeeGenMasterView1.hints.GradeId.mandatory}"
-                                        shortDesc="#{bindings.TblFeeGenMasterView1.hints.GradeId.tooltip}" id="soc2" contentStyle='text-align: left'>
+                                        shortDesc="#{bindings.TblFeeGenMasterView1.hints.GradeId.tooltip}" id="soc2" autoSubmit="true"
+                                        contentStyle='text-align: left'>
                       <f:selectItems value="#{row.bindings.GradeId.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.GradeId.validator}"/>
                     </af:selectOneChoice>
@@ -191,7 +192,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFeeGenDetailView2.hints.StdRegId.name}" filterable="true"
-                             sortable="true" headerText="Student Regesteration" id="c8" align="left" width="200">
+                             sortable="true" headerText="Student Regesteration" id="c8" align="left" width="300">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.StdRegId}"
                                    id="it15" placeholder="Search ">
@@ -200,12 +201,13 @@
                     <af:selectOneChoice value="#{row.bindings.StdRegId.inputValue}"
                                         label="#{row.bindings.StdRegId.label}"
                                         required="#{bindings.TblFeeGenDetailView2.hints.StdRegId.mandatory}"
-                                        shortDesc="#{bindings.TblFeeGenDetailView2.hints.StdRegId.tooltip}" id="soc6" contentStyle='text-align: left'>
+                                        shortDesc="#{bindings.TblFeeGenDetailView2.hints.StdRegId.tooltip}" id="soc6" 
+                                        contentStyle='text-align: left' readOnly="true">
                       <f:selectItems value="#{row.bindings.StdRegId.items}" id="si6"/>
                       <f:validator binding="#{row.bindings.StdRegId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFeeGenDetailView2.hints.FoundMemberDisc.name}"
+                  <!--<af:column sortProperty="#{bindings.TblFeeGenDetailView2.hints.FoundMemberDisc.name}"
                              filterable="true" sortable="true"
                              headerText="Founding Member Discount" id="c9" align="left" width="150">
                               <f:facet name="filter">
@@ -322,7 +324,7 @@
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblFeeGenDetailView2.hints.NetFee.format}"/>
                     </af:inputText>
-                  </af:column>
+                  </af:column>-->
                   <af:column sortProperty="#{bindings.TblFeeGenDetailView2.hints.Ast.name}" filterable="true"
                              sortable="true" headerText="Active" id="c15" width="70" align="left">
                              <f:facet name="filter">
@@ -333,7 +335,7 @@
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblFeeGenDetailView2.hints.Ast.mandatory}"
                                         shortDesc="#{bindings.TblFeeGenDetailView2.hints.Ast.tooltip}" id="soc7"
-                                        contentStyle="text-align: left">
+                                        contentStyle="text-align: left" readOnly="true">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si7"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>
