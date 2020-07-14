@@ -13,7 +13,7 @@
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblTermsView2Query"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
-    <iterator Binds="TblWeekView2" RangeSize="25" DataControl="AppModuleDataControl1" id="TblWeekView2Iterator"/>
+    <iterator Binds="TblWeekView2" RangeSize="8" DataControl="AppModuleDataControl1" id="TblWeekView2Iterator"/>
     <searchRegion Binds="TblWeekView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblWeekView2Query"/>
   </executables>
@@ -38,6 +38,7 @@
           <Item Value="Ast"/>
           <Item Value="StartDate"/>
           <Item Value="EndDate"/>
+          <Item Value="NoDaysOff"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

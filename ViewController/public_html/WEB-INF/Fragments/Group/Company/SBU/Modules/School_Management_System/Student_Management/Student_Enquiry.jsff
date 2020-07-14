@@ -42,7 +42,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblStdEnqView1.rangeSize}"
                           filterModel="#{bindings.TblStdEnqView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblStdEnqView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="::b2 ::b3 ::b4 ::b5"  scrollPolicy="page" autoHeightRows="0"
+                          partialTriggers="::b2 ::b3 ::b4 ::b5 ::b7"  scrollPolicy="page" autoHeightRows="0"
                          inlineStyle="font-family:serif;">
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.Id.name}" filterable="true" sortable="true"
                              headerText="Enquiry ID" id="c1" align="left" width="80" visible="false">
@@ -168,6 +168,175 @@
                                 <af:spacer width="5" height="10" id="s5"/>
                             </af:iterator>
                         </af:panelGroupLayout>
+              </af:showDetailItem>
+              <af:showDetailItem text="Search" id="sdi1">
+                <af:table value="#{bindings.TblStdEnqView12.collectionModel}" var="row"
+                          rows="#{bindings.TblStdEnqView12.rangeSize}"
+                          emptyText="#{bindings.TblStdEnqView12.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblStdEnqView12.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblStdEnqView12.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblStdEnqView12.rangeSize}"
+                          filterModel="#{bindings.TblStdEnqView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblStdEnqView1Query.processQuery}" varStatus="vs" id="t2"
+                          scrollPolicy="page" autoHeightRows="0" partialTriggers="::b7">
+                  <af:column sortProperty="#{bindings.TblStdEnqView12.hints.AcadYearId.name}" filterable="true"
+                             sortable="true" headerText="Academic Year" id="c8">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.AcadYearId}"
+       id="it17" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
+                                        label="#{row.bindings.AcadYearId.label}"
+                                        required="#{bindings.TblStdEnqView12.hints.AcadYearId.mandatory}"
+                                        shortDesc="#{bindings.TblStdEnqView12.hints.AcadYearId.tooltip}" id="soc8" readOnly="true">
+                      <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si8"/>
+                      <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStdEnqView12.hints.FirstName.name}" filterable="true"
+                             sortable="true" headerText="First name" id="c9">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FirstName}"
+       id="it18" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.FirstName.inputValue}"
+                                  label="#{bindings.TblStdEnqView12.hints.FirstName.label}"
+                                  required="#{bindings.TblStdEnqView12.hints.FirstName.mandatory}"
+                                  columns="#{bindings.TblStdEnqView12.hints.FirstName.displayWidth}"
+                                  maximumLength="#{bindings.TblStdEnqView12.hints.FirstName.precision}"
+                                  shortDesc="#{bindings.TblStdEnqView12.hints.FirstName.tooltip}" id="it11" readOnly="true">
+                      <f:validator binding="#{row.bindings.FirstName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStdEnqView12.hints.LastName.name}" filterable="true"
+                             sortable="true" headerText="Last Name" id="c10">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.LastName}"
+       id="it19" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.LastName.inputValue}"
+                                  label="#{bindings.TblStdEnqView12.hints.LastName.label}"
+                                  required="#{bindings.TblStdEnqView12.hints.LastName.mandatory}"
+                                  columns="#{bindings.TblStdEnqView12.hints.LastName.displayWidth}"
+                                  maximumLength="#{bindings.TblStdEnqView12.hints.LastName.precision}"
+                                  shortDesc="#{bindings.TblStdEnqView12.hints.LastName.tooltip}" id="it12" readOnly="true">
+                      <f:validator binding="#{row.bindings.LastName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStdEnqView12.hints.Gender.name}" filterable="true"
+                             sortable="true" headerText="Gender" id="c11">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Gender}"
+       id="it20" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Gender.inputValue}" label="#{row.bindings.Gender.label}"
+                                        required="#{bindings.TblStdEnqView12.hints.Gender.mandatory}"
+                                        shortDesc="#{bindings.TblStdEnqView12.hints.Gender.tooltip}" id="soc9" readOnly="true">
+                      <f:selectItems value="#{row.bindings.Gender.items}" id="si9"/>
+                      <f:validator binding="#{row.bindings.Gender.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStdEnqView12.hints.EmirId.name}" filterable="true"
+                             sortable="true" headerText="Emirates ID" id="c12">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.EmirId}"
+       id="it21" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.EmirId.inputValue}"
+                                  label="#{bindings.TblStdEnqView12.hints.EmirId.label}"
+                                  required="#{bindings.TblStdEnqView12.hints.EmirId.mandatory}"
+                                  columns="#{bindings.TblStdEnqView12.hints.EmirId.displayWidth}"
+                                  maximumLength="#{bindings.TblStdEnqView12.hints.EmirId.precision}"
+                                  shortDesc="#{bindings.TblStdEnqView12.hints.EmirId.tooltip}" id="it14" readOnly="true">
+                      <f:validator binding="#{row.bindings.EmirId.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStdEnqView12.hints.Dob.name}" filterable="true" sortable="true"
+                             headerText="DOB" id="c13">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblStdEnqView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dob.value}"
+                                    id="id5" placeholder="Search ">
+                        <af:convertDateTime pattern="#{bindings.TblStdEnqView12.hints.Dob.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Dob.inputValue}"
+                                  label="#{bindings.TblStdEnqView12.hints.Dob.label}"
+                                  required="#{bindings.TblStdEnqView12.hints.Dob.mandatory}"
+                                  columns="#{bindings.TblStdEnqView12.hints.Dob.displayWidth}"
+                                  shortDesc="#{bindings.TblStdEnqView12.hints.Dob.tooltip}" id="id7" readOnly="true">
+                      <f:validator binding="#{row.bindings.Dob.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblStdEnqView12.hints.Dob.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStdEnqView12.hints.TotAge.name}" filterable="true"
+                             sortable="true" headerText="Total Age" id="c14">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.TotAge}"
+       id="it22" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.TotAge.inputValue}"
+                                  label="#{bindings.TblStdEnqView12.hints.TotAge.label}"
+                                  required="#{bindings.TblStdEnqView12.hints.TotAge.mandatory}"
+                                  columns="#{bindings.TblStdEnqView12.hints.TotAge.displayWidth}"
+                                  maximumLength="#{bindings.TblStdEnqView12.hints.TotAge.precision}"
+                                  shortDesc="#{bindings.TblStdEnqView12.hints.TotAge.tooltip}" id="it16" readOnly="true">
+                      <f:validator binding="#{row.bindings.TotAge.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStdEnqView12.hints.GradeId.name}" filterable="true"
+                             sortable="true" headerText="Grade" id="c15">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.GradeId}"
+       id="it23" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
+                                        required="#{bindings.TblStdEnqView12.hints.GradeId.mandatory}"
+                                        shortDesc="#{bindings.TblStdEnqView12.hints.GradeId.tooltip}" id="soc10" readOnly="true">
+                      <f:selectItems value="#{row.bindings.GradeId.items}" id="si10"/>
+                      <f:validator binding="#{row.bindings.GradeId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStdEnqView12.hints.EmirArea.name}" filterable="true"
+                             sortable="true" headerText="Emirates Area" id="c16">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.EmirArea}"
+       id="it24" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.EmirArea.inputValue}"
+                                        label="#{row.bindings.EmirArea.label}"
+                                        required="#{bindings.TblStdEnqView12.hints.EmirArea.mandatory}"
+                                        shortDesc="#{bindings.TblStdEnqView12.hints.EmirArea.tooltip}" id="soc11" readOnly="true">
+                      <f:selectItems value="#{row.bindings.EmirArea.items}" id="si11"/>
+                      <f:validator binding="#{row.bindings.EmirArea.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStdEnqView12.hints.Ast.name}" filterable="true" sortable="true"
+                             headerText="Active" id="c18">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ast}"
+       id="it25" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblStdEnqView12.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblStdEnqView12.hints.Ast.tooltip}" id="soc12" readOnly="true">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si12"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+                <af:spacer width="10" height="30" id="s4"/>
+                <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
+                           disabled="#{!bindings.Delete.enabled}" id="b7"/>
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>

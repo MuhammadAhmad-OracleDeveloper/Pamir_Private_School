@@ -6,13 +6,35 @@
   Name="TblStdEnqView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblStdEnq.ID, 
+       TblStdEnq.GROUP_COMPANY_ID, 
+       TblStdEnq.DATED, 
+       TblStdEnq.ACAD_YEAR_ID, 
+       TblStdEnq.FIRST_NAME, 
+       TblStdEnq.LAST_NAME, 
+       TblStdEnq.GENDER, 
+       TblStdEnq.DOB, 
+       TblStdEnq.TOT_AGE, 
+       TblStdEnq.GRADE_ID, 
+       TblStdEnq.CONT_PERSON, 
+       TblStdEnq.CONT_NUMBER, 
+       TblStdEnq.CONT_RELATION, 
+       TblStdEnq.LOOKUP_ELEC_GROUP, 
+       TblStdEnq.ADDRESS, 
+       TblStdEnq.EMIR_ID, 
+       TblStdEnq.EMIR_AREA, 
+       TblStdEnq.REG_FEE, 
+       TblStdEnq.AST, 
+       TblStdEnq.CREATED_DATE, 
+       TblStdEnq.CREATED_BY, 
+       TblStdEnq.UPDATED_DATE, 
+       TblStdEnq.UPDATED_BY, 
+       TblStdEnq.LOOKUP_REF_BY"
+  FromList="TBL_STD_ENQ TblStdEnq"
+  OrderBy="TblStdEnq.ID asc">
   <ViewAccessor
     Name="Academic_Year_LOV1"
     ViewObjectName="model.LOV.Academic_Year_LOV"

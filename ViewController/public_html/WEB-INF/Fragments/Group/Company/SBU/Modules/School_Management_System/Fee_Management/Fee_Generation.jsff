@@ -348,7 +348,7 @@
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
           <af:gridCell marginStart="5px" width="100%" halign="center"  marginEnd="5px" id="gc5">
-            <af:panelGroupLayout id="pgl2" halign="center"  layout="horizontal">
+            <!--<af:panelGroupLayout id="pgl2" halign="center"  layout="horizontal">
                             <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -358,7 +358,7 @@
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s2"/>
                             </af:iterator>
-                        </af:panelGroupLayout>
+                        </af:panelGroupLayout>-->
            </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr7">
@@ -397,7 +397,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFeeGenDetailDView4.hints.FeeTypeId.name}" filterable="true"
                              sortable="true" headerText="Fee Type"
-                             id="c17" align="left">
+                             id="c17" align="left" width="150">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.FeeTypeId}"
        id="it26" placeholder="Search Type">
@@ -407,13 +407,13 @@
                                         label="#{row.bindings.FeeTypeId.label}"
                                         required="#{bindings.TblFeeGenDetailDView4.hints.FeeTypeId.mandatory}"
                                         shortDesc="#{bindings.TblFeeGenDetailDView4.hints.FeeTypeId.tooltip}" id="soc8" 
-                                        contentStyle="text-align: left">
+                                        contentStyle="text-align: left" readOnly="true">
                       <f:selectItems value="#{row.bindings.FeeTypeId.items}" id="si8"/>
                       <f:validator binding="#{row.bindings.FeeTypeId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFeeGenDetailDView4.hints.Amount.name}" filterable="true"
-                             sortable="true" headerText="Amount" id="c18" align="left">
+                             sortable="true" headerText="Amount" id="c18" align="left" width="150">
                      <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Amount}"
        id="it27" placeholder="Search Amount">
@@ -425,7 +425,7 @@
                                   columns="#{bindings.TblFeeGenDetailDView4.hints.Amount.displayWidth}"
                                   maximumLength="#{bindings.TblFeeGenDetailDView4.hints.Amount.precision}"
                                   shortDesc="#{bindings.TblFeeGenDetailDView4.hints.Amount.tooltip}" id="it24"
-                                  contentStyle='text-align: right'>
+                                  contentStyle='text-align: right' readOnly="true">
                       <f:validator binding="#{row.bindings.Amount.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblFeeGenDetailDView4.hints.Amount.format}"/>
@@ -441,7 +441,7 @@
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblFeeGenDetailDView4.hints.Ast.mandatory}"
                                         shortDesc="#{bindings.TblFeeGenDetailDView4.hints.Ast.tooltip}" id="soc9"
-                                        contentStyle="text-align: left">
+                                        contentStyle="text-align: left" readOnly="true">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si9"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>
@@ -454,7 +454,7 @@
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr6">
           <af:gridCell marginStart="5px" width="100%"  halign="center" marginEnd="5px" id="gc6">
-             <af:panelGroupLayout id="pgl5"  halign="center" layout="horizontal">
+             <!--<af:panelGroupLayout id="pgl5"  halign="center" layout="horizontal">
                             <af:iterator id="i3" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -464,7 +464,7 @@
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s3"/>
                             </af:iterator>
-                        </af:panelGroupLayout>
+                        </af:panelGroupLayout>-->
            </af:gridCell>
         </af:gridRow>
       </af:panelGridLayout>

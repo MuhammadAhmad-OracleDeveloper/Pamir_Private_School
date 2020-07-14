@@ -70,9 +70,23 @@
                                         label="#{row.bindings.AcadYearId.label}"
                                         required="#{bindings.TblWeekView1.hints.AcadYearId.mandatory}"
                                         shortDesc="#{bindings.TblWeekView1.hints.AcadYearId.tooltip}" id="soc1"
-                                        contentStyle="text-align: left">
+                                        contentStyle="text-align: left" readOnly="true">
                       <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="Terms" id="c2" sortable="true"
+                             filterable="true">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.TermsId}"
+                                   id="it5" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.TermsId.inputValue}" label="#{row.bindings.TermsId.label}"
+                                        required="#{bindings.TblWeekView1.hints.TermsId.mandatory}"
+                                        shortDesc="#{bindings.TblWeekView1.hints.TermsId.tooltip}" id="soc2" readOnly="true">
+                      <f:selectItems value="#{row.bindings.TermsId.items}" id="si2"/>
+                      <f:validator binding="#{row.bindings.TermsId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblWeekView1.hints.StartDate.name}" filterable="true"
@@ -89,7 +103,7 @@
                                   required="#{bindings.TblWeekView1.hints.StartDate.mandatory}"
                                   columns="#{bindings.TblWeekView1.hints.StartDate.displayWidth}"
                                   shortDesc="#{bindings.TblWeekView1.hints.StartDate.tooltip}" id="id2"
-                                  contentStyle='text-align: left'>
+                                  contentStyle='text-align: left' readOnly="true">
                       <f:validator binding="#{row.bindings.StartDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblWeekView1.hints.StartDate.format}"/>
                     </af:inputDate>
@@ -106,7 +120,7 @@
                                   label="#{bindings.TblWeekView1.hints.EndDate.label}"
                                   required="#{bindings.TblWeekView1.hints.EndDate.mandatory}"
                                   columns="#{bindings.TblWeekView1.hints.EndDate.displayWidth}"
-                                  shortDesc="#{bindings.TblWeekView1.hints.EndDate.tooltip}" id="id5"
+                                  shortDesc="#{bindings.TblWeekView1.hints.EndDate.tooltip}" id="id5" readOnly="true"
                                   contentStyle='text-align: left'>
                       <f:validator binding="#{row.bindings.EndDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblWeekView1.hints.EndDate.format}"/>
@@ -125,7 +139,7 @@
                                   columns="#{bindings.TblWeekView1.hints.WeekNo.displayWidth}"
                                   maximumLength="#{bindings.TblWeekView1.hints.WeekNo.precision}"
                                   shortDesc="#{bindings.TblWeekView1.hints.WeekNo.tooltip}" id="it3"
-                                  contentStyle='text-align: right'>
+                                  contentStyle='text-align: right' readOnly="true">
                       <f:validator binding="#{row.bindings.WeekNo.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblWeekView1.hints.WeekNo.format}"/>
                     </af:inputText>
@@ -135,7 +149,7 @@
             </af:panelTabbed>
           </af:gridCell>
         </af:gridRow>
-        <af:gridRow marginTop="5px" height="auto" id="gr3">
+        <!--<af:gridRow marginTop="5px" height="auto" id="gr3">
           <af:gridCell marginStart="5px" width="100%" halign="center"  marginEnd="5px" id="gc3">
               <af:panelGroupLayout id="pgl3"  halign="center" layout="horizontal">
                             <af:iterator id="i2" var="index" varStatus="status"
@@ -149,7 +163,7 @@
                             </af:iterator>
                         </af:panelGroupLayout>
           </af:gridCell>
-        </af:gridRow>
+        </af:gridRow>-->
         
       </af:panelGridLayout>
     </af:showDetailItem>
