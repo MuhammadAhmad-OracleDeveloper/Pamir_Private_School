@@ -344,12 +344,12 @@ public class TblTermsImpl extends EntityImpl {
         return new Key(new Object[] { id });
     }
 
-    /**
-     * @return the associated entity oracle.jbo.RowIterator.
-     */
-    public RowIterator getTblTransFeeGenMaster() {
-        return (RowIterator) getAttributeInternal(TBLTRANSFEEGENMASTER);
-    }
+//    /**
+//     * @return the associated entity oracle.jbo.RowIterator.
+//     */
+//    public RowIterator getTblTransFeeGenMaster() {
+//        return (RowIterator) getAttributeInternal(TBLTRANSFEEGENMASTER);
+//    }
 
 
     /**

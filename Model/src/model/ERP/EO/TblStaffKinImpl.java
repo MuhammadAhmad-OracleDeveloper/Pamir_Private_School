@@ -7,6 +7,7 @@ import java.sql.Timestamp;
 import oracle.adf.share.ADFContext;
 
 import oracle.jbo.Key;
+import oracle.jbo.domain.BFileDomain;
 import oracle.jbo.domain.NClobDomain;
 import oracle.jbo.domain.Number;
 import oracle.jbo.server.EntityDefImpl;
@@ -160,15 +161,15 @@ public class TblStaffKinImpl extends EntityImpl {
      * Gets the attribute value for KinRel, using the alias name KinRel.
      * @return the value of KinRel
      */
-    public Number getKinRel() {
-        return (Number) getAttributeInternal(KINREL);
+    public BigDecimal getKinRel() {
+        return (BigDecimal) getAttributeInternal(KINREL);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for KinRel.
      * @param value value to set the KinRel
      */
-    public void setKinRel(Number value) {
+    public void setKinRel(BigDecimal value) {
         setAttributeInternal(KINREL, value);
     }
 
