@@ -253,7 +253,104 @@
                 </af:gridRow>
                 <af:gridRow id="gr6">
                     <af:gridCell id="gc6">
-                        
+                        <af:panelTabbed position="above" id="pt3">
+                            <af:showDetailItem id="tab3" text="Week">
+                                <af:table value="#{bindings.TblWeekView2.collectionModel}" var="row"
+                                          rows="#{bindings.TblWeekView2.rangeSize}"
+                                          emptyText="#{bindings.TblWeekView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.TblWeekView2.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.TblWeekView2.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.TblWeekView2.rangeSize}"
+                                          filterModel="#{bindings.TblWeekView2Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.TblWeekView2Query.processQuery}" varStatus="vs"
+                                          id="t3">
+                                    <af:column sortProperty="#{bindings.TblWeekView2.hints.Id.name}" filterable="true"
+                                               sortable="true" headerText="Week ID"
+                                               id="c11" align="left">
+                                        <af:inputText value="#{row.bindings.Id.inputValue}"
+                                                      label="#{bindings.TblWeekView2.hints.Id.label}"
+                                                      required="#{bindings.TblWeekView2.hints.Id.mandatory}"
+                                                      columns="#{bindings.TblWeekView2.hints.Id.displayWidth}"
+                                                      maximumLength="#{bindings.TblWeekView2.hints.Id.precision}"
+                                                      shortDesc="#{bindings.TblWeekView2.hints.Id.tooltip}" id="it8">
+                                            <f:validator binding="#{row.bindings.Id.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblWeekView2.hints.Id.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblWeekView2.hints.StartDate.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Start Date" id="c12">
+                                        <f:facet name="filter">
+                                            <af:inputDate value="#{bindings.TblWeekView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.StartDate.value}"
+                                                          id="id8">
+                                                <af:convertDateTime pattern="#{bindings.TblWeekView2.hints.StartDate.format}"/>
+                                            </af:inputDate>
+                                        </f:facet>
+                                        <af:inputDate value="#{row.bindings.StartDate.inputValue}"
+                                                      label="#{bindings.TblWeekView2.hints.StartDate.label}"
+                                                      required="#{bindings.TblWeekView2.hints.StartDate.mandatory}"
+                                                      columns="#{bindings.TblWeekView2.hints.StartDate.displayWidth}"
+                                                      shortDesc="#{bindings.TblWeekView2.hints.StartDate.tooltip}"
+                                                      id="id9">
+                                            <f:validator binding="#{row.bindings.StartDate.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.TblWeekView2.hints.StartDate.format}"/>
+                                        </af:inputDate>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblWeekView2.hints.EndDate.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="End Date" id="c13">
+                                        <f:facet name="filter">
+                                            <af:inputDate value="#{bindings.TblWeekView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.EndDate.value}"
+                                                          id="id10">
+                                                <af:convertDateTime pattern="#{bindings.TblWeekView2.hints.EndDate.format}"/>
+                                            </af:inputDate>
+                                        </f:facet>
+                                        <af:inputDate value="#{row.bindings.EndDate.inputValue}"
+                                                      label="#{bindings.TblWeekView2.hints.EndDate.label}"
+                                                      required="#{bindings.TblWeekView2.hints.EndDate.mandatory}"
+                                                      columns="#{bindings.TblWeekView2.hints.EndDate.displayWidth}"
+                                                      shortDesc="#{bindings.TblWeekView2.hints.EndDate.tooltip}"
+                                                      id="id11">
+                                            <f:validator binding="#{row.bindings.EndDate.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.TblWeekView2.hints.EndDate.format}"/>
+                                        </af:inputDate>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblWeekView2.hints.WeekNo.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Week No." id="c14">
+                                        <af:inputText value="#{row.bindings.WeekNo.inputValue}"
+                                                      label="#{bindings.TblWeekView2.hints.WeekNo.label}"
+                                                      required="#{bindings.TblWeekView2.hints.WeekNo.mandatory}"
+                                                      columns="#{bindings.TblWeekView2.hints.WeekNo.displayWidth}"
+                                                      maximumLength="#{bindings.TblWeekView2.hints.WeekNo.precision}"
+                                                      shortDesc="#{bindings.TblWeekView2.hints.WeekNo.tooltip}"
+                                                      id="it11">
+                                            <f:validator binding="#{row.bindings.WeekNo.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblWeekView2.hints.WeekNo.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                </af:table>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow id="gr7">
+                    <af:gridCell id="gc7">
+                        <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/sms/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s2"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
                     </af:gridCell>
                 </af:gridRow>
             </af:panelGridLayout>
