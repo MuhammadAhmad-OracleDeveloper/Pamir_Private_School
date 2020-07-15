@@ -82,7 +82,7 @@
                     <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
                                         required="#{bindings.TblSectionTimetableMasterView1.hints.GradeId.mandatory}"
                                         shortDesc="#{bindings.TblSectionTimetableMasterView1.hints.GradeId.tooltip}"
-                                        id="soc1">
+                                        id="soc1" autoSubmit="true">
                       <f:selectItems value="#{row.bindings.GradeId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.GradeId.validator}"/>
                     </af:selectOneChoice>
