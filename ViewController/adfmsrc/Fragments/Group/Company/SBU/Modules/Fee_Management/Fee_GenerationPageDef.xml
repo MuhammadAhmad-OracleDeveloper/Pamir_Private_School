@@ -18,6 +18,10 @@
               id="TblFeeGenDetailDView4Iterator"/>
     <searchRegion Binds="TblFeeGenDetailDView4Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFeeGenDetailDView4Query"/>
+    <iterator Binds="TblFeeGenDetailDiscView2" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblFeeGenDetailDiscView2Iterator"/>
+    <searchRegion Binds="TblFeeGenDetailDiscView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFeeGenDetailDiscView2Query"/>
   </executables>
   <bindings>
     <tree IterBinding="TblFeeGenMasterView1Iterator" id="TblFeeGenMasterView1">
@@ -87,6 +91,22 @@
     <action IterBinding="TblFeeGenDetailDView4Iterator" id="Execute2" RequiresUpdateModel="true"
             Action="iteratorExecute"/>
     <action IterBinding="TblFeeGenDetailDView4Iterator" id="Delete2" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblFeeGenDetailDiscView2Iterator" id="TblFeeGenDetailDiscView2">
+      <nodeDefinition DefName="model.ERP.VO.TblFeeGenDetailDiscView" Name="TblFeeGenDetailDiscView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="DiscPerc"/>
+          <Item Value="DiscAmount"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFeeGenDetailDiscView2Iterator" id="CreateInsert3" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFeeGenDetailDiscView2Iterator" id="Execute3" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblFeeGenDetailDiscView2Iterator" id="Delete3" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>
