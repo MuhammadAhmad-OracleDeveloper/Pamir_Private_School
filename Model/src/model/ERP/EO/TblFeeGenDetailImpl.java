@@ -38,7 +38,8 @@ public class TblFeeGenDetailImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         TblFeeGenDetailD,
-        TblFeeGenMaster;
+        TblFeeGenMaster,
+        TblFeeGenDetailDisc;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -61,6 +62,8 @@ public class TblFeeGenDetailImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int FEEGENMASTERID = AttributesEnum.FeeGenMasterId.index();
     public static final int STDREGID = AttributesEnum.StdRegId.index();
@@ -77,12 +80,21 @@ public class TblFeeGenDetailImpl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int TBLFEEGENDETAILD = AttributesEnum.TblFeeGenDetailD.index();
     public static final int TBLFEEGENMASTER = AttributesEnum.TblFeeGenMaster.index();
+    public static final int TBLFEEGENDETAILDISC = AttributesEnum.TblFeeGenDetailDisc.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblFeeGenDetailImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblFeeGenDetail");
+    }
+
 
     /**
      * Gets the attribute value for Id, using the alias name Id.
@@ -314,19 +326,20 @@ public class TblFeeGenDetailImpl extends EntityImpl {
     }
 
     /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblFeeGenDetailDisc() {
+        return (RowIterator) getAttributeInternal(TBLFEEGENDETAILDISC);
+    }
+
+
+    /**
      * @param id key constituent
 
      * @return a Key object based on given key constituents.
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblFeeGenDetail");
     }
 
     /**

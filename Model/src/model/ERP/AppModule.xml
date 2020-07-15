@@ -901,6 +901,12 @@
   <ViewUsage
     Name="TblWeekView2"
     ViewObjectName="model.ERP.VO.TblWeekView"/>
+  <ViewUsage
+    Name="TblFeeGenDetailDiscView1"
+    ViewObjectName="model.ERP.VO.TblFeeGenDetailDiscView"/>
+  <ViewUsage
+    Name="TblFeeGenDetailDiscView2"
+    ViewObjectName="model.ERP.VO.TblFeeGenDetailDiscView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -1788,5 +1794,11 @@
     ViewLinkObjectName="model.ERP.VO.FkTblWeekTermFkLink"
     SrcViewUsageName="model.ERP.AppModule.TblTermsView2"
     DstViewUsageName="model.ERP.AppModule.TblWeekView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKTblFeeGenDetailDiscFkLink1"
+    ViewLinkObjectName="model.ERP.VO.FKTblFeeGenDetailDiscFkLink"
+    SrcViewUsageName="model.ERP.AppModule.TblFeeGenDetailView2"
+    DstViewUsageName="model.ERP.AppModule.TblFeeGenDetailDiscView2"
     Reversed="false"/>
 </AppModule>

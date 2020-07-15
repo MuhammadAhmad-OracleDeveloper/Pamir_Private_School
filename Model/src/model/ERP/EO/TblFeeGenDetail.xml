@@ -142,6 +142,13 @@
     AssociationOtherEnd="model.ERP.EO.FkFeeGenDetailGenMasterAssoc.TblFeeGenDetail"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblFeeGenDetailDisc"
+    Association="model.ERP.EO.FKTblFeeGenDetailDiscFkAssoc"
+    AssociationEnd="model.ERP.EO.FKTblFeeGenDetailDiscFkAssoc.TblFeeGenDetailDisc"
+    AssociationOtherEnd="model.ERP.EO.FKTblFeeGenDetailDiscFkAssoc.TblFeeGenDetail"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkFeeGenDetail"
     PrimaryKey="true">
