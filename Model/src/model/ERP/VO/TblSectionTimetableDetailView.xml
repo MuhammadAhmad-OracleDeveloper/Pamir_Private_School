@@ -14,10 +14,6 @@
   SelectAllAttributes="false"
   PageIterMode="Full">
   <ViewAccessor
-    Name="Staff_Name_LOV1"
-    ViewObjectName="model.LOV.Staff_Name_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
     Name="Active_Name_LOV1"
     ViewObjectName="model.LOV.Active_Name_LOV"
     RowLevelBinds="true"/>
@@ -26,36 +22,9 @@
     ViewObjectName="model.LOV.Week_Days_LOV"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="Subject_Staff_Dep_LOV1"
-    ViewObjectName="model.LOV.Section_Staff_Subject_Dep_LOV"
-    RowLevelBinds="true">
-    <ParameterMap>
-      <PIMap Variable="getStaffID">
-        <TransientExpression
-          trustMode="untrusted"
-          Name="ExpressionScript"><![CDATA[StaffId]]></TransientExpression>
-      </PIMap>
-    </ParameterMap>
-  </ViewAccessor>
-  <ListBinding
-    Name="LOV_StaffId"
-    ListVOName="Staff_Name_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="StaffId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FirstName"/>
-      <Item Value="LastName"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
+    Name="Section_Staff_Dep_LOV1"
+    ViewObjectName="model.LOV.Section_Staff_Dep_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Ast"
     ListVOName="Active_Name_LOV1"
@@ -93,8 +62,27 @@
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
+    Name="LOV_StaffId"
+    ListVOName="Section_Staff_Dep_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StaffId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="StaffId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
     Name="LOV_StaffSubjectId"
-    ListVOName="Subject_Staff_Dep_LOV1"
+    ListVOName="Section_Staff_Dep_LOV1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
@@ -103,10 +91,11 @@
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
-      <Item Value="Staffsubjectid"/>
+      <Item Value="StaffId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
