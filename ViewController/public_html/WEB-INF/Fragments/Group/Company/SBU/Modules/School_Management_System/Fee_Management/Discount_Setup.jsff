@@ -118,6 +118,25 @@
                           filterModel="#{bindings.TblDiscSetupDetailView2Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblDiscSetupDetailView2Query.processQuery}" varStatus="vs" id="t2"
                           >
+                          <af:column sortProperty="#{bindings.TblDiscSetupDetailView2.hints.OrderNo.name}" filterable="true"
+                             sortable="true" headerText="Order No."
+                             id="c6">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.OrderNo}"
+                                   id="it12" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.OrderNo.inputValue}"
+                                  label="#{bindings.TblDiscSetupDetailView2.hints.OrderNo.label}"
+                                  required="#{bindings.TblDiscSetupDetailView2.hints.OrderNo.mandatory}"
+                                  columns="#{bindings.TblDiscSetupDetailView2.hints.OrderNo.displayWidth}"
+                                  maximumLength="#{bindings.TblDiscSetupDetailView2.hints.OrderNo.precision}"
+                                  shortDesc="#{bindings.TblDiscSetupDetailView2.hints.OrderNo.tooltip}" readOnly="true" id="it3">
+                      <f:validator binding="#{row.bindings.OrderNo.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblDiscSetupDetailView2.hints.OrderNo.format}"/>
+                    </af:inputText>
+                  </af:column>
                   <af:column sortProperty="#{bindings.TblDiscSetupDetailView2.hints.Name.name}" filterable="true"
                              sortable="true" headerText="Discount Category" id="c4" width="200">
                              <f:facet name="filter">
@@ -151,25 +170,7 @@
                       <f:validator binding="#{row.bindings.FeeTypeId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblDiscSetupDetailView2.hints.OrderNo.name}" filterable="true"
-                             sortable="true" headerText="Order No."
-                             id="c6">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.OrderNo}"
-                                   id="it12" placeholder="Search ">
-                                  </af:inputText>
-                            </f:facet>
-                    <af:inputText value="#{row.bindings.OrderNo.inputValue}"
-                                  label="#{bindings.TblDiscSetupDetailView2.hints.OrderNo.label}"
-                                  required="#{bindings.TblDiscSetupDetailView2.hints.OrderNo.mandatory}"
-                                  columns="#{bindings.TblDiscSetupDetailView2.hints.OrderNo.displayWidth}"
-                                  maximumLength="#{bindings.TblDiscSetupDetailView2.hints.OrderNo.precision}"
-                                  shortDesc="#{bindings.TblDiscSetupDetailView2.hints.OrderNo.tooltip}" id="it3">
-                      <f:validator binding="#{row.bindings.OrderNo.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblDiscSetupDetailView2.hints.OrderNo.format}"/>
-                    </af:inputText>
-                  </af:column>
+                  
                   <af:column sortProperty="#{bindings.TblDiscSetupDetailView2.hints.MinPerc.name}" filterable="true"
                              sortable="true" headerText="Min Percentage"
                              id="c7">
