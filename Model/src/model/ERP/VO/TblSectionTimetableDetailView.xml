@@ -22,9 +22,21 @@
     ViewObjectName="model.LOV.Week_Days_LOV"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="Section_Staff_Dep_LOV1"
-    ViewObjectName="model.LOV.Section_Staff_Dep_LOV"
+    Name="Staff_Name_LOV1"
+    ViewObjectName="model.LOV.Staff_Name_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Section_Staff_Subject_Dep_LOV1"
+    ViewObjectName="model.LOV.Section_Staff_Subject_Dep_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getStaffID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[StaffId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_Ast"
     ListVOName="Active_Name_LOV1"
@@ -63,7 +75,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_StaffId"
-    ListVOName="Section_Staff_Dep_LOV1"
+    ListVOName="Staff_Name_LOV1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
@@ -72,7 +84,7 @@
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
-      <Item Value="StaffId"/>
+      <Item Value="Id"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="FirstName"/>
@@ -82,7 +94,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_StaffSubjectId"
-    ListVOName="Section_Staff_Dep_LOV1"
+    ListVOName="Section_Staff_Subject_Dep_LOV1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
@@ -91,11 +103,10 @@
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
-      <Item Value="StaffId"/>
+      <Item Value="Staffsubjectid"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FirstName"/>
-      <Item Value="LastName"/>
+      <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
