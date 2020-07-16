@@ -35,6 +35,7 @@ public class TblFeeGenMasterImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         CompanySbuId,
+        VType,
         TblFeeGenDetail,
         TblFeeGenDetailD;
         private static AttributesEnum[] vals = null;
@@ -73,6 +74,7 @@ public class TblFeeGenMasterImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int COMPANYSBUID = AttributesEnum.CompanySbuId.index();
+    public static final int VTYPE = AttributesEnum.VType.index();
     public static final int TBLFEEGENDETAIL = AttributesEnum.TblFeeGenDetail.index();
     public static final int TBLFEEGENDETAILD = AttributesEnum.TblFeeGenDetailD.index();
 
@@ -264,6 +266,22 @@ public class TblFeeGenMasterImpl extends EntityImpl {
      */
     public void setCompanySbuId(Number value) {
         setAttributeInternal(COMPANYSBUID, value);
+    }
+
+    /**
+     * Gets the attribute value for VType, using the alias name VType.
+     * @return the value of VType
+     */
+    public String getVType() {
+        return (String) getAttributeInternal(VTYPE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for VType.
+     * @param value value to set the VType
+     */
+    public void setVType(String value) {
+        setAttributeInternal(VTYPE, value);
     }
 
     /**

@@ -112,6 +112,20 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FEE_GEN_MASTER"/>
+  <Attribute
+    Name="VType"
+    Precision="1"
+    ColumnName="V_TYPE"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_FEE_GEN_MASTER"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblFeeGenDetail"
     Association="model.ERP.EO.FkFeeGenDetailGenMasterAssoc"

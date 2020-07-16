@@ -109,5 +109,56 @@
             Action="iteratorExecute"/>
     <action IterBinding="TblFeeGenDetailDiscView2Iterator" id="Delete3" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <tree IterBinding="TblFeeGenMasterView1Iterator" id="TblFeeGenMasterView11">
+      <nodeDefinition DefName="model.ERP.VO.TblFeeGenMasterView" Name="TblFeeGenMasterView110">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="AcadYearId"/>
+          <Item Value="GradeId"/>
+          <Item Value="SectionsId"/>
+          <Item Value="TermsId"/>
+          <Item Value="VType"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblFeeGenDetailView2Iterator" id="TblFeeGenDetailView21">
+      <nodeDefinition DefName="model.ERP.VO.TblFeeGenDetailView" Name="TblFeeGenDetailView210">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="StdRegId"/>
+          <Item Value="FoundMemberDisc"/>
+          <Item Value="MgtDisc"/>
+          <Item Value="ScholarDisc"/>
+          <Item Value="SiblingDisc"/>
+          <Item Value="StaffDisc"/>
+          <Item Value="NetFee"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblFeeGenDetailDView4Iterator" id="TblFeeGenDetailDView41">
+      <nodeDefinition DefName="model.ERP.VO.TblFeeGenDetailDView" Name="TblFeeGenDetailDView410">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="FeeTypeId"/>
+          <Item Value="Amount"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblFeeGenDetailDiscView2Iterator" id="TblFeeGenDetailDiscView21">
+      <nodeDefinition DefName="model.ERP.VO.TblFeeGenDetailDiscView" Name="TblFeeGenDetailDiscView210">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="FeeGenDetailId"/>
+          <Item Value="DiscSetupDetailId"/>
+          <Item Value="DiscPerc"/>
+          <Item Value="DiscAmount"/>
+          <Item Value="Ast"/>
+          <Item Value="StdDiscPolDetailId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>
