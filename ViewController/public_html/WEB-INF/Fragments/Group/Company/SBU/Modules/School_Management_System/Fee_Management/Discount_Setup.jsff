@@ -158,17 +158,22 @@
                              id="c5" width="150">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.FeeTypeId}"
-                                   id="it11" placeholder="Search ">
+                                   id="it11" placeholder="Search " >
                                   </af:inputText>
                             </f:facet>
+                            
                     <af:selectOneChoice value="#{row.bindings.FeeTypeId.inputValue}"
                                         label="#{row.bindings.FeeTypeId.label}"
                                         required="#{bindings.TblDiscSetupDetailView2.hints.FeeTypeId.mandatory}"
                                         shortDesc="#{bindings.TblDiscSetupDetailView2.hints.FeeTypeId.tooltip}"
                                         id="soc3">
-                      <f:selectItems value="#{row.bindings.FeeTypeId.items}" id="si3"/>
+                                       
+                                  
+                        
+                      <f:selectItems value="#{row.bindings.FeeTypeId.items}" id="si3" />
                       <f:validator binding="#{row.bindings.FeeTypeId.validator}"/>
                     </af:selectOneChoice>
+                    
                   </af:column>
                   
                   <af:column sortProperty="#{bindings.TblDiscSetupDetailView2.hints.MinPerc.name}" filterable="true"

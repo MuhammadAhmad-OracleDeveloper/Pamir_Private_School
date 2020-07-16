@@ -180,7 +180,7 @@
                     <af:selectOneChoice value="#{row.bindings.StaffId.inputValue}" label="#{row.bindings.StaffId.label}"
                                         required="#{bindings.TblSectionTimetableDetailView3.hints.StaffId.mandatory}"
                                         shortDesc="#{bindings.TblSectionTimetableDetailView3.hints.StaffId.tooltip}"
-                                        id="soc5" contentStyle="text-align: left">
+                                        id="soc5" contentStyle="text-align: left" autoSubmit="true">
                       <f:selectItems value="#{row.bindings.StaffId.items}" id="si5"/>
                       <f:validator binding="#{row.bindings.StaffId.validator}"/>
                     </af:selectOneChoice>
