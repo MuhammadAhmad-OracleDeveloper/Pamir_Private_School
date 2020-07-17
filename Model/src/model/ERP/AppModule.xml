@@ -907,6 +907,15 @@
   <ViewUsage
     Name="TblFeeGenDetailDiscView2"
     ViewObjectName="model.ERP.VO.TblFeeGenDetailDiscView"/>
+  <ViewUsage
+    Name="TblGradeAttDetailView1"
+    ViewObjectName="model.ERP.VO.TblGradeAttDetailView"/>
+  <ViewUsage
+    Name="TblGradeAttMasterView1"
+    ViewObjectName="model.ERP.VO.TblGradeAttMasterView"/>
+  <ViewUsage
+    Name="TblGradeAttDetailView2"
+    ViewObjectName="model.ERP.VO.TblGradeAttDetailView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -1800,5 +1809,11 @@
     ViewLinkObjectName="model.ERP.VO.FKTblFeeGenDetailDiscFkLink"
     SrcViewUsageName="model.ERP.AppModule.TblFeeGenDetailView2"
     DstViewUsageName="model.ERP.AppModule.TblFeeGenDetailDiscView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkGradeAttDetailMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkGradeAttDetailMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblGradeAttMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblGradeAttDetailView2"
     Reversed="false"/>
 </AppModule>
