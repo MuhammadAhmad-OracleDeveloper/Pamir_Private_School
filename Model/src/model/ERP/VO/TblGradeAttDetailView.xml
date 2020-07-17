@@ -13,6 +13,51 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Student_Attendance_LOV1"
+    ViewObjectName="model.LOV.Student_Attendance_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Student_Registration_LOV1"
+    ViewObjectName="model.LOV.Student_Registration_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_StdAtt"
+    ListVOName="Student_Attendance_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StdAtt"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_StdRegId"
+    ListVOName="Student_Registration_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StdRegId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblGradeAttDetail"
     Entity="model.ERP.EO.TblGradeAttDetail"/>
@@ -34,13 +79,29 @@
     PrecisionRule="true"
     EntityAttrName="StdRegId"
     EntityUsage="TblGradeAttDetail"
-    AliasName="STD_REG_ID"/>
+    AliasName="STD_REG_ID"
+    LOVName="LOV_StdRegId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="StdAtt"
     PrecisionRule="true"
     EntityAttrName="StdAtt"
     EntityUsage="TblGradeAttDetail"
-    AliasName="STD_ATT"/>
+    AliasName="STD_ATT"
+    LOVName="LOV_StdAtt">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
