@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblFeeGenMasterStdWiseView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="TblFeeGenMaster.ACAD_YEAR_ID, 
+       TblFeeGenMaster.AST, 
+       TblFeeGenMaster.COMPANY_SBU_ID, 
+       TblFeeGenMaster.CREATED_BY, 
+       TblFeeGenMaster.CREATED_DATE, 
+       TblFeeGenMaster.GRADE_ID, 
+       TblFeeGenMaster.GROUP_COMPANY_ID, 
+       TblFeeGenMaster.ID, 
+       TblFeeGenMaster.SECTIONS_ID, 
+       TblFeeGenMaster.TERMS_ID, 
+       TblFeeGenMaster.UPDATED_BY, 
+       TblFeeGenMaster.UPDATED_DATE, 
+       TblFeeGenMaster.V_TYPE"
+  FromList="TBL_FEE_GEN_MASTER TblFeeGenMaster"
+  Where="TblFeeGenMaster.V_TYPE = 'I'">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.ERP.VO.TblFeeGenMasterStdWiseView_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewAccessor
+    Name="Academic_Year_LOV1"
+    ViewObjectName="model.LOV.Academic_Year_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Active_Name_LOV1"
+    ViewObjectName="model.LOV.Active_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Section_Name_LOV1"
+    ViewObjectName="model.LOV.Section_Name_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getGrade">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[GradeId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="Terms_Name_LOV1"
+    ViewObjectName="model.LOV.Terms_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Grade_Name_LOV1"
+    ViewObjectName="model.LOV.Grade_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_AcadYearId"
+    ListVOName="Academic_Year_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AcadYearId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Ast"
+    ListVOName="Active_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Ast"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SectionsId"
+    ListVOName="Section_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SectionsId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TermsId"
+    ListVOName="Terms_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TermsId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TermName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_GradeId"
+    ListVOName="Grade_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GradeId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GradeName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="TblFeeGenMaster"
+    Entity="model.ERP.EO.TblFeeGenMaster"/>
+  <ViewAttribute
+    Name="AcadYearId"
+    PrecisionRule="true"
+    EntityAttrName="AcadYearId"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="ACAD_YEAR_ID"
+    LOVName="LOV_AcadYearId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Ast"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="AST"
+    LOVName="LOV_Ast">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="COMPANY_SBU_ID"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    IsUpdateable="false"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="GradeId"
+    PrecisionRule="true"
+    EntityAttrName="GradeId"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="GRADE_ID"
+    LOVName="LOV_GradeId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="GroupCompanyId"
+    PrecisionRule="true"
+    EntityAttrName="GroupCompanyId"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="GROUP_COMPANY_ID"/>
+  <ViewAttribute
+    Name="Id"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="SectionsId"
+    PrecisionRule="true"
+    EntityAttrName="SectionsId"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="SECTIONS_ID"
+    LOVName="LOV_SectionsId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TermsId"
+    PrecisionRule="true"
+    EntityAttrName="TermsId"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="TERMS_ID"
+    LOVName="LOV_TermsId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    IsUpdateable="false"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="UPDATED_DATE"/>
+  <ViewAttribute
+    Name="VType"
+    PrecisionRule="true"
+    EntityAttrName="VType"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="V_TYPE"
+    DefaultValue="I"/>
+  <ViewLinkAccessor
+    Name="TblFeeGenDetailView"
+    ViewLink="model.ERP.VO.FkTblFeeGenMasterStdWiseFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

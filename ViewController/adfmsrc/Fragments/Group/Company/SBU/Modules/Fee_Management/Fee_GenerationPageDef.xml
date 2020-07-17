@@ -4,53 +4,42 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TblFeeGenMasterView1" RangeSize="8" DataControl="AppModuleDataControl1"
-              id="TblFeeGenMasterView1Iterator"/>
-    <searchRegion Binds="TblFeeGenMasterView1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFeeGenMasterView1Query"/>
-    <iterator Binds="TblFeeGenDetailView2" RangeSize="8" DataControl="AppModuleDataControl1"
-              id="TblFeeGenDetailView2Iterator"/>
-    <searchRegion Binds="TblFeeGenDetailView2Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFeeGenDetailView2Query"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
-    <iterator Binds="TblFeeGenDetailDView4" RangeSize="8" DataControl="AppModuleDataControl1"
-              id="TblFeeGenDetailDView4Iterator"/>
-    <searchRegion Binds="TblFeeGenDetailDView4Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFeeGenDetailDView4Query"/>
-    <iterator Binds="TblFeeGenDetailDiscView2" RangeSize="8" DataControl="AppModuleDataControl1"
-              id="TblFeeGenDetailDiscView2Iterator"/>
-    <searchRegion Binds="TblFeeGenDetailDiscView2Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFeeGenDetailDiscView2Query"/>
+    <iterator Binds="TblFeeGenMasterClassWiseView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblFeeGenMasterClassWiseView1Iterator"/>
+    <searchRegion Binds="TblFeeGenMasterClassWiseView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="TblFeeGenMasterClassWiseView1Query"/>
+    <iterator Binds="TblFeeGenMasterStdWiseView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblFeeGenMasterStdWiseView1Iterator"/>
+    <searchRegion Binds="TblFeeGenMasterStdWiseView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="TblFeeGenMasterStdWiseView1Query"/>
+    <iterator Binds="TblFeeGenDetailView3" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblFeeGenDetailView3Iterator"/>
+    <iterator Binds="TblFeeGenDetailDView6" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblFeeGenDetailDView6Iterator"/>
+    <searchRegion Binds="TblFeeGenDetailDView6Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFeeGenDetailDView6Query"/>
+    <iterator Binds="TblFeeGenDetailDiscView4" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblFeeGenDetailDiscView4Iterator"/>
+    <searchRegion Binds="TblFeeGenDetailDiscView4Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFeeGenDetailDiscView4Query"/>
+    <iterator Binds="TblFeeGenDetailView4" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblFeeGenDetailView4Iterator"/>
+    <searchRegion Binds="TblFeeGenDetailView4Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFeeGenDetailView4Query"/>
+    <iterator Binds="TblFeeGenDetailDView5" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblFeeGenDetailDView5Iterator"/>
+    <searchRegion Binds="TblFeeGenDetailDView5Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFeeGenDetailDView5Query"/>
+    <iterator Binds="TblFeeGenDetailDiscView3" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblFeeGenDetailDiscView3Iterator"/>
+    <searchRegion Binds="TblFeeGenDetailDiscView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFeeGenDetailDiscView3Query"/>
   </executables>
   <bindings>
-    <tree IterBinding="TblFeeGenMasterView1Iterator" id="TblFeeGenMasterView1">
-      <nodeDefinition DefName="model.ERP.VO.TblFeeGenMasterView" Name="TblFeeGenMasterView10">
-        <AttrNames>
-          <Item Value="Id"/>
-          <Item Value="AcadYearId"/>
-          <Item Value="GradeId"/>
-          <Item Value="SectionsId"/>
-          <Item Value="TermsId"/>
-          <Item Value="Ast"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <tree IterBinding="TblFeeGenDetailView2Iterator" id="TblFeeGenDetailView2">
-      <nodeDefinition DefName="model.ERP.VO.TblFeeGenDetailView" Name="TblFeeGenDetailView20">
-        <AttrNames>
-          <Item Value="Id"/>
-          <Item Value="StdRegId"/>
-          <Item Value="FoundMemberDisc"/>
-          <Item Value="MgtDisc"/>
-          <Item Value="ScholarDisc"/>
-          <Item Value="SiblingDisc"/>
-          <Item Value="StaffDisc"/>
-          <Item Value="NetFee"/>
-          <Item Value="Ast"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -64,68 +53,53 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="TblFeeGenMasterView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
-    <action IterBinding="TblFeeGenMasterView1Iterator" id="Execute" RequiresUpdateModel="true"
-            Action="iteratorExecute"/>
-    <action IterBinding="TblFeeGenMasterView1Iterator" id="Delete" RequiresUpdateModel="false"
-            Action="removeCurrentRow"/>
-    <action IterBinding="TblFeeGenDetailView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
-    <action IterBinding="TblFeeGenDetailView2Iterator" id="Execute1" RequiresUpdateModel="true"
-            Action="iteratorExecute"/>
-    <action IterBinding="TblFeeGenDetailView2Iterator" id="Delete1" RequiresUpdateModel="false"
-            Action="removeCurrentRow"/>
-    <tree IterBinding="TblFeeGenDetailDView4Iterator" id="TblFeeGenDetailDView4">
-      <nodeDefinition DefName="model.ERP.VO.TblFeeGenDetailDView" Name="TblFeeGenDetailDView40">
+    <tree IterBinding="TblFeeGenMasterClassWiseView1Iterator" id="TblFeeGenMasterClassWiseView1">
+      <nodeDefinition DefName="model.ERP.VO.TblFeeGenMasterClassWiseView" Name="TblFeeGenMasterClassWiseView10">
         <AttrNames>
-          <Item Value="Id"/>
-          <Item Value="FeeTypeId"/>
-          <Item Value="Amount"/>
-          <Item Value="Ast"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <action IterBinding="TblFeeGenDetailDView4Iterator" id="CreateInsert2" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
-    <action IterBinding="TblFeeGenDetailDView4Iterator" id="Execute2" RequiresUpdateModel="true"
-            Action="iteratorExecute"/>
-    <action IterBinding="TblFeeGenDetailDView4Iterator" id="Delete2" RequiresUpdateModel="false"
-            Action="removeCurrentRow"/>
-    <tree IterBinding="TblFeeGenDetailDiscView2Iterator" id="TblFeeGenDetailDiscView2">
-      <nodeDefinition DefName="model.ERP.VO.TblFeeGenDetailDiscView" Name="TblFeeGenDetailDiscView20">
-        <AttrNames>
-          <Item Value="Id"/>
-          <Item Value="DiscPerc"/>
-          <Item Value="DiscAmount"/>
-          <Item Value="Ast"/>
-          <Item Value="DiscSetupDetailId"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <action IterBinding="TblFeeGenDetailDiscView2Iterator" id="CreateInsert3" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
-    <action IterBinding="TblFeeGenDetailDiscView2Iterator" id="Execute3" RequiresUpdateModel="true"
-            Action="iteratorExecute"/>
-    <action IterBinding="TblFeeGenDetailDiscView2Iterator" id="Delete3" RequiresUpdateModel="false"
-            Action="removeCurrentRow"/>
-    <tree IterBinding="TblFeeGenMasterView1Iterator" id="TblFeeGenMasterView11">
-      <nodeDefinition DefName="model.ERP.VO.TblFeeGenMasterView" Name="TblFeeGenMasterView110">
-        <AttrNames>
-          <Item Value="Id"/>
           <Item Value="AcadYearId"/>
+          <Item Value="Ast"/>
+          <Item Value="CompanySbuId"/>
           <Item Value="GradeId"/>
+          <Item Value="GroupCompanyId"/>
+          <Item Value="Id"/>
           <Item Value="SectionsId"/>
           <Item Value="TermsId"/>
           <Item Value="VType"/>
-          <Item Value="Ast"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <tree IterBinding="TblFeeGenDetailView2Iterator" id="TblFeeGenDetailView21">
-      <nodeDefinition DefName="model.ERP.VO.TblFeeGenDetailView" Name="TblFeeGenDetailView210">
+    <tree IterBinding="TblFeeGenMasterStdWiseView1Iterator" id="TblFeeGenMasterStdWiseView1">
+      <nodeDefinition DefName="model.ERP.VO.TblFeeGenMasterStdWiseView" Name="TblFeeGenMasterStdWiseView10">
+        <AttrNames>
+          <Item Value="AcadYearId"/>
+          <Item Value="Ast"/>
+          <Item Value="CompanySbuId"/>
+          <Item Value="GradeId"/>
+          <Item Value="GroupCompanyId"/>
+          <Item Value="Id"/>
+          <Item Value="SectionsId"/>
+          <Item Value="TermsId"/>
+          <Item Value="VType"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFeeGenMasterClassWiseView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFeeGenMasterClassWiseView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblFeeGenMasterClassWiseView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="TblFeeGenMasterStdWiseView1Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFeeGenMasterStdWiseView1Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblFeeGenMasterStdWiseView1Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblFeeGenDetailView3Iterator" id="TblFeeGenDetailView3">
+      <nodeDefinition DefName="model.ERP.VO.TblFeeGenDetailView" Name="TblFeeGenDetailView30">
         <AttrNames>
           <Item Value="Id"/>
+          <Item Value="FeeGenMasterId"/>
           <Item Value="StdRegId"/>
           <Item Value="FoundMemberDisc"/>
           <Item Value="MgtDisc"/>
@@ -137,18 +111,61 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <tree IterBinding="TblFeeGenDetailDView4Iterator" id="TblFeeGenDetailDView41">
-      <nodeDefinition DefName="model.ERP.VO.TblFeeGenDetailDView" Name="TblFeeGenDetailDView410">
+    <tree IterBinding="TblFeeGenDetailDView6Iterator" id="TblFeeGenDetailDView6">
+      <nodeDefinition DefName="model.ERP.VO.TblFeeGenDetailDView" Name="TblFeeGenDetailDView60">
         <AttrNames>
           <Item Value="Id"/>
+          <Item Value="FeeGenMasterId"/>
+          <Item Value="FeeGenDetailId"/>
           <Item Value="FeeTypeId"/>
           <Item Value="Amount"/>
           <Item Value="Ast"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <tree IterBinding="TblFeeGenDetailDiscView2Iterator" id="TblFeeGenDetailDiscView21">
-      <nodeDefinition DefName="model.ERP.VO.TblFeeGenDetailDiscView" Name="TblFeeGenDetailDiscView210">
+    <tree IterBinding="TblFeeGenDetailDiscView4Iterator" id="TblFeeGenDetailDiscView4">
+      <nodeDefinition DefName="model.ERP.VO.TblFeeGenDetailDiscView" Name="TblFeeGenDetailDiscView40">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="FeeGenDetailId"/>
+          <Item Value="DiscSetupDetailId"/>
+          <Item Value="DiscPerc"/>
+          <Item Value="DiscAmount"/>
+          <Item Value="Ast"/>
+          <Item Value="StdDiscPolDetailId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblFeeGenDetailView4Iterator" id="TblFeeGenDetailView4">
+      <nodeDefinition DefName="model.ERP.VO.TblFeeGenDetailView" Name="TblFeeGenDetailView40">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="FeeGenMasterId"/>
+          <Item Value="StdRegId"/>
+          <Item Value="FoundMemberDisc"/>
+          <Item Value="MgtDisc"/>
+          <Item Value="ScholarDisc"/>
+          <Item Value="SiblingDisc"/>
+          <Item Value="StaffDisc"/>
+          <Item Value="NetFee"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblFeeGenDetailDView5Iterator" id="TblFeeGenDetailDView5">
+      <nodeDefinition DefName="model.ERP.VO.TblFeeGenDetailDView" Name="TblFeeGenDetailDView50">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="FeeGenMasterId"/>
+          <Item Value="FeeGenDetailId"/>
+          <Item Value="FeeTypeId"/>
+          <Item Value="Amount"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblFeeGenDetailDiscView3Iterator" id="TblFeeGenDetailDiscView3">
+      <nodeDefinition DefName="model.ERP.VO.TblFeeGenDetailDiscView" Name="TblFeeGenDetailDiscView30">
         <AttrNames>
           <Item Value="Id"/>
           <Item Value="FeeGenDetailId"/>

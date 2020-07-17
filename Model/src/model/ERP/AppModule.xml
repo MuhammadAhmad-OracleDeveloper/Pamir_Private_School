@@ -916,6 +916,30 @@
   <ViewUsage
     Name="TblGradeAttDetailView2"
     ViewObjectName="model.ERP.VO.TblGradeAttDetailView"/>
+  <ViewUsage
+    Name="TblFeeGenMasterClassWiseView1"
+    ViewObjectName="model.ERP.VO.TblFeeGenMasterClassWiseView"/>
+  <ViewUsage
+    Name="TblFeeGenDetailView3"
+    ViewObjectName="model.ERP.VO.TblFeeGenDetailView"/>
+  <ViewUsage
+    Name="TblFeeGenMasterStdWiseView1"
+    ViewObjectName="model.ERP.VO.TblFeeGenMasterStdWiseView"/>
+  <ViewUsage
+    Name="TblFeeGenDetailView4"
+    ViewObjectName="model.ERP.VO.TblFeeGenDetailView"/>
+  <ViewUsage
+    Name="TblFeeGenDetailDiscView3"
+    ViewObjectName="model.ERP.VO.TblFeeGenDetailDiscView"/>
+  <ViewUsage
+    Name="TblFeeGenDetailDiscView4"
+    ViewObjectName="model.ERP.VO.TblFeeGenDetailDiscView"/>
+  <ViewUsage
+    Name="TblFeeGenDetailDView5"
+    ViewObjectName="model.ERP.VO.TblFeeGenDetailDView"/>
+  <ViewUsage
+    Name="TblFeeGenDetailDView6"
+    ViewObjectName="model.ERP.VO.TblFeeGenDetailDView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -1815,5 +1839,41 @@
     ViewLinkObjectName="model.ERP.VO.FkGradeAttDetailMasterLink"
     SrcViewUsageName="model.ERP.AppModule.TblGradeAttMasterView1"
     DstViewUsageName="model.ERP.AppModule.TblGradeAttDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblFeeGenMasterClassWiseFkLink"
+    ViewLinkObjectName="model.ERP.VO.FkTblFeeGenMasterClassWiseFkLink"
+    SrcViewUsageName="model.ERP.AppModule.TblFeeGenMasterClassWiseView1"
+    DstViewUsageName="model.ERP.AppModule.TblFeeGenDetailView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblFeeGenMasterStdWiseFkLink"
+    ViewLinkObjectName="model.ERP.VO.FkTblFeeGenMasterStdWiseFkLink"
+    SrcViewUsageName="model.ERP.AppModule.TblFeeGenMasterStdWiseView1"
+    DstViewUsageName="model.ERP.AppModule.TblFeeGenDetailView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKTblFeeGenDetailDiscFkLink2"
+    ViewLinkObjectName="model.ERP.VO.FKTblFeeGenDetailDiscFkLink"
+    SrcViewUsageName="model.ERP.AppModule.TblFeeGenDetailView4"
+    DstViewUsageName="model.ERP.AppModule.TblFeeGenDetailDiscView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKTblFeeGenDetailDiscFkLink3"
+    ViewLinkObjectName="model.ERP.VO.FKTblFeeGenDetailDiscFkLink"
+    SrcViewUsageName="model.ERP.AppModule.TblFeeGenDetailView3"
+    DstViewUsageName="model.ERP.AppModule.TblFeeGenDetailDiscView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkFeeGenDetailDGenDetailLink3"
+    ViewLinkObjectName="model.ERP.VO.FkFeeGenDetailDGenDetailLink"
+    SrcViewUsageName="model.ERP.AppModule.TblFeeGenDetailView4"
+    DstViewUsageName="model.ERP.AppModule.TblFeeGenDetailDView5"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkFeeGenDetailDGenDetailLink4"
+    ViewLinkObjectName="model.ERP.VO.FkFeeGenDetailDGenDetailLink"
+    SrcViewUsageName="model.ERP.AppModule.TblFeeGenDetailView3"
+    DstViewUsageName="model.ERP.AppModule.TblFeeGenDetailDView6"
     Reversed="false"/>
 </AppModule>
