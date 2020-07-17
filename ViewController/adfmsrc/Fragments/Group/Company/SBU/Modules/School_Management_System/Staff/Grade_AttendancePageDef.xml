@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Grade_AttendancePageDef"
+                Package="Fragments.Group.Company.SBU.Modules.School_Management_System.Staff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblGradeAttMasterView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblGradeAttMasterView1Iterator"/>
+    <searchRegion Binds="TblGradeAttMasterView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGradeAttMasterView1Query"/>
+    <iterator Binds="TblGradeAttDetailView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblGradeAttDetailView2Iterator"/>
+    <searchRegion Binds="TblGradeAttDetailView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGradeAttDetailView2Query"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <searchRegion Binds="USERS_CRUD_OPERATIONS1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="USERS_CRUD_OPERATIONS1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblGradeAttMasterView1Iterator" id="TblGradeAttMasterView1">
+      <nodeDefinition DefName="model.ERP.VO.TblGradeAttMasterView" Name="TblGradeAttMasterView10">
+        <AttrNames>
+          <Item Value="AcadYearId"/>
+          <Item Value="GradeId"/>
+          <Item Value="SectionsId"/>
+          <Item Value="Dated"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblGradeAttMasterView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblGradeAttMasterView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblGradeAttMasterView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblGradeAttDetailView2Iterator" id="TblGradeAttDetailView2">
+      <nodeDefinition DefName="model.ERP.VO.TblGradeAttDetailView" Name="TblGradeAttDetailView20">
+        <AttrNames>
+          <Item Value="StdRegId"/>
+          <Item Value="StdAtt"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblGradeAttDetailView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblGradeAttDetailView2Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblGradeAttDetailView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
