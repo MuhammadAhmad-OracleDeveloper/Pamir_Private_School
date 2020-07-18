@@ -48,7 +48,7 @@
                              filterable="true" sortable="true"
                              headerText="Academic Year" id="c4">
                     <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
-                                        label="#{row.bindings.AcadYearId.label}"
+                                        label="#{row.bindings.AcadYearId.label}" autoSubmit="true"
                                         required="#{bindings.TblSectionTimetableMasterView1.hints.AcadYearId.mandatory}"
                                         shortDesc="#{bindings.TblSectionTimetableMasterView1.hints.AcadYearId.tooltip}"
                                         id="soc3">
@@ -110,6 +110,24 @@
                                         id="soc4">
                       <f:selectItems value="#{row.bindings.Ast.items}" id="si4"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="#{bindings.TblSectionTimetableMasterView1.hints.TermsId.label}" id="c6">
+                    <af:selectOneChoice value="#{row.bindings.TermsId.inputValue}" label="#{row.bindings.TermsId.label}"
+                                        required="#{bindings.TblSectionTimetableMasterView1.hints.TermsId.mandatory}"
+                                        shortDesc="#{bindings.TblSectionTimetableMasterView1.hints.TermsId.tooltip}"
+                                        id="soc9" autoSubmit="true">
+                      <f:selectItems value="#{row.bindings.TermsId.items}" id="si9"/>
+                      <f:validator binding="#{row.bindings.TermsId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="#{bindings.TblSectionTimetableMasterView1.hints.WeekId.label}" id="c15">
+                    <af:selectOneChoice value="#{row.bindings.WeekId.inputValue}" label="#{row.bindings.WeekId.label}"
+                                        required="#{bindings.TblSectionTimetableMasterView1.hints.WeekId.mandatory}"
+                                        shortDesc="#{bindings.TblSectionTimetableMasterView1.hints.WeekId.tooltip}"
+                                        id="soc10">
+                      <f:selectItems value="#{row.bindings.WeekId.items}" id="si10"/>
+                      <f:validator binding="#{row.bindings.WeekId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                 </af:table>

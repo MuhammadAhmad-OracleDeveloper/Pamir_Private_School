@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Week_No_Term_Id_Depn_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="TblWeek.TERMS_ID, 
+       TblWeek.ID, 
+       TblWeek.WEEK_NO"
+  FromList="TBL_WEEK TblWeek"
+  Where="TblWeek.TERMS_ID = :get_termID">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Week_No_Term_Id_Depn_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="get_termID"
+    Kind="where"
+    Type="java.math.BigDecimal"/>
+  <EntityUsage
+    Name="TblWeek"
+    Entity="model.ERP.EO.TblWeek"/>
+  <ViewAttribute
+    Name="TermsId"
+    PrecisionRule="true"
+    EntityAttrName="TermsId"
+    EntityUsage="TblWeek"
+    AliasName="TERMS_ID"/>
+  <ViewAttribute
+    Name="Id"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblWeek"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="WeekNo"
+    PrecisionRule="true"
+    EntityAttrName="WeekNo"
+    EntityUsage="TblWeek"
+    AliasName="WEEK_NO"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

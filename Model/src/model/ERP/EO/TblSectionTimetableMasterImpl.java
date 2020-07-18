@@ -35,6 +35,8 @@ public class TblSectionTimetableMasterImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         CompanySbuId,
+        TermsId,
+        WeekId,
         TblSectionTimetableDetail;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -72,6 +74,8 @@ public class TblSectionTimetableMasterImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int COMPANYSBUID = AttributesEnum.CompanySbuId.index();
+    public static final int TERMSID = AttributesEnum.TermsId.index();
+    public static final int WEEKID = AttributesEnum.WeekId.index();
     public static final int TBLSECTIONTIMETABLEDETAIL = AttributesEnum.TblSectionTimetableDetail.index();
 
     /**
@@ -262,6 +266,38 @@ public class TblSectionTimetableMasterImpl extends EntityImpl {
      */
     public void setCompanySbuId(Number value) {
         setAttributeInternal(COMPANYSBUID, value);
+    }
+
+    /**
+     * Gets the attribute value for TermsId, using the alias name TermsId.
+     * @return the value of TermsId
+     */
+    public BigDecimal getTermsId() {
+        return (BigDecimal) getAttributeInternal(TERMSID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TermsId.
+     * @param value value to set the TermsId
+     */
+    public void setTermsId(BigDecimal value) {
+        setAttributeInternal(TERMSID, value);
+    }
+
+    /**
+     * Gets the attribute value for WeekId, using the alias name WeekId.
+     * @return the value of WeekId
+     */
+    public BigDecimal getWeekId() {
+        return (BigDecimal) getAttributeInternal(WEEKID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for WeekId.
+     * @param value value to set the WeekId
+     */
+    public void setWeekId(BigDecimal value) {
+        setAttributeInternal(WEEKID, value);
     }
 
     /**

@@ -37,6 +37,30 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="Term_Name_Acad_Year_Depn_LOV1"
+    ViewObjectName="model.LOV.Term_Name_Acad_Year_Depn_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="get_Acad_Year_ID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[AcadYearId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="Week_No_Term_Id_Depn_LOV1"
+    ViewObjectName="model.LOV.Week_No_Term_Id_Depn_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="get_termID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[TermsId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_GradeId"
     ListVOName="Grade_Name_LOV1"
@@ -106,6 +130,42 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TermsId"
+    ListVOName="Term_Name_Acad_Year_Depn_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TermsId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TermName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_WeekId"
+    ListVOName="Week_No_Term_Id_Depn_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="WeekId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="WeekNo"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -227,6 +287,34 @@
     EntityAttrName="CompanySbuId"
     EntityUsage="TblSectionTimetableMaster"
     AliasName="COMPANY_SBU_ID"/>
+  <ViewAttribute
+    Name="TermsId"
+    PrecisionRule="true"
+    EntityAttrName="TermsId"
+    EntityUsage="TblSectionTimetableMaster"
+    AliasName="TERMS_ID"
+    LOVName="LOV_TermsId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="WeekId"
+    PrecisionRule="true"
+    EntityAttrName="WeekId"
+    EntityUsage="TblSectionTimetableMaster"
+    AliasName="WEEK_ID"
+    LOVName="LOV_WeekId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblSectionTimetableDetailView"
     ViewLink="model.ERP.VO.FkSectionTimetableMasterSectionTimetableDetailLink"
