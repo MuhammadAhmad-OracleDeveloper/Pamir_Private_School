@@ -35,7 +35,8 @@ public class TblSectionStaffImpl extends EntityImpl {
         CompanySbuId,
         StaffId,
         TblStaffSubject,
-        TblSections;
+        TblSections,
+        TblStaff;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -74,6 +75,7 @@ public class TblSectionStaffImpl extends EntityImpl {
     public static final int STAFFID = AttributesEnum.StaffId.index();
     public static final int TBLSTAFFSUBJECT = AttributesEnum.TblStaffSubject.index();
     public static final int TBLSECTIONS = AttributesEnum.TblSections.index();
+    public static final int TBLSTAFF = AttributesEnum.TblStaff.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -293,6 +295,21 @@ public class TblSectionStaffImpl extends EntityImpl {
      */
     public void setTblSections(TblSectionsImpl value) {
         setAttributeInternal(TBLSECTIONS, value);
+    }
+
+
+    /**
+     * @return the associated entity TblStaffImpl.
+     */
+    public TblStaffImpl getTblStaff() {
+        return (TblStaffImpl) getAttributeInternal(TBLSTAFF);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity TblStaffImpl.
+     */
+    public void setTblStaff(TblStaffImpl value) {
+        setAttributeInternal(TBLSTAFF, value);
     }
 
 

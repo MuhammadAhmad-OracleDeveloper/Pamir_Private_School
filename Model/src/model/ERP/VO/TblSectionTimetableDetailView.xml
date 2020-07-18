@@ -22,10 +22,6 @@
     ViewObjectName="model.LOV.Week_Days_LOV"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="Staff_Name_LOV1"
-    ViewObjectName="model.LOV.Staff_Name_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
     Name="Section_Staff_Subject_Dep_LOV1"
     ViewObjectName="model.LOV.Section_Staff_Subject_Dep_LOV"
     RowLevelBinds="true">
@@ -34,6 +30,18 @@
         <TransientExpression
           trustMode="untrusted"
           Name="ExpressionScript"><![CDATA[StaffId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="Staff_Name_Section_Depn_LOV1"
+    ViewObjectName="model.LOV.Staff_Name_Section_Depn_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="get_sectionID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[SectionId]]></TransientExpression>
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
@@ -74,25 +82,6 @@
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_StaffId"
-    ListVOName="Staff_Name_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="StaffId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FirstName"/>
-      <Item Value="LastName"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
     Name="LOV_StaffSubjectId"
     ListVOName="Section_Staff_Subject_Dep_LOV1"
     ListRangeSize="-1"
@@ -110,9 +99,47 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_StaffId"
+    ListVOName="Staff_Name_Section_Depn_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StaffId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="StaffId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblSectionTimetableDetail"
     Entity="model.ERP.EO.TblSectionTimetableDetail"/>
+  <EntityUsage
+    Name="TblSectionTimetableMaster"
+    Entity="model.ERP.EO.TblSectionTimetableMaster"
+    Association="model.ERP.EO.FkSectionTimetableMasterSectionTimetableDetailAssoc"
+    AssociationEnd="model.ERP.EO.FkSectionTimetableMasterSectionTimetableDetailAssoc.TblSectionTimetableMaster"
+    SourceUsage="model.ERP.VO.TblSectionTimetableDetailView.TblSectionTimetableDetail"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.ERP.EO.TblSectionTimetableMaster.Id"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.ERP.EO.TblSectionTimetableDetail.SectionTimetableMasterId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
@@ -232,4 +259,19 @@
     EntityAttrName="SectionTimetableMasterId"
     EntityUsage="TblSectionTimetableDetail"
     AliasName="SECTION_TIMETABLE_MASTER_ID"/>
+  <ViewAttribute
+    Name="SectionId"
+    PrecisionRule="true"
+    EntityAttrName="SectionId"
+    EntityUsage="TblSectionTimetableMaster"
+    AliasName="SECTION_ID"/>
+  <ViewAttribute
+    Name="Id1"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblSectionTimetableMaster"
+    AliasName="ID1"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id"/>
+  </AttrArray>
 </ViewObject>

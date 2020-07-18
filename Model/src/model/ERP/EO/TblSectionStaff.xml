@@ -133,6 +133,13 @@
     AssociationOtherEnd="model.ERP.EO.FkSectionSectionStaffAssoc.TblSectionStaff"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblStaff"
+    Association="model.ERP.EO.FkTblSectionStaffFkAssoc"
+    AssociationEnd="model.ERP.EO.FkTblSectionStaffFkAssoc.TblStaff"
+    AssociationOtherEnd="model.ERP.EO.FkTblSectionStaffFkAssoc.TblSectionStaff"
+    Type="model.ERP.EO.TblStaffImpl"
+    IsUpdateable="true"/>
   <Key
     Name="PkSectionStaff"
     PrimaryKey="true">
@@ -172,6 +179,7 @@
       <Attr Name="_isForeign" Value="true"/>
       <Attr Name="_DBObjectName" Value="FK_SECTION_STAFF_STAFF"/>
     </DesignTime>
+    <AttrArray Name="Attributes"/>
   </Key>
   <Key
     Name="FkSectionStaffStaffSubject">
@@ -182,6 +190,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.ERP.EO.TblSectionStaff.StaffSubjectId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_TblSectionStaff">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_STAFF"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_TBL_SECTION_STAFF"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblSectionStaff.StaffId"/>
     </AttrArray>
   </Key>
 </Entity>

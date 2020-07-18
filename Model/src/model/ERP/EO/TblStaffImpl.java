@@ -72,7 +72,8 @@ public class TblStaffImpl extends EntityImpl {
         TblStaffVisa,
         TblStaffSubject,
         TblStaffDocs,
-        TblStaffLeavePkg;
+        TblStaffLeavePkg,
+        TblSectionStaff;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -147,6 +148,7 @@ public class TblStaffImpl extends EntityImpl {
     public static final int TBLSTAFFSUBJECT = AttributesEnum.TblStaffSubject.index();
     public static final int TBLSTAFFDOCS = AttributesEnum.TblStaffDocs.index();
     public static final int TBLSTAFFLEAVEPKG = AttributesEnum.TblStaffLeavePkg.index();
+    public static final int TBLSECTIONSTAFF = AttributesEnum.TblSectionStaff.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -828,6 +830,14 @@ public class TblStaffImpl extends EntityImpl {
      */
     public RowIterator getTblStaffLeavePkg() {
         return (RowIterator) getAttributeInternal(TBLSTAFFLEAVEPKG);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblSectionStaff() {
+        return (RowIterator) getAttributeInternal(TBLSECTIONSTAFF);
     }
 
 
