@@ -9,6 +9,8 @@
   SelectList="TblStdReg.ID, 
        TblStdReg.FIRST_NAME, 
        TblStdReg.LAST_NAME, 
+       TblStdReg.FATHER_NAME, 
+       TblStdReg.ENROLL_NO, 
        TblStdReg.AST"
   FromList="TBL_STD_REG TblStdReg"
   BindingStyle="OracleName"
@@ -42,6 +44,18 @@
     EntityAttrName="LastName"
     EntityUsage="TblStdReg"
     AliasName="LAST_NAME"/>
+  <ViewAttribute
+    Name="FatherName"
+    PrecisionRule="true"
+    EntityAttrName="FatherName"
+    EntityUsage="TblStdReg"
+    AliasName="FATHER_NAME"/>
+  <ViewAttribute
+    Name="EnrollNo"
+    PrecisionRule="true"
+    EntityAttrName="EnrollNo"
+    EntityUsage="TblStdReg"
+    AliasName="ENROLL_NO"/>
   <ViewAttribute
     Name="Ast"
     PrecisionRule="true"
