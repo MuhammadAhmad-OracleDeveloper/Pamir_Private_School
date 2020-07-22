@@ -32,7 +32,8 @@
        TblStdEnq.CREATED_BY, 
        TblStdEnq.UPDATED_DATE, 
        TblStdEnq.UPDATED_BY, 
-       TblStdEnq.LOOKUP_REF_BY"
+       TblStdEnq.LOOKUP_REF_BY, 
+       TblStdEnq.SECTIONS_ID"
   FromList="TBL_STD_ENQ TblStdEnq"
   OrderBy="TblStdEnq.ID asc">
   <ViewAccessor
@@ -67,6 +68,18 @@
     Name="Lookup_Emirates_Area_LOV1"
     ViewObjectName="model.LOV.Lookup_Emirates_Area_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Section_Name_LOV1"
+    ViewObjectName="model.LOV.Section_Name_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getGrade">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[GradeId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_AcadYearId"
     ListVOName="Academic_Year_LOV1"
@@ -201,6 +214,24 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="EmirArea"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SectionsId"
+    ListVOName="Section_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SectionsId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -418,6 +449,20 @@
     EntityUsage="TblStdEnq"
     AliasName="LOOKUP_REF_BY"
     LOVName="LOV_LookupRefBy">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SectionsId"
+    PrecisionRule="true"
+    EntityAttrName="SectionsId"
+    EntityUsage="TblStdEnq"
+    AliasName="SECTIONS_ID"
+    LOVName="LOV_SectionsId">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

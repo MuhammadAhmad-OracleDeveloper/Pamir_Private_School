@@ -135,9 +135,18 @@
                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
                                         required="#{bindings.TblStdEnqView1.hints.GradeId.mandatory}"
-                                        shortDesc="#{bindings.TblStdEnqView1.hints.GradeId.tooltip}" id="soc2">
+                                        shortDesc="#{bindings.TblStdEnqView1.hints.GradeId.tooltip}" id="soc2" autoSubmit="true">
                       <f:selectItems value="#{row.bindings.GradeId.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.GradeId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="#{bindings.TblStdEnqView1.hints.SectionsId.label}" id="c2" width="150">
+                    <af:selectOneChoice value="#{row.bindings.SectionsId.inputValue}"
+                                        label="#{row.bindings.SectionsId.label}"
+                                        required="#{bindings.TblStdEnqView1.hints.SectionsId.mandatory}"
+                                        shortDesc="#{bindings.TblStdEnqView1.hints.SectionsId.tooltip}" id="soc13">
+                      <f:selectItems value="#{row.bindings.SectionsId.items}" id="si13"/>
+                      <f:validator binding="#{row.bindings.SectionsId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStdEnqView1.hints.EmirId.name}" filterable="true"
