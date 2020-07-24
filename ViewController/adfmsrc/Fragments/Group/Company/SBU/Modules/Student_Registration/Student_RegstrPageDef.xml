@@ -19,10 +19,8 @@
               id="StdRegSiblingsDetail2Iterator"/>
     <searchRegion Binds="StdRegSiblingsDetail2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="StdRegSiblingsDetail2Query"/>
-    <iterator Binds="TblStdRegSibView1" RangeSize="25" DataControl="AppModuleDataControl1"
-              id="TblStdRegSibView1Iterator"/>
-    <searchRegion Binds="TblStdRegSibView1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStdRegSibView1Query"/>
+    <searchRegion Binds="TblStdRegSibView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStdRegSibView3Query"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="TblStdRegGuardView2Iterator" id="Id">
@@ -428,15 +426,6 @@
     </tree>
     <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_EmirArea" id="EmirArea"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <tree IterBinding="TblStdRegSibView1Iterator" id="TblStdRegSibView1">
-      <nodeDefinition DefName="model.ERP.VO.TblStdRegSibView" Name="TblStdRegSibView10">
-        <AttrNames>
-          <Item Value="Dob"/>
-          <Item Value="SchoolName"/>
-          <Item Value="SibName"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <attributeValues IterBinding="TblStdRegView1Iterator" id="EligStatus">
       <AttrNames>
         <Item Value="EligStatus"/>
@@ -464,5 +453,14 @@
           id="GuardMaritalStatus" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_LookupDetailCity" id="LookupDetailCity"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="TblStdRegSibView3Iterator" id="TblStdRegSibView3">
+      <nodeDefinition DefName="model.ERP.VO.TblStdRegSibView" Name="TblStdRegSibView30">
+        <AttrNames>
+          <Item Value="Dob"/>
+          <Item Value="SibName"/>
+          <Item Value="SchoolName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

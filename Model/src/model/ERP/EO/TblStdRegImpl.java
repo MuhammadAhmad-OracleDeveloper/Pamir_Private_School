@@ -115,6 +115,8 @@ public class TblStdRegImpl extends EntityImpl {
         MotherMaritalStatus,
         GuardMaritalStatus,
         LookupDetailCity,
+        ActiveSibEmirId,
+        ActiveStdEmirId,
         TblStdEnq,
         TblGrade,
         TblLookupDetail,
@@ -243,6 +245,8 @@ public class TblStdRegImpl extends EntityImpl {
     public static final int MOTHERMARITALSTATUS = AttributesEnum.MotherMaritalStatus.index();
     public static final int GUARDMARITALSTATUS = AttributesEnum.GuardMaritalStatus.index();
     public static final int LOOKUPDETAILCITY = AttributesEnum.LookupDetailCity.index();
+    public static final int ACTIVESIBEMIRID = AttributesEnum.ActiveSibEmirId.index();
+    public static final int ACTIVESTDEMIRID = AttributesEnum.ActiveStdEmirId.index();
     public static final int TBLSTDENQ = AttributesEnum.TblStdEnq.index();
     public static final int TBLGRADE = AttributesEnum.TblGrade.index();
     public static final int TBLLOOKUPDETAIL = AttributesEnum.TblLookupDetail.index();
@@ -1695,6 +1699,38 @@ public class TblStdRegImpl extends EntityImpl {
      */
     public void setLookupDetailCity(BigDecimal value) {
         setAttributeInternal(LOOKUPDETAILCITY, value);
+    }
+
+    /**
+     * Gets the attribute value for ActiveSibEmirId, using the alias name ActiveSibEmirId.
+     * @return the value of ActiveSibEmirId
+     */
+    public String getActiveSibEmirId() {
+        return (String) getAttributeInternal(ACTIVESIBEMIRID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ActiveSibEmirId.
+     * @param value value to set the ActiveSibEmirId
+     */
+    public void setActiveSibEmirId(String value) {
+        setAttributeInternal(ACTIVESIBEMIRID, value);
+    }
+
+    /**
+     * Gets the attribute value for ActiveStdEmirId, using the alias name ActiveStdEmirId.
+     * @return the value of ActiveStdEmirId
+     */
+    public String getActiveStdEmirId() {
+        return (String) getAttributeInternal(ACTIVESTDEMIRID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ActiveStdEmirId.
+     * @param value value to set the ActiveStdEmirId
+     */
+    public void setActiveStdEmirId(String value) {
+        setAttributeInternal(ACTIVESTDEMIRID, value);
     }
 
     /**

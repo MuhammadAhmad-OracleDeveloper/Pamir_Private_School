@@ -1192,59 +1192,58 @@
                                 </af:panelGroupLayout>
                             </af:showDetailItem>
                             <af:showDetailItem text="Sibling's Details" id="sdi5">
-                                <af:panelFormLayout id="pfl6">
-                                    <af:table value="#{bindings.TblStdRegSibView1.collectionModel}" var="row"
-                                              rows="#{bindings.TblStdRegSibView1.rangeSize}"
-                                              emptyText="#{bindings.TblStdRegSibView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                <af:table value="#{bindings.TblStdRegSibView3.collectionModel}" var="row"
+                                              rows="#{bindings.TblStdRegSibView3.rangeSize}"
+                                              emptyText="#{bindings.TblStdRegSibView3.viewable ? 'No data to display.' : 'Access Denied.'}"
                                               rowBandingInterval="0"
-                                              selectedRowKeys="#{bindings.TblStdRegSibView1.collectionModel.selectedRow}"
-                                              selectionListener="#{bindings.TblStdRegSibView1.collectionModel.makeCurrent}"
-                                              rowSelection="single" fetchSize="#{bindings.TblStdRegSibView1.rangeSize}"
-                                              filterModel="#{bindings.TblStdRegSibView1Query.queryDescriptor}"
+                                              selectedRowKeys="#{bindings.TblStdRegSibView3.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.TblStdRegSibView3.collectionModel.makeCurrent}"
+                                              rowSelection="single" fetchSize="#{bindings.TblStdRegSibView3.rangeSize}"
+                                              filterModel="#{bindings.TblStdRegSibView3Query.queryDescriptor}"
                                               filterVisible="true"
-                                              queryListener="#{bindings.TblStdRegSibView1Query.processQuery}"
-                                              varStatus="vs" id="t2">
-                                        <af:column sortProperty="#{bindings.TblStdRegSibView1.hints.Dob.name}"
+                                              queryListener="#{bindings.TblStdRegSibView3Query.processQuery}"
+                                              varStatus="vs" id="t2" partialTriggers="::b11 ::b12 ::b13">
+                                        <af:column sortProperty="#{bindings.TblStdRegSibView3.hints.Dob.name}"
                                                    filterable="true" sortable="true" headerText="D.O.B" id="c10"
                                                    width="106">
                                             <f:facet name="filter">
-                                                <af:inputDate value="#{bindings.TblStdRegSibView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dob.value}"
+                                                <af:inputDate value="#{bindings.TblStdRegSibView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dob.value}"
                                                               id="id8">
-                                                    <af:convertDateTime pattern="#{bindings.TblStdRegSibView1.hints.Dob.format}"/>
+                                                    <af:convertDateTime pattern="#{bindings.TblStdRegSibView3.hints.Dob.format}"/>
                                                 </af:inputDate>
                                             </f:facet>
                                             <af:inputDate value="#{row.bindings.Dob.inputValue}"
-                                                          label="#{bindings.TblStdRegSibView1.hints.Dob.label}"
-                                                          required="#{bindings.TblStdRegSibView1.hints.Dob.mandatory}"
-                                                          columns="#{bindings.TblStdRegSibView1.hints.Dob.displayWidth}"
-                                                          shortDesc="#{bindings.TblStdRegSibView1.hints.Dob.tooltip}"
+                                                          label="#{bindings.TblStdRegSibView3.hints.Dob.label}"
+                                                          required="#{bindings.TblStdRegSibView3.hints.Dob.mandatory}"
+                                                          columns="#{bindings.TblStdRegSibView3.hints.Dob.displayWidth}"
+                                                          shortDesc="#{bindings.TblStdRegSibView3.hints.Dob.tooltip}"
                                                           id="id9">
                                                 <f:validator binding="#{row.bindings.Dob.validator}"/>
-                                                <af:convertDateTime pattern="#{bindings.TblStdRegSibView1.hints.Dob.format}"/>
+                                                <af:convertDateTime pattern="#{bindings.TblStdRegSibView3.hints.Dob.format}"/>
                                             </af:inputDate>
                                         </af:column>
-                                        <af:column sortProperty="#{bindings.TblStdRegSibView1.hints.SibName.name}"
+                                        <af:column sortProperty="#{bindings.TblStdRegSibView3.hints.SibName.name}"
                                                    filterable="true" sortable="true" headerText="Name" id="c13"
                                                    width="225">
                                             <af:inputText value="#{row.bindings.SibName.inputValue}"
-                                                          label="#{bindings.TblStdRegSibView1.hints.SibName.label}"
-                                                          required="#{bindings.TblStdRegSibView1.hints.SibName.mandatory}"
-                                                          columns="#{bindings.TblStdRegSibView1.hints.SibName.displayWidth}"
-                                                          maximumLength="#{bindings.TblStdRegSibView1.hints.SibName.precision}"
-                                                          shortDesc="#{bindings.TblStdRegSibView1.hints.SibName.tooltip}"
+                                                          label="#{bindings.TblStdRegSibView3.hints.SibName.label}"
+                                                          required="#{bindings.TblStdRegSibView3.hints.SibName.mandatory}"
+                                                          columns="#{bindings.TblStdRegSibView3.hints.SibName.displayWidth}"
+                                                          maximumLength="#{bindings.TblStdRegSibView3.hints.SibName.precision}"
+                                                          shortDesc="#{bindings.TblStdRegSibView3.hints.SibName.tooltip}"
                                                           id="it42">
                                                 <f:validator binding="#{row.bindings.SibName.validator}"/>
                                             </af:inputText>
                                         </af:column>
-                                        <af:column sortProperty="#{bindings.TblStdRegSibView1.hints.SchoolName.name}"
+                                        <af:column sortProperty="#{bindings.TblStdRegSibView3.hints.SchoolName.name}"
                                                    filterable="true" sortable="true" headerText="School" id="c12"
                                                    width="225">
                                             <af:inputText value="#{row.bindings.SchoolName.inputValue}"
-                                                          label="#{bindings.TblStdRegSibView1.hints.SchoolName.label}"
-                                                          required="#{bindings.TblStdRegSibView1.hints.SchoolName.mandatory}"
-                                                          columns="#{bindings.TblStdRegSibView1.hints.SchoolName.displayWidth}"
-                                                          maximumLength="#{bindings.TblStdRegSibView1.hints.SchoolName.precision}"
-                                                          shortDesc="#{bindings.TblStdRegSibView1.hints.SchoolName.tooltip}"
+                                                          label="#{bindings.TblStdRegSibView3.hints.SchoolName.label}"
+                                                          required="#{bindings.TblStdRegSibView3.hints.SchoolName.mandatory}"
+                                                          columns="#{bindings.TblStdRegSibView3.hints.SchoolName.displayWidth}"
+                                                          maximumLength="#{bindings.TblStdRegSibView3.hints.SchoolName.precision}"
+                                                          shortDesc="#{bindings.TblStdRegSibView3.hints.SchoolName.tooltip}"
                                                           id="it5">
                                                 <f:validator binding="#{row.bindings.SchoolName.validator}"/>
                                             </af:inputText>
@@ -1262,136 +1261,12 @@
                                             <af:spacer width="5" height="10" id="s18"/>
                                         </af:iterator>
                                     </af:panelGroupLayout>
-                                </af:panelFormLayout>
                                 <af:spacer width="10" height="20" id="s54"/>
                                 <af:panelGroupLayout id="pgl9" halign="center" layout="horizontal">
                                     <af:outputText inlineStyle="font-size: 20px;font-weight: bold;"
                                                    value="Siblings Already Enrolled" id="ot1"/>
                                 </af:panelGroupLayout>
                                 <af:spacer width="10" height="10" id="s7"/>
-                                <!--<af:table value="#{bindings.StdRegSiblingsDetail2.collectionModel}" var="row"
-                          rows="#{bindings.StdRegSiblingsDetail2.rangeSize}"
-                          emptyText="#{bindings.StdRegSiblingsDetail2.viewable ? 'No data to display.' : 'Access Denied.'}"
-                          rowBandingInterval="0"
-                          selectedRowKeys="#{bindings.StdRegSiblingsDetail2.collectionModel.selectedRow}"
-                          selectionListener="#{bindings.StdRegSiblingsDetail2.collectionModel.makeCurrent}"
-                          rowSelection="single" fetchSize="#{bindings.StdRegSiblingsDetail2.rangeSize}"
-                          filterModel="#{bindings.StdRegSiblingsDetail2Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.StdRegSiblingsDetail2Query.processQuery}" varStatus="vs" id="t4">
-                  <af:column sortProperty="#{bindings.StdRegSiblingsDetail2.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.StdRegSiblingsDetail2.hints.Id.label}" id="c31">
-                    <af:inputText value="#{row.bindings.Id.inputValue}"
-                                  label="#{bindings.StdRegSiblingsDetail2.hints.Id.label}"
-                                  required="#{bindings.StdRegSiblingsDetail2.hints.Id.mandatory}"
-                                  columns="#{bindings.StdRegSiblingsDetail2.hints.Id.displayWidth}"
-                                  maximumLength="#{bindings.StdRegSiblingsDetail2.hints.Id.precision}"
-                                  shortDesc="#{bindings.StdRegSiblingsDetail2.hints.Id.tooltip}" id="it70">
-                      <f:validator binding="#{row.bindings.Id.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.StdRegSiblingsDetail2.hints.Id.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.StdRegSiblingsDetail2.hints.RegDate.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.StdRegSiblingsDetail2.hints.RegDate.label}"
-                             id="c32">
-                    <f:facet name="filter">
-                      <af:inputDate value="#{bindings.StdRegSiblingsDetail2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.RegDate.value}"
-                                    id="id6">
-                        <af:convertDateTime pattern="#{bindings.StdRegSiblingsDetail2.hints.RegDate.format}"/>
-                      </af:inputDate>
-                    </f:facet>
-                    <af:inputDate value="#{row.bindings.RegDate.inputValue}"
-                                  label="#{bindings.StdRegSiblingsDetail2.hints.RegDate.label}"
-                                  required="#{bindings.StdRegSiblingsDetail2.hints.RegDate.mandatory}"
-                                  columns="#{bindings.StdRegSiblingsDetail2.hints.RegDate.displayWidth}"
-                                  shortDesc="#{bindings.StdRegSiblingsDetail2.hints.RegDate.tooltip}" id="id7">
-                      <f:validator binding="#{row.bindings.RegDate.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.StdRegSiblingsDetail2.hints.RegDate.format}"/>
-                    </af:inputDate>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.StdRegSiblingsDetail2.hints.RegNo.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.StdRegSiblingsDetail2.hints.RegNo.label}" id="c33">
-                    <af:inputText value="#{row.bindings.RegNo.inputValue}"
-                                  label="#{bindings.StdRegSiblingsDetail2.hints.RegNo.label}"
-                                  required="#{bindings.StdRegSiblingsDetail2.hints.RegNo.mandatory}"
-                                  columns="#{bindings.StdRegSiblingsDetail2.hints.RegNo.displayWidth}"
-                                  maximumLength="#{bindings.StdRegSiblingsDetail2.hints.RegNo.precision}"
-                                  shortDesc="#{bindings.StdRegSiblingsDetail2.hints.RegNo.tooltip}" id="it79">
-                      <f:validator binding="#{row.bindings.RegNo.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.StdRegSiblingsDetail2.hints.EnrollNo.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.StdRegSiblingsDetail2.hints.EnrollNo.label}"
-                             id="c34">
-                    <af:inputText value="#{row.bindings.EnrollNo.inputValue}"
-                                  label="#{bindings.StdRegSiblingsDetail2.hints.EnrollNo.label}"
-                                  required="#{bindings.StdRegSiblingsDetail2.hints.EnrollNo.mandatory}"
-                                  columns="#{bindings.StdRegSiblingsDetail2.hints.EnrollNo.displayWidth}"
-                                  maximumLength="#{bindings.StdRegSiblingsDetail2.hints.EnrollNo.precision}"
-                                  shortDesc="#{bindings.StdRegSiblingsDetail2.hints.EnrollNo.tooltip}" id="it80">
-                      <f:validator binding="#{row.bindings.EnrollNo.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.StdRegSiblingsDetail2.hints.FirstName.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.StdRegSiblingsDetail2.hints.FirstName.label}"
-                             id="c35">
-                    <af:inputText value="#{row.bindings.FirstName.inputValue}"
-                                  label="#{bindings.StdRegSiblingsDetail2.hints.FirstName.label}"
-                                  required="#{bindings.StdRegSiblingsDetail2.hints.FirstName.mandatory}"
-                                  columns="#{bindings.StdRegSiblingsDetail2.hints.FirstName.displayWidth}"
-                                  maximumLength="#{bindings.StdRegSiblingsDetail2.hints.FirstName.precision}"
-                                  shortDesc="#{bindings.StdRegSiblingsDetail2.hints.FirstName.tooltip}" id="it81">
-                      <f:validator binding="#{row.bindings.FirstName.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.StdRegSiblingsDetail2.hints.LastName.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.StdRegSiblingsDetail2.hints.LastName.label}"
-                             id="c36">
-                    <af:inputText value="#{row.bindings.LastName.inputValue}"
-                                  label="#{bindings.StdRegSiblingsDetail2.hints.LastName.label}"
-                                  required="#{bindings.StdRegSiblingsDetail2.hints.LastName.mandatory}"
-                                  columns="#{bindings.StdRegSiblingsDetail2.hints.LastName.displayWidth}"
-                                  maximumLength="#{bindings.StdRegSiblingsDetail2.hints.LastName.precision}"
-                                  shortDesc="#{bindings.StdRegSiblingsDetail2.hints.LastName.tooltip}" id="it82">
-                      <f:validator binding="#{row.bindings.LastName.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.StdRegSiblingsDetail2.hints.EmirId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.StdRegSiblingsDetail2.hints.EmirId.label}" id="c37">
-                    <af:inputText value="#{row.bindings.EmirId.inputValue}"
-                                  label="#{bindings.StdRegSiblingsDetail2.hints.EmirId.label}"
-                                  required="#{bindings.StdRegSiblingsDetail2.hints.EmirId.mandatory}"
-                                  columns="#{bindings.StdRegSiblingsDetail2.hints.EmirId.displayWidth}"
-                                  maximumLength="#{bindings.StdRegSiblingsDetail2.hints.EmirId.precision}"
-                                  shortDesc="#{bindings.StdRegSiblingsDetail2.hints.EmirId.tooltip}" id="it83">
-                      <f:validator binding="#{row.bindings.EmirId.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.StdRegSiblingsDetail2.hints.FatherEmirId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.StdRegSiblingsDetail2.hints.FatherEmirId.label}"
-                             id="c38">
-                    <af:inputText value="#{row.bindings.FatherEmirId.inputValue}"
-                                  label="#{bindings.StdRegSiblingsDetail2.hints.FatherEmirId.label}"
-                                  required="#{bindings.StdRegSiblingsDetail2.hints.FatherEmirId.mandatory}"
-                                  columns="#{bindings.StdRegSiblingsDetail2.hints.FatherEmirId.displayWidth}"
-                                  maximumLength="#{bindings.StdRegSiblingsDetail2.hints.FatherEmirId.precision}"
-                                  shortDesc="#{bindings.StdRegSiblingsDetail2.hints.FatherEmirId.tooltip}" id="it84">
-                      <f:validator binding="#{row.bindings.FatherEmirId.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.StdRegSiblingsDetail2.hints.MotherEmirId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.StdRegSiblingsDetail2.hints.MotherEmirId.label}"
-                             id="c39">
-                    <af:inputText value="#{row.bindings.MotherEmirId.inputValue}"
-                                  label="#{bindings.StdRegSiblingsDetail2.hints.MotherEmirId.label}"
-                                  required="#{bindings.StdRegSiblingsDetail2.hints.MotherEmirId.mandatory}"
-                                  columns="#{bindings.StdRegSiblingsDetail2.hints.MotherEmirId.displayWidth}"
-                                  maximumLength="#{bindings.StdRegSiblingsDetail2.hints.MotherEmirId.precision}"
-                                  shortDesc="#{bindings.StdRegSiblingsDetail2.hints.MotherEmirId.tooltip}" id="it85">
-                      <f:validator binding="#{row.bindings.MotherEmirId.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                </af:table>-->
                                 <af:table value="#{bindings.StdRegSiblingsDetail2.collectionModel}" var="row"
                                           rows="#{bindings.StdRegSiblingsDetail2.rangeSize}"
                                           emptyText="#{bindings.StdRegSiblingsDetail2.viewable ? 'No data to display.' : 'Access Denied.'}"

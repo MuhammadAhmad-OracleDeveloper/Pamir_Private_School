@@ -6,13 +6,13 @@
   Name="StdRegSiblingsDetail"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
   SelectListFlags="1"
   FromListFlags="1"
   WhereFlags="1"
-  BindingStyle="OracleName"
-  CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  SelectAllAttributes="false">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -76,6 +76,18 @@
     EntityAttrName="MotherEmirId"
     EntityUsage="TblStdReg"
     AliasName="MOTHER_EMIR_ID"/>
+  <ViewAttribute
+    Name="ActiveSibEmirId"
+    PrecisionRule="true"
+    EntityAttrName="ActiveSibEmirId"
+    EntityUsage="TblStdReg"
+    AliasName="ACTIVE_SIB_EMIR_ID"/>
+  <ViewAttribute
+    Name="ActiveStdEmirId"
+    PrecisionRule="true"
+    EntityAttrName="ActiveStdEmirId"
+    EntityUsage="TblStdReg"
+    AliasName="ACTIVE_STD_EMIR_ID"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
