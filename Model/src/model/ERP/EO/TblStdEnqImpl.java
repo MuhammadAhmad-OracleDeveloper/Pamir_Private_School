@@ -320,15 +320,15 @@ public class TblStdEnqImpl extends EntityImpl {
      * Gets the attribute value for ContRelation, using the alias name ContRelation.
      * @return the value of ContRelation
      */
-    public String getContRelation() {
-        return (String) getAttributeInternal(CONTRELATION);
+    public BigDecimal getContRelation() {
+        return (BigDecimal) getAttributeInternal(CONTRELATION);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ContRelation.
      * @param value value to set the ContRelation
      */
-    public void setContRelation(String value) {
+    public void setContRelation(BigDecimal value) {
         setAttributeInternal(CONTRELATION, value);
     }
 
@@ -384,15 +384,15 @@ public class TblStdEnqImpl extends EntityImpl {
      * Gets the attribute value for EmirArea, using the alias name EmirArea.
      * @return the value of EmirArea
      */
-    public Number getEmirArea() {
-        return (Number) getAttributeInternal(EMIRAREA);
+    public BigDecimal getEmirArea() {
+        return (BigDecimal) getAttributeInternal(EMIRAREA);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for EmirArea.
      * @param value value to set the EmirArea
      */
-    public void setEmirArea(Number value) {
+    public void setEmirArea(BigDecimal value) {
         setAttributeInternal(EMIRAREA, value);
     }
 

@@ -4,32 +4,14 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TblEnqFollowUpView2" RangeSize="8" DataControl="AppModuleDataControl1"
-              id="TblEnqFollowUpView2Iterator"/>
-    <searchRegion Binds="TblEnqFollowUpView2Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblEnqFollowUpView2Query"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblEnqFollowUpView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblEnqFollowUpView1Iterator"/>
+    <searchRegion Binds="TblEnqFollowUpView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblEnqFollowUpView1Query"/>
   </executables>
   <bindings>
-    <tree IterBinding="TblEnqFollowUpView2Iterator" id="TblEnqFollowUpView2">
-      <nodeDefinition DefName="model.ERP.VO.TblEnqFollowUpView" Name="TblEnqFollowUpView20">
-        <AttrNames>
-          <Item Value="Id"/>
-          <Item Value="Dated"/>
-          <Item Value="FollowMethod"/>
-          <Item Value="SmsContactNo"/>
-          <Item Value="SmsText"/>
-          <Item Value="EmailTo"/>
-          <Item Value="EmailSubject"/>
-          <Item Value="EmailBody"/>
-          <Item Value="CallContactNo"/>
-          <Item Value="CallContent"/>
-          <Item Value="Ast"/>
-          <Item Value="StdEnqId"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
       <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
         <AttrNames>
@@ -41,67 +23,103 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="Id">
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <attributeValues IterBinding="TblEnqFollowUpView1Iterator" id="Id">
       <AttrNames>
         <Item Value="Id"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="Dated">
+    <attributeValues IterBinding="TblEnqFollowUpView1Iterator" id="Dated">
       <AttrNames>
         <Item Value="Dated"/>
       </AttrNames>
     </attributeValues>
-    <list IterBinding="TblEnqFollowUpView2Iterator" StaticList="false" Uses="LOV_StdEnqId" id="StdEnqId"
+    <list IterBinding="TblEnqFollowUpView1Iterator" StaticList="false" Uses="LOV_FollowMethod" id="FollowMethod"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblEnqFollowUpView2Iterator" StaticList="false" Uses="LOV_FollowMethod" id="FollowMethod"
+    <list IterBinding="TblEnqFollowUpView1Iterator" StaticList="false" Uses="LOV_StdEnqId" id="StdEnqId"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="SmsContactNo">
+    <attributeValues IterBinding="TblEnqFollowUpView1Iterator" id="SmsToType">
+      <AttrNames>
+        <Item Value="SmsToType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView1Iterator" id="SmsContactNo">
       <AttrNames>
         <Item Value="SmsContactNo"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="SmsText">
+    <attributeValues IterBinding="TblEnqFollowUpView1Iterator" id="SmsText">
       <AttrNames>
         <Item Value="SmsText"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="CallContactNo">
+    <attributeValues IterBinding="TblEnqFollowUpView1Iterator" id="EmailToType">
       <AttrNames>
-        <Item Value="CallContactNo"/>
+        <Item Value="EmailToType"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="CallContent">
-      <AttrNames>
-        <Item Value="CallContent"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="EmailTo">
+    <attributeValues IterBinding="TblEnqFollowUpView1Iterator" id="EmailTo">
       <AttrNames>
         <Item Value="EmailTo"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="EmailSubject">
+    <attributeValues IterBinding="TblEnqFollowUpView1Iterator" id="EmailSubject">
       <AttrNames>
         <Item Value="EmailSubject"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="EmailBody">
+    <attributeValues IterBinding="TblEnqFollowUpView1Iterator" id="EmailBody">
       <AttrNames>
         <Item Value="EmailBody"/>
       </AttrNames>
     </attributeValues>
-    <list IterBinding="TblEnqFollowUpView2Iterator" StaticList="false" Uses="LOV_Ast" id="Ast" DTSupportsMRU="false"
+    <attributeValues IterBinding="TblEnqFollowUpView1Iterator" id="CallToType">
+      <AttrNames>
+        <Item Value="CallToType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView1Iterator" id="CallContactNo">
+      <AttrNames>
+        <Item Value="CallContactNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView1Iterator" id="CallContent">
+      <AttrNames>
+        <Item Value="CallContent"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblEnqFollowUpView1Iterator" StaticList="false" Uses="LOV_Ast" id="Ast" DTSupportsMRU="false"
           SelectItemValueMode="ListObject"/>
-    <action IterBinding="TblEnqFollowUpView2Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
-    <action IterBinding="TblEnqFollowUpView2Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
-    <action IterBinding="TblEnqFollowUpView2Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
-    <action IterBinding="TblEnqFollowUpView2Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
-    <action IterBinding="TblEnqFollowUpView2Iterator" id="CreateInsert" RequiresUpdateModel="true"
+    <action IterBinding="TblEnqFollowUpView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblEnqFollowUpView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblEnqFollowUpView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblEnqFollowUpView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblEnqFollowUpView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
             Action="createInsertRow"/>
-    <action IterBinding="TblEnqFollowUpView2Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
-    <action IterBinding="TblEnqFollowUpView2Iterator" id="Delete" RequiresUpdateModel="false"
+    <action IterBinding="TblEnqFollowUpView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblEnqFollowUpView1Iterator" id="Delete" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
-    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblEnqFollowUpView1Iterator" id="TblEnqFollowUpView1">
+      <nodeDefinition DefName="model.ERP.VO.TblEnqFollowUpView" Name="TblEnqFollowUpView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="FollowMethod"/>
+          <Item Value="StdEnqId"/>
+          <Item Value="SmsToType"/>
+          <Item Value="SmsContactNo"/>
+          <Item Value="SmsText"/>
+          <Item Value="EmailToType"/>
+          <Item Value="EmailTo"/>
+          <Item Value="EmailSubject"/>
+          <Item Value="EmailBody"/>
+          <Item Value="CallToType"/>
+          <Item Value="CallContactNo"/>
+          <Item Value="CallContent"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

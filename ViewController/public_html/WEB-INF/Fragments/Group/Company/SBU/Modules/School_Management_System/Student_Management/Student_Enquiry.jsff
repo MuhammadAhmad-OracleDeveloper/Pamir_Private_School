@@ -391,14 +391,15 @@
                                 shortDesc="#{bindings.ContNumber.hints.tooltip}" id="it10" contentStyle=" width:200px;">
                     <f:validator binding="#{bindings.ContNumber.validator}"/>
                   </af:inputText>
-                  <af:spacer  id="s8"/>
+                   <af:spacer  id="s15"/>
                   <af:selectOneChoice value="#{bindings.ContRelation.inputValue}" label="Contact Relation"
                                       required="#{bindings.ContRelation.hints.mandatory}"
-                                      shortDesc="#{bindings.ContRelation.hints.tooltip}" id="soc3" contentStyle=" width:200px;">
-                    <f:selectItems value="#{bindings.ContRelation.items}" id="si3"/>
+                                      shortDesc="#{bindings.ContRelation.hints.tooltip}" id="soc14" contentStyle=" width:200px;">
+                    <f:selectItems value="#{bindings.ContRelation.items}" id="si14"/>
                     <f:validator binding="#{bindings.ContRelation.validator}"/>
                   </af:selectOneChoice>
-                  <af:spacer  id="s2"/>
+                  <af:spacer  id="s8"/>
+                  
                   <af:selectOneChoice value="#{bindings.LookupRefBy.inputValue}" label="Refrence By"
                                       required="#{bindings.LookupRefBy.hints.mandatory}"
                                       shortDesc="#{bindings.LookupRefBy.hints.tooltip}" id="soc6" contentStyle=" width:200px;">
