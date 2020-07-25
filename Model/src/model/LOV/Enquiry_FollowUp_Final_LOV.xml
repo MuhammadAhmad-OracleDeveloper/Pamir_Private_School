@@ -18,22 +18,35 @@
         ResId="model.LOV.Enquiry_FollowUp_Final_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <SQLQuery><![CDATA[SELECT  
-    TBL_ENQ_FOLLOW_UP.STD_ENQ_ID,  
-    TBL_STD_ENQ.FIRST_NAME,  
-    TBL_STD_ENQ.LAST_NAME  
-FROM  
-    TBL_ENQ_FOLLOW_UP,  
-    TBL_STD_ENQ  
-WHERE  
-    TBL_STD_ENQ.ID = TBL_ENQ_FOLLOW_UP.STD_ENQ_ID AND TBL_ENQ_FOLLOW_UP.AST = 'Y'  
-    AND TBL_ENQ_FOLLOW_UP.STD_ENQ_ID NOT IN ( 
-        SELECT  
-            STD_ENQ_ID  
-        FROM  
-            TBL_STD_REG  
-        WHERE  
-            STD_ENQ_ID IS NOT NULL 
+  <SQLQuery><![CDATA[SELECT    
+    TBL_ENQ_FOLLOW_UP.STD_ENQ_ID,    
+    TBL_STD_ENQ.FIRST_NAME,    
+    TBL_STD_ENQ.LAST_NAME, 
+    TBL_STD_ENQ.GRADE_ID, 
+    TBL_STD_ENQ.SECTIONS_ID,  
+    TBL_STD_ENQ.ACAD_YEAR_ID,  
+    TBL_STD_ENQ.GENDER,  
+    TBL_STD_ENQ.DOB,  
+    TBL_STD_ENQ.CONT_PERSON,  
+    TBL_STD_ENQ.CONT_NUMBER,  
+    TBL_STD_ENQ.CONT_RELATION,  
+    TBL_STD_ENQ.LOOKUP_ELEC_GROUP,  
+    TBL_STD_ENQ.ADDRESS,  
+    TBL_STD_ENQ.EMIR_ID,  
+    TBL_STD_ENQ.EMIR_AREA,  
+    TBL_STD_ENQ.CONT_EMAIL    
+FROM    
+    TBL_ENQ_FOLLOW_UP,    
+    TBL_STD_ENQ    
+WHERE    
+    TBL_STD_ENQ.ID = TBL_ENQ_FOLLOW_UP.STD_ENQ_ID AND TBL_ENQ_FOLLOW_UP.AST = 'Y'    
+    AND TBL_ENQ_FOLLOW_UP.STD_ENQ_ID NOT IN (   
+        SELECT    
+            STD_ENQ_ID    
+        FROM    
+            TBL_STD_REG    
+        WHERE    
+            STD_ENQ_ID IS NOT NULL   
     )]]></SQLQuery>
   <ViewAttribute
     Name="StdEnqId"
@@ -70,6 +83,156 @@ WHERE
     ColumnType="VARCHAR2"
     AliasName="LAST_NAME"
     Expression="LAST_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="GradeId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="GRADE_ID"
+    Expression="GRADE_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="SectionsId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="SECTIONS_ID"
+    Expression="SECTIONS_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="AcadYearId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ACAD_YEAR_ID"
+    Expression="ACAD_YEAR_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Gender"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="GENDER"
+    Expression="GENDER"
+    SQLType="CHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Dob"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    AliasName="DOB"
+    Expression="DOB"
+    SQLType="DATE"/>
+  <ViewAttribute
+    Name="ContPerson"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CONT_PERSON"
+    Expression="CONT_PERSON"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ContNumber"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="15"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CONT_NUMBER"
+    Expression="CONT_NUMBER"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ContRelation"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="CONT_RELATION"
+    Expression="CONT_RELATION"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="LookupElecGroup"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="LOOKUP_ELEC_GROUP"
+    Expression="LOOKUP_ELEC_GROUP"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Address"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="300"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="ADDRESS"
+    Expression="ADDRESS"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EmirId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="EMIR_ID"
+    Expression="EMIR_ID"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ContEmail"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CONT_EMAIL"
+    Expression="CONT_EMAIL"
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="150"/>

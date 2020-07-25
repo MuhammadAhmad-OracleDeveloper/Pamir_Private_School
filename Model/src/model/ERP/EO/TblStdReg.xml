@@ -85,9 +85,7 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_STD_REG"
-    RetrievedOnUpdate="true"
-    RetrievedOnInsert="true"/>
+    TableName="TBL_STD_REG"/>
   <Attribute
     Name="BirthPlace"
     Precision="100"
@@ -148,18 +146,14 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_STD_REG"
-    RetrievedOnInsert="true"
-    RetrievedOnUpdate="true"/>
+    TableName="TBL_STD_REG"/>
   <Attribute
     Name="SectionsId"
     ColumnName="SECTIONS_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_STD_REG"
-    RetrievedOnInsert="true"
-    RetrievedOnUpdate="true"/>
+    TableName="TBL_STD_REG"/>
   <Attribute
     Name="Image"
     Precision="100"
@@ -684,8 +678,7 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_STD_REG"
-    IsNotNull="true"/>
+    TableName="TBL_STD_REG"/>
   <Attribute
     Name="EligStatus"
     Precision="50"
@@ -1078,18 +1071,6 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.ERP.EO.TblStdReg.Id"/>
-    </AttrArray>
-  </Key>
-  <Key
-    Name="TblStdRegDobCheck">
-    <DesignTime>
-      <Attr Name="_isNotNull" Value="true"/>
-      <Attr Name="_checkCondition" Value='"DOB" IS NOT NULL'/>
-      <Attr Name="_isCheck" Value="true"/>
-      <Attr Name="_DBObjectName" Value="TBL_STD_REG_DOB_CHECK"/>
-    </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblStdReg.Dob"/>
     </AttrArray>
   </Key>
   <Key

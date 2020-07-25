@@ -1202,7 +1202,7 @@
                                               filterModel="#{bindings.TblStdRegSibView3Query.queryDescriptor}"
                                               filterVisible="true"
                                               queryListener="#{bindings.TblStdRegSibView3Query.processQuery}"
-                                              varStatus="vs" id="t2" partialTriggers="::b11 ::b12 ::b13">
+                                              varStatus="vs" id="t2">
                                         <af:column sortProperty="#{bindings.TblStdRegSibView3.hints.Dob.name}"
                                                    filterable="true" sortable="true" headerText="D.O.B" id="c10"
                                                    width="106">
@@ -1349,7 +1349,7 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.StdRegSiblingsDetail2.hints.EmirId.name}"
                                                filterable="true" sortable="true" headerText="Emirates ID" id="c37">
-                                        <af:inputText value="#{row.bindings.EmirId.inputValue}"
+                                        <af:inputText value="#{row.bindings.EmirId.inputValue}" autoSubmit="true"
                                                       label="#{bindings.StdRegSiblingsDetail2.hints.EmirId.label}"
                                                       required="#{bindings.StdRegSiblingsDetail2.hints.EmirId.mandatory}"
                                                       columns="#{bindings.StdRegSiblingsDetail2.hints.EmirId.displayWidth}"
@@ -1383,6 +1383,18 @@
                                                       shortDesc="#{bindings.StdRegSiblingsDetail2.hints.MotherEmirId.tooltip}"
                                                       id="it85" readOnly="true">
                                             <f:validator binding="#{row.bindings.MotherEmirId.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.StdRegSiblingsDetail2.hints.ActiveStdEmirId.label}"
+                                               id="c31">
+                                        <af:inputText value="#{row.bindings.ActiveStdEmirId.inputValue}" autoSubmit="true"
+                                                      label="#{bindings.StdRegSiblingsDetail2.hints.ActiveStdEmirId.label}"
+                                                      required="#{bindings.StdRegSiblingsDetail2.hints.ActiveStdEmirId.mandatory}"
+                                                      columns="#{bindings.StdRegSiblingsDetail2.hints.ActiveStdEmirId.displayWidth}"
+                                                      maximumLength="#{bindings.StdRegSiblingsDetail2.hints.ActiveStdEmirId.precision}"
+                                                      shortDesc="#{bindings.StdRegSiblingsDetail2.hints.ActiveStdEmirId.tooltip}"
+                                                      id="it26">
+                                            <f:validator binding="#{row.bindings.ActiveStdEmirId.validator}"/>
                                         </af:inputText>
                                     </af:column>
                                 </af:table>
