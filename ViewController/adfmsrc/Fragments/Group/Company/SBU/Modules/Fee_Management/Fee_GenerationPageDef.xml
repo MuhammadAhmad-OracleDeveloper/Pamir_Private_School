@@ -16,7 +16,7 @@
     <searchRegion Binds="TblFeeGenMasterStdWiseView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="TblFeeGenMasterStdWiseView1Query"/>
-    <iterator Binds="TblFeeGenDetailView3" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblFeeGenDetailView3" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblFeeGenDetailView3Iterator"/>
     <iterator Binds="TblFeeGenDetailDView6" RangeSize="25" DataControl="AppModuleDataControl1"
               id="TblFeeGenDetailDView6Iterator"/>
@@ -120,6 +120,9 @@
           <Item Value="FeeTypeId"/>
           <Item Value="Amount"/>
           <Item Value="Ast"/>
+          <Item Value="VatId"/>
+          <Item Value="VatAmount"/>
+          <Item Value="NetAmount"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

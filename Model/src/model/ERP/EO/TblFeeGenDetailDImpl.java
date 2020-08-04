@@ -27,6 +27,9 @@ public class TblFeeGenDetailDImpl extends EntityImpl {
         FeeGenDetailId,
         FeeTypeId,
         Amount,
+        VatId,
+        VatAmount,
+        NetAmount,
         Ast,
         CreatedDate,
         CreatedBy,
@@ -56,11 +59,16 @@ public class TblFeeGenDetailDImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int FEEGENMASTERID = AttributesEnum.FeeGenMasterId.index();
     public static final int FEEGENDETAILID = AttributesEnum.FeeGenDetailId.index();
     public static final int FEETYPEID = AttributesEnum.FeeTypeId.index();
     public static final int AMOUNT = AttributesEnum.Amount.index();
+    public static final int VATID = AttributesEnum.VatId.index();
+    public static final int VATAMOUNT = AttributesEnum.VatAmount.index();
+    public static final int NETAMOUNT = AttributesEnum.NetAmount.index();
     public static final int AST = AttributesEnum.Ast.index();
     public static final int CREATEDDATE = AttributesEnum.CreatedDate.index();
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
@@ -74,6 +82,14 @@ public class TblFeeGenDetailDImpl extends EntityImpl {
      */
     public TblFeeGenDetailDImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblFeeGenDetailD");
+    }
+
 
     /**
      * Gets the attribute value for Id, using the alias name Id.
@@ -220,32 +236,81 @@ public class TblFeeGenDetailDImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for VatId, using the alias name VatId.
+     * @return the value of VatId
+     */
+    public BigDecimal getVatId() {
+        return (BigDecimal) getAttributeInternal(VATID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for VatId.
+     * @param value value to set the VatId
+     */
+    public void setVatId(BigDecimal value) {
+        setAttributeInternal(VATID, value);
+    }
+
+    /**
+     * Gets the attribute value for VatAmount, using the alias name VatAmount.
+     * @return the value of VatAmount
+     */
+    public BigDecimal getVatAmount() {
+        return (BigDecimal) getAttributeInternal(VATAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for VatAmount.
+     * @param value value to set the VatAmount
+     */
+    public void setVatAmount(BigDecimal value) {
+        setAttributeInternal(VATAMOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for NetAmount, using the alias name NetAmount.
+     * @return the value of NetAmount
+     */
+    public BigDecimal getNetAmount() {
+        return (BigDecimal) getAttributeInternal(NETAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for NetAmount.
+     * @param value value to set the NetAmount
+     */
+    public void setNetAmount(BigDecimal value) {
+        setAttributeInternal(NETAMOUNT, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblFeeGenDetail() {
-        return (EntityImpl) getAttributeInternal(TBLFEEGENDETAIL);
+    public TblFeeGenDetailImpl getTblFeeGenDetail() {
+        return (TblFeeGenDetailImpl) getAttributeInternal(TBLFEEGENDETAIL);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblFeeGenDetail(EntityImpl value) {
+    public void setTblFeeGenDetail(TblFeeGenDetailImpl value) {
         setAttributeInternal(TBLFEEGENDETAIL, value);
     }
 
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblFeeGenMaster() {
-        return (EntityImpl) getAttributeInternal(TBLFEEGENMASTER);
+    public TblFeeGenMasterImpl getTblFeeGenMaster() {
+        return (TblFeeGenMasterImpl) getAttributeInternal(TBLFEEGENMASTER);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblFeeGenMaster(EntityImpl value) {
+    public void setTblFeeGenMaster(TblFeeGenMasterImpl value) {
         setAttributeInternal(TBLFEEGENMASTER, value);
     }
+
 
     /**
      * @param id key constituent
@@ -254,13 +319,6 @@ public class TblFeeGenDetailDImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblFeeGenDetailD");
     }
 
     /**
