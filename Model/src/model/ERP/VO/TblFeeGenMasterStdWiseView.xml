@@ -21,9 +21,13 @@
        TblFeeGenMaster.TERMS_ID, 
        TblFeeGenMaster.UPDATED_BY, 
        TblFeeGenMaster.UPDATED_DATE, 
-       TblFeeGenMaster.V_TYPE"
-  FromList="TBL_FEE_GEN_MASTER TblFeeGenMaster"
-  Where="TblFeeGenMaster.V_TYPE = 'I'">
+       TblFeeGenMaster.V_TYPE, 
+       TblTerms.END_DATE, 
+       TblTerms.START_DATE, 
+       TblTerms.ID AS ID1"
+  FromList="TBL_FEE_GEN_MASTER TblFeeGenMaster, TBL_TERMS TblTerms"
+  Where="TblFeeGenMaster.TERMS_ID = TblTerms.ID(+) 
+AND TblFeeGenMaster.V_TYPE = 'I'">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -151,6 +155,25 @@
   <EntityUsage
     Name="TblFeeGenMaster"
     Entity="model.ERP.EO.TblFeeGenMaster"/>
+  <EntityUsage
+    Name="TblTerms"
+    Entity="model.ERP.EO.TblTerms"
+    Association="model.ERP.EO.FkTblFeeGenMasterTermsFkAssoc"
+    AssociationEnd="model.ERP.EO.FkTblFeeGenMasterTermsFkAssoc.TblTerms"
+    SourceUsage="model.ERP.VO.TblFeeGenMasterStdWiseView.TblFeeGenMaster"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.ERP.EO.TblTerms.Id"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.ERP.EO.TblFeeGenMaster.TermsId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="AcadYearId"
     PrecisionRule="true"
@@ -272,6 +295,27 @@
     EntityUsage="TblFeeGenMaster"
     AliasName="V_TYPE"
     DefaultValue="I"/>
+  <ViewAttribute
+    Name="EndDate"
+    PrecisionRule="true"
+    EntityAttrName="EndDate"
+    EntityUsage="TblTerms"
+    AliasName="END_DATE"/>
+  <ViewAttribute
+    Name="StartDate"
+    PrecisionRule="true"
+    EntityAttrName="StartDate"
+    EntityUsage="TblTerms"
+    AliasName="START_DATE"/>
+  <ViewAttribute
+    Name="Id1"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblTerms"
+    AliasName="ID1"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id"/>
+  </AttrArray>
   <ViewLinkAccessor
     Name="TblFeeGenDetailView"
     ViewLink="model.ERP.VO.FkTblFeeGenMasterStdWiseFkLink"

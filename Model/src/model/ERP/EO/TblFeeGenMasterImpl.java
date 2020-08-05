@@ -37,7 +37,8 @@ public class TblFeeGenMasterImpl extends EntityImpl {
         CompanySbuId,
         VType,
         TblFeeGenDetail,
-        TblFeeGenDetailD;
+        TblFeeGenDetailD,
+        TblTerms;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -77,6 +78,7 @@ public class TblFeeGenMasterImpl extends EntityImpl {
     public static final int VTYPE = AttributesEnum.VType.index();
     public static final int TBLFEEGENDETAIL = AttributesEnum.TblFeeGenDetail.index();
     public static final int TBLFEEGENDETAILD = AttributesEnum.TblFeeGenDetailD.index();
+    public static final int TBLTERMS = AttributesEnum.TblTerms.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -296,6 +298,21 @@ public class TblFeeGenMasterImpl extends EntityImpl {
      */
     public RowIterator getTblFeeGenDetailD() {
         return (RowIterator) getAttributeInternal(TBLFEEGENDETAILD);
+    }
+
+
+    /**
+     * @return the associated entity TblTermsImpl.
+     */
+    public TblTermsImpl getTblTerms() {
+        return (TblTermsImpl) getAttributeInternal(TBLTERMS);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity TblTermsImpl.
+     */
+    public void setTblTerms(TblTermsImpl value) {
+        setAttributeInternal(TBLTERMS, value);
     }
 
 

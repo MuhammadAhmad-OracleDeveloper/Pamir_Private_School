@@ -140,6 +140,13 @@
     AssociationOtherEnd="model.ERP.EO.FkFeeGenDetailDGenMasterAssoc.TblFeeGenMaster"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblTerms"
+    Association="model.ERP.EO.FkTblFeeGenMasterTermsFkAssoc"
+    AssociationEnd="model.ERP.EO.FkTblFeeGenMasterTermsFkAssoc.TblTerms"
+    AssociationOtherEnd="model.ERP.EO.FkTblFeeGenMasterTermsFkAssoc.TblFeeGenMaster"
+    Type="model.ERP.EO.TblTermsImpl"
+    IsUpdateable="true"/>
   <Key
     Name="PkFeeGenMaster"
     PrimaryKey="true">
@@ -200,6 +207,17 @@
       <Attr Name="_referencedKey" Value="PK_TERMS"/>
       <Attr Name="_isForeign" Value="true"/>
       <Attr Name="_DBObjectName" Value="FK_FEE_GEN_MASTER_TERMS"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblFeeGenMaster.TermsId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_TblFeeGenMaster">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_TERMS"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_TBL_FEE_GEN_MASTER"/>
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.ERP.EO.TblFeeGenMaster.TermsId"/>

@@ -129,7 +129,31 @@
                       <f:validator binding="#{row.bindings.TermsId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFeeGenMasterClassWiseView1.hints.Ast.name}" filterable="true"
+                            <af:column headerText="#{bindings.TblFeeGenMasterClassWiseView1.hints.StartDate.label}"
+                                       id="c42">
+                              <af:inputDate value="#{row.bindings.StartDate.inputValue}" readOnly="true"
+                                            label="#{bindings.TblFeeGenMasterClassWiseView1.hints.StartDate.label}"
+                                            required="#{bindings.TblFeeGenMasterClassWiseView1.hints.StartDate.mandatory}"
+                                            columns="#{bindings.TblFeeGenMasterClassWiseView1.hints.StartDate.displayWidth}"
+                                            shortDesc="#{bindings.TblFeeGenMasterClassWiseView1.hints.StartDate.tooltip}"
+                                            id="id3">
+                                <f:validator binding="#{row.bindings.StartDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblFeeGenMasterClassWiseView1.hints.StartDate.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column headerText="#{bindings.TblFeeGenMasterClassWiseView1.hints.EndDate.label}"
+                                       id="c43">
+                              <af:inputDate value="#{row.bindings.EndDate.inputValue}" readOnly="true"
+                                            label="#{bindings.TblFeeGenMasterClassWiseView1.hints.EndDate.label}"
+                                            required="#{bindings.TblFeeGenMasterClassWiseView1.hints.EndDate.mandatory}"
+                                            columns="#{bindings.TblFeeGenMasterClassWiseView1.hints.EndDate.displayWidth}"
+                                            shortDesc="#{bindings.TblFeeGenMasterClassWiseView1.hints.EndDate.tooltip}"
+                                            id="id5">
+                                <f:validator binding="#{row.bindings.EndDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblFeeGenMasterClassWiseView1.hints.EndDate.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFeeGenMasterClassWiseView1.hints.Ast.name}" filterable="true"
                              sortable="true" headerText="Active" id="c6" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Ast}"
@@ -678,7 +702,31 @@
                       <f:validator binding="#{row.bindings.TermsId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFeeGenMasterStdWiseView1.hints.Ast.name}" filterable="true"
+                            <af:column headerText="Start Date"
+                                       id="c39">
+                              <af:inputDate value="#{row.bindings.StartDate.inputValue}" readOnly="true"
+                                            label="#{bindings.TblFeeGenMasterStdWiseView1.hints.StartDate.label}"
+                                            required="#{bindings.TblFeeGenMasterStdWiseView1.hints.StartDate.mandatory}"
+                                            columns="#{bindings.TblFeeGenMasterStdWiseView1.hints.StartDate.displayWidth}"
+                                            shortDesc="#{bindings.TblFeeGenMasterStdWiseView1.hints.StartDate.tooltip}"
+                                            id="id1">
+                                <f:validator binding="#{row.bindings.StartDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblFeeGenMasterStdWiseView1.hints.StartDate.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column headerText="End Date"
+                                       id="c41">
+                              <af:inputDate value="#{row.bindings.EndDate.inputValue}" readOnly="true"
+                                            label="#{bindings.TblFeeGenMasterStdWiseView1.hints.EndDate.label}"
+                                            required="#{bindings.TblFeeGenMasterStdWiseView1.hints.EndDate.mandatory}"
+                                            columns="#{bindings.TblFeeGenMasterStdWiseView1.hints.EndDate.displayWidth}"
+                                            shortDesc="#{bindings.TblFeeGenMasterStdWiseView1.hints.EndDate.tooltip}"
+                                            id="id2">
+                                <f:validator binding="#{row.bindings.EndDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblFeeGenMasterStdWiseView1.hints.EndDate.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFeeGenMasterStdWiseView1.hints.Ast.name}" filterable="true"
                              sortable="true" headerText="Active" id="c22" align="left">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Ast}"
