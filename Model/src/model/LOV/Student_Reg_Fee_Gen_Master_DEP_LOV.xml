@@ -15,7 +15,8 @@
        TblFeeGenMaster.GRADE_ID, 
        TblFeeGenMaster.ID AS ID1, 
        TblFeeGenMaster.SECTIONS_ID, 
-       TblFeeGenMaster.ACAD_YEAR_ID"
+       TblFeeGenMaster.ACAD_YEAR_ID, 
+       TblStdReg.FIRST_NAME"
   FromList="TBL_STD_REG TblStdReg, TBL_FEE_GEN_MASTER TblFeeGenMaster"
   Where="TblFeeGenMaster.GRADE_ID = :getGradeID 
 AND TblFeeGenMaster.SECTIONS_ID = :getSectionID   
@@ -92,6 +93,12 @@ AND TblFeeGenMaster.ACAD_YEAR_ID = :getAcadYearID">
     EntityAttrName="AcadYearId"
     EntityUsage="TblFeeGenMaster"
     AliasName="ACAD_YEAR_ID"/>
+  <ViewAttribute
+    Name="FirstName"
+    PrecisionRule="true"
+    EntityAttrName="FirstName"
+    EntityUsage="TblStdReg"
+    AliasName="FIRST_NAME"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
