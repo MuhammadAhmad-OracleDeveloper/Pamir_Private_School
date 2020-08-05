@@ -150,7 +150,8 @@
     ColumnType="NUMBER"
     TableName="TBL_FEE_GEN_DETAIL"
     RetrievedOnInsert="true"
-    RetrievedOnUpdate="true"/>
+    RetrievedOnUpdate="true"
+    IsNotNull="true"/>
   <AccessorAttribute
     Name="TblFeeGenDetailD"
     Association="model.ERP.EO.FkFeeGenDetailDGenDetailAssoc"
@@ -180,6 +181,18 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.ERP.EO.TblFeeGenDetail.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="TblFeeGenDetailTermsIdCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"TERMS_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TBL_FEE_GEN_DETAIL_TERMS_ID_CH"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblFeeGenDetail.TermsId"/>
     </AttrArray>
   </Key>
   <Key

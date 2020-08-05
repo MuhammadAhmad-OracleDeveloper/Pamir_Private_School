@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Fee_Gen_Master_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="TblFeeGenMaster.ID, 
+       TblFeeGenMaster.TERMS_ID"
+  FromList="TBL_FEE_GEN_MASTER TblFeeGenMaster"
+  Where="TblFeeGenMaster.ID = :getMasterID">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Fee_Gen_Master_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="getMasterID"
+    Kind="where"
+    Type="java.math.BigDecimal"/>
+  <EntityUsage
+    Name="TblFeeGenMaster"
+    Entity="model.ERP.EO.TblFeeGenMaster"/>
+  <ViewAttribute
+    Name="Id"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="TermsId"
+    PrecisionRule="true"
+    EntityAttrName="TermsId"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="TERMS_ID"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

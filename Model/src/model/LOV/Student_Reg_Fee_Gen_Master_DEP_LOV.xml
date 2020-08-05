@@ -6,13 +6,20 @@
   Name="Student_Reg_Fee_Gen_Master_DEP_LOV"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblStdReg.ID, 
+       TblStdReg.FATHER_NAME, 
+       TblStdReg.LAST_NAME, 
+       TblFeeGenMaster.GRADE_ID, 
+       TblFeeGenMaster.ID AS ID1, 
+       TblFeeGenMaster.SECTIONS_ID, 
+       TblFeeGenMaster.ACAD_YEAR_ID"
+  FromList="TBL_STD_REG TblStdReg, TBL_FEE_GEN_MASTER TblFeeGenMaster"
+  Where="TblFeeGenMaster.GRADE_ID = :getGradeID 
+AND TblFeeGenMaster.SECTIONS_ID = :getSectionID   
+AND TblFeeGenMaster.ACAD_YEAR_ID = :getAcadYearID">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -28,10 +35,6 @@
     Kind="where"
     Type="java.math.BigDecimal"/>
   <Variable
-    Name="getTermID"
-    Kind="where"
-    Type="java.math.BigDecimal"/>
-  <Variable
     Name="getSectionID"
     Kind="where"
     Type="java.math.BigDecimal"/>
@@ -42,7 +45,6 @@
     Name="TblFeeGenMaster"
     Entity="model.ERP.EO.TblFeeGenMaster"
     ReadOnly="true"
-    Reference="false"
     DeleteParticipant="false">
     <DesignTime>
       <Attr Name="_customjoin" Value="true"/>
@@ -66,6 +68,30 @@
     EntityAttrName="LastName"
     EntityUsage="TblStdReg"
     AliasName="LAST_NAME"/>
+  <ViewAttribute
+    Name="GradeId"
+    PrecisionRule="true"
+    EntityAttrName="GradeId"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="GRADE_ID"/>
+  <ViewAttribute
+    Name="Id1"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="ID1"/>
+  <ViewAttribute
+    Name="SectionsId"
+    PrecisionRule="true"
+    EntityAttrName="SectionsId"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="SECTIONS_ID"/>
+  <ViewAttribute
+    Name="AcadYearId"
+    PrecisionRule="true"
+    EntityAttrName="AcadYearId"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="ACAD_YEAR_ID"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

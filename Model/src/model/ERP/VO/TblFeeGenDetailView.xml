@@ -37,10 +37,17 @@
           trustMode="untrusted"
           Name="ExpressionScript"><![CDATA[SectionsId]]></TransientExpression>
       </PIMap>
-      <PIMap Variable="getTermID">
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="Fee_Gen_Master_LOV1"
+    ViewObjectName="model.LOV.Fee_Gen_Master_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getMasterID">
         <TransientExpression
           trustMode="untrusted"
-          Name="ExpressionScript"><![CDATA[TermsId1]]></TransientExpression>
+          Name="ExpressionScript"><![CDATA[FeeGenMasterId]]></TransientExpression>
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
@@ -72,12 +79,36 @@
       <Item Value="StdRegId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="AcadYearId1"/>
+      <Item Value="GradeId1"/>
+    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="Id"/>
+      <Item Value="AcadYearId"/>
+      <Item Value="GradeId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="FatherName"/>
       <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TermsId"
+    ListVOName="Fee_Gen_Master_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TermsId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TermsId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TermsId"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -235,13 +266,33 @@
     PrecisionRule="true"
     EntityAttrName="TermsId"
     EntityUsage="TblFeeGenDetail"
-    AliasName="TERMS_ID"/>
+    AliasName="TERMS_ID"
+    LOVName="LOV_TermsId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="TermsId1"
     PrecisionRule="true"
     EntityAttrName="TermsId"
     EntityUsage="TblFeeGenMaster"
     AliasName="TERMS_ID1"/>
+  <ViewAttribute
+    Name="GradeId1"
+    PrecisionRule="true"
+    EntityAttrName="GradeId"
+    EntityUsage="TblFeeGenDetail"
+    AliasName="GRADE_ID1"/>
+  <ViewAttribute
+    Name="AcadYearId1"
+    PrecisionRule="true"
+    EntityAttrName="AcadYearId"
+    EntityUsage="TblFeeGenDetail"
+    AliasName="ACAD_YEAR_ID1"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>

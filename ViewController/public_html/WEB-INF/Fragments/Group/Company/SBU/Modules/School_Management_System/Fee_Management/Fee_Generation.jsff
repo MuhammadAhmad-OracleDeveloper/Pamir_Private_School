@@ -726,7 +726,8 @@
                           filterModel="#{bindings.TblFeeGenDetailView4Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblFeeGenDetailView4Query.processQuery}" varStatus="vs" id="t6"
                           scrollPolicy="page" autoHeightRows="0" >
-                  <af:column sortProperty="#{bindings.TblFeeGenDetailView4.hints.Id.name}" filterable="true"
+                           
+                            <af:column sortProperty="#{bindings.TblFeeGenDetailView4.hints.Id.name}" filterable="true"
                              sortable="true" headerText="Fee Generation Detail ID" id="c23" width="80" align="right" visible="false">
                               <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
@@ -745,7 +746,17 @@
                                         pattern="#{bindings.TblFeeGenDetailView4.hints.Id.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFeeGenDetailView4.hints.StdRegId.name}" filterable="true"
+                            <af:column headerText="#{bindings.TblFeeGenDetailView4.hints.TermsId.label}" id="c40">
+                              <af:selectOneChoice value="#{row.bindings.TermsId.inputValue}"
+                                                  label="#{row.bindings.TermsId.label}"
+                                                  required="#{bindings.TblFeeGenDetailView4.hints.TermsId.mandatory}"
+                                                  shortDesc="#{bindings.TblFeeGenDetailView4.hints.TermsId.tooltip}"
+                                                  id="soc21">
+                                <f:selectItems value="#{row.bindings.TermsId.items}" id="si21"/>
+                                <f:validator binding="#{row.bindings.TermsId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFeeGenDetailView4.hints.StdRegId.name}" filterable="true"
                              sortable="true" headerText="Student Regesteration" id="c24" align="left" width="300">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.StdRegId}"
@@ -761,19 +772,6 @@
                       <f:validator binding="#{row.bindings.StdRegId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                            <af:column headerText="#{bindings.TblFeeGenDetailView4.hints.TermsId.label}" id="c39">
-                              <af:inputText value="#{row.bindings.TermsId.inputValue}" readOnly="true"
-                                            label="#{bindings.TblFeeGenDetailView4.hints.TermsId.label}"
-                                            required="#{bindings.TblFeeGenDetailView4.hints.TermsId.mandatory}"
-                                            columns="#{bindings.TblFeeGenDetailView4.hints.TermsId.displayWidth}"
-                                            maximumLength="#{bindings.TblFeeGenDetailView4.hints.TermsId.precision}"
-                                            shortDesc="#{bindings.TblFeeGenDetailView4.hints.TermsId.tooltip}"
-                                            id="it53">
-                                <f:validator binding="#{row.bindings.TermsId.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblFeeGenDetailView4.hints.TermsId.format}"/>
-                              </af:inputText>
-                            </af:column>
                             <!--<af:column sortProperty="#{bindings.TblFeeGenDetailView4.hints.FoundMemberDisc.name}"
                              filterable="true" sortable="true"
                              headerText="Founding Member Discount" id="c9" align="left" width="150">
@@ -1003,7 +1001,7 @@
                   </af:column>
                             <af:column headerText="VAT Percentage" id="c36">
                               <af:selectOneChoice value="#{row.bindings.VatId.inputValue}"
-                                                  label="#{row.bindings.VatId.label}"
+                                                  label="#{row.bindings.VatId.label}" readOnly="true"
                                                   required="#{bindings.TblFeeGenDetailDView5.hints.VatId.mandatory}"
                                                   shortDesc="#{bindings.TblFeeGenDetailDView5.hints.VatId.tooltip}"
                                                   id="soc20">
@@ -1012,7 +1010,7 @@
                               </af:selectOneChoice>
                             </af:column>
                             <af:column headerText="VAT Amount" id="c37" width="150">
-                              <af:inputText value="#{row.bindings.VatAmount.inputValue}"
+                              <af:inputText value="#{row.bindings.VatAmount.inputValue}" readOnly="true"
                                             label="#{bindings.TblFeeGenDetailDView5.hints.VatAmount.label}"
                                             required="#{bindings.TblFeeGenDetailDView5.hints.VatAmount.mandatory}"
                                             columns="#{bindings.TblFeeGenDetailDView5.hints.VatAmount.displayWidth}"
@@ -1025,7 +1023,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column headerText="Net Amount" id="c38" width="150">
-                              <af:inputText value="#{row.bindings.NetAmount.inputValue}"
+                              <af:inputText value="#{row.bindings.NetAmount.inputValue}" readOnly="true"
                                             label="#{bindings.TblFeeGenDetailDView5.hints.NetAmount.label}"
                                             required="#{bindings.TblFeeGenDetailDView5.hints.NetAmount.mandatory}"
                                             columns="#{bindings.TblFeeGenDetailDView5.hints.NetAmount.displayWidth}"
