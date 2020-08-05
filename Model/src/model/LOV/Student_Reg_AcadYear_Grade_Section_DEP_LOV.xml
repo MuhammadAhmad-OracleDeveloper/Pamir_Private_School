@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Student_Reg_AcadYear_Grade_Section_DEP_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="TblStdReg.ACAD_YEAR_ID, 
+       TblStdReg.ID, 
+       TblStdReg.GRADE_ID, 
+       TblStdReg.SECTIONS_ID, 
+       TblStdReg.FIRST_NAME, 
+       TblStdReg.LAST_NAME, 
+       TblStdReg.ID AS ID1"
+  FromList="TBL_STD_REG TblStdReg"
+  Where="( ( (TblStdReg.ACAD_YEAR_ID = :getAcadYearID )  
+AND (TblStdReg.GRADE_ID = :getGradeID )  
+AND (TblStdReg.SECTIONS_ID = :getSectionID ) ) )">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Student_Reg_AcadYear_Grade_Section_DEP_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="getAcadYearID"
+    Kind="where"
+    Type="java.math.BigDecimal"/>
+  <Variable
+    Name="getGradeID"
+    Kind="where"
+    Type="java.math.BigDecimal"/>
+  <Variable
+    Name="getSectionID"
+    Kind="where"
+    Type="java.math.BigDecimal"/>
+  <EntityUsage
+    Name="TblStdReg"
+    Entity="model.ERP.EO.TblStdReg"/>
+  <ViewAttribute
+    Name="AcadYearId"
+    PrecisionRule="true"
+    EntityAttrName="AcadYearId"
+    EntityUsage="TblStdReg"
+    AliasName="ACAD_YEAR_ID"/>
+  <ViewAttribute
+    Name="Id"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblStdReg"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="GradeId"
+    PrecisionRule="true"
+    EntityAttrName="GradeId"
+    EntityUsage="TblStdReg"
+    AliasName="GRADE_ID"/>
+  <ViewAttribute
+    Name="SectionsId"
+    PrecisionRule="true"
+    EntityAttrName="SectionsId"
+    EntityUsage="TblStdReg"
+    AliasName="SECTIONS_ID"/>
+  <ViewAttribute
+    Name="FirstName"
+    PrecisionRule="true"
+    EntityAttrName="FirstName"
+    EntityUsage="TblStdReg"
+    AliasName="FIRST_NAME"/>
+  <ViewAttribute
+    Name="LastName"
+    PrecisionRule="true"
+    EntityAttrName="LastName"
+    EntityUsage="TblStdReg"
+    AliasName="LAST_NAME"/>
+  <ViewAttribute
+    Name="Id1"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblStdReg"
+    AliasName="ID1"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

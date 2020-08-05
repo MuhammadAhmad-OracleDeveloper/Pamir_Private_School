@@ -152,6 +152,7 @@
           <Item Value="StaffDisc"/>
           <Item Value="NetFee"/>
           <Item Value="Ast"/>
+          <Item Value="TermsId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -164,6 +165,9 @@
           <Item Value="FeeTypeId"/>
           <Item Value="Amount"/>
           <Item Value="Ast"/>
+          <Item Value="VatId"/>
+          <Item Value="VatAmount"/>
+          <Item Value="NetAmount"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -180,5 +184,11 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action IterBinding="TblFeeGenDetailView4Iterator" id="CreateInsert2" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFeeGenDetailView4Iterator" id="Execute2" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblFeeGenDetailView4Iterator" id="Delete2" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

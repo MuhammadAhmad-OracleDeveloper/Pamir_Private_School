@@ -37,6 +37,9 @@ public class TblFeeGenDetailImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        AcadYearId,
+        GradeId,
+        TermsId,
         TblFeeGenDetailD,
         TblFeeGenMaster,
         TblFeeGenDetailDisc;
@@ -78,6 +81,9 @@ public class TblFeeGenDetailImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int ACADYEARID = AttributesEnum.AcadYearId.index();
+    public static final int GRADEID = AttributesEnum.GradeId.index();
+    public static final int TERMSID = AttributesEnum.TermsId.index();
     public static final int TBLFEEGENDETAILD = AttributesEnum.TblFeeGenDetailD.index();
     public static final int TBLFEEGENMASTER = AttributesEnum.TblFeeGenMaster.index();
     public static final int TBLFEEGENDETAILDISC = AttributesEnum.TblFeeGenDetailDisc.index();
@@ -302,6 +308,54 @@ public class TblFeeGenDetailImpl extends EntityImpl {
      */
     public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
+    }
+
+    /**
+     * Gets the attribute value for AcadYearId, using the alias name AcadYearId.
+     * @return the value of AcadYearId
+     */
+    public BigDecimal getAcadYearId() {
+        return (BigDecimal) getAttributeInternal(ACADYEARID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for AcadYearId.
+     * @param value value to set the AcadYearId
+     */
+    public void setAcadYearId(BigDecimal value) {
+        setAttributeInternal(ACADYEARID, value);
+    }
+
+    /**
+     * Gets the attribute value for GradeId, using the alias name GradeId.
+     * @return the value of GradeId
+     */
+    public BigDecimal getGradeId() {
+        return (BigDecimal) getAttributeInternal(GRADEID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GradeId.
+     * @param value value to set the GradeId
+     */
+    public void setGradeId(BigDecimal value) {
+        setAttributeInternal(GRADEID, value);
+    }
+
+    /**
+     * Gets the attribute value for TermsId, using the alias name TermsId.
+     * @return the value of TermsId
+     */
+    public BigDecimal getTermsId() {
+        return (BigDecimal) getAttributeInternal(TERMSID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TermsId.
+     * @param value value to set the TermsId
+     */
+    public void setTermsId(BigDecimal value) {
+        setAttributeInternal(TERMSID, value);
     }
 
     /**

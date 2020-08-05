@@ -18,9 +18,32 @@
     ViewObjectName="model.LOV.Active_Name_LOV"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="Student_Registration_LOV1"
-    ViewObjectName="model.LOV.Student_Registration_LOV"
-    RowLevelBinds="true"/>
+    Name="Student_Reg_Fee_Gen_Master_DEP_LOV1"
+    ViewObjectName="model.LOV.Student_Reg_Fee_Gen_Master_DEP_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getAcadYearID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[AcadYearId]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="getGradeID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[GradeId]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="getSectionID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[SectionsId]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="getTermID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[TermsId1]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_Ast"
     ListVOName="Active_Name_LOV1"
@@ -41,7 +64,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_StdRegId"
-    ListVOName="Student_Registration_LOV1"
+    ListVOName="Student_Reg_Fee_Gen_Master_DEP_LOV1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
@@ -53,7 +76,7 @@
       <Item Value="Id"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FirstName"/>
+      <Item Value="FatherName"/>
       <Item Value="LastName"/>
     </AttrArray>
     <DisplayCriteria/>
@@ -61,6 +84,25 @@
   <EntityUsage
     Name="TblFeeGenDetail"
     Entity="model.ERP.EO.TblFeeGenDetail"/>
+  <EntityUsage
+    Name="TblFeeGenMaster"
+    Entity="model.ERP.EO.TblFeeGenMaster"
+    Association="model.ERP.EO.FkFeeGenDetailGenMasterAssoc"
+    AssociationEnd="model.ERP.EO.FkFeeGenDetailGenMasterAssoc.TblFeeGenMaster"
+    SourceUsage="model.ERP.VO.TblFeeGenDetailView.TblFeeGenDetail"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.ERP.EO.TblFeeGenMaster.Id"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.ERP.EO.TblFeeGenDetail.FeeGenMasterId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
@@ -164,6 +206,45 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblFeeGenDetail"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="GradeId"
+    PrecisionRule="true"
+    EntityAttrName="GradeId"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="GRADE_ID"/>
+  <ViewAttribute
+    Name="Id1"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="ID1"/>
+  <ViewAttribute
+    Name="AcadYearId"
+    PrecisionRule="true"
+    EntityAttrName="AcadYearId"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="ACAD_YEAR_ID"/>
+  <ViewAttribute
+    Name="SectionsId"
+    PrecisionRule="true"
+    EntityAttrName="SectionsId"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="SECTIONS_ID"/>
+  <ViewAttribute
+    Name="TermsId"
+    PrecisionRule="true"
+    EntityAttrName="TermsId"
+    EntityUsage="TblFeeGenDetail"
+    AliasName="TERMS_ID"/>
+  <ViewAttribute
+    Name="TermsId1"
+    PrecisionRule="true"
+    EntityAttrName="TermsId"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="TERMS_ID1"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id"/>
+  </AttrArray>
   <ViewLinkAccessor
     Name="TblFeeGenDetailDView"
     ViewLink="model.ERP.VO.FkFeeGenDetailDGenDetailLink"
