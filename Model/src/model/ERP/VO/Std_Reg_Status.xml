@@ -26,6 +26,28 @@
         ResId="model.ERP.VO.Std_Reg_Status_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <ViewAccessor
+    Name="Student_Reg_Type_LOV1"
+    ViewObjectName="model.LOV.Student_Reg_Type_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_RegType"
+    ListVOName="Student_Reg_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RegType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblStdReg"
     Entity="model.ERP.EO.TblStdReg"/>
@@ -82,7 +104,15 @@
     PrecisionRule="true"
     EntityAttrName="RegType"
     EntityUsage="TblStdReg"
-    AliasName="REG_TYPE"/>
+    AliasName="REG_TYPE"
+    LOVName="LOV_RegType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

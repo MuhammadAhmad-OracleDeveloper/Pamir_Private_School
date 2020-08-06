@@ -1,2 +1,187 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"></ui:composition>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Panel Label 1">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Tab Label 1">
+                <af:table value="#{bindings.Std_Reg_Status1.collectionModel}" var="row"
+                          rows="#{bindings.Std_Reg_Status1.rangeSize}"
+                          emptyText="#{bindings.Std_Reg_Status1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.Std_Reg_Status1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.Std_Reg_Status1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.Std_Reg_Status1.rangeSize}"
+                          filterModel="#{bindings.Std_Reg_Status1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.Std_Reg_Status1Query.processQuery}" varStatus="vs" id="t1"
+                          partialTriggers="::b2">
+                  <af:column sortProperty="#{bindings.Std_Reg_Status1.hints.FirstName.name}" filterable="true"
+                             sortable="true" headerText="First Name" id="c1" width="225">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.FirstName}"
+                                   id="id4" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.FirstName.inputValue}"
+                                  label="#{bindings.Std_Reg_Status1.hints.FirstName.label}"
+                                  required="#{bindings.Std_Reg_Status1.hints.FirstName.mandatory}"
+                                  columns="#{bindings.Std_Reg_Status1.hints.FirstName.displayWidth}"
+                                  maximumLength="#{bindings.Std_Reg_Status1.hints.FirstName.precision}"
+                                  shortDesc="#{bindings.Std_Reg_Status1.hints.FirstName.tooltip}" id="it1"
+                                  readOnly="true">
+                      <f:validator binding="#{row.bindings.FirstName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Std_Reg_Status1.hints.LastName.name}" filterable="true"
+                             sortable="true" headerText="Last Name" id="c2" width="225">
+                              <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.LastName}"
+                                   id="it7" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.LastName.inputValue}"
+                                  label="#{bindings.Std_Reg_Status1.hints.LastName.label}"
+                                  required="#{bindings.Std_Reg_Status1.hints.LastName.mandatory}"
+                                  columns="#{bindings.Std_Reg_Status1.hints.LastName.displayWidth}"
+                                  maximumLength="#{bindings.Std_Reg_Status1.hints.LastName.precision}"
+                                  shortDesc="#{bindings.Std_Reg_Status1.hints.LastName.tooltip}" id="it2"
+                                  readOnly="true">
+                      <f:validator binding="#{row.bindings.LastName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  
+                  <af:column sortProperty="#{bindings.Std_Reg_Status1.hints.MotherEmirId.name}" filterable="true"
+                             sortable="true" headerText="Mother's Emirates ID" id="c4" width="150">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.MotherEmirId}"
+                                   id="it8" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.MotherEmirId.inputValue}"
+                                  label="#{bindings.Std_Reg_Status1.hints.MotherEmirId.label}"
+                                  required="#{bindings.Std_Reg_Status1.hints.MotherEmirId.mandatory}"
+                                  columns="#{bindings.Std_Reg_Status1.hints.MotherEmirId.displayWidth}"
+                                  maximumLength="#{bindings.Std_Reg_Status1.hints.MotherEmirId.precision}"
+                                  shortDesc="#{bindings.Std_Reg_Status1.hints.MotherEmirId.tooltip}" id="it3"
+                                  readOnly="true">
+                      <f:validator binding="#{row.bindings.MotherEmirId.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Std_Reg_Status1.hints.FatherEmirId.name}" filterable="true"
+                             sortable="true" headerText="Father's Emirates ID" id="c5" width="150">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.FatherEmirId}"
+                                   id="it9" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.FatherEmirId.inputValue}"
+                                  label="#{bindings.Std_Reg_Status1.hints.FatherEmirId.label}"
+                                  required="#{bindings.Std_Reg_Status1.hints.FatherEmirId.mandatory}"
+                                  columns="#{bindings.Std_Reg_Status1.hints.FatherEmirId.displayWidth}"
+                                  maximumLength="#{bindings.Std_Reg_Status1.hints.FatherEmirId.precision}"
+                                  shortDesc="#{bindings.Std_Reg_Status1.hints.FatherEmirId.tooltip}" id="it4"
+                                  readOnly="true">
+                      <f:validator binding="#{row.bindings.FatherEmirId.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Std_Reg_Status1.hints.EmirId.name}" filterable="true"
+                             sortable="true" headerText="Emirates ID" id="c6" width="150">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.EmirId}"
+                                   id="it10" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.EmirId.inputValue}"
+                                  label="#{bindings.Std_Reg_Status1.hints.EmirId.label}"
+                                  required="#{bindings.Std_Reg_Status1.hints.EmirId.mandatory}"
+                                  columns="#{bindings.Std_Reg_Status1.hints.EmirId.displayWidth}"
+                                  maximumLength="#{bindings.Std_Reg_Status1.hints.EmirId.precision}"
+                                  shortDesc="#{bindings.Std_Reg_Status1.hints.EmirId.tooltip}" id="it5" readOnly="true">
+                      <f:validator binding="#{row.bindings.EmirId.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Std_Reg_Status1.hints.GuardEmirId.name}" filterable="true"
+                             sortable="true" headerText="Guardian's Emirates ID" id="c7" width="150">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.GuardEmirId}"
+                                   id="it11" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.GuardEmirId.inputValue}"
+                                  label="#{bindings.Std_Reg_Status1.hints.GuardEmirId.label}"
+                                  required="#{bindings.Std_Reg_Status1.hints.GuardEmirId.mandatory}"
+                                  columns="#{bindings.Std_Reg_Status1.hints.GuardEmirId.displayWidth}"
+                                  maximumLength="#{bindings.Std_Reg_Status1.hints.GuardEmirId.precision}"
+                                  shortDesc="#{bindings.Std_Reg_Status1.hints.GuardEmirId.tooltip}" id="it6"
+                                  readOnly="true">
+                      <f:validator binding="#{row.bindings.GuardEmirId.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Std_Reg_Status1.hints.JoinDate.name}" filterable="true"
+                             sortable="true" headerText="Joining Date" id="c3">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.Std_Reg_Status1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.JoinDate.value}"
+                                    id="id1" placeholder="Search ">
+                        <af:convertDateTime pattern="#{bindings.Std_Reg_Status1.hints.JoinDate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.JoinDate.inputValue}"
+                                  label="#{bindings.Std_Reg_Status1.hints.JoinDate.label}"
+                                  required="#{bindings.Std_Reg_Status1.hints.JoinDate.mandatory}"
+                                  columns="#{bindings.Std_Reg_Status1.hints.JoinDate.displayWidth}"
+                                  shortDesc="#{bindings.Std_Reg_Status1.hints.JoinDate.tooltip}" id="id2">
+                      <f:validator binding="#{row.bindings.JoinDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.Std_Reg_Status1.hints.JoinDate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Std_Reg_Status1.hints.RegType.name}" filterable="true"
+                             sortable="true" headerText="Registration Type" id="c8" width="150">
+                              <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.RegType}"
+                                   id="it12" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.RegType.inputValue}" label="#{row.bindings.RegType.label}"
+                                        required="#{bindings.Std_Reg_Status1.hints.RegType.mandatory}"
+                                        shortDesc="#{bindings.Std_Reg_Status1.hints.RegType.tooltip}" id="soc1">
+                      <f:selectItems value="#{row.bindings.RegType.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.RegType.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px"  height="auto" id="gr3">
+          <af:gridCell marginStart="5px" halign="center"  width="100%" marginEnd="5px" id="gc3">
+             <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s4"/>
+              <af:button actionListener="#{bindings.Execute.execute}" text="Update"
+                         disabled="#{!bindings.Execute.enabled}" id="b2" icon="#{resource['images:edit.png']}"/>
+            </af:panelGroupLayout>
+          </af:gridCell>
+        </af:gridRow>
+        
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>
