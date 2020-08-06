@@ -86,4 +86,15 @@ public class SchlMngmtModuleBoard_Sidebar implements Serializable {
         link.append(action);
         setDynamicTaskFlowId(link.toString());
     }
+    
+    public void ReportFragmentCall(ActionEvent actionEvent) {
+        // Add event code here...
+        String action = (String)actionEvent.getComponent().getAttributes().get("link");
+        StringBuilder link = new StringBuilder();
+        link.append("/WEB-INF/TaskFlows/Group/Company/SBU/Modules/School_Management_System/Reports/");
+        link.append(action);
+        link.append(".xml#");
+        link.append(action);
+        setDynamicTaskFlowId(link.toString());
+    }
 }

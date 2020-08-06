@@ -18,6 +18,7 @@
               id="Transportation_Pages1Iterator" Refresh="always" CacheResults="false"/>
     <iterator Binds="Library_Pages1" DataControl="AppModuleDataControl" id="Library_Pages1Iterator" Refresh="always"
               CacheResults="false"/>
+    <iterator Binds="Report_Pages1" RangeSize="25" DataControl="AppModuleDataControl" id="Report_Pages1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="Setup_Pages1Iterator" id="Setup_Pages1">
@@ -137,6 +138,22 @@
           <Item Value="REdit"/>
           <Item Value="RDelete"/>
           <Item Value="RPrint"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="Report_Pages1Iterator" id="Report_Pages1">
+      <nodeDefinition DefName="model.UserRoles.VO.Report_Pages" Name="Report_Pages10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="ReportIcon"/>
+          <Item Value="ReportLink"/>
+          <Item Value="SrNo"/>
+          <Item Value="RoleId"/>
+          <Item Value="CompanyReportId"/>
+          <Item Value="RoleId1"/>
+          <Item Value="RView"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
