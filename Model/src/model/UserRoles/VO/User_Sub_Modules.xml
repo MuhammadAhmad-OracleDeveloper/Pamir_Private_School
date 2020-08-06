@@ -42,32 +42,32 @@
       Name="VariableScript"
       CodeSourceName="User_Sub_Modules"/>
   </Variable>
-  <SQLQuery><![CDATA[SELECT            
-RSM.ID RSMID , RSM.ROLE_MODULE_ID ,RSM.COMPANY_SUB_MODULE_ID, RSM.R_VIEW ,     
-TSM.ID TSMID ,TSM.NAME , TSM.LINK, TSM.ICON ,TSM.DESCRIPTION ,TSM.SR_NO , TSM.ITERATOR_VALUE_BINDING , TSM.SIDEBAR_CLASS,    
-RM.ID RMID , RM.ROLE_ID , RM.COMPANY_MODULE_ID , RM.R_VIEW ,           
-CM.ID CMID , CM.GROUP_COMPANY_ID , CM.MODULE_ID , CM.AST CMAST ,           
-GC.ID GCID , GC.AST GCAST      
-FROM            
-TBL_ROLE_SUB_MODULES RSM , TBL_ROLE_MODULES RM , TBL_COMPANY_SUB_MODULE CSM ,TBL_COMPANY_MODULE CM , TBL_GROUP_COMPANY GC , TBL_SUB_MODULE TSM , TBL_MODULE TM           
-Where           
-RM.ID = RSM.ROLE_MODULE_ID      
-AND          
-RSM.COMPANY_SUB_MODULE_ID = CSM.ID     
-AND          
-CSM.SUB_MODULE_ID = TSM.ID      
-AND     
-CM.ID = RM.COMPANY_MODULE_ID           
+  <SQLQuery><![CDATA[SELECT             
+RSM.ID RSMID , RSM.ROLE_MODULE_ID ,RSM.COMPANY_SUB_MODULE_ID, RSM.R_VIEW ,      
+TSM.ID TSMID ,TSM.NAME , TSM.LINK, TSM.ICON ,TSM.DESCRIPTION ,TSM.SR_NO ,    
+RM.ID RMID , RM.ROLE_ID , RM.COMPANY_MODULE_ID , RM.R_VIEW ,            
+CM.ID CMID , CM.GROUP_COMPANY_ID , CM.MODULE_ID , CM.AST CMAST ,            
+GC.ID GCID , GC.AST GCAST       
+FROM             
+TBL_ROLE_SUB_MODULES RSM , TBL_ROLE_MODULES RM , TBL_COMPANY_SUB_MODULE CSM ,TBL_COMPANY_MODULE CM , TBL_GROUP_COMPANY GC , TBL_SUB_MODULE TSM , TBL_MODULE TM            
+Where            
+RM.ID = RSM.ROLE_MODULE_ID       
 AND           
-GC.ID = CM.GROUP_COMPANY_ID           
+RSM.COMPANY_SUB_MODULE_ID = CSM.ID      
 AND           
-TM.ID = CM.MODULE_ID       
-AND          
-TSM.MODULE_ID = :get_Module_ID          
+CSM.SUB_MODULE_ID = TSM.ID       
+AND      
+CM.ID = RM.COMPANY_MODULE_ID            
+AND            
+GC.ID = CM.GROUP_COMPANY_ID            
+AND            
+TM.ID = CM.MODULE_ID        
 AND           
-RSM.ROLE_ID = :get_Role_ID           
-AND           
-GC.ID = :get_com_mod_ID      
+TSM.MODULE_ID = :get_Module_ID           
+AND            
+RSM.ROLE_ID = :get_Role_ID            
+AND            
+GC.ID = :get_com_mod_ID       
 order by TSM.SR_NO ASC]]></SQLQuery>
   <ViewAttribute
     Name="Rsmid"
@@ -194,36 +194,6 @@ order by TSM.SR_NO ASC]]></SQLQuery>
     AliasName="SR_NO"
     Expression="SR_NO"
     SQLType="NUMERIC"/>
-  <ViewAttribute
-    Name="IteratorValueBinding"
-    IsUpdateable="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Precision="150"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    AliasName="ITERATOR_VALUE_BINDING"
-    Expression="ITERATOR_VALUE_BINDING"
-    SQLType="VARCHAR">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="150"/>
-    </DesignTime>
-  </ViewAttribute>
-  <ViewAttribute
-    Name="SidebarClass"
-    IsUpdateable="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Precision="150"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    AliasName="SIDEBAR_CLASS"
-    Expression="SIDEBAR_CLASS"
-    SQLType="VARCHAR">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="150"/>
-    </DesignTime>
-  </ViewAttribute>
   <ViewAttribute
     Name="Rmid"
     IsUpdateable="false"
