@@ -117,6 +117,7 @@ public class TblStdRegImpl extends EntityImpl {
         LookupDetailCity,
         ActiveSibEmirId,
         ActiveStdEmirId,
+        RegType,
         TblStdEnq,
         TblGrade,
         TblLookupDetail,
@@ -247,6 +248,7 @@ public class TblStdRegImpl extends EntityImpl {
     public static final int LOOKUPDETAILCITY = AttributesEnum.LookupDetailCity.index();
     public static final int ACTIVESIBEMIRID = AttributesEnum.ActiveSibEmirId.index();
     public static final int ACTIVESTDEMIRID = AttributesEnum.ActiveStdEmirId.index();
+    public static final int REGTYPE = AttributesEnum.RegType.index();
     public static final int TBLSTDENQ = AttributesEnum.TblStdEnq.index();
     public static final int TBLGRADE = AttributesEnum.TblGrade.index();
     public static final int TBLLOOKUPDETAIL = AttributesEnum.TblLookupDetail.index();
@@ -1731,6 +1733,22 @@ public class TblStdRegImpl extends EntityImpl {
      */
     public void setActiveStdEmirId(String value) {
         setAttributeInternal(ACTIVESTDEMIRID, value);
+    }
+
+    /**
+     * Gets the attribute value for RegType, using the alias name RegType.
+     * @return the value of RegType
+     */
+    public String getRegType() {
+        return (String) getAttributeInternal(REGTYPE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for RegType.
+     * @param value value to set the RegType
+     */
+    public void setRegType(String value) {
+        setAttributeInternal(REGTYPE, value);
     }
 
     /**
