@@ -121,6 +121,10 @@
     Name="Lookup_Area_Name_LOV1"
     ViewObjectName="model.LOV.Lookup_Area_Name_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Student_Reg_Type_LOV1"
+    ViewObjectName="model.LOV.Student_Reg_Type_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_LookupBirthCountry"
     ListVOName="Lookup_Country_Name_LOV1"
@@ -672,6 +676,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_RegType"
+    ListVOName="Student_Reg_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RegType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -1459,6 +1481,20 @@
     EntityAttrName="ActiveStdEmirId"
     EntityUsage="TblStdReg"
     AliasName="ACTIVE_STD_EMIR_ID"/>
+  <ViewAttribute
+    Name="RegType"
+    PrecisionRule="true"
+    EntityAttrName="RegType"
+    EntityUsage="TblStdReg"
+    AliasName="REG_TYPE"
+    LOVName="LOV_RegType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>

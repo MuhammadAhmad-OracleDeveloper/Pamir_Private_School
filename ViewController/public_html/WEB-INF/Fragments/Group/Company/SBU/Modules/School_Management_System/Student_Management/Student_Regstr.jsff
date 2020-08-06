@@ -303,6 +303,16 @@
                                             <f:validator binding="#{row.bindings.Gender.validator}"/>
                                         </af:selectOneChoice>
                                     </af:column>
+                                    <af:column headerText="#{bindings.TblStdRegView1.hints.RegType.label}" id="c40">
+                                        <af:selectOneChoice value="#{row.bindings.RegType.inputValue}"
+                                                            label="#{row.bindings.RegType.label}"
+                                                            required="#{bindings.TblStdRegView1.hints.RegType.mandatory}"
+                                                            shortDesc="#{bindings.TblStdRegView1.hints.RegType.tooltip}"
+                                                            id="soc19" readOnly="true">
+                                            <f:selectItems value="#{row.bindings.RegType.items}" id="si19"/>
+                                            <f:validator binding="#{row.bindings.RegType.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
                                     <af:column sortProperty="#{bindings.TblStdRegView1.hints.Ast.name}"
                                                filterable="true" sortable="true" headerText="Active" id="c9" width="80"
                                                align="left">
@@ -495,7 +505,7 @@
                                                               required="#{bindings.JoinDate.hints.mandatory}"
                                                               columns="#{bindings.JoinDate.hints.displayWidth}"
                                                               shortDesc="#{bindings.JoinDate.hints.tooltip}" id="id3"
-                                                              contentStyle="width:200px;">
+                                                              contentStyle="width:200px;" readOnly="true">
                                                     <f:validator binding="#{bindings.JoinDate.validator}"/>
                                                     <af:convertDateTime pattern="#{bindings.JoinDate.format}"/>
                                                 </af:inputDate>

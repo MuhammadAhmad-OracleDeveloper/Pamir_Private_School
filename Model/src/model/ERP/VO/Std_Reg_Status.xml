@@ -6,20 +6,13 @@
   Name="Std_Reg_Status"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  PageIterMode="Full"
-  SelectList="TblStdReg.FIRST_NAME, 
-       TblStdReg.ID, 
-       TblStdReg.LAST_NAME, 
-       TblStdReg.JOIN_DATE, 
-       TblStdReg.MOTHER_EMIR_ID, 
-       TblStdReg.FATHER_EMIR_ID, 
-       TblStdReg.EMIR_ID, 
-       TblStdReg.GUARD_EMIR_ID, 
-       TblStdReg.REG_TYPE"
-  FromList="TBL_STD_REG TblStdReg"
-  Where="TblStdReg.REG_TYPE = 'T'">
+  SelectAllAttributes="false"
+  PageIterMode="Full">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -77,12 +70,6 @@
     EntityAttrName="GuardEmirId"
     EntityUsage="TblStdReg"
     AliasName="GUARD_EMIR_ID"/>
-  <ViewAttribute
-    Name="RegType"
-    PrecisionRule="true"
-    EntityAttrName="RegType"
-    EntityUsage="TblStdReg"
-    AliasName="REG_TYPE"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
