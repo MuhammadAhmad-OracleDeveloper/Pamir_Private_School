@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Registration_StatusPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.School_Management_System.Student_Management">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Std_Reg_Status1" RangeSize="25" DataControl="AppModuleDataControl1" id="Std_Reg_Status1Iterator"/>
+    <searchRegion Binds="Std_Reg_Status1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="Std_Reg_Status1Query"/>
+    <iterator Binds="StdRegSiblingsDetail1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="StdRegSiblingsDetail1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Std_Reg_Status1Iterator" id="Std_Reg_Status1">
+      <nodeDefinition DefName="model.ERP.VO.Std_Reg_Status" Name="Std_Reg_Status10">
+        <AttrNames>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="JoinDate"/>
+          <Item Value="MotherEmirId"/>
+          <Item Value="FatherEmirId"/>
+          <Item Value="EmirId"/>
+          <Item Value="GuardEmirId"/>
+          <Item Value="RegType"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="Std_Reg_Status1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>
