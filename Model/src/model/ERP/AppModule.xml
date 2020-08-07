@@ -946,6 +946,12 @@
   <ViewUsage
     Name="Std_Reg_Status1"
     ViewObjectName="model.ERP.VO.Std_Reg_Status"/>
+  <ViewUsage
+    Name="TblFeeGenDTransView1"
+    ViewObjectName="model.ERP.VO.TblFeeGenDTransView"/>
+  <ViewUsage
+    Name="TblFeeGenDTransView2"
+    ViewObjectName="model.ERP.VO.TblFeeGenDTransView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -1887,5 +1893,11 @@
     ViewLinkObjectName="model.ERP.VO.FkTblSectionStaffFkLink"
     SrcViewUsageName="model.ERP.AppModule.TblStaffView1"
     DstViewUsageName="model.ERP.AppModule.TblSectionStaffView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKTblFeeGenDTransDetailFkLink1"
+    ViewLinkObjectName="model.ERP.VO.FKTblFeeGenDTransDetailFkLink"
+    SrcViewUsageName="model.ERP.AppModule.TblFeeGenDetailView2"
+    DstViewUsageName="model.ERP.AppModule.TblFeeGenDTransView2"
     Reversed="false"/>
 </AppModule>

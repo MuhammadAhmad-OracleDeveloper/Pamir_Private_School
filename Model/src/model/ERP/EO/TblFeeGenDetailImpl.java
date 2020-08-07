@@ -42,7 +42,8 @@ public class TblFeeGenDetailImpl extends EntityImpl {
         TermsId,
         TblFeeGenDetailD,
         TblFeeGenMaster,
-        TblFeeGenDetailDisc;
+        TblFeeGenDetailDisc,
+        TblFeeGenDTrans;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -87,6 +88,7 @@ public class TblFeeGenDetailImpl extends EntityImpl {
     public static final int TBLFEEGENDETAILD = AttributesEnum.TblFeeGenDetailD.index();
     public static final int TBLFEEGENMASTER = AttributesEnum.TblFeeGenMaster.index();
     public static final int TBLFEEGENDETAILDISC = AttributesEnum.TblFeeGenDetailDisc.index();
+    public static final int TBLFEEGENDTRANS = AttributesEnum.TblFeeGenDTrans.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -384,6 +386,14 @@ public class TblFeeGenDetailImpl extends EntityImpl {
      */
     public RowIterator getTblFeeGenDetailDisc() {
         return (RowIterator) getAttributeInternal(TBLFEEGENDETAILDISC);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblFeeGenDTrans() {
+        return (RowIterator) getAttributeInternal(TBLFEEGENDTRANS);
     }
 
 
