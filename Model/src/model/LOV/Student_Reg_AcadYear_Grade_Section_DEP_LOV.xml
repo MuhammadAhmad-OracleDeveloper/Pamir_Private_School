@@ -15,11 +15,13 @@
        TblStdReg.SECTIONS_ID, 
        TblStdReg.FIRST_NAME, 
        TblStdReg.LAST_NAME, 
-       TblStdReg.ID AS ID1"
+       TblStdReg.ID AS ID1, 
+       TblStdReg.REG_TYPE"
   FromList="TBL_STD_REG TblStdReg"
-  Where="( ( (TblStdReg.ACAD_YEAR_ID = :getAcadYearID )  
-AND (TblStdReg.GRADE_ID = :getGradeID )  
-AND (TblStdReg.SECTIONS_ID = :getSectionID ) ) )">
+  Where="TblStdReg.ACAD_YEAR_ID = :getAcadYearID  
+AND TblStdReg.GRADE_ID = :getGradeID   
+AND TblStdReg.SECTIONS_ID = :getSectionID and 
+ TblStdReg.REG_TYPE = 'P'">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -83,6 +85,12 @@ AND (TblStdReg.SECTIONS_ID = :getSectionID ) ) )">
     EntityAttrName="Id"
     EntityUsage="TblStdReg"
     AliasName="ID1"/>
+  <ViewAttribute
+    Name="RegType"
+    PrecisionRule="true"
+    EntityAttrName="RegType"
+    EntityUsage="TblStdReg"
+    AliasName="REG_TYPE"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

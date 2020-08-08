@@ -1078,6 +1078,13 @@
     AssociationOtherEnd="model.ERP.EO.FkStdRegSibSibAssoc.TblStdReg1"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblFeeGenDetail"
+    Association="model.ERP.EO.FkTblFeeGenDetailFkAssoc"
+    AssociationEnd="model.ERP.EO.FkTblFeeGenDetailFkAssoc.TblFeeGenDetail"
+    AssociationOtherEnd="model.ERP.EO.FkTblFeeGenDetailFkAssoc.TblStdReg"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkStdReg"
     PrimaryKey="true">

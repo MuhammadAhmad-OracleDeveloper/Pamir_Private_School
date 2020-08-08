@@ -10,10 +10,12 @@
        TblStdEnq.FIRST_NAME, 
        TblStdEnq.ID AS ID1, 
        TblStdEnq.LAST_NAME, 
-       TblStdReg.AST"
+       TblStdReg.AST, 
+       TblStdReg.REG_TYPE"
   FromList="TBL_STD_REG TblStdReg, TBL_STD_ENQ TblStdEnq"
-  Where="TblStdReg.STD_ENQ_ID = TblStdEnq.ID 
-And TblStdReg.AST='Y'"
+  Where="TblStdReg.STD_ENQ_ID = TblStdEnq.ID  
+And TblStdReg.AST='Y' and 
+ TblStdReg.REG_TYPE = 'P'"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full">
@@ -77,6 +79,12 @@ And TblStdReg.AST='Y'"
     EntityAttrName="Ast"
     EntityUsage="TblStdReg"
     AliasName="AST"/>
+  <ViewAttribute
+    Name="RegType"
+    PrecisionRule="true"
+    EntityAttrName="RegType"
+    EntityUsage="TblStdReg"
+    AliasName="REG_TYPE"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>

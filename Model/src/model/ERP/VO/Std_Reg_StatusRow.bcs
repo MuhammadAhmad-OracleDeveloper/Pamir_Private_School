@@ -1,0 +1,12 @@
+//Groovy Scripts for model.ERP.VO.Std_Reg_Status
+
+package model.ERP.VO
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="JoinDate")
+def JoinDate_ExpressionScript_Expression()
+{
+adf.currentDate
+}
+

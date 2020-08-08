@@ -65,7 +65,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblRouteFeeMasterView1.hints.AcadYearId.name}" filterable="true"
                              sortable="true" headerText="Academic Year"
-                             id="c2" align="left">
+                             id="c2" align="left" width="100">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.AcadYearId}"
                                    id="it4" placeholder="Search ">
@@ -80,7 +80,7 @@
                       <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblRouteFeeMasterView1.hints.RouteId.name}" filterable="true"
+                  <!--<af:column sortProperty="#{bindings.TblRouteFeeMasterView1.hints.RouteId.name}" filterable="true"
                              sortable="true" headerText="Route"
                              id="c3" width="200" align="left">
                               <f:facet name="filter">
@@ -111,9 +111,25 @@
                       <f:selectItems value="#{row.bindings.RouteStopsId.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.RouteStopsId.validator}"/>
                     </af:selectOneChoice>
+                  </af:column>-->
+                  <af:column headerText="Area" id="c3"
+                             width="211">
+                  <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.LookupDetailArea}"
+                                   id="it6" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.LookupDetailArea.inputValue}"
+                                        label="#{row.bindings.LookupDetailArea.label}"
+                                        required="#{bindings.TblRouteFeeMasterView1.hints.LookupDetailArea.mandatory}"
+                                        shortDesc="#{bindings.TblRouteFeeMasterView1.hints.LookupDetailArea.tooltip}"
+                                        id="soc2">
+                      <f:selectItems value="#{row.bindings.LookupDetailArea.items}" id="si2"/>
+                      <f:validator binding="#{row.bindings.LookupDetailArea.validator}"/>
+                    </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblRouteFeeMasterView1.hints.Ast.name}" filterable="true"
-                             sortable="true" headerText="Active" id="c5" align="left">
+                             sortable="true" headerText="Active" id="c5" align="left" width="-11">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Ast}"
                                    id="it11" placeholder="Search ">

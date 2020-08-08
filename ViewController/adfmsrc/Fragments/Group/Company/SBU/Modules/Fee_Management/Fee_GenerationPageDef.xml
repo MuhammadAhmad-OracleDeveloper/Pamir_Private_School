@@ -38,6 +38,10 @@
               id="TblFeeGenDetailDiscView3Iterator"/>
     <searchRegion Binds="TblFeeGenDetailDiscView3Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFeeGenDetailDiscView3Query"/>
+    <iterator Binds="TblFeeGenDTransView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblFeeGenDTransView2Iterator"/>
+    <searchRegion Binds="TblFeeGenDTransView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFeeGenDTransView2Query"/>
   </executables>
   <bindings>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
@@ -194,5 +198,13 @@
             Action="iteratorExecute"/>
     <action IterBinding="TblFeeGenDetailView4Iterator" id="Delete2" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <tree IterBinding="TblFeeGenDTransView2Iterator" id="TblFeeGenDTransView2">
+      <nodeDefinition DefName="model.ERP.VO.TblFeeGenDTransView" Name="TblFeeGenDTransView20">
+        <AttrNames>
+          <Item Value="LookupDetailArea"/>
+          <Item Value="TransFee"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

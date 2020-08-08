@@ -11,12 +11,14 @@
        TblStdReg.LAST_NAME, 
        TblStdReg.FATHER_NAME, 
        TblStdReg.ENROLL_NO, 
-       TblStdReg.AST"
+       TblStdReg.AST, 
+       TblStdReg.REG_TYPE"
   FromList="TBL_STD_REG TblStdReg"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  Where="tblstdreg.ast = 'Y'">
+  Where="tblstdreg.ast = 'Y' and 
+ TblStdReg.REG_TYPE = 'P'">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -62,6 +64,12 @@
     EntityAttrName="Ast"
     EntityUsage="TblStdReg"
     AliasName="AST"/>
+  <ViewAttribute
+    Name="RegType"
+    PrecisionRule="true"
+    EntityAttrName="RegType"
+    EntityUsage="TblStdReg"
+    AliasName="REG_TYPE"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

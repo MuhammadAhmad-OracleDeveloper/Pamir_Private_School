@@ -16,11 +16,19 @@
        TblFeeGenMaster.ID AS ID1, 
        TblFeeGenMaster.SECTIONS_ID, 
        TblFeeGenMaster.ACAD_YEAR_ID, 
-       TblStdReg.FIRST_NAME"
+       TblStdReg.FIRST_NAME, 
+       TblStdReg.REG_TYPE, 
+       TblStdReg.TRANS_REQ, 
+       TblStdReg.EMIR_AREA, 
+       TblStdReg.JOIN_DATE, 
+       TblFeeGenMaster.TERMS_ID"
   FromList="TBL_STD_REG TblStdReg, TBL_FEE_GEN_MASTER TblFeeGenMaster"
-  Where="TblFeeGenMaster.GRADE_ID = :getGradeID 
-AND TblFeeGenMaster.SECTIONS_ID = :getSectionID   
-AND TblFeeGenMaster.ACAD_YEAR_ID = :getAcadYearID">
+  Where="TblFeeGenMaster.GRADE_ID = :getGradeID         
+AND TblFeeGenMaster.SECTIONS_ID = :getSectionID           
+AND TblFeeGenMaster.ACAD_YEAR_ID = :getAcadYearID        
+AND TblFeeGenMaster.TERMS_ID = :getTERMS_ID        
+  
+and  TblStdReg.REG_TYPE = 'P'">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -37,6 +45,10 @@ AND TblFeeGenMaster.ACAD_YEAR_ID = :getAcadYearID">
     Type="java.math.BigDecimal"/>
   <Variable
     Name="getSectionID"
+    Kind="where"
+    Type="java.math.BigDecimal"/>
+  <Variable
+    Name="getTERMS_ID"
     Kind="where"
     Type="java.math.BigDecimal"/>
   <EntityUsage
@@ -99,6 +111,36 @@ AND TblFeeGenMaster.ACAD_YEAR_ID = :getAcadYearID">
     EntityAttrName="FirstName"
     EntityUsage="TblStdReg"
     AliasName="FIRST_NAME"/>
+  <ViewAttribute
+    Name="RegType"
+    PrecisionRule="true"
+    EntityAttrName="RegType"
+    EntityUsage="TblStdReg"
+    AliasName="REG_TYPE"/>
+  <ViewAttribute
+    Name="TransReq"
+    PrecisionRule="true"
+    EntityAttrName="TransReq"
+    EntityUsage="TblStdReg"
+    AliasName="TRANS_REQ"/>
+  <ViewAttribute
+    Name="EmirArea"
+    PrecisionRule="true"
+    EntityAttrName="EmirArea"
+    EntityUsage="TblStdReg"
+    AliasName="EMIR_AREA"/>
+  <ViewAttribute
+    Name="JoinDate"
+    PrecisionRule="true"
+    EntityAttrName="JoinDate"
+    EntityUsage="TblStdReg"
+    AliasName="JOIN_DATE"/>
+  <ViewAttribute
+    Name="TermsId"
+    PrecisionRule="true"
+    EntityAttrName="TermsId"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="TERMS_ID"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

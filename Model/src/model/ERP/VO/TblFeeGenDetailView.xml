@@ -37,6 +37,26 @@
           trustMode="untrusted"
           Name="ExpressionScript"><![CDATA[SectionsId]]></TransientExpression>
       </PIMap>
+      <PIMap Variable="getEMIR_AREA">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[EmirArea]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="getJOIN_DATE">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[JoinDate]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="getTERMS_ID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[TermsId]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="getTRANS_REQ">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[TransReq]]></TransientExpression>
+      </PIMap>
     </ParameterMap>
   </ViewAccessor>
   <ViewAccessor
@@ -82,11 +102,17 @@
     <AttrArray Name="DerivedAttrNames">
       <Item Value="AcadYearId1"/>
       <Item Value="GradeId1"/>
+      <Item Value="EmirArea"/>
+      <Item Value="TransReq"/>
+      <Item Value="JoinDate"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="Id"/>
       <Item Value="AcadYearId"/>
       <Item Value="GradeId"/>
+      <Item Value="EmirArea"/>
+      <Item Value="TransReq"/>
+      <Item Value="JoinDate"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="FirstName"/>
@@ -131,6 +157,25 @@
       </AttrArray>
       <AttrArray Name="_srcAttributes">
         <Item Value="model.ERP.EO.TblFeeGenDetail.FeeGenMasterId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblStdReg"
+    Entity="model.ERP.EO.TblStdReg"
+    Association="model.ERP.EO.FkTblFeeGenDetailFkAssoc"
+    AssociationEnd="model.ERP.EO.FkTblFeeGenDetailFkAssoc.TblStdReg"
+    SourceUsage="model.ERP.VO.TblFeeGenDetailView.TblFeeGenDetail"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.ERP.EO.TblStdReg.Id"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.ERP.EO.TblFeeGenDetail.StdRegId"/>
       </AttrArray>
     </DesignTime>
   </EntityUsage>
@@ -293,6 +338,42 @@
     EntityAttrName="AcadYearId"
     EntityUsage="TblFeeGenDetail"
     AliasName="ACAD_YEAR_ID1"/>
+  <ViewAttribute
+    Name="EmirArea"
+    PrecisionRule="true"
+    EntityAttrName="EmirArea"
+    EntityUsage="TblStdReg"
+    AliasName="EMIR_AREA"/>
+  <ViewAttribute
+    Name="Id2"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblStdReg"
+    AliasName="ID2"/>
+  <ViewAttribute
+    Name="TransReq"
+    PrecisionRule="true"
+    EntityAttrName="TransReq"
+    EntityUsage="TblStdReg"
+    AliasName="TRANS_REQ"/>
+  <ViewAttribute
+    Name="JoinDate"
+    PrecisionRule="true"
+    EntityAttrName="JoinDate"
+    EntityUsage="TblFeeGenDetail"
+    AliasName="JOIN_DATE"/>
+  <ViewAttribute
+    Name="LookupDetailArea"
+    PrecisionRule="true"
+    EntityAttrName="LookupDetailArea"
+    EntityUsage="TblFeeGenDetail"
+    AliasName="LOOKUP_DETAIL_AREA"/>
+  <ViewAttribute
+    Name="TransReq1"
+    PrecisionRule="true"
+    EntityAttrName="TransReq"
+    EntityUsage="TblFeeGenDetail"
+    AliasName="TRANS_REQ1"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>

@@ -40,10 +40,14 @@ public class TblFeeGenDetailImpl extends EntityImpl {
         AcadYearId,
         GradeId,
         TermsId,
+        JoinDate,
+        TransReq,
+        LookupDetailArea,
         TblFeeGenDetailD,
         TblFeeGenMaster,
         TblFeeGenDetailDisc,
-        TblFeeGenDTrans;
+        TblFeeGenDTrans,
+        TblStdReg;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -85,10 +89,14 @@ public class TblFeeGenDetailImpl extends EntityImpl {
     public static final int ACADYEARID = AttributesEnum.AcadYearId.index();
     public static final int GRADEID = AttributesEnum.GradeId.index();
     public static final int TERMSID = AttributesEnum.TermsId.index();
+    public static final int JOINDATE = AttributesEnum.JoinDate.index();
+    public static final int TRANSREQ = AttributesEnum.TransReq.index();
+    public static final int LOOKUPDETAILAREA = AttributesEnum.LookupDetailArea.index();
     public static final int TBLFEEGENDETAILD = AttributesEnum.TblFeeGenDetailD.index();
     public static final int TBLFEEGENMASTER = AttributesEnum.TblFeeGenMaster.index();
     public static final int TBLFEEGENDETAILDISC = AttributesEnum.TblFeeGenDetailDisc.index();
     public static final int TBLFEEGENDTRANS = AttributesEnum.TblFeeGenDTrans.index();
+    public static final int TBLSTDREG = AttributesEnum.TblStdReg.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -361,6 +369,54 @@ public class TblFeeGenDetailImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for JoinDate, using the alias name JoinDate.
+     * @return the value of JoinDate
+     */
+    public Timestamp getJoinDate() {
+        return (Timestamp) getAttributeInternal(JOINDATE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for JoinDate.
+     * @param value value to set the JoinDate
+     */
+    public void setJoinDate(Timestamp value) {
+        setAttributeInternal(JOINDATE, value);
+    }
+
+    /**
+     * Gets the attribute value for TransReq, using the alias name TransReq.
+     * @return the value of TransReq
+     */
+    public String getTransReq() {
+        return (String) getAttributeInternal(TRANSREQ);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TransReq.
+     * @param value value to set the TransReq
+     */
+    public void setTransReq(String value) {
+        setAttributeInternal(TRANSREQ, value);
+    }
+
+    /**
+     * Gets the attribute value for LookupDetailArea, using the alias name LookupDetailArea.
+     * @return the value of LookupDetailArea
+     */
+    public BigDecimal getLookupDetailArea() {
+        return (BigDecimal) getAttributeInternal(LOOKUPDETAILAREA);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for LookupDetailArea.
+     * @param value value to set the LookupDetailArea
+     */
+    public void setLookupDetailArea(BigDecimal value) {
+        setAttributeInternal(LOOKUPDETAILAREA, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getTblFeeGenDetailD() {
@@ -394,6 +450,21 @@ public class TblFeeGenDetailImpl extends EntityImpl {
      */
     public RowIterator getTblFeeGenDTrans() {
         return (RowIterator) getAttributeInternal(TBLFEEGENDTRANS);
+    }
+
+
+    /**
+     * @return the associated entity TblStdRegImpl.
+     */
+    public TblStdRegImpl getTblStdReg() {
+        return (TblStdRegImpl) getAttributeInternal(TBLSTDREG);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity TblStdRegImpl.
+     */
+    public void setTblStdReg(TblStdRegImpl value) {
+        setAttributeInternal(TBLSTDREG, value);
     }
 
 

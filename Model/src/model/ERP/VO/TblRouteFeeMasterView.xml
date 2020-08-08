@@ -29,6 +29,14 @@
     Name="Route_Stops_Name_LOV1"
     ViewObjectName="model.LOV.Route_Stops_Name_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Emirates_Area_LOV1"
+    ViewObjectName="model.LOV.Lookup_Emirates_Area_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Area_Name_LOV1"
+    ViewObjectName="model.LOV.Lookup_Area_Name_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_AcadYearId"
     ListVOName="Academic_Year_LOV1"
@@ -91,6 +99,24 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="RouteStopsId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LookupDetailArea"
+    ListVOName="Lookup_Area_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LookupDetailArea"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -186,6 +212,20 @@
     EntityUsage="TblRouteFeeMaster"
     AliasName="ROUTE_STOPS_ID"
     LOVName="LOV_RouteStopsId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LookupDetailArea"
+    PrecisionRule="true"
+    EntityAttrName="LookupDetailArea"
+    EntityUsage="TblRouteFeeMaster"
+    AliasName="LOOKUP_DETAIL_AREA"
+    LOVName="LOV_LookupDetailArea">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

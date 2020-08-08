@@ -131,7 +131,8 @@ public class TblStdRegImpl extends EntityImpl {
         TblSections,
         TblStdRegGuard,
         TblStdRegSib,
-        TblStdRegSib1;
+        TblStdRegSib1,
+        TblFeeGenDetail;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -263,6 +264,7 @@ public class TblStdRegImpl extends EntityImpl {
     public static final int TBLSTDREGGUARD = AttributesEnum.TblStdRegGuard.index();
     public static final int TBLSTDREGSIB = AttributesEnum.TblStdRegSib.index();
     public static final int TBLSTDREGSIB1 = AttributesEnum.TblStdRegSib1.index();
+    public static final int TBLFEEGENDETAIL = AttributesEnum.TblFeeGenDetail.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -1924,6 +1926,14 @@ public class TblStdRegImpl extends EntityImpl {
      */
     public RowIterator getTblStdRegSib1() {
         return (RowIterator) getAttributeInternal(TBLSTDREGSIB1);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblFeeGenDetail() {
+        return (RowIterator) getAttributeInternal(TBLFEEGENDETAIL);
     }
 
 

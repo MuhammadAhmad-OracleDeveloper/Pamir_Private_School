@@ -74,7 +74,12 @@
     PrecisionRule="true"
     EntityAttrName="JoinDate"
     EntityUsage="TblStdReg"
-    AliasName="JOIN_DATE"/>
+    AliasName="JOIN_DATE">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="Std_Reg_StatusRow"/>
+  </ViewAttribute>
   <ViewAttribute
     Name="MotherEmirId"
     PrecisionRule="true"
