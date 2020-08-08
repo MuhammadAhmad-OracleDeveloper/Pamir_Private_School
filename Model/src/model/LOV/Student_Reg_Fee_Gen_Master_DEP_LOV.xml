@@ -12,23 +12,18 @@
   SelectList="TblStdReg.ID, 
        TblStdReg.FATHER_NAME, 
        TblStdReg.LAST_NAME, 
-       TblFeeGenMaster.GRADE_ID, 
-       TblFeeGenMaster.ID AS ID1, 
-       TblFeeGenMaster.SECTIONS_ID, 
-       TblFeeGenMaster.ACAD_YEAR_ID, 
        TblStdReg.FIRST_NAME, 
        TblStdReg.REG_TYPE, 
        TblStdReg.TRANS_REQ, 
        TblStdReg.EMIR_AREA, 
        TblStdReg.JOIN_DATE, 
-       TblFeeGenMaster.TERMS_ID"
-  FromList="TBL_STD_REG TblStdReg, TBL_FEE_GEN_MASTER TblFeeGenMaster"
-  Where="TblFeeGenMaster.GRADE_ID = :getGradeID         
-AND TblFeeGenMaster.SECTIONS_ID = :getSectionID           
-AND TblFeeGenMaster.ACAD_YEAR_ID = :getAcadYearID        
-AND TblFeeGenMaster.TERMS_ID = :getTERMS_ID        
-  
-and  TblStdReg.REG_TYPE = 'P'">
+       TblStdReg.ACAD_YEAR_ID, 
+       TblStdReg.SECTIONS_ID, 
+       TblStdReg.GRADE_ID"
+  FromList="TBL_STD_REG TblStdReg"
+  Where="TblStdReg.ACAD_YEAR_ID = :getAcadYearID    
+AND TblStdReg.SECTIONS_ID = :getSectionID     
+AND TblStdReg.GRADE_ID = :getGradeID">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -47,22 +42,9 @@ and  TblStdReg.REG_TYPE = 'P'">
     Name="getSectionID"
     Kind="where"
     Type="java.math.BigDecimal"/>
-  <Variable
-    Name="getTERMS_ID"
-    Kind="where"
-    Type="java.math.BigDecimal"/>
   <EntityUsage
     Name="TblStdReg"
     Entity="model.ERP.EO.TblStdReg"/>
-  <EntityUsage
-    Name="TblFeeGenMaster"
-    Entity="model.ERP.EO.TblFeeGenMaster"
-    ReadOnly="true"
-    DeleteParticipant="false">
-    <DesignTime>
-      <Attr Name="_customjoin" Value="true"/>
-    </DesignTime>
-  </EntityUsage>
   <ViewAttribute
     Name="Id"
     PrecisionRule="true"
@@ -81,30 +63,6 @@ and  TblStdReg.REG_TYPE = 'P'">
     EntityAttrName="LastName"
     EntityUsage="TblStdReg"
     AliasName="LAST_NAME"/>
-  <ViewAttribute
-    Name="GradeId"
-    PrecisionRule="true"
-    EntityAttrName="GradeId"
-    EntityUsage="TblFeeGenMaster"
-    AliasName="GRADE_ID"/>
-  <ViewAttribute
-    Name="Id1"
-    PrecisionRule="true"
-    EntityAttrName="Id"
-    EntityUsage="TblFeeGenMaster"
-    AliasName="ID1"/>
-  <ViewAttribute
-    Name="SectionsId"
-    PrecisionRule="true"
-    EntityAttrName="SectionsId"
-    EntityUsage="TblFeeGenMaster"
-    AliasName="SECTIONS_ID"/>
-  <ViewAttribute
-    Name="AcadYearId"
-    PrecisionRule="true"
-    EntityAttrName="AcadYearId"
-    EntityUsage="TblFeeGenMaster"
-    AliasName="ACAD_YEAR_ID"/>
   <ViewAttribute
     Name="FirstName"
     PrecisionRule="true"
@@ -136,11 +94,26 @@ and  TblStdReg.REG_TYPE = 'P'">
     EntityUsage="TblStdReg"
     AliasName="JOIN_DATE"/>
   <ViewAttribute
-    Name="TermsId"
+    Name="AcadYearId"
     PrecisionRule="true"
-    EntityAttrName="TermsId"
-    EntityUsage="TblFeeGenMaster"
-    AliasName="TERMS_ID"/>
+    EntityAttrName="AcadYearId"
+    EntityUsage="TblStdReg"
+    AliasName="ACAD_YEAR_ID"/>
+  <ViewAttribute
+    Name="SectionsId"
+    PrecisionRule="true"
+    EntityAttrName="SectionsId"
+    EntityUsage="TblStdReg"
+    AliasName="SECTIONS_ID"/>
+  <ViewAttribute
+    Name="GradeId"
+    PrecisionRule="true"
+    EntityAttrName="GradeId"
+    EntityUsage="TblStdReg"
+    AliasName="GRADE_ID"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id"/>
+  </AttrArray>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

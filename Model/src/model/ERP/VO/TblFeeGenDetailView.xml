@@ -37,26 +37,6 @@
           trustMode="untrusted"
           Name="ExpressionScript"><![CDATA[SectionsId]]></TransientExpression>
       </PIMap>
-      <PIMap Variable="getEMIR_AREA">
-        <TransientExpression
-          trustMode="untrusted"
-          Name="ExpressionScript"><![CDATA[EmirArea]]></TransientExpression>
-      </PIMap>
-      <PIMap Variable="getJOIN_DATE">
-        <TransientExpression
-          trustMode="untrusted"
-          Name="ExpressionScript"><![CDATA[JoinDate]]></TransientExpression>
-      </PIMap>
-      <PIMap Variable="getTERMS_ID">
-        <TransientExpression
-          trustMode="untrusted"
-          Name="ExpressionScript"><![CDATA[TermsId]]></TransientExpression>
-      </PIMap>
-      <PIMap Variable="getTRANS_REQ">
-        <TransientExpression
-          trustMode="untrusted"
-          Name="ExpressionScript"><![CDATA[TransReq]]></TransientExpression>
-      </PIMap>
     </ParameterMap>
   </ViewAccessor>
   <ViewAccessor
@@ -102,8 +82,8 @@
     <AttrArray Name="DerivedAttrNames">
       <Item Value="AcadYearId1"/>
       <Item Value="GradeId1"/>
-      <Item Value="EmirArea"/>
-      <Item Value="TransReq"/>
+      <Item Value="LookupDetailArea"/>
+      <Item Value="TransReq1"/>
       <Item Value="JoinDate"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
@@ -124,7 +104,8 @@
     Name="LOV_TermsId"
     ListVOName="Fee_Gen_Master_LOV1"
     ListRangeSize="-1"
-    NullValueFlag="none"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="TermsId"/>
@@ -134,7 +115,7 @@
       <Item Value="TermsId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="TermsId"/>
+      <Item Value="Id"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -157,25 +138,6 @@
       </AttrArray>
       <AttrArray Name="_srcAttributes">
         <Item Value="model.ERP.EO.TblFeeGenDetail.FeeGenMasterId"/>
-      </AttrArray>
-    </DesignTime>
-  </EntityUsage>
-  <EntityUsage
-    Name="TblStdReg"
-    Entity="model.ERP.EO.TblStdReg"
-    Association="model.ERP.EO.FkTblFeeGenDetailFkAssoc"
-    AssociationEnd="model.ERP.EO.FkTblFeeGenDetailFkAssoc.TblStdReg"
-    SourceUsage="model.ERP.VO.TblFeeGenDetailView.TblFeeGenDetail"
-    ReadOnly="true"
-    Reference="true"
-    DeleteParticipant="false"
-    JoinType="LEFT OUTER JOIN">
-    <DesignTime>
-      <AttrArray Name="_dstAttributes">
-        <Item Value="model.ERP.EO.TblStdReg.Id"/>
-      </AttrArray>
-      <AttrArray Name="_srcAttributes">
-        <Item Value="model.ERP.EO.TblFeeGenDetail.StdRegId"/>
       </AttrArray>
     </DesignTime>
   </EntityUsage>
@@ -283,30 +245,6 @@
     EntityUsage="TblFeeGenDetail"
     AliasName="UPDATED_BY"/>
   <ViewAttribute
-    Name="GradeId"
-    PrecisionRule="true"
-    EntityAttrName="GradeId"
-    EntityUsage="TblFeeGenMaster"
-    AliasName="GRADE_ID"/>
-  <ViewAttribute
-    Name="Id1"
-    PrecisionRule="true"
-    EntityAttrName="Id"
-    EntityUsage="TblFeeGenMaster"
-    AliasName="ID1"/>
-  <ViewAttribute
-    Name="AcadYearId"
-    PrecisionRule="true"
-    EntityAttrName="AcadYearId"
-    EntityUsage="TblFeeGenMaster"
-    AliasName="ACAD_YEAR_ID"/>
-  <ViewAttribute
-    Name="SectionsId"
-    PrecisionRule="true"
-    EntityAttrName="SectionsId"
-    EntityUsage="TblFeeGenMaster"
-    AliasName="SECTIONS_ID"/>
-  <ViewAttribute
     Name="TermsId"
     PrecisionRule="true"
     EntityAttrName="TermsId"
@@ -316,16 +254,10 @@
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
-          Value="combo"/>
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
-  <ViewAttribute
-    Name="TermsId1"
-    PrecisionRule="true"
-    EntityAttrName="TermsId"
-    EntityUsage="TblFeeGenMaster"
-    AliasName="TERMS_ID1"/>
   <ViewAttribute
     Name="GradeId1"
     PrecisionRule="true"
@@ -338,24 +270,6 @@
     EntityAttrName="AcadYearId"
     EntityUsage="TblFeeGenDetail"
     AliasName="ACAD_YEAR_ID1"/>
-  <ViewAttribute
-    Name="EmirArea"
-    PrecisionRule="true"
-    EntityAttrName="EmirArea"
-    EntityUsage="TblStdReg"
-    AliasName="EMIR_AREA"/>
-  <ViewAttribute
-    Name="Id2"
-    PrecisionRule="true"
-    EntityAttrName="Id"
-    EntityUsage="TblStdReg"
-    AliasName="ID2"/>
-  <ViewAttribute
-    Name="TransReq"
-    PrecisionRule="true"
-    EntityAttrName="TransReq"
-    EntityUsage="TblStdReg"
-    AliasName="TRANS_REQ"/>
   <ViewAttribute
     Name="JoinDate"
     PrecisionRule="true"
@@ -374,6 +288,30 @@
     EntityAttrName="TransReq"
     EntityUsage="TblFeeGenDetail"
     AliasName="TRANS_REQ1"/>
+  <ViewAttribute
+    Name="SectionsId"
+    PrecisionRule="true"
+    EntityAttrName="SectionsId"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="SECTIONS_ID"/>
+  <ViewAttribute
+    Name="Id1"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="ID1"/>
+  <ViewAttribute
+    Name="AcadYearId"
+    PrecisionRule="true"
+    EntityAttrName="AcadYearId"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="ACAD_YEAR_ID"/>
+  <ViewAttribute
+    Name="GradeId"
+    PrecisionRule="true"
+    EntityAttrName="GradeId"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="GRADE_ID"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>
