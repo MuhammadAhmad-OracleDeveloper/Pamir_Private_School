@@ -180,6 +180,27 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_FEE_GEN_DETAIL"/>
+  <Attribute
+    Name="FeeMonth"
+    ColumnName="FEE_MONTH"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FEE_GEN_DETAIL"/>
+  <Attribute
+    Name="VType"
+    Precision="1"
+    ColumnName="V_TYPE"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_FEE_GEN_DETAIL"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblFeeGenDetailD"
     Association="model.ERP.EO.FkFeeGenDetailDGenDetailAssoc"

@@ -10,9 +10,13 @@
   CustomQuery="false"
   PageIterMode="Full"
   SelectList="TblFeeGenMaster.ID, 
-       TblFeeGenMaster.TERMS_ID"
-  FromList="TBL_FEE_GEN_MASTER TblFeeGenMaster"
-  Where="TblFeeGenMaster.ID = :getMasterID">
+       TblFeeGenMaster.TERMS_ID, 
+       TblFeeGenMaster.V_TYPE, 
+       TblTerms.TERM_NAME, 
+       TblTerms.ID AS ID1"
+  FromList="TBL_FEE_GEN_MASTER TblFeeGenMaster, TBL_TERMS TblTerms"
+  Where="TblFeeGenMaster.TERMS_ID = TblTerms.ID(+) 
+And TblFeeGenMaster.ID = :getMasterID">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -23,9 +27,32 @@
     Name="getMasterID"
     Kind="where"
     Type="java.math.BigDecimal"/>
+  <ViewAccessor
+    Name="Terms_Name_LOV1"
+    ViewObjectName="model.LOV.Terms_Name_LOV"
+    RowLevelBinds="true"/>
   <EntityUsage
     Name="TblFeeGenMaster"
     Entity="model.ERP.EO.TblFeeGenMaster"/>
+  <EntityUsage
+    Name="TblTerms"
+    Entity="model.ERP.EO.TblTerms"
+    Association="model.ERP.EO.FkTblFeeGenMasterTermsFkAssoc"
+    AssociationEnd="model.ERP.EO.FkTblFeeGenMasterTermsFkAssoc.TblTerms"
+    SourceUsage="model.LOV.Fee_Gen_Master_LOV.TblFeeGenMaster"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.ERP.EO.TblTerms.Id"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.ERP.EO.TblFeeGenMaster.TermsId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="Id"
     PrecisionRule="true"
@@ -38,6 +65,27 @@
     EntityAttrName="TermsId"
     EntityUsage="TblFeeGenMaster"
     AliasName="TERMS_ID"/>
+  <ViewAttribute
+    Name="VType"
+    PrecisionRule="true"
+    EntityAttrName="VType"
+    EntityUsage="TblFeeGenMaster"
+    AliasName="V_TYPE"/>
+  <ViewAttribute
+    Name="TermName"
+    PrecisionRule="true"
+    EntityAttrName="TermName"
+    EntityUsage="TblTerms"
+    AliasName="TERM_NAME"/>
+  <ViewAttribute
+    Name="Id1"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblTerms"
+    AliasName="ID1"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id"/>
+  </AttrArray>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

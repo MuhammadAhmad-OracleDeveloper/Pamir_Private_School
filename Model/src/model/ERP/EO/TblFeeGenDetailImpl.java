@@ -43,6 +43,8 @@ public class TblFeeGenDetailImpl extends EntityImpl {
         JoinDate,
         TransReq,
         LookupDetailArea,
+        FeeMonth,
+        VType,
         TblFeeGenDetailD,
         TblFeeGenMaster,
         TblFeeGenDetailDisc,
@@ -92,6 +94,8 @@ public class TblFeeGenDetailImpl extends EntityImpl {
     public static final int JOINDATE = AttributesEnum.JoinDate.index();
     public static final int TRANSREQ = AttributesEnum.TransReq.index();
     public static final int LOOKUPDETAILAREA = AttributesEnum.LookupDetailArea.index();
+    public static final int FEEMONTH = AttributesEnum.FeeMonth.index();
+    public static final int VTYPE = AttributesEnum.VType.index();
     public static final int TBLFEEGENDETAILD = AttributesEnum.TblFeeGenDetailD.index();
     public static final int TBLFEEGENMASTER = AttributesEnum.TblFeeGenMaster.index();
     public static final int TBLFEEGENDETAILDISC = AttributesEnum.TblFeeGenDetailDisc.index();
@@ -414,6 +418,38 @@ public class TblFeeGenDetailImpl extends EntityImpl {
      */
     public void setLookupDetailArea(BigDecimal value) {
         setAttributeInternal(LOOKUPDETAILAREA, value);
+    }
+
+    /**
+     * Gets the attribute value for FeeMonth, using the alias name FeeMonth.
+     * @return the value of FeeMonth
+     */
+    public BigDecimal getFeeMonth() {
+        return (BigDecimal) getAttributeInternal(FEEMONTH);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FeeMonth.
+     * @param value value to set the FeeMonth
+     */
+    public void setFeeMonth(BigDecimal value) {
+        setAttributeInternal(FEEMONTH, value);
+    }
+
+    /**
+     * Gets the attribute value for VType, using the alias name VType.
+     * @return the value of VType
+     */
+    public String getVType() {
+        return (String) getAttributeInternal(VTYPE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for VType.
+     * @param value value to set the VType
+     */
+    public void setVType(String value) {
+        setAttributeInternal(VTYPE, value);
     }
 
     /**

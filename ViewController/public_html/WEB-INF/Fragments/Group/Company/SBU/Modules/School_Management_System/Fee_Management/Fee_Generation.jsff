@@ -868,6 +868,19 @@
                                 <f:validator binding="#{row.bindings.StdRegId.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
+                            <af:column headerText="Fee Months" id="c48">
+                              <af:inputText value="#{row.bindings.FeeMonth.inputValue}"
+                                            label="#{bindings.TblFeeGenDetailView4.hints.FeeMonth.label}"
+                                            required="#{bindings.TblFeeGenDetailView4.hints.FeeMonth.mandatory}"
+                                            columns="#{bindings.TblFeeGenDetailView4.hints.FeeMonth.displayWidth}"
+                                            maximumLength="#{bindings.TblFeeGenDetailView4.hints.FeeMonth.precision}"
+                                            shortDesc="#{bindings.TblFeeGenDetailView4.hints.FeeMonth.tooltip}"
+                                            id="it58">
+                                <f:validator binding="#{row.bindings.FeeMonth.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblFeeGenDetailView4.hints.FeeMonth.format}"/>
+                              </af:inputText>
+                            </af:column>
                             <!--<af:column sortProperty="#{bindings.TblFeeGenDetailView4.hints.StdRegId.name}" filterable="true"
                              sortable="true" headerText="Student Regesteration" id="c24" align="left" width="300">
                              <f:facet name="filter">
@@ -1236,6 +1249,59 @@
                 </af:table>
                 
               </af:showDetailItem>
+              <af:showDetailItem text="Transportation" id="sdi8">
+                          <af:table value="#{bindings.TblFeeGenDTransView2.collectionModel}" var="row"
+                                    rows="#{bindings.TblFeeGenDTransView2.rangeSize}"
+                                    emptyText="#{bindings.TblFeeGenDTransView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblFeeGenDTransView2.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblFeeGenDTransView2.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblFeeGenDTransView2.rangeSize}"
+                                    filterModel="#{bindings.TblFeeGenDTransView2Query.queryDescriptor}"
+                                    filterVisible="true"
+                                    queryListener="#{bindings.TblFeeGenDTransView2Query.processQuery}" varStatus="vs"
+                                    id="t10">
+                            <af:column sortProperty="#{bindings.TblFeeGenDTransView2.hints.LookupDetailArea.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Area"
+                                       id="c47" width="235">
+                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.LookupDetailArea}"
+                                           id="it57" placeholder="Search ">
+                                          </af:inputText>
+                                    </f:facet>
+                              <af:selectOneChoice value="#{row.bindings.LookupDetailArea.inputValue}"
+                                                  label="#{row.bindings.LookupDetailArea.label}"
+                                                  required="#{bindings.TblFeeGenDTransView2.hints.LookupDetailArea.mandatory}"
+                                                  shortDesc="#{bindings.TblFeeGenDTransView2.hints.LookupDetailArea.tooltip}"
+                                                  id="soc23" readOnly="true">
+                                <f:selectItems value="#{row.bindings.LookupDetailArea.items}" id="si23"/>
+                                <f:validator binding="#{row.bindings.LookupDetailArea.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblFeeGenDTransView2.hints.TransFee.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Fee" id="c46"
+                                       width="-35">
+                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.TransFee}"
+                                           id="it56" placeholder="Search ">
+                                          </af:inputText>
+                                    </f:facet>
+                              <af:inputText value="#{row.bindings.TransFee.inputValue}"
+                                            label="#{bindings.TblFeeGenDTransView2.hints.TransFee.label}"
+                                            required="#{bindings.TblFeeGenDTransView2.hints.TransFee.mandatory}"
+                                            columns="#{bindings.TblFeeGenDTransView2.hints.TransFee.displayWidth}"
+                                            maximumLength="#{bindings.TblFeeGenDTransView2.hints.TransFee.precision}"
+                                            shortDesc="#{bindings.TblFeeGenDTransView2.hints.TransFee.tooltip}"
+                                            id="it32" readOnly="true">
+                                <f:validator binding="#{row.bindings.TransFee.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblFeeGenDTransView2.hints.TransFee.format}"/>
+                              </af:inputText>
+                            </af:column>
+                          </af:table>
+                        </af:showDetailItem>
             </af:panelTabbed>
          
                     </af:gridCell>

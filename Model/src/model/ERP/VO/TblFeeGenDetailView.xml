@@ -104,18 +104,21 @@
     Name="LOV_TermsId"
     ListVOName="Fee_Gen_Master_LOV1"
     ListRangeSize="-1"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    NullValueFlag="none"
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="TermsId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="VType"/>
+    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="TermsId"/>
+      <Item Value="VType"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Id"/>
+      <Item Value="TermName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -254,7 +257,7 @@
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
-          Value="choice"/>
+          Value="combo"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -312,6 +315,18 @@
     EntityAttrName="GradeId"
     EntityUsage="TblFeeGenMaster"
     AliasName="GRADE_ID"/>
+  <ViewAttribute
+    Name="FeeMonth"
+    PrecisionRule="true"
+    EntityAttrName="FeeMonth"
+    EntityUsage="TblFeeGenDetail"
+    AliasName="FEE_MONTH"/>
+  <ViewAttribute
+    Name="VType"
+    PrecisionRule="true"
+    EntityAttrName="VType"
+    EntityUsage="TblFeeGenDetail"
+    AliasName="V_TYPE"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>
