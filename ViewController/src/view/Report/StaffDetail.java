@@ -46,6 +46,11 @@ public class StaffDetail {
                 reportBean.setReportURLName("userid=ppss/ppss@orcl&domain=classicdomain&report=C:/PPSS_Reports/Visa_Expiry_Detail_Report&");
                 break;
 
+            case "StaffDetailReport":
+
+                reportBean.setReportURLName("userid=ppss/ppss@orcl&domain=classicdomain&report=C:/PPSS_Reports/Staff_Detail_Report&");
+                break;
+
             default:
                 showMessage("Please Select Report Type");
                 break;
