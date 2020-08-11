@@ -32,7 +32,7 @@
                           rowSelection="single" fetchSize="#{bindings.Std_Reg_Status1.rangeSize}"
                           filterModel="#{bindings.Std_Reg_Status1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.Std_Reg_Status1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="::b2">
+                          partialTriggers="::b2" scrollPolicy="page">
                   <af:column sortProperty="#{bindings.Std_Reg_Status1.hints.FirstName.name}" filterable="true"
                              sortable="true" headerText="First Name" id="c1" width="225">
                              <f:facet name="filter">
@@ -51,7 +51,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.Std_Reg_Status1.hints.LastName.name}" filterable="true"
-                             sortable="true" headerText="Last Name" id="c2" width="225">
+                             sortable="true" headerText="Last Name" id="c2" width="223">
                               <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.LastName}"
                                    id="it7" placeholder="Search ">
@@ -67,9 +67,35 @@
                       <f:validator binding="#{row.bindings.LastName.validator}"/>
                     </af:inputText>
                   </af:column>
-                  
+                  <af:column headerText="Grade" id="c9">
+                  <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.GradeId}"
+                                   id="it13" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}" label="#{row.bindings.GradeId.label}"
+                                        required="#{bindings.Std_Reg_Status1.hints.GradeId.mandatory}"
+                                        shortDesc="#{bindings.Std_Reg_Status1.hints.GradeId.tooltip}" id="soc2" autoSubmit="true" readOnly="true">
+                      <f:selectItems value="#{row.bindings.GradeId.items}" id="si2"/>
+                      <f:validator binding="#{row.bindings.GradeId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="Section" id="c10">
+                  <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.SectionsId}"
+                                   id="it14" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.SectionsId.inputValue}"
+                                        label="#{row.bindings.SectionsId.label}"
+                                        required="#{bindings.Std_Reg_Status1.hints.SectionsId.mandatory}"
+                                        shortDesc="#{bindings.Std_Reg_Status1.hints.SectionsId.tooltip}" id="soc3" readOnly="true">
+                      <f:selectItems value="#{row.bindings.SectionsId.items}" id="si3"/>
+                      <f:validator binding="#{row.bindings.SectionsId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
                   <af:column sortProperty="#{bindings.Std_Reg_Status1.hints.MotherEmirId.name}" filterable="true"
-                             sortable="true" headerText="Mother's Emirates ID" id="c4" width="150">
+                             sortable="true" headerText="Mother's Emirates ID" id="c4" width="152">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.MotherEmirId}"
                                    id="it8" placeholder="Search ">
@@ -136,7 +162,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.Std_Reg_Status1.hints.JoinDate.name}" filterable="true"
-                             sortable="true" headerText="Joining Date" id="c3">
+                             sortable="true" headerText="Joining Date" id="c3" width="100">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.Std_Reg_Status1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.JoinDate.value}"
                                     id="id1" placeholder="Search ">

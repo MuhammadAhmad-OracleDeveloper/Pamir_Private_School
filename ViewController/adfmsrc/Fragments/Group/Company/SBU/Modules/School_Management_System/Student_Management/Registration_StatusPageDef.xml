@@ -4,7 +4,7 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="Std_Reg_Status1" RangeSize="25" DataControl="AppModuleDataControl1" id="Std_Reg_Status1Iterator"/>
+    <iterator Binds="Std_Reg_Status1" RangeSize="12" DataControl="AppModuleDataControl1" id="Std_Reg_Status1Iterator"/>
     <searchRegion Binds="Std_Reg_Status1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="Std_Reg_Status1Query"/>
     <iterator Binds="StdRegSiblingsDetail1" RangeSize="25" DataControl="AppModuleDataControl1"
@@ -22,6 +22,8 @@
           <Item Value="EmirId"/>
           <Item Value="GuardEmirId"/>
           <Item Value="RegType"/>
+          <Item Value="GradeId"/>
+          <Item Value="SectionsId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
