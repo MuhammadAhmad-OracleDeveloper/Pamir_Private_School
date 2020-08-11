@@ -19,7 +19,8 @@
        TblStdReg.JOIN_DATE, 
        TblStdReg.ACAD_YEAR_ID, 
        TblStdReg.SECTIONS_ID, 
-       TblStdReg.GRADE_ID"
+       TblStdReg.GRADE_ID, 
+       TblStdReg.EMIR_ID"
   FromList="TBL_STD_REG TblStdReg"
   Where="TblStdReg.ACAD_YEAR_ID = :getAcadYearID    
 AND TblStdReg.SECTIONS_ID = :getSectionID     
@@ -111,6 +112,12 @@ AND TblStdReg.GRADE_ID = :getGradeID">
     EntityAttrName="GradeId"
     EntityUsage="TblStdReg"
     AliasName="GRADE_ID"/>
+  <ViewAttribute
+    Name="EmirId"
+    PrecisionRule="true"
+    EntityAttrName="EmirId"
+    EntityUsage="TblStdReg"
+    AliasName="EMIR_ID"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>
