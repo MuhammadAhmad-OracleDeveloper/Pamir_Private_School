@@ -585,18 +585,18 @@
                 </af:table>
                         </af:showDetailItem>
                         <af:showDetailItem text="Transportation" id="sdi6">
-                          <af:table value="#{bindings.TblFeeGenDTransView2.collectionModel}" var="row"
-                                    rows="#{bindings.TblFeeGenDTransView2.rangeSize}"
-                                    emptyText="#{bindings.TblFeeGenDTransView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          <af:table value="#{bindings.TblFeeGenDTransView3.collectionModel}" var="row"
+                                    rows="#{bindings.TblFeeGenDTransView3.rangeSize}"
+                                    emptyText="#{bindings.TblFeeGenDTransView3.viewable ? 'No data to display.' : 'Access Denied.'}"
                                     rowBandingInterval="0"
-                                    selectedRowKeys="#{bindings.TblFeeGenDTransView2.collectionModel.selectedRow}"
-                                    selectionListener="#{bindings.TblFeeGenDTransView2.collectionModel.makeCurrent}"
-                                    rowSelection="single" fetchSize="#{bindings.TblFeeGenDTransView2.rangeSize}"
-                                    filterModel="#{bindings.TblFeeGenDTransView2Query.queryDescriptor}"
+                                    selectedRowKeys="#{bindings.TblFeeGenDTransView3.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblFeeGenDTransView3.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblFeeGenDTransView3.rangeSize}"
+                                    filterModel="#{bindings.TblFeeGenDTransView3Query.queryDescriptor}"
                                     filterVisible="true"
-                                    queryListener="#{bindings.TblFeeGenDTransView2Query.processQuery}" varStatus="vs"
+                                    queryListener="#{bindings.TblFeeGenDTransView3Query.processQuery}" varStatus="vs"
                                     id="t9">
-                            <af:column sortProperty="#{bindings.TblFeeGenDTransView2.hints.LookupDetailArea.name}"
+                            <af:column sortProperty="#{bindings.TblFeeGenDTransView3.hints.LookupDetailArea.name}"
                                        filterable="true" sortable="true"
                                        headerText="Area"
                                        id="c44" width="235">
@@ -607,14 +607,14 @@
                                     </f:facet>
                               <af:selectOneChoice value="#{row.bindings.LookupDetailArea.inputValue}"
                                                   label="#{row.bindings.LookupDetailArea.label}"
-                                                  required="#{bindings.TblFeeGenDTransView2.hints.LookupDetailArea.mandatory}"
-                                                  shortDesc="#{bindings.TblFeeGenDTransView2.hints.LookupDetailArea.tooltip}"
+                                                  required="#{bindings.TblFeeGenDTransView3.hints.LookupDetailArea.mandatory}"
+                                                  shortDesc="#{bindings.TblFeeGenDTransView3.hints.LookupDetailArea.tooltip}"
                                                   id="soc22" readOnly="true">
                                 <f:selectItems value="#{row.bindings.LookupDetailArea.items}" id="si22"/>
                                 <f:validator binding="#{row.bindings.LookupDetailArea.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblFeeGenDTransView2.hints.TransFee.name}"
+                            <af:column sortProperty="#{bindings.TblFeeGenDTransView3.hints.TransFee.name}"
                                        filterable="true" sortable="true"
                                        headerText="Fee" id="c45"
                                        width="-35">
@@ -624,18 +624,19 @@
                                           </af:inputText>
                                     </f:facet>
                               <af:inputText value="#{row.bindings.TransFee.inputValue}"
-                                            label="#{bindings.TblFeeGenDTransView2.hints.TransFee.label}"
-                                            required="#{bindings.TblFeeGenDTransView2.hints.TransFee.mandatory}"
-                                            columns="#{bindings.TblFeeGenDTransView2.hints.TransFee.displayWidth}"
-                                            maximumLength="#{bindings.TblFeeGenDTransView2.hints.TransFee.precision}"
-                                            shortDesc="#{bindings.TblFeeGenDTransView2.hints.TransFee.tooltip}"
+                                            label="#{bindings.TblFeeGenDTransView3.hints.TransFee.label}"
+                                            required="#{bindings.TblFeeGenDTransView3.hints.TransFee.mandatory}"
+                                            columns="#{bindings.TblFeeGenDTransView3.hints.TransFee.displayWidth}"
+                                            maximumLength="#{bindings.TblFeeGenDTransView3.hints.TransFee.precision}"
+                                            shortDesc="#{bindings.TblFeeGenDTransView3.hints.TransFee.tooltip}"
                                             id="it53" readOnly="true">
                                 <f:validator binding="#{row.bindings.TransFee.validator}"/>
                                 <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblFeeGenDTransView2.hints.TransFee.format}"/>
+                                                  pattern="#{bindings.TblFeeGenDTransView3.hints.TransFee.format}"/>
                               </af:inputText>
                             </af:column>
                           </af:table>
+
                         </af:showDetailItem>
                       </af:panelTabbed>
                    
@@ -1250,18 +1251,18 @@
                 
               </af:showDetailItem>
               <af:showDetailItem text="Transportation" id="sdi8">
-                          <af:table value="#{bindings.TblFeeGenDTransView2.collectionModel}" var="row"
-                                    rows="#{bindings.TblFeeGenDTransView2.rangeSize}"
-                                    emptyText="#{bindings.TblFeeGenDTransView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          <af:table value="#{bindings.TblFeeGenDTransView4.collectionModel}" var="row"
+                                    rows="#{bindings.TblFeeGenDTransView4.rangeSize}"
+                                    emptyText="#{bindings.TblFeeGenDTransView4.viewable ? 'No data to display.' : 'Access Denied.'}"
                                     rowBandingInterval="0"
-                                    selectedRowKeys="#{bindings.TblFeeGenDTransView2.collectionModel.selectedRow}"
-                                    selectionListener="#{bindings.TblFeeGenDTransView2.collectionModel.makeCurrent}"
-                                    rowSelection="single" fetchSize="#{bindings.TblFeeGenDTransView2.rangeSize}"
-                                    filterModel="#{bindings.TblFeeGenDTransView2Query.queryDescriptor}"
+                                    selectedRowKeys="#{bindings.TblFeeGenDTransView4.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblFeeGenDTransView4.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblFeeGenDTransView4.rangeSize}"
+                                    filterModel="#{bindings.TblFeeGenDTransView4Query.queryDescriptor}"
                                     filterVisible="true"
-                                    queryListener="#{bindings.TblFeeGenDTransView2Query.processQuery}" varStatus="vs"
+                                    queryListener="#{bindings.TblFeeGenDTransView4Query.processQuery}" varStatus="vs"
                                     id="t10">
-                            <af:column sortProperty="#{bindings.TblFeeGenDTransView2.hints.LookupDetailArea.name}"
+                            <af:column sortProperty="#{bindings.TblFeeGenDTransView4.hints.LookupDetailArea.name}"
                                        filterable="true" sortable="true"
                                        headerText="Area"
                                        id="c47" width="235">
@@ -1272,14 +1273,14 @@
                                     </f:facet>
                               <af:selectOneChoice value="#{row.bindings.LookupDetailArea.inputValue}"
                                                   label="#{row.bindings.LookupDetailArea.label}"
-                                                  required="#{bindings.TblFeeGenDTransView2.hints.LookupDetailArea.mandatory}"
-                                                  shortDesc="#{bindings.TblFeeGenDTransView2.hints.LookupDetailArea.tooltip}"
+                                                  required="#{bindings.TblFeeGenDTransView4.hints.LookupDetailArea.mandatory}"
+                                                  shortDesc="#{bindings.TblFeeGenDTransView4.hints.LookupDetailArea.tooltip}"
                                                   id="soc23" readOnly="true">
                                 <f:selectItems value="#{row.bindings.LookupDetailArea.items}" id="si23"/>
                                 <f:validator binding="#{row.bindings.LookupDetailArea.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblFeeGenDTransView2.hints.TransFee.name}"
+                            <af:column sortProperty="#{bindings.TblFeeGenDTransView4.hints.TransFee.name}"
                                        filterable="true" sortable="true"
                                        headerText="Fee" id="c46"
                                        width="-35">
@@ -1289,18 +1290,19 @@
                                           </af:inputText>
                                     </f:facet>
                               <af:inputText value="#{row.bindings.TransFee.inputValue}"
-                                            label="#{bindings.TblFeeGenDTransView2.hints.TransFee.label}"
-                                            required="#{bindings.TblFeeGenDTransView2.hints.TransFee.mandatory}"
-                                            columns="#{bindings.TblFeeGenDTransView2.hints.TransFee.displayWidth}"
-                                            maximumLength="#{bindings.TblFeeGenDTransView2.hints.TransFee.precision}"
-                                            shortDesc="#{bindings.TblFeeGenDTransView2.hints.TransFee.tooltip}"
+                                            label="#{bindings.TblFeeGenDTransView4.hints.TransFee.label}"
+                                            required="#{bindings.TblFeeGenDTransView4.hints.TransFee.mandatory}"
+                                            columns="#{bindings.TblFeeGenDTransView4.hints.TransFee.displayWidth}"
+                                            maximumLength="#{bindings.TblFeeGenDTransView4.hints.TransFee.precision}"
+                                            shortDesc="#{bindings.TblFeeGenDTransView4.hints.TransFee.tooltip}"
                                             id="it32" readOnly="true">
                                 <f:validator binding="#{row.bindings.TransFee.validator}"/>
                                 <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblFeeGenDTransView2.hints.TransFee.format}"/>
+                                                  pattern="#{bindings.TblFeeGenDTransView4.hints.TransFee.format}"/>
                               </af:inputText>
                             </af:column>
                           </af:table>
+ 
                         </af:showDetailItem>
             </af:panelTabbed>
          

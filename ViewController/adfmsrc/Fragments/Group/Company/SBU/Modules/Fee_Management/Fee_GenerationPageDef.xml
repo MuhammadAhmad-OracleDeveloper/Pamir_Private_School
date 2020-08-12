@@ -38,10 +38,14 @@
               id="TblFeeGenDetailDiscView3Iterator"/>
     <searchRegion Binds="TblFeeGenDetailDiscView3Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFeeGenDetailDiscView3Query"/>
-    <iterator Binds="TblFeeGenDTransView2" RangeSize="25" DataControl="AppModuleDataControl1"
-              id="TblFeeGenDTransView2Iterator"/>
-    <searchRegion Binds="TblFeeGenDTransView2Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFeeGenDTransView2Query"/>
+    <iterator Binds="TblFeeGenDTransView3" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblFeeGenDTransView3Iterator"/>
+    <searchRegion Binds="TblFeeGenDTransView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFeeGenDTransView3Query"/>
+    <iterator Binds="TblFeeGenDTransView4" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblFeeGenDTransView4Iterator"/>
+    <searchRegion Binds="TblFeeGenDTransView4Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFeeGenDTransView4Query"/>
   </executables>
   <bindings>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
@@ -199,11 +203,23 @@
             Action="iteratorExecute"/>
     <action IterBinding="TblFeeGenDetailView4Iterator" id="Delete2" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
-    <tree IterBinding="TblFeeGenDTransView2Iterator" id="TblFeeGenDTransView2">
-      <nodeDefinition DefName="model.ERP.VO.TblFeeGenDTransView" Name="TblFeeGenDTransView20">
+    <tree IterBinding="TblFeeGenDTransView3Iterator" id="TblFeeGenDTransView3">
+      <nodeDefinition DefName="model.ERP.VO.TblFeeGenDTransView" Name="TblFeeGenDTransView30">
         <AttrNames>
+          <Item Value="Id"/>
           <Item Value="LookupDetailArea"/>
           <Item Value="TransFee"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblFeeGenDTransView4Iterator" id="TblFeeGenDTransView4">
+      <nodeDefinition DefName="model.ERP.VO.TblFeeGenDTransView" Name="TblFeeGenDTransView40">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="LookupDetailArea"/>
+          <Item Value="TransFee"/>
+          <Item Value="Ast"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

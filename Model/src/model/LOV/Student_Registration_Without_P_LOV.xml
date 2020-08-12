@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Student_Registration_Without_P_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblStdReg.ID, 
+       TblStdReg.FIRST_NAME, 
+       TblStdReg.LAST_NAME, 
+       TblStdReg.FATHER_NAME, 
+       TblStdReg.ENROLL_NO, 
+       TblStdReg.AST"
+  FromList="TBL_STD_REG TblStdReg"
+  Where="TblStdReg.AST='Y'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Student_Registration_Without_P_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblStdReg"
+    Entity="model.ERP.EO.TblStdReg"/>
+  <ViewAttribute
+    Name="Id"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblStdReg"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="FirstName"
+    PrecisionRule="true"
+    EntityAttrName="FirstName"
+    EntityUsage="TblStdReg"
+    AliasName="FIRST_NAME"/>
+  <ViewAttribute
+    Name="LastName"
+    PrecisionRule="true"
+    EntityAttrName="LastName"
+    EntityUsage="TblStdReg"
+    AliasName="LAST_NAME"/>
+  <ViewAttribute
+    Name="FatherName"
+    PrecisionRule="true"
+    EntityAttrName="FatherName"
+    EntityUsage="TblStdReg"
+    AliasName="FATHER_NAME"/>
+  <ViewAttribute
+    Name="EnrollNo"
+    PrecisionRule="true"
+    EntityAttrName="EnrollNo"
+    EntityUsage="TblStdReg"
+    AliasName="ENROLL_NO"/>
+  <ViewAttribute
+    Name="Ast"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblStdReg"
+    AliasName="AST"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>
