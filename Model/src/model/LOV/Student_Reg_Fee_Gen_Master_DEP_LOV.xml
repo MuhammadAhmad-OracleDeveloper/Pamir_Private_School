@@ -22,9 +22,10 @@
        TblStdReg.GRADE_ID, 
        TblStdReg.EMIR_ID"
   FromList="TBL_STD_REG TblStdReg"
-  Where="TblStdReg.ACAD_YEAR_ID = :getAcadYearID    
-AND TblStdReg.SECTIONS_ID = :getSectionID     
-AND TblStdReg.GRADE_ID = :getGradeID">
+  Where="TblStdReg.ACAD_YEAR_ID = :getAcadYearID      
+AND TblStdReg.SECTIONS_ID = :getSectionID       
+AND TblStdReg.GRADE_ID = :getGradeID  
+AND TblStdReg.REG_TYPE = 'P'">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
