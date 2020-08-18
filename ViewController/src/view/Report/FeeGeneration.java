@@ -10,6 +10,8 @@ import view.DatabaseConnection.DatabaseConnection;
 public class FeeGeneration {
     private RichSelectOneChoice format_type;
     private static String gotFormat = "";
+    private RichSelectOneChoice report_type;
+    private static String selectedReportType = "";
 
     public FeeGeneration() {
         System.out.println("Fee Generation Report");
@@ -18,6 +20,7 @@ public class FeeGeneration {
     public String get_report() {
         // Add event code here...
         gotFormat = (String)this.getFormat_type().getValue();
+        selectedReportType = (String) this.getReport_type().getValue();
         
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
@@ -25,7 +28,26 @@ public class FeeGeneration {
         if (gotFormat == "") {
             showMessage("Please Select Report Format");
         } else { 
-         reportBean.setReportURLName("userid=ppss/ppss@orcl&domain=classicdomain&report=C:/PPSS_Reports/Fee_Generate_Detail_Report&");
+            
+            
+         
+            switch (selectedReportType) {
+            case "FeeGenerateDetail":
+
+                reportBean.setReportURLName("userid=ppss/ppss@orcl&domain=classicdomain&report=C:/PPSS_Reports/Fee_Generate_Detail_Report&");
+                break;
+
+            case "StudentFeeDetail":
+
+                reportBean.setReportURLName("userid=ppss/ppss@orcl&domain=classicdomain&report=C:/PPSS_Reports/Fee_Generate_Detail_Report&");
+                break;
+
+            default:
+                showMessage("Please Select Report Type");
+                break;
+
+            }
+        
         } 
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                         "CACHE"); // which will be one of the [cashe - file - mail - printer]
@@ -58,5 +80,13 @@ public class FeeGeneration {
 
     public RichSelectOneChoice getFormat_type() {
         return format_type;
+    }
+
+    public void setReport_type(RichSelectOneChoice report_type) {
+        this.report_type = report_type;
+    }
+
+    public RichSelectOneChoice getReport_type() {
+        return report_type;
     }
 }
