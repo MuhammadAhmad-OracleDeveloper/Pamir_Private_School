@@ -10,6 +10,10 @@
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblRegFeeRecView1Query"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblRegFeeRecDView2" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblRegFeeRecDView2Iterator"/>
+    <searchRegion Binds="TblRegFeeRecDView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblRegFeeRecDView2Query"/>
   </executables>
   <bindings>
     <tree IterBinding="TblRegFeeRecView1Iterator" id="TblRegFeeRecView1">
@@ -19,6 +23,9 @@
           <Item Value="Dated"/>
           <Item Value="StdRegId"/>
           <Item Value="Ast"/>
+          <Item Value="AcadYearId"/>
+          <Item Value="GradeId"/>
+          <Item Value="SectionsId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -39,5 +46,23 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <tree IterBinding="TblRegFeeRecDView2Iterator" id="TblRegFeeRecDView2">
+      <nodeDefinition DefName="model.ERP.VO.TblRegFeeRecDView" Name="TblRegFeeRecDView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="RecType"/>
+          <Item Value="Amount"/>
+          <Item Value="ChqNo"/>
+          <Item Value="ChqDate"/>
+          <Item Value="Bank"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblRegFeeRecDView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblRegFeeRecDView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblRegFeeRecDView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

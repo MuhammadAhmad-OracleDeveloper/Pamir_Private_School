@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="Student_Detail_TaskFlow">
+    <default-activity>Student_Detail</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__1">
+      <managed-bean-name>StudentDetailBean</managed-bean-name>
+      <managed-bean-class>view.Report.StudentDetail</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
+    <view id="Student_Detail">
+      <page>/WEB-INF/Fragments/Group/Company/SBU/Modules/School_Management_System/Reports/Student_Detail.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

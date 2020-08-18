@@ -7,20 +7,18 @@ import oracle.adf.view.rich.component.rich.input.RichSelectOneChoice;
 
 import view.DatabaseConnection.DatabaseConnection;
 
-public class FeeGeneration {
+public class StudentDetail {
     private RichSelectOneChoice format_type;
     private static String gotFormat = "";
-    private RichSelectOneChoice report_type;
-    private static String selectedReportType = "";
-
-    public FeeGeneration() {
-        System.out.println("Fee Generation Report");
+//    private RichSelectOneChoice report_type;
+//    private static String selectedReportType = "";
+    public StudentDetail() {
     }
 
     public String get_report() {
         // Add event code here...
         gotFormat = (String)this.getFormat_type().getValue();
-        selectedReportType = (String) this.getReport_type().getValue();
+//        selectedReportType = (String) this.getReport_type().getValue();
         
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
@@ -28,26 +26,9 @@ public class FeeGeneration {
         if (gotFormat == "") {
             showMessage("Please Select Report Format");
         } else { 
-            
-            
-         
-            switch (selectedReportType) {
-            case "FeeGenerateDetail":
-
-                reportBean.setReportURLName("userid=ppss/ppss@orcl&domain=classicdomain&report=C:/PPSS_Reports/Fee_Generate_Detail_Report&");
-                break;
-
-            case "StudentFeeDetail":
-
-                reportBean.setReportURLName("userid=ppss/ppss@orcl&domain=classicdomain&report=C:/PPSS_Reports/STD_Fee_Detail&");
-                break;
-
-            default:
-                showMessage("Please Select Report Type");
-                break;
-
-            }
         
+                reportBean.setReportURLName("userid=ppss/ppss@orcl&domain=classicdomain&report=C:/PPSS_Reports/Student_Registration_Detail_Report&");
+    
         } 
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                         "CACHE"); // which will be one of the [cashe - file - mail - printer]
@@ -82,11 +63,11 @@ public class FeeGeneration {
         return format_type;
     }
 
-    public void setReport_type(RichSelectOneChoice report_type) {
-        this.report_type = report_type;
-    }
-
-    public RichSelectOneChoice getReport_type() {
-        return report_type;
-    }
+//    public void setReport_type(RichSelectOneChoice report_type) {
+//        this.report_type = report_type;
+//    }
+//
+//    public RichSelectOneChoice getReport_type() {
+//        return report_type;
+//    }
 }
