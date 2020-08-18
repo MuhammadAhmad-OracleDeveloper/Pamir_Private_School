@@ -40,58 +40,6 @@
     ColumnType="NUMBER"
     TableName="TBL_FEE_REC"/>
   <Attribute
-    Name="RecType"
-    Precision="3"
-    ColumnName="REC_TYPE"
-    SQLType="CHAR"
-    Type="java.lang.String"
-    ColumnType="CHAR"
-    TableName="TBL_FEE_REC"
-    RetrievedOnUpdate="true"
-    RetrievedOnInsert="true">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="3"/>
-    </DesignTime>
-  </Attribute>
-  <Attribute
-    Name="Amount"
-    ColumnName="AMOUNT"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_FEE_REC"/>
-  <Attribute
-    Name="ChqNo"
-    Precision="50"
-    ColumnName="CHQ_NO"
-    SQLType="VARCHAR"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    TableName="TBL_FEE_REC">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="50"/>
-    </DesignTime>
-  </Attribute>
-  <Attribute
-    Name="ChqDate"
-    ColumnName="CHQ_DATE"
-    SQLType="DATE"
-    Type="java.sql.Timestamp"
-    ColumnType="DATE"
-    TableName="TBL_FEE_REC"/>
-  <Attribute
-    Name="Bank"
-    Precision="50"
-    ColumnName="BANK"
-    SQLType="VARCHAR"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    TableName="TBL_FEE_REC">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="50"/>
-    </DesignTime>
-  </Attribute>
-  <Attribute
     Name="Remarks"
     Precision="50"
     ColumnName="REMARKS"
@@ -162,6 +110,13 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FEE_REC"/>
+  <AccessorAttribute
+    Name="TblFeeRecD"
+    Association="model.ERP.EO.FkTblFeeRecFkAssoc"
+    AssociationEnd="model.ERP.EO.FkTblFeeRecFkAssoc.TblFeeRecD"
+    AssociationOtherEnd="model.ERP.EO.FkTblFeeRecFkAssoc.TblFeeRec"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkFeeRec"
     PrimaryKey="true">

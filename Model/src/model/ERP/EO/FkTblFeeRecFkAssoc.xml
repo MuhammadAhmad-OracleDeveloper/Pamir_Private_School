@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkTblFeeRecFkAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblFeeRec"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.EO.TblFeeRec"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblFeeRec"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblFeeRec.PkFeeRec"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblFeeRec.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblFeeRecD"
+    Cardinality="-1"
+    Owner="model.ERP.EO.TblFeeRecD">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblFeeRecD"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblFeeRecD.fk_TblFeeRecD"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblFeeRecD.FeeRecId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

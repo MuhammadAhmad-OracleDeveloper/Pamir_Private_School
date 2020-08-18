@@ -7,6 +7,7 @@ import java.sql.Timestamp;
 import oracle.adf.share.ADFContext;
 
 import oracle.jbo.Key;
+import oracle.jbo.RowIterator;
 import oracle.jbo.domain.Number;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.EntityImpl;
@@ -25,11 +26,6 @@ public class TblFeeRecImpl extends EntityImpl {
         Id,
         Dated,
         FeeGenDetailId,
-        RecType,
-        Amount,
-        ChqNo,
-        ChqDate,
-        Bank,
         Remarks,
         Ast,
         CreatedDate,
@@ -37,7 +33,8 @@ public class TblFeeRecImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         CompanySbuId,
-        GroupCompanyId;
+        GroupCompanyId,
+        TblFeeRecD;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -65,11 +62,6 @@ public class TblFeeRecImpl extends EntityImpl {
     public static final int ID = AttributesEnum.Id.index();
     public static final int DATED = AttributesEnum.Dated.index();
     public static final int FEEGENDETAILID = AttributesEnum.FeeGenDetailId.index();
-    public static final int RECTYPE = AttributesEnum.RecType.index();
-    public static final int AMOUNT = AttributesEnum.Amount.index();
-    public static final int CHQNO = AttributesEnum.ChqNo.index();
-    public static final int CHQDATE = AttributesEnum.ChqDate.index();
-    public static final int BANK = AttributesEnum.Bank.index();
     public static final int REMARKS = AttributesEnum.Remarks.index();
     public static final int AST = AttributesEnum.Ast.index();
     public static final int CREATEDDATE = AttributesEnum.CreatedDate.index();
@@ -78,6 +70,7 @@ public class TblFeeRecImpl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int COMPANYSBUID = AttributesEnum.CompanySbuId.index();
     public static final int GROUPCOMPANYID = AttributesEnum.GroupCompanyId.index();
+    public static final int TBLFEERECD = AttributesEnum.TblFeeRecD.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -141,85 +134,6 @@ public class TblFeeRecImpl extends EntityImpl {
         setAttributeInternal(FEEGENDETAILID, value);
     }
 
-    /**
-     * Gets the attribute value for RecType, using the alias name RecType.
-     * @return the value of RecType
-     */
-    public String getRecType() {
-        return (String) getAttributeInternal(RECTYPE);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for RecType.
-     * @param value value to set the RecType
-     */
-    public void setRecType(String value) {
-        setAttributeInternal(RECTYPE, value);
-    }
-
-    /**
-     * Gets the attribute value for Amount, using the alias name Amount.
-     * @return the value of Amount
-     */
-    public BigDecimal getAmount() {
-        return (BigDecimal) getAttributeInternal(AMOUNT);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for Amount.
-     * @param value value to set the Amount
-     */
-    public void setAmount(BigDecimal value) {
-        setAttributeInternal(AMOUNT, value);
-    }
-
-    /**
-     * Gets the attribute value for ChqNo, using the alias name ChqNo.
-     * @return the value of ChqNo
-     */
-    public String getChqNo() {
-        return (String) getAttributeInternal(CHQNO);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for ChqNo.
-     * @param value value to set the ChqNo
-     */
-    public void setChqNo(String value) {
-        setAttributeInternal(CHQNO, value);
-    }
-
-    /**
-     * Gets the attribute value for ChqDate, using the alias name ChqDate.
-     * @return the value of ChqDate
-     */
-    public Timestamp getChqDate() {
-        return (Timestamp) getAttributeInternal(CHQDATE);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for ChqDate.
-     * @param value value to set the ChqDate
-     */
-    public void setChqDate(Timestamp value) {
-        setAttributeInternal(CHQDATE, value);
-    }
-
-    /**
-     * Gets the attribute value for Bank, using the alias name Bank.
-     * @return the value of Bank
-     */
-    public String getBank() {
-        return (String) getAttributeInternal(BANK);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for Bank.
-     * @param value value to set the Bank
-     */
-    public void setBank(String value) {
-        setAttributeInternal(BANK, value);
-    }
 
     /**
      * Gets the attribute value for Remarks, using the alias name Remarks.
@@ -331,6 +245,14 @@ public class TblFeeRecImpl extends EntityImpl {
      */
     public void setGroupCompanyId(Number value) {
         setAttributeInternal(GROUPCOMPANYID, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblFeeRecD() {
+        return (RowIterator) getAttributeInternal(TBLFEERECD);
     }
 
 

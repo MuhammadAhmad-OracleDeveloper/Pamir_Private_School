@@ -30,24 +30,6 @@
     ViewObjectName="model.LOV.Student_Registration_LOV"
     RowLevelBinds="true"/>
   <ListBinding
-    Name="LOV_RecType"
-    ListVOName="Recieve_Type_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="RecType"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="DBAttr"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="ViewAttr"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
     Name="LOV_Ast"
     ListVOName="Active_Name_LOV1"
     ListRangeSize="-1"
@@ -115,44 +97,6 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
-    Name="RecType"
-    PrecisionRule="true"
-    EntityAttrName="RecType"
-    EntityUsage="TblRegFeeRec"
-    AliasName="REC_TYPE"
-    LOVName="LOV_RecType">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
-  <ViewAttribute
-    Name="ChqNo"
-    PrecisionRule="true"
-    EntityAttrName="ChqNo"
-    EntityUsage="TblRegFeeRec"
-    AliasName="CHQ_NO"/>
-  <ViewAttribute
-    Name="ChqDate"
-    PrecisionRule="true"
-    EntityAttrName="ChqDate"
-    EntityUsage="TblRegFeeRec"
-    AliasName="CHQ_DATE"/>
-  <ViewAttribute
-    Name="Bank"
-    PrecisionRule="true"
-    EntityAttrName="Bank"
-    EntityUsage="TblRegFeeRec"
-    AliasName="BANK"/>
-  <ViewAttribute
-    Name="Amount"
-    PrecisionRule="true"
-    EntityAttrName="Amount"
-    EntityUsage="TblRegFeeRec"
-    AliasName="AMOUNT"/>
-  <ViewAttribute
     Name="Ast"
     PrecisionRule="true"
     EntityAttrName="Ast"
@@ -192,4 +136,27 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblRegFeeRec"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="AcadYearId"
+    PrecisionRule="true"
+    EntityAttrName="AcadYearId"
+    EntityUsage="TblRegFeeRec"
+    AliasName="ACAD_YEAR_ID"/>
+  <ViewAttribute
+    Name="GradeId"
+    PrecisionRule="true"
+    EntityAttrName="GradeId"
+    EntityUsage="TblRegFeeRec"
+    AliasName="GRADE_ID"/>
+  <ViewAttribute
+    Name="SectionsId"
+    PrecisionRule="true"
+    EntityAttrName="SectionsId"
+    EntityUsage="TblRegFeeRec"
+    AliasName="SECTIONS_ID"/>
+  <ViewLinkAccessor
+    Name="TblRegFeeRecDView"
+    ViewLink="model.ERP.VO.FkTblRegFeeRecDFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

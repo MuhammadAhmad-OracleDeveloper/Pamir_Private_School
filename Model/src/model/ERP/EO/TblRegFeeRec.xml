@@ -40,58 +40,6 @@
     ColumnType="NUMBER"
     TableName="TBL_REG_FEE_REC"/>
   <Attribute
-    Name="RecType"
-    Precision="3"
-    ColumnName="REC_TYPE"
-    SQLType="CHAR"
-    Type="java.lang.String"
-    ColumnType="CHAR"
-    TableName="TBL_REG_FEE_REC"
-    RetrievedOnUpdate="true"
-    RetrievedOnInsert="true">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="3"/>
-    </DesignTime>
-  </Attribute>
-  <Attribute
-    Name="ChqNo"
-    Precision="50"
-    ColumnName="CHQ_NO"
-    SQLType="VARCHAR"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    TableName="TBL_REG_FEE_REC">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="50"/>
-    </DesignTime>
-  </Attribute>
-  <Attribute
-    Name="ChqDate"
-    ColumnName="CHQ_DATE"
-    SQLType="DATE"
-    Type="java.sql.Timestamp"
-    ColumnType="DATE"
-    TableName="TBL_REG_FEE_REC"/>
-  <Attribute
-    Name="Bank"
-    Precision="50"
-    ColumnName="BANK"
-    SQLType="VARCHAR"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    TableName="TBL_REG_FEE_REC">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="50"/>
-    </DesignTime>
-  </Attribute>
-  <Attribute
-    Name="Amount"
-    ColumnName="AMOUNT"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_REG_FEE_REC"/>
-  <Attribute
     Name="Ast"
     Precision="1"
     ColumnName="AST"
@@ -150,6 +98,34 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_REG_FEE_REC"/>
+  <Attribute
+    Name="AcadYearId"
+    ColumnName="ACAD_YEAR_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_REG_FEE_REC"/>
+  <Attribute
+    Name="GradeId"
+    ColumnName="GRADE_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_REG_FEE_REC"/>
+  <Attribute
+    Name="SectionsId"
+    ColumnName="SECTIONS_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_REG_FEE_REC"/>
+  <AccessorAttribute
+    Name="TblRegFeeRecD"
+    Association="model.ERP.EO.FkTblRegFeeRecDFkAssoc"
+    AssociationEnd="model.ERP.EO.FkTblRegFeeRecDFkAssoc.TblRegFeeRecD"
+    AssociationOtherEnd="model.ERP.EO.FkTblRegFeeRecDFkAssoc.TblRegFeeRec"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkRegFeeRec"
     PrimaryKey="true">

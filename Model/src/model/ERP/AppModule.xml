@@ -958,6 +958,18 @@
   <ViewUsage
     Name="TblFeeGenDTransView4"
     ViewObjectName="model.ERP.VO.TblFeeGenDTransView"/>
+  <ViewUsage
+    Name="TblFeeRecDView1"
+    ViewObjectName="model.ERP.VO.TblFeeRecDView"/>
+  <ViewUsage
+    Name="TblRegFeeRecDView1"
+    ViewObjectName="model.ERP.VO.TblRegFeeRecDView"/>
+  <ViewUsage
+    Name="TblRegFeeRecDView2"
+    ViewObjectName="model.ERP.VO.TblRegFeeRecDView"/>
+  <ViewUsage
+    Name="TblFeeRecDView2"
+    ViewObjectName="model.ERP.VO.TblFeeRecDView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -1917,5 +1929,17 @@
     ViewLinkObjectName="model.ERP.VO.FKTblFeeGenDTransDetailFkLink"
     SrcViewUsageName="model.ERP.AppModule.TblFeeGenDetailView4"
     DstViewUsageName="model.ERP.AppModule.TblFeeGenDTransView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblRegFeeRecDFkLink1"
+    ViewLinkObjectName="model.ERP.VO.FkTblRegFeeRecDFkLink"
+    SrcViewUsageName="model.ERP.AppModule.TblRegFeeRecView1"
+    DstViewUsageName="model.ERP.AppModule.TblRegFeeRecDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblFeeRecFkLink1"
+    ViewLinkObjectName="model.ERP.VO.FkTblFeeRecFkLink"
+    SrcViewUsageName="model.ERP.AppModule.TblFeeRecView1"
+    DstViewUsageName="model.ERP.AppModule.TblFeeRecDView2"
     Reversed="false"/>
 </AppModule>
