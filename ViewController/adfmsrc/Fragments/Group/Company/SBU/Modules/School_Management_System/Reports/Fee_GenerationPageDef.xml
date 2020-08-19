@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Fee_GenerationPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.School_Management_System.Reports">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblRegFeeRecView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblRegFeeRecView1Iterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="TblRegFeeRecView1Iterator" StaticList="false" Uses="LOV_StdRegId" id="StdRegId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+  </bindings>
+</pageDefinition>

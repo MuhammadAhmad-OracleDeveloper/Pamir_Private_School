@@ -1,5 +1,7 @@
 package view.Report;
 
+import java.math.BigDecimal;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
@@ -12,6 +14,8 @@ public class StaffDetail {
     private static String gotFormat = "";
     private RichSelectOneChoice report_type;
     private static String selectedReportType = "";
+    private static BigDecimal gotstaff;
+    private RichSelectOneChoice staffID;
 
     public StaffDetail() {
         System.out.println("Staff Detail Report");
@@ -21,6 +25,7 @@ public class StaffDetail {
         // Add event code here...
         gotFormat = (String) this.getFormat_type().getValue();
         selectedReportType = (String) this.getReport_type().getValue();
+        gotstaff = (BigDecimal)this.getstaffID().getValue();
 
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
@@ -28,7 +33,10 @@ public class StaffDetail {
         if (gotFormat == "") {
             showMessage("Please Select Report Format");
         } else {
-
+            
+            if ( gotstaff  != null) {
+                reportBean.setReportParameter("P_Staff_id", gotstaff.toString());
+            }
 
             switch (selectedReportType) {
             case "MiscellaneousDocumentsDetailReport":
@@ -98,5 +106,13 @@ public class StaffDetail {
 
     public RichSelectOneChoice getReport_type() {
         return report_type;
+    }
+
+    public void setstaffID(RichSelectOneChoice staffID) {
+        this.staffID = staffID;
+    }
+
+    public RichSelectOneChoice getstaffID() {
+        return staffID;
     }
 }

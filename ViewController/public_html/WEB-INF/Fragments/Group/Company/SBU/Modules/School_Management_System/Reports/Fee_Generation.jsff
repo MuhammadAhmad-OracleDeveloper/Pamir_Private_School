@@ -16,9 +16,13 @@
                             <af:spacer width="20" height="10" id="s11"/>
                            
                             <af:spacer width="20" height="10" id="s12"/>
-                           
-                           
-
+                            <af:selectOneChoice label="#{bindings.StdRegId.label}"
+                                                binding="#{backingBeanScope.FeeGenerationBean.stdID}"
+                                                required="#{bindings.StdRegId.hints.mandatory}"
+                                                shortDesc="#{bindings.StdRegId.hints.tooltip}" id="soc1">
+                                <f:selectItems value="#{bindings.StdRegId.items}" id="si1"/>
+                                <f:validator binding="#{bindings.StdRegId.validator}"/>
+                            </af:selectOneChoice>
                         </af:panelGroupLayout>
                         <af:spacer width="20" height="30" id="s15"/>
                          <af:selectOneChoice label="Select Report Type" id="soc6" autoSubmit="true"

@@ -1,15 +1,23 @@
 package view.Report;
 
+import java.math.BigDecimal;
+
 import javax.faces.application.FacesMessage;
 
 import javax.faces.context.FacesContext;
 
+import javax.faces.event.ValueChangeEvent;
+
 import oracle.adf.view.rich.component.rich.input.RichSelectOneChoice;
+
+import oracle.jbo.domain.Number;
 
 import view.DatabaseConnection.DatabaseConnection;
 
 public class DiscountPolicy {
+    private static BigDecimal gotStudent;
     private RichSelectOneChoice format_type;
+    private RichSelectOneChoice stdID;
     private static String gotFormat = "";
 
     public DiscountPolicy() {
@@ -19,13 +27,25 @@ public class DiscountPolicy {
     public String get_report() {
         // Add event code here...
         gotFormat = (String)this.getFormat_type().getValue();
+        gotStudent = (BigDecimal)this.getstdID().getValue();
         
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
+       
+        
+        
         String url = "";
+        
+        
         if (gotFormat == "") {
             showMessage("Please Select Report Format");
         } else { 
+            
+            
+            if ( gotStudent  != null) {
+                reportBean.setReportParameter("P_Std_reg_id", gotStudent.toString());
+            }
+            
          reportBean.setReportURLName("userid=ppss/ppss@orcl&domain=classicdomain&report=C:/PPSS_Reports/Discount_Policy_Report&");
         } 
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
@@ -59,5 +79,14 @@ public class DiscountPolicy {
 
     public RichSelectOneChoice getFormat_type() {
         return format_type;
+    }
+
+
+    public void setstdID(RichSelectOneChoice stdID) {
+        this.stdID = stdID;
+    }
+
+    public RichSelectOneChoice getstdID() {
+        return stdID;
     }
 }

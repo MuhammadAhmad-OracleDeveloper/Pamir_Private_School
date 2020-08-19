@@ -1,5 +1,7 @@
 package view.Report;
 
+import java.math.BigDecimal;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
@@ -12,6 +14,8 @@ public class FeeGeneration {
     private static String gotFormat = "";
     private RichSelectOneChoice report_type;
     private static String selectedReportType = "";
+    private static BigDecimal gotStudent;
+    private RichSelectOneChoice stdID;
 
     public FeeGeneration() {
         System.out.println("Fee Generation Report");
@@ -21,6 +25,7 @@ public class FeeGeneration {
         // Add event code here...
         gotFormat = (String)this.getFormat_type().getValue();
         selectedReportType = (String) this.getReport_type().getValue();
+        gotStudent = (BigDecimal)this.getstdID().getValue();
         
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
@@ -29,7 +34,9 @@ public class FeeGeneration {
             showMessage("Please Select Report Format");
         } else { 
             
-            
+            if ( gotStudent  != null) {
+                reportBean.setReportParameter("P_Std_reg_id", gotStudent.toString());
+            }
          
             switch (selectedReportType) {
             case "FeeGenerateDetail":
@@ -88,5 +95,12 @@ public class FeeGeneration {
 
     public RichSelectOneChoice getReport_type() {
         return report_type;
+    }
+    public void setstdID(RichSelectOneChoice stdID) {
+        this.stdID = stdID;
+    }
+
+    public RichSelectOneChoice getstdID() {
+        return stdID;
     }
 }

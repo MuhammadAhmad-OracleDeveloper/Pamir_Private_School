@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Staff_DetailPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.School_Management_System.Reports">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblSectionStaffView4" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblSectionStaffView4Iterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="TblSectionStaffView4Iterator" StaticList="false" Uses="LOV_StaffId" id="StaffId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+  </bindings>
+</pageDefinition>
