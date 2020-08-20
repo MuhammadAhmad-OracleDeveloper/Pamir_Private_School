@@ -4,6 +4,10 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
+    <iterator Binds="TblGradeView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblGradeView1Iterator"/>
   </executables>
-  <bindings/>
+  <bindings>
+    <list IterBinding="TblGradeView1Iterator" StaticList="false" Uses="LOV_Id" id="Id" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
+  </bindings>
 </pageDefinition>

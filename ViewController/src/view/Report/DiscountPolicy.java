@@ -16,8 +16,10 @@ import view.DatabaseConnection.DatabaseConnection;
 
 public class DiscountPolicy {
     private static BigDecimal gotStudent;
+    private static BigDecimal gotGrade;
     private RichSelectOneChoice format_type;
     private RichSelectOneChoice stdID;
+    private RichSelectOneChoice gradeID;
     private static String gotFormat = "";
 
     public DiscountPolicy() {
@@ -28,6 +30,7 @@ public class DiscountPolicy {
         // Add event code here...
         gotFormat = (String)this.getFormat_type().getValue();
         gotStudent = (BigDecimal)this.getstdID().getValue();
+        gotGrade = (BigDecimal)this.getgradeID().getValue();
         
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
@@ -44,6 +47,9 @@ public class DiscountPolicy {
             
             if ( gotStudent  != null) {
                 reportBean.setReportParameter("P_Std_reg_id", gotStudent.toString());
+            }
+            if ( gotGrade  != null) {
+                reportBean.setReportParameter("P_Grade_id", gotGrade.toString());
             }
             
          reportBean.setReportURLName("userid=ppss/ppss@orcl&domain=classicdomain&report=C:/PPSS_Reports/Discount_Policy_Report&");
@@ -88,5 +94,12 @@ public class DiscountPolicy {
 
     public RichSelectOneChoice getstdID() {
         return stdID;
+    }
+    public void setgradeID(RichSelectOneChoice gradeID) {
+        this.gradeID = gradeID;
+    }
+
+    public RichSelectOneChoice getgradeID() {
+        return gradeID;
     }
 }

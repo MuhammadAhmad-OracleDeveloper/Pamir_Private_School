@@ -9,8 +9,13 @@
                 </af:gridRow>
                 <af:gridRow marginTop="5px" height="auto" id="gr2">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
-                    
-                       
+                        <af:selectOneChoice label="Grade"
+                                            binding="#{backingBeanScope.StudentDetailBean.gradeID}"
+                                            required="#{bindings.Id.hints.mandatory}"
+                                            shortDesc="#{bindings.Id.hints.tooltip}" id="soc1">
+                            <f:selectItems value="#{bindings.Id.items}" id="si1"/>
+                            <f:validator binding="#{bindings.Id.validator}"/>
+                        </af:selectOneChoice>
                         <af:spacer width="20" height="30" id="s7"/>
                         <af:panelGroupLayout id="pgl6">
                             <af:spacer width="20" height="10" id="s11"/>

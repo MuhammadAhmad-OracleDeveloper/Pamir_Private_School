@@ -14,14 +14,20 @@
                         <af:spacer width="20" height="30" id="s7"/>
                         <af:panelGroupLayout id="pgl6">
                             <af:spacer width="20" height="10" id="s11"/>
-                           
-                            <af:spacer width="20" height="10" id="s12"/>
-                            <af:selectOneChoice label="#{bindings.StdRegId.label}"
+                           <af:selectOneChoice  label="Student"
                                                 binding="#{backingBeanScope.FeeGenerationBean.stdID}"
-                                                required="#{bindings.StdRegId.hints.mandatory}"
-                                                shortDesc="#{bindings.StdRegId.hints.tooltip}" id="soc1">
-                                <f:selectItems value="#{bindings.StdRegId.items}" id="si1"/>
-                                <f:validator binding="#{bindings.StdRegId.validator}"/>
+                                                required="#{bindings.Id.hints.mandatory}"
+                                                shortDesc="#{bindings.Id.hints.tooltip}" id="soc1">
+                                <f:selectItems value="#{bindings.Id.items}" id="si1"/>
+                                <f:validator binding="#{bindings.Id.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer width="20" height="10" id="s12"/>
+                            <af:selectOneChoice label="Grade"
+                                                binding="#{backingBeanScope.FeeGenerationBean.gradeID}"
+                                                required="#{bindings.Id1.hints.mandatory}"
+                                                shortDesc="#{bindings.Id1.hints.tooltip}" id="soc2">
+                                <f:selectItems value="#{bindings.Id1.items}" id="si2"/>
+                                <f:validator binding="#{bindings.Id1.validator}"/>
                             </af:selectOneChoice>
                         </af:panelGroupLayout>
                         <af:spacer width="20" height="30" id="s15"/>

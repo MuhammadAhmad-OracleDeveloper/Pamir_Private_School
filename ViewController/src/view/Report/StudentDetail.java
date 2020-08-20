@@ -1,5 +1,7 @@
 package view.Report;
 
+import java.math.BigDecimal;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
@@ -10,6 +12,8 @@ import view.DatabaseConnection.DatabaseConnection;
 public class StudentDetail {
     private RichSelectOneChoice format_type;
     private static String gotFormat = "";
+    private static BigDecimal gotGrade;
+    private RichSelectOneChoice gradeID;
 //    private RichSelectOneChoice report_type;
 //    private static String selectedReportType = "";
     public StudentDetail() {
@@ -18,6 +22,7 @@ public class StudentDetail {
     public String get_report() {
         // Add event code here...
         gotFormat = (String)this.getFormat_type().getValue();
+        gotGrade = (BigDecimal)this.getgradeID().getValue();
 //        selectedReportType = (String) this.getReport_type().getValue();
         
         DatabaseConnection dbconnect = new DatabaseConnection();
@@ -26,6 +31,9 @@ public class StudentDetail {
         if (gotFormat == "") {
             showMessage("Please Select Report Format");
         } else { 
+            if ( gotGrade  != null) {
+                reportBean.setReportParameter("P_Grade_id", gotGrade.toString());
+            }
         
                 reportBean.setReportURLName("userid=ppss/ppss@orcl&domain=classicdomain&report=C:/PPSS_Reports/Student_Registration_Detail_Report&");
     
@@ -61,6 +69,13 @@ public class StudentDetail {
 
     public RichSelectOneChoice getFormat_type() {
         return format_type;
+    }
+    public void setgradeID(RichSelectOneChoice gradeID) {
+        this.gradeID = gradeID;
+    }
+
+    public RichSelectOneChoice getgradeID() {
+        return gradeID;
     }
 
 //    public void setReport_type(RichSelectOneChoice report_type) {

@@ -9,12 +9,12 @@
                 </af:gridRow>
                 <af:gridRow marginTop="5px" height="auto" id="gr2">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
-                        <af:selectOneChoice label="#{bindings.StaffId.label}"
-                                                binding="#{backingBeanScope.StaffDetailBean.staffID}"
-                                            required="#{bindings.StaffId.hints.mandatory}"
-                                            shortDesc="#{bindings.StaffId.hints.tooltip}" id="soc1">
-                            <f:selectItems value="#{bindings.StaffId.items}" id="si2"/>
-                            <f:validator binding="#{bindings.StaffId.validator}"/>
+                        <af:selectOneChoice label="#{bindings.Id.label}"
+                                            binding="#{backingBeanScope.StaffDetailBean.staffID}"
+                                            required="#{bindings.Id.hints.mandatory}"
+                                            shortDesc="#{bindings.Id.hints.tooltip}" id="soc1">
+                            <f:selectItems value="#{bindings.Id.items}" id="si2"/>
+                            <f:validator binding="#{bindings.Id.validator}"/>
                         </af:selectOneChoice>
                         <af:spacer width="20" height="30" id="s7"/>
                         <af:panelGroupLayout id="pgl6">

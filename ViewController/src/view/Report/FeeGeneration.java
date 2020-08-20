@@ -16,6 +16,9 @@ public class FeeGeneration {
     private static String selectedReportType = "";
     private static BigDecimal gotStudent;
     private RichSelectOneChoice stdID;
+    private static BigDecimal gotGrade;
+    private RichSelectOneChoice gradeID;
+    
 
     public FeeGeneration() {
         System.out.println("Fee Generation Report");
@@ -26,6 +29,7 @@ public class FeeGeneration {
         gotFormat = (String)this.getFormat_type().getValue();
         selectedReportType = (String) this.getReport_type().getValue();
         gotStudent = (BigDecimal)this.getstdID().getValue();
+        gotGrade = (BigDecimal)this.getgradeID().getValue();
         
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
@@ -36,6 +40,9 @@ public class FeeGeneration {
             
             if ( gotStudent  != null) {
                 reportBean.setReportParameter("P_Std_reg_id", gotStudent.toString());
+            }
+            if ( gotGrade  != null) {
+                reportBean.setReportParameter("P_Grade_id", gotGrade.toString());
             }
          
             switch (selectedReportType) {
@@ -102,5 +109,12 @@ public class FeeGeneration {
 
     public RichSelectOneChoice getstdID() {
         return stdID;
+    }
+    public void setgradeID(RichSelectOneChoice gradeID) {
+        this.gradeID = gradeID;
+    }
+
+    public RichSelectOneChoice getgradeID() {
+        return gradeID;
     }
 }

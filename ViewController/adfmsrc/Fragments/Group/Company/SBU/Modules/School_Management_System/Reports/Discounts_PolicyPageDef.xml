@@ -4,11 +4,13 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TblRegFeeRecView1" RangeSize="25" DataControl="AppModuleDataControl1"
-              id="TblRegFeeRecView1Iterator"/>
+    <iterator Binds="TblStdRegView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblStdRegView1Iterator"/>
+    <iterator Binds="TblGradeView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblGradeView1Iterator"/>
   </executables>
   <bindings>
-    <list IterBinding="TblRegFeeRecView1Iterator" StaticList="false" Uses="LOV_StdRegId" id="StdRegId"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStdRegView1Iterator" StaticList="false" Uses="LOV_Id" id="Id" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblGradeView1Iterator" StaticList="false" Uses="LOV_Id" id="Id1" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
