@@ -222,7 +222,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFeeGenDetailView3.hints.StdRegId.name}" filterable="true"
-                             sortable="true" headerText="Student Regesteration" id="c8" align="left" width="300">
+                             sortable="true" headerText="Student Registration" id="c8" align="left" width="300">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.StdRegId}"
                                    id="it15" placeholder="Search ">
@@ -858,7 +858,7 @@
                                 <f:validator binding="#{row.bindings.TermsId.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="Student Regesteration" id="c24"
+                            <af:column headerText="Student Registration" id="c24"
                                        width="218">
                               <af:selectOneChoice value="#{row.bindings.StdRegId.inputValue}"
                                                   label="#{row.bindings.StdRegId.label}"
@@ -882,140 +882,7 @@
                                                   pattern="#{bindings.TblFeeGenDetailView4.hints.FeeMonth.format}"/>
                               </af:inputText>
                             </af:column>
-                            <!--<af:column sortProperty="#{bindings.TblFeeGenDetailView4.hints.StdRegId.name}" filterable="true"
-                             sortable="true" headerText="Student Regesteration" id="c24" align="left" width="300">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.StdRegId}"
-                                   id="it32" placeholder="Search ">
-                                  </af:inputText>
-                            </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.StdRegId.inputValue}"
-                                        label="#{row.bindings.StdRegId.label}"
-                                        required="#{bindings.TblFeeGenDetailView4.hints.StdRegId.mandatory}"
-                                        shortDesc="#{bindings.TblFeeGenDetailView4.hints.StdRegId.tooltip}" id="soc15" 
-                                        contentStyle='text-align: left'>
-                      <f:selectItems value="#{row.bindings.StdRegId.items}" id="si15"/>
-                      <f:validator binding="#{row.bindings.StdRegId.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>-->
-                            <!--<af:column sortProperty="#{bindings.TblFeeGenDetailView4.hints.FoundMemberDisc.name}"
-                             filterable="true" sortable="true"
-                             headerText="Founding Member Discount" id="c9" align="left" width="150">
-                              <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.FoundMemberDisc}"
-                                   id="it16" placeholder="Search ">
-                                  </af:inputText>
-                            </f:facet>
-                    <af:inputText value="#{row.bindings.FoundMemberDisc.inputValue}"
-                                  label="#{bindings.TblFeeGenDetailView4.hints.FoundMemberDisc.label}"
-                                  required="#{bindings.TblFeeGenDetailView4.hints.FoundMemberDisc.mandatory}"
-                                  columns="#{bindings.TblFeeGenDetailView4.hints.FoundMemberDisc.displayWidth}"
-                                  maximumLength="#{bindings.TblFeeGenDetailView4.hints.FoundMemberDisc.precision}"
-                                  shortDesc="#{bindings.TblFeeGenDetailView4.hints.FoundMemberDisc.tooltip}" id="it3"               
-                                  contentStyle='text-align: right' readOnly="true">
-                      <f:validator binding="#{row.bindings.FoundMemberDisc.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblFeeGenDetailView4.hints.FoundMemberDisc.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblFeeGenDetailView4.hints.MgtDisc.name}" filterable="true"
-                             sortable="true" headerText="Management Discount" id="c10" align="left" width="150">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.MgtDisc}"
-                                   id="it17" placeholder="Search ">
-                                  </af:inputText>
-                            </f:facet>
-                    <af:inputText value="#{row.bindings.MgtDisc.inputValue}"
-                                  label="#{bindings.TblFeeGenDetailView4.hints.MgtDisc.label}"
-                                  required="#{bindings.TblFeeGenDetailView4.hints.MgtDisc.mandatory}"
-                                  columns="#{bindings.TblFeeGenDetailView4.hints.MgtDisc.displayWidth}"
-                                  maximumLength="#{bindings.TblFeeGenDetailView4.hints.MgtDisc.precision}"
-                                  shortDesc="#{bindings.TblFeeGenDetailView4.hints.MgtDisc.tooltip}" id="it4" 
-                                  readOnly="true" contentStyle='text-align: right'>
-                      <f:validator binding="#{row.bindings.MgtDisc.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblFeeGenDetailView4.hints.MgtDisc.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblFeeGenDetailView4.hints.ScholarDisc.name}" filterable="true"
-                             sortable="true" headerText="Scholarship Discount"
-                             id="c11" align="left" width="150">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.ScholarDisc}"
-                                   id="it18" placeholder="Search ">
-                                  </af:inputText>
-                            </f:facet>
-                    <af:inputText value="#{row.bindings.ScholarDisc.inputValue}"
-                                  label="#{bindings.TblFeeGenDetailView4.hints.ScholarDisc.label}"
-                                  required="#{bindings.TblFeeGenDetailView4.hints.ScholarDisc.mandatory}"
-                                  columns="#{bindings.TblFeeGenDetailView4.hints.ScholarDisc.displayWidth}"
-                                  maximumLength="#{bindings.TblFeeGenDetailView4.hints.ScholarDisc.precision}"
-                                  shortDesc="#{bindings.TblFeeGenDetailView4.hints.ScholarDisc.tooltip}" id="it5" 
-                                  readOnly="true" contentStyle='text-align: right'>
-                      <f:validator binding="#{row.bindings.ScholarDisc.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblFeeGenDetailView4.hints.ScholarDisc.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblFeeGenDetailView4.hints.SiblingDisc.name}" filterable="true"
-                             sortable="true" headerText="Sibling Discount"
-                             id="c12" align="left" width="110">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.SiblingDisc}"
-                                   id="it19" placeholder="Search ">
-                                  </af:inputText>
-                            </f:facet>
-                    <af:inputText value="#{row.bindings.SiblingDisc.inputValue}"
-                                  label="#{bindings.TblFeeGenDetailView4.hints.SiblingDisc.label}"
-                                  required="#{bindings.TblFeeGenDetailView4.hints.SiblingDisc.mandatory}"
-                                  columns="#{bindings.TblFeeGenDetailView4.hints.SiblingDisc.displayWidth}"
-                                  maximumLength="#{bindings.TblFeeGenDetailView4.hints.SiblingDisc.precision}"
-                                  shortDesc="#{bindings.TblFeeGenDetailView4.hints.SiblingDisc.tooltip}" id="it6" 
-                                  readOnly="true" contentStyle='text-align: right'>
-                      <f:validator binding="#{row.bindings.SiblingDisc.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblFeeGenDetailView4.hints.SiblingDisc.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblFeeGenDetailView4.hints.StaffDisc.name}" filterable="true"
-                             sortable="true" headerText="Staff Discount"
-                             id="c13" align="left" width="100">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.StaffDisc}"
-                                   id="it20" placeholder="Search ">
-                                  </af:inputText>
-                            </f:facet>
-                    <af:inputText value="#{row.bindings.StaffDisc.inputValue}"
-                                  label="#{bindings.TblFeeGenDetailView4.hints.StaffDisc.label}"
-                                  required="#{bindings.TblFeeGenDetailView4.hints.StaffDisc.mandatory}"
-                                  columns="#{bindings.TblFeeGenDetailView4.hints.StaffDisc.displayWidth}"
-                                  maximumLength="#{bindings.TblFeeGenDetailView4.hints.StaffDisc.precision}"
-                                  shortDesc="#{bindings.TblFeeGenDetailView4.hints.StaffDisc.tooltip}" id="it7" 
-                                  readOnly="true" contentStyle='text-align: right'>
-                      <f:validator binding="#{row.bindings.StaffDisc.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblFeeGenDetailView4.hints.StaffDisc.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblFeeGenDetailView4.hints.NetFee.name}" filterable="true"
-                             sortable="true" headerText="Net Fee" id="c14" align="left" width="100">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.NetFee}"
-                                   id="it21" placeholder="Search ">
-                                  </af:inputText>
-                            </f:facet>
-                    <af:inputText value="#{row.bindings.NetFee.inputValue}"
-                                  label="#{bindings.TblFeeGenDetailView4.hints.NetFee.label}"
-                                  required="#{bindings.TblFeeGenDetailView4.hints.NetFee.mandatory}"
-                                  columns="#{bindings.TblFeeGenDetailView4.hints.NetFee.displayWidth}"
-                                  maximumLength="#{bindings.TblFeeGenDetailView4.hints.NetFee.precision}"
-                                  shortDesc="#{bindings.TblFeeGenDetailView4.hints.NetFee.tooltip}" id="it8"
-                                  contentStyle='text-align: right'>
-                      <f:validator binding="#{row.bindings.NetFee.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblFeeGenDetailView4.hints.NetFee.format}"/>
-                    </af:inputText>
-                  </af:column>-->
+                           
                   <af:column sortProperty="#{bindings.TblFeeGenDetailView4.hints.Ast.name}" filterable="true"
                              sortable="true" headerText="Active" id="c25" width="140" align="left">
                              <f:facet name="filter">
@@ -1031,6 +898,15 @@
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
+                            <af:column headerText="Generate Report"
+                                       id="c49" align="center">
+                              <af:link shortDesc="#{bindings.TblFeeGenDetailView4.hints.StdRegIdReport.tooltip}"
+                                       id="it59"
+                                       actionListener="#{backingBeanScope.FeeGenerationBean.getStdReport}"
+                                       icon="#{resource['images:get_report.png']}">
+                                        <f:attribute name="sendStdID" value="#{row.bindings.StdRegIdReport.inputValue}"/>
+                                       </af:link>
+                            </af:column>
                 </af:table>
                
               </af:showDetailItem>

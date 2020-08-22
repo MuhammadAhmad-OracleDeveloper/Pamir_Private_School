@@ -6,13 +6,38 @@
   Name="TblFeeGenDetailView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblFeeGenDetail.ID, 
+       TblFeeGenDetail.FEE_GEN_MASTER_ID, 
+       TblFeeGenDetail.STD_REG_ID, 
+       TblFeeGenDetail.FOUND_MEMBER_DISC, 
+       TblFeeGenDetail.MGT_DISC, 
+       TblFeeGenDetail.SCHOLAR_DISC, 
+       TblFeeGenDetail.SIBLING_DISC, 
+       TblFeeGenDetail.STAFF_DISC, 
+       TblFeeGenDetail.NET_FEE, 
+       TblFeeGenDetail.AST, 
+       TblFeeGenDetail.CREATED_DATE, 
+       TblFeeGenDetail.CREATED_BY, 
+       TblFeeGenDetail.UPDATED_DATE, 
+       TblFeeGenDetail.UPDATED_BY, 
+       TblFeeGenDetail.TERMS_ID, 
+       TblFeeGenDetail.GRADE_ID AS GRADE_ID1, 
+       TblFeeGenDetail.ACAD_YEAR_ID AS ACAD_YEAR_ID1, 
+       TblFeeGenDetail.JOIN_DATE, 
+       TblFeeGenDetail.LOOKUP_DETAIL_AREA, 
+       TblFeeGenDetail.TRANS_REQ AS TRANS_REQ1, 
+       TblFeeGenMaster.SECTIONS_ID, 
+       TblFeeGenMaster.ID AS ID1, 
+       TblFeeGenMaster.ACAD_YEAR_ID, 
+       TblFeeGenMaster.GRADE_ID, 
+       TblFeeGenDetail.FEE_MONTH, 
+       TblFeeGenDetail.V_TYPE, 
+       TblFeeGenDetail.STD_REG_ID AS STD_REG_ID1"
+  FromList="TBL_FEE_GEN_DETAIL TblFeeGenDetail, TBL_FEE_GEN_MASTER TblFeeGenMaster"
+  Where="TblFeeGenDetail.FEE_GEN_MASTER_ID = TblFeeGenMaster.ID(+)">
   <ViewAccessor
     Name="Active_Name_LOV1"
     ViewObjectName="model.LOV.Active_Name_LOV"
@@ -328,6 +353,12 @@
     EntityAttrName="VType"
     EntityUsage="TblFeeGenDetail"
     AliasName="V_TYPE"/>
+  <ViewAttribute
+    Name="StdRegIdReport"
+    PrecisionRule="true"
+    EntityAttrName="StdRegId"
+    EntityUsage="TblFeeGenDetail"
+    AliasName="STD_REG_ID1"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>

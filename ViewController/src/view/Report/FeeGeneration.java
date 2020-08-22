@@ -2,8 +2,12 @@ package view.Report;
 
 import java.math.BigDecimal;
 
+import java.util.Map;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+
+import javax.faces.event.ActionEvent;
 
 import oracle.adf.view.rich.component.rich.input.RichSelectOneChoice;
 
@@ -23,7 +27,29 @@ public class FeeGeneration {
     public FeeGeneration() {
         System.out.println("Fee Generation Report");
     }
+    
+    DatabaseConnection dbconnect = new DatabaseConnection();
+    OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
+    
 
+    public void getStdReport(ActionEvent actionEvent) {
+        // Add event code here...
+        String url = "";
+        Number sendStdID = (Number) actionEvent.getComponent().getAttributes().get("sendStdID");
+        reportBean.setReportParameter("P_Std_reg_id", sendStdID.toString());
+        
+        reportBean.setReportURLName("userid=ppss/ppss@orcl&domain=classicdomain&report=C:/PPSS_Reports/STD_Fee_Detail&");
+        reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                        "CACHE"); // which will be one of the [cashe - file - mail - printer]
+        reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                        "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+        reportBean.setReportParameter("paramform", "no");
+
+        url = reportBean.getReportServerURL();
+        System.out.println("Url => " + url);
+        reportBean.openUrlInNewWindow(url);
+    }
+    
     public String get_report() {
         // Add event code here...
         gotFormat = (String)this.getFormat_type().getValue();
@@ -31,8 +57,7 @@ public class FeeGeneration {
         gotStudent = (BigDecimal)this.getstdID().getValue();
         gotGrade = (BigDecimal)this.getgradeID().getValue();
         
-        DatabaseConnection dbconnect = new DatabaseConnection();
-        OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
+        
         String url = "";
         if (gotFormat == "") {
             showMessage("Please Select Report Format");
@@ -117,4 +142,5 @@ public class FeeGeneration {
     public RichSelectOneChoice getgradeID() {
         return gradeID;
     }
+
 }
