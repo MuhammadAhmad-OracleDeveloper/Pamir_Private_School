@@ -35,6 +35,7 @@ public class TblStaffVisaImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        Image,
         TblStaff,
         TblLookupDetail,
         TblLookupDetail1;
@@ -60,6 +61,7 @@ public class TblStaffVisaImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int STAFFID = AttributesEnum.StaffId.index();
     public static final int DATED = AttributesEnum.Dated.index();
@@ -73,6 +75,7 @@ public class TblStaffVisaImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int IMAGE = AttributesEnum.Image.index();
     public static final int TBLSTAFF = AttributesEnum.TblStaff.index();
     public static final int TBLLOOKUPDETAIL = AttributesEnum.TblLookupDetail.index();
     public static final int TBLLOOKUPDETAIL1 = AttributesEnum.TblLookupDetail1.index();
@@ -81,6 +84,13 @@ public class TblStaffVisaImpl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public TblStaffVisaImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblStaffVisa");
     }
 
     /**
@@ -276,6 +286,22 @@ public class TblStaffVisaImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for Image, using the alias name Image.
+     * @return the value of Image
+     */
+    public String getImage() {
+        return (String) getAttributeInternal(IMAGE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Image.
+     * @param value value to set the Image
+     */
+    public void setImage(String value) {
+        setAttributeInternal(IMAGE, value);
+    }
+
+    /**
      * @return the associated entity TblStaffImpl.
      */
     public TblStaffImpl getTblStaff() {
@@ -317,6 +343,7 @@ public class TblStaffVisaImpl extends EntityImpl {
         setAttributeInternal(TBLLOOKUPDETAIL1, value);
     }
 
+
     /**
      * @param id key constituent
 
@@ -324,13 +351,6 @@ public class TblStaffVisaImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblStaffVisa");
     }
 
     /**

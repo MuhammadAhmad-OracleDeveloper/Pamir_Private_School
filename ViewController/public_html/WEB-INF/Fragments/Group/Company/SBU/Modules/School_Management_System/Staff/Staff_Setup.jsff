@@ -1126,6 +1126,19 @@
                                         </af:selectOneChoice>
                                     </af:column>
                                 </af:table>
+                                 <af:panelGroupLayout id="pgl22" layout="vertical"
+                                                                 inlineStyle="margin-top: 5%; margin-left: 5%; padding:8%; border: 1px solid black;">
+                                               
+                                          
+                                                <af:inputFile id="if1" inlineStyle="margin: 2%;"
+                                                              value="#{pageFlowScope.FileManagingBean.file}"/>
+                                                      
+                                                <!--<af:inputFile id="if1"/>-->
+                                                <af:button text="Save Image" id="b7" partialSubmit="true" inlineStyle="margin-left: 28%;margin-top: 6%;"
+                                                           actionListener="#{pageFlowScope.FileManagingBean.UploadImage}">
+                                                  <f:attribute name="path" value="C://Meta_Data//Pamir_Data//staff_setup_images//"/>
+                                                </af:button>
+                                            </af:panelGroupLayout>
                                 <af:spacer width="10" height="40" id="s18"/>
                                 <af:panelGroupLayout id="pgl9" halign="center" layout="horizontal">
                                     <af:iterator id="i6" var="index" varStatus="status"

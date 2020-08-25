@@ -124,6 +124,18 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_STAFF_VISA"/>
+  <Attribute
+    Name="Image"
+    Precision="100"
+    ColumnName="IMAGE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_STAFF_VISA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblStaff"
     Association="model.ERP.EO.FkStaffVisaStaffAssoc"
