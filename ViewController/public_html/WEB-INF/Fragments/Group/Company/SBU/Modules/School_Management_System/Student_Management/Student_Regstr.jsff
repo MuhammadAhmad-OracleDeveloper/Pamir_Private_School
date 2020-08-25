@@ -350,12 +350,11 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3" halign="center"></af:gridCell>
                 </af:gridRow>
                 <af:gridRow marginTop="5px" height="auto" id="gr4">
-                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4" halign="center">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
                         <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
-                            <af:showDetailItem id="tab2" text="Student Details">
-                                <af:panelGridLayout id="pgl11">
-                                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">
-                                        <af:gridCell marginStart="5px" width="auto" id="gc7">
+                            <af:showDetailItem id="tab2" text="Student Details" inlineStyle="overflow: scroll !important;">
+                                
+                                            <af:panelGroupLayout id="pgl7" layout="horizontal">
                                             <af:panelFormLayout id="pfl1" maxColumns="3" rows="10">
                                                 <af:inputText value="#{bindings.TotAge.inputValue}" label="Total Age"
                                                               required="#{bindings.TotAge.hints.mandatory}" columns="20"
@@ -594,9 +593,7 @@
                                                     </af:panelGroupLayout>
                                                 </f:facet>
                                             </af:panelFormLayout>
-                                        </af:gridCell>
-                                        <af:gridCell marginStart="100px" width="auto" marginEnd="5px" id="gc8">
-                                            <af:panelGroupLayout id="pgl12" layout="vertical"
+                                         <af:panelGroupLayout id="pgl12" layout="vertical"
                                                                  inlineStyle="margin-top: 5%; margin-left: 5%; padding:8%; border: 1px solid black;">
                                                 <af:image id="i1"
                                                           shortDesc="Upload image or refresh page to render properly"
@@ -613,14 +610,10 @@
                                                   <f:attribute name="path" value="C://Meta_Data//Pamir_Data//student_regstr_images//"/>
                                                 </af:button>
                                             </af:panelGroupLayout>
-                                        </af:gridCell>
-                                    </af:gridRow>
-                                </af:panelGridLayout>
-                                <af:gridRow id="gr6">
-                                    <af:gridCell id="gc6"></af:gridCell>
-                                </af:gridRow>
+                                        </af:panelGroupLayout>
+                                       
                             </af:showDetailItem>
-                            <af:showDetailItem text="Parent's Details" id="sdi1">
+                            <af:showDetailItem text="Parent's Details" id="sdi1" inlineStyle="overflow: scroll !important;">
                                 <af:panelFormLayout id="pfl2" maxColumns="3" rows="5">
                                     <af:inputText value="#{bindings.FatherName.inputValue}" label="Father's Name"
                                                   required="#{bindings.FatherName.hints.mandatory}"
@@ -834,123 +827,7 @@
                                     </f:facet>
                                 </af:panelFormLayout>
                             </af:showDetailItem>
-                            <!--<af:showDetailItem text="Discount Detail" id="sdi2">
-                                <af:panelFormLayout id="pfl3" maxColumns="2" rows="4">
-                                    <af:selectOneChoice value="#{bindings.MgtDiscType.inputValue}"
-                                                        label="Management Discount Type"
-                                                        required="#{bindings.MgtDiscType.hints.mandatory}"
-                                                        shortDesc="#{bindings.MgtDiscType.hints.tooltip}" id="soc9"
-                                                        contentStyle="width:200px;">
-                                        <f:selectItems value="#{bindings.MgtDiscType.items}" id="si9"/>
-                                        <f:validator binding="#{bindings.MgtDiscType.validator}"/>
-                                    </af:selectOneChoice>
-                                    <af:spacer id="s33"/>
-                                    <af:inputText value="#{bindings.MgtDiscValue.inputValue}"
-                                                  label="Management Discount Value"
-                                                  required="#{bindings.MgtDiscValue.hints.mandatory}"
-                                                  columns="#{bindings.MgtDiscValue.hints.displayWidth}"
-                                                  maximumLength="#{bindings.MgtDiscValue.hints.precision}"
-                                                  shortDesc="#{bindings.MgtDiscValue.hints.tooltip}" id="it23"
-                                                  contentStyle="width:200px;">
-                                        <f:validator binding="#{bindings.MgtDiscValue.validator}"/>
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.MgtDiscValue.format}"/>
-                                    </af:inputText>
-                                    <af:spacer id="s34"/>
-                                    <af:inputText value="#{bindings.FoundMemDiscPerc.inputValue}"
-                                                  label="Founding Member Discount (%)"
-                                                  required="#{bindings.FoundMemDiscPerc.hints.mandatory}"
-                                                  columns="#{bindings.FoundMemDiscPerc.hints.displayWidth}"
-                                                  maximumLength="#{bindings.FoundMemDiscPerc.hints.precision}"
-                                                  shortDesc="#{bindings.FoundMemDiscPerc.hints.tooltip}" id="it24"
-                                                  contentStyle="width:200px;">
-                                        <f:validator binding="#{bindings.FoundMemDiscPerc.validator}"/>
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.FoundMemDiscPerc.format}"/>
-                                    </af:inputText>
-                                    <af:spacer id="s10"/>
-                                    <af:selectOneChoice value="#{bindings.SibDiscType.inputValue}"
-                                                        label="Sibling Discount Type"
-                                                        required="#{bindings.SibDiscType.hints.mandatory}"
-                                                        shortDesc="#{bindings.SibDiscType.hints.tooltip}" id="soc10"
-                                                        contentStyle="width:200px;">
-                                        <f:selectItems value="#{bindings.SibDiscType.items}" id="si10"/>
-                                        <f:validator binding="#{bindings.SibDiscType.validator}"/>
-                                    </af:selectOneChoice>
-                                    <af:spacer id="s35"/>
-                                    <af:inputText value="#{bindings.SibDiscValue.inputValue}"
-                                                  label="Sibling Discount Value"
-                                                  required="#{bindings.SibDiscValue.hints.mandatory}"
-                                                  columns="#{bindings.SibDiscValue.hints.displayWidth}"
-                                                  maximumLength="#{bindings.SibDiscValue.hints.precision}"
-                                                  shortDesc="#{bindings.SibDiscValue.hints.tooltip}" id="it25"
-                                                  contentStyle="width:200px;">
-                                        <f:validator binding="#{bindings.SibDiscValue.validator}"/>
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.SibDiscValue.format}"/>
-                                    </af:inputText>
-                                    <af:spacer id="s36"/>
-                                    <af:inputText value="#{bindings.ScholarDiscPerc.inputValue}"
-                                                  label="Scholarship Discount Percentage"
-                                                  required="#{bindings.ScholarDiscPerc.hints.mandatory}"
-                                                  columns="#{bindings.ScholarDiscPerc.hints.displayWidth}"
-                                                  maximumLength="#{bindings.ScholarDiscPerc.hints.precision}"
-                                                  shortDesc="#{bindings.ScholarDiscPerc.hints.tooltip}" id="it63">
-                                        <f:validator binding="#{bindings.ScholarDiscPerc.validator}"/>
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.ScholarDiscPerc.format}"/>
-                                    </af:inputText>
-                                    <af:spacer id="s37"/>
-                                    <af:inputText value="#{bindings.ScholarDiscAmt.inputValue}"
-                                                  label="Scholarship Discount Amount"
-                                                  required="#{bindings.ScholarDiscAmt.hints.mandatory}"
-                                                  columns="#{bindings.ScholarDiscAmt.hints.displayWidth}"
-                                                  maximumLength="#{bindings.ScholarDiscAmt.hints.precision}"
-                                                  shortDesc="#{bindings.ScholarDiscAmt.hints.tooltip}" id="it26"
-                                                  contentStyle="width:200px;">
-                                        <f:validator binding="#{bindings.ScholarDiscAmt.validator}"/>
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.ScholarDiscAmt.format}"/>
-                                    </af:inputText>
-                                    <af:spacer id="s11"/>
-                                    <af:selectOneChoice value="#{bindings.StaffDiscType.inputValue}"
-                                                        label="Staff Discount Type"
-                                                        required="#{bindings.StaffDiscType.hints.mandatory}"
-                                                        shortDesc="#{bindings.StaffDiscType.hints.tooltip}" id="soc11"
-                                                        contentStyle="width:200px;">
-                                        <f:selectItems value="#{bindings.StaffDiscType.items}" id="si11"/>
-                                        <f:validator binding="#{bindings.StaffDiscType.validator}"/>
-                                    </af:selectOneChoice>
-                                    <af:spacer id="s38"/>
-                                    <af:inputText value="#{bindings.StaffDiscValue.inputValue}"
-                                                  label="Staff Discount Value"
-                                                  required="#{bindings.StaffDiscValue.hints.mandatory}"
-                                                  columns="#{bindings.StaffDiscValue.hints.displayWidth}"
-                                                  maximumLength="#{bindings.StaffDiscValue.hints.precision}"
-                                                  shortDesc="#{bindings.StaffDiscValue.hints.tooltip}" id="it27"
-                                                  contentStyle="width:200px;">
-                                        <f:validator binding="#{bindings.StaffDiscValue.validator}"/>
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.StaffDiscValue.format}"/>
-                                    </af:inputText>
-                                    <f:facet name="footer">
-                                        <af:panelGroupLayout layout="horizontal" id="pgl7" halign="center">
-                                            <af:button actionListener="#{bindings.First.execute}" text="First"
-                                                       disabled="#{!bindings.First.enabled}" partialSubmit="true"
-                                                       id="b11"/>
-                                            <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
-                                                       disabled="#{!bindings.Previous.enabled}" partialSubmit="true"
-                                                       id="b12"/>
-                                            <af:button actionListener="#{bindings.Next.execute}" text="Next"
-                                                       disabled="#{!bindings.Next.enabled}" partialSubmit="true"
-                                                       id="b13"/>
-                                            <af:button actionListener="#{bindings.Last.execute}" text="Last"
-                                                       disabled="#{!bindings.Last.enabled}" partialSubmit="true"
-                                                       id="b14"/>
-                                        </af:panelGroupLayout>
-                                    </f:facet>
-                                </af:panelFormLayout>
-                            </af:showDetailItem>-->
+                          
                             <af:showDetailItem text="Other Details" id="sdi3">
                                 <af:panelFormLayout id="pfl4" maxColumns="1" rows="1">
                                     <af:selectOneChoice value="#{bindings.LookupMotherTounge.inputValue}"
