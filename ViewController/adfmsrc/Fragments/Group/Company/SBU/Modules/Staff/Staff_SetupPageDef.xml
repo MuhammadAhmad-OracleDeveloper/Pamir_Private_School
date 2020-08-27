@@ -229,6 +229,7 @@
           <Item Value="LookupVisaType"/>
           <Item Value="LookupVisaSpons"/>
           <Item Value="Ast"/>
+          <Item Value="Image"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -246,6 +247,7 @@
           <Item Value="PassportIssDate"/>
           <Item Value="PassportExpDate"/>
           <Item Value="Ast"/>
+          <Item Value="Image"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -383,6 +385,7 @@
           <Item Value="DocIssDate"/>
           <Item Value="DocExpDate"/>
           <Item Value="Ast"/>
+          <Item Value="Image"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -407,5 +410,35 @@
             Action="iteratorExecute"/>
     <action IterBinding="TblStaffLeavePkgView2Iterator" id="Delete13" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <attributeValues IterBinding="TblStaffVisaView2Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStaffVisaView2Iterator" id="Image1">
+      <AttrNames>
+        <Item Value="Image"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStaffPassportView3Iterator" id="Id1">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStaffPassportView3Iterator" id="Image2">
+      <AttrNames>
+        <Item Value="Image"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStaffDocsView2Iterator" id="Id2">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStaffDocsView2Iterator" id="Image3">
+      <AttrNames>
+        <Item Value="Image"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

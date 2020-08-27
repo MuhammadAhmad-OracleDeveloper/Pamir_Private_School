@@ -34,6 +34,7 @@ public class TblStaffDocsImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        Image,
         TblStaff;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -70,6 +71,7 @@ public class TblStaffDocsImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int IMAGE = AttributesEnum.Image.index();
     public static final int TBLSTAFF = AttributesEnum.TblStaff.index();
 
     /**
@@ -260,6 +262,22 @@ public class TblStaffDocsImpl extends EntityImpl {
      */
     public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
+    }
+
+    /**
+     * Gets the attribute value for Image, using the alias name Image.
+     * @return the value of Image
+     */
+    public String getImage() {
+        return (String) getAttributeInternal(IMAGE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Image.
+     * @param value value to set the Image
+     */
+    public void setImage(String value) {
+        setAttributeInternal(IMAGE, value);
     }
 
     /**
