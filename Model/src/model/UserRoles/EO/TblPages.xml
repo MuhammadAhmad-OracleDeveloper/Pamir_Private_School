@@ -120,6 +120,13 @@
     AssociationOtherEnd="model.UserRoles.EO.FkTblPagesFkAssoc.TblPages"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblCompanyPages"
+    Association="model.UserRoles.EO.FkTblCompanyPagesPagesFkAssoc"
+    AssociationEnd="model.UserRoles.EO.FkTblCompanyPagesPagesFkAssoc.TblCompanyPages"
+    AssociationOtherEnd="model.UserRoles.EO.FkTblCompanyPagesPagesFkAssoc.TblPages"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkPages"
     PrimaryKey="true">

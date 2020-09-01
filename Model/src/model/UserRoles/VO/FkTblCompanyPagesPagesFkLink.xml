@@ -3,40 +3,39 @@
 <!---->
 <ViewLink
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="Fk_Tbl_Role_Company_Role_Group_FkLink"
+  Name="FkTblCompanyPagesPagesFkLink"
   Version="12.2.1.11.57"
-  InheritPersonalization="merge">
+  InheritPersonalization="merge"
+  EntityAssociation="model.UserRoles.EO.FkTblCompanyPagesPagesFkAssoc">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.UserRoles.VO.Fk_Tbl_Role_Company_Role_Group_FkLink_LABEL"/>
+        ResId="model.UserRoles.VO.FkTblCompanyPagesPagesFkLink_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <ViewLinkDefEnd
-    Name="TblRoleGroupView"
+    Name="TblPagesView"
     Cardinality="1"
     Source="true"
-    Owner="model.UserRoles.VO.TblRoleGroupView">
+    Owner="model.UserRoles.VO.TblPagesView">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="TblRoleGroupView"/>
+      <Attr Name="_finderName" Value="TblPagesView"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.UserRoles.VO.TblRoleGroupView.Id"/>
-      <Item Value="model.UserRoles.VO.TblRoleGroupView.RoleId"/>
+      <Item Value="model.UserRoles.VO.TblPagesView.Id"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ViewLinkDefEnd
-    Name="TblRoleCompanyView"
+    Name="TblCompanyPagesView"
     Cardinality="-1"
-    Owner="model.UserRoles.VO.TblRoleCompanyView">
+    Owner="model.UserRoles.VO.TblCompanyPagesView">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="TblRoleCompanyView"/>
+      <Attr Name="_finderName" Value="TblCompanyPagesView"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.UserRoles.VO.TblRoleCompanyView.RoleGroupId"/>
-      <Item Value="model.UserRoles.VO.TblRoleCompanyView.RoleId"/>
+      <Item Value="model.UserRoles.VO.TblCompanyPagesView.PageId"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ResourceBundle>

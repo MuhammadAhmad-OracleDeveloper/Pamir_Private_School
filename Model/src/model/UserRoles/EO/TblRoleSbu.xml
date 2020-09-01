@@ -26,7 +26,12 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_ROLE_SBU"/>
+    TableName="TBL_ROLE_SBU">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblRoleSbuRow"/>
+  </Attribute>
   <Attribute
     Name="RoleCompanyId"
     ColumnName="ROLE_COMPANY_ID"

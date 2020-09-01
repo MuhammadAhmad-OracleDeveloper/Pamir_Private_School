@@ -1,0 +1,12 @@
+//Groovy Scripts for model.UserRoles.EO.TblRoleCompany
+
+package model.UserRoles.EO
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="GroupCompanyId")
+def GroupCompanyId_ExpressionScript_Expression()
+{
+adf.context.current.sessionScope.get('sessCmpnyID')
+}
+

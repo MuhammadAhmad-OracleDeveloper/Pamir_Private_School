@@ -3,39 +3,40 @@
 <!---->
 <Association
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="FkRoleSbuUserCompanyAssoc"
+  Name="FkTblCompanyPagesPagesFkAssoc"
   Version="12.2.1.11.57"
   InheritPersonalization="merge">
   <DesignTime>
     <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <AssociationEnd
-    Name="TblRoleCompany"
+    Name="TblPages"
     Cardinality="1"
     Source="true"
-    Owner="model.UserRoles.EO.TblRoleCompany">
+    Owner="model.UserRoles.EO.TblPages"
+    LockLevel="NONE">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_aggregation" Value="0"/>
-      <Attr Name="_finderName" Value="TblRoleCompany"/>
+      <Attr Name="_finderName" Value="TblPages"/>
+      <Attr Name="_foreignKey" Value="model.UserRoles.EO.TblPages.PkPages"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.UserRoles.EO.TblRoleCompany.Id"/>
-      <Item Value="model.UserRoles.EO.TblRoleCompany.RoleId"/>
+      <Item Value="model.UserRoles.EO.TblPages.Id"/>
     </AttrArray>
   </AssociationEnd>
   <AssociationEnd
-    Name="TblRoleSbu"
+    Name="TblCompanyPages"
     Cardinality="-1"
-    Owner="model.UserRoles.EO.TblRoleSbu">
+    Owner="model.UserRoles.EO.TblCompanyPages">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_aggregation" Value="0"/>
-      <Attr Name="_finderName" Value="TblRoleSbu"/>
+      <Attr Name="_finderName" Value="TblCompanyPages"/>
+      <Attr Name="_foreignKey" Value="model.UserRoles.EO.TblCompanyPages.fk_TblCompanyPages1"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.UserRoles.EO.TblRoleSbu.RoleCompanyId"/>
-      <Item Value="model.UserRoles.EO.TblRoleSbu.RoleId"/>
+      <Item Value="model.UserRoles.EO.TblCompanyPages.PageId"/>
     </AttrArray>
   </AssociationEnd>
 </Association>

@@ -45,7 +45,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Id.name}" filterable="true"
                              sortable="true" headerText="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Id.label}" id="c2">
-                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                    <af:inputText value="#{row.bindings.Id.inputValue}" readOnly="true"
                                   label="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Id.label}"
                                   required="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Id.mandatory}"
                                   columns="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Id.displayWidth}"
@@ -154,7 +154,7 @@
                   <af:column sortProperty="#{bindings.TblUserView3.hints.Id.name}" filterable="true" sortable="true"
                              headerText="#{bindings.TblUserView3.hints.Id.label}" id="c8">
                     <af:inputText value="#{row.bindings.Id.inputValue}" label="#{bindings.TblUserView3.hints.Id.label}"
-                                  required="#{bindings.TblUserView3.hints.Id.mandatory}"
+                                  required="#{bindings.TblUserView3.hints.Id.mandatory}" readOnly="true"
                                   columns="#{bindings.TblUserView3.hints.Id.displayWidth}"
                                   maximumLength="#{bindings.TblUserView3.hints.Id.precision}"
                                   shortDesc="#{bindings.TblUserView3.hints.Id.tooltip}" id="it7">
@@ -303,7 +303,7 @@
                             <af:column sortProperty="#{bindings.TblRoleGroupView4.hints.Id.name}" filterable="true"
                                        sortable="true" headerText="#{bindings.TblRoleGroupView4.hints.Id.label}"
                                        id="c18">
-                              <af:inputText value="#{row.bindings.Id.inputValue}"
+                              <af:inputText value="#{row.bindings.Id.inputValue}" readOnly="true"
                                             label="#{bindings.TblRoleGroupView4.hints.Id.label}"
                                             required="#{bindings.TblRoleGroupView4.hints.Id.mandatory}"
                                             columns="#{bindings.TblRoleGroupView4.hints.Id.displayWidth}"
@@ -450,7 +450,7 @@
                                        sortable="true" headerText="#{bindings.TblRoleCompanyView4.hints.Id.label}"
                                        id="c26">
                               <af:inputText value="#{row.bindings.Id.inputValue}"
-                                            label="#{bindings.TblRoleCompanyView4.hints.Id.label}"
+                                            label="#{bindings.TblRoleCompanyView4.hints.Id.label}" readOnly="true"
                                             required="#{bindings.TblRoleCompanyView4.hints.Id.mandatory}"
                                             columns="#{bindings.TblRoleCompanyView4.hints.Id.displayWidth}"
                                             maximumLength="#{bindings.TblRoleCompanyView4.hints.Id.precision}"
@@ -611,7 +611,7 @@
                                     id="t5" partialTriggers="::b15 ::b16 ::b17">
                             <af:column sortProperty="#{bindings.TblRoleSbuView5.hints.Id.name}" filterable="true"
                                        sortable="true" headerText="#{bindings.TblRoleSbuView5.hints.Id.label}" id="c35">
-                              <af:inputText value="#{row.bindings.Id.inputValue}"
+                              <af:inputText value="#{row.bindings.Id.inputValue}" readOnly="true"
                                             label="#{bindings.TblRoleSbuView5.hints.Id.label}"
                                             required="#{bindings.TblRoleSbuView5.hints.Id.mandatory}"
                                             columns="#{bindings.TblRoleSbuView5.hints.Id.displayWidth}"
@@ -770,7 +770,7 @@
                                       <af:column sortProperty="#{bindings.TblRoleModulesView2.hints.Id.name}"
                                                  filterable="true" sortable="true"
                                                  headerText="#{bindings.TblRoleModulesView2.hints.Id.label}" id="c44">
-                                        <af:inputText value="#{row.bindings.Id.inputValue}"
+                                        <af:inputText value="#{row.bindings.Id.inputValue}" readOnly="true"
                                                       label="#{bindings.TblRoleModulesView2.hints.Id.label}"
                                                       required="#{bindings.TblRoleModulesView2.hints.Id.mandatory}"
                                                       columns="#{bindings.TblRoleModulesView2.hints.Id.displayWidth}"
@@ -883,21 +883,16 @@
                                                             pattern="#{bindings.TblRoleModulesView2.hints.UpdatedBy.format}"/>
                                         </af:inputText>
                                       </af:column>
-                                      <af:column sortProperty="#{bindings.TblRoleModulesView2.hints.CompanyModuleId.name}"
-                                                 filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblRoleModulesView2.hints.CompanyModuleId.label}"
+                                      <af:column headerText="#{bindings.TblRoleModulesView2.hints.CompanyModuleId.label}"
                                                  id="c51">
-                                        <af:inputText value="#{row.bindings.CompanyModuleId.inputValue}"
-                                                      label="#{bindings.TblRoleModulesView2.hints.CompanyModuleId.label}"
-                                                      required="#{bindings.TblRoleModulesView2.hints.CompanyModuleId.mandatory}"
-                                                      columns="#{bindings.TblRoleModulesView2.hints.CompanyModuleId.displayWidth}"
-                                                      maximumLength="#{bindings.TblRoleModulesView2.hints.CompanyModuleId.precision}"
-                                                      shortDesc="#{bindings.TblRoleModulesView2.hints.CompanyModuleId.tooltip}"
-                                                      id="it36">
+                                        <af:selectOneChoice value="#{row.bindings.CompanyModuleId.inputValue}"
+                                                            label="#{row.bindings.CompanyModuleId.label}"
+                                                            required="#{bindings.TblRoleModulesView2.hints.CompanyModuleId.mandatory}"
+                                                            shortDesc="#{bindings.TblRoleModulesView2.hints.CompanyModuleId.tooltip}"
+                                                            id="soc9">
+                                          <f:selectItems value="#{row.bindings.CompanyModuleId.items}" id="si9"/>
                                           <f:validator binding="#{row.bindings.CompanyModuleId.validator}"/>
-                                          <af:convertNumber groupingUsed="false"
-                                                            pattern="#{bindings.TblRoleModulesView2.hints.CompanyModuleId.format}"/>
-                                        </af:inputText>
+                                        </af:selectOneChoice>
                                       </af:column>
                                       <af:column sortProperty="#{bindings.TblRoleModulesView2.hints.RoleCompanyId.name}"
                                                  filterable="true" sortable="true"
@@ -946,7 +941,7 @@
                                                  filterable="true" sortable="true"
                                                  headerText="#{bindings.TblRoleSubModulesView3.hints.Id.label}"
                                                  id="c53">
-                                        <af:inputText value="#{row.bindings.Id.inputValue}"
+                                        <af:inputText value="#{row.bindings.Id.inputValue}" readOnly="true"
                                                       label="#{bindings.TblRoleSubModulesView3.hints.Id.label}"
                                                       required="#{bindings.TblRoleSubModulesView3.hints.Id.mandatory}"
                                                       columns="#{bindings.TblRoleSubModulesView3.hints.Id.displayWidth}"
@@ -990,21 +985,16 @@
                                                             pattern="#{bindings.TblRoleSubModulesView3.hints.RoleModuleId.format}"/>
                                         </af:inputText>
                                       </af:column>
-                                      <af:column sortProperty="#{bindings.TblRoleSubModulesView3.hints.CompanySubModuleId.name}"
-                                                 filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblRoleSubModulesView3.hints.CompanySubModuleId.label}"
+                                      <af:column headerText="#{bindings.TblRoleSubModulesView3.hints.CompanySubModuleId.label}"
                                                  id="c56">
-                                        <af:inputText value="#{row.bindings.CompanySubModuleId.inputValue}"
-                                                      label="#{bindings.TblRoleSubModulesView3.hints.CompanySubModuleId.label}"
-                                                      required="#{bindings.TblRoleSubModulesView3.hints.CompanySubModuleId.mandatory}"
-                                                      columns="#{bindings.TblRoleSubModulesView3.hints.CompanySubModuleId.displayWidth}"
-                                                      maximumLength="#{bindings.TblRoleSubModulesView3.hints.CompanySubModuleId.precision}"
-                                                      shortDesc="#{bindings.TblRoleSubModulesView3.hints.CompanySubModuleId.tooltip}"
-                                                      id="it41">
+                                        <af:selectOneChoice value="#{row.bindings.CompanySubModuleId.inputValue}"
+                                                            label="#{row.bindings.CompanySubModuleId.label}"
+                                                            required="#{bindings.TblRoleSubModulesView3.hints.CompanySubModuleId.mandatory}"
+                                                            shortDesc="#{bindings.TblRoleSubModulesView3.hints.CompanySubModuleId.tooltip}"
+                                                            id="soc10">
+                                          <f:selectItems value="#{row.bindings.CompanySubModuleId.items}" id="si10"/>
                                           <f:validator binding="#{row.bindings.CompanySubModuleId.validator}"/>
-                                          <af:convertNumber groupingUsed="false"
-                                                            pattern="#{bindings.TblRoleSubModulesView3.hints.CompanySubModuleId.format}"/>
-                                        </af:inputText>
+                                        </af:selectOneChoice>
                                       </af:column>
                                       <af:column sortProperty="#{bindings.TblRoleSubModulesView3.hints.RView.name}"
                                                  filterable="true" sortable="true"
@@ -1120,7 +1110,7 @@
                                       <af:column sortProperty="#{bindings.TblRolePagesView2.hints.Id.name}"
                                                  filterable="true" sortable="true"
                                                  headerText="#{bindings.TblRolePagesView2.hints.Id.label}" id="c62">
-                                        <af:inputText value="#{row.bindings.Id.inputValue}"
+                                        <af:inputText value="#{row.bindings.Id.inputValue}" readOnly="true"
                                                       label="#{bindings.TblRolePagesView2.hints.Id.label}"
                                                       required="#{bindings.TblRolePagesView2.hints.Id.mandatory}"
                                                       columns="#{bindings.TblRolePagesView2.hints.Id.displayWidth}"
@@ -1225,21 +1215,16 @@
                                           <f:validator binding="#{row.bindings.RPost.validator}"/>
                                         </af:inputText>
                                       </af:column>
-                                      <af:column sortProperty="#{bindings.TblRolePagesView2.hints.CompanyPagesId.name}"
-                                                 filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblRolePagesView2.hints.CompanyPagesId.label}"
+                                      <af:column headerText="#{bindings.TblRolePagesView2.hints.CompanyPagesId.label}"
                                                  id="c70">
-                                        <af:inputText value="#{row.bindings.CompanyPagesId.inputValue}"
-                                                      label="#{bindings.TblRolePagesView2.hints.CompanyPagesId.label}"
-                                                      required="#{bindings.TblRolePagesView2.hints.CompanyPagesId.mandatory}"
-                                                      columns="#{bindings.TblRolePagesView2.hints.CompanyPagesId.displayWidth}"
-                                                      maximumLength="#{bindings.TblRolePagesView2.hints.CompanyPagesId.precision}"
-                                                      shortDesc="#{bindings.TblRolePagesView2.hints.CompanyPagesId.tooltip}"
-                                                      id="it51">
+                                        <af:selectOneChoice value="#{row.bindings.CompanyPagesId.inputValue}"
+                                                            label="#{row.bindings.CompanyPagesId.label}"
+                                                            required="#{bindings.TblRolePagesView2.hints.CompanyPagesId.mandatory}"
+                                                            shortDesc="#{bindings.TblRolePagesView2.hints.CompanyPagesId.tooltip}"
+                                                            id="soc11">
+                                          <f:selectItems value="#{row.bindings.CompanyPagesId.items}" id="si11"/>
                                           <f:validator binding="#{row.bindings.CompanyPagesId.validator}"/>
-                                          <af:convertNumber groupingUsed="false"
-                                                            pattern="#{bindings.TblRolePagesView2.hints.CompanyPagesId.format}"/>
-                                        </af:inputText>
+                                        </af:selectOneChoice>
                                       </af:column>
                                       <af:column sortProperty="#{bindings.TblRolePagesView2.hints.CompanySubModuleId.name}"
                                                  filterable="true" sortable="true"
@@ -1297,7 +1282,7 @@
                                       <af:column sortProperty="#{bindings.TblRoleReportsView2.hints.Id.name}"
                                                  filterable="true" sortable="true"
                                                  headerText="#{bindings.TblRoleReportsView2.hints.Id.label}" id="c73">
-                                        <af:inputText value="#{row.bindings.Id.inputValue}"
+                                        <af:inputText value="#{row.bindings.Id.inputValue}" readOnly="true"
                                                       label="#{bindings.TblRoleReportsView2.hints.Id.label}"
                                                       required="#{bindings.TblRoleReportsView2.hints.Id.mandatory}"
                                                       columns="#{bindings.TblRoleReportsView2.hints.Id.displayWidth}"
@@ -1338,21 +1323,16 @@
                                           <f:validator binding="#{row.bindings.RView.validator}"/>
                                         </af:selectOneChoice>
                                       </af:column>
-                                      <af:column sortProperty="#{bindings.TblRoleReportsView2.hints.CompanyReportId.name}"
-                                                 filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblRoleReportsView2.hints.CompanyReportId.label}"
-                                                 id="c76">
-                                        <af:inputText value="#{row.bindings.CompanyReportId.inputValue}"
-                                                      label="#{bindings.TblRoleReportsView2.hints.CompanyReportId.label}"
-                                                      required="#{bindings.TblRoleReportsView2.hints.CompanyReportId.mandatory}"
-                                                      columns="#{bindings.TblRoleReportsView2.hints.CompanyReportId.displayWidth}"
-                                                      maximumLength="#{bindings.TblRoleReportsView2.hints.CompanyReportId.precision}"
-                                                      shortDesc="#{bindings.TblRoleReportsView2.hints.CompanyReportId.tooltip}"
-                                                      id="it56">
+                                      <af:column headerText="#{bindings.TblRoleReportsView2.hints.CompanyReportId.label}"
+                                                 id="c71">
+                                        <af:selectOneChoice value="#{row.bindings.CompanyReportId.inputValue}"
+                                                            label="#{row.bindings.CompanyReportId.label}"
+                                                            required="#{bindings.TblRoleReportsView2.hints.CompanyReportId.mandatory}"
+                                                            shortDesc="#{bindings.TblRoleReportsView2.hints.CompanyReportId.tooltip}"
+                                                            id="soc12">
+                                          <f:selectItems value="#{row.bindings.CompanyReportId.items}" id="si12"/>
                                           <f:validator binding="#{row.bindings.CompanyReportId.validator}"/>
-                                          <af:convertNumber groupingUsed="false"
-                                                            pattern="#{bindings.TblRoleReportsView2.hints.CompanyReportId.format}"/>
-                                        </af:inputText>
+                                        </af:selectOneChoice>
                                       </af:column>
                                       <af:column sortProperty="#{bindings.TblRoleReportsView2.hints.CompanySubModuleId.name}"
                                                  filterable="true" sortable="true"
