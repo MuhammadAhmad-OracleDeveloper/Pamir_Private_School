@@ -104,7 +104,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_STD_REG_SIB"/>
+    TableName="TBL_STD_REG_SIB">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblStdRegSibRow"/>
+  </Attribute>
   <Attribute
     Name="SchoolName"
     Precision="250"

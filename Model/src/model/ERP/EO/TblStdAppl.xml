@@ -38,7 +38,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_STD_APPL"/>
+    TableName="TBL_STD_APPL">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblStdApplRow"/>
+  </Attribute>
   <Attribute
     Name="ApplType"
     Precision="3"
@@ -87,14 +92,24 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_STD_APPL"/>
+    TableName="TBL_STD_APPL">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblStdApplRow"/>
+  </Attribute>
   <Attribute
     Name="ToDate"
     ColumnName="TO_DATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_STD_APPL"/>
+    TableName="TBL_STD_APPL">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblStdApplRow"/>
+  </Attribute>
   <Attribute
     Name="ApplReason"
     Precision="500"

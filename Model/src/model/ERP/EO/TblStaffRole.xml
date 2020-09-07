@@ -38,7 +38,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_STAFF_ROLE"/>
+    TableName="TBL_STAFF_ROLE">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblStaffRoleRow"/>
+  </Attribute>
   <Attribute
     Name="LookupStaffRole"
     ColumnName="LOOKUP_STAFF_ROLE"

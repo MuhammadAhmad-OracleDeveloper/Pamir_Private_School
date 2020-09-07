@@ -38,7 +38,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_STAFF_SALARY"/>
+    TableName="TBL_STAFF_SALARY">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblStaffSalaryRow"/>
+  </Attribute>
   <Attribute
     Name="PaymentMode"
     Precision="3"

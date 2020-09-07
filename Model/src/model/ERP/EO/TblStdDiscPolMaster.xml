@@ -31,7 +31,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_STD_DISC_POL_MASTER"/>
+    TableName="TBL_STD_DISC_POL_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblStdDiscPolMasterRow"/>
+  </Attribute>
   <Attribute
     Name="StdRegId"
     ColumnName="STD_REG_ID"

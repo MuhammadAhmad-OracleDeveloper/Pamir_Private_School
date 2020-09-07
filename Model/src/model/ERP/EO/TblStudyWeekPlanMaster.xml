@@ -45,7 +45,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_STUDY_WEEK_PLAN_MASTER"/>
+    TableName="TBL_STUDY_WEEK_PLAN_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblStudyWeekPlanMasterRow"/>
+  </Attribute>
   <Attribute
     Name="StaffId"
     ColumnName="STAFF_ID"

@@ -36,7 +36,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_STAFF_LEAVE_PKG"/>
+    TableName="TBL_STAFF_LEAVE_PKG">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblStaffLeavePkgRow"/>
+  </Attribute>
   <Attribute
     Name="LeavePkgMasterId"
     ColumnName="LEAVE_PKG_MASTER_ID"
