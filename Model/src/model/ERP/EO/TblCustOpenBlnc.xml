@@ -30,7 +30,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_CUST_OPEN_BLNC"/>
+    TableName="TBL_CUST_OPEN_BLNC">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblCustOpenBlncRow"/>
+  </Attribute>
   <Attribute
     Name="PblCustId"
     IsNotNull="true"

@@ -38,7 +38,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_ENQ_FOLLOW_UP"/>
+    TableName="TBL_ENQ_FOLLOW_UP">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblEnqFollowUpRow"/>
+  </Attribute>
   <Attribute
     Name="FollowMethod"
     Precision="3"

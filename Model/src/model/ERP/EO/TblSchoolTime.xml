@@ -45,14 +45,24 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_SCHOOL_TIME"/>
+    TableName="TBL_SCHOOL_TIME">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblSchoolTimeRow"/>
+  </Attribute>
   <Attribute
     Name="ToDate"
     ColumnName="TO_DATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_SCHOOL_TIME"/>
+    TableName="TBL_SCHOOL_TIME">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblSchoolTimeRow"/>
+  </Attribute>
   <Attribute
     Name="StartTime"
     ColumnName="START_TIME"

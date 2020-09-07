@@ -45,7 +45,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_NOTICES"/>
+    TableName="TBL_NOTICES">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblNoticesRow"/>
+  </Attribute>
   <Attribute
     Name="NoticeDesc"
     Precision="300"
@@ -64,14 +69,24 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_NOTICES"/>
+    TableName="TBL_NOTICES">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblNoticesRow"/>
+  </Attribute>
   <Attribute
     Name="EndDate"
     ColumnName="END_DATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_NOTICES"/>
+    TableName="TBL_NOTICES">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblNoticesRow"/>
+  </Attribute>
   <Attribute
     Name="NoticeType"
     Precision="3"

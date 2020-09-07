@@ -38,7 +38,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_STAFF_BENEFIT"/>
+    TableName="TBL_STAFF_BENEFIT">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblStaffBenefitRow"/>
+  </Attribute>
   <Attribute
     Name="LookupBenefit"
     ColumnName="LOOKUP_BENEFIT"
@@ -73,14 +78,24 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_STAFF_BENEFIT"/>
+    TableName="TBL_STAFF_BENEFIT">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblStaffBenefitRow"/>
+  </Attribute>
   <Attribute
     Name="BenefitToDate"
     ColumnName="BENEFIT_TO_DATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_STAFF_BENEFIT"/>
+    TableName="TBL_STAFF_BENEFIT">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblStaffBenefitRow"/>
+  </Attribute>
   <Attribute
     Name="Remarks"
     Precision="150"

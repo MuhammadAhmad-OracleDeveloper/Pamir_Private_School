@@ -1,0 +1,12 @@
+//Groovy Scripts for model.ERP.EO.TblFeeGenDetail
+
+package model.ERP.EO
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="JoinDate")
+def JoinDate_ExpressionScript_Expression()
+{
+adf.currentDate
+}
+

@@ -1,0 +1,19 @@
+//Groovy Scripts for model.ERP.EO.TblSectionTimetableDetail
+
+package model.ERP.EO
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="FromTime")
+def FromTime_ExpressionScript_Expression()
+{
+adf.currentDate
+}
+
+
+@TransientValueExpression(attributeName="ToTime")
+def ToTime_ExpressionScript_Expression()
+{
+adf.currentDate
+}
+

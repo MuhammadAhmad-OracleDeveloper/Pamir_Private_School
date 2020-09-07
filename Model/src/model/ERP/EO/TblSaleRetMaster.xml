@@ -64,7 +64,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_SALE_RET_MASTER"/>
+    TableName="TBL_SALE_RET_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblSaleRetMasterRow"/>
+  </Attribute>
   <Attribute
     Name="NetAmt"
     ColumnName="NET_AMT"

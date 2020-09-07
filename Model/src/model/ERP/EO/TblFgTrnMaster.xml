@@ -57,7 +57,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_FG_TRN_MASTER"/>
+    TableName="TBL_FG_TRN_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblFgTrnMasterRow"/>
+  </Attribute>
   <Attribute
     Name="ProFgMasterId"
     ColumnName="PRO_FG_MASTER_ID"

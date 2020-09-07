@@ -51,14 +51,24 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_ACAD_YEAR"/>
+    TableName="TBL_ACAD_YEAR">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblAcadYearRow"/>
+  </Attribute>
   <Attribute
     Name="EndDate"
     ColumnName="END_DATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_ACAD_YEAR"/>
+    TableName="TBL_ACAD_YEAR">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblAcadYearRow"/>
+  </Attribute>
   <Attribute
     Name="Ast"
     Precision="1"
@@ -156,8 +166,8 @@
   <AccessorAttribute
     Name="TblTransFeeGenMaster"
     Association="model.ERP.EO.FkTblTransFeeGenMasterAcadYearFkAssoc"
-    AssociationEnd="model.ERP.EO.FkTblTransFeeGenMasterAcadYearFkAssoc.TblTransFeeGenMaster"
-    AssociationOtherEnd="model.ERP.EO.FkTblTransFeeGenMasterAcadYearFkAssoc.TblAcadYear"
+    AssociationEnd="model.ERP.EO.FkTblTransFeeGenMasterAcadYearFkAssoc.TblTransFeeGenMaster1"
+    AssociationOtherEnd="model.ERP.EO.FkTblTransFeeGenMasterAcadYearFkAssoc.TblAcadYear1"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <AccessorAttribute

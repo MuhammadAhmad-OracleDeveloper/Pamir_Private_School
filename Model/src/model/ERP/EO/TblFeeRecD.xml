@@ -71,7 +71,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_FEE_REC_D"/>
+    TableName="TBL_FEE_REC_D">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblFeeRecDRow"/>
+  </Attribute>
   <Attribute
     Name="Bank"
     Precision="50"

@@ -55,14 +55,24 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_STAFF_DOCS"/>
+    TableName="TBL_STAFF_DOCS">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblStaffDocsRow"/>
+  </Attribute>
   <Attribute
     Name="DocExpDate"
     ColumnName="DOC_EXP_DATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_STAFF_DOCS"/>
+    TableName="TBL_STAFF_DOCS">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblStaffDocsRow"/>
+  </Attribute>
   <Attribute
     Name="Ast"
     Precision="1"

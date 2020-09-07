@@ -31,7 +31,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_MEMBER"/>
+    TableName="TBL_MEMBER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblMemberRow"/>
+  </Attribute>
   <Attribute
     Name="Name"
     Precision="300"
@@ -110,14 +115,24 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_MEMBER"/>
+    TableName="TBL_MEMBER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblMemberRow"/>
+  </Attribute>
   <Attribute
     Name="ExpDate"
     ColumnName="EXP_DATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_MEMBER"/>
+    TableName="TBL_MEMBER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblMemberRow"/>
+  </Attribute>
   <Attribute
     Name="DiscPerc"
     ColumnName="DISC_PERC"

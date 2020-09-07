@@ -45,7 +45,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_AGE_POLICY"/>
+    TableName="TBL_AGE_POLICY">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblAgePolicyRow"/>
+  </Attribute>
   <Attribute
     Name="GradeId"
     ColumnName="GRADE_ID"

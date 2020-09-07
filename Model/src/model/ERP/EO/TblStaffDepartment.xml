@@ -38,7 +38,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_STAFF_DEPARTMENT"/>
+    TableName="TBL_STAFF_DEPARTMENT">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblStaffDepartmentRow"/>
+  </Attribute>
   <Attribute
     Name="DepartmentId"
     ColumnName="DEPARTMENT_ID"

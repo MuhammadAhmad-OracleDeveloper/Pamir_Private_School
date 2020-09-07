@@ -1,0 +1,12 @@
+//Groovy Scripts for model.ERP.EO.TblShipPlanDetailD
+
+package model.ERP.EO
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="ShipDate")
+def ShipDate_ExpressionScript_Expression()
+{
+adf.currentDate
+}
+

@@ -57,7 +57,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_INV_VOUCHER_MASTER"/>
+    TableName="TBL_INV_VOUCHER_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblInvVoucherMasterRow"/>
+  </Attribute>
   <Attribute
     Name="DepartmentId"
     ColumnName="DEPARTMENT_ID"

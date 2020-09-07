@@ -31,7 +31,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_SECTION_TIMETABLE_MASTER"/>
+    TableName="TBL_SECTION_TIMETABLE_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblSectionTimetableMasterRow"/>
+  </Attribute>
   <Attribute
     Name="GradeId"
     ColumnName="GRADE_ID"

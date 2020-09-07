@@ -1,0 +1,12 @@
+//Groovy Scripts for model.ERP.EO.TblFeeRecD
+
+package model.ERP.EO
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="ChqDate")
+def ChqDate_ExpressionScript_Expression()
+{
+adf.currentDate
+}
+

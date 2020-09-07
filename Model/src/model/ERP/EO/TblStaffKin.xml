@@ -38,7 +38,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_STAFF_KIN"/>
+    TableName="TBL_STAFF_KIN">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblStaffKinRow"/>
+  </Attribute>
   <Attribute
     Name="Name"
     Precision="150"

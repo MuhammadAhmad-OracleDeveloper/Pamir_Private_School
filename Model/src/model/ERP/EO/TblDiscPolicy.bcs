@@ -1,0 +1,26 @@
+//Groovy Scripts for model.ERP.EO.TblDiscPolicy
+
+package model.ERP.EO
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="Dated")
+def Dated_ExpressionScript_Expression()
+{
+adf.currentDate
+}
+
+
+@TransientValueExpression(attributeName="StartDate")
+def StartDate_ExpressionScript_Expression()
+{
+adf.currentDate
+}
+
+
+@TransientValueExpression(attributeName="EndDate")
+def EndDate_ExpressionScript_Expression()
+{
+adf.currentDate
+}
+
