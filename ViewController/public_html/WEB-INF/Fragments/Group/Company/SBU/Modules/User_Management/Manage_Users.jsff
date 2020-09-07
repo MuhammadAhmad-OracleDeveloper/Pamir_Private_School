@@ -35,7 +35,7 @@
                           queryListener="#{bindings.Cstm_Tbl_Role_Group_Role1Query.processQuery}" varStatus="vs"
                           id="t1" partialTriggers="::b2 ::b3 ::b4">
                   <af:column sortProperty="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Ast.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Ast.label}" id="c1">
+                             sortable="true" headerText="Active" id="c1">
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Ast.mandatory}"
                                         shortDesc="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Ast.tooltip}" id="soc1">
@@ -44,7 +44,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Id.label}" id="c2">
+                             sortable="true" headerText="Id" id="c2">
                     <af:inputText value="#{row.bindings.Id.inputValue}" readOnly="true"
                                   label="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Id.label}"
                                   required="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Id.mandatory}"
@@ -57,7 +57,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Name.label}"
+                             sortable="true" headerText="Role Name"
                              id="c3">
                     <af:inputText value="#{row.bindings.Name.inputValue}"
                                   label="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Name.label}"
@@ -68,7 +68,7 @@
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.RoleGroupRoleId.name}"
+                  <!--<af:column sortProperty="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.RoleGroupRoleId.name}"
                              filterable="true" sortable="true"
                              headerText="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.RoleGroupRoleId.label}" id="c4">
                     <af:inputText value="#{row.bindings.RoleGroupRoleId.inputValue}"
@@ -122,7 +122,7 @@
                                   shortDesc="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.RView.tooltip}" id="it6">
                       <f:validator binding="#{row.bindings.RView.validator}"/>
                     </af:inputText>
-                  </af:column>
+                  </af:column>-->
                 </af:table>
               </af:showDetailItem>
             </af:panelTabbed>
@@ -141,7 +141,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr4">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
             <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab2" text="User's">
+              <af:showDetailItem id="tab2" text="Users">
                 <af:table value="#{bindings.TblUserView3.collectionModel}" var="row"
                           rows="#{bindings.TblUserView3.rangeSize}"
                           emptyText="#{bindings.TblUserView3.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -152,7 +152,7 @@
                           queryListener="#{bindings.TblUserView3Query.processQuery}" varStatus="vs" id="t2"
                           partialTriggers="::b5 ::b6 ::b7">
                   <af:column sortProperty="#{bindings.TblUserView3.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="#{bindings.TblUserView3.hints.Id.label}" id="c8">
+                             headerText="Id" id="c8">
                     <af:inputText value="#{row.bindings.Id.inputValue}" label="#{bindings.TblUserView3.hints.Id.label}"
                                   required="#{bindings.TblUserView3.hints.Id.mandatory}" readOnly="true"
                                   columns="#{bindings.TblUserView3.hints.Id.displayWidth}"
@@ -163,7 +163,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblUserView3.hints.RoleId.name}" filterable="true" sortable="true"
-                             headerText="#{bindings.TblUserView3.hints.RoleId.label}" id="c9">
+                             headerText="Role Id" id="c9">
                     <af:inputText value="#{row.bindings.RoleId.inputValue}"
                                   label="#{bindings.TblUserView3.hints.RoleId.label}"
                                   required="#{bindings.TblUserView3.hints.RoleId.mandatory}"
@@ -175,7 +175,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblUserView3.hints.Name.name}" filterable="true" sortable="true"
-                             headerText="#{bindings.TblUserView3.hints.Name.label}" id="c10">
+                             headerText="User Name" id="c10">
                     <af:inputText value="#{row.bindings.Name.inputValue}"
                                   label="#{bindings.TblUserView3.hints.Name.label}"
                                   required="#{bindings.TblUserView3.hints.Name.mandatory}"
@@ -185,30 +185,8 @@
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblUserView3.hints.Ast.name}" filterable="true" sortable="true"
-                             headerText="#{bindings.TblUserView3.hints.Ast.label}" id="c11">
-                    <af:inputText value="#{row.bindings.Ast.inputValue}"
-                                  label="#{bindings.TblUserView3.hints.Ast.label}"
-                                  required="#{bindings.TblUserView3.hints.Ast.mandatory}"
-                                  columns="#{bindings.TblUserView3.hints.Ast.displayWidth}"
-                                  maximumLength="#{bindings.TblUserView3.hints.Ast.precision}"
-                                  shortDesc="#{bindings.TblUserView3.hints.Ast.tooltip}" id="it10">
-                      <f:validator binding="#{row.bindings.Ast.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblUserView3.hints.Email.name}" filterable="true" sortable="true"
-                             headerText="#{bindings.TblUserView3.hints.Email.label}" id="c12">
-                    <af:inputText value="#{row.bindings.Email.inputValue}"
-                                  label="#{bindings.TblUserView3.hints.Email.label}"
-                                  required="#{bindings.TblUserView3.hints.Email.mandatory}"
-                                  columns="#{bindings.TblUserView3.hints.Email.displayWidth}"
-                                  maximumLength="#{bindings.TblUserView3.hints.Email.precision}"
-                                  shortDesc="#{bindings.TblUserView3.hints.Email.tooltip}" id="it11">
-                      <f:validator binding="#{row.bindings.Email.validator}"/>
-                    </af:inputText>
-                  </af:column>
                   <af:column sortProperty="#{bindings.TblUserView3.hints.Pwd.name}" filterable="true" sortable="true"
-                             headerText="#{bindings.TblUserView3.hints.Pwd.label}" id="c13">
+                             headerText="Password" id="c13">
                     <af:inputText value="#{row.bindings.Pwd.inputValue}"
                                   label="#{bindings.TblUserView3.hints.Pwd.label}"
                                   required="#{bindings.TblUserView3.hints.Pwd.mandatory}"
@@ -218,7 +196,29 @@
                       <f:validator binding="#{row.bindings.Pwd.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblUserView3.hints.CreatedDate.name}" filterable="true"
+                  <af:column sortProperty="#{bindings.TblUserView3.hints.Email.name}" filterable="true" sortable="true"
+                             headerText="Email" id="c12">
+                    <af:inputText value="#{row.bindings.Email.inputValue}"
+                                  label="#{bindings.TblUserView3.hints.Email.label}"
+                                  required="#{bindings.TblUserView3.hints.Email.mandatory}"
+                                  columns="#{bindings.TblUserView3.hints.Email.displayWidth}"
+                                  maximumLength="#{bindings.TblUserView3.hints.Email.precision}"
+                                  shortDesc="#{bindings.TblUserView3.hints.Email.tooltip}" id="it11">
+                      <f:validator binding="#{row.bindings.Email.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblUserView3.hints.Ast.name}" filterable="true" sortable="true"
+                             headerText="Active" id="c11">
+                    <af:inputText value="#{row.bindings.Ast.inputValue}"
+                                  label="#{bindings.TblUserView3.hints.Ast.label}"
+                                  required="#{bindings.TblUserView3.hints.Ast.mandatory}"
+                                  columns="#{bindings.TblUserView3.hints.Ast.displayWidth}"
+                                  maximumLength="#{bindings.TblUserView3.hints.Ast.precision}"
+                                  shortDesc="#{bindings.TblUserView3.hints.Ast.tooltip}" id="it10">
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <!--<af:column sortProperty="#{bindings.TblUserView3.hints.CreatedDate.name}" filterable="true"
                              sortable="true" headerText="#{bindings.TblUserView3.hints.CreatedDate.label}" id="c14">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblUserView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.CreatedDate.value}"
@@ -275,7 +275,7 @@
                       <f:validator binding="#{row.bindings.UpdatedBy.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblUserView3.hints.UpdatedBy.format}"/>
                     </af:inputText>
-                  </af:column>
+                  </af:column>-->
                 </af:table>
                 <af:button actionListener="#{bindings.CreateInsert1.execute}" text="CreateInsert1"
                            disabled="#{!bindings.CreateInsert1.enabled}" id="b5"/>
@@ -299,9 +299,9 @@
                                     rowSelection="single" fetchSize="#{bindings.TblRoleGroupView4.rangeSize}"
                                     filterModel="#{bindings.TblRoleGroupView4Query.queryDescriptor}"
                                     filterVisible="true" queryListener="#{bindings.TblRoleGroupView4Query.processQuery}"
-                                    varStatus="vs" id="t3" partialTriggers="::b8 ::b9 ::b11">
+                                    varStatus="vs" id="t3" >
                             <af:column sortProperty="#{bindings.TblRoleGroupView4.hints.Id.name}" filterable="true"
-                                       sortable="true" headerText="#{bindings.TblRoleGroupView4.hints.Id.label}"
+                                       sortable="true" headerText="Id"
                                        id="c18">
                               <af:inputText value="#{row.bindings.Id.inputValue}" readOnly="true"
                                             label="#{bindings.TblRoleGroupView4.hints.Id.label}"
@@ -315,7 +315,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblRoleGroupView4.hints.GroupId.name}" filterable="true"
-                                       sortable="true" headerText="#{bindings.TblRoleGroupView4.hints.GroupId.label}"
+                                       sortable="true" headerText="Group Id"
                                        id="c19">
                               <af:inputText value="#{row.bindings.GroupId.inputValue}"
                                             label="#{bindings.TblRoleGroupView4.hints.GroupId.label}"
@@ -328,7 +328,7 @@
                                                   pattern="#{bindings.TblRoleGroupView4.hints.GroupId.format}"/>
                               </af:inputText>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblRoleGroupView4.hints.RoleId.name}" filterable="true"
+                            <!--<af:column sortProperty="#{bindings.TblRoleGroupView4.hints.RoleId.name}" filterable="true"
                                        sortable="true" headerText="#{bindings.TblRoleGroupView4.hints.RoleId.label}"
                                        id="c20">
                               <af:inputText value="#{row.bindings.RoleId.inputValue}"
@@ -341,8 +341,8 @@
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblRoleGroupView4.hints.RoleId.format}"/>
                               </af:inputText>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblRoleGroupView4.hints.CreatedDate.name}"
+                            </af:column>-->
+                            <!--<af:column sortProperty="#{bindings.TblRoleGroupView4.hints.CreatedDate.name}"
                                        filterable="true" sortable="true"
                                        headerText="#{bindings.TblRoleGroupView4.hints.CreatedDate.label}" id="c21">
                               <f:facet name="filter">
@@ -360,8 +360,8 @@
                                 <f:validator binding="#{row.bindings.CreatedDate.validator}"/>
                                 <af:convertDateTime pattern="#{bindings.TblRoleGroupView4.hints.CreatedDate.format}"/>
                               </af:inputDate>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblRoleGroupView4.hints.CreatedBy.name}"
+                            </af:column>-->
+                            <!--<af:column sortProperty="#{bindings.TblRoleGroupView4.hints.CreatedBy.name}"
                                        filterable="true" sortable="true"
                                        headerText="#{bindings.TblRoleGroupView4.hints.CreatedBy.label}" id="c22">
                               <af:inputText value="#{row.bindings.CreatedBy.inputValue}"
@@ -374,8 +374,8 @@
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblRoleGroupView4.hints.CreatedBy.format}"/>
                               </af:inputText>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblRoleGroupView4.hints.UpdatedDate.name}"
+                            </af:column>-->
+                            <!--<af:column sortProperty="#{bindings.TblRoleGroupView4.hints.UpdatedDate.name}"
                                        filterable="true" sortable="true"
                                        headerText="#{bindings.TblRoleGroupView4.hints.UpdatedDate.label}" id="c23">
                               <f:facet name="filter">
@@ -393,8 +393,8 @@
                                 <f:validator binding="#{row.bindings.UpdatedDate.validator}"/>
                                 <af:convertDateTime pattern="#{bindings.TblRoleGroupView4.hints.UpdatedDate.format}"/>
                               </af:inputDate>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblRoleGroupView4.hints.UpdatedBy.name}"
+                            </af:column>-->
+                            <!--<af:column sortProperty="#{bindings.TblRoleGroupView4.hints.UpdatedBy.name}"
                                        filterable="true" sortable="true"
                                        headerText="#{bindings.TblRoleGroupView4.hints.UpdatedBy.label}" id="c24">
                               <af:inputText value="#{row.bindings.UpdatedBy.inputValue}"
@@ -407,9 +407,9 @@
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblRoleGroupView4.hints.UpdatedBy.format}"/>
                               </af:inputText>
-                            </af:column>
+                            </af:column>-->
                             <af:column sortProperty="#{bindings.TblRoleGroupView4.hints.RView.name}" filterable="true"
-                                       sortable="true" headerText="#{bindings.TblRoleGroupView4.hints.RView.label}"
+                                       sortable="true" headerText="View"
                                        id="c25">
                               <af:selectOneChoice value="#{row.bindings.RView.inputValue}"
                                                   label="#{row.bindings.RView.label}"
@@ -421,12 +421,12 @@
                               </af:selectOneChoice>
                             </af:column>
                           </af:table>
-                          <af:button actionListener="#{bindings.CreateInsert2.execute}" text="CreateInsert2"
-                                     disabled="#{!bindings.CreateInsert2.enabled}" id="b8"/>
+                          <!--<af:button actionListener="#{bindings.CreateInsert2.execute}" text="CreateInsert2"
+                                     disabled="#{!bindings.CreateInsert2.enabled}" id="b8"/>-->
                           <af:button actionListener="#{bindings.Execute2.execute}" text="Execute2"
                                      disabled="#{!bindings.Execute2.enabled}" id="b9"/>
-                          <af:button actionListener="#{bindings.Delete2.execute}" text="Delete2"
-                                     disabled="#{!bindings.Delete2.enabled}" id="b11"/>
+                          <!--<af:button actionListener="#{bindings.Delete2.execute}" text="Delete2"
+                                     disabled="#{!bindings.Delete2.enabled}" id="b11"/>-->
                         </af:showDetailItem>
                       </af:panelTabbed>
                     </af:gridCell>
@@ -445,9 +445,9 @@
                                     filterModel="#{bindings.TblRoleCompanyView4Query.queryDescriptor}"
                                     filterVisible="true"
                                     queryListener="#{bindings.TblRoleCompanyView4Query.processQuery}" varStatus="vs"
-                                    id="t4" partialTriggers="::b12 ::b13 ::b14">
+                                    id="t4">
                             <af:column sortProperty="#{bindings.TblRoleCompanyView4.hints.Id.name}" filterable="true"
-                                       sortable="true" headerText="#{bindings.TblRoleCompanyView4.hints.Id.label}"
+                                       sortable="true" headerText="Id"
                                        id="c26">
                               <af:inputText value="#{row.bindings.Id.inputValue}"
                                             label="#{bindings.TblRoleCompanyView4.hints.Id.label}" readOnly="true"
@@ -460,7 +460,7 @@
                                                   pattern="#{bindings.TblRoleCompanyView4.hints.Id.format}"/>
                               </af:inputText>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblRoleCompanyView4.hints.GroupCompanyId.name}"
+                            <!--<af:column sortProperty="#{bindings.TblRoleCompanyView4.hints.GroupCompanyId.name}"
                                        filterable="true" sortable="true"
                                        headerText="#{bindings.TblRoleCompanyView4.hints.GroupCompanyId.label}" id="c27">
                               <af:inputText value="#{row.bindings.GroupCompanyId.inputValue}"
@@ -474,8 +474,8 @@
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblRoleCompanyView4.hints.GroupCompanyId.format}"/>
                               </af:inputText>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblRoleCompanyView4.hints.RoleId.name}"
+                            </af:column>-->
+                            <!--<af:column sortProperty="#{bindings.TblRoleCompanyView4.hints.RoleId.name}"
                                        filterable="true" sortable="true"
                                        headerText="#{bindings.TblRoleCompanyView4.hints.RoleId.label}" id="c28">
                               <af:inputText value="#{row.bindings.RoleId.inputValue}"
@@ -488,8 +488,8 @@
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblRoleCompanyView4.hints.RoleId.format}"/>
                               </af:inputText>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblRoleCompanyView4.hints.CreatedDate.name}"
+                            </af:column>-->
+                            <!--<af:column sortProperty="#{bindings.TblRoleCompanyView4.hints.CreatedDate.name}"
                                        filterable="true" sortable="true"
                                        headerText="#{bindings.TblRoleCompanyView4.hints.CreatedDate.label}" id="c29">
                               <f:facet name="filter">
@@ -507,8 +507,8 @@
                                 <f:validator binding="#{row.bindings.CreatedDate.validator}"/>
                                 <af:convertDateTime pattern="#{bindings.TblRoleCompanyView4.hints.CreatedDate.format}"/>
                               </af:inputDate>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblRoleCompanyView4.hints.CreatedBy.name}"
+                            </af:column>-->
+                            <!--<af:column sortProperty="#{bindings.TblRoleCompanyView4.hints.CreatedBy.name}"
                                        filterable="true" sortable="true"
                                        headerText="#{bindings.TblRoleCompanyView4.hints.CreatedBy.label}" id="c30">
                               <af:inputText value="#{row.bindings.CreatedBy.inputValue}"
@@ -522,8 +522,8 @@
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblRoleCompanyView4.hints.CreatedBy.format}"/>
                               </af:inputText>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblRoleCompanyView4.hints.UpdatedDate.name}"
+                            </af:column>-->
+                            <!--<af:column sortProperty="#{bindings.TblRoleCompanyView4.hints.UpdatedDate.name}"
                                        filterable="true" sortable="true"
                                        headerText="#{bindings.TblRoleCompanyView4.hints.UpdatedDate.label}" id="c31">
                               <f:facet name="filter">
@@ -541,8 +541,8 @@
                                 <f:validator binding="#{row.bindings.UpdatedDate.validator}"/>
                                 <af:convertDateTime pattern="#{bindings.TblRoleCompanyView4.hints.UpdatedDate.format}"/>
                               </af:inputDate>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblRoleCompanyView4.hints.UpdatedBy.name}"
+                            </af:column>-->
+                            <!--<af:column sortProperty="#{bindings.TblRoleCompanyView4.hints.UpdatedBy.name}"
                                        filterable="true" sortable="true"
                                        headerText="#{bindings.TblRoleCompanyView4.hints.UpdatedBy.label}" id="c32">
                               <af:inputText value="#{row.bindings.UpdatedBy.inputValue}"
@@ -556,9 +556,9 @@
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblRoleCompanyView4.hints.UpdatedBy.format}"/>
                               </af:inputText>
-                            </af:column>
+                            </af:column>-->
                             <af:column sortProperty="#{bindings.TblRoleCompanyView4.hints.RView.name}" filterable="true"
-                                       sortable="true" headerText="#{bindings.TblRoleCompanyView4.hints.RView.label}"
+                                       sortable="true" headerText="View"
                                        id="c33">
                               <af:selectOneChoice value="#{row.bindings.RView.inputValue}"
                                                   label="#{row.bindings.RView.label}"
@@ -569,7 +569,7 @@
                                 <f:validator binding="#{row.bindings.RView.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblRoleCompanyView4.hints.RoleGroupId.name}"
+                            <!--<af:column sortProperty="#{bindings.TblRoleCompanyView4.hints.RoleGroupId.name}"
                                        filterable="true" sortable="true"
                                        headerText="#{bindings.TblRoleCompanyView4.hints.RoleGroupId.label}" id="c34">
                               <af:inputText value="#{row.bindings.RoleGroupId.inputValue}"
@@ -583,14 +583,14 @@
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblRoleCompanyView4.hints.RoleGroupId.format}"/>
                               </af:inputText>
-                            </af:column>
+                            </af:column>-->
                           </af:table>
-                          <af:button actionListener="#{bindings.CreateInsert3.execute}" text="CreateInsert3"
-                                     disabled="#{!bindings.CreateInsert3.enabled}" id="b12"/>
+                          <!--<af:button actionListener="#{bindings.CreateInsert3.execute}" text="CreateInsert3"
+                                     disabled="#{!bindings.CreateInsert3.enabled}" id="b12"/>-->
                           <af:button actionListener="#{bindings.Execute3.execute}" text="Execute3"
                                      disabled="#{!bindings.Execute3.enabled}" id="b13"/>
-                          <af:button actionListener="#{bindings.Delete3.execute}" text="Delete3"
-                                     disabled="#{!bindings.Delete3.enabled}" id="b14"/>
+                          <!--<af:button actionListener="#{bindings.Delete3.execute}" text="Delete3"
+                                     disabled="#{!bindings.Delete3.enabled}" id="b14"/>-->
                         </af:showDetailItem>
                       </af:panelTabbed>
                     </af:gridCell>
@@ -599,7 +599,7 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8">
                       <af:panelTabbed position="above" id="pt5">
                         <af:showDetailItem id="tab5" text="SBU Role's">
-                          <af:table value="#{bindings.TblRoleSbuView5.collectionModel}" var="row"
+                          <!--<af:table value="#{bindings.TblRoleSbuView5.collectionModel}" var="row"
                                     rows="#{bindings.TblRoleSbuView5.rangeSize}"
                                     emptyText="#{bindings.TblRoleSbuView5.viewable ? 'No data to display.' : 'Access Denied.'}"
                                     rowBandingInterval="0"
@@ -610,7 +610,7 @@
                                     queryListener="#{bindings.TblRoleSbuView5Query.processQuery}" varStatus="vs"
                                     id="t5" partialTriggers="::b15 ::b16 ::b17">
                             <af:column sortProperty="#{bindings.TblRoleSbuView5.hints.Id.name}" filterable="true"
-                                       sortable="true" headerText="#{bindings.TblRoleSbuView5.hints.Id.label}" id="c35">
+                                       sortable="true" headerText="Id" id="c35">
                               <af:inputText value="#{row.bindings.Id.inputValue}" readOnly="true"
                                             label="#{bindings.TblRoleSbuView5.hints.Id.label}"
                                             required="#{bindings.TblRoleSbuView5.hints.Id.mandatory}"
@@ -622,7 +622,7 @@
                                                   pattern="#{bindings.TblRoleSbuView5.hints.Id.format}"/>
                               </af:inputText>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblRoleSbuView5.hints.CompanySbuId.name}"
+                            --><!--<af:column sortProperty="#{bindings.TblRoleSbuView5.hints.CompanySbuId.name}"
                                        filterable="true" sortable="true"
                                        headerText="#{bindings.TblRoleSbuView5.hints.CompanySbuId.label}" id="c36">
                               <af:inputText value="#{row.bindings.CompanySbuId.inputValue}"
@@ -636,8 +636,8 @@
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblRoleSbuView5.hints.CompanySbuId.format}"/>
                               </af:inputText>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblRoleSbuView5.hints.RoleCompanyId.name}"
+                            </af:column>--><!--
+                            --><!--<af:column sortProperty="#{bindings.TblRoleSbuView5.hints.RoleCompanyId.name}"
                                        filterable="true" sortable="true"
                                        headerText="#{bindings.TblRoleSbuView5.hints.RoleCompanyId.label}" id="c37">
                               <af:inputText value="#{row.bindings.RoleCompanyId.inputValue}"
@@ -651,8 +651,8 @@
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblRoleSbuView5.hints.RoleCompanyId.format}"/>
                               </af:inputText>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblRoleSbuView5.hints.RoleId.name}" filterable="true"
+                            </af:column>--><!--
+                            --><!--<af:column sortProperty="#{bindings.TblRoleSbuView5.hints.RoleId.name}" filterable="true"
                                        sortable="true" headerText="#{bindings.TblRoleSbuView5.hints.RoleId.label}"
                                        id="c38">
                               <af:inputText value="#{row.bindings.RoleId.inputValue}"
@@ -665,7 +665,7 @@
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblRoleSbuView5.hints.RoleId.format}"/>
                               </af:inputText>
-                            </af:column>
+                            </af:column>--><!--
                             <af:column sortProperty="#{bindings.TblRoleSbuView5.hints.CreatedDate.name}"
                                        filterable="true" sortable="true"
                                        headerText="#{bindings.TblRoleSbuView5.hints.CreatedDate.label}" id="c39">
@@ -684,7 +684,7 @@
                                 <af:convertDateTime pattern="#{bindings.TblRoleSbuView5.hints.CreatedDate.format}"/>
                               </af:inputDate>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblRoleSbuView5.hints.CreatedBy.name}" filterable="true"
+                            --><!--<af:column sortProperty="#{bindings.TblRoleSbuView5.hints.CreatedBy.name}" filterable="true"
                                        sortable="true" headerText="#{bindings.TblRoleSbuView5.hints.CreatedBy.label}"
                                        id="c40">
                               <af:inputText value="#{row.bindings.CreatedBy.inputValue}"
@@ -729,7 +729,7 @@
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblRoleSbuView5.hints.UpdatedBy.format}"/>
                               </af:inputText>
-                            </af:column>
+                            </af:column>--><!--
                             <af:column sortProperty="#{bindings.TblRoleSbuView5.hints.RView.name}" filterable="true"
                                        sortable="true" headerText="#{bindings.TblRoleSbuView5.hints.RView.label}"
                                        id="c43">
@@ -741,13 +741,13 @@
                                 <f:validator binding="#{row.bindings.RView.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
-                          </af:table>
-                          <af:button actionListener="#{bindings.CreateInsert4.execute}" text="CreateInsert4"
-                                     disabled="#{!bindings.CreateInsert4.enabled}" id="b15"/>
+                          </af:table>-->
+                          <!--<af:button actionListener="#{bindings.CreateInsert4.execute}" text="CreateInsert4"
+                                     disabled="#{!bindings.CreateInsert4.enabled}" id="b15"/>-->
                           <af:button actionListener="#{bindings.Execute4.execute}" text="Execute4"
                                      disabled="#{!bindings.Execute4.enabled}" id="b16"/>
-                          <af:button actionListener="#{bindings.Delete4.execute}" text="Delete4"
-                                     disabled="#{!bindings.Delete4.enabled}" id="b17"/>
+                          <!--<af:button actionListener="#{bindings.Delete4.execute}" text="Delete4"
+                                     disabled="#{!bindings.Delete4.enabled}" id="b17"/>-->
                         </af:showDetailItem>
                         <af:showDetailItem id="sdi2" text="Module">
                           <af:panelGridLayout id="pgl3">
@@ -766,7 +766,7 @@
                                               filterModel="#{bindings.TblRoleModulesView2Query.queryDescriptor}"
                                               filterVisible="true"
                                               queryListener="#{bindings.TblRoleModulesView2Query.processQuery}"
-                                              varStatus="vs" id="t6" partialTriggers="::b18 ::b19 ::b20">
+                                              varStatus="vs" id="t6">
                                       <af:column sortProperty="#{bindings.TblRoleModulesView2.hints.Id.name}"
                                                  filterable="true" sortable="true"
                                                  headerText="#{bindings.TblRoleModulesView2.hints.Id.label}" id="c44">
@@ -782,7 +782,7 @@
                                                             pattern="#{bindings.TblRoleModulesView2.hints.Id.format}"/>
                                         </af:inputText>
                                       </af:column>
-                                      <af:column sortProperty="#{bindings.TblRoleModulesView2.hints.RoleId.name}"
+                                      <!--<af:column sortProperty="#{bindings.TblRoleModulesView2.hints.RoleId.name}"
                                                  filterable="true" sortable="true"
                                                  headerText="#{bindings.TblRoleModulesView2.hints.RoleId.label}"
                                                  id="c45">
@@ -797,7 +797,7 @@
                                           <af:convertNumber groupingUsed="false"
                                                             pattern="#{bindings.TblRoleModulesView2.hints.RoleId.format}"/>
                                         </af:inputText>
-                                      </af:column>
+                                      </af:column>-->
                                       <af:column sortProperty="#{bindings.TblRoleModulesView2.hints.RView.name}"
                                                  filterable="true" sortable="true"
                                                  headerText="#{bindings.TblRoleModulesView2.hints.RView.label}"
@@ -811,7 +811,7 @@
                                           <f:validator binding="#{row.bindings.RView.validator}"/>
                                         </af:selectOneChoice>
                                       </af:column>
-                                      <af:column sortProperty="#{bindings.TblRoleModulesView2.hints.CreatedDate.name}"
+                                      <!--<af:column sortProperty="#{bindings.TblRoleModulesView2.hints.CreatedDate.name}"
                                                  filterable="true" sortable="true"
                                                  headerText="#{bindings.TblRoleModulesView2.hints.CreatedDate.label}"
                                                  id="c47">
@@ -882,8 +882,8 @@
                                           <af:convertNumber groupingUsed="false"
                                                             pattern="#{bindings.TblRoleModulesView2.hints.UpdatedBy.format}"/>
                                         </af:inputText>
-                                      </af:column>
-                                      <af:column headerText="#{bindings.TblRoleModulesView2.hints.CompanyModuleId.label}"
+                                      </af:column>-->
+                                      <!--<af:column headerText="#{bindings.TblRoleModulesView2.hints.CompanyModuleId.label}"
                                                  id="c51">
                                         <af:selectOneChoice value="#{row.bindings.CompanyModuleId.inputValue}"
                                                             label="#{row.bindings.CompanyModuleId.label}"
@@ -893,8 +893,8 @@
                                           <f:selectItems value="#{row.bindings.CompanyModuleId.items}" id="si9"/>
                                           <f:validator binding="#{row.bindings.CompanyModuleId.validator}"/>
                                         </af:selectOneChoice>
-                                      </af:column>
-                                      <af:column sortProperty="#{bindings.TblRoleModulesView2.hints.RoleCompanyId.name}"
+                                      </af:column>-->
+                                      <!--<af:column sortProperty="#{bindings.TblRoleModulesView2.hints.RoleCompanyId.name}"
                                                  filterable="true" sortable="true"
                                                  headerText="#{bindings.TblRoleModulesView2.hints.RoleCompanyId.label}"
                                                  id="c52">
@@ -909,14 +909,14 @@
                                           <af:convertNumber groupingUsed="false"
                                                             pattern="#{bindings.TblRoleModulesView2.hints.RoleCompanyId.format}"/>
                                         </af:inputText>
-                                      </af:column>
+                                      </af:column>-->
                                     </af:table>
-                                    <af:button actionListener="#{bindings.CreateInsert5.execute}" text="CreateInsert5"
-                                               disabled="#{!bindings.CreateInsert5.enabled}" id="b18"/>
+                                    <!--<af:button actionListener="#{bindings.CreateInsert5.execute}" text="CreateInsert5"
+                                               disabled="#{!bindings.CreateInsert5.enabled}" id="b18"/>-->
                                     <af:button actionListener="#{bindings.Execute5.execute}" text="Execute5"
                                                disabled="#{!bindings.Execute5.enabled}" id="b19"/>
-                                    <af:button actionListener="#{bindings.Delete5.execute}" text="Delete5"
-                                               disabled="#{!bindings.Delete5.enabled}" id="b20"/>
+                                    <!--<af:button actionListener="#{bindings.Delete5.execute}" text="Delete5"
+                                               disabled="#{!bindings.Delete5.enabled}" id="b20"/>-->
                                   </af:showDetailItem>
                                 </af:panelTabbed>
                               </af:gridCell>
@@ -936,7 +936,7 @@
                                               filterModel="#{bindings.TblRoleSubModulesView3Query.queryDescriptor}"
                                               filterVisible="true"
                                               queryListener="#{bindings.TblRoleSubModulesView3Query.processQuery}"
-                                              varStatus="vs" id="t7" partialTriggers="::b21 ::b22 ::b23">
+                                              varStatus="vs" id="t7">
                                       <af:column sortProperty="#{bindings.TblRoleSubModulesView3.hints.Id.name}"
                                                  filterable="true" sortable="true"
                                                  headerText="#{bindings.TblRoleSubModulesView3.hints.Id.label}"
@@ -953,7 +953,7 @@
                                                             pattern="#{bindings.TblRoleSubModulesView3.hints.Id.format}"/>
                                         </af:inputText>
                                       </af:column>
-                                      <af:column sortProperty="#{bindings.TblRoleSubModulesView3.hints.RoleId.name}"
+                                      <!--<af:column sortProperty="#{bindings.TblRoleSubModulesView3.hints.RoleId.name}"
                                                  filterable="true" sortable="true"
                                                  headerText="#{bindings.TblRoleSubModulesView3.hints.RoleId.label}"
                                                  id="c54">
@@ -968,8 +968,8 @@
                                           <af:convertNumber groupingUsed="false"
                                                             pattern="#{bindings.TblRoleSubModulesView3.hints.RoleId.format}"/>
                                         </af:inputText>
-                                      </af:column>
-                                      <af:column sortProperty="#{bindings.TblRoleSubModulesView3.hints.RoleModuleId.name}"
+                                      </af:column>-->
+                                      <!--<af:column sortProperty="#{bindings.TblRoleSubModulesView3.hints.RoleModuleId.name}"
                                                  filterable="true" sortable="true"
                                                  headerText="#{bindings.TblRoleSubModulesView3.hints.RoleModuleId.label}"
                                                  id="c55">
@@ -984,8 +984,8 @@
                                           <af:convertNumber groupingUsed="false"
                                                             pattern="#{bindings.TblRoleSubModulesView3.hints.RoleModuleId.format}"/>
                                         </af:inputText>
-                                      </af:column>
-                                      <af:column headerText="#{bindings.TblRoleSubModulesView3.hints.CompanySubModuleId.label}"
+                                      </af:column>-->
+                                      <!--<af:column headerText="#{bindings.TblRoleSubModulesView3.hints.CompanySubModuleId.label}"
                                                  id="c56">
                                         <af:selectOneChoice value="#{row.bindings.CompanySubModuleId.inputValue}"
                                                             label="#{row.bindings.CompanySubModuleId.label}"
@@ -995,7 +995,7 @@
                                           <f:selectItems value="#{row.bindings.CompanySubModuleId.items}" id="si10"/>
                                           <f:validator binding="#{row.bindings.CompanySubModuleId.validator}"/>
                                         </af:selectOneChoice>
-                                      </af:column>
+                                      </af:column>-->
                                       <af:column sortProperty="#{bindings.TblRoleSubModulesView3.hints.RView.name}"
                                                  filterable="true" sortable="true"
                                                  headerText="#{bindings.TblRoleSubModulesView3.hints.RView.label}"
@@ -1009,7 +1009,7 @@
                                           <f:validator binding="#{row.bindings.RView.validator}"/>
                                         </af:selectOneChoice>
                                       </af:column>
-                                      <af:column sortProperty="#{bindings.TblRoleSubModulesView3.hints.CreatedDate.name}"
+                                      <!--<af:column sortProperty="#{bindings.TblRoleSubModulesView3.hints.CreatedDate.name}"
                                                  filterable="true" sortable="true"
                                                  headerText="#{bindings.TblRoleSubModulesView3.hints.CreatedDate.label}"
                                                  id="c58">
@@ -1080,14 +1080,14 @@
                                           <af:convertNumber groupingUsed="false"
                                                             pattern="#{bindings.TblRoleSubModulesView3.hints.UpdatedBy.format}"/>
                                         </af:inputText>
-                                      </af:column>
+                                      </af:column>-->
                                     </af:table>
-                                    <af:button actionListener="#{bindings.CreateInsert6.execute}" text="CreateInsert6"
-                                               disabled="#{!bindings.CreateInsert6.enabled}" id="b21"/>
+                                    <!--<af:button actionListener="#{bindings.CreateInsert6.execute}" text="CreateInsert6"
+                                               disabled="#{!bindings.CreateInsert6.enabled}" id="b21"/>-->
                                     <af:button actionListener="#{bindings.Execute6.execute}" text="Execute6"
                                                disabled="#{!bindings.Execute6.enabled}" id="b22"/>
-                                    <af:button actionListener="#{bindings.Delete6.execute}" text="Delete6"
-                                               disabled="#{!bindings.Delete6.enabled}" id="b23"/>
+                                    <!--<af:button actionListener="#{bindings.Delete6.execute}" text="Delete6"
+                                               disabled="#{!bindings.Delete6.enabled}" id="b23"/>-->
                                   </af:showDetailItem>
                                 </af:panelTabbed>
                               </af:gridCell>
@@ -1106,7 +1106,7 @@
                                               filterModel="#{bindings.TblRolePagesView2Query.queryDescriptor}"
                                               filterVisible="true"
                                               queryListener="#{bindings.TblRolePagesView2Query.processQuery}"
-                                              varStatus="vs" id="t8" partialTriggers="::b24 ::b25 ::b26">
+                                              varStatus="vs" id="t8">
                                       <af:column sortProperty="#{bindings.TblRolePagesView2.hints.Id.name}"
                                                  filterable="true" sortable="true"
                                                  headerText="#{bindings.TblRolePagesView2.hints.Id.label}" id="c62">
@@ -1122,7 +1122,7 @@
                                                             pattern="#{bindings.TblRolePagesView2.hints.Id.format}"/>
                                         </af:inputText>
                                       </af:column>
-                                      <af:column sortProperty="#{bindings.TblRolePagesView2.hints.RoleId.name}"
+                                      <!--<af:column sortProperty="#{bindings.TblRolePagesView2.hints.RoleId.name}"
                                                  filterable="true" sortable="true"
                                                  headerText="#{bindings.TblRolePagesView2.hints.RoleId.label}" id="c63">
                                         <af:inputText value="#{row.bindings.RoleId.inputValue}"
@@ -1136,7 +1136,7 @@
                                           <af:convertNumber groupingUsed="false"
                                                             pattern="#{bindings.TblRolePagesView2.hints.RoleId.format}"/>
                                         </af:inputText>
-                                      </af:column>
+                                      </af:column>-->
                                       <af:column sortProperty="#{bindings.TblRolePagesView2.hints.RView.name}"
                                                  filterable="true" sortable="true"
                                                  headerText="#{bindings.TblRolePagesView2.hints.RView.label}" id="c64">
@@ -1189,7 +1189,7 @@
                                           <f:validator binding="#{row.bindings.RDelete.validator}"/>
                                         </af:inputText>
                                       </af:column>
-                                      <af:column sortProperty="#{bindings.TblRolePagesView2.hints.RPrint.name}"
+                                      <!--<af:column sortProperty="#{bindings.TblRolePagesView2.hints.RPrint.name}"
                                                  filterable="true" sortable="true"
                                                  headerText="#{bindings.TblRolePagesView2.hints.RPrint.label}" id="c68">
                                         <af:inputText value="#{row.bindings.RPrint.inputValue}"
@@ -1201,8 +1201,8 @@
                                                       id="it49">
                                           <f:validator binding="#{row.bindings.RPrint.validator}"/>
                                         </af:inputText>
-                                      </af:column>
-                                      <af:column sortProperty="#{bindings.TblRolePagesView2.hints.RPost.name}"
+                                      </af:column>-->
+                                      <!--<af:column sortProperty="#{bindings.TblRolePagesView2.hints.RPost.name}"
                                                  filterable="true" sortable="true"
                                                  headerText="#{bindings.TblRolePagesView2.hints.RPost.label}" id="c69">
                                         <af:inputText value="#{row.bindings.RPost.inputValue}"
@@ -1214,8 +1214,8 @@
                                                       id="it50">
                                           <f:validator binding="#{row.bindings.RPost.validator}"/>
                                         </af:inputText>
-                                      </af:column>
-                                      <af:column headerText="#{bindings.TblRolePagesView2.hints.CompanyPagesId.label}"
+                                      </af:column>-->
+                                      <!--<af:column headerText="#{bindings.TblRolePagesView2.hints.CompanyPagesId.label}"
                                                  id="c70">
                                         <af:selectOneChoice value="#{row.bindings.CompanyPagesId.inputValue}"
                                                             label="#{row.bindings.CompanyPagesId.label}"
@@ -1225,8 +1225,8 @@
                                           <f:selectItems value="#{row.bindings.CompanyPagesId.items}" id="si11"/>
                                           <f:validator binding="#{row.bindings.CompanyPagesId.validator}"/>
                                         </af:selectOneChoice>
-                                      </af:column>
-                                      <af:column sortProperty="#{bindings.TblRolePagesView2.hints.CompanySubModuleId.name}"
+                                      </af:column>-->
+                                      <!--<af:column sortProperty="#{bindings.TblRolePagesView2.hints.CompanySubModuleId.name}"
                                                  filterable="true" sortable="true"
                                                  headerText="#{bindings.TblRolePagesView2.hints.CompanySubModuleId.label}"
                                                  id="c71">
@@ -1241,8 +1241,8 @@
                                           <af:convertNumber groupingUsed="false"
                                                             pattern="#{bindings.TblRolePagesView2.hints.CompanySubModuleId.format}"/>
                                         </af:inputText>
-                                      </af:column>
-                                      <af:column sortProperty="#{bindings.TblRolePagesView2.hints.RoleSubModulesId.name}"
+                                      </af:column>-->
+                                      <!--<af:column sortProperty="#{bindings.TblRolePagesView2.hints.RoleSubModulesId.name}"
                                                  filterable="true" sortable="true"
                                                  headerText="#{bindings.TblRolePagesView2.hints.RoleSubModulesId.label}"
                                                  id="c72">
@@ -1257,14 +1257,14 @@
                                           <af:convertNumber groupingUsed="false"
                                                             pattern="#{bindings.TblRolePagesView2.hints.RoleSubModulesId.format}"/>
                                         </af:inputText>
-                                      </af:column>
+                                      </af:column>-->
                                     </af:table>
-                                    <af:button actionListener="#{bindings.CreateInsert7.execute}" text="CreateInsert7"
-                                               disabled="#{!bindings.CreateInsert7.enabled}" id="b24"/>
+                                    <!--<af:button actionListener="#{bindings.CreateInsert7.execute}" text="CreateInsert7"
+                                               disabled="#{!bindings.CreateInsert7.enabled}" id="b24"/>-->
                                     <af:button actionListener="#{bindings.Execute7.execute}" text="Execute7"
                                                disabled="#{!bindings.Execute7.enabled}" id="b25"/>
-                                    <af:button actionListener="#{bindings.Delete7.execute}" text="Delete7"
-                                               disabled="#{!bindings.Delete7.enabled}" id="b26"/>
+                                    <!--<af:button actionListener="#{bindings.Delete7.execute}" text="Delete7"
+                                               disabled="#{!bindings.Delete7.enabled}" id="b26"/>-->
                                   </af:showDetailItem>
                                   <af:showDetailItem id="sdi3" text="Report Role's">
                                     <af:table value="#{bindings.TblRoleReportsView2.collectionModel}" var="row"
@@ -1278,7 +1278,7 @@
                                               filterModel="#{bindings.TblRoleReportsView2Query.queryDescriptor}"
                                               filterVisible="true"
                                               queryListener="#{bindings.TblRoleReportsView2Query.processQuery}"
-                                              varStatus="vs" id="t9" partialTriggers="::b27 ::b28 ::b29">
+                                              varStatus="vs" id="t9">
                                       <af:column sortProperty="#{bindings.TblRoleReportsView2.hints.Id.name}"
                                                  filterable="true" sortable="true"
                                                  headerText="#{bindings.TblRoleReportsView2.hints.Id.label}" id="c73">
@@ -1294,7 +1294,7 @@
                                                             pattern="#{bindings.TblRoleReportsView2.hints.Id.format}"/>
                                         </af:inputText>
                                       </af:column>
-                                      <af:column sortProperty="#{bindings.TblRoleReportsView2.hints.RoleId.name}"
+                                      <!--<af:column sortProperty="#{bindings.TblRoleReportsView2.hints.RoleId.name}"
                                                  filterable="true" sortable="true"
                                                  headerText="#{bindings.TblRoleReportsView2.hints.RoleId.label}"
                                                  id="c74">
@@ -1309,7 +1309,7 @@
                                           <af:convertNumber groupingUsed="false"
                                                             pattern="#{bindings.TblRoleReportsView2.hints.RoleId.format}"/>
                                         </af:inputText>
-                                      </af:column>
+                                      </af:column>-->
                                       <af:column sortProperty="#{bindings.TblRoleReportsView2.hints.RView.name}"
                                                  filterable="true" sortable="true"
                                                  headerText="#{bindings.TblRoleReportsView2.hints.RView.label}"
@@ -1323,7 +1323,7 @@
                                           <f:validator binding="#{row.bindings.RView.validator}"/>
                                         </af:selectOneChoice>
                                       </af:column>
-                                      <af:column headerText="#{bindings.TblRoleReportsView2.hints.CompanyReportId.label}"
+                                      <!--<af:column headerText="#{bindings.TblRoleReportsView2.hints.CompanyReportId.label}"
                                                  id="c76">
                                         <af:selectOneChoice value="#{row.bindings.CompanyReportId.inputValue}"
                                                             label="#{row.bindings.CompanyReportId.label}"
@@ -1333,8 +1333,8 @@
                                           <f:selectItems value="#{row.bindings.CompanyReportId.items}" id="si12"/>
                                           <f:validator binding="#{row.bindings.CompanyReportId.validator}"/>
                                         </af:selectOneChoice>
-                                      </af:column>
-                                      <af:column sortProperty="#{bindings.TblRoleReportsView2.hints.CompanySubModuleId.name}"
+                                      </af:column>-->
+                                      <!--<af:column sortProperty="#{bindings.TblRoleReportsView2.hints.CompanySubModuleId.name}"
                                                  filterable="true" sortable="true"
                                                  headerText="#{bindings.TblRoleReportsView2.hints.CompanySubModuleId.label}"
                                                  id="c77">
@@ -1349,8 +1349,8 @@
                                           <af:convertNumber groupingUsed="false"
                                                             pattern="#{bindings.TblRoleReportsView2.hints.CompanySubModuleId.format}"/>
                                         </af:inputText>
-                                      </af:column>
-                                      <af:column sortProperty="#{bindings.TblRoleReportsView2.hints.RoleSubModulesId.name}"
+                                      </af:column>-->
+                                      <!--<af:column sortProperty="#{bindings.TblRoleReportsView2.hints.RoleSubModulesId.name}"
                                                  filterable="true" sortable="true"
                                                  headerText="#{bindings.TblRoleReportsView2.hints.RoleSubModulesId.label}"
                                                  id="c78">
@@ -1365,14 +1365,14 @@
                                           <af:convertNumber groupingUsed="false"
                                                             pattern="#{bindings.TblRoleReportsView2.hints.RoleSubModulesId.format}"/>
                                         </af:inputText>
-                                      </af:column>
+                                      </af:column>-->
                                     </af:table>
-                                    <af:button actionListener="#{bindings.CreateInsert8.execute}" text="CreateInsert8"
-                                               disabled="#{!bindings.CreateInsert8.enabled}" id="b27"/>
+                                    <!--<af:button actionListener="#{bindings.CreateInsert8.execute}" text="CreateInsert8"
+                                               disabled="#{!bindings.CreateInsert8.enabled}" id="b27"/>-->
                                     <af:button actionListener="#{bindings.Execute8.execute}" text="Execute8"
                                                disabled="#{!bindings.Execute8.enabled}" id="b28"/>
-                                    <af:button actionListener="#{bindings.Delete8.execute}" text="Delete8"
-                                               disabled="#{!bindings.Delete8.enabled}" id="b29"/>
+                                    <!--<af:button actionListener="#{bindings.Delete8.execute}" text="Delete8"
+                                               disabled="#{!bindings.Delete8.enabled}" id="b29"/>-->
                                   </af:showDetailItem>
                                 </af:panelTabbed>
                               </af:gridCell>
