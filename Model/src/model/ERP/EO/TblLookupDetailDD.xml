@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="TBL_LOOKUP_DETAIL_D_D"
   AliasName="TblLookupDetailDD"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.ERP.EO.TblLookupDetailDDImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="Id"
     ColumnName="ID"
@@ -62,12 +67,14 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_LOOKUP_DETAIL_D_D"/>
+    TableName="TBL_LOOKUP_DETAIL_D_D"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_LOOKUP_DETAIL_D_D"/>
   <Attribute
@@ -76,12 +83,13 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_LOOKUP_DETAIL_D_D"/>
+    TableName="TBL_LOOKUP_DETAIL_D_D"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_LOOKUP_DETAIL_D_D"/>
   <AccessorAttribute
