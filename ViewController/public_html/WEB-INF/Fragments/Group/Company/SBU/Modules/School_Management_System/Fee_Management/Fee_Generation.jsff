@@ -595,7 +595,7 @@
                                     filterModel="#{bindings.TblFeeGenDTransView3Query.queryDescriptor}"
                                     filterVisible="true"
                                     queryListener="#{bindings.TblFeeGenDTransView3Query.processQuery}" varStatus="vs"
-                                    id="t9">
+                                    id="t9" partialTriggers="::b3">
                             <af:column sortProperty="#{bindings.TblFeeGenDTransView3.hints.LookupDetailArea.name}"
                                        filterable="true" sortable="true"
                                        headerText="Area"
@@ -636,7 +636,9 @@
                               </af:inputText>
                             </af:column>
                           </af:table>
-
+                          <af:spacer width="10" height="10" id="s6"/>
+                          <af:button actionListener="#{bindings.Execute3.execute}" text="Refresh"
+                                     disabled="#{!bindings.Execute3.enabled}" id="b3"/>
                         </af:showDetailItem>
                       </af:panelTabbed>
                    
