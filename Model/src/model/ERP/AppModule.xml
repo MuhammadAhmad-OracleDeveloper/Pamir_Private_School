@@ -970,6 +970,15 @@
   <ViewUsage
     Name="TblFeeRecDView2"
     ViewObjectName="model.ERP.VO.TblFeeRecDView"/>
+  <ViewUsage
+    Name="TblEditFeeCollDView1"
+    ViewObjectName="model.ERP.VO.TblEditFeeCollDView"/>
+  <ViewUsage
+    Name="TblEditFeeCollMView1"
+    ViewObjectName="model.ERP.VO.TblEditFeeCollMView"/>
+  <ViewUsage
+    Name="TblEditFeeCollDView2"
+    ViewObjectName="model.ERP.VO.TblEditFeeCollDView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -1941,5 +1950,11 @@
     ViewLinkObjectName="model.ERP.VO.FkTblFeeRecFkLink"
     SrcViewUsageName="model.ERP.AppModule.TblFeeRecView1"
     DstViewUsageName="model.ERP.AppModule.TblFeeRecDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkEditFeeCollMLink1"
+    ViewLinkObjectName="model.ERP.VO.FkEditFeeCollMLink"
+    SrcViewUsageName="model.ERP.AppModule.TblEditFeeCollMView1"
+    DstViewUsageName="model.ERP.AppModule.TblEditFeeCollDView2"
     Reversed="false"/>
 </AppModule>
