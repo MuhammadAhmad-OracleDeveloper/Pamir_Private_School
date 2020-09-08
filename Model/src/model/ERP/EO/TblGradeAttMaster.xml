@@ -31,7 +31,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_GRADE_ATT_MASTER"/>
+    TableName="TBL_GRADE_ATT_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblGradeAttMasterRow"/>
+  </Attribute>
   <Attribute
     Name="AcadYearId"
     ColumnName="ACAD_YEAR_ID"

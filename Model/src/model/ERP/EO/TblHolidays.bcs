@@ -1,0 +1,19 @@
+//Groovy Scripts for model.ERP.EO.TblHolidays
+
+package model.ERP.EO
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="HolidayFrDate")
+def HolidayFrDate_ExpressionScript_Expression()
+{
+adf.currentDate
+}
+
+
+@TransientValueExpression(attributeName="HolidayToDate")
+def HolidayToDate_ExpressionScript_Expression()
+{
+adf.currentDate
+}
+

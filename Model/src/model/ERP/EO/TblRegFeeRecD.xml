@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="TBL_REG_FEE_REC_D"
   AliasName="TblRegFeeRecD"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.ERP.EO.TblRegFeeRecDImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="Id"
     ColumnName="ID"
@@ -60,7 +65,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_REG_FEE_REC_D"/>
+    TableName="TBL_REG_FEE_REC_D">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblRegFeeRecDRow"/>
+  </Attribute>
   <Attribute
     Name="Bank"
     Precision="50"
@@ -100,12 +110,14 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_REG_FEE_REC_D"/>
+    TableName="TBL_REG_FEE_REC_D"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_REG_FEE_REC_D"/>
   <Attribute
@@ -114,12 +126,13 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_REG_FEE_REC_D"/>
+    TableName="TBL_REG_FEE_REC_D"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_REG_FEE_REC_D"/>
   <AccessorAttribute

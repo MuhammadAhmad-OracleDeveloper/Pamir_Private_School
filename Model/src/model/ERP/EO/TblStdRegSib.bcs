@@ -1,0 +1,12 @@
+//Groovy Scripts for model.ERP.EO.TblStdRegSib
+
+package model.ERP.EO
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="Dob")
+def Dob_ExpressionScript_Expression()
+{
+adf.currentDate
+}
+

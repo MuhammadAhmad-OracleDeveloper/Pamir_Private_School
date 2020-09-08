@@ -31,7 +31,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_VAT"/>
+    TableName="TBL_VAT">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblVatRow"/>
+  </Attribute>
   <Attribute
     Name="VatPerc"
     ColumnName="VAT_PERC"

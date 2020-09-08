@@ -158,7 +158,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_FEE_GEN_DETAIL"/>
+    TableName="TBL_FEE_GEN_DETAIL">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblFeeGenDetailRow"/>
+  </Attribute>
   <Attribute
     Name="TransReq"
     Precision="1"

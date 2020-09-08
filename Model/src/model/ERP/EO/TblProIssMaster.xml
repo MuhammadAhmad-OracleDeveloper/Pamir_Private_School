@@ -57,7 +57,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_PRO_ISS_MASTER"/>
+    TableName="TBL_PRO_ISS_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblProIssMasterRow"/>
+  </Attribute>
   <Attribute
     Name="PorMasterId"
     ColumnName="POR_MASTER_ID"

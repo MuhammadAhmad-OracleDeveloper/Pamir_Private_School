@@ -45,14 +45,24 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_HOLIDAYS"/>
+    TableName="TBL_HOLIDAYS">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblHolidaysRow"/>
+  </Attribute>
   <Attribute
     Name="HolidayToDate"
     ColumnName="HOLIDAY_TO_DATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_HOLIDAYS"/>
+    TableName="TBL_HOLIDAYS">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblHolidaysRow"/>
+  </Attribute>
   <Attribute
     Name="HolidayName"
     Precision="100"

@@ -1,0 +1,12 @@
+//Groovy Scripts for model.ERP.EO.TblStaffSalary
+
+package model.ERP.EO
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="Dated")
+def Dated_ExpressionScript_Expression()
+{
+adf.currentDate
+}
+

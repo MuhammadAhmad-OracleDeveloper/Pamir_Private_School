@@ -38,7 +38,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_STUDY_WEEK_PLAN_DETAIL"/>
+    TableName="TBL_STUDY_WEEK_PLAN_DETAIL">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblStudyWeekPlanDetailRow"/>
+  </Attribute>
   <Attribute
     Name="WeekLesson"
     Precision="300"

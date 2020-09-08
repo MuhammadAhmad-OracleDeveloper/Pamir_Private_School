@@ -102,14 +102,24 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_TERMS"/>
+    TableName="TBL_TERMS">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblTermsRow"/>
+  </Attribute>
   <Attribute
     Name="EndDate"
     ColumnName="END_DATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_TERMS"/>
+    TableName="TBL_TERMS">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblTermsRow"/>
+  </Attribute>
   <Attribute
     Name="CompanySbuId"
     ColumnName="COMPANY_SBU_ID"

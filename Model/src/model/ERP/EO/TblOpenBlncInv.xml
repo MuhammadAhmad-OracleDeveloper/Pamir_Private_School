@@ -30,7 +30,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_OPEN_BLNC_INV"/>
+    TableName="TBL_OPEN_BLNC_INV">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblOpenBlncInvRow"/>
+  </Attribute>
   <Attribute
     Name="ItemL4Id"
     IsNotNull="true"

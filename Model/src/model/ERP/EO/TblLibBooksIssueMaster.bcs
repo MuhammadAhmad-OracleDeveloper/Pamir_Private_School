@@ -1,0 +1,19 @@
+//Groovy Scripts for model.ERP.EO.TblLibBooksIssueMaster
+
+package model.ERP.EO
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="Dated")
+def Dated_ExpressionScript_Expression()
+{
+adf.currentDate
+}
+
+
+@TransientValueExpression(attributeName="ReturnDate")
+def ReturnDate_ExpressionScript_Expression()
+{
+adf.currentDate
+}
+

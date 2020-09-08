@@ -31,7 +31,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_LIB_BOOKS_RETURN"/>
+    TableName="TBL_LIB_BOOKS_RETURN">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblLibBooksReturnRow"/>
+  </Attribute>
   <Attribute
     Name="LibBooksIssueDetailId"
     ColumnName="LIB_BOOKS_ISSUE_DETAIL_ID"

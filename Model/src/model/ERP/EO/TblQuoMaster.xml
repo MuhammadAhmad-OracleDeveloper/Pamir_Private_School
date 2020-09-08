@@ -56,7 +56,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_QUO_MASTER"/>
+    TableName="TBL_QUO_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblQuoMasterRow"/>
+  </Attribute>
   <Attribute
     Name="PblCustId"
     ColumnName="PBL_CUST_ID"

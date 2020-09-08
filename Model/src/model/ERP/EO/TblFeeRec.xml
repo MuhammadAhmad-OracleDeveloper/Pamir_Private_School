@@ -31,7 +31,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_FEE_REC"/>
+    TableName="TBL_FEE_REC">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblFeeRecRow"/>
+  </Attribute>
   <Attribute
     Name="FeeGenDetailId"
     ColumnName="FEE_GEN_DETAIL_ID"

@@ -1,0 +1,19 @@
+//Groovy Scripts for model.ERP.EO.TblSchoolTime
+
+package model.ERP.EO
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="FrDate")
+def FrDate_ExpressionScript_Expression()
+{
+adf.currentDate
+}
+
+
+@TransientValueExpression(attributeName="ToDate")
+def ToDate_ExpressionScript_Expression()
+{
+adf.currentDate
+}
+

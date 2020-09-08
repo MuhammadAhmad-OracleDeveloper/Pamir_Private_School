@@ -1,0 +1,33 @@
+//Groovy Scripts for model.ERP.EO.TblStaff
+
+package model.ERP.EO
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="Dated")
+def Dated_ExpressionScript_Expression()
+{
+adf.currentDate
+}
+
+
+@TransientValueExpression(attributeName="Dob")
+def Dob_ExpressionScript_Expression()
+{
+adf.currentDate
+}
+
+
+@TransientValueExpression(attributeName="Doj")
+def Doj_ExpressionScript_Expression()
+{
+adf.currentDate
+}
+
+
+@TransientValueExpression(attributeName="LicenseExp")
+def LicenseExp_ExpressionScript_Expression()
+{
+adf.currentDate
+}
+

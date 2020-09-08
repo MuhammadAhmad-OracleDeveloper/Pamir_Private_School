@@ -25,7 +25,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_SUPP_OPEN_BLNC"/>
+    TableName="TBL_SUPP_OPEN_BLNC">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblSuppOpenBlncRow"/>
+  </Attribute>
   <Attribute
     Name="PblSuppId"
     IsNotNull="true"

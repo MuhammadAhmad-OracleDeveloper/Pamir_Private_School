@@ -38,7 +38,12 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_STAFF_EXPR"/>
+    TableName="TBL_STAFF_EXPR">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblStaffExprRow"/>
+  </Attribute>
   <Attribute
     Name="Organization"
     Precision="150"
@@ -69,14 +74,24 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_STAFF_EXPR"/>
+    TableName="TBL_STAFF_EXPR">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblStaffExprRow"/>
+  </Attribute>
   <Attribute
     Name="ExprToDate"
     ColumnName="EXPR_TO_DATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_STAFF_EXPR"/>
+    TableName="TBL_STAFF_EXPR">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="TblStaffExprRow"/>
+  </Attribute>
   <Attribute
     Name="Remarks"
     Precision="150"

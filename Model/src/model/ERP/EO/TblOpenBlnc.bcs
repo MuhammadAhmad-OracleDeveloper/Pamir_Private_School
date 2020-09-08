@@ -1,0 +1,12 @@
+//Groovy Scripts for model.ERP.EO.TblOpenBlnc
+
+package model.ERP.EO
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="OpenBlncDated")
+def OpenBlncDated_ExpressionScript_Expression()
+{
+adf.currentDate
+}
+
