@@ -15,7 +15,8 @@
        TblRoleGroup.R_VIEW, 
        TblRole.TEMP_COMPANY, 
        TblRole.TEMP_GROUP, 
-       TblRole.TEMP_SBU"
+       TblRole.TEMP_SBU, 
+       TblRole.ROLE_TYPE"
   FromList="TBL_ROLE TblRole, TBL_ROLE_GROUP TblRoleGroup"
   Where="TblRole.ID = TblRoleGroup.ROLE_ID(+)          
 AND TblRole.AST = 'Y'      
@@ -34,6 +35,10 @@ AND TblRole.AST = 'Y'
     Name="Active_Name_LOV1"
     ViewObjectName="model.LOV.Active_Name_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Role_Type_LOV1"
+    ViewObjectName="model.UserRoles.LOV.Role_Type_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Ast"
     ListVOName="Active_Name_LOV1"
@@ -46,6 +51,24 @@ AND TblRole.AST = 'Y'
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
       <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_RoleType"
+    ListVOName="Role_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RoleType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DbAttr"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ViewAttr"/>
@@ -146,6 +169,20 @@ AND TblRole.AST = 'Y'
     EntityAttrName="TempSbu"
     EntityUsage="TblRole"
     AliasName="TEMP_SBU"/>
+  <ViewAttribute
+    Name="RoleType"
+    PrecisionRule="true"
+    EntityAttrName="RoleType"
+    EntityUsage="TblRole"
+    AliasName="ROLE_TYPE"
+    LOVName="LOV_RoleType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>
