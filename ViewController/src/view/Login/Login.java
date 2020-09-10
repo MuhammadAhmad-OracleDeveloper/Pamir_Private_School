@@ -124,6 +124,7 @@ public class Login {
                 try {
                     portal_name = (rset.getString("portal_name")).toString();
                     portal_id = (rset.getString("portal_id")).toString();
+                    System.out.println(portal_id+",,,,,,,,,,,,,,,,,,,,,,,,,");
                     
                 } catch (Exception e) {
                 //                     TODO: Add catch code
@@ -149,18 +150,17 @@ public class Login {
                 
                 case "PRT":
                         storeOnSession("sessPortalPrtId", portal_id);
-                    System.out.println("PRT");
+                    System.out.println(portal_id+",,,,,,,,,,,,,,,,,,,,,,,,,"+"PRT");
                     break;
                 
                 case "STD":
                         storeOnSession("sessPortalStdId", portal_id);
-                    System.out.println("STD");
+                    System.out.println(portal_id+",,,,,,,,,,,,,,,,,,,,,,,,,"+"STD");
                     break;
                 
                 case "STF":
                         storeOnSession("sessPortalStfId", portal_id);
-                   
-                    System.out.println("STF");
+                    System.out.println(portal_id+",,,,,,,,,,,,,,,,,,,,,,,,,"+"STF");
                     break;
                 
                 default :
@@ -354,6 +354,7 @@ public class Login {
         sessUName = "";
         role_id = "";
         user_id = "";
+        portal_id = "";
         storeOnSession("sessUName", "");
         storeOnSession("sessRMID", "");
         storeOnSession("sessUMID", "");

@@ -979,6 +979,21 @@
   <ViewUsage
     Name="TblEditFeeCollDView2"
     ViewObjectName="model.ERP.VO.TblEditFeeCollDView"/>
+  <ViewUsage
+    Name="TblStudyMaterialDDView1"
+    ViewObjectName="model.ERP.VO.TblStudyMaterialDDView"/>
+  <ViewUsage
+    Name="TblStudyMaterialDView1"
+    ViewObjectName="model.ERP.VO.TblStudyMaterialDView"/>
+  <ViewUsage
+    Name="TblStudyMaterialMView1"
+    ViewObjectName="model.ERP.VO.TblStudyMaterialMView"/>
+  <ViewUsage
+    Name="TblStudyMaterialDDView2"
+    ViewObjectName="model.ERP.VO.TblStudyMaterialDDView"/>
+  <ViewUsage
+    Name="TblStudyMaterialDView2"
+    ViewObjectName="model.ERP.VO.TblStudyMaterialDView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -1956,5 +1971,17 @@
     ViewLinkObjectName="model.ERP.VO.FkEditFeeCollMLink"
     SrcViewUsageName="model.ERP.AppModule.TblEditFeeCollMView1"
     DstViewUsageName="model.ERP.AppModule.TblEditFeeCollDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkStudyMaterialDDMLink1"
+    ViewLinkObjectName="model.ERP.VO.FkStudyMaterialDDMLink"
+    SrcViewUsageName="model.ERP.AppModule.TblStudyMaterialMView1"
+    DstViewUsageName="model.ERP.AppModule.TblStudyMaterialDDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkStudyMaterialMLink1"
+    ViewLinkObjectName="model.ERP.VO.FkStudyMaterialMLink"
+    SrcViewUsageName="model.ERP.AppModule.TblStudyMaterialMView1"
+    DstViewUsageName="model.ERP.AppModule.TblStudyMaterialDView2"
     Reversed="false"/>
 </AppModule>

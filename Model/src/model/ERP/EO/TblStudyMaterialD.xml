@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblStudyMaterialD"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_STUDY_MATERIAL_D"
+  AliasName="TblStudyMaterialD"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_STUDY_MATERIAL_D"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="StudyMaterialMId"
+    ColumnName="STUDY_MATERIAL_M_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_STUDY_MATERIAL_D"/>
+  <Attribute
+    Name="StdRegId"
+    ColumnName="STD_REG_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_STUDY_MATERIAL_D"/>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_STUDY_MATERIAL_D"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_STUDY_MATERIAL_D"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_STUDY_MATERIAL_D"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_STUDY_MATERIAL_D"/>
+  <AccessorAttribute
+    Name="TblStudyMaterialM"
+    Association="model.ERP.EO.FkStudyMaterialMAssoc"
+    AssociationEnd="model.ERP.EO.FkStudyMaterialMAssoc.TblStudyMaterialM"
+    AssociationOtherEnd="model.ERP.EO.FkStudyMaterialMAssoc.TblStudyMaterialD"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkStudyMaterialD"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_STUDY_MATERIAL_D"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblStudyMaterialD.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkStudyMaterialDStdReg">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_STD_REG"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_STUDY_MATERIAL_D_STD_REG"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblStudyMaterialD.StdRegId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkStudyMaterialM">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_STUDY_MATERIAL_M"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_STUDY_MATERIAL_M_"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblStudyMaterialD.StudyMaterialMId"/>
+    </AttrArray>
+  </Key>
+</Entity>

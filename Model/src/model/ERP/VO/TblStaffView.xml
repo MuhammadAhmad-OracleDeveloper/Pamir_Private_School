@@ -95,10 +95,6 @@
     Name="Lookup_Area_Name_LOV1"
     ViewObjectName="model.LOV.Lookup_Area_Name_LOV"
     RowLevelBinds="true"/>
-  <ViewAccessor
-    Name="Staff_Name_LOV1"
-    ViewObjectName="model.LOV.Staff_Name_LOV"
-    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Ast"
     ListVOName="Active_Name_LOV1"
@@ -297,25 +293,6 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
-  <ListBinding
-    Name="LOV_Id"
-    ListVOName="Staff_Name_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FirstName"/>
-      <Item Value="LastName"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
   <EntityUsage
     Name="TblStaff"
     Entity="model.ERP.EO.TblStaff"/>
@@ -325,15 +302,7 @@
     PrecisionRule="true"
     EntityAttrName="Id"
     EntityUsage="TblStaff"
-    AliasName="ID"
-    LOVName="LOV_Id">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="ID"/>
   <ViewAttribute
     Name="GroupCompanyId"
     PrecisionRule="true"

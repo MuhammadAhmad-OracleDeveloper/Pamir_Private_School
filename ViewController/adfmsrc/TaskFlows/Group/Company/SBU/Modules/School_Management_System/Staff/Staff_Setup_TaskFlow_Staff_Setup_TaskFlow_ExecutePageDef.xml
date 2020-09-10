@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57"
+                id="Staff_Setup_TaskFlow_Staff_Setup_TaskFlow_ExecutePageDef"
+                Package="TaskFlows.Group.Company.SBU.Modules.School_Management_System.Staff" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="TblStaffView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblStaffView1Iterator"
+              Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="TblStaffView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>
