@@ -31,138 +31,141 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
                         <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
                             <af:showDetailItem id="tab1" text="Staff">
-                                <af:table value="#{bindings.TblStaffView1.collectionModel}" var="row"
-                                          rows="#{bindings.TblStaffView1.rangeSize}"
-                                          emptyText="#{bindings.TblStaffView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                <af:table value="#{bindings.TblStaffView11.collectionModel}" var="row"
+                                          rows="#{bindings.TblStaffView11.rangeSize}"
+                                          emptyText="#{bindings.TblStaffView11.viewable ? 'No data to display.' : 'Access Denied.'}"
                                           rowBandingInterval="0"
-                                          selectedRowKeys="#{bindings.TblStaffView1.collectionModel.selectedRow}"
-                                          selectionListener="#{bindings.TblStaffView1.collectionModel.makeCurrent}"
-                                          rowSelection="single" fetchSize="#{bindings.TblStaffView1.rangeSize}"
+                                          selectedRowKeys="#{bindings.TblStaffView11.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.TblStaffView11.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.TblStaffView11.rangeSize}"
                                           filterModel="#{bindings.TblStaffView1Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblStaffView1Query.processQuery}" varStatus="vs"
-                                          id="t1" scrollPolicy="page" autoHeightRows="0" partialTriggers="::b6">
-                                    <af:column sortProperty="#{bindings.TblStaffView1.hints.Id.name}" filterable="true"
-                                               sortable="true" headerText="Staff ID" id="c1" width="80" align="right">
-                                        <f:facet name="filter">
-                                            <af:inputText value="#{vs.filterCriteria.Id}" id="id4"
-                                                          placeholder="Search "></af:inputText>
-                                        </f:facet>
-                                        <af:inputText value="#{row.bindings.Id.inputValue}"
-                                                      label="#{bindings.TblStaffView1.hints.Id.label}"
-                                                      required="#{bindings.TblStaffView1.hints.Id.mandatory}"
-                                                      columns="#{bindings.TblStaffView1.hints.Id.displayWidth}"
-                                                      maximumLength="#{bindings.TblStaffView1.hints.Id.precision}"
-                                                      shortDesc="#{bindings.TblStaffView1.hints.Id.tooltip}" id="it1"
-                                                      readOnly="true" contentStyle='text-align: center'>
+                                          id="t1" scrollPolicy="page" autoHeightRows="0">
+                                    <!--<af:column sortProperty="#{bindings.TblStaffView11.hints.Id.name}" filterable="true"
+                                               sortable="true" headerText="#{bindings.TblStaffView11.hints.Id.label}"
+                                               id="c1">
+                                        <af:selectOneChoice value="#{row.bindings.Id.inputValue}"
+                                                            label="#{row.bindings.Id.label}"
+                                                            required="#{bindings.TblStaffView11.hints.Id.mandatory}"
+                                                            shortDesc="#{bindings.TblStaffView11.hints.Id.tooltip}"
+                                                            id="soc1">
+                                            <f:selectItems value="#{row.bindings.Id.items}" id="si1"/>
                                             <f:validator binding="#{row.bindings.Id.validator}"/>
-                                            <af:convertNumber groupingUsed="false"
-                                                              pattern="#{bindings.TblStaffView1.hints.Id.format}"/>
-                                        </af:inputText>
-                                    </af:column>
-                                    <af:column sortProperty="#{bindings.TblStaffView1.hints.Dated.name}"
-                                               filterable="true" sortable="true" headerText="Date" id="c2" align="left">
+                                        </af:selectOneChoice>
+                                    </af:column>-->
+                                    <af:column sortProperty="#{bindings.TblStaffView11.hints.Dated.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Dated" id="c2">
                                         <f:facet name="filter">
                                             <af:inputDate value="#{bindings.TblStaffView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
                                                           id="id1" placeholder="Search ">
-                                                <af:convertDateTime pattern="#{bindings.TblStaffView1.hints.Dated.format}"/>
+                                                <af:convertDateTime pattern="#{bindings.TblStaffView11.hints.Dated.format}"/>
                                             </af:inputDate>
                                         </f:facet>
                                         <af:inputDate value="#{row.bindings.Dated.inputValue}"
-                                                      label="#{bindings.TblStaffView1.hints.Dated.label}"
-                                                      required="#{bindings.TblStaffView1.hints.Dated.mandatory}"
-                                                      columns="#{bindings.TblStaffView1.hints.Dated.displayWidth}"
-                                                      shortDesc="#{bindings.TblStaffView1.hints.Dated.tooltip}" id="id2"
-                                                      contentStyle='text-align: left'>
+                                                      label="#{bindings.TblStaffView11.hints.Dated.label}"
+                                                      required="#{bindings.TblStaffView11.hints.Dated.mandatory}"
+                                                      columns="#{bindings.TblStaffView11.hints.Dated.displayWidth}"
+                                                      shortDesc="#{bindings.TblStaffView11.hints.Dated.tooltip}"
+                                                      id="id2">
                                             <f:validator binding="#{row.bindings.Dated.validator}"/>
-                                            <af:convertDateTime pattern="#{bindings.TblStaffView1.hints.Dated.format}"/>
+                                            <af:convertDateTime pattern="#{bindings.TblStaffView11.hints.Dated.format}"/>
                                         </af:inputDate>
                                     </af:column>
-                                    <af:column sortProperty="#{bindings.TblStaffView1.hints.FirstName.name}"
-                                               filterable="true" sortable="true" headerText="First Name" id="c3"
-                                               width="200" align="left">
-                                        <f:facet name="filter">
-                                            <af:inputText value="#{vs.filterCriteria.FirstName}" id="it6"
-                                                          placeholder="Search "></af:inputText>
-                                        </f:facet>
+                                    <af:column sortProperty="#{bindings.TblStaffView11.hints.FirstName.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="First Name" id="c3" width="200">
+                                               <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FirstName}"
+       id="id4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+
                                         <af:inputText value="#{row.bindings.FirstName.inputValue}"
-                                                      label="#{bindings.TblStaffView1.hints.FirstName.label}"
-                                                      required="#{bindings.TblStaffView1.hints.FirstName.mandatory}"
-                                                      columns="#{bindings.TblStaffView1.hints.FirstName.displayWidth}"
-                                                      maximumLength="#{bindings.TblStaffView1.hints.FirstName.precision}"
-                                                      shortDesc="#{bindings.TblStaffView1.hints.FirstName.tooltip}"
-                                                      id="it2" contentStyle="text-align: left">
+                                                      label="#{bindings.TblStaffView11.hints.FirstName.label}"
+                                                      required="#{bindings.TblStaffView11.hints.FirstName.mandatory}"
+                                                      columns="#{bindings.TblStaffView11.hints.FirstName.displayWidth}"
+                                                      maximumLength="#{bindings.TblStaffView11.hints.FirstName.precision}"
+                                                      shortDesc="#{bindings.TblStaffView11.hints.FirstName.tooltip}"
+                                                      id="it1">
                                             <f:validator binding="#{row.bindings.FirstName.validator}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column sortProperty="#{bindings.TblStaffView1.hints.LastName.name}"
-                                               filterable="true" sortable="true" headerText="Last Name" id="c4"
-                                               width="200" align="left">
-                                        <f:facet name="filter">
-                                            <af:inputText value="#{vs.filterCriteria.LastName}" id="it14"
-                                                          placeholder="Search "></af:inputText>
-                                        </f:facet>
+                                    <af:column sortProperty="#{bindings.TblStaffView11.hints.LastName.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Last Name" id="c4" width="200">
+                                                <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.LastName}"
+       id="it4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
                                         <af:inputText value="#{row.bindings.LastName.inputValue}"
-                                                      label="#{bindings.TblStaffView1.hints.LastName.label}"
-                                                      required="#{bindings.TblStaffView1.hints.LastName.mandatory}"
-                                                      columns="#{bindings.TblStaffView1.hints.LastName.displayWidth}"
-                                                      maximumLength="#{bindings.TblStaffView1.hints.LastName.precision}"
-                                                      shortDesc="#{bindings.TblStaffView1.hints.LastName.tooltip}"
-                                                      id="it3" contentStyle="text-align: left">
+                                                      label="#{bindings.TblStaffView11.hints.LastName.label}"
+                                                      required="#{bindings.TblStaffView11.hints.LastName.mandatory}"
+                                                      columns="#{bindings.TblStaffView11.hints.LastName.displayWidth}"
+                                                      maximumLength="#{bindings.TblStaffView11.hints.LastName.precision}"
+                                                      shortDesc="#{bindings.TblStaffView11.hints.LastName.tooltip}"
+                                                      id="it2">
                                             <f:validator binding="#{row.bindings.LastName.validator}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column sortProperty="#{bindings.TblStaffView1.hints.Doj.name}" filterable="true"
-                                               sortable="true" headerText="Date of Join" id="c5" align="left">
+                                    <af:column sortProperty="#{bindings.TblStaffView11.hints.Doj.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Dtae of Join" id="c5">
                                         <f:facet name="filter">
                                             <af:inputDate value="#{bindings.TblStaffView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Doj.value}"
                                                           id="id3" placeholder="Search ">
-                                                <af:convertDateTime pattern="#{bindings.TblStaffView1.hints.Doj.format}"/>
+                                                <af:convertDateTime pattern="#{bindings.TblStaffView11.hints.Doj.format}"/>
                                             </af:inputDate>
                                         </f:facet>
                                         <af:inputDate value="#{row.bindings.Doj.inputValue}"
-                                                      label="#{bindings.TblStaffView1.hints.Doj.label}"
-                                                      required="#{bindings.TblStaffView1.hints.Doj.mandatory}"
-                                                      columns="#{bindings.TblStaffView1.hints.Doj.displayWidth}"
-                                                      shortDesc="#{bindings.TblStaffView1.hints.Doj.tooltip}" id="id6"
-                                                      contentStyle='text-align: left'>
+                                                      label="#{bindings.TblStaffView11.hints.Doj.label}"
+                                                      required="#{bindings.TblStaffView11.hints.Doj.mandatory}"
+                                                      columns="#{bindings.TblStaffView11.hints.Doj.displayWidth}"
+                                                      shortDesc="#{bindings.TblStaffView11.hints.Doj.tooltip}"
+                                                      id="id44">
                                             <f:validator binding="#{row.bindings.Doj.validator}"/>
-                                            <af:convertDateTime pattern="#{bindings.TblStaffView1.hints.Doj.format}"/>
+                                            <af:convertDateTime pattern="#{bindings.TblStaffView11.hints.Doj.format}"/>
                                         </af:inputDate>
                                     </af:column>
-                                    <af:column sortProperty="#{bindings.TblStaffView1.hints.EmirId.name}"
-                                               filterable="true" sortable="true" headerText="Emirates ID" id="c6"
-                                               align="left" width="120">
-                                        <f:facet name="filter">
-                                            <af:inputText value="#{vs.filterCriteria.EmirId}" id="it15"
-                                                          placeholder="Search "></af:inputText>
-                                        </f:facet>
+                                    <af:column sortProperty="#{bindings.TblStaffView11.hints.EmirId.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Emirates ID" id="c6" width="200">
+                                                <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.EmirId}"
+       id="it14" placeholder="Search ">
+      </af:inputText>
+</f:facet>
                                         <af:inputText value="#{row.bindings.EmirId.inputValue}"
-                                                      label="#{bindings.TblStaffView1.hints.EmirId.label}"
-                                                      required="#{bindings.TblStaffView1.hints.EmirId.mandatory}"
-                                                      columns="#{bindings.TblStaffView1.hints.EmirId.displayWidth}"
-                                                      maximumLength="#{bindings.TblStaffView1.hints.EmirId.precision}"
-                                                      shortDesc="#{bindings.TblStaffView1.hints.EmirId.tooltip}"
-                                                      id="it4" contentStyle='text-align: right'>
+                                                      label="#{bindings.TblStaffView11.hints.EmirId.label}"
+                                                      required="#{bindings.TblStaffView11.hints.EmirId.mandatory}"
+                                                      columns="#{bindings.TblStaffView11.hints.EmirId.displayWidth}"
+                                                      maximumLength="#{bindings.TblStaffView11.hints.EmirId.precision}"
+                                                      shortDesc="#{bindings.TblStaffView11.hints.EmirId.tooltip}"
+                                                      id="it3">
                                             <f:validator binding="#{row.bindings.EmirId.validator}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column headerText="Active" id="c7" sortable="true" filterable="true"
-                                               align="left">
-                                        <f:facet name="filter">
-                                            <af:inputText value="#{vs.filterCriteria.Ast}" id="it16"
-                                                          placeholder="Search "></af:inputText>
-                                        </f:facet>
+                                    <af:column sortProperty="#{bindings.TblStaffView11.hints.Ast.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Active" id="c7">
+                                               <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ast}"
+       id="it6" placeholder="Search ">
+      </af:inputText>
+</f:facet>
                                         <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
                                                             label="#{row.bindings.Ast.label}"
-                                                            required="#{bindings.TblStaffView1.hints.Ast.mandatory}"
-                                                            shortDesc="#{bindings.TblStaffView1.hints.Ast.tooltip}"
-                                                            id="soc1" contentStyle="text-align: left">
-                                            <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
+                                                            required="#{bindings.TblStaffView11.hints.Ast.mandatory}"
+                                                            shortDesc="#{bindings.TblStaffView11.hints.Ast.tooltip}"
+                                                            id="soc39">
+                                            <f:selectItems value="#{row.bindings.Ast.items}" id="si39"/>
                                             <f:validator binding="#{row.bindings.Ast.validator}"/>
                                         </af:selectOneChoice>
                                     </af:column>
                                 </af:table>
+                         
                             </af:showDetailItem>
                         </af:panelTabbed>
                     </af:gridCell>
