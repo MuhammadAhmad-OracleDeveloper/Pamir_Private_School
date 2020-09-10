@@ -251,14 +251,7 @@
                     </af:selectOneChoice>
                   </af:column>
                 </af:table>
-                
-              </af:showDetailItem>
-            </af:panelTabbed>
-          </af:gridCell>
-        </af:gridRow>
-        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
-          <af:gridCell marginStart="5px" width="100%" halign="center"  marginEnd="5px" id="gc5">
-            <af:panelGroupLayout id="pgl2" layout="horizontal">
+                 <af:panelGroupLayout id="pgl2" halign="center" layout="horizontal">
                             <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -269,8 +262,11 @@
                                 <af:spacer width="5" height="10" id="s3"/>
                             </af:iterator>
                         </af:panelGroupLayout>
-           </af:gridCell>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
         </af:gridRow>
+        
       </af:panelGridLayout>
     </af:showDetailItem>
   </af:panelAccordion>
