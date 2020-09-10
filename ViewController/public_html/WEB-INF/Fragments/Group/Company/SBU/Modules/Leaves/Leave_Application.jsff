@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
- <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
+                <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
     <af:dialog id="d1" title="User Guide">
       here the guide will be shown !!!!!!
     </af:dialog>
@@ -32,7 +32,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Leave Application">
+              <af:showDetailItem id="tab1" text="Leave Application Form">
                 <af:table value="#{bindings.TblLeaveReqView1.collectionModel}" var="row"
                           rows="#{bindings.TblLeaveReqView1.rangeSize}"
                           emptyText="#{bindings.TblLeaveReqView1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -42,9 +42,9 @@
                           rowSelection="single" fetchSize="#{bindings.TblLeaveReqView1.rangeSize}"
                           filterModel="#{bindings.TblLeaveReqView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblLeaveReqView1Query.processQuery}" varStatus="vs" id="t1"
-                          scrollPolicy="page" autoHeightRows="0">
+                          partialTriggers="">
                   <af:column sortProperty="#{bindings.TblLeaveReqView1.hints.Id.name}" filterable="true" sortable="true"
-                             headerText="ID" id="c1" align="right" visible="false">
+                             headerText="ID" id="c1" align="right">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Id}"
                                    id="id4" placeholder="Search ">
@@ -128,8 +128,8 @@
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLeaveReqView1.hints.LeaveDays.name}" filterable="true"
-                             sortable="true" headerText="No. of  Leave Days" id="c6"
-                             align="left">
+                             sortable="true" headerText="No. of Leave Days" id="c6"
+                             align="right">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.LeaveDays}"
                                    id="it5" placeholder="Search ">
@@ -147,7 +147,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLeaveReqView1.hints.Remarks.name}" filterable="true"
-                             sortable="true" headerText="Remarks" id="c7" width="200">
+                             sortable="true" headerText="Remarks" id="c7">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Remarks}"
                                    id="it6" placeholder="Search ">
@@ -164,9 +164,11 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblLeaveReqView1.hints.Ast.name}" filterable="true"
                              sortable="true" headerText="Active" id="c8">
-                    <f:facet name="filter">
-                      <af:inputText value="#{vs.filterCriteria.Ast}" id="it7" placeholder="Search "/>
-                    </f:facet>
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Ast}"
+                                   id="it7" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblLeaveReqView1.hints.Ast.mandatory}"
                                         shortDesc="#{bindings.TblLeaveReqView1.hints.Ast.tooltip}" id="soc2">
@@ -175,7 +177,8 @@
                     </af:selectOneChoice>
                   </af:column>
                 </af:table>
-                <af:panelGroupLayout id="pgl3" halign="center"  layout="horizontal">
+                 <af:panelGroupLayout id="pgl3" halign="center"  layout="horizontal">
+                            <af:spacer width="190" height="10" id="s4"/>
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -191,8 +194,7 @@
             </af:panelTabbed>
           </af:gridCell>
         </af:gridRow>
-     
-        
+       
       </af:panelGridLayout>
     </af:showDetailItem>
   </af:panelAccordion>

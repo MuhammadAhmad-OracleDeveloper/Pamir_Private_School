@@ -168,14 +168,7 @@
                     </af:selectOneChoice>
                   </af:column>
                 </af:table>
-            
-                        </af:showDetailItem>
-                      </af:panelTabbed>
-                    </af:gridCell>
-                  </af:gridRow>
-                  <af:gridRow marginTop="5px" height="auto" id="gr16">
-                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc16">
-                      <af:panelGroupLayout id="pgl5"  halign="center" layout="horizontal">
+             <af:panelGroupLayout id="pgl5"  halign="center" layout="horizontal">
                             <af:iterator id="i3" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -186,8 +179,11 @@
                                 <af:spacer width="5" height="10" id="s4"/>
                             </af:iterator>
                         </af:panelGroupLayout>
+                        </af:showDetailItem>
+                      </af:panelTabbed>
                     </af:gridCell>
                   </af:gridRow>
+                  
                   <af:gridRow marginTop="5px" height="auto" id="gr17">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc17">
                        <af:panelTabbed position="above" id="pt5">
@@ -797,13 +793,7 @@
                     </af:selectOneChoice>
                   </af:column>
                 </af:table>
-                        </af:showDetailItem>
-                      </af:panelTabbed>
-                    </af:gridCell>
-                  </af:gridRow>
-                  <af:gridRow marginTop="5px" height="auto" id="gr9">
-                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9">
-                       <af:panelGroupLayout id="pgl3"  halign="center" layout="horizontal">
+                 <af:panelGroupLayout id="pgl3"  halign="center" layout="horizontal">
                         <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -814,8 +804,11 @@
                                 <af:spacer width="5" height="10" id="s5"/>
                             </af:iterator>
                         </af:panelGroupLayout>
+                        </af:showDetailItem>
+                      </af:panelTabbed>
                     </af:gridCell>
                   </af:gridRow>
+                 
                   <af:gridRow marginTop="5px" height="auto" id="gr10">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc10">
                        <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
@@ -910,15 +903,8 @@
                                        </af:link>
                             </af:column>
                 </af:table>
-               
-              </af:showDetailItem>
-              
-            </af:panelTabbed>
-          </af:gridCell>
-      </af:gridRow>
-                  <af:gridRow id="gr3">
-                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
-                    <af:panelGroupLayout id="pgl6"  halign="center" layout="horizontal">
+                 <af:spacer width="5" height="10" id="s2"/>
+               <af:panelGroupLayout id="pgl6"  halign="center" layout="horizontal">
                         <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -931,8 +917,12 @@
                           <af:spacer width="5" height="10" id="s2"/>
                             </af:iterator>
                         </af:panelGroupLayout>
-                    </af:gridCell>
-                  </af:gridRow>
+              </af:showDetailItem>
+              
+            </af:panelTabbed>
+          </af:gridCell>
+      </af:gridRow>
+                  
                   <af:gridRow marginTop="5px" height="auto" id="gr11">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc11">
                         <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
