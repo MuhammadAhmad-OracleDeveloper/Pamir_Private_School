@@ -6,13 +6,51 @@
   Name="TblStaffView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblStaff.ID, 
+       TblStaff.GROUP_COMPANY_ID, 
+       TblStaff.DATED, 
+       TblStaff.JOB_STATUS, 
+       TblStaff.LOOKUP_SALUTATION, 
+       TblStaff.FIRST_NAME, 
+       TblStaff.LAST_NAME, 
+       TblStaff.GENDER, 
+       TblStaff.DOB, 
+       TblStaff.DOJ, 
+       TblStaff.LOOKUP_NATIONALITY, 
+       TblStaff.LOOKUP_RELIGION, 
+       TblStaff.LOOKUP_STAFF_TYPE, 
+       TblStaff.CURR_ADDRESS, 
+       TblStaff.PER_ADDRESS, 
+       TblStaff.PERSONAL_MOBILE, 
+       TblStaff.RES_PHONE, 
+       TblStaff.PERSONAL_EMAIL, 
+       TblStaff.OTHER_CONTACT, 
+       TblStaff.IMAGE, 
+       TblStaff.EMIR_ID, 
+       TblStaff.LOOKUP_REF_BY, 
+       TblStaff.AST, 
+       TblStaff.CREATED_DATE, 
+       TblStaff.CREATED_BY, 
+       TblStaff.UPDATED_DATE, 
+       TblStaff.UPDATED_BY, 
+       TblStaff.LICENSE_EXP, 
+       TblStaff.LICENSE_NO, 
+       TblStaff.LOOKUP_DETAIL_CNTRY, 
+       TblStaff.LOOKUP_DETAIL_CITY, 
+       TblStaff.LOOKUP_DETAIL_AREA"
+  FromList="TBL_STAFF TblStaff"
+  Where="TblStaff.ID = nvl(:getSessStaffID,TblStaff.ID)">
+  <Variable
+    Name="getSessStaffID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      CodeSourceName="TblStaffView"/>
+  </Variable>
   <ViewAccessor
     Name="Active_Name_LOV1"
     ViewObjectName="model.LOV.Active_Name_LOV"
