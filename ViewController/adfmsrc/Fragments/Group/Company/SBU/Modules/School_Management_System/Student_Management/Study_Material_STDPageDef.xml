@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Study_Material_STDPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.School_Management_System.Student_Management">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblStudyMaterialMView1" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblStudyMaterialMView1Iterator"/>
+    <searchRegion Binds="TblStudyMaterialMView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStudyMaterialMView1Query"/>
+    <iterator Binds="TblStudyMaterialDView2" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblStudyMaterialDView2Iterator"/>
+    <searchRegion Binds="TblStudyMaterialDView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStudyMaterialDView2Query"/>
+    <iterator Binds="TblStudyMaterialDDView2" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblStudyMaterialDDView2Iterator"/>
+    <searchRegion Binds="TblStudyMaterialDDView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStudyMaterialDDView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblStudyMaterialMView1Iterator" id="TblStudyMaterialMView1">
+      <nodeDefinition DefName="model.ERP.VO.TblStudyMaterialMView" Name="TblStudyMaterialMView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="AcadYearId"/>
+          <Item Value="GradeId"/>
+          <Item Value="SectionsId"/>
+          <Item Value="StaffId"/>
+          <Item Value="SubjectId"/>
+          <Item Value="Category"/>
+          <Item Value="Type"/>
+          <Item Value="ChapName"/>
+          <Item Value="TopicName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblStudyMaterialMView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblStudyMaterialMView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblStudyMaterialMView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <attributeValues IterBinding="TblStudyMaterialMView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStudyMaterialMView1Iterator" id="Dated">
+      <AttrNames>
+        <Item Value="Dated"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblStudyMaterialMView1Iterator" StaticList="false" Uses="LOV_AcadYearId" id="AcadYearId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStudyMaterialMView1Iterator" StaticList="false" Uses="LOV_GradeId" id="GradeId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStudyMaterialMView1Iterator" StaticList="false" Uses="LOV_SectionsId" id="SectionsId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStudyMaterialMView1Iterator" StaticList="false" Uses="LOV_StaffId" id="StaffId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStudyMaterialMView1Iterator" StaticList="false" Uses="LOV_SubjectId" id="SubjectId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStudyMaterialMView1Iterator" StaticList="false" Uses="LOV_Category" id="Category"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblStudyMaterialMView1Iterator" id="ChapName">
+      <AttrNames>
+        <Item Value="ChapName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStudyMaterialMView1Iterator" id="TopicName">
+      <AttrNames>
+        <Item Value="TopicName"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblStudyMaterialMView1Iterator" StaticList="false" Uses="LOV_Type" id="Type"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action IterBinding="TblStudyMaterialMView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblStudyMaterialMView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblStudyMaterialMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblStudyMaterialMView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="TblStudyMaterialDView2Iterator" id="TblStudyMaterialDView2">
+      <nodeDefinition DefName="model.ERP.VO.TblStudyMaterialDView" Name="TblStudyMaterialDView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="StdRegId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblStudyMaterialDView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblStudyMaterialDView2Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblStudyMaterialDView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblStudyMaterialDDView2Iterator" id="TblStudyMaterialDDView2">
+      <nodeDefinition DefName="model.ERP.VO.TblStudyMaterialDDView" Name="TblStudyMaterialDDView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Descript"/>
+          <Item Value="Image"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblStudyMaterialDDView2Iterator" id="CreateInsert2" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblStudyMaterialDDView2Iterator" id="Execute2" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblStudyMaterialDDView2Iterator" id="Delete2" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>
