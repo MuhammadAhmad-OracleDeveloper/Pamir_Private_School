@@ -28,119 +28,210 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
                       <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab3" text="Study Material Master">
-                          <af:panelFormLayout id="pfl1" maxColumns="3" rows="6">
-                            <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
-                                          required="#{bindings.Id.hints.mandatory}"
-                                          columns="20"
-                                          maximumLength="#{bindings.Id.hints.precision}"
-                                          shortDesc="#{bindings.Id.hints.tooltip}" id="it13" disabled="true">
-                              <f:validator binding="#{bindings.Id.validator}"/>
-                              <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
-                            </af:inputText>
-                            <af:inputDate value="#{bindings.Dated.inputValue}" label="Dated"
-                                          required="#{bindings.Dated.hints.mandatory}"
-                                          columns="#{bindings.Dated.hints.displayWidth}"
-                                          shortDesc="#{bindings.Dated.hints.tooltip}" id="id3"
-                                          contentStyle="width:200px;">
-                              <f:validator binding="#{bindings.Dated.validator}"/>
-                              <af:convertDateTime pattern="#{bindings.Dated.format}"/>
-                            </af:inputDate>
-                            <af:spacer  id="s4"/>
-                            <af:selectOneChoice value="#{bindings.AcadYearId.inputValue}"
-                                                label="Academic Year"
-                                                required="#{bindings.AcadYearId.hints.mandatory}"
-                                                shortDesc="#{bindings.AcadYearId.hints.tooltip}" id="soc8"
-                                                contentStyle="width:200px;">
-                              <f:selectItems value="#{bindings.AcadYearId.items}" id="si8"/>
-                              <f:validator binding="#{bindings.AcadYearId.validator}"/>
-                            </af:selectOneChoice>
-                            <af:spacer  id="s6"/>
-                            <af:selectOneChoice value="#{bindings.GradeId.inputValue}" label="Grade"
-                                                required="#{bindings.GradeId.hints.mandatory}"
-                                                shortDesc="#{bindings.GradeId.hints.tooltip}" 
-                                                autoSubmit="true"
-                                                id="soc9" contentStyle="width:200px;" >
-                              <f:selectItems value="#{bindings.GradeId.items}" id="si9"/>
-                              <f:validator binding="#{bindings.GradeId.validator}"/>
-                            </af:selectOneChoice>
-                            <af:spacer  id="s7"/>
-                            <af:selectOneChoice value="#{bindings.SectionsId.inputValue}"
-                                                label="Section"
-                                                required="#{bindings.SectionsId.hints.mandatory}"
-                                                shortDesc="#{bindings.SectionsId.hints.tooltip}" id="soc10"
-                                                contentStyle="width:200px;">
-                              <f:selectItems value="#{bindings.SectionsId.items}" id="si10"/>
-                              <f:validator binding="#{bindings.SectionsId.validator}"/>
-                            </af:selectOneChoice>
-                            <af:spacer  id="s8"/>
-                            <af:selectOneChoice value="#{bindings.StaffId.inputValue}" label="Staff"
-                                                required="#{bindings.StaffId.hints.mandatory}"
-                                                shortDesc="#{bindings.StaffId.hints.tooltip}"
-                                                autoSubmit="true"
-                                                id="soc11" contentStyle="width:200px;">
-                              <f:selectItems value="#{bindings.StaffId.items}" id="si11"/>
-                              <f:validator binding="#{bindings.StaffId.validator}"/>
-                            </af:selectOneChoice>
-                            
-                            <af:spacer  id="s10"/>
-                            <af:selectOneChoice value="#{bindings.SubjectId.inputValue}"
-                                                label="Subject"
-                                                required="#{bindings.SubjectId.hints.mandatory}"
-                                                shortDesc="#{bindings.SubjectId.hints.tooltip}" id="soc12"
-                                                contentStyle="width:200px;">
-                              <f:selectItems value="#{bindings.SubjectId.items}" id="si12"/>
-                              <f:validator binding="#{bindings.SubjectId.validator}"/>
-                            </af:selectOneChoice>
-                            <af:spacer  id="s11"/>
-                            <af:selectOneChoice value="#{bindings.Category.inputValue}"
-                                                label="Category"
-                                                required="#{bindings.Category.hints.mandatory}"
-                                                shortDesc="#{bindings.Category.hints.tooltip}" id="soc13"
-                                                contentStyle="width:200px;">
-                              <f:selectItems value="#{bindings.Category.items}" id="si13"/>
-                              <f:validator binding="#{bindings.Category.validator}"/>
-                            </af:selectOneChoice>
-                            <af:spacer  id="s12"/>
-                            <af:inputText value="#{bindings.ChapName.inputValue}"
-                                          label="Chapter"
-                                          required="#{bindings.ChapName.hints.mandatory}"
-                                          columns="#{bindings.ChapName.hints.displayWidth}"
-                                          maximumLength="#{bindings.ChapName.hints.precision}"
-                                          shortDesc="#{bindings.ChapName.hints.tooltip}" id="it14"
-                                          contentStyle="width:200px;">
-                              <f:validator binding="#{bindings.ChapName.validator}"/>
-                            </af:inputText>
-                            <af:spacer  id="s13"/>
-                            <af:inputText value="#{bindings.TopicName.inputValue}"
-                                          label="Topic"
-                                          required="#{bindings.TopicName.hints.mandatory}"
-                                          columns="#{bindings.TopicName.hints.displayWidth}"
-                                          maximumLength="#{bindings.TopicName.hints.precision}"
-                                          shortDesc="#{bindings.TopicName.hints.tooltip}" id="it15"
-                                          contentStyle="width:200px;">
-                              <f:validator binding="#{bindings.TopicName.validator}"/>
-                            </af:inputText>
-                            <af:spacer  id="s14"/>
-                            <af:selectOneChoice value="#{bindings.Type.inputValue}" label="Type"
-                                                required="#{bindings.Type.hints.mandatory}"
-                                                shortDesc="#{bindings.Type.hints.tooltip}" id="soc14"
-                                                contentStyle="width:200px;">
-                              <f:selectItems value="#{bindings.Type.items}" id="si14"/>
-                              <f:validator binding="#{bindings.Type.validator}"/>
-                            </af:selectOneChoice>
-                            <f:facet name="footer">
-                              <af:panelGroupLayout layout="horizontal" id="pgl7">
-                                <af:button actionListener="#{bindings.First.execute}" text="First"
-                                           disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b2"/>
-                                <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
-                                           disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
-                                <af:button actionListener="#{bindings.Next.execute}" text="Next"
-                                           disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b4"/>
-                                <af:button actionListener="#{bindings.Last.execute}" text="Last"
-                                           disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b5"/>
-                              </af:panelGroupLayout>
-                            </f:facet>
-                          </af:panelFormLayout>
+                          <af:table value="#{bindings.TblStudyMaterialMView1.collectionModel}" var="row"
+                                    rows="#{bindings.TblStudyMaterialMView1.rangeSize}"
+                                    emptyText="#{bindings.TblStudyMaterialMView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblStudyMaterialMView1.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblStudyMaterialMView1.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblStudyMaterialMView1.rangeSize}"
+                                    filterModel="#{bindings.TblStudyMaterialMView1Query.queryDescriptor}"
+                                    filterVisible="true"
+                                    queryListener="#{bindings.TblStudyMaterialMView1Query.processQuery}" varStatus="vs"
+                                    id="t1" scrollPolicy="page" autoHeightRows="0">
+                            <af:column sortProperty="#{bindings.TblStudyMaterialMView1.hints.Id.name}" filterable="true"
+                                       sortable="true" headerText="ID"
+                                       id="c1" visible="false">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="it24" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Id.inputValue}"
+                                            label="#{bindings.TblStudyMaterialMView1.hints.Id.label}"
+                                            required="#{bindings.TblStudyMaterialMView1.hints.Id.mandatory}"
+                                            columns="#{bindings.TblStudyMaterialMView1.hints.Id.displayWidth}"
+                                            maximumLength="#{bindings.TblStudyMaterialMView1.hints.Id.precision}"
+                                            shortDesc="#{bindings.TblStudyMaterialMView1.hints.Id.tooltip}" id="it1" readOnly="true">
+                                <f:validator binding="#{row.bindings.Id.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblStudyMaterialMView1.hints.Id.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblStudyMaterialMView1.hints.Dated.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Dated" id="c2">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.TblStudyMaterialMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                              id="id1" placeholder="Search ">
+                                  <af:convertDateTime pattern="#{bindings.TblStudyMaterialMView1.hints.Dated.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                            label="#{bindings.TblStudyMaterialMView1.hints.Dated.label}"
+                                            required="#{bindings.TblStudyMaterialMView1.hints.Dated.mandatory}"
+                                            columns="#{bindings.TblStudyMaterialMView1.hints.Dated.displayWidth}"
+                                            shortDesc="#{bindings.TblStudyMaterialMView1.hints.Dated.tooltip}" id="id2">
+                                <f:validator binding="#{row.bindings.Dated.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblStudyMaterialMView1.hints.Dated.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblStudyMaterialMView1.hints.AcadYearId.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Academic Year" id="c3">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.AcadYearId}"
+       id="it4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
+                                                  label="#{row.bindings.AcadYearId.label}"
+                                                  required="#{bindings.TblStudyMaterialMView1.hints.AcadYearId.mandatory}"
+                                                  shortDesc="#{bindings.TblStudyMaterialMView1.hints.AcadYearId.tooltip}"
+                                                  id="soc1" >
+                                <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si1"/>
+                                <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblStudyMaterialMView1.hints.GradeId.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Grade" id="c4">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.GradeId}"
+       id="it5" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}"
+                                                  label="#{row.bindings.GradeId.label}"
+                                                  required="#{bindings.TblStudyMaterialMView1.hints.GradeId.mandatory}"
+                                                  shortDesc="#{bindings.TblStudyMaterialMView1.hints.GradeId.tooltip}"
+                                                  id="soc2" autoSubmit="true" >
+                                <f:selectItems value="#{row.bindings.GradeId.items}" id="si2"/>
+                                <f:validator binding="#{row.bindings.GradeId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblStudyMaterialMView1.hints.SectionsId.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Section" id="c5">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.SectionsId}"
+       id="it6" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.SectionsId.inputValue}"
+                                                  label="#{row.bindings.SectionsId.label}"
+                                                  required="#{bindings.TblStudyMaterialMView1.hints.SectionsId.mandatory}"
+                                                  shortDesc="#{bindings.TblStudyMaterialMView1.hints.SectionsId.tooltip}"
+                                                  id="soc3" >
+                                <f:selectItems value="#{row.bindings.SectionsId.items}" id="si3"/>
+                                <f:validator binding="#{row.bindings.SectionsId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblStudyMaterialMView1.hints.StaffId.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Staff" id="c6" width="200">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.StaffId}"
+       id="it7" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.StaffId.inputValue}"
+                                                  label="#{row.bindings.StaffId.label}"
+                                                  required="#{bindings.TblStudyMaterialMView1.hints.StaffId.mandatory}"
+                                                  shortDesc="#{bindings.TblStudyMaterialMView1.hints.StaffId.tooltip}"
+                                                  id="soc4" autoSubmit="true" >
+                                <f:selectItems value="#{row.bindings.StaffId.items}" id="si4"/>
+                                <f:validator binding="#{row.bindings.StaffId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblStudyMaterialMView1.hints.SubjectId.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Sebject" id="c7">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.SubjectId}"
+       id="it8" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.SubjectId.inputValue}"
+                                                  label="#{row.bindings.SubjectId.label}"
+                                                  required="#{bindings.TblStudyMaterialMView1.hints.SubjectId.mandatory}"
+                                                  shortDesc="#{bindings.TblStudyMaterialMView1.hints.SubjectId.tooltip}"
+                                                  id="soc5" >
+                                <f:selectItems value="#{row.bindings.SubjectId.items}" id="si5"/>
+                                <f:validator binding="#{row.bindings.SubjectId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblStudyMaterialMView1.hints.Category.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Category" id="c8">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Category}"
+       id="it9" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.Category.inputValue}"
+                                                  label="#{row.bindings.Category.label}"
+                                                  required="#{bindings.TblStudyMaterialMView1.hints.Category.mandatory}"
+                                                  shortDesc="#{bindings.TblStudyMaterialMView1.hints.Category.tooltip}"
+                                                  id="soc6" >
+                                <f:selectItems value="#{row.bindings.Category.items}" id="si6"/>
+                                <f:validator binding="#{row.bindings.Category.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblStudyMaterialMView1.hints.Type.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Type" id="c9">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Type}"
+       id="it10" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.Type.inputValue}"
+                                                  label="#{row.bindings.Type.label}"
+                                                  required="#{bindings.TblStudyMaterialMView1.hints.Type.mandatory}"
+                                                  shortDesc="#{bindings.TblStudyMaterialMView1.hints.Type.tooltip}"
+                                                  id="soc7" >
+                                <f:selectItems value="#{row.bindings.Type.items}" id="si7"/>
+                                <f:validator binding="#{row.bindings.Type.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblStudyMaterialMView1.hints.ChapName.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Chapter" id="c10" width="150">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ChapName}"
+       id="it11" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.ChapName.inputValue}"
+                                            label="#{bindings.TblStudyMaterialMView1.hints.ChapName.label}"
+                                            required="#{bindings.TblStudyMaterialMView1.hints.ChapName.mandatory}"
+                                            columns="#{bindings.TblStudyMaterialMView1.hints.ChapName.displayWidth}"
+                                            maximumLength="#{bindings.TblStudyMaterialMView1.hints.ChapName.precision}"
+                                            shortDesc="#{bindings.TblStudyMaterialMView1.hints.ChapName.tooltip}"
+                                            id="it2" >
+                                <f:validator binding="#{row.bindings.ChapName.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblStudyMaterialMView1.hints.TopicName.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Topic" id="c11" width="150">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.TopicName}"
+       id="it12" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.TopicName.inputValue}"
+                                            label="#{bindings.TblStudyMaterialMView1.hints.TopicName.label}"
+                                            required="#{bindings.TblStudyMaterialMView1.hints.TopicName.mandatory}"
+                                            columns="#{bindings.TblStudyMaterialMView1.hints.TopicName.displayWidth}"
+                                            maximumLength="#{bindings.TblStudyMaterialMView1.hints.TopicName.precision}"
+                                            shortDesc="#{bindings.TblStudyMaterialMView1.hints.TopicName.tooltip}"
+                                            id="it3" >
+                                <f:validator binding="#{row.bindings.TopicName.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                          </af:table>
                         </af:showDetailItem>
                       </af:panelTabbed>
                     </af:gridCell>
@@ -328,212 +419,6 @@
                     </af:gridCell>
                   </af:gridRow>
                 </af:panelGridLayout>
-              </af:showDetailItem>
-              <af:showDetailItem text="Search" id="sdi1">
-                                          <af:table value="#{bindings.TblStudyMaterialMView1.collectionModel}" var="row"
-                                    rows="#{bindings.TblStudyMaterialMView1.rangeSize}"
-                                    emptyText="#{bindings.TblStudyMaterialMView1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                    rowBandingInterval="0"
-                                    selectedRowKeys="#{bindings.TblStudyMaterialMView1.collectionModel.selectedRow}"
-                                    selectionListener="#{bindings.TblStudyMaterialMView1.collectionModel.makeCurrent}"
-                                    rowSelection="single" fetchSize="#{bindings.TblStudyMaterialMView1.rangeSize}"
-                                    filterModel="#{bindings.TblStudyMaterialMView1Query.queryDescriptor}"
-                                    filterVisible="true"
-                                    queryListener="#{bindings.TblStudyMaterialMView1Query.processQuery}" varStatus="vs"
-                                    id="t1" scrollPolicy="page" autoHeightRows="0">
-                            <af:column sortProperty="#{bindings.TblStudyMaterialMView1.hints.Id.name}" filterable="true"
-                                       sortable="true" headerText="ID"
-                                       id="c1" visible="false">
-                                       <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.Id}"
-       id="it24" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                              <af:inputText value="#{row.bindings.Id.inputValue}"
-                                            label="#{bindings.TblStudyMaterialMView1.hints.Id.label}"
-                                            required="#{bindings.TblStudyMaterialMView1.hints.Id.mandatory}"
-                                            columns="#{bindings.TblStudyMaterialMView1.hints.Id.displayWidth}"
-                                            maximumLength="#{bindings.TblStudyMaterialMView1.hints.Id.precision}"
-                                            shortDesc="#{bindings.TblStudyMaterialMView1.hints.Id.tooltip}" id="it1" readOnly="true">
-                                <f:validator binding="#{row.bindings.Id.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblStudyMaterialMView1.hints.Id.format}"/>
-                              </af:inputText>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblStudyMaterialMView1.hints.Dated.name}"
-                                       filterable="true" sortable="true"
-                                       headerText="Dated" id="c2">
-                              <f:facet name="filter">
-                                <af:inputDate value="#{bindings.TblStudyMaterialMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
-                                              id="id1" placeholder="Search ">
-                                  <af:convertDateTime pattern="#{bindings.TblStudyMaterialMView1.hints.Dated.format}"/>
-                                </af:inputDate>
-                              </f:facet>
-                              <af:inputDate value="#{row.bindings.Dated.inputValue}"
-                                            label="#{bindings.TblStudyMaterialMView1.hints.Dated.label}"
-                                            required="#{bindings.TblStudyMaterialMView1.hints.Dated.mandatory}"
-                                            columns="#{bindings.TblStudyMaterialMView1.hints.Dated.displayWidth}"
-                                            shortDesc="#{bindings.TblStudyMaterialMView1.hints.Dated.tooltip}" id="id2" readOnly="true">
-                                <f:validator binding="#{row.bindings.Dated.validator}"/>
-                                <af:convertDateTime pattern="#{bindings.TblStudyMaterialMView1.hints.Dated.format}"/>
-                              </af:inputDate>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblStudyMaterialMView1.hints.AcadYearId.name}"
-                                       filterable="true" sortable="true"
-                                       headerText="Academic Year" id="c3">
-                                       <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.AcadYearId}"
-       id="it4" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                              <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
-                                                  label="#{row.bindings.AcadYearId.label}"
-                                                  required="#{bindings.TblStudyMaterialMView1.hints.AcadYearId.mandatory}"
-                                                  shortDesc="#{bindings.TblStudyMaterialMView1.hints.AcadYearId.tooltip}"
-                                                  id="soc1" readOnly="true">
-                                <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si1"/>
-                                <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
-                              </af:selectOneChoice>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblStudyMaterialMView1.hints.GradeId.name}"
-                                       filterable="true" sortable="true"
-                                       headerText="Grade" id="c4">
-                                        <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.GradeId}"
-       id="it5" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                              <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}"
-                                                  label="#{row.bindings.GradeId.label}"
-                                                  required="#{bindings.TblStudyMaterialMView1.hints.GradeId.mandatory}"
-                                                  shortDesc="#{bindings.TblStudyMaterialMView1.hints.GradeId.tooltip}"
-                                                  id="soc2" readOnly="true" >
-                                <f:selectItems value="#{row.bindings.GradeId.items}" id="si2"/>
-                                <f:validator binding="#{row.bindings.GradeId.validator}"/>
-                              </af:selectOneChoice>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblStudyMaterialMView1.hints.SectionsId.name}"
-                                       filterable="true" sortable="true"
-                                       headerText="Section" id="c5">
-                                       <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.SectionsId}"
-       id="it6" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                              <af:selectOneChoice value="#{row.bindings.SectionsId.inputValue}"
-                                                  label="#{row.bindings.SectionsId.label}"
-                                                  required="#{bindings.TblStudyMaterialMView1.hints.SectionsId.mandatory}"
-                                                  shortDesc="#{bindings.TblStudyMaterialMView1.hints.SectionsId.tooltip}"
-                                                  id="soc3" readOnly="true">
-                                <f:selectItems value="#{row.bindings.SectionsId.items}" id="si3"/>
-                                <f:validator binding="#{row.bindings.SectionsId.validator}"/>
-                              </af:selectOneChoice>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblStudyMaterialMView1.hints.StaffId.name}"
-                                       filterable="true" sortable="true"
-                                       headerText="Staff" id="c6">
-                                       <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.StaffId}"
-       id="it7" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                              <af:selectOneChoice value="#{row.bindings.StaffId.inputValue}"
-                                                  label="#{row.bindings.StaffId.label}"
-                                                  required="#{bindings.TblStudyMaterialMView1.hints.StaffId.mandatory}"
-                                                  shortDesc="#{bindings.TblStudyMaterialMView1.hints.StaffId.tooltip}"
-                                                  id="soc4" readOnly="true">
-                                <f:selectItems value="#{row.bindings.StaffId.items}" id="si4"/>
-                                <f:validator binding="#{row.bindings.StaffId.validator}"/>
-                              </af:selectOneChoice>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblStudyMaterialMView1.hints.SubjectId.name}"
-                                       filterable="true" sortable="true"
-                                       headerText="Sebject" id="c7">
-                                        <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.SubjectId}"
-       id="it8" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                              <af:selectOneChoice value="#{row.bindings.SubjectId.inputValue}"
-                                                  label="#{row.bindings.SubjectId.label}"
-                                                  required="#{bindings.TblStudyMaterialMView1.hints.SubjectId.mandatory}"
-                                                  shortDesc="#{bindings.TblStudyMaterialMView1.hints.SubjectId.tooltip}"
-                                                  id="soc5" readOnly="true">
-                                <f:selectItems value="#{row.bindings.SubjectId.items}" id="si5"/>
-                                <f:validator binding="#{row.bindings.SubjectId.validator}"/>
-                              </af:selectOneChoice>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblStudyMaterialMView1.hints.Category.name}"
-                                       filterable="true" sortable="true"
-                                       headerText="Category" id="c8">
-                                        <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.Category}"
-       id="it9" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                              <af:selectOneChoice value="#{row.bindings.Category.inputValue}"
-                                                  label="#{row.bindings.Category.label}"
-                                                  required="#{bindings.TblStudyMaterialMView1.hints.Category.mandatory}"
-                                                  shortDesc="#{bindings.TblStudyMaterialMView1.hints.Category.tooltip}"
-                                                  id="soc6" readOnly="true">
-                                <f:selectItems value="#{row.bindings.Category.items}" id="si6"/>
-                                <f:validator binding="#{row.bindings.Category.validator}"/>
-                              </af:selectOneChoice>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblStudyMaterialMView1.hints.Type.name}"
-                                       filterable="true" sortable="true"
-                                       headerText="Type" id="c9">
-                                        <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.Type}"
-       id="it10" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                              <af:selectOneChoice value="#{row.bindings.Type.inputValue}"
-                                                  label="#{row.bindings.Type.label}"
-                                                  required="#{bindings.TblStudyMaterialMView1.hints.Type.mandatory}"
-                                                  shortDesc="#{bindings.TblStudyMaterialMView1.hints.Type.tooltip}"
-                                                  id="soc7" readOnly="true">
-                                <f:selectItems value="#{row.bindings.Type.items}" id="si7"/>
-                                <f:validator binding="#{row.bindings.Type.validator}"/>
-                              </af:selectOneChoice>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblStudyMaterialMView1.hints.ChapName.name}"
-                                       filterable="true" sortable="true"
-                                       headerText="Chapter" id="c10">
-                                        <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.ChapName}"
-       id="it11" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                              <af:inputText value="#{row.bindings.ChapName.inputValue}"
-                                            label="#{bindings.TblStudyMaterialMView1.hints.ChapName.label}"
-                                            required="#{bindings.TblStudyMaterialMView1.hints.ChapName.mandatory}"
-                                            columns="#{bindings.TblStudyMaterialMView1.hints.ChapName.displayWidth}"
-                                            maximumLength="#{bindings.TblStudyMaterialMView1.hints.ChapName.precision}"
-                                            shortDesc="#{bindings.TblStudyMaterialMView1.hints.ChapName.tooltip}"
-                                            id="it2" readOnly="true">
-                                <f:validator binding="#{row.bindings.ChapName.validator}"/>
-                              </af:inputText>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblStudyMaterialMView1.hints.TopicName.name}"
-                                       filterable="true" sortable="true"
-                                       headerText="Topic" id="c11">
-                                       <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.TopicName}"
-       id="it12" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                              <af:inputText value="#{row.bindings.TopicName.inputValue}"
-                                            label="#{bindings.TblStudyMaterialMView1.hints.TopicName.label}"
-                                            required="#{bindings.TblStudyMaterialMView1.hints.TopicName.mandatory}"
-                                            columns="#{bindings.TblStudyMaterialMView1.hints.TopicName.displayWidth}"
-                                            maximumLength="#{bindings.TblStudyMaterialMView1.hints.TopicName.precision}"
-                                            shortDesc="#{bindings.TblStudyMaterialMView1.hints.TopicName.tooltip}"
-                                            id="it3" readOnly="true">
-                                <f:validator binding="#{row.bindings.TopicName.validator}"/>
-                              </af:inputText>
-                            </af:column>
-                          </af:table>
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>

@@ -12,9 +12,16 @@
                       
                         <af:spacer width="20" height="30" id="s7"/>
                         <af:panelGroupLayout id="pgl6">
-                        
-                        </af:panelGroupLayout>
                         <af:spacer width="20" height="30" id="s15"/>
+                        <af:selectOneChoice label="Select Report Type" id="soc6" autoSubmit="true"
+                                                unselectedLabel="--Select--"
+                                                binding="#{backingBeanScope.StudentLedgerBean.report_type}"
+                                            contentStyle="width:200px">
+                                <af:selectItem label="Std Ledger" value="StdLedger" id="si10"/>
+                               
+                            </af:selectOneChoice>
+                        </af:panelGroupLayout>
+                        <af:spacer width="20" height="30" id="s3"/>
                         <af:panelGroupLayout id="pgl4" layout="horizontal">
                             <af:spacer width="20" height="10" id="s16"/>
                             <af:selectOneChoice label="Select Format Type" id="soc5" autoSubmit="true"
