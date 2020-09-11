@@ -30,7 +30,7 @@ public class DatabaseConnection {
         
         /*  Report servlet connection >> port , hostname */
         setUportReport("9002");
-        setUipReport("192.168.1.4");
+        setUipReport("207.180.246.67");
         /*  END */
         
         String thinConn = "jdbc:oracle:thin:@" + getUipp() + ":" + getUportADF() + ":" + getUSID() ;
