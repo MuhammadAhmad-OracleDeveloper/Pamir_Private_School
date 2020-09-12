@@ -134,13 +134,7 @@
                     </af:inputText>
                   </af:column>
                 </af:table>
-              </af:showDetailItem>
-            </af:panelTabbed>
-          </af:gridCell>
-        </af:gridRow>
-        <af:gridRow marginTop="5px" height="auto" id="gr3" >
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" halign="center" id="gc3">
-             <af:panelGroupLayout id="pgl3" layout="horizontal" halign="center">
+                 <af:panelGroupLayout id="pgl3" layout="horizontal" halign="center">
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -152,6 +146,8 @@
                 <af:spacer width="5" height="10" id="s5"/>
                             </af:iterator>
                         </af:panelGroupLayout>
+              </af:showDetailItem>
+            </af:panelTabbed>
           </af:gridCell>
         </af:gridRow>
         
