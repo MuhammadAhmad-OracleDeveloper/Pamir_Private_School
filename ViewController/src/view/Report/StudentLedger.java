@@ -40,7 +40,7 @@ public class StudentLedger {
             switch (selectedReportType) {
             case "StdLedger":
 
-                reportBean.setReportURLName("userid=ppss/ppss@orcl&domain=classicdomain&report=C:/PPSS_Reports/Std_Ledger&");
+                reportBean.setReportURLName("userid=ppss/ppss@orcl&domain=classicdomain&report=C:/PPSS_Reports/STD_Ledger&");
                 break;
 
             
