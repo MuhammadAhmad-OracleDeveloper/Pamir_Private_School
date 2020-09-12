@@ -41,7 +41,8 @@
                                           filterModel="#{bindings.TblStdRegView1Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblStdRegView1Query.processQuery}" varStatus="vs"
-                                          id="t1" scrollPolicy="page" autoHeightRows="0">
+                                          id="t1" scrollPolicy="page" autoHeightRows="0"
+                                          partialTriggers="::b3 ::b4 ::b5 ::b11">
                                     <af:column sortProperty="#{bindings.TblStdRegView1.hints.Id.name}" filterable="true"
                                                sortable="true" headerText="Student Registration ID" id="c1"
                                                align="right" width="80" visible="false">
@@ -577,20 +578,19 @@
                                                 </af:inputText>
                                                 <f:facet name="footer">
                                                     <af:panelGroupLayout layout="horizontal" id="pgl5" halign="center">
-                                                        <af:button actionListener="#{bindings.First.execute}"
-                                                                   text="First" disabled="#{!bindings.First.enabled}"
-                                                                   partialSubmit="true" id="b19"/>
-                                                        <af:button actionListener="#{bindings.Previous.execute}"
-                                                                   text="Previous"
-                                                                   disabled="#{!bindings.Previous.enabled}"
-                                                                   partialSubmit="true" id="b3"/>
-                                                        <af:button actionListener="#{bindings.Next.execute}" text="Next"
-                                                                   disabled="#{!bindings.Next.enabled}"
-                                                                   partialSubmit="true" id="b4"/>
-                                                        <af:button actionListener="#{bindings.Last.execute}" text="Last"
-                                                                   disabled="#{!bindings.Last.enabled}"
-                                                                   partialSubmit="true" id="b5"/>
-                                                    </af:panelGroupLayout>
+                                                <af:button actionListener="#{bindings.First1.execute}" text="First"
+                                                           disabled="#{!bindings.First1.enabled}" partialSubmit="true"
+                                                           id="b3"/>
+                                                <af:button actionListener="#{bindings.Previous1.execute}"
+                                                           text="Previous" disabled="#{!bindings.Previous1.enabled}"
+                                                           partialSubmit="true" id="b4"/>
+                                                <af:button actionListener="#{bindings.Next1.execute}" text="Next"
+                                                           disabled="#{!bindings.Next1.enabled}" partialSubmit="true"
+                                                           id="b5"/>
+                                                <af:button actionListener="#{bindings.Last1.execute}" text="Last"
+                                                           disabled="#{!bindings.Last1.enabled}" partialSubmit="true"
+                                                           id="b11"/>
+                                            </af:panelGroupLayout>
                                                 </f:facet>
                                             </af:panelFormLayout>
                                          <af:panelGroupLayout id="pgl12" layout="vertical"
@@ -811,18 +811,18 @@
                                     </af:inputText>
                                     <f:facet name="footer">
                                         <af:panelGroupLayout layout="horizontal" id="pgl6" halign="center">
-                                            <af:button actionListener="#{bindings.First.execute}" text="First"
-                                                       disabled="#{!bindings.First.enabled}" partialSubmit="true"
-                                                       id="b6"/>
-                                            <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
-                                                       disabled="#{!bindings.Previous.enabled}" partialSubmit="true"
-                                                       id="b7"/>
-                                            <af:button actionListener="#{bindings.Next.execute}" text="Next"
-                                                       disabled="#{!bindings.Next.enabled}" partialSubmit="true"
-                                                       id="b8"/>
-                                            <af:button actionListener="#{bindings.Last.execute}" text="Last"
-                                                       disabled="#{!bindings.Last.enabled}" partialSubmit="true"
-                                                       id="b9"/>
+                                            <af:button actionListener="#{bindings.First1.execute}" text="First"
+                                                           disabled="#{!bindings.First1.enabled}" partialSubmit="true"
+                                                           id="b6"/>
+                                                <af:button actionListener="#{bindings.Previous1.execute}"
+                                                           text="Previous" disabled="#{!bindings.Previous1.enabled}"
+                                                           partialSubmit="true" id="b7"/>
+                                                <af:button actionListener="#{bindings.Next1.execute}" text="Next"
+                                                           disabled="#{!bindings.Next1.enabled}" partialSubmit="true"
+                                                           id="b8"/>
+                                                <af:button actionListener="#{bindings.Last1.execute}" text="Last"
+                                                           disabled="#{!bindings.Last1.enabled}" partialSubmit="true"
+                                                           id="b9"/>
                                         </af:panelGroupLayout>
                                     </f:facet>
                                 </af:panelFormLayout>
@@ -868,18 +868,18 @@
                                     <af:spacer id="s55"/>
                                     <f:facet name="footer">
                                         <af:panelGroupLayout layout="horizontal" id="pgl8" halign="center">
-                                            <af:button actionListener="#{bindings.First.execute}" text="First"
-                                                       disabled="#{!bindings.First.enabled}" partialSubmit="true"
-                                                       id="b15"/>
-                                            <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
-                                                       disabled="#{!bindings.Previous.enabled}" partialSubmit="true"
-                                                       id="b16"/>
-                                            <af:button actionListener="#{bindings.Next.execute}" text="Next"
-                                                       disabled="#{!bindings.Next.enabled}" partialSubmit="true"
-                                                       id="b17"/>
-                                            <af:button actionListener="#{bindings.Last.execute}" text="Last"
-                                                       disabled="#{!bindings.Last.enabled}" partialSubmit="true"
-                                                       id="b18"/>
+                                            <af:button actionListener="#{bindings.First1.execute}" text="First"
+                                                           disabled="#{!bindings.First1.enabled}" partialSubmit="true"
+                                                           id="b12"/>
+                                                <af:button actionListener="#{bindings.Previous1.execute}"
+                                                           text="Previous" disabled="#{!bindings.Previous1.enabled}"
+                                                           partialSubmit="true" id="b13"/>
+                                                <af:button actionListener="#{bindings.Next1.execute}" text="Next"
+                                                           disabled="#{!bindings.Next1.enabled}" partialSubmit="true"
+                                                           id="b14"/>
+                                                <af:button actionListener="#{bindings.Last1.execute}" text="Last"
+                                                           disabled="#{!bindings.Last1.enabled}" partialSubmit="true"
+                                                           id="b15"/>
                                         </af:panelGroupLayout>
                                     </f:facet>
                                 </af:panelFormLayout>
@@ -896,7 +896,7 @@
                                           filterVisible="true"
                                           queryListener="#{bindings.TblStdRegGuardView2Query.processQuery}"
                                           varStatus="vs" id="t3" scrollPolicy="page" autoHeightRows="0"
-                                          partialTriggers="::b19">
+                                          >
                                     <af:column sortProperty="#{bindings.TblStdRegGuardView2.hints.Id.name}"
                                                filterable="true" sortable="true" headerText="ID" id="c20"
                                                visible="false">
