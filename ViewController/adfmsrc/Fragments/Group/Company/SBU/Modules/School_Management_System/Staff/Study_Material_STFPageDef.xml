@@ -76,6 +76,7 @@
           <Item Value="Id"/>
           <Item Value="Descript"/>
           <Item Value="Image"/>
+          <Item Value="StudyMaterialMId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -85,5 +86,15 @@
             Action="iteratorExecute"/>
     <action IterBinding="TblStudyMaterialDDView2Iterator" id="Delete2" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <attributeValues IterBinding="TblStudyMaterialDDView2Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStudyMaterialDDView2Iterator" id="Image">
+      <AttrNames>
+        <Item Value="Image"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

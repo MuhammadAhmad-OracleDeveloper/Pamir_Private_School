@@ -36,6 +36,8 @@ public class FileManaging {
     private RichInputText db_passport_image_value;
     private RichLink db_docs_image_download_path;
     private RichInputText db_docs_image_value;
+    private RichInputText db_study_material_image_value;
+    private RichLink db_study_material_image_download_path;
 
     public FileManaging() {
     }
@@ -78,9 +80,13 @@ public class FileManaging {
             case "db_docs_image_value":
                 db_docs_image_value.setValue(UniFileName);
                 break;
+            case "db_study_material_image_value":
+                db_study_material_image_value.setValue(UniFileName);
+                break;
             default:
+                System.out.println("nothing to upload");
             }
-            db_Image_Value.setValue(UniFileName);
+//            db_Image_Value.setValue(UniFileName);
             
             InputStream inputStream = null;
             try {
@@ -116,7 +122,7 @@ public class FileManaging {
     public void downloadmeVisa(FacesContext fc, OutputStream os) throws IOException
     {
         String FilePath = (String)this.getDb_visa_image_download_path().getIcon();
-        String FileName = (String)this.getDb_visa_image_value().getValue();
+        String FileName = (String)this.getDb_visa_image_download_path().getText();
         
         
         File file = new File(FilePath + FileName);
@@ -155,7 +161,7 @@ public class FileManaging {
     public void downloadmePass(FacesContext fc, OutputStream os) throws IOException
     {
         String FilePath = (String)this.getDb_passport_image_download_path().getIcon();
-        String FileName = (String)this.getDb_passport_image_value().getValue();
+        String FileName = (String)this.getDb_passport_image_download_path().getText();
         
         
         File file = new File(FilePath + FileName);
@@ -193,7 +199,7 @@ public class FileManaging {
     public void downloadmeDocs(FacesContext fc, OutputStream os) throws IOException
     {
         String FilePath = (String)this.getDb_docs_image_download_path().getIcon();
-        String FileName = (String)this.getDb_docs_image_value().getValue();
+        String FileName = (String)this.getDb_docs_image_download_path().getText();
         
         
         File file = new File(FilePath + FileName);
@@ -227,6 +233,49 @@ public class FileManaging {
 
     }
 
+
+
+    public void downloadmeStdStudyMaterial(FacesContext fc, OutputStream os) throws IOException
+    {                                   
+        String FilePath = (String)this.getDb_study_material_image_download_path().getIcon();
+        String FileName = (String)this.getDb_study_material_image_download_path().getText();
+        
+        
+        File file = new File(FilePath + FileName);
+        
+        FacesContext facesContext = FacesContext.getCurrentInstance();
+
+        HttpServletResponse response = 
+                (HttpServletResponse) facesContext.getExternalContext().getResponse();
+
+        response.reset();
+        response.setHeader("Content-Type", "application/octet-stream");
+        response.setHeader("Content-Disposition", "attachment;filename="+FileName);
+
+        OutputStream responseOutputStream = response.getOutputStream();
+
+        InputStream fileInputStream = new FileInputStream(file);
+
+        byte[] bytesBuffer = new byte[2048];
+        int bytesRead;
+        while ((bytesRead = fileInputStream.read(bytesBuffer)) > 0) 
+        {
+            responseOutputStream.write(bytesBuffer, 0, bytesRead);
+        }
+
+        responseOutputStream.flush();
+
+        fileInputStream.close();
+        responseOutputStream.close();
+
+        facesContext.responseComplete();
+
+    }
+
+
+    public RichLink getDb_study_material_image_download_path() {
+        return db_study_material_image_download_path;
+    }
 
       public void setDb_Image_Value(RichInputText db_Image_Value) {
         this.db_Image_Value = db_Image_Value;
@@ -292,5 +341,17 @@ public class FileManaging {
 
     public RichInputText getDb_docs_image_value() {
         return db_docs_image_value;
+    }
+
+    public void setDb_study_material_image_value(RichInputText db_study_material_image_value) {
+        this.db_study_material_image_value = db_study_material_image_value;
+    }
+
+    public RichInputText getDb_study_material_image_value() {
+        return db_study_material_image_value;
+    }
+
+    public void setDb_study_material_image_download_path(RichLink db_study_material_image_download_path) {
+        this.db_study_material_image_download_path = db_study_material_image_download_path;
     }
 }
