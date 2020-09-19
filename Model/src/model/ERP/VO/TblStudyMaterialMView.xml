@@ -6,13 +6,36 @@
   Name="TblStudyMaterialMView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblStudyMaterialM.ID, 
+       TblStudyMaterialM.ACAD_YEAR_ID, 
+       TblStudyMaterialM.GRADE_ID, 
+       TblStudyMaterialM.SECTIONS_ID, 
+       TblStudyMaterialM.SUBJECT_ID, 
+       TblStudyMaterialM.STAFF_ID, 
+       TblStudyMaterialM.TYPE, 
+       TblStudyMaterialM.CATEGORY, 
+       TblStudyMaterialM.DATED, 
+       TblStudyMaterialM.CHAP_NAME, 
+       TblStudyMaterialM.TOPIC_NAME, 
+       TblStudyMaterialM.GROUP_COMPANY_ID, 
+       TblStudyMaterialM.CREATED_DATE, 
+       TblStudyMaterialM.CREATED_BY, 
+       TblStudyMaterialM.UPDATED_DATE, 
+       TblStudyMaterialM.UPDATED_BY, 
+       TblStudyMaterialM.COMPANY_SBU_ID"
+  FromList="TBL_STUDY_MATERIAL_M TblStudyMaterialM"
+  Where="TblStudyMaterialM.STAFF_ID = nvl(:getSessStaffID,TblStudyMaterialM.STAFF_ID)">
+  <Variable
+    Name="getSessStaffID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      CodeSourceName="TblStudyMaterialMView"/>
+  </Variable>
   <ViewAccessor
     Name="Academic_Year_LOV1"
     ViewObjectName="model.LOV.Academic_Year_LOV"

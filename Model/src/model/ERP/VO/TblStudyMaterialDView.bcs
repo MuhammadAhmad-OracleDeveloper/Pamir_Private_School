@@ -1,0 +1,12 @@
+//Groovy Scripts for model.ERP.VO.TblStudyMaterialDView
+
+package model.ERP.VO
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="getSessStdID")
+def getSessStdID_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('sessPortalStdId')
+}
+
