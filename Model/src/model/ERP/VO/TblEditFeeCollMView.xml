@@ -24,15 +24,49 @@
   <ViewAccessor
     Name="Section_Name_LOV1"
     ViewObjectName="model.LOV.Section_Name_LOV"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getGrade">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[GradeId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ViewAccessor
     Name="Terms_Name_LOV1"
     ViewObjectName="model.LOV.Terms_Name_LOV"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getAcadYear">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[AcadYearId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ViewAccessor
-    Name="Student_Registration_LOV1"
-    ViewObjectName="model.LOV.Student_Registration_LOV"
-    RowLevelBinds="true"/>
+    Name="Std_Reg_Depn_LOV1"
+    ViewObjectName="model.LOV.Std_Reg_Depn_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getAcadYear">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[AcadYearId]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="getGrade">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[GradeId]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="getSection">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[SectionsId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_AcadYearId"
     ListVOName="Academic_Year_LOV1"
@@ -107,7 +141,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_StdRegId"
-    ListVOName="Student_Registration_LOV1"
+    ListVOName="Std_Reg_Depn_LOV1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
@@ -119,10 +153,9 @@
       <Item Value="Id"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="EmirId"/>
       <Item Value="FirstName"/>
       <Item Value="LastName"/>
-      <Item Value="EnrollNo"/>
-      <Item Value="FatherName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>

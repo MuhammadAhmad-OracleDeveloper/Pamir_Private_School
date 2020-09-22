@@ -356,7 +356,7 @@
                                   <af:convertDateTime pattern="#{bindings.TblEditFeeCollMView1.hints.Dated.format}"/>
                                 </af:inputDate>
                               </f:facet>
-                              <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                              <af:inputDate value="#{row.bindings.Dated.inputValue}" autoSubmit="true"
                                             label="#{bindings.TblEditFeeCollMView1.hints.Dated.label}"
                                             required="#{bindings.TblEditFeeCollMView1.hints.Dated.mandatory}"
                                             columns="#{bindings.TblEditFeeCollMView1.hints.Dated.displayWidth}"
@@ -374,7 +374,7 @@
                                   </af:inputText>
                             </f:facet>
                               <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
-                                                  label="#{row.bindings.AcadYearId.label}"
+                                                  label="#{row.bindings.AcadYearId.label}" autoSubmit="true"
                                                   required="#{bindings.TblEditFeeCollMView1.hints.AcadYearId.mandatory}"
                                                   shortDesc="#{bindings.TblEditFeeCollMView1.hints.AcadYearId.tooltip}"
                                                   id="soc5">
@@ -391,7 +391,7 @@
                                   </af:inputText>
                             </f:facet>
                               <af:selectOneChoice value="#{row.bindings.TermsId.inputValue}"
-                                                  label="#{row.bindings.TermsId.label}"
+                                                  label="#{row.bindings.TermsId.label}" autoSubmit="true"
                                                   required="#{bindings.TblEditFeeCollMView1.hints.TermsId.mandatory}"
                                                   shortDesc="#{bindings.TblEditFeeCollMView1.hints.TermsId.tooltip}"
                                                   id="soc6">
@@ -408,7 +408,7 @@
                                   </af:inputText>
                             </f:facet>
                               <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}"
-                                                  label="#{row.bindings.GradeId.label}"
+                                                  label="#{row.bindings.GradeId.label}" autoSubmit="true"
                                                   required="#{bindings.TblEditFeeCollMView1.hints.GradeId.mandatory}"
                                                   shortDesc="#{bindings.TblEditFeeCollMView1.hints.GradeId.tooltip}"
                                                   id="soc7">
@@ -425,7 +425,7 @@
                                   </af:inputText>
                             </f:facet>
                               <af:selectOneChoice value="#{row.bindings.SectionsId.inputValue}"
-                                                  label="#{row.bindings.SectionsId.label}"
+                                                  label="#{row.bindings.SectionsId.label}" autoSubmit="true"
                                                   required="#{bindings.TblEditFeeCollMView1.hints.SectionsId.mandatory}"
                                                   shortDesc="#{bindings.TblEditFeeCollMView1.hints.SectionsId.tooltip}"
                                                   id="soc8">

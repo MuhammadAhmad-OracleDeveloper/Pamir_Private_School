@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Student_LedgerPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.School_Management_System.Reports">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblStdRegView1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblStdRegView1Iterator"/>
+    <searchRegion Binds="TblStdRegView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStdRegView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblStdRegView1Iterator" id="TblStdRegView1">
+      <nodeDefinition DefName="model.ERP.VO.TblStdRegView" Name="TblStdRegView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="AcadYearId"/>
+          <Item Value="GradeId"/>
+          <Item Value="SectionsId"/>
+          <Item Value="EmirId"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Gender"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

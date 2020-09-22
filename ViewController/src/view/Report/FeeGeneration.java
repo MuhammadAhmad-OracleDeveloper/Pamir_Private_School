@@ -2,6 +2,13 @@ package view.Report;
 
 import java.math.BigDecimal;
 
+import java.sql.CallableStatement;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 import java.util.Map;
 
 import javax.faces.application.FacesMessage;
@@ -30,6 +37,43 @@ public class FeeGeneration {
     
     DatabaseConnection dbconnect = new DatabaseConnection();
     OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
+    
+
+    public void getStdLedgerReport(ActionEvent actionEvent) {
+        // Add event code here...
+        String url = "";
+        Number sendStdIDLgr = (Number) actionEvent.getComponent().getAttributes().get("sendStdIDLgr");
+//        reportBean.setReportParameter("P_Std_reg_id", sendStdID.toString());
+        String sendStdIDLgrCnvrt = sendStdIDLgr.toString();
+        int sendStdIDLgrfinal =Integer.parseInt(sendStdIDLgrCnvrt);  
+        
+        //calling procedure start//
+        Connection conn;
+        ResultSet rs;
+        CallableStatement cstmt = null;
+            try {
+                conn = DatabaseConnection.getConnection();
+                String SQL = "{call P_Std_Lgr(?)}";
+                cstmt = conn.prepareCall (SQL);
+                cstmt.setInt(1, sendStdIDLgrfinal);
+                rs = cstmt.executeQuery();
+            }
+            catch (SQLException e) {
+                System.out.println(e);
+            }
+        //calling procedure end//
+        
+        reportBean.setReportURLName("userid=ppss/ppss@orcl&domain=classicdomain&report=C:/PPSS_Reports/STD_Ledger&");
+        reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                        "CACHE"); // which will be one of the [cashe - file - mail - printer]
+        reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                        "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+        reportBean.setReportParameter("paramform", "no");
+
+        url = reportBean.getReportServerURL();
+        System.out.println("Url => " + url);
+        reportBean.openUrlInNewWindow(url);
+    }
     
 
     public void getStdReport(ActionEvent actionEvent) {

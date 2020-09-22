@@ -8,9 +8,11 @@
   InheritPersonalization="merge"
   SelectList="TblTerms.ID, 
        TblTerms.TERM_NAME, 
-       TblTerms.AST"
+       TblTerms.AST, 
+       TblTerms.ACAD_YEAR_ID"
   FromList="TBL_TERMS TblTerms"
-  Where="AST='Y'"
+  Where="TblTerms.ACAD_YEAR_ID = :getAcadYear 
+AND AST='Y'"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full">
@@ -20,6 +22,10 @@
         ResId="model.LOV.Terms_Name_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <Variable
+    Name="getAcadYear"
+    Kind="where"
+    Type="java.math.BigDecimal"/>
   <EntityUsage
     Name="TblTerms"
     Entity="model.ERP.EO.TblTerms"/>
@@ -41,6 +47,12 @@
     EntityAttrName="Ast"
     EntityUsage="TblTerms"
     AliasName="AST"/>
+  <ViewAttribute
+    Name="AcadYearId"
+    PrecisionRule="true"
+    EntityAttrName="AcadYearId"
+    EntityUsage="TblTerms"
+    AliasName="ACAD_YEAR_ID"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

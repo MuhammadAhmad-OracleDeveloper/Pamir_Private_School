@@ -1,17 +1,34 @@
 package view.Report;
 
+import java.math.BigDecimal;
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
+import oracle.adf.model.BindingContext;
+import oracle.adf.model.binding.DCBindingContainer;
+import oracle.adf.model.binding.DCIteratorBinding;
 import oracle.adf.view.rich.component.rich.input.RichSelectOneChoice;
+
+import oracle.jbo.Row;
+import oracle.jbo.RowSetIterator;
+
+import oracle.jbo.ViewObject;
 
 import view.DatabaseConnection.DatabaseConnection;
 
 public class StudentLedger {
     private RichSelectOneChoice format_type;
-    private static String gotFormat = "";
     private RichSelectOneChoice report_type;
+    
     private static String selectedReportType = "";
+    private static String gotFormat = "";
+    private static String gotStdRegId;
 
     public StudentLedger() {
         System.out.println("Student Ledger Report");
@@ -24,7 +41,43 @@ public class StudentLedger {
         // Add event code here...
         gotFormat = (String)this.getFormat_type().getValue();
         selectedReportType = (String) this.getReport_type().getValue();
+//        gotStdRegId = (BigDecimal) this.getGetStdRegId().getValue();
         
+        
+        
+        //get current row value from table//
+        DCBindingContainer bindings = this.getDCBindingContainer();
+            DCIteratorBinding itorBinding =
+           bindings.findIteratorBinding("TblStdRegView1Iterator");//ur iterator name
+            RowSetIterator rsi = itorBinding.getRowSetIterator();
+            ViewObject ioOrderLines= itorBinding.getViewObject();
+            if(itorBinding!= null){
+                    Row currentRow = itorBinding.getCurrentRow();
+                    if(currentRow != null){
+                  gotStdRegId = (currentRow.getAttribute("Id")).toString();//ur column name which u want to fetch
+                   System.out.println(gotStdRegId);
+                    }}
+        //get current row value from table//
+            
+            
+        //working for procedure call//
+        String sendStdIDLgrCnvrt = gotStdRegId;
+        int sendStdIDLgrfinal =Integer.parseInt(sendStdIDLgrCnvrt);  
+        //calling procedure start//
+        Connection conn;
+        ResultSet rs;
+        CallableStatement cstmt = null;
+            try {
+                conn = DatabaseConnection.getConnection();
+                String SQL = "{call P_Std_Lgr(?)}";
+                cstmt = conn.prepareCall (SQL);
+                cstmt.setInt(1, sendStdIDLgrfinal);
+                rs = cstmt.executeQuery();
+            }
+            catch (SQLException e) {
+                System.out.println(e);
+            }
+        //calling procedure end//
         
         
         String url = "";
@@ -62,6 +115,19 @@ public class StudentLedger {
         reportBean.openUrlInNewWindow(url);
         return null;
     }
+    
+    
+    
+    
+    public DCBindingContainer getDCBindingContainer() {
+        DCBindingContainer bindingsContainer =
+            (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry(); 
+        return bindingsContainer;
+    }
+    
+    
+    
+    
     
     public String showMessage(String msgs) {
         String messageText = msgs;
