@@ -11,18 +11,25 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
                       
                         <af:spacer width="20" height="30" id="s7"/>
-                        <af:panelGroupLayout id="pgl6">
+                        <af:panelGroupLayout id="pgl6" layout="horizontal">
                         <af:spacer width="20" height="30" id="s15"/>
+                            <af:selectOneChoice label="#{bindings.RoleId.label}"
+                                                shortDesc="#{bindings.RoleId.hints.tooltip}" id="soc1"
+                                                binding="#{backingBeanScope.UserDetailReportBean.roleId}">
+                                <f:selectItems value="#{bindings.RoleId.items}" id="si1"/>
+                                <f:validator binding="#{bindings.RoleId.validator}"/>
+                            </af:selectOneChoice>
+                        </af:panelGroupLayout>
+                        <af:spacer width="20" height="30" id="s3"/>
+                        <af:panelGroupLayout id="pgl4" layout="horizontal">
+                            <af:spacer width="20" height="10" id="s16"/>
                         <af:selectOneChoice label="Select Report Type" id="soc6" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.UserDetailReportBean.report_type}">
                                 <af:selectItem label="User Role Detail Report" value="UserRoleDetail" id="si10"/>
                                
                             </af:selectOneChoice>
-                        </af:panelGroupLayout>
-                        <af:spacer width="20" height="30" id="s3"/>
-                        <af:panelGroupLayout id="pgl4" layout="horizontal">
-                            <af:spacer width="20" height="10" id="s16"/>
+                            <af:spacer width="20" height="10" id="s5"/>
                             <af:selectOneChoice label="Select Format Type" id="soc5" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                                 contentStyle="width:200px"

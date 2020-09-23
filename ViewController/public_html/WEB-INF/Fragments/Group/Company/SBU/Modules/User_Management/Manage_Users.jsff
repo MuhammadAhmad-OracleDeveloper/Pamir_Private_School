@@ -34,28 +34,6 @@
                           filterModel="#{bindings.Cstm_Tbl_Role_Group_Role1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.Cstm_Tbl_Role_Group_Role1Query.processQuery}" varStatus="vs"
                           id="t1" partialTriggers="::b2 ::b3 ::b4">
-                  <af:column sortProperty="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Ast.name}" filterable="true"
-                             sortable="true" headerText="Active" id="c1">
-                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
-                                        required="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Ast.mandatory}"
-                                        shortDesc="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Ast.tooltip}" id="soc1">
-                      <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
-                      <f:validator binding="#{row.bindings.Ast.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Id" id="c2">
-                    <af:inputText value="#{row.bindings.Id.inputValue}" readOnly="true"
-                                  label="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Id.label}"
-                                  required="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Id.mandatory}"
-                                  columns="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Id.displayWidth}"
-                                  maximumLength="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Id.precision}"
-                                  shortDesc="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Id.tooltip}" id="it1">
-                      <f:validator binding="#{row.bindings.Id.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Id.format}"/>
-                    </af:inputText>
-                  </af:column>
                   <af:column sortProperty="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Name.name}" filterable="true"
                              sortable="true" headerText="Role Name"
                              id="c3">
@@ -77,6 +55,23 @@
                       <f:selectItems value="#{row.bindings.RoleType.items}" id="si4"/>
                       <f:validator binding="#{row.bindings.RoleType.validator}"/>
                     </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="Active" id="c1">
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Ast.tooltip}" id="soc1">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Id.name}" filterable="true"
+                             sortable="true" headerText="Download Report" id="c2" align="center">
+                    <af:link shortDesc="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.Id.tooltip}" id="it1" 
+                                icon="#{resource['images:get_report.png']}"
+                                actionListener="#{backingBeanScope.manageUsersBean.get_report}">
+                                 <f:attribute name="sendRoleID" value="#{row.bindings.Id.inputValue}"/>
+                                       </af:link>
                   </af:column>
                   <!--<af:column sortProperty="#{bindings.Cstm_Tbl_Role_Group_Role1.hints.RoleGroupRoleId.name}"
                              filterable="true" sortable="true"
@@ -170,18 +165,6 @@
                                   shortDesc="#{bindings.TblUserView3.hints.Id.tooltip}" id="it7">
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblUserView3.hints.Id.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblUserView3.hints.RoleId.name}" filterable="true" sortable="true"
-                             headerText="Role Id" id="c9">
-                    <af:inputText value="#{row.bindings.RoleId.inputValue}"
-                                  label="#{bindings.TblUserView3.hints.RoleId.label}"
-                                  required="#{bindings.TblUserView3.hints.RoleId.mandatory}"
-                                  columns="#{bindings.TblUserView3.hints.RoleId.displayWidth}"
-                                  maximumLength="#{bindings.TblUserView3.hints.RoleId.precision}"
-                                  shortDesc="#{bindings.TblUserView3.hints.RoleId.tooltip}" id="it8">
-                      <f:validator binding="#{row.bindings.RoleId.validator}"/>
-                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblUserView3.hints.RoleId.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblUserView3.hints.Name.name}" filterable="true" sortable="true"

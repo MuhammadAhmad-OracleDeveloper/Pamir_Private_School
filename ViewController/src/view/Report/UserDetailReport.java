@@ -14,8 +14,10 @@ public class UserDetailReport {
     private static String gotFormat = "";
     private RichSelectOneChoice report_type;
     private static String selectedReportType = "";
-    
-    
+    private RichSelectOneChoice roleId;
+    private static BigDecimal selectedRole;
+
+
     public UserDetailReport() {
         System.out.println("User Detail Report");
     }
@@ -28,6 +30,7 @@ public class UserDetailReport {
         // Add event code here...
         gotFormat = (String)this.getFormat_type().getValue();
         selectedReportType = (String) this.getReport_type().getValue();
+        selectedRole = (BigDecimal) this.getRoleId().getValue();
         
         
         
@@ -36,9 +39,9 @@ public class UserDetailReport {
             showMessage("Please Select Report Format");
         } else { 
             
-//            if ( gotStudent  != null) {
-//                reportBean.setReportParameter("P_Std_reg_id", gotStudent.toString());
-//            }
+            if ( selectedRole  != null) {
+                reportBean.setReportParameter("P_Role_Id", selectedRole.toString());
+            }
            
          
             switch (selectedReportType) {
@@ -94,5 +97,13 @@ public class UserDetailReport {
 
     public RichSelectOneChoice getReport_type() {
         return report_type;
+    }
+
+    public void setRoleId(RichSelectOneChoice roleId) {
+        this.roleId = roleId;
+    }
+
+    public RichSelectOneChoice getRoleId() {
+        return roleId;
     }
 }

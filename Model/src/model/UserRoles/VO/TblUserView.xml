@@ -13,6 +13,28 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Roles_Name_LOV1"
+    ViewObjectName="model.UserRoles.LOV.Roles_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_RoleId"
+    ListVOName="Roles_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RoleId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblUser"
     Entity="model.UserRoles.EO.TblUser"/>
@@ -28,7 +50,15 @@
     PrecisionRule="true"
     EntityAttrName="RoleId"
     EntityUsage="TblUser"
-    AliasName="ROLE_ID"/>
+    AliasName="ROLE_ID"
+    LOVName="LOV_RoleId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Name"
     IsNotNull="true"
