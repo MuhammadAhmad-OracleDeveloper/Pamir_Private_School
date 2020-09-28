@@ -13,6 +13,52 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="INV_PO_Master_LOV1"
+    ViewObjectName="model.LOV.INV_PO_Master_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="INV_DO_Master_LOV1"
+    ViewObjectName="model.LOV.INV_DO_Master_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_PoMId"
+    ListVOName="INV_PO_Master_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PoMId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Dated"/>
+      <Item Value="Vno"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DoMId"
+    ListVOName="INV_DO_Master_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DoMId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Dated"/>
+      <Item Value="Vno"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblPoDD"
     Entity="model.ERP.EO.TblPoDD"/>
@@ -28,13 +74,29 @@
     PrecisionRule="true"
     EntityAttrName="PoMId"
     EntityUsage="TblPoDD"
-    AliasName="PO_M_ID"/>
+    AliasName="PO_M_ID"
+    LOVName="LOV_PoMId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="DoMId"
     PrecisionRule="true"
     EntityAttrName="DoMId"
     EntityUsage="TblPoDD"
-    AliasName="DO_M_ID"/>
+    AliasName="DO_M_ID"
+    LOVName="LOV_DoMId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Narration"
     PrecisionRule="true"

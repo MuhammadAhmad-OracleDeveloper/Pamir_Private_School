@@ -13,6 +13,140 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Voucher_Type_LOV1"
+    ViewObjectName="model.LOV.Voucher_Type_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="INV_QC_Master_LOV1"
+    ViewObjectName="model.LOV.INV_QC_Master_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="INV_PO_Master_LOV1"
+    ViewObjectName="model.LOV.INV_PO_Master_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Deparment_Name_LOV1"
+    ViewObjectName="model.LOV.Deparment_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Company_SBU_Name_LOV1"
+    ViewObjectName="model.LOV.Company_SBU_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="PBL_Supplier_Name_LOV1"
+    ViewObjectName="model.LOV.PBL_Supplier_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Vtp"
+    ListVOName="Voucher_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Vtp"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_QcMId"
+    ListVOName="INV_QC_Master_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="QcMId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Dated"/>
+      <Item Value="Vno"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_PoMId"
+    ListVOName="INV_PO_Master_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PoMId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Dated"/>
+      <Item Value="Vno"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DepartmentId"
+    ListVOName="Deparment_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DepartmentId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CompanySbuId"
+    ListVOName="Company_SBU_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CompanySbuId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_PblSuppId"
+    ListVOName="PBL_Supplier_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PblSuppId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblGrnM"
     Entity="model.ERP.EO.TblGrnM"/>
@@ -34,7 +168,15 @@
     PrecisionRule="true"
     EntityAttrName="Vtp"
     EntityUsage="TblGrnM"
-    AliasName="VTP"/>
+    AliasName="VTP"
+    LOVName="LOV_Vtp">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Dated"
     PrecisionRule="true"
@@ -46,13 +188,29 @@
     PrecisionRule="true"
     EntityAttrName="QcMId"
     EntityUsage="TblGrnM"
-    AliasName="QC_M_ID"/>
+    AliasName="QC_M_ID"
+    LOVName="LOV_QcMId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="PoMId"
     PrecisionRule="true"
     EntityAttrName="PoMId"
     EntityUsage="TblGrnM"
-    AliasName="PO_M_ID"/>
+    AliasName="PO_M_ID"
+    LOVName="LOV_PoMId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Narration"
     PrecisionRule="true"
@@ -64,19 +222,43 @@
     PrecisionRule="true"
     EntityAttrName="DepartmentId"
     EntityUsage="TblGrnM"
-    AliasName="DEPARTMENT_ID"/>
+    AliasName="DEPARTMENT_ID"
+    LOVName="LOV_DepartmentId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CompanySbuId"
     PrecisionRule="true"
     EntityAttrName="CompanySbuId"
     EntityUsage="TblGrnM"
-    AliasName="COMPANY_SBU_ID"/>
+    AliasName="COMPANY_SBU_ID"
+    LOVName="LOV_CompanySbuId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="PblSuppId"
     PrecisionRule="true"
     EntityAttrName="PblSuppId"
     EntityUsage="TblGrnM"
-    AliasName="PBL_SUPP_ID"/>
+    AliasName="PBL_SUPP_ID"
+    LOVName="LOV_PblSuppId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Carrier"
     PrecisionRule="true"
