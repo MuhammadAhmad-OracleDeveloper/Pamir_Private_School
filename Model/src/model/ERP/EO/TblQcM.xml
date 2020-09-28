@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblQcM"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_QC_M"
+  AliasName="TblQcM"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_QC_M"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Vno"
+    Precision="25"
+    ColumnName="VNO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_QC_M">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Vtp"
+    Precision="3"
+    ColumnName="VTP"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_QC_M"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Dated"
+    ColumnName="DATED"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_QC_M"/>
+  <Attribute
+    Name="IgpMId"
+    ColumnName="IGP_M_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_QC_M"/>
+  <Attribute
+    Name="Narration"
+    Precision="300"
+    ColumnName="NARRATION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_QC_M">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_QC_M"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_QC_M"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_QC_M"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_QC_M"/>
+  <AccessorAttribute
+    Name="TblQcD"
+    Association="model.ERP.EO.FkQcDMAssoc"
+    AssociationEnd="model.ERP.EO.FkQcDMAssoc.TblQcD"
+    AssociationOtherEnd="model.ERP.EO.FkQcDMAssoc.TblQcM"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblGrnM"
+    Association="model.ERP.EO.FkGrnMQcAssoc"
+    AssociationEnd="model.ERP.EO.FkGrnMQcAssoc.TblGrnM"
+    AssociationOtherEnd="model.ERP.EO.FkGrnMQcAssoc.TblQcM"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblIgpM"
+    Association="model.ERP.EO.FkQcMIgpAssoc"
+    AssociationEnd="model.ERP.EO.FkQcMIgpAssoc.TblIgpM"
+    AssociationOtherEnd="model.ERP.EO.FkQcMIgpAssoc.TblQcM"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkQcMId"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_QC_M_ID"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblQcM.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkQcMIgp">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_IGP_M_ID"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_QC_M_IGP"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblQcM.IgpMId"/>
+    </AttrArray>
+  </Key>
+</Entity>

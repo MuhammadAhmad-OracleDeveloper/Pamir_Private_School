@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkPoDdMAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblPoM"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.EO.TblPoM">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblPoM"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblPoM.PkPoMId"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblPoM.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblPoDD"
+    Cardinality="-1"
+    Owner="model.ERP.EO.TblPoDD">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblPoDD"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblPoDD.FkPoDdM"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblPoDD.PoMId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

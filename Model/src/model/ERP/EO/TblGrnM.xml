@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblGrnM"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_GRN_M"
+  AliasName="TblGrnM"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRN_M"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Vno"
+    Precision="25"
+    ColumnName="VNO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_GRN_M">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Vtp"
+    Precision="3"
+    ColumnName="VTP"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_GRN_M"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Dated"
+    ColumnName="DATED"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_GRN_M"/>
+  <Attribute
+    Name="QcMId"
+    ColumnName="QC_M_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRN_M"/>
+  <Attribute
+    Name="PoMId"
+    ColumnName="PO_M_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRN_M"/>
+  <Attribute
+    Name="Narration"
+    Precision="300"
+    ColumnName="NARRATION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_GRN_M">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DepartmentId"
+    ColumnName="DEPARTMENT_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRN_M"/>
+  <Attribute
+    Name="CompanySbuId"
+    ColumnName="COMPANY_SBU_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRN_M"/>
+  <Attribute
+    Name="PblSuppId"
+    ColumnName="PBL_SUPP_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRN_M"/>
+  <Attribute
+    Name="Carrier"
+    Precision="150"
+    ColumnName="CARRIER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_GRN_M">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_GRN_M"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRN_M"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_GRN_M"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRN_M"/>
+  <AccessorAttribute
+    Name="TblGrnD"
+    Association="model.ERP.EO.FkGrnDMAssoc"
+    AssociationEnd="model.ERP.EO.FkGrnDMAssoc.TblGrnD"
+    AssociationOtherEnd="model.ERP.EO.FkGrnDMAssoc.TblGrnM"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblDnM"
+    Association="model.ERP.EO.FkDnMGrnAssoc"
+    AssociationEnd="model.ERP.EO.FkDnMGrnAssoc.TblDnM"
+    AssociationOtherEnd="model.ERP.EO.FkDnMGrnAssoc.TblGrnM"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblPoM"
+    Association="model.ERP.EO.FkGrnMPoAssoc"
+    AssociationEnd="model.ERP.EO.FkGrnMPoAssoc.TblPoM"
+    AssociationOtherEnd="model.ERP.EO.FkGrnMPoAssoc.TblGrnM"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblQcM"
+    Association="model.ERP.EO.FkGrnMQcAssoc"
+    AssociationEnd="model.ERP.EO.FkGrnMQcAssoc.TblQcM"
+    AssociationOtherEnd="model.ERP.EO.FkGrnMQcAssoc.TblGrnM"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkGrnMId"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_GRN_M_ID"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblGrnM.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkGrnMCompanySbu">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_COMPANY_SBU"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_GRN_M_COMPANY_SBU"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblGrnM.CompanySbuId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkGrnMDepartment">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_DEPARTMENT"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_GRN_M_DEPARTMENT"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblGrnM.DepartmentId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkGrnMPo">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_PO_M_ID"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_GRN_M_PO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblGrnM.PoMId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkGrnMQc">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_QC_M_ID"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_GRN_M_QC"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblGrnM.QcMId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkGrnMSupplier">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_PBL_SUPP_ID"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_GRN_M_SUPPLIER"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblGrnM.PblSuppId"/>
+    </AttrArray>
+  </Key>
+</Entity>

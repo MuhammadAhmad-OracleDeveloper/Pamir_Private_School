@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblGinD"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_GIN_D"
+  AliasName="TblGinD"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GIN_D"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="GinMId"
+    ColumnName="GIN_M_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GIN_D"/>
+  <Attribute
+    Name="SrNo"
+    Precision="3"
+    Scale="0"
+    ColumnName="SR_NO"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="TBL_GIN_D"/>
+  <Attribute
+    Name="ItemL4Id"
+    IsNotNull="true"
+    ColumnName="ITEM_L4_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GIN_D"/>
+  <Attribute
+    Name="UomId"
+    ColumnName="UOM_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GIN_D"/>
+  <Attribute
+    Name="Description"
+    Precision="100"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_GIN_D">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Qty"
+    ColumnName="QTY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GIN_D"/>
+  <Attribute
+    Name="Rate"
+    ColumnName="RATE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GIN_D"/>
+  <Attribute
+    Name="Amount"
+    ColumnName="AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GIN_D"/>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_GIN_D"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GIN_D"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_GIN_D"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GIN_D"/>
+  <AccessorAttribute
+    Name="TblGinM"
+    Association="model.ERP.EO.FkGinDMAssoc"
+    AssociationEnd="model.ERP.EO.FkGinDMAssoc.TblGinM"
+    AssociationOtherEnd="model.ERP.EO.FkGinDMAssoc.TblGinD"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkGinDId"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_GIN_D_ID"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblGinD.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkGinDItemL4Id">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_TBL_ITEM_L4_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_GIN_D_ITEM_L4_ID"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblGinD.ItemL4Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkGinDM">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_GIN_M_ID"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_GIN_D_M"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblGinD.GinMId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkGinDUom">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_UOM_ID"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_GIN_D_UOM"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblGinD.UomId"/>
+    </AttrArray>
+  </Key>
+</Entity>
