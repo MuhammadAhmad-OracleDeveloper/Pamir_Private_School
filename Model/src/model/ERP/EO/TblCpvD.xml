@@ -3,18 +3,13 @@
 <!---->
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="TblGlVoucherDetail"
+  Name="TblCpvD"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   DBObjectType="table"
-  DBObjectName="TBL_GL_VOUCHER_DETAIL"
-  AliasName="TblGlVoucherDetail"
-  BindingStyle="OracleName"
-  RowClass="model.ERP.EO.TblGlVoucherDetailImpl">
-  <DesignTime>
-    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
-    <Attr Name="_isCodegen" Value="true"/>
-  </DesignTime>
+  DBObjectName="TBL_CPV_D"
+  AliasName="TblCpvD"
+  BindingStyle="OracleName">
   <Attribute
     Name="Id"
     IsNotNull="true"
@@ -22,15 +17,15 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_GL_VOUCHER_DETAIL"
+    TableName="TBL_CPV_D"
     PrimaryKey="true"/>
   <Attribute
-    Name="GlVoucherMasterId"
-    ColumnName="GL_VOUCHER_MASTER_ID"
+    Name="CpvMId"
+    ColumnName="CPV_M_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_GL_VOUCHER_DETAIL"/>
+    TableName="TBL_CPV_D"/>
   <Attribute
     Name="SrNo"
     Precision="3"
@@ -39,7 +34,7 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="TBL_GL_VOUCHER_DETAIL"/>
+    TableName="TBL_CPV_D"/>
   <Attribute
     Name="GlL4Id"
     IsNotNull="true"
@@ -47,7 +42,7 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_GL_VOUCHER_DETAIL"/>
+    TableName="TBL_CPV_D"/>
   <Attribute
     Name="Description"
     Precision="100"
@@ -55,7 +50,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="TBL_GL_VOUCHER_DETAIL">
+    TableName="TBL_CPV_D">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
@@ -66,79 +61,79 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_GL_VOUCHER_DETAIL"/>
+    TableName="TBL_CPV_D"/>
   <Attribute
     Name="Cr"
     ColumnName="CR"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_GL_VOUCHER_DETAIL"/>
+    TableName="TBL_CPV_D"/>
   <Attribute
     Name="CreatedDate"
     ColumnName="CREATED_DATE"
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_GL_VOUCHER_DETAIL"/>
+    TableName="TBL_CPV_D"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="oracle.jbo.domain.Number"
+    Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_GL_VOUCHER_DETAIL"/>
+    TableName="TBL_CPV_D"/>
   <Attribute
     Name="UpdatedDate"
     ColumnName="UPDATED_DATE"
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_GL_VOUCHER_DETAIL"/>
+    TableName="TBL_CPV_D"/>
   <Attribute
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="oracle.jbo.domain.Number"
+    Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_GL_VOUCHER_DETAIL"/>
+    TableName="TBL_CPV_D"/>
   <AccessorAttribute
-    Name="TblGlVoucherMaster"
-    Association="model.ERP.EO.FkGlVoucherDetailMasterAssoc"
-    AssociationEnd="model.ERP.EO.FkGlVoucherDetailMasterAssoc.TblGlVoucherMaster"
-    AssociationOtherEnd="model.ERP.EO.FkGlVoucherDetailMasterAssoc.TblGlVoucherDetail"
+    Name="TblCpvM"
+    Association="model.ERP.EO.FkCpvDMasterAssoc"
+    AssociationEnd="model.ERP.EO.FkCpvDMasterAssoc.TblCpvM"
+    AssociationOtherEnd="model.ERP.EO.FkCpvDMasterAssoc.TblCpvD"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
   <Key
-    Name="PkGlVoucherDetailId"
+    Name="PkCpvDId"
     PrimaryKey="true">
     <DesignTime>
-      <Attr Name="_DBObjectName" Value="PK_GL_VOUCHER_DETAIL_ID"/>
+      <Attr Name="_DBObjectName" Value="PK_CPV_D_ID"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblGlVoucherDetail.Id"/>
+      <Item Value="model.ERP.EO.TblCpvD.Id"/>
     </AttrArray>
   </Key>
   <Key
-    Name="FkGlVoucherDetailGlL4Id">
+    Name="FkCpvDGlL4Id">
     <DesignTime>
       <Attr Name="_referencedKey" Value="PK_GL_L4_ID"/>
       <Attr Name="_isForeign" Value="true"/>
-      <Attr Name="_DBObjectName" Value="FK_GL_VOUCHER_DETAIL_GL_L4_ID"/>
+      <Attr Name="_DBObjectName" Value="FK_CPV_D_GL_L4_ID"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblGlVoucherDetail.GlL4Id"/>
+      <Item Value="model.ERP.EO.TblCpvD.GlL4Id"/>
     </AttrArray>
   </Key>
   <Key
-    Name="FkGlVoucherDetailMaster">
+    Name="FkCpvDMaster">
     <DesignTime>
-      <Attr Name="_referencedKey" Value="PK_GL_VOUCHER_MASTER_ID"/>
+      <Attr Name="_referencedKey" Value="PK_CPV_M_ID"/>
       <Attr Name="_isForeign" Value="true"/>
-      <Attr Name="_DBObjectName" Value="FK_GL_VOUCHER_DETAIL_MASTER"/>
+      <Attr Name="_DBObjectName" Value="FK_CPV_D_MASTER"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblGlVoucherDetail.GlVoucherMasterId"/>
+      <Item Value="model.ERP.EO.TblCpvD.CpvMId"/>
     </AttrArray>
   </Key>
 </Entity>

@@ -3,33 +3,33 @@
 <!---->
 <ViewLink
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="FkGlVoucherDetailMasterLink"
+  Name="FkCpvDMasterLink"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  EntityAssociation="model.ERP.EO.FkGlVoucherDetailMasterAssoc">
+  EntityAssociation="model.ERP.EO.FkCpvDMasterAssoc">
   <ViewLinkDefEnd
-    Name="TblGlVoucherMasterView"
+    Name="TblCpvMView"
     Cardinality="1"
     Source="true"
-    Owner="model.ERP.VO.TblGlVoucherMasterView">
+    Owner="model.ERP.VO.TblCpvMView">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="TblGlVoucherMasterView"/>
+      <Attr Name="_finderName" Value="TblCpvMView"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.VO.TblGlVoucherMasterView.Id"/>
+      <Item Value="model.ERP.VO.TblCpvMView.Id"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ViewLinkDefEnd
-    Name="TblGlVoucherDetailView"
+    Name="TblCpvDView"
     Cardinality="-1"
-    Owner="model.ERP.VO.TblGlVoucherDetailView">
+    Owner="model.ERP.VO.TblCpvDView">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="TblGlVoucherDetailView"/>
+      <Attr Name="_finderName" Value="TblCpvDView"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.VO.TblGlVoucherDetailView.GlVoucherMasterId"/>
+      <Item Value="model.ERP.VO.TblCpvDView.CpvMId"/>
     </AttrArray>
   </ViewLinkDefEnd>
 </ViewLink>

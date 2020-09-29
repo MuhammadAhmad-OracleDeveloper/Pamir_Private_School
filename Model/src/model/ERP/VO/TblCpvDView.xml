@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="TblGlVoucherDetailView"
+  Name="TblCpvDView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -13,105 +13,75 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
-  <ViewAccessor
-    Name="Gl4_Name_LOV1"
-    ViewObjectName="model.LOV.Gl4_Name_LOV"
-    RowLevelBinds="true"/>
-  <ListBinding
-    Name="LOV_GlL4Id"
-    ListVOName="Gl4_Name_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="GlL4Id"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="GlL4Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="GlL4Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
   <EntityUsage
-    Name="TblGlVoucherDetail"
-    Entity="model.ERP.EO.TblGlVoucherDetail"/>
+    Name="TblCpvD"
+    Entity="model.ERP.EO.TblCpvD"/>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Id"
-    EntityUsage="TblGlVoucherDetail"
+    EntityUsage="TblCpvD"
     AliasName="ID"/>
   <ViewAttribute
-    Name="GlVoucherMasterId"
+    Name="CpvMId"
     PrecisionRule="true"
-    EntityAttrName="GlVoucherMasterId"
-    EntityUsage="TblGlVoucherDetail"
-    AliasName="GL_VOUCHER_MASTER_ID"/>
+    EntityAttrName="CpvMId"
+    EntityUsage="TblCpvD"
+    AliasName="CPV_M_ID"/>
   <ViewAttribute
     Name="SrNo"
     PrecisionRule="true"
     EntityAttrName="SrNo"
-    EntityUsage="TblGlVoucherDetail"
+    EntityUsage="TblCpvD"
     AliasName="SR_NO"/>
   <ViewAttribute
     Name="GlL4Id"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="GlL4Id"
-    EntityUsage="TblGlVoucherDetail"
-    AliasName="GL_L4_ID"
-    LOVName="LOV_GlL4Id">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    EntityUsage="TblCpvD"
+    AliasName="GL_L4_ID"/>
   <ViewAttribute
     Name="Description"
     PrecisionRule="true"
     EntityAttrName="Description"
-    EntityUsage="TblGlVoucherDetail"
+    EntityUsage="TblCpvD"
     AliasName="DESCRIPTION"/>
   <ViewAttribute
     Name="Dr"
     PrecisionRule="true"
     EntityAttrName="Dr"
-    EntityUsage="TblGlVoucherDetail"
+    EntityUsage="TblCpvD"
     AliasName="DR"/>
   <ViewAttribute
     Name="Cr"
     PrecisionRule="true"
     EntityAttrName="Cr"
-    EntityUsage="TblGlVoucherDetail"
+    EntityUsage="TblCpvD"
     AliasName="CR"/>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
-    EntityUsage="TblGlVoucherDetail"
+    EntityUsage="TblCpvD"
     AliasName="CREATED_DATE"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
-    EntityUsage="TblGlVoucherDetail"
+    EntityUsage="TblCpvD"
     AliasName="CREATED_BY"/>
   <ViewAttribute
     Name="UpdatedDate"
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
-    EntityUsage="TblGlVoucherDetail"
+    EntityUsage="TblCpvD"
     AliasName="UPDATED_DATE"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
-    EntityUsage="TblGlVoucherDetail"
+    EntityUsage="TblCpvD"
     AliasName="UPDATED_BY"/>
 </ViewObject>

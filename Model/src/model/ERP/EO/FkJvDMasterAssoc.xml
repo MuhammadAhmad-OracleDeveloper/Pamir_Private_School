@@ -3,39 +3,39 @@
 <!---->
 <Association
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="FkGlVoucherDetailMasterAssoc"
+  Name="FkJvDMasterAssoc"
   Version="12.2.1.11.57"
   InheritPersonalization="merge">
   <DesignTime>
     <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <AssociationEnd
-    Name="TblGlVoucherMaster"
+    Name="TblJvM"
     Cardinality="1"
     Source="true"
-    Owner="model.ERP.EO.TblGlVoucherMaster">
+    Owner="model.ERP.EO.TblJvM">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_aggregation" Value="0"/>
-      <Attr Name="_finderName" Value="TblGlVoucherMaster"/>
-      <Attr Name="_foreignKey" Value="model.ERP.EO.TblGlVoucherMaster.PkGlVoucherMasterId"/>
+      <Attr Name="_finderName" Value="TblJvM"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblJvM.PkJvMId"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblGlVoucherMaster.Id"/>
+      <Item Value="model.ERP.EO.TblJvM.Id"/>
     </AttrArray>
   </AssociationEnd>
   <AssociationEnd
-    Name="TblGlVoucherDetail"
+    Name="TblJvD"
     Cardinality="-1"
-    Owner="model.ERP.EO.TblGlVoucherDetail">
+    Owner="model.ERP.EO.TblJvD">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_aggregation" Value="0"/>
-      <Attr Name="_finderName" Value="TblGlVoucherDetail"/>
-      <Attr Name="_foreignKey" Value="model.ERP.EO.TblGlVoucherDetail.FkGlVoucherDetailMaster"/>
+      <Attr Name="_finderName" Value="TblJvD"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblJvD.FkJvDMaster"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblGlVoucherDetail.GlVoucherMasterId"/>
+      <Item Value="model.ERP.EO.TblJvD.JvMId"/>
     </AttrArray>
   </AssociationEnd>
 </Association>

@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="TblGlVoucherMasterView"
+  Name="TblBpvMView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -13,135 +13,103 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
-  <ViewAccessor
-    Name="Supp_Name_LOV1"
-    ViewObjectName="model.LOV.Supp_Name_LOV"
-    RowLevelBinds="true"/>
-  <ListBinding
-    Name="LOV_PblSuppId"
-    ListVOName="Supp_Name_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="PblSuppId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
   <EntityUsage
-    Name="TblGlVoucherMaster"
-    Entity="model.ERP.EO.TblGlVoucherMaster"/>
+    Name="TblBpvM"
+    Entity="model.ERP.EO.TblBpvM"/>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Id"
-    EntityUsage="TblGlVoucherMaster"
+    EntityUsage="TblBpvM"
     AliasName="ID"/>
   <ViewAttribute
     Name="Vno"
     PrecisionRule="true"
     EntityAttrName="Vno"
-    EntityUsage="TblGlVoucherMaster"
+    EntityUsage="TblBpvM"
     AliasName="VNO"/>
   <ViewAttribute
     Name="Vtp"
     PrecisionRule="true"
     EntityAttrName="Vtp"
-    EntityUsage="TblGlVoucherMaster"
+    EntityUsage="TblBpvM"
     AliasName="VTP"/>
   <ViewAttribute
     Name="Dated"
     PrecisionRule="true"
     EntityAttrName="Dated"
-    EntityUsage="TblGlVoucherMaster"
+    EntityUsage="TblBpvM"
     AliasName="DATED"/>
   <ViewAttribute
     Name="ChqNo"
     PrecisionRule="true"
     EntityAttrName="ChqNo"
-    EntityUsage="TblGlVoucherMaster"
+    EntityUsage="TblBpvM"
     AliasName="CHQ_NO"/>
   <ViewAttribute
     Name="ChqDate"
     PrecisionRule="true"
     EntityAttrName="ChqDate"
-    EntityUsage="TblGlVoucherMaster"
+    EntityUsage="TblBpvM"
     AliasName="CHQ_DATE"/>
   <ViewAttribute
     Name="ClrDate"
     PrecisionRule="true"
     EntityAttrName="ClrDate"
-    EntityUsage="TblGlVoucherMaster"
+    EntityUsage="TblBpvM"
     AliasName="CLR_DATE"/>
   <ViewAttribute
     Name="Narration"
     PrecisionRule="true"
     EntityAttrName="Narration"
-    EntityUsage="TblGlVoucherMaster"
+    EntityUsage="TblBpvM"
     AliasName="NARRATION"/>
   <ViewAttribute
     Name="GroupCompanyId"
     PrecisionRule="true"
     EntityAttrName="GroupCompanyId"
-    EntityUsage="TblGlVoucherMaster"
+    EntityUsage="TblBpvM"
     AliasName="GROUP_COMPANY_ID"/>
   <ViewAttribute
-    Name="PblSuppId"
+    Name="CompanySbuId"
     PrecisionRule="true"
-    EntityAttrName="PblSuppId"
-    EntityUsage="TblGlVoucherMaster"
-    AliasName="PBL_SUPP_ID"
-    LOVName="LOV_PblSuppId">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblBpvM"
+    AliasName="COMPANY_SBU_ID"/>
+  <ViewAttribute
+    Name="PblCustId"
+    PrecisionRule="true"
+    EntityAttrName="PblCustId"
+    EntityUsage="TblBpvM"
+    AliasName="PBL_CUST_ID"/>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
-    EntityUsage="TblGlVoucherMaster"
-    AliasName="CREATED_DATE"
-    IsUpdateable="false"/>
+    EntityUsage="TblBpvM"
+    AliasName="CREATED_DATE"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
-    EntityUsage="TblGlVoucherMaster"
+    EntityUsage="TblBpvM"
     AliasName="CREATED_BY"/>
   <ViewAttribute
     Name="UpdatedDate"
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
-    EntityUsage="TblGlVoucherMaster"
-    AliasName="UPDATED_DATE"
-    IsUpdateable="false"/>
+    EntityUsage="TblBpvM"
+    AliasName="UPDATED_DATE"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
-    EntityUsage="TblGlVoucherMaster"
+    EntityUsage="TblBpvM"
     AliasName="UPDATED_BY"/>
-  <ViewAttribute
-    Name="PblCustId"
-    PrecisionRule="true"
-    EntityAttrName="PblCustId"
-    EntityUsage="TblGlVoucherMaster"
-    AliasName="PBL_CUST_ID"/>
   <ViewLinkAccessor
-    Name="TblGlVoucherDetailView"
-    ViewLink="model.ERP.VO.FkGlVoucherDetailMasterLink"
+    Name="TblBpvDView"
+    ViewLink="model.ERP.VO.FkBpvDMasterLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

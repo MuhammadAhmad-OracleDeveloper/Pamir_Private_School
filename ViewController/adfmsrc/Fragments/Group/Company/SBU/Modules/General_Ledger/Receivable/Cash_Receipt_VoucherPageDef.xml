@@ -2,87 +2,14 @@
 <pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Cash_Receipt_VoucherPageDef"
                 Package="Fragments.Group.Company.SBU.Modules.General_Ledger.Receivable">
  <parameters/>
-  <executables>
+ <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TblGlVoucherMasterTransView1" RangeSize="8" DataControl="AppModuleDataControl1"
-              id="TblGlVoucherMasterTransView1Iterator"/>
-    <searchRegion Binds="TblGlVoucherMasterTransView1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
-                  id="TblGlVoucherMasterTransView1Query"/>
-    <iterator Binds="TblGlVoucherDetailView8" RangeSize="8" DataControl="AppModuleDataControl1"
-              id="TblGlVoucherDetailView8Iterator"/>
-    <searchRegion Binds="TblGlVoucherDetailView8Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGlVoucherDetailView8Query"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
   </executables>
   <bindings>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
-    <attributeValues IterBinding="TblGlVoucherMasterTransView1Iterator" id="Dated">
-      <AttrNames>
-        <Item Value="Dated"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblGlVoucherMasterTransView1Iterator" id="Id">
-      <AttrNames>
-        <Item Value="Id"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblGlVoucherMasterTransView1Iterator" id="Narration">
-      <AttrNames>
-        <Item Value="Narration"/>
-      </AttrNames>
-    </attributeValues>
-    <list IterBinding="TblGlVoucherMasterTransView1Iterator" StaticList="false" Uses="LOV_PblSuppId" id="PblSuppId"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="TblGlVoucherMasterTransView1Iterator" id="Vno">
-      <AttrNames>
-        <Item Value="Vno"/>
-      </AttrNames>
-    </attributeValues>
-    <action IterBinding="TblGlVoucherMasterTransView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
-    <action IterBinding="TblGlVoucherMasterTransView1Iterator" id="Previous" RequiresUpdateModel="true"
-            Action="previous"/>
-    <action IterBinding="TblGlVoucherMasterTransView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
-    <action IterBinding="TblGlVoucherMasterTransView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
-    <tree IterBinding="TblGlVoucherMasterTransView1Iterator" id="TblGlVoucherMasterTransView1">
-      <nodeDefinition DefName="model.ERP.VO.TblGlVoucherMasterTransView" Name="TblGlVoucherMasterTransView10">
-        <AttrNames>
-          <Item Value="Dated"/>
-          <Item Value="Id"/>
-          <Item Value="Narration"/>
-          <Item Value="PblSuppId"/>
-          <Item Value="Vno"/>
-          <Item Value="PblCustId"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <action IterBinding="TblGlVoucherMasterTransView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
-    <action IterBinding="TblGlVoucherMasterTransView1Iterator" id="Execute" RequiresUpdateModel="true"
-            Action="iteratorExecute"/>
-    <action IterBinding="TblGlVoucherMasterTransView1Iterator" id="Delete" RequiresUpdateModel="false"
-            Action="removeCurrentRow"/>
-    <tree IterBinding="TblGlVoucherDetailView8Iterator" id="TblGlVoucherDetailView8">
-      <nodeDefinition DefName="model.ERP.VO.TblGlVoucherDetailView" Name="TblGlVoucherDetailView80">
-        <AttrNames>
-          <Item Value="Id"/>
-          <Item Value="SrNo"/>
-          <Item Value="GlL4Id"/>
-          <Item Value="Description"/>
-          <Item Value="Dr"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <action IterBinding="TblGlVoucherDetailView8Iterator" id="CreateInsert1" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
-    <action IterBinding="TblGlVoucherDetailView8Iterator" id="Execute1" RequiresUpdateModel="true"
-            Action="iteratorExecute"/>
-    <action IterBinding="TblGlVoucherDetailView8Iterator" id="Delete1" RequiresUpdateModel="false"
-            Action="removeCurrentRow"/>
-    <list IterBinding="TblGlVoucherMasterTransView1Iterator" StaticList="false" Uses="LOV_PblCustId" id="PblCustId"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
       <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
         <AttrNames>
@@ -94,10 +21,5 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <attributeValues IterBinding="TblGlVoucherMasterTransView1Iterator" id="Vtp">
-      <AttrNames>
-        <Item Value="Vtp"/>
-      </AttrNames>
-    </attributeValues>
   </bindings>
 </pageDefinition>
