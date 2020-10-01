@@ -618,7 +618,7 @@
     ViewObjectName="model.ERP.VO.TblCustOpenBlncView"/>
   <ViewUsage
     Name="TblPblCustView1"
-    ViewObjectName="model.ERP.VO.TblPblCustView"/>
+    ViewObjectName="model.ERP.VO.TblRblCustView"/>
   <ViewUsage
     Name="TblSuppOpenBlncView1"
     ViewObjectName="model.ERP.VO.TblSuppOpenBlncView"/>
@@ -1090,6 +1090,57 @@
   <ViewUsage
     Name="TblJvDView2"
     ViewObjectName="model.ERP.VO.TblJvDView"/>
+  <ViewUsage
+    Name="TblBankCashView1"
+    ViewObjectName="model.ERP.VO.TblBankCashView"/>
+  <ViewUsage
+    Name="TblPbpDView1"
+    ViewObjectName="model.ERP.VO.TblPbpDView"/>
+  <ViewUsage
+    Name="TblPbpMView1"
+    ViewObjectName="model.ERP.VO.TblPbpMView"/>
+  <ViewUsage
+    Name="TblPcpDView1"
+    ViewObjectName="model.ERP.VO.TblPcpDView"/>
+  <ViewUsage
+    Name="TblPcpMView1"
+    ViewObjectName="model.ERP.VO.TblPcpMView"/>
+  <ViewUsage
+    Name="TblRbrDView1"
+    ViewObjectName="model.ERP.VO.TblRbrDView"/>
+  <ViewUsage
+    Name="TblRbrMView1"
+    ViewObjectName="model.ERP.VO.TblRbrMView"/>
+  <ViewUsage
+    Name="TblRcrDView1"
+    ViewObjectName="model.ERP.VO.TblRcrDView"/>
+  <ViewUsage
+    Name="TblRcrMView1"
+    ViewObjectName="model.ERP.VO.TblRcrMView"/>
+  <ViewUsage
+    Name="TblPbpDView2"
+    ViewObjectName="model.ERP.VO.TblPbpDView"/>
+  <ViewUsage
+    Name="TblPcpDView2"
+    ViewObjectName="model.ERP.VO.TblPcpDView"/>
+  <ViewUsage
+    Name="TblPbpDView3"
+    ViewObjectName="model.ERP.VO.TblPbpDView"/>
+  <ViewUsage
+    Name="TblPcpDView3"
+    ViewObjectName="model.ERP.VO.TblPcpDView"/>
+  <ViewUsage
+    Name="TblRbrDView2"
+    ViewObjectName="model.ERP.VO.TblRbrDView"/>
+  <ViewUsage
+    Name="TblRbrDView3"
+    ViewObjectName="model.ERP.VO.TblRbrDView"/>
+  <ViewUsage
+    Name="TblRcrDView2"
+    ViewObjectName="model.ERP.VO.TblRcrDView"/>
+  <ViewUsage
+    Name="TblRcrDView3"
+    ViewObjectName="model.ERP.VO.TblRcrDView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -2175,5 +2226,53 @@
     ViewLinkObjectName="model.ERP.VO.FkJvDMasterLink"
     SrcViewUsageName="model.ERP.AppModule.TblJvMView1"
     DstViewUsageName="model.ERP.AppModule.TblJvDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkPbpDLink1"
+    ViewLinkObjectName="model.ERP.VO.FkPbpDLink"
+    SrcViewUsageName="model.ERP.AppModule.TblPbpMView1"
+    DstViewUsageName="model.ERP.AppModule.TblPbpDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkPcpDMLink1"
+    ViewLinkObjectName="model.ERP.VO.FkPcpDMLink"
+    SrcViewUsageName="model.ERP.AppModule.TblPcpMView1"
+    DstViewUsageName="model.ERP.AppModule.TblPcpDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkPbpDIdLink1"
+    ViewLinkObjectName="model.ERP.VO.FkPbpDIdLink"
+    SrcViewUsageName="model.ERP.AppModule.TblBankCashView1"
+    DstViewUsageName="model.ERP.AppModule.TblPbpDView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkPcpDIdLink1"
+    ViewLinkObjectName="model.ERP.VO.FkPcpDIdLink"
+    SrcViewUsageName="model.ERP.AppModule.TblBankCashView1"
+    DstViewUsageName="model.ERP.AppModule.TblPcpDView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkRbrDIdLink1"
+    ViewLinkObjectName="model.ERP.VO.FkRbrDIdLink"
+    SrcViewUsageName="model.ERP.AppModule.TblBankCashView1"
+    DstViewUsageName="model.ERP.AppModule.TblRbrDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkRbrDLink1"
+    ViewLinkObjectName="model.ERP.VO.FkRbrDLink"
+    SrcViewUsageName="model.ERP.AppModule.TblRbrMView1"
+    DstViewUsageName="model.ERP.AppModule.TblRbrDView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkRcrDIdLink1"
+    ViewLinkObjectName="model.ERP.VO.FkRcrDIdLink"
+    SrcViewUsageName="model.ERP.AppModule.TblBankCashView1"
+    DstViewUsageName="model.ERP.AppModule.TblRcrDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkRcrDMLink1"
+    ViewLinkObjectName="model.ERP.VO.FkRcrDMLink"
+    SrcViewUsageName="model.ERP.AppModule.TblRcrMView1"
+    DstViewUsageName="model.ERP.AppModule.TblRcrDView3"
     Reversed="false"/>
 </AppModule>

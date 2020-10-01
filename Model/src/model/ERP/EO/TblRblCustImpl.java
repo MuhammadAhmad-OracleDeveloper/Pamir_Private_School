@@ -18,7 +18,7 @@ import oracle.jbo.server.TransactionEvent;
 // ---    Custom code may be added to this class.
 // ---    Warning: Do not modify method signatures of generated methods.
 // ---------------------------------------------------------------------
-public class TblPblCustImpl extends EntityImpl {
+public class TblRblCustImpl extends EntityImpl {
     /**
      * AttributesEnum: generated enum for identifying attributes and accessors. DO NOT MODIFY.
      */
@@ -49,7 +49,7 @@ public class TblPblCustImpl extends EntityImpl {
         private static final int firstIndex = 0;
 
         public int index() {
-            return AttributesEnum.firstIndex() + ordinal();
+            return TblRblCustImpl.AttributesEnum.firstIndex() + ordinal();
         }
 
         public static final int firstIndex() {
@@ -57,12 +57,12 @@ public class TblPblCustImpl extends EntityImpl {
         }
 
         public static int count() {
-            return AttributesEnum.firstIndex() + AttributesEnum.staticValues().length;
+            return TblRblCustImpl.AttributesEnum.firstIndex() + TblRblCustImpl.AttributesEnum.staticValues().length;
         }
 
         public static final AttributesEnum[] staticValues() {
             if (vals == null) {
-                vals = AttributesEnum.values();
+                vals = TblRblCustImpl.AttributesEnum.values();
             }
             return vals;
         }
@@ -93,7 +93,7 @@ public class TblPblCustImpl extends EntityImpl {
     /**
      * This is the default constructor (do not remove).
      */
-    public TblPblCustImpl() {
+    public TblRblCustImpl() {
     }
 
     /**
@@ -452,7 +452,7 @@ public class TblPblCustImpl extends EntityImpl {
      * @return the definition object for this instance class.
      */
     public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblPblCust");
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblRblCust");
     }
 
     /**

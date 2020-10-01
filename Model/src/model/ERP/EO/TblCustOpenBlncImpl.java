@@ -24,7 +24,7 @@ public class TblCustOpenBlncImpl extends EntityImpl {
     public enum AttributesEnum {
         CustOpenBlncId,
         CustOpenBlncDated,
-        PblCustId,
+        RblCustId,
         CustOpenBlncDr,
         CustOpenBlncCr,
         GroupCompanyId,
@@ -60,7 +60,7 @@ public class TblCustOpenBlncImpl extends EntityImpl {
 
     public static final int CUSTOPENBLNCID = AttributesEnum.CustOpenBlncId.index();
     public static final int CUSTOPENBLNCDATED = AttributesEnum.CustOpenBlncDated.index();
-    public static final int PBLCUSTID = AttributesEnum.PblCustId.index();
+    public static final int RBLCUSTID = AttributesEnum.RblCustId.index();
     public static final int CUSTOPENBLNCDR = AttributesEnum.CustOpenBlncDr.index();
     public static final int CUSTOPENBLNCCR = AttributesEnum.CustOpenBlncCr.index();
     public static final int GROUPCOMPANYID = AttributesEnum.GroupCompanyId.index();
@@ -121,16 +121,16 @@ public class TblCustOpenBlncImpl extends EntityImpl {
      * Gets the attribute value for PblCustId, using the alias name PblCustId.
      * @return the value of PblCustId
      */
-    public BigDecimal getPblCustId() {
-        return (BigDecimal) getAttributeInternal(PBLCUSTID);
+    public BigDecimal getRblCustId() {
+        return (BigDecimal) getAttributeInternal(RBLCUSTID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for PblCustId.
      * @param value value to set the PblCustId
      */
-    public void setPblCustId(BigDecimal value) {
-        setAttributeInternal(PBLCUSTID, value);
+    public void setRblCustId(BigDecimal value) {
+        setAttributeInternal(RBLCUSTID, value);
     }
 
     /**
@@ -264,14 +264,14 @@ public class TblCustOpenBlncImpl extends EntityImpl {
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public TblPblCustImpl getTblPblCust() {
-        return (TblPblCustImpl) getAttributeInternal(TBLPBLCUST);
+    public TblRblCustImpl getTblPblCust() {
+        return (TblRblCustImpl) getAttributeInternal(TBLPBLCUST);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblPblCust(TblPblCustImpl value) {
+    public void setTblPblCust(TblRblCustImpl value) {
         setAttributeInternal(TBLPBLCUST, value);
     }
 

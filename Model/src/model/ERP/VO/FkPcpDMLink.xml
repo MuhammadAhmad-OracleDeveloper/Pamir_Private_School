@@ -3,34 +3,33 @@
 <!---->
 <ViewLink
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="FkCustOpenBlncPblCustIdLink"
+  Name="FkPcpDMLink"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  EntityAssociation="model.ERP.EO.FkCustOpenBlncPblCustIdAssoc">
+  EntityAssociation="model.ERP.EO.FkPcpDMAssoc">
   <ViewLinkDefEnd
-    Name="TblPblCustView"
+    Name="TblPcpMView"
     Cardinality="1"
     Source="true"
-    Owner="model.ERP.VO.TblRblCustView">
+    Owner="model.ERP.VO.TblPcpMView">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_minCardinality" Value="1"/>
-      <Attr Name="_finderName" Value="TblPblCustView"/>
+      <Attr Name="_finderName" Value="TblPcpMView"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.VO.TblRblCustView.Id"/>
+      <Item Value="model.ERP.VO.TblPcpMView.Id"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ViewLinkDefEnd
-    Name="TblCustOpenBlncView"
+    Name="TblPcpDView"
     Cardinality="-1"
-    Owner="model.ERP.VO.TblCustOpenBlncView">
+    Owner="model.ERP.VO.TblPcpDView">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="TblCustOpenBlncView"/>
+      <Attr Name="_finderName" Value="TblPcpDView"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.VO.TblCustOpenBlncView.RblCustId"/>
+      <Item Value="model.ERP.VO.TblPcpDView.PcpMId"/>
     </AttrArray>
   </ViewLinkDefEnd>
 </ViewLink>

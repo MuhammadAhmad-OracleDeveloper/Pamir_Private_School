@@ -3,40 +3,39 @@
 <!---->
 <Association
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="FkCustOpenBlncPblCustIdAssoc"
+  Name="FkPcpDMAssoc"
   Version="12.2.1.11.57"
   InheritPersonalization="merge">
   <DesignTime>
     <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <AssociationEnd
-    Name="TblPblCust"
+    Name="TblPcpM"
     Cardinality="1"
     Source="true"
-    Owner="model.ERP.EO.TblRblCust">
+    Owner="model.ERP.EO.TblPcpM">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_minCardinality" Value="1"/>
       <Attr Name="_aggregation" Value="0"/>
-      <Attr Name="_finderName" Value="TblPblCust"/>
-      <Attr Name="_foreignKey" Value="model.ERP.EO.TblRblCust.PkPblCustId"/>
+      <Attr Name="_finderName" Value="TblPcpM"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblPcpM.PkPcpMId"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblRblCust.Id"/>
+      <Item Value="model.ERP.EO.TblPcpM.Id"/>
     </AttrArray>
   </AssociationEnd>
   <AssociationEnd
-    Name="TblCustOpenBlnc"
+    Name="TblPcpD"
     Cardinality="-1"
-    Owner="model.ERP.EO.TblCustOpenBlnc">
+    Owner="model.ERP.EO.TblPcpD">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_aggregation" Value="0"/>
-      <Attr Name="_finderName" Value="TblCustOpenBlnc"/>
-      <Attr Name="_foreignKey" Value="model.ERP.EO.TblCustOpenBlnc.FkCustOpenBlncPblCustId"/>
+      <Attr Name="_finderName" Value="TblPcpD"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblPcpD.FkPcpDM"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblCustOpenBlnc.RblCustId"/>
+      <Item Value="model.ERP.EO.TblPcpD.PcpMId"/>
     </AttrArray>
   </AssociationEnd>
 </Association>

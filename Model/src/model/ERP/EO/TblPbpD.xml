@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblPbpD"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_PBP_D"
+  AliasName="TblPbpD"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_PBP_D"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="PbpMId"
+    ColumnName="PBP_M_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_PBP_D"/>
+  <Attribute
+    Name="SrNo"
+    Precision="3"
+    Scale="0"
+    ColumnName="SR_NO"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="TBL_PBP_D"/>
+  <Attribute
+    Name="BankCashId"
+    IsNotNull="true"
+    ColumnName="BANK_CASH_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_PBP_D"/>
+  <Attribute
+    Name="Description"
+    Precision="100"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_PBP_D">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Dr"
+    ColumnName="DR"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_PBP_D"/>
+  <Attribute
+    Name="Cr"
+    ColumnName="CR"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_PBP_D"/>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_PBP_D"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_PBP_D"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_PBP_D"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_PBP_D"/>
+  <AccessorAttribute
+    Name="TblPbpM"
+    Association="model.ERP.EO.FkPbpDAssoc"
+    AssociationEnd="model.ERP.EO.FkPbpDAssoc.TblPbpM"
+    AssociationOtherEnd="model.ERP.EO.FkPbpDAssoc.TblPbpD"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblBankCash"
+    Association="model.ERP.EO.FkPbpDIdAssoc"
+    AssociationEnd="model.ERP.EO.FkPbpDIdAssoc.TblBankCash"
+    AssociationOtherEnd="model.ERP.EO.FkPbpDIdAssoc.TblPbpD"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkPbpDId"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_PBP_D_ID"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblPbpD.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkPbpD">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_PBP_ID"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_PBP_D"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblPbpD.PbpMId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkPbpDId">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_BANK_CASH_ID"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_PBP_D_ID"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblPbpD.BankCashId"/>
+    </AttrArray>
+  </Key>
+</Entity>

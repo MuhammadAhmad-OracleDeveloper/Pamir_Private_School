@@ -37,13 +37,13 @@
       CodeSourceName="TblCustOpenBlncRow"/>
   </Attribute>
   <Attribute
-    Name="PblCustId"
-    IsNotNull="true"
-    ColumnName="PBL_CUST_ID"
+    Name="RblCustId"
+    ColumnName="RBL_CUST_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_CUST_OPEN_BLNC"/>
+    TableName="TBL_CUST_OPEN_BLNC"
+    IsNotNull="true"/>
   <Attribute
     Name="CustOpenBlncDr"
     ColumnName="CUST_OPEN_BLNC_DR"
@@ -118,6 +118,18 @@
     </AttrArray>
   </Key>
   <Key
+    Name="TblCustOpenBlncRblCustIdCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"RBL_CUST_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TBL_CUST_OPEN_BLNC_RBL_CUST_ID"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblCustOpenBlnc.RblCustId"/>
+    </AttrArray>
+  </Key>
+  <Key
     Name="FkCustOpenBlncCompany">
     <DesignTime>
       <Attr Name="_referencedKey" Value="PK_GROUP_COMPANY"/>
@@ -136,7 +148,7 @@
       <Attr Name="_DBObjectName" Value="FK_CUST_OPEN_BLNC_PBL_CUST_ID"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblCustOpenBlnc.PblCustId"/>
+      <Item Value="model.ERP.EO.TblCustOpenBlnc.RblCustId"/>
     </AttrArray>
   </Key>
 </Entity>

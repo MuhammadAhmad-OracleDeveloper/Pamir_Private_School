@@ -6,13 +6,16 @@
   Name="TblCustOpenBlncView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblCustOpenBlnc.CUST_OPEN_BLNC_ID, 
+       TblCustOpenBlnc.CUST_OPEN_BLNC_DATED, 
+       TblCustOpenBlnc.RBL_CUST_ID, 
+       TblCustOpenBlnc.CUST_OPEN_BLNC_DR, 
+       TblCustOpenBlnc.CUST_OPEN_BLNC_CR, 
+       TblCustOpenBlnc.GROUP_COMPANY_ID"
+  FromList="TBL_CUST_OPEN_BLNC TblCustOpenBlnc">
   <ViewAccessor
     Name="Customer_Name_LOV1"
     ViewObjectName="model.LOV.Customer_Name_LOV"
@@ -24,7 +27,7 @@
     NullValueFlag="none"
     MRUCount="0">
     <AttrArray Name="AttrNames">
-      <Item Value="PblCustId"/>
+      <Item Value="RblCustId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -52,12 +55,12 @@
     EntityUsage="TblCustOpenBlnc"
     AliasName="CUST_OPEN_BLNC_DATED"/>
   <ViewAttribute
-    Name="PblCustId"
+    Name="RblCustId"
     IsNotNull="true"
     PrecisionRule="true"
-    EntityAttrName="PblCustId"
+    EntityAttrName="RblCustId"
     EntityUsage="TblCustOpenBlnc"
-    AliasName="PBL_CUST_ID"
+    AliasName="RBL_CUST_ID"
     LOVName="LOV_PblCustId">
     <Properties>
       <SchemaBasedProperties>

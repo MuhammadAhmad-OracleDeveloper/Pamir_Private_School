@@ -3,34 +3,34 @@
 <!---->
 <ViewLink
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="FkCustOpenBlncPblCustIdLink"
+  Name="FkRcrDIdLink"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  EntityAssociation="model.ERP.EO.FkCustOpenBlncPblCustIdAssoc">
+  EntityAssociation="model.ERP.EO.FkRcrDIdAssoc">
   <ViewLinkDefEnd
-    Name="TblPblCustView"
+    Name="TblBankCashView"
     Cardinality="1"
     Source="true"
-    Owner="model.ERP.VO.TblRblCustView">
+    Owner="model.ERP.VO.TblBankCashView">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_minCardinality" Value="1"/>
-      <Attr Name="_finderName" Value="TblPblCustView"/>
+      <Attr Name="_finderName" Value="TblBankCashView"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.VO.TblRblCustView.Id"/>
+      <Item Value="model.ERP.VO.TblBankCashView.Id"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ViewLinkDefEnd
-    Name="TblCustOpenBlncView"
+    Name="TblRcrDView"
     Cardinality="-1"
-    Owner="model.ERP.VO.TblCustOpenBlncView">
+    Owner="model.ERP.VO.TblRcrDView">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="TblCustOpenBlncView"/>
+      <Attr Name="_finderName" Value="TblRcrDView"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.ERP.VO.TblCustOpenBlncView.RblCustId"/>
+      <Item Value="model.ERP.VO.TblRcrDView.BankCashId"/>
     </AttrArray>
   </ViewLinkDefEnd>
 </ViewLink>

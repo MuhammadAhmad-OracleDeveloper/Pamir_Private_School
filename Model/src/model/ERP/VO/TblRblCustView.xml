@@ -3,16 +3,16 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="TblPblCustView"
+  Name="TblRblCustView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
   SelectListFlags="1"
   FromListFlags="1"
   WhereFlags="1"
-  BindingStyle="OracleName"
-  CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  SelectAllAttributes="false">
   <ViewAccessor
     Name="GL_L4_LOV1"
     ViewObjectName="model.LOV.GL_L4_LOV"
@@ -58,26 +58,26 @@
     <DisplayCriteria/>
   </ListBinding>
   <EntityUsage
-    Name="TblPblCust"
-    Entity="model.ERP.EO.TblPblCust"/>
+    Name="TblRblCust"
+    Entity="model.ERP.EO.TblRblCust"/>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Id"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblRblCust"
     AliasName="ID"/>
   <ViewAttribute
     Name="Name"
     PrecisionRule="true"
     EntityAttrName="Name"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblRblCust"
     AliasName="NAME"/>
   <ViewAttribute
     Name="Type"
     PrecisionRule="true"
     EntityAttrName="Type"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblRblCust"
     AliasName="TYPE"
     LOVName="LOV_Type">
     <Properties>
@@ -91,7 +91,7 @@
     Name="GlL4Id"
     PrecisionRule="true"
     EntityAttrName="GlL4Id"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblRblCust"
     AliasName="GL_L4_ID"
     LOVName="LOV_GlL4Id">
     <Properties>
@@ -105,97 +105,97 @@
     Name="CustBuss"
     PrecisionRule="true"
     EntityAttrName="CustBuss"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblRblCust"
     AliasName="CUST_BUSS"/>
   <ViewAttribute
     Name="ContactPer"
     PrecisionRule="true"
     EntityAttrName="ContactPer"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblRblCust"
     AliasName="CONTACT_PER"/>
   <ViewAttribute
     Name="Phone"
     PrecisionRule="true"
     EntityAttrName="Phone"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblRblCust"
     AliasName="PHONE"/>
   <ViewAttribute
     Name="Designation"
     PrecisionRule="true"
     EntityAttrName="Designation"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblRblCust"
     AliasName="DESIGNATION"/>
   <ViewAttribute
     Name="Cnic"
     PrecisionRule="true"
     EntityAttrName="Cnic"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblRblCust"
     AliasName="CNIC"/>
   <ViewAttribute
     Name="Cell"
     PrecisionRule="true"
     EntityAttrName="Cell"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblRblCust"
     AliasName="CELL"/>
   <ViewAttribute
     Name="Fax"
     PrecisionRule="true"
     EntityAttrName="Fax"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblRblCust"
     AliasName="FAX"/>
   <ViewAttribute
     Name="Ntn"
     PrecisionRule="true"
     EntityAttrName="Ntn"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblRblCust"
     AliasName="NTN"/>
   <ViewAttribute
     Name="Strn"
     PrecisionRule="true"
     EntityAttrName="Strn"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblRblCust"
     AliasName="STRN"/>
   <ViewAttribute
     Name="EMail"
     PrecisionRule="true"
     EntityAttrName="EMail"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblRblCust"
     AliasName="E_MAIL"/>
   <ViewAttribute
     Name="Url"
     PrecisionRule="true"
     EntityAttrName="Url"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblRblCust"
     AliasName="URL"/>
   <ViewAttribute
     Name="GroupCompanyId"
     PrecisionRule="true"
     EntityAttrName="GroupCompanyId"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblRblCust"
     AliasName="GROUP_COMPANY_ID"/>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblRblCust"
     AliasName="CREATED_DATE"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblRblCust"
     AliasName="CREATED_BY"/>
   <ViewAttribute
     Name="UpdatedDate"
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblRblCust"
     AliasName="UPDATED_DATE"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblRblCust"
     AliasName="UPDATED_BY"/>
   <ViewLinkAccessor
     Name="TblCustOpenBlncView"
