@@ -1,19 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
- <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
-    <af:dialog id="d1" title="User Guide">
-      here the guide will be shown !!!!!!
-    </af:dialog>
-  </af:popup>
+  
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
     <af:showDetailItem id="pane1" text="Cash Receipt Voucher">
          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
-         <af:button id="b2" text="Help" icon="#{resource['images:info.png']}" iconPosition="top"
-                   inlineStyle="background-color:InfoBackground;">
-          <af:showPopupBehavior popupId="p1"/>
-        </af:button>
-        <af:spacer width="10" height="10" id="s12"/>
                             <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                                    disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
                                    icon="#{resource['images:cancel.png']}" iconPosition="top">
@@ -33,280 +24,235 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1" text="Cash Receipt Voucher">
-               <af:panelFormLayout id="pfl1" maxColumns="2" rows="1">
-                  <af:inputText value="#{bindings.Vtp1.inputValue}" label="#{bindings.Vtp1.hints.label}"
-                                required="#{bindings.Vtp1.hints.mandatory}" visible="false"
-                                columns="#{bindings.Vtp1.hints.displayWidth}"
-                                maximumLength="#{bindings.Vtp1.hints.precision}"
-                                shortDesc="#{bindings.Vtp1.hints.tooltip}" id="it2">
-                    <f:validator binding="#{bindings.Vtp1.validator}"/>
-                  </af:inputText>
-                  <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
-                                required="#{bindings.Vno.hints.mandatory}" columns="#{bindings.Vno.hints.displayWidth}"
-                                maximumLength="#{bindings.Vno.hints.precision}"
-                                shortDesc="#{bindings.Vno.hints.tooltip}" id="it1">
-                    <f:validator binding="#{bindings.Vno.validator}"/>
-                  </af:inputText>
-                  <af:inputDate value="#{bindings.Dated.inputValue}" label="Date"
-                                required="#{bindings.Dated.hints.mandatory}"
-                                columns="#{bindings.Dated.hints.displayWidth}"
-                                shortDesc="#{bindings.Dated.hints.tooltip}" id="id1" contentStyle="width:136px;">
-                    <f:validator binding="#{bindings.Dated.validator}"/>
-                    <af:convertDateTime pattern="#{bindings.Dated.format}"/>
-                  </af:inputDate>
-                  <af:selectOneChoice value="#{bindings.PblSuppId.inputValue}" label="Supplier"
-                                      required="#{bindings.PblSuppId.hints.mandatory}"
-                                      shortDesc="#{bindings.PblSuppId.hints.tooltip}" id="soc2"
-                                      contentStyle="width:150px;">
-                    <f:selectItems value="#{bindings.PblSuppId.items}" id="si2"/>
-                    <f:validator binding="#{bindings.PblSuppId.validator}"/>
-                  </af:selectOneChoice>
-                  <af:inputText value="#{bindings.Narration.inputValue}" label="Narration"
-                                required="#{bindings.Narration.hints.mandatory}"
-                                columns="#{bindings.Narration.hints.displayWidth}"
-                                maximumLength="#{bindings.Narration.hints.precision}"
-                                shortDesc="#{bindings.Narration.hints.tooltip}" id="it3" contentStyle="width:150px;">
-                    <f:validator binding="#{bindings.Narration.validator}"/>
-                  </af:inputText>
-                  <f:facet name="footer">
-                    <af:panelGroupLayout layout="horizontal" id="pgl5"/>
-                  </f:facet>
-                </af:panelFormLayout>
-                <af:panelGroupLayout id="pgl3" halign="center"  layout="horizontal">
-             <af:iterator id="i3" var="index" varStatus="status"
-                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                                <af:button id="b3" clientComponent="true" text="Add"
-                                           rendered="#{index.bindings.Crudid.inputValue =='1'}"
-                                           icon="#{resource['images:add.png']}"
-                                           disabled="#{!bindings.CreateInsert.enabled}"
-                                           actionListener="#{GLvoucherTypeBean.SaveVtp}">
-                                    <f:attribute name="sendVTP" value="CRV"/>
-                                </af:button>
-                                <af:spacer width="5" height="10" id="s2"/>
-                            </af:iterator>
+                <af:panelGridLayout id="pgl2">
+                  <af:gridRow marginTop="5px" height="auto" id="gr3">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+                      <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+                        <af:showDetailItem id="tab2" text="Cash Receipt Voucher Master">
+                          <af:panelFormLayout id="pfl1" maxColumns="3" rows="8">
+                           <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
+                                          required="#{bindings.Id.hints.mandatory}"
+                                          columns="#{bindings.Id.hints.displayWidth}"
+                                          maximumLength="#{bindings.Id.hints.precision}"
+                                          shortDesc="#{bindings.Id.hints.tooltip}" id="it1" disabled="true">
+                              <f:validator binding="#{bindings.Id.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
+                            </af:inputText>
+                            <af:inputDate value="#{bindings.Dated.inputValue}" label="Date"
+                                          required="#{bindings.Dated.hints.mandatory}"
+                                          columns="#{bindings.Dated.hints.displayWidth}"
+                                          shortDesc="#{bindings.Dated.hints.tooltip}" id="id1"
+                                          contentStyle="width:150px;">
+                              <f:validator binding="#{bindings.Dated.validator}"/>
+                              <af:convertDateTime pattern="#{bindings.Dated.format}"/>
+                            </af:inputDate>
+                            <af:spacer  id="s4"/>
+                            <af:selectOneChoice value="#{bindings.CompanySbuId.inputValue}"
+                                                label="Project"
+                                                required="#{bindings.CompanySbuId.hints.mandatory}"
+                                                shortDesc="#{bindings.CompanySbuId.hints.tooltip}" id="soc1"
+                                                contentStyle="width:150px;">
+                              <f:selectItems value="#{bindings.CompanySbuId.items}" id="si1"/>
+                              <f:validator binding="#{bindings.CompanySbuId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s5"/>
+                            <af:selectOneChoice value="#{bindings.PblCustId.inputValue}"
+                                                label="Customer"
+                                                required="#{bindings.PblCustId.hints.mandatory}"
+                                                shortDesc="#{bindings.PblCustId.hints.tooltip}" id="soc2"
+                                                contentStyle="width:150px;">
+                              <f:selectItems value="#{bindings.PblCustId.items}" id="si2"/>
+                              <f:validator binding="#{bindings.PblCustId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s6"/>
+                            <af:inputText value="#{bindings.Narration.inputValue}"
+                                          label="Narration"
+                                          required="#{bindings.Narration.hints.mandatory}"
+                                          columns="#{bindings.Narration.hints.displayWidth}"
+                                          maximumLength="#{bindings.Narration.hints.precision}"
+                                          shortDesc="#{bindings.Narration.hints.tooltip}" id="it2"
+                                          contentStyle="width:150px;" rows="10">
+                              <f:validator binding="#{bindings.Narration.validator}"/>
+                            </af:inputText>
+                            <af:spacer  id="s7"/>
+                            <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
+                                          required="#{bindings.Vno.hints.mandatory}"
+                                          columns="20"
+                                          maximumLength="#{bindings.Vno.hints.precision}"
+                                          shortDesc="#{bindings.Vno.hints.tooltip}" id="it3"
+                                          contentStyle="width:150px;">
+                              <f:validator binding="#{bindings.Vno.validator}"/>
+                            </af:inputText>
+                            <af:spacer  id="s8"/>
+                            <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type"
+                                                required="#{bindings.Vtp.hints.mandatory}"
+                                                shortDesc="#{bindings.Vtp.hints.tooltip}" id="soc3"
+                                                contentStyle="width:150px;">
+                              <f:selectItems value="#{bindings.Vtp.items}" id="si3"/>
+                              <f:validator binding="#{bindings.Vtp.validator}"/>
+                            </af:selectOneChoice>
+                            <f:facet name="footer">
+                              <af:panelGroupLayout layout="horizontal" id="pgl6">
+                                <af:button actionListener="#{bindings.First.execute}" text="First"
+                                           disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b2"/>
+                                <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                           disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
+                                <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                           disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b4"/>
+                                <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                           disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b5"/>
+                              </af:panelGroupLayout>
+                            </f:facet>
+                          </af:panelFormLayout>
+                          
+                        </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr4">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                     <af:panelGroupLayout id="pgl3" halign="center" layout="horizontal">
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
-                                rendered="#{index.bindings.Crudid.inputValue !='1'}"
                                            icon="/sms/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
                                     <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
                                 </af:button>
-                
-                <af:spacer width="5" height="10" id="s5"/>
-                
+                                <af:spacer width="5" height="10" id="s3"/>
                             </af:iterator>
                         </af:panelGroupLayout>
-              </af:showDetailItem>
-             <af:showDetailItem text="Search" id="sdi1">
-              <af:table value="#{bindings.TblGlVoucherMasterTransView1.collectionModel}" var="row"
-                          rows="#{bindings.TblGlVoucherMasterTransView1.rangeSize}"
-                          emptyText="#{bindings.TblGlVoucherMasterTransView1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                          rowBandingInterval="0"
-                          selectedRowKeys="#{bindings.TblGlVoucherMasterTransView1.collectionModel.selectedRow}"
-                          selectionListener="#{bindings.TblGlVoucherMasterTransView1.collectionModel.makeCurrent}"
-                          rowSelection="single" fetchSize="#{bindings.TblGlVoucherMasterTransView1.rangeSize}"
-                          filterModel="#{bindings.TblGlVoucherMasterTransView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblGlVoucherMasterTransView1Query.processQuery}" varStatus="vs"
-                          id="t2" scrollPolicy="page" autoHeightRows="0">
-                  <af:column sortProperty="#{bindings.TblGlVoucherMasterTransView1.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="ID" id="c6" align="right" visible="false">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.Id}"
-                                   id="id4" placeholder="Search ">
-                                  </af:inputText>
-                            </f:facet>
-                    <af:inputText value="#{row.bindings.Id.inputValue}"
-                                  label="#{bindings.TblGlVoucherMasterTransView1.hints.Id.label}"
-                                  required="#{bindings.TblGlVoucherMasterTransView1.hints.Id.mandatory}"
-                                  columns="#{bindings.TblGlVoucherMasterTransView1.hints.Id.displayWidth}"
-                                  maximumLength="#{bindings.TblGlVoucherMasterTransView1.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblGlVoucherMasterTransView1.hints.Id.tooltip}" id="it8" readOnly="true">
-                      <f:validator binding="#{row.bindings.Id.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblGlVoucherMasterTransView1.hints.Id.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblGlVoucherMasterTransView1.hints.Vno.name}" filterable="true"
-                             sortable="true" headerText="Voucher No."
-                             id="c7" align="left">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.Vno}"
-                                   id="it12" placeholder="Search ">
-                                  </af:inputText>
-                            </f:facet>
-                    <af:inputText value="#{row.bindings.Vno.inputValue}"
-                                  label="#{bindings.TblGlVoucherMasterTransView1.hints.Vno.label}"
-                                  required="#{bindings.TblGlVoucherMasterTransView1.hints.Vno.mandatory}"
-                                  columns="#{bindings.TblGlVoucherMasterTransView1.hints.Vno.displayWidth}"
-                                  maximumLength="#{bindings.TblGlVoucherMasterTransView1.hints.Vno.precision}"
-                                  shortDesc="#{bindings.TblGlVoucherMasterTransView1.hints.Vno.tooltip}" id="it9" readOnly="true"
-                                  contentStyle='text-align: right'>
-                      <f:validator binding="#{row.bindings.Vno.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblGlVoucherMasterTransView1.hints.Dated.name}" filterable="true"
-                             sortable="true" headerText="Date"
-                             id="c8">
-                    <f:facet name="filter">
-                      <af:inputDate value="#{bindings.TblGlVoucherMasterTransView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
-                                    id="id10" placeholder="Search ">
-                                    
-                        <af:convertDateTime pattern="#{bindings.TblGlVoucherMasterTransView1.hints.Dated.format}"/>
-                      </af:inputDate>
-                    </f:facet>
-                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
-                                  label="#{bindings.TblGlVoucherMasterTransView1.hints.Dated.label}"
-                                  required="#{bindings.TblGlVoucherMasterTransView1.hints.Dated.mandatory}"
-                                  columns="#{bindings.TblGlVoucherMasterTransView1.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.TblGlVoucherMasterTransView1.hints.Dated.tooltip}" id="id5" readOnly="true">
-                      <f:validator binding="#{row.bindings.Dated.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.TblGlVoucherMasterTransView1.hints.Dated.format}"/>
-                    </af:inputDate>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblGlVoucherMasterTransView1.hints.PblSuppId.name}"
-                             filterable="true" sortable="true"
-                             headerText="Supplier" id="c13" width="200">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.PblSuppId}"
-                                   id="it15" placeholder="Search ">
-                                  </af:inputText>
-                            </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.PblSuppId.inputValue}"
-                                        label="#{row.bindings.PblSuppId.label}"
-                                        required="#{bindings.TblGlVoucherMasterTransView1.hints.PblSuppId.mandatory}"
-                                        shortDesc="#{bindings.TblGlVoucherMasterTransView1.hints.PblSuppId.tooltip}"
-                                        id="soc5" readOnly="true">
-                      <f:selectItems value="#{row.bindings.PblSuppId.items}" id="si5"/>
-                      <f:validator binding="#{row.bindings.PblSuppId.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblGlVoucherMasterTransView1.hints.Narration.name}"
-                             filterable="true" sortable="true"
-                             headerText="Narration" id="c14" width="200">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.Narration}"
-                                   id="it16" placeholder="Search ">
-                                  </af:inputText>
-                            </f:facet>
-                    <af:inputText value="#{row.bindings.Narration.inputValue}"
-                                  label="#{bindings.TblGlVoucherMasterTransView1.hints.Narration.label}"
-                                  required="#{bindings.TblGlVoucherMasterTransView1.hints.Narration.mandatory}"
-                                  columns="#{bindings.TblGlVoucherMasterTransView1.hints.Narration.displayWidth}"
-                                  maximumLength="#{bindings.TblGlVoucherMasterTransView1.hints.Narration.precision}"
-                                  shortDesc="#{bindings.TblGlVoucherMasterTransView1.hints.Narration.tooltip}" id="it11" readOnly="true">
-                      <f:validator binding="#{row.bindings.Narration.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                </af:table>
-                
-              </af:showDetailItem>
-            </af:panelTabbed>
-          </af:gridCell>
-        </af:gridRow>
-       
-        <af:gridRow marginTop="5px" height="auto" id="gr4">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
-            <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
-             <af:showDetailItem id="tab2" text="Details">
-                <af:table value="#{bindings.TblGlVoucherDetailView8.collectionModel}" var="row"
-                          rows="#{bindings.TblGlVoucherDetailView8.rangeSize}"
-                          emptyText="#{bindings.TblGlVoucherDetailView8.viewable ? 'No data to display.' : 'Access Denied.'}"
-                          rowBandingInterval="0"
-                          selectedRowKeys="#{bindings.TblGlVoucherDetailView8.collectionModel.selectedRow}"
-                          selectionListener="#{bindings.TblGlVoucherDetailView8.collectionModel.makeCurrent}"
-                          rowSelection="single" fetchSize="#{bindings.TblGlVoucherDetailView8.rangeSize}"
-                          filterModel="#{bindings.TblGlVoucherDetailView8Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblGlVoucherDetailView8Query.processQuery}" varStatus="vs" id="t1"
-                          scrollPolicy="page" autoHeightRows="0">
-                  <af:column sortProperty="#{bindings.TblGlVoucherDetailView8.hints.SrNo.name}" filterable="true"
-                             sortable="true" headerText="Serial No." id="c1" align="left">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.SrNo}"
-                                   id="it17" placeholder="Search ">
-                                  </af:inputText>
-                            </f:facet>
-                    <af:inputText value="#{row.bindings.SrNo.inputValue}"
-                                  label="#{bindings.TblGlVoucherDetailView8.hints.SrNo.label}"
-                                  required="#{bindings.TblGlVoucherDetailView8.hints.SrNo.mandatory}"
-                                  columns="#{bindings.TblGlVoucherDetailView8.hints.SrNo.displayWidth}"
-                                  maximumLength="#{bindings.TblGlVoucherDetailView8.hints.SrNo.precision}"
-                                  shortDesc="#{bindings.TblGlVoucherDetailView8.hints.SrNo.tooltip}" id="it4">
-                      <f:validator binding="#{row.bindings.SrNo.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblGlVoucherDetailView8.hints.SrNo.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblGlVoucherDetailView8.hints.GlL4Id.name}" filterable="true"
-                             sortable="true" headerText="Account Title"
-                             id="c2" width="200">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.GlL4Id}"
-                                   id="it18" placeholder="Search ">
-                                  </af:inputText>
-                            </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.GlL4Id.inputValue}" label="#{row.bindings.GlL4Id.label}"
-                                        required="#{bindings.TblGlVoucherDetailView8.hints.GlL4Id.mandatory}"
-                                        shortDesc="#{bindings.TblGlVoucherDetailView8.hints.GlL4Id.tooltip}" id="soc3">
-                      <f:selectItems value="#{row.bindings.GlL4Id.items}" id="si3"/>
-                      <f:validator binding="#{row.bindings.GlL4Id.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblGlVoucherDetailView8.hints.Description.name}" filterable="true"
-                             sortable="true" headerText="Description"
-                             id="c3" width="200">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.Description}"
-                                   id="it19" placeholder="Search ">
-                                  </af:inputText>
-                            </f:facet>
-                    <af:inputText value="#{row.bindings.Description.inputValue}"
-                                  label="#{bindings.TblGlVoucherDetailView8.hints.Description.label}"
-                                  required="#{bindings.TblGlVoucherDetailView8.hints.Description.mandatory}"
-                                  columns="#{bindings.TblGlVoucherDetailView8.hints.Description.displayWidth}"
-                                  maximumLength="#{bindings.TblGlVoucherDetailView8.hints.Description.precision}"
-                                  shortDesc="#{bindings.TblGlVoucherDetailView8.hints.Description.tooltip}" id="it5">
-                      <f:validator binding="#{row.bindings.Description.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblGlVoucherDetailView8.hints.Dr.name}" filterable="true"
-                             sortable="true" headerText="Dr" id="c4" align="left">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.Dr}"
-                                   id="it20" placeholder="Search ">
-                                  </af:inputText>
-                            </f:facet>
-                    <af:inputText value="#{row.bindings.Dr.inputValue}"
-                                  label="#{bindings.TblGlVoucherDetailView8.hints.Dr.label}"
-                                  required="#{bindings.TblGlVoucherDetailView8.hints.Dr.mandatory}"
-                                  columns="#{bindings.TblGlVoucherDetailView8.hints.Dr.displayWidth}"
-                                  maximumLength="#{bindings.TblGlVoucherDetailView8.hints.Dr.precision}"
-                                  shortDesc="#{bindings.TblGlVoucherDetailView8.hints.Dr.tooltip}" id="it6">
-                      <f:validator binding="#{row.bindings.Dr.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblGlVoucherDetailView8.hints.Dr.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblGlVoucherDetailView8.hints.Cr.name}" filterable="true"
-                             sortable="true" headerText="Cr" id="c5" align="left">
-                              <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.Cr}"
-                                   id="it21" placeholder="Search ">
-                                  </af:inputText>
-                            </f:facet>
-                    <af:inputText value="#{row.bindings.Cr.inputValue}"
-                                  label="#{bindings.TblGlVoucherDetailView8.hints.Cr.label}"
-                                  required="#{bindings.TblGlVoucherDetailView8.hints.Cr.mandatory}"
-                                  columns="#{bindings.TblGlVoucherDetailView8.hints.Cr.displayWidth}"
-                                  maximumLength="#{bindings.TblGlVoucherDetailView8.hints.Cr.precision}"
-                                  shortDesc="#{bindings.TblGlVoucherDetailView8.hints.Cr.tooltip}" id="it7">
-                      <f:validator binding="#{row.bindings.Cr.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblGlVoucherDetailView8.hints.Cr.format}"/>
-                    </af:inputText>
-                  </af:column>
-                </af:table>
-                 <af:panelGroupLayout id="pgl2" halign="center"  layout="horizontal">
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr5">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+                      <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
+                        <af:showDetailItem id="tab3" text="Cash Receipt Voucher Detail">
+                          <af:table value="#{bindings.TblCrvDView2.collectionModel}" var="row"
+                                    rows="#{bindings.TblCrvDView2.rangeSize}"
+                                    emptyText="#{bindings.TblCrvDView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblCrvDView2.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblCrvDView2.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblCrvDView2.rangeSize}"
+                                    filterModel="#{bindings.TblCrvDView2Query.queryDescriptor}" filterVisible="true"
+                                    queryListener="#{bindings.TblCrvDView2Query.processQuery}" varStatus="vs" id="t2"
+                                    scrollPolicy="page" autoHeightRows="0">
+                            <af:column sortProperty="#{bindings.TblCrvDView2.hints.Id.name}" filterable="true"
+                                       sortable="true" headerText="ID" id="c8" visible="false">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="id4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Id.inputValue}"
+                                            label="#{bindings.TblCrvDView2.hints.Id.label}"
+                                            required="#{bindings.TblCrvDView2.hints.Id.mandatory}"
+                                            columns="#{bindings.TblCrvDView2.hints.Id.displayWidth}"
+                                            maximumLength="#{bindings.TblCrvDView2.hints.Id.precision}"
+                                            shortDesc="#{bindings.TblCrvDView2.hints.Id.tooltip}" id="it12" readOnly="true">
+                                <f:validator binding="#{row.bindings.Id.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblCrvDView2.hints.Id.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblCrvDView2.hints.SrNo.name}" filterable="true"
+                                       sortable="true" headerText="Serial No." id="c9">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.SrNo}"
+       id="it17" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.SrNo.inputValue}"
+                                            label="#{bindings.TblCrvDView2.hints.SrNo.label}"
+                                            required="#{bindings.TblCrvDView2.hints.SrNo.mandatory}"
+                                            columns="20"
+                                            maximumLength="#{bindings.TblCrvDView2.hints.SrNo.precision}"
+                                            shortDesc="#{bindings.TblCrvDView2.hints.SrNo.tooltip}" id="it13">
+                                <f:validator binding="#{row.bindings.SrNo.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblCrvDView2.hints.SrNo.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblCrvDView2.hints.GlL4Id.name}" filterable="true"
+                                       sortable="true" headerText="GL Level 4"
+                                       id="c10" width="150">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.GlL4Id}"
+       id="it18" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.GlL4Id.inputValue}"
+                                                  label="#{row.bindings.GlL4Id.label}"
+                                                  required="#{bindings.TblCrvDView2.hints.GlL4Id.mandatory}"
+                                                  shortDesc="#{bindings.TblCrvDView2.hints.GlL4Id.tooltip}" id="soc7">
+                                <f:selectItems value="#{row.bindings.GlL4Id.items}" id="si7"/>
+                                <f:validator binding="#{row.bindings.GlL4Id.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblCrvDView2.hints.Description.name}" filterable="true"
+                                       sortable="true" headerText="Description"
+                                       id="c11" width="400">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Description}"
+       id="it19" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Description.inputValue}"
+                                            label="#{bindings.TblCrvDView2.hints.Description.label}"
+                                            required="#{bindings.TblCrvDView2.hints.Description.mandatory}"
+                                            columns="#{bindings.TblCrvDView2.hints.Description.displayWidth}"
+                                            maximumLength="#{bindings.TblCrvDView2.hints.Description.precision}"
+                                            shortDesc="#{bindings.TblCrvDView2.hints.Description.tooltip}" id="it14">
+                                <f:validator binding="#{row.bindings.Description.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblCrvDView2.hints.Dr.name}" filterable="true"
+                                       sortable="true" headerText="Dr" id="c12">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Dr}"
+       id="it20" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Dr.inputValue}"
+                                            label="#{bindings.TblCrvDView2.hints.Dr.label}"
+                                            required="#{bindings.TblCrvDView2.hints.Dr.mandatory}"
+                                            columns="#{bindings.TblCrvDView2.hints.Dr.displayWidth}"
+                                            maximumLength="#{bindings.TblCrvDView2.hints.Dr.precision}"
+                                            shortDesc="#{bindings.TblCrvDView2.hints.Dr.tooltip}" id="it15">
+                                <f:validator binding="#{row.bindings.Dr.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblCrvDView2.hints.Dr.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblCrvDView2.hints.Cr.name}" filterable="true"
+                                       sortable="true" headerText="Cr" id="c13">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Cr}"
+       id="it21" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Cr.inputValue}"
+                                            label="#{bindings.TblCrvDView2.hints.Cr.label}"
+                                            required="#{bindings.TblCrvDView2.hints.Cr.mandatory}"
+                                            columns="#{bindings.TblCrvDView2.hints.Cr.displayWidth}"
+                                            maximumLength="#{bindings.TblCrvDView2.hints.Cr.precision}"
+                                            shortDesc="#{bindings.TblCrvDView2.hints.Cr.tooltip}" id="it16">
+                                <f:validator binding="#{row.bindings.Cr.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblCrvDView2.hints.Cr.format}"/>
+                              </af:inputText>
+                            </af:column>
+                          </af:table>
+                          
+                        </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr6">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
+                       <af:panelGroupLayout id="pgl5" layout="horizontal">
+                            
                             <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -314,11 +260,136 @@
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
                                     <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
                                 </af:button>
-                
-                <af:spacer width="5" height="10" id="s3"/>
-                
+                                <af:spacer width="5" height="10" id="s2"/>
                             </af:iterator>
                         </af:panelGroupLayout>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7"/>
+                  </af:gridRow>
+                </af:panelGridLayout>
+              </af:showDetailItem>
+              <af:showDetailItem text="Serach" id="sdi1">
+                <af:table value="#{bindings.TblCrvMView1.collectionModel}" var="row"
+                          rows="#{bindings.TblCrvMView1.rangeSize}"
+                          emptyText="#{bindings.TblCrvMView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0" selectedRowKeys="#{bindings.TblCrvMView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblCrvMView1.collectionModel.makeCurrent}" rowSelection="single"
+                          fetchSize="#{bindings.TblCrvMView1.rangeSize}"
+                          filterModel="#{bindings.TblCrvMView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblCrvMView1Query.processQuery}" varStatus="vs" id="t1"
+                           scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblCrvMView1.hints.Id.name}" filterable="true" sortable="true"
+                             headerText="ID" id="c1" visible="false">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="it22" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Id.inputValue}" label="#{bindings.TblCrvMView1.hints.Id.label}"
+                                  required="#{bindings.TblCrvMView1.hints.Id.mandatory}"
+                                  columns="#{bindings.TblCrvMView1.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblCrvMView1.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblCrvMView1.hints.Id.tooltip}" id="it4" readOnly="true">
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblCrvMView1.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCrvMView1.hints.Vno.name}" filterable="true" sortable="true"
+                             headerText="Voucher No." id="c2">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Vno}"
+       id="it7" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Vno.inputValue}"
+                                  label="#{bindings.TblCrvMView1.hints.Vno.label}"
+                                  required="#{bindings.TblCrvMView1.hints.Vno.mandatory}"
+                                  columns="#{bindings.TblCrvMView1.hints.Vno.displayWidth}"
+                                  maximumLength="#{bindings.TblCrvMView1.hints.Vno.precision}"
+                                  shortDesc="#{bindings.TblCrvMView1.hints.Vno.tooltip}" id="it5" readOnly="true">
+                      <f:validator binding="#{row.bindings.Vno.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCrvMView1.hints.Vtp.name}" filterable="true" sortable="true"
+                             headerText="Voucher Type" id="c3">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Vtp}"
+       id="it8" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Vtp.inputValue}" label="#{row.bindings.Vtp.label}"
+                                        required="#{bindings.TblCrvMView1.hints.Vtp.mandatory}"
+                                        shortDesc="#{bindings.TblCrvMView1.hints.Vtp.tooltip}" id="soc4" readOnly="true">
+                      <f:selectItems value="#{row.bindings.Vtp.items}" id="si4"/>
+                      <f:validator binding="#{row.bindings.Vtp.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCrvMView1.hints.Dated.name}" filterable="true" sortable="true"
+                             headerText="Date" id="c4">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblCrvMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                    id="id2" placeholder="Search ">
+                        <af:convertDateTime pattern="#{bindings.TblCrvMView1.hints.Dated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                  label="#{bindings.TblCrvMView1.hints.Dated.label}"
+                                  required="#{bindings.TblCrvMView1.hints.Dated.mandatory}"
+                                  columns="#{bindings.TblCrvMView1.hints.Dated.displayWidth}"
+                                  shortDesc="#{bindings.TblCrvMView1.hints.Dated.tooltip}" id="id3" readOnly="true">
+                      <f:validator binding="#{row.bindings.Dated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblCrvMView1.hints.Dated.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCrvMView1.hints.CompanySbuId.name}" filterable="true"
+                             sortable="true" headerText="Project" id="c5" width="200">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.CompanySbuId}"
+       id="it9" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.CompanySbuId.inputValue}"
+                                        label="#{row.bindings.CompanySbuId.label}"
+                                        required="#{bindings.TblCrvMView1.hints.CompanySbuId.mandatory}"
+                                        shortDesc="#{bindings.TblCrvMView1.hints.CompanySbuId.tooltip}" id="soc5" readOnly="true">
+                      <f:selectItems value="#{row.bindings.CompanySbuId.items}" id="si5"/>
+                      <f:validator binding="#{row.bindings.CompanySbuId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCrvMView1.hints.PblCustId.name}" filterable="true"
+                             sortable="true" headerText="Customer" id="c6" width="200">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.PblCustId}"
+       id="it10" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.PblCustId.inputValue}"
+                                        label="#{row.bindings.PblCustId.label}"
+                                        required="#{bindings.TblCrvMView1.hints.PblCustId.mandatory}"
+                                        shortDesc="#{bindings.TblCrvMView1.hints.PblCustId.tooltip}" id="soc6" readOnly="true">
+                      <f:selectItems value="#{row.bindings.PblCustId.items}" id="si6"/>
+                      <f:validator binding="#{row.bindings.PblCustId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCrvMView1.hints.Narration.name}" filterable="true"
+                             sortable="true" headerText="Narration" id="c7" width="400">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Narration}"
+       id="it11" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Narration.inputValue}"
+                                  label="#{bindings.TblCrvMView1.hints.Narration.label}"
+                                  required="#{bindings.TblCrvMView1.hints.Narration.mandatory}"
+                                  columns="#{bindings.TblCrvMView1.hints.Narration.displayWidth}"
+                                  maximumLength="#{bindings.TblCrvMView1.hints.Narration.precision}"
+                                  shortDesc="#{bindings.TblCrvMView1.hints.Narration.tooltip}" id="it6" readOnly="true">
+                      <f:validator binding="#{row.bindings.Narration.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
@@ -328,3 +399,4 @@
     </af:showDetailItem>
   </af:panelAccordion>
 </ui:composition>
+
