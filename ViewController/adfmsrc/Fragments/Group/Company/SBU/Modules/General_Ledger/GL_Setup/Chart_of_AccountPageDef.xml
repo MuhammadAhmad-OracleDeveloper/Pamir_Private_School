@@ -20,6 +20,29 @@
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGlL4View3Query"/>
   </executables>
   <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TblGlL1View1Iterator" id="GlL1Id">
+      <AttrNames>
+        <Item Value="GlL1Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblGlL1View1Iterator" id="GlL1Name">
+      <AttrNames>
+        <Item Value="GlL1Name"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblGlL1View1Iterator" StaticList="false" Uses="LOV_Ast" id="Ast" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
     <tree IterBinding="TblGlL1View1Iterator" id="TblGlL1View1">
       <nodeDefinition DefName="model.ERP.VO.TblGlL1View" Name="TblGlL1View10">
         <AttrNames>
@@ -34,6 +57,20 @@
     <action IterBinding="TblGlL1View1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <attributeValues IterBinding="TblGlL2View2Iterator" id="GlL2Id">
+      <AttrNames>
+        <Item Value="GlL2Id"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblGlL2View2Iterator" StaticList="false" Uses="LOV_GlL1Id" id="GlL1Id1" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblGlL2View2Iterator" id="GlL2Name">
+      <AttrNames>
+        <Item Value="GlL2Name"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblGlL2View2Iterator" StaticList="false" Uses="LOV_Ast" id="Ast1" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
     <tree IterBinding="TblGlL2View2Iterator" id="TblGlL2View2">
       <nodeDefinition DefName="model.ERP.VO.TblGlL2View" Name="TblGlL2View20">
         <AttrNames>
@@ -44,20 +81,23 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
-      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
-        <AttrNames>
-          <Item Value="Crudid"/>
-          <Item Value="Operation"/>
-          <Item Value="Icon"/>
-          <Item Value="Bindingname"/>
-          <Item Value="Btndisabled"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <action IterBinding="TblGlL2View2Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="TblGlL2View2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblGlL2View2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <list IterBinding="TblGlL3View3Iterator" StaticList="false" Uses="LOV_GlL2Id" id="GlL2Id1" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblGlL3View3Iterator" id="GlL3Id">
+      <AttrNames>
+        <Item Value="GlL3Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblGlL3View3Iterator" id="GlL3Name">
+      <AttrNames>
+        <Item Value="GlL3Name"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblGlL3View3Iterator" StaticList="false" Uses="LOV_Ast" id="Ast2" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
     <tree IterBinding="TblGlL3View3Iterator" id="TblGlL3View3">
       <nodeDefinition DefName="model.ERP.VO.TblGlL3View" Name="TblGlL3View30">
         <AttrNames>
@@ -71,6 +111,20 @@
     <action IterBinding="TblGlL3View3Iterator" id="CreateInsert2" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="TblGlL3View3Iterator" id="Execute2" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblGlL3View3Iterator" id="Delete2" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <list IterBinding="TblGlL4View3Iterator" StaticList="false" Uses="LOV_GlL3Id" id="GlL3Id1" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblGlL4View3Iterator" id="GlL4Id">
+      <AttrNames>
+        <Item Value="GlL4Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblGlL4View3Iterator" id="GlL4Name">
+      <AttrNames>
+        <Item Value="GlL4Name"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblGlL4View3Iterator" StaticList="false" Uses="LOV_Ast" id="Ast3" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
     <tree IterBinding="TblGlL4View3Iterator" id="TblGlL4View3">
       <nodeDefinition DefName="model.ERP.VO.TblGlL4View" Name="TblGlL4View30">
         <AttrNames>
@@ -84,80 +138,5 @@
     <action IterBinding="TblGlL4View3Iterator" id="CreateInsert3" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="TblGlL4View3Iterator" id="Execute3" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblGlL4View3Iterator" id="Delete3" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <attributeValues IterBinding="TblGlL2View2Iterator" id="GlL2Id">
-      <AttrNames>
-        <Item Value="GlL2Id"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblGlL2View2Iterator" id="GlL1Id">
-      <AttrNames>
-        <Item Value="GlL1Id"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblGlL2View2Iterator" id="GlL2Name">
-      <AttrNames>
-        <Item Value="GlL2Name"/>
-      </AttrNames>
-    </attributeValues>
-    <list IterBinding="TblGlL2View2Iterator" StaticList="false" Uses="LOV_Ast" id="Ast" DTSupportsMRU="false"
-          SelectItemValueMode="ListObject"/>
-    <action IterBinding="TblGlL2View2Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
-    <action IterBinding="TblGlL2View2Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
-    <action IterBinding="TblGlL2View2Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
-    <action IterBinding="TblGlL2View2Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
-    <list IterBinding="TblGlL2View2Iterator" StaticList="false" Uses="LOV_GlL1Id" id="GlL1Id1" DTSupportsMRU="true"
-          SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblGlL3View3Iterator" StaticList="false" Uses="LOV_GlL2Id" id="GlL2Id1" DTSupportsMRU="false"
-          SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="TblGlL3View3Iterator" id="GlL3Id">
-      <AttrNames>
-        <Item Value="GlL3Id"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblGlL3View3Iterator" id="GlL3Name">
-      <AttrNames>
-        <Item Value="GlL3Name"/>
-      </AttrNames>
-    </attributeValues>
-    <list IterBinding="TblGlL3View3Iterator" StaticList="false" Uses="LOV_Ast" id="Ast1" DTSupportsMRU="false"
-          SelectItemValueMode="ListObject"/>
-    <action IterBinding="TblGlL3View3Iterator" id="First1" RequiresUpdateModel="true" Action="first"/>
-    <action IterBinding="TblGlL3View3Iterator" id="Previous1" RequiresUpdateModel="true" Action="previous"/>
-    <action IterBinding="TblGlL3View3Iterator" id="Next1" RequiresUpdateModel="true" Action="next"/>
-    <action IterBinding="TblGlL3View3Iterator" id="Last1" RequiresUpdateModel="true" Action="last"/>
-    <attributeValues IterBinding="TblGlL4View3Iterator" id="GlL4Id">
-      <AttrNames>
-        <Item Value="GlL4Id"/>
-      </AttrNames>
-    </attributeValues>
-    <list IterBinding="TblGlL4View3Iterator" StaticList="false" Uses="LOV_GlL3Id" id="GlL3Id1" DTSupportsMRU="false"
-          SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="TblGlL4View3Iterator" id="GlL4Name">
-      <AttrNames>
-        <Item Value="GlL4Name"/>
-      </AttrNames>
-    </attributeValues>
-    <list IterBinding="TblGlL4View3Iterator" StaticList="false" Uses="LOV_Ast" id="Ast2" DTSupportsMRU="false"
-          SelectItemValueMode="ListObject"/>
-    <action IterBinding="TblGlL4View3Iterator" id="First2" RequiresUpdateModel="true" Action="first"/>
-    <action IterBinding="TblGlL4View3Iterator" id="Previous2" RequiresUpdateModel="true" Action="previous"/>
-    <action IterBinding="TblGlL4View3Iterator" id="Next2" RequiresUpdateModel="true" Action="next"/>
-    <action IterBinding="TblGlL4View3Iterator" id="Last2" RequiresUpdateModel="true" Action="last"/>
-    <attributeValues IterBinding="TblGlL1View1Iterator" id="GlL1Id2">
-      <AttrNames>
-        <Item Value="GlL1Id"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblGlL1View1Iterator" id="GlL1Name">
-      <AttrNames>
-        <Item Value="GlL1Name"/>
-      </AttrNames>
-    </attributeValues>
-    <list IterBinding="TblGlL1View1Iterator" StaticList="false" Uses="LOV_Ast" id="Ast3" DTSupportsMRU="false"
-          SelectItemValueMode="ListObject"/>
-    <action IterBinding="TblGlL1View1Iterator" id="First3" RequiresUpdateModel="true" Action="first"/>
-    <action IterBinding="TblGlL1View1Iterator" id="Previous3" RequiresUpdateModel="true" Action="previous"/>
-    <action IterBinding="TblGlL1View1Iterator" id="Next3" RequiresUpdateModel="true" Action="next"/>
-    <action IterBinding="TblGlL1View1Iterator" id="Last3" RequiresUpdateModel="true" Action="last"/>
   </bindings>
 </pageDefinition>

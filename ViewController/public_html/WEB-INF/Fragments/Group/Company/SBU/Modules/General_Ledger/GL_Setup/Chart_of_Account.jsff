@@ -37,35 +37,36 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc26">
                       <af:panelTabbed position="above" id="pt7">
                         <af:showDetailItem id="tab4" text="Level 1">
-                                          <af:panelFormLayout id="pfl4">
-              <af:inputText value="#{bindings.GlL1Id2.inputValue}" label="ID"
-                            required="#{bindings.GlL1Id2.hints.mandatory}"
-                            columns="#{bindings.GlL1Id2.hints.displayWidth}"
-                            maximumLength="#{bindings.GlL1Id2.hints.precision}"
-                            shortDesc="#{bindings.GlL1Id2.hints.tooltip}" id="it29" disabled="true"
-                            contentStyle="width:250px;">
-                <f:validator binding="#{bindings.GlL1Id2.validator}"/>
-                <af:convertNumber groupingUsed="false" pattern="#{bindings.GlL1Id2.format}"/>
-              </af:inputText>
+                          <af:panelFormLayout id="pfl4">
+                            <af:inputText value="#{bindings.GlL1Id.inputValue}" label="ID"
+                                          required="#{bindings.GlL1Id.hints.mandatory}"
+                                          columns="#{bindings.GlL1Id.hints.displayWidth}"
+                                          maximumLength="#{bindings.GlL1Id.hints.precision}"
+                                          shortDesc="#{bindings.GlL1Id.hints.tooltip}" id="it29" disabled="true"
+                                          contentStyle="width:250px;">
+                              <f:validator binding="#{bindings.GlL1Id.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.GlL1Id.format}"/>
+                            </af:inputText>
+                            <af:spacer  id="s3"/>
+                            <af:inputText value="#{bindings.GlL1Name.inputValue}"
+                                          label="Level 1"
+                                          required="#{bindings.GlL1Name.hints.mandatory}"
+                                          columns="#{bindings.GlL1Name.hints.displayWidth}"
+                                          maximumLength="#{bindings.GlL1Name.hints.precision}"
+                                          shortDesc="#{bindings.GlL1Name.hints.tooltip}" id="it30"
+                                          contentStyle="width:250px;">
+                              <f:validator binding="#{bindings.GlL1Name.validator}"/>
+                            </af:inputText>
                             <af:spacer  id="s4"/>
-                            <af:inputText value="#{bindings.GlL1Name.inputValue}" label="Level 1"
-                            required="#{bindings.GlL1Name.hints.mandatory}"
-                            columns="#{bindings.GlL1Name.hints.displayWidth}"
-                            maximumLength="#{bindings.GlL1Name.hints.precision}"
-                            shortDesc="#{bindings.GlL1Name.hints.tooltip}" id="it30" contentStyle="width:250px;">
-                <f:validator binding="#{bindings.GlL1Name.validator}"/>
-              </af:inputText>
-              <af:spacer  id="s14"/>
-              
-              <af:selectOneChoice value="#{bindings.Ast3.inputValue}" label="Active"
-                                  required="#{bindings.Ast3.hints.mandatory}" shortDesc="#{bindings.Ast3.hints.tooltip}"
-                                  id="soc14" contentStyle="width:250px;">
-                <f:selectItems value="#{bindings.Ast3.items}" id="si14"/>
-                <f:validator binding="#{bindings.Ast3.validator}"/>
-              </af:selectOneChoice>
-             
-            </af:panelFormLayout>
-            <af:panelGroupLayout id="pgl3" layout="horizontal" halign="center">
+                            <af:selectOneChoice value="#{bindings.Ast.inputValue}" label="Active"
+                                                required="#{bindings.Ast.hints.mandatory}"
+                                                shortDesc="#{bindings.Ast.hints.tooltip}" id="soc14"
+                                                contentStyle="width:250px;">
+                              <f:selectItems value="#{bindings.Ast.items}" id="si14"/>
+                              <f:validator binding="#{bindings.Ast.validator}"/>
+                            </af:selectOneChoice>
+                          </af:panelFormLayout>
+                          <af:panelGroupLayout id="pgl3" layout="horizontal" halign="center">
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -159,16 +160,15 @@
                       <af:panelTabbed position="above" id="pt5">
                         <af:showDetailItem id="tab2" text="Level 2">
                           <af:panelFormLayout id="pfl1">
-                         
-                            <af:selectOneChoice value="#{bindings.GlL1Id1.inputValue}" label="Level 1"
+                          <af:selectOneChoice value="#{bindings.GlL1Id1.inputValue}" label="Level 1"
                                                 required="#{bindings.GlL1Id1.hints.mandatory}"
-                                                shortDesc="#{bindings.GlL1Id1.hints.tooltip}" id="soc6"
+                                                shortDesc="#{bindings.GlL1Id1.hints.tooltip}" id="soc5"
                                                 contentStyle="width:250px;">
-                              <f:selectItems value="#{bindings.GlL1Id1.items}" id="si6"/>
+                              <f:selectItems value="#{bindings.GlL1Id1.items}" id="si5"/>
                               <f:validator binding="#{bindings.GlL1Id1.validator}"/>
                             </af:selectOneChoice>
-                            <af:spacer  id="s7"/>
-                            <af:inputText value="#{bindings.GlL2Id.inputValue}" label="ID" 
+                            <af:spacer  id="s10"/>
+                            <af:inputText value="#{bindings.GlL2Id.inputValue}" label="ID"
                                           required="#{bindings.GlL2Id.hints.mandatory}"
                                           columns="#{bindings.GlL2Id.hints.displayWidth}"
                                           maximumLength="#{bindings.GlL2Id.hints.precision}"
@@ -177,7 +177,8 @@
                               <f:validator binding="#{bindings.GlL2Id.validator}"/>
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.GlL2Id.format}"/>
                             </af:inputText>
-                            <af:spacer  id="s10"/>
+                            <af:spacer  id="s7"/>
+                            
                             <af:inputText value="#{bindings.GlL2Name.inputValue}"
                                           label="Level 2"
                                           required="#{bindings.GlL2Name.hints.mandatory}"
@@ -187,15 +188,14 @@
                                           contentStyle="width:250px;">
                               <f:validator binding="#{bindings.GlL2Name.validator}"/>
                             </af:inputText>
-                            <af:spacer  id="s3"/>
-                            <af:selectOneChoice value="#{bindings.Ast.inputValue}" label="Active"
-                                                required="#{bindings.Ast.hints.mandatory}"
-                                                shortDesc="#{bindings.Ast.hints.tooltip}" id="soc5"
+                            <af:spacer  id="s14"/>
+                            <af:selectOneChoice value="#{bindings.Ast1.inputValue}" label="Active"
+                                                required="#{bindings.Ast1.hints.mandatory}"
+                                                shortDesc="#{bindings.Ast1.hints.tooltip}" id="soc6"
                                                 contentStyle="width:250px;">
-                              <f:selectItems value="#{bindings.Ast.items}" id="si5"/>
-                              <f:validator binding="#{bindings.Ast.validator}"/>
+                              <f:selectItems value="#{bindings.Ast1.items}" id="si6"/>
+                              <f:validator binding="#{bindings.Ast1.validator}"/>
                             </af:selectOneChoice>
-                           
                           </af:panelFormLayout>
                         </af:showDetailItem>
                       </af:panelTabbed>
@@ -313,8 +313,7 @@
                   <af:gridRow marginTop="5px" height="auto" id="gr19">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc19">
                       <af:panelFormLayout id="pfl2">
-                    
-                        <af:selectOneChoice value="#{bindings.GlL2Id1.inputValue}" label="Level 2"
+                       <af:selectOneChoice value="#{bindings.GlL2Id1.inputValue}" label="Level 2"
                                             required="#{bindings.GlL2Id1.hints.mandatory}"
                                             shortDesc="#{bindings.GlL2Id1.hints.tooltip}" id="soc8"
                                             contentStyle="width:250px;">
@@ -341,14 +340,13 @@
                           <f:validator binding="#{bindings.GlL3Name.validator}"/>
                         </af:inputText>
                         <af:spacer  id="s11"/>
-                        <af:selectOneChoice value="#{bindings.Ast1.inputValue}" label="Active"
-                                            required="#{bindings.Ast1.hints.mandatory}"
-                                            shortDesc="#{bindings.Ast1.hints.tooltip}" id="soc9"
-                                            contentStyle="width:250px;">
-                          <f:selectItems value="#{bindings.Ast1.items}" id="si9"/>
-                          <f:validator binding="#{bindings.Ast1.validator}"/>
+                        <af:selectOneChoice value="#{bindings.Ast2.inputValue}" label="Active"
+                                            required="#{bindings.Ast2.hints.mandatory}"
+                                            shortDesc="#{bindings.Ast2.hints.tooltip}" id="soc9"
+                                             contentStyle="width:250px;">
+                          <f:selectItems value="#{bindings.Ast2.items}" id="si9"/>
+                          <f:validator binding="#{bindings.Ast2.validator}"/>
                         </af:selectOneChoice>
-                       
                       </af:panelFormLayout>
                     </af:gridCell>
                   </af:gridRow>
@@ -456,8 +454,7 @@
                   <af:gridRow marginTop="5px" height="auto" id="gr22">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc22">
                       <af:panelFormLayout id="pfl3">
-                    
-                        <af:selectOneChoice value="#{bindings.GlL3Id1.inputValue}" label="Level 3"
+                         <af:selectOneChoice value="#{bindings.GlL3Id1.inputValue}" label="Level 3"
                                             required="#{bindings.GlL3Id1.hints.mandatory}"
                                             shortDesc="#{bindings.GlL3Id1.hints.tooltip}" id="soc11"
                                             contentStyle="width:250px;">
@@ -484,14 +481,13 @@
                           <f:validator binding="#{bindings.GlL4Name.validator}"/>
                         </af:inputText>
                         <af:spacer  id="s13"/>
-                        <af:selectOneChoice value="#{bindings.Ast2.inputValue}" label="Active"
-                                            required="#{bindings.Ast2.hints.mandatory}"
-                                            shortDesc="#{bindings.Ast2.hints.tooltip}" id="soc12"
+                        <af:selectOneChoice value="#{bindings.Ast3.inputValue}" label="Active"
+                                            required="#{bindings.Ast3.hints.mandatory}"
+                                            shortDesc="#{bindings.Ast3.hints.tooltip}" id="soc12"
                                             contentStyle="width:250px;">
-                          <f:selectItems value="#{bindings.Ast2.items}" id="si12"/>
-                          <f:validator binding="#{bindings.Ast2.validator}"/>
+                          <f:selectItems value="#{bindings.Ast3.items}" id="si12"/>
+                          <f:validator binding="#{bindings.Ast3.validator}"/>
                         </af:selectOneChoice>
-                       
                       </af:panelFormLayout>
                     </af:gridCell>
                   </af:gridRow>
