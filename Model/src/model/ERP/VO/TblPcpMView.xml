@@ -13,6 +13,73 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Voucher_Type_LOV1"
+    ViewObjectName="model.LOV.Voucher_Type_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="PBL_Supplier_Name_LOV1"
+    ViewObjectName="model.LOV.PBL_Supplier_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="INV_GRN_Master_LOV1"
+    ViewObjectName="model.LOV.INV_GRN_Master_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Vtp"
+    ListVOName="Voucher_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Vtp"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_PblSuppId"
+    ListVOName="PBL_Supplier_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PblSuppId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_GrnMId"
+    ListVOName="INV_GRN_Master_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GrnMId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Dated"/>
+      <Item Value="Vno"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblPcpM"
     Entity="model.ERP.EO.TblPcpM"/>
@@ -34,7 +101,15 @@
     PrecisionRule="true"
     EntityAttrName="Vtp"
     EntityUsage="TblPcpM"
-    AliasName="VTP"/>
+    AliasName="VTP"
+    LOVName="LOV_Vtp">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Dated"
     PrecisionRule="true"
@@ -52,13 +127,29 @@
     PrecisionRule="true"
     EntityAttrName="PblSuppId"
     EntityUsage="TblPcpM"
-    AliasName="PBL_SUPP_ID"/>
+    AliasName="PBL_SUPP_ID"
+    LOVName="LOV_PblSuppId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="GrnMId"
     PrecisionRule="true"
     EntityAttrName="GrnMId"
     EntityUsage="TblPcpM"
-    AliasName="GRN_M_ID"/>
+    AliasName="GRN_M_ID"
+    LOVName="LOV_GrnMId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"

@@ -13,6 +13,28 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Bank_Cash_B_LOV1"
+    ViewObjectName="model.LOV.Bank_Cash_B_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_BankCashId"
+    ListVOName="Bank_Cash_B_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="BankCashId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblRbrD"
     Entity="model.ERP.EO.TblRbrD"/>
@@ -41,7 +63,15 @@
     PrecisionRule="true"
     EntityAttrName="BankCashId"
     EntityUsage="TblRbrD"
-    AliasName="BANK_CASH_ID"/>
+    AliasName="BANK_CASH_ID"
+    LOVName="LOV_BankCashId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Description"
     PrecisionRule="true"

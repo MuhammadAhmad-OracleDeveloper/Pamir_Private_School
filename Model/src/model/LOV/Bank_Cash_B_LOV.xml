@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Bank_Cash_B_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblBankCash.ID, 
+       TblBankCash.NAME, 
+       TblBankCash.TYPE"
+  FromList="TBL_BANK_CASH TblBankCash"
+  Where="TblBankCash.TYPE='B'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Bank_Cash_B_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblBankCash"
+    Entity="model.ERP.EO.TblBankCash"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblBankCash"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Name"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblBankCash"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="Type"
+    PrecisionRule="true"
+    EntityAttrName="Type"
+    EntityUsage="TblBankCash"
+    AliasName="TYPE"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

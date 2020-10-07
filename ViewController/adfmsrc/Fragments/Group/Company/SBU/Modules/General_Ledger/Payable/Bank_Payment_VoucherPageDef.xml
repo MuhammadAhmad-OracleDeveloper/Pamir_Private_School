@@ -6,12 +6,12 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
-    <iterator Binds="TblBpvMView1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblBpvMView1Iterator"/>
-    <searchRegion Binds="TblBpvMView1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblBpvMView1Query"/>
-    <iterator Binds="TblBpvDView2" RangeSize="8" DataControl="AppModuleDataControl1" id="TblBpvDView2Iterator"/>
-    <searchRegion Binds="TblBpvDView2Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblBpvDView2Query"/>
+    <iterator Binds="TblPbpMView1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblPbpMView1Iterator"/>
+    <searchRegion Binds="TblPbpMView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblPbpMView1Query"/>
+    <iterator Binds="TblPbpDView2" RangeSize="8" DataControl="AppModuleDataControl1" id="TblPbpDView2Iterator"/>
+    <searchRegion Binds="TblPbpDView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblPbpDView2Query"/>
   </executables>
   <bindings>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
@@ -27,63 +27,63 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <attributeValues IterBinding="TblBpvMView1Iterator" id="Id">
+    <attributeValues IterBinding="TblPbpMView1Iterator" id="Id">
       <AttrNames>
         <Item Value="Id"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblBpvMView1Iterator" id="Dated">
-      <AttrNames>
-        <Item Value="Dated"/>
-      </AttrNames>
-    </attributeValues>
-    <list IterBinding="TblBpvMView1Iterator" StaticList="false" Uses="LOV_CompanySbuId" id="CompanySbuId"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblBpvMView1Iterator" StaticList="false" Uses="LOV_PblCustId" id="PblCustId"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="TblBpvMView1Iterator" id="Narration">
-      <AttrNames>
-        <Item Value="Narration"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblBpvMView1Iterator" id="ChqNo">
-      <AttrNames>
-        <Item Value="ChqNo"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblBpvMView1Iterator" id="ChqDate">
-      <AttrNames>
-        <Item Value="ChqDate"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblBpvMView1Iterator" id="ClrDate">
-      <AttrNames>
-        <Item Value="ClrDate"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblBpvMView1Iterator" id="Vno">
+    <attributeValues IterBinding="TblPbpMView1Iterator" id="Vno">
       <AttrNames>
         <Item Value="Vno"/>
       </AttrNames>
     </attributeValues>
-    <list IterBinding="TblBpvMView1Iterator" StaticList="false" Uses="LOV_Vtp" id="Vtp" DTSupportsMRU="false"
+    <list IterBinding="TblPbpMView1Iterator" StaticList="false" Uses="LOV_Vtp" id="Vtp" DTSupportsMRU="false"
           SelectItemValueMode="ListObject"/>
-    <action IterBinding="TblBpvMView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
-    <action IterBinding="TblBpvMView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
-    <action IterBinding="TblBpvMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
-    <action IterBinding="TblBpvMView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
-    <action IterBinding="TblBpvMView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
-    <action IterBinding="TblBpvMView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
-    <action IterBinding="TblBpvMView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <tree IterBinding="TblBpvMView1Iterator" id="TblBpvMView1">
-      <nodeDefinition DefName="model.ERP.VO.TblBpvMView" Name="TblBpvMView10">
+    <attributeValues IterBinding="TblPbpMView1Iterator" id="Dated">
+      <AttrNames>
+        <Item Value="Dated"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPbpMView1Iterator" id="ChqNo">
+      <AttrNames>
+        <Item Value="ChqNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPbpMView1Iterator" id="ChqDate">
+      <AttrNames>
+        <Item Value="ChqDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPbpMView1Iterator" id="ClrDate">
+      <AttrNames>
+        <Item Value="ClrDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPbpMView1Iterator" id="Narration">
+      <AttrNames>
+        <Item Value="Narration"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblPbpMView1Iterator" StaticList="false" Uses="LOV_PblSuppId" id="PblSuppId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblPbpMView1Iterator" StaticList="false" Uses="LOV_GrnMId" id="GrnMId" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <action IterBinding="TblPbpMView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblPbpMView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblPbpMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblPbpMView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblPbpMView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblPbpMView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblPbpMView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblPbpMView1Iterator" id="TblPbpMView1">
+      <nodeDefinition DefName="model.ERP.VO.TblPbpMView" Name="TblPbpMView10">
         <AttrNames>
           <Item Value="Id"/>
           <Item Value="Vno"/>
           <Item Value="Vtp"/>
           <Item Value="Dated"/>
-          <Item Value="CompanySbuId"/>
-          <Item Value="PblCustId"/>
+          <Item Value="PblSuppId"/>
+          <Item Value="GrnMId"/>
           <Item Value="ChqNo"/>
           <Item Value="ChqDate"/>
           <Item Value="ClrDate"/>
@@ -91,20 +91,20 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <tree IterBinding="TblBpvDView2Iterator" id="TblBpvDView2">
-      <nodeDefinition DefName="model.ERP.VO.TblBpvDView" Name="TblBpvDView20">
+    <tree IterBinding="TblPbpDView2Iterator" id="TblPbpDView2">
+      <nodeDefinition DefName="model.ERP.VO.TblPbpDView" Name="TblPbpDView20">
         <AttrNames>
           <Item Value="Id"/>
           <Item Value="SrNo"/>
-          <Item Value="GlL4Id"/>
+          <Item Value="BankCashId"/>
           <Item Value="Description"/>
           <Item Value="Dr"/>
           <Item Value="Cr"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="TblBpvDView2Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
-    <action IterBinding="TblBpvDView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
-    <action IterBinding="TblBpvDView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="TblPbpDView2Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblPbpDView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblPbpDView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

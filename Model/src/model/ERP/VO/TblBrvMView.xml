@@ -21,10 +21,6 @@
     Name="Company_SBU_Name_LOV1"
     ViewObjectName="model.LOV.Company_SBU_Name_LOV"
     RowLevelBinds="true"/>
-  <ViewAccessor
-    Name="Pbl_Customer_Name_LOV1"
-    ViewObjectName="model.LOV.Pbl_Customer_Name_LOV"
-    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
     ListVOName="Voucher_Type_LOV1"
@@ -51,24 +47,6 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="CompanySbuId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_PblCustId"
-    ListVOName="Pbl_Customer_Name_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="PblCustId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -152,20 +130,6 @@
     EntityUsage="TblBrvM"
     AliasName="COMPANY_SBU_ID"
     LOVName="LOV_CompanySbuId">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
-  <ViewAttribute
-    Name="PblCustId"
-    PrecisionRule="true"
-    EntityAttrName="PblCustId"
-    EntityUsage="TblBrvM"
-    AliasName="PBL_CUST_ID"
-    LOVName="LOV_PblCustId">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

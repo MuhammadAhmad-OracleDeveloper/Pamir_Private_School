@@ -6,12 +6,12 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
-    <iterator Binds="TblCrvMView1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblCrvMView1Iterator"/>
-    <searchRegion Binds="TblCrvMView1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblCrvMView1Query"/>
-    <iterator Binds="TblCrvDView2" RangeSize="8" DataControl="AppModuleDataControl1" id="TblCrvDView2Iterator"/>
-    <searchRegion Binds="TblCrvDView2Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblCrvDView2Query"/>
+    <iterator Binds="TblRcrMView1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblRcrMView1Iterator"/>
+    <searchRegion Binds="TblRcrMView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblRcrMView1Query"/>
+    <iterator Binds="TblRcrDView3" RangeSize="8" DataControl="AppModuleDataControl1" id="TblRcrDView3Iterator"/>
+    <searchRegion Binds="TblRcrDView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblRcrDView3Query"/>
   </executables>
   <bindings>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
@@ -27,66 +27,66 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <attributeValues IterBinding="TblCrvMView1Iterator" id="Id">
+    <attributeValues IterBinding="TblRcrMView1Iterator" id="Id">
       <AttrNames>
         <Item Value="Id"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblCrvMView1Iterator" id="Vno">
-      <AttrNames>
-        <Item Value="Vno"/>
-      </AttrNames>
-    </attributeValues>
-    <list IterBinding="TblCrvMView1Iterator" StaticList="false" Uses="LOV_Vtp" id="Vtp" DTSupportsMRU="false"
-          SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="TblCrvMView1Iterator" id="Dated">
+    <attributeValues IterBinding="TblRcrMView1Iterator" id="Dated">
       <AttrNames>
         <Item Value="Dated"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblCrvMView1Iterator" id="Narration">
+    <list IterBinding="TblRcrMView1Iterator" StaticList="false" Uses="LOV_RblCustId" id="RblCustId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblRcrMView1Iterator" StaticList="false" Uses="LOV_SaleInvMId" id="SaleInvMId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblRcrMView1Iterator" id="Narration">
       <AttrNames>
         <Item Value="Narration"/>
       </AttrNames>
     </attributeValues>
-    <list IterBinding="TblCrvMView1Iterator" StaticList="false" Uses="LOV_CompanySbuId" id="CompanySbuId"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblCrvMView1Iterator" StaticList="false" Uses="LOV_PblCustId" id="PblCustId"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <action IterBinding="TblCrvMView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
-    <action IterBinding="TblCrvMView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
-    <action IterBinding="TblCrvMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
-    <action IterBinding="TblCrvMView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
-    <action IterBinding="TblCrvMView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
-    <action IterBinding="TblCrvMView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
-    <action IterBinding="TblCrvMView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <tree IterBinding="TblCrvMView1Iterator" id="TblCrvMView1">
-      <nodeDefinition DefName="model.ERP.VO.TblCrvMView" Name="TblCrvMView10">
+    <attributeValues IterBinding="TblRcrMView1Iterator" id="Vno">
+      <AttrNames>
+        <Item Value="Vno"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblRcrMView1Iterator" StaticList="false" Uses="LOV_Vtp" id="Vtp" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <action IterBinding="TblRcrMView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblRcrMView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblRcrMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblRcrMView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblRcrMView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblRcrMView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblRcrMView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblRcrMView1Iterator" id="TblRcrMView1">
+      <nodeDefinition DefName="model.ERP.VO.TblRcrMView" Name="TblRcrMView10">
         <AttrNames>
           <Item Value="Id"/>
           <Item Value="Vno"/>
           <Item Value="Vtp"/>
           <Item Value="Dated"/>
           <Item Value="Narration"/>
-          <Item Value="CompanySbuId"/>
-          <Item Value="PblCustId"/>
+          <Item Value="RblCustId"/>
+          <Item Value="SaleInvMId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <tree IterBinding="TblCrvDView2Iterator" id="TblCrvDView2">
-      <nodeDefinition DefName="model.ERP.VO.TblCrvDView" Name="TblCrvDView20">
+    <tree IterBinding="TblRcrDView3Iterator" id="TblRcrDView3">
+      <nodeDefinition DefName="model.ERP.VO.TblRcrDView" Name="TblRcrDView30">
         <AttrNames>
           <Item Value="Id"/>
           <Item Value="SrNo"/>
-          <Item Value="GlL4Id"/>
+          <Item Value="BankCashId"/>
           <Item Value="Description"/>
           <Item Value="Dr"/>
           <Item Value="Cr"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="TblCrvDView2Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
-    <action IterBinding="TblCrvDView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
-    <action IterBinding="TblCrvDView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="TblRcrDView3Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblRcrDView3Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblRcrDView3Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>
