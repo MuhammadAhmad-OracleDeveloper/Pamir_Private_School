@@ -26,12 +26,13 @@
 
                         </af:panelGroupLayout>
                         <af:spacer width="20" height="30" id="s15"/>
-                         <!--<af:selectOneChoice label="Select Report Type" id="soc6" autoSubmit="true"
+                         <af:selectOneChoice label="Select Report Type" id="soc6" autoSubmit="true"
                                                 unselectedLabel="Select"
-                                                binding="#{backingBeanScope.StudentDetailBean.report_type}">
-                                <af:selectItem label="Fee Generate Detail" value="FeeGenerateDetail" id="si10"/>
-                                <af:selectItem label="Student Fee Detail" value="StudentFeeDetail" id="si8"/>
-                            </af:selectOneChoice>-->
+                                             binding="#{backingBeanScope.StudentDetailBean.report_type}">
+                                <af:selectItem value="StudentBIOData" label="Student BIO Data" id="si10"/>
+                                <af:selectItem value="StudentDetail" label="Student Detail" id="si8"/>
+                                <af:selectItem value="StudentGradeWise" label="Student Grade Wise" id="si2"/>
+                            </af:selectOneChoice>
                             <af:spacer width="30" height="30" id="s1"/>
                         <af:panelGroupLayout id="pgl4" layout="horizontal">
                             <af:spacer width="20" height="10" id="s16"/>

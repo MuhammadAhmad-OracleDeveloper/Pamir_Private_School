@@ -9,20 +9,21 @@
                 </af:gridRow>
                 <af:gridRow marginTop="5px" height="auto" id="gr2">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
-                        <af:selectOneChoice label="#{bindings.Id.label}"
-                                            binding="#{backingBeanScope.StaffDetailBean.staffID}"
-                                            required="#{bindings.Id.hints.mandatory}"
-                                            shortDesc="#{bindings.Id.hints.tooltip}" id="soc1">
-                            <f:selectItems value="#{bindings.Id.items}" id="si2"/>
-                            <f:validator binding="#{bindings.Id.validator}"/>
+                        <af:selectOneChoice label="Staff"
+                                             binding="#{backingBeanScope.StaffDetailBean.staffID}"
+                                            shortDesc="#{bindings.StaffId.hints.tooltip}" id="soc2">
+                            <f:selectItems value="#{bindings.StaffId.items}" id="si3"/>
+                            <f:validator binding="#{bindings.StaffId.validator}"/>
                         </af:selectOneChoice>
                         <af:spacer width="20" height="30" id="s7"/>
-                        <af:panelGroupLayout id="pgl6">
+                        <!--<af:panelGroupLayout id="pgl6">
                             <af:spacer width="20" height="10" id="s11"/>
+                            
                            
+                            
                             <af:spacer width="20" height="10" id="s12"/>
                            
-                        </af:panelGroupLayout>
+                        </af:panelGroupLayout>-->
                         <af:spacer width="20" height="10" id="s2"/>
                             <af:selectOneChoice label="Select Report Type" id="soc6" autoSubmit="true"
                                                 unselectedLabel="--Select--"

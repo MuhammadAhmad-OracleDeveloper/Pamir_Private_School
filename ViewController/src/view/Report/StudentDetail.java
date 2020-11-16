@@ -14,8 +14,8 @@ public class StudentDetail {
     private static String gotFormat = "";
     private static BigDecimal gotGrade;
     private RichSelectOneChoice gradeID;
-//    private RichSelectOneChoice report_type;
-//    private static String selectedReportType = "";
+    private RichSelectOneChoice report_type;
+    private static String selectedReportType = "";
     public StudentDetail() {
     }
 
@@ -23,7 +23,7 @@ public class StudentDetail {
         // Add event code here...
         gotFormat = (String)this.getFormat_type().getValue();
         gotGrade = (BigDecimal)this.getgradeID().getValue();
-//        selectedReportType = (String) this.getReport_type().getValue();
+        selectedReportType = (String) this.getReport_type().getValue();
         
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
@@ -35,7 +35,27 @@ public class StudentDetail {
                 reportBean.setReportParameter("P_Grade_id", gotGrade.toString());
             }
         
+            switch (selectedReportType) {
+            case "StudentBIOData":
+
+                reportBean.setReportURLName("userid=ppss/ppss@orcl&domain=classicdomain&report=C:/PPSS_Reports/Students_biodata&");
+                break;
+            case "StudentDetail":
+
                 reportBean.setReportURLName("userid=ppss/ppss@orcl&domain=classicdomain&report=C:/PPSS_Reports/Student_Registration_Detail_Report&");
+                break;
+            case "StudentGradeWise":
+
+                reportBean.setReportURLName("userid=ppss/ppss@orcl&domain=classicdomain&report=C:/PPSS_Reports/Students_Biodata_GradeWise&");
+                break;
+
+            
+            default:
+                showMessage("Please Select Report Type");
+                break;
+
+            }
+                
     
         } 
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
@@ -85,4 +105,11 @@ public class StudentDetail {
 //    public RichSelectOneChoice getReport_type() {
 //        return report_type;
 //    }
+    public void setReport_type(RichSelectOneChoice report_type) {
+        this.report_type = report_type;
+    }
+
+    public RichSelectOneChoice getReport_type() {
+        return report_type;
+    }
 }

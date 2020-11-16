@@ -85,9 +85,9 @@ public class StudentLedger {
             showMessage("Please Select Report Format");
         } else { 
             
-    //            if ( gotStudent  != null) {
-    //                reportBean.setReportParameter("P_Std_reg_id", gotStudent.toString());
-    //            }
+                if ( gotStdRegId  != null) {
+                    reportBean.setReportParameter("P_Std_reg_id", gotStdRegId.toString());
+                }
            
          
             switch (selectedReportType) {
