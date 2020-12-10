@@ -945,7 +945,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblFeeGenDetailDView5.rangeSize}"
                           filterModel="#{bindings.TblFeeGenDetailDView5Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblFeeGenDetailDView5Query.processQuery}" varStatus="vs" id="t7"
-                          scrollPolicy="page" autoHeightRows="0">
+                          scrollPolicy="page" autoHeightRows="0" partialTriggers="::b4">
                   <af:column sortProperty="#{bindings.TblFeeGenDetailDView5.hints.Id.name}" filterable="true"
                              sortable="true" headerText="Fee Generation Detail D ID" id="c26" align="center" width="80" visible="false">
                    <f:facet name="filter">
@@ -1039,8 +1039,10 @@
                               </af:inputText>
                             </af:column>
                           </af:table>
-               
-              </af:showDetailItem>
+                          <af:spacer width="10" height="10" id="s8"/>
+                          <af:button actionListener="#{bindings.Delete3.execute}" text="Delete"
+                                     disabled="#{!bindings.Delete3.enabled}" id="b4"/>
+                        </af:showDetailItem>
               <af:showDetailItem text="Fee Generation Detail Discount" id="sdi2">
                           <af:table value="#{bindings.TblFeeGenDetailDiscView3.collectionModel}" var="row"
                           rows="#{bindings.TblFeeGenDetailDiscView3.rangeSize}"
