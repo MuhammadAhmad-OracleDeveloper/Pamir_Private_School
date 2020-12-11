@@ -412,7 +412,130 @@
                     </af:gridCell>
                   </af:gridRow>
                   <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr8">
-                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8"/>
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8">
+                      <af:panelTabbed position="above" id="pt4">
+                        <af:showDetailItem id="tab4" text="Student Enquiry Follow Up">
+                        <af:panelFormLayout id="pfl3" maxColumns="3" rows="6">
+                           <af:inputText value="#{bindings.Id1.inputValue}" label="ID" visible="false"
+                                required="#{bindings.Id1.hints.mandatory}" columns="#{bindings.Id1.hints.displayWidth}"
+                                maximumLength="#{bindings.Id1.hints.precision}" shortDesc="#{bindings.Id1.hints.tooltip}"
+                                id="it33" contentStyle="width:150px;" disabled="true" >
+                    <f:validator binding="#{bindings.Id1.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Id1.format}"/>
+                  </af:inputText>
+                  <af:spacer id="s28"/>
+                  <af:inputDate value="#{bindings.Dated1.inputValue}" label="Follow up Date"
+                                required="#{bindings.Dated1.hints.mandatory}"
+                                columns="#{bindings.Dated1.hints.displayWidth}"
+                                shortDesc="#{bindings.Dated1.hints.tooltip}" id="id2" contentStyle="width:150px;"
+                                disabled="true">
+                    <f:validator binding="#{bindings.Dated1.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.Dated1.format}"/>
+                  </af:inputDate>
+                  <af:spacer  id="s29"/>
+                  <af:selectOneChoice value="#{bindings.StdEnqId1.inputValue}" label="Student Enquiry"
+                                      required="#{bindings.StdEnqId1.hints.mandatory}"
+                                      shortDesc="#{bindings.StdEnqId1.hints.tooltip}" id="soc16" disabled="true"
+                                      contentStyle="width:150px;">
+                    <f:selectItems value="#{bindings.StdEnqId1.items}" id="si16"/>
+                    <f:validator binding="#{bindings.StdEnqId1.validator}"/>
+                  </af:selectOneChoice>
+                  <af:spacer  id="s30"/>
+                  <af:selectOneChoice value="#{bindings.FollowMethod1.inputValue}" label="Follow up Method"
+                                      required="#{bindings.FollowMethod1.hints.mandatory}"
+                                      shortDesc="#{bindings.FollowMethod1.hints.tooltip}" id="soc17" disabled="true"
+                                      contentStyle="width:150px;">
+                    <f:selectItems value="#{bindings.FollowMethod1.items}" id="si17"/>
+                    <f:validator binding="#{bindings.FollowMethod1.validator}"/>
+                  </af:selectOneChoice>
+                  <af:spacer  id="s31"/>
+                  <af:inputText value="#{bindings.SmsContactNo1.inputValue}" label="Sms Contact No."
+                                required="#{bindings.SmsContactNo1.hints.mandatory}"
+                                columns="30"
+                                maximumLength="#{bindings.SmsContactNo1.hints.precision}"
+                                shortDesc="#{bindings.SmsContactNo1.hints.tooltip}" id="it34" contentStyle='text-align: right'
+                                disabled="true">
+                    <f:validator binding="#{bindings.SmsContactNo1.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s32"/>
+                  <af:inputText value="#{bindings.SmsText1.inputValue}" label="Sms Text"
+                                required="#{bindings.SmsText1.hints.mandatory}"
+                                columns="30"
+                                maximumLength="#{bindings.SmsText1.hints.precision}"
+                                shortDesc="#{bindings.SmsText1.hints.tooltip}" id="it35" disabled="true">
+                    <f:validator binding="#{bindings.SmsText1.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s33"/>
+                  <af:inputText value="#{bindings.CallContactNo1.inputValue}"
+                                label="Call Contact No."
+                                required="#{bindings.CallContactNo1.hints.mandatory}"
+                                columns="30"
+                                maximumLength="#{bindings.CallContactNo1.hints.precision}"
+                                shortDesc="#{bindings.CallContactNo1.hints.tooltip}" id="it36" contentStyle='text-align: right'
+                                disabled="true">
+                    <f:validator binding="#{bindings.CallContactNo1.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s34"/>
+                  <af:inputText value="#{bindings.CallContent1.inputValue}" label="Call Content"
+                                required="#{bindings.CallContent1.hints.mandatory}"
+                                columns="30"
+                                maximumLength="#{bindings.CallContent1.hints.precision}"
+                                shortDesc="#{bindings.CallContent1.hints.tooltip}" id="it37" disabled="true">
+                    <f:validator binding="#{bindings.CallContent1.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s35"/>
+                  <af:inputText value="#{bindings.EmailTo1.inputValue}" label="Email To"
+                                required="#{bindings.EmailTo1.hints.mandatory}"
+                                columns="30"
+                                maximumLength="#{bindings.EmailTo1.hints.precision}"
+                                shortDesc="#{bindings.EmailTo1.hints.tooltip}" id="it38" disabled="true">
+                    <f:validator binding="#{bindings.EmailTo1.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s36"/>
+                  <af:inputText value="#{bindings.EmailSubject1.inputValue}" label="Email Subject"
+                                required="#{bindings.EmailSubject1.hints.mandatory}"
+                                columns="30"
+                                maximumLength="#{bindings.EmailSubject1.hints.precision}"
+                                shortDesc="#{bindings.EmailSubject1.hints.tooltip}" id="it39" disabled="true">
+                    <f:validator binding="#{bindings.EmailSubject1.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s37"/>
+                  <af:inputText value="#{bindings.EmailBody1.inputValue}" label="Email Body"
+                                required="#{bindings.EmailBody1.hints.mandatory}"
+                                columns="#{bindings.EmailBody1.hints.displayWidth}"
+                                maximumLength="#{bindings.EmailBody1.hints.precision}"
+                                shortDesc="#{bindings.EmailBody1.hints.tooltip}" id="it40" contentStyle="width:250px;"
+                                disabled="true">
+                    <f:validator binding="#{bindings.EmailBody1.validator}"/>
+                  </af:inputText>
+                            <f:facet name="footer">
+                              <af:panelGroupLayout layout="horizontal" halign="center" id="pgl8">
+                                <af:button actionListener="#{bindings.First2.execute}" text="First"
+                                           disabled="#{!bindings.First2.enabled}" partialSubmit="true" id="b13"/>
+                                <af:button actionListener="#{bindings.Previous2.execute}" text="Previous"
+                                           disabled="#{!bindings.Previous2.enabled}" partialSubmit="true" id="b14"/>
+                                <af:button actionListener="#{bindings.Next2.execute}" text="Next"
+                                           disabled="#{!bindings.Next2.enabled}" partialSubmit="true" id="b15"/>
+                                <af:button actionListener="#{bindings.Last2.execute}" text="Last"
+                                           disabled="#{!bindings.Last2.enabled}" partialSubmit="true" id="b16"/>
+                              </af:panelGroupLayout>
+                            </f:facet>
+                          </af:panelFormLayout>
+                         
+                <!--<af:panelGroupLayout id="pgl9"   layout="horizontal" halign="center">
+                            <af:iterator id="i3" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/sms/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}2"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s27"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>-->
+                        </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
                   </af:gridRow>
                 </af:panelGridLayout>
               </af:showDetailItem>

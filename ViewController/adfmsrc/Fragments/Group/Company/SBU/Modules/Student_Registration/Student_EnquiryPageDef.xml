@@ -4,13 +4,15 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
     <iterator Binds="TblStdEnqView1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblStdEnqView1Iterator"/>
     <searchRegion Binds="TblStdEnqView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStdEnqView1Query"/>
-    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
-              id="USERS_CRUD_OPERATIONS1Iterator"/>
     <iterator Binds="TblEnqFollowUpView1" RangeSize="25" DataControl="AppModuleDataControl1"
               id="TblEnqFollowUpView1Iterator"/>
+    <iterator Binds="TblEnqFollowUpView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblEnqFollowUpView2Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="TblStdEnqView1Iterator" id="TblStdEnqView1">
@@ -211,6 +213,65 @@
     <action IterBinding="TblEnqFollowUpView1Iterator" id="Execute1" RequiresUpdateModel="true"
             Action="iteratorExecute"/>
     <action IterBinding="TblEnqFollowUpView1Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="Id1">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="Dated1">
+      <AttrNames>
+        <Item Value="Dated"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblEnqFollowUpView2Iterator" StaticList="false" Uses="LOV_StdEnqId" id="StdEnqId1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblEnqFollowUpView2Iterator" StaticList="false" Uses="LOV_FollowMethod" id="FollowMethod1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="SmsContactNo1">
+      <AttrNames>
+        <Item Value="SmsContactNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="SmsText1">
+      <AttrNames>
+        <Item Value="SmsText"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="CallContactNo1">
+      <AttrNames>
+        <Item Value="CallContactNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="CallContent1">
+      <AttrNames>
+        <Item Value="CallContent"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="EmailTo1">
+      <AttrNames>
+        <Item Value="EmailTo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="EmailSubject1">
+      <AttrNames>
+        <Item Value="EmailSubject"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="EmailBody1">
+      <AttrNames>
+        <Item Value="EmailBody"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblEnqFollowUpView2Iterator" id="First2" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblEnqFollowUpView2Iterator" id="Previous2" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblEnqFollowUpView2Iterator" id="Next2" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblEnqFollowUpView2Iterator" id="Last2" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblEnqFollowUpView2Iterator" id="CreateInsert2" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblEnqFollowUpView2Iterator" id="Execute2" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblEnqFollowUpView2Iterator" id="Delete2" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>
