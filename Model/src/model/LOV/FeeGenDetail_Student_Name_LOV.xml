@@ -45,6 +45,25 @@
   <EntityUsage
     Name="TblFeeGenDetail"
     Entity="model.ERP.EO.TblFeeGenDetail"/>
+  <EntityUsage
+    Name="TblStdReg"
+    Entity="model.ERP.EO.TblStdReg"
+    Association="model.ERP.EO.FkTblFeeGenDetailFkAssoc"
+    AssociationEnd="model.ERP.EO.FkTblFeeGenDetailFkAssoc.TblStdReg"
+    SourceUsage="model.LOV.FeeGenDetail_Student_Name_LOV.TblFeeGenDetail"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.ERP.EO.TblStdReg.Id"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.ERP.EO.TblFeeGenDetail.StdRegId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
@@ -66,6 +85,33 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="EmirId"
+    PrecisionRule="true"
+    EntityAttrName="EmirId"
+    EntityUsage="TblStdReg"
+    AliasName="EMIR_ID"/>
+  <ViewAttribute
+    Name="Id1"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblStdReg"
+    AliasName="ID1"/>
+  <ViewAttribute
+    Name="FirstName"
+    PrecisionRule="true"
+    EntityAttrName="FirstName"
+    EntityUsage="TblStdReg"
+    AliasName="FIRST_NAME"/>
+  <ViewAttribute
+    Name="LastName"
+    PrecisionRule="true"
+    EntityAttrName="LastName"
+    EntityUsage="TblStdReg"
+    AliasName="LAST_NAME"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id"/>
+  </AttrArray>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

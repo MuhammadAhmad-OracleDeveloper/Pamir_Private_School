@@ -154,7 +154,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblGradeAttDetailView2.rangeSize}"
                           filterModel="#{bindings.TblGradeAttDetailView2Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblGradeAttDetailView2Query.processQuery}" varStatus="vs" id="t2"
-                          scrollPolicy="page" autoHeightRows="0">
+                          scrollPolicy="page" autoHeightRows="0" partialTriggers="::b3">
                   <af:column sortProperty="#{bindings.TblGradeAttDetailView2.hints.StdRegId.name}" filterable="true"
                              sortable="true" headerText="Student"
                              id="c6" width="225">
@@ -189,7 +189,9 @@
                 </af:table>
                 <af:panelGroupLayout id="pgl2" halign="center" layout="horizontal">
                             <af:spacer  height="10" id="s2"/>
-                            <af:iterator id="i1" var="index" varStatus="status"
+                  <af:button actionListener="#{bindings.Execute1.execute}" text="Refresh / Update"
+                             disabled="#{!bindings.Execute1.enabled}" id="b3"/>
+                  <!--<af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/sms/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
@@ -198,7 +200,8 @@
                                 </af:button>
                 
                 <af:spacer width="5" height="10" id="s3"/>
-                            </af:iterator>
+                            </af:iterator>-->
+                            
                         </af:panelGroupLayout>
               </af:showDetailItem>
             </af:panelTabbed>

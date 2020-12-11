@@ -57,7 +57,15 @@ AND TblFeeGenMaster.V_TYPE = 'I'">
   <ViewAccessor
     Name="Terms_Name_LOV1"
     ViewObjectName="model.LOV.Terms_Name_LOV"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getAcadYear">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[AcadYearId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ViewAccessor
     Name="Grade_Name_LOV1"
     ViewObjectName="model.LOV.Grade_Name_LOV"

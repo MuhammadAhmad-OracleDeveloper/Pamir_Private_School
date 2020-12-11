@@ -12,7 +12,8 @@
        TblStdReg.FATHER_NAME, 
        TblStdReg.ENROLL_NO, 
        TblStdReg.AST, 
-       TblStdReg.REG_TYPE"
+       TblStdReg.REG_TYPE, 
+       TblStdReg.EMIR_ID"
   FromList="TBL_STD_REG TblStdReg"
   BindingStyle="OracleName"
   CustomQuery="false"
@@ -70,6 +71,12 @@
     EntityAttrName="RegType"
     EntityUsage="TblStdReg"
     AliasName="REG_TYPE"/>
+  <ViewAttribute
+    Name="EmirId"
+    PrecisionRule="true"
+    EntityAttrName="EmirId"
+    EntityUsage="TblStdReg"
+    AliasName="EMIR_ID"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
