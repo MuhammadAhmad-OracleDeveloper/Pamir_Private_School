@@ -7,6 +7,7 @@ import java.sql.Timestamp;
 import oracle.adf.share.ADFContext;
 
 import oracle.jbo.Key;
+import oracle.jbo.RowIterator;
 import oracle.jbo.domain.Number;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.EntityImpl;
@@ -32,7 +33,8 @@ public class TblCollRecMImpl extends EntityImpl {
         CreatedDate,
         CreatedBy,
         UpdatedDate,
-        UpdatedBy;
+        UpdatedBy,
+        TblCollRecD;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -55,6 +57,8 @@ public class TblCollRecMImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int DATED = AttributesEnum.Dated.index();
     public static final int STDREGID = AttributesEnum.StdRegId.index();
@@ -66,12 +70,21 @@ public class TblCollRecMImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int TBLCOLLRECD = AttributesEnum.TblCollRecD.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblCollRecMImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblCollRecM");
+    }
+
 
     /**
      * Gets the attribute value for Id, using the alias name Id.
@@ -234,19 +247,20 @@ public class TblCollRecMImpl extends EntityImpl {
     }
 
     /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblCollRecD() {
+        return (RowIterator) getAttributeInternal(TBLCOLLRECD);
+    }
+
+
+    /**
      * @param id key constituent
 
      * @return a Key object based on given key constituents.
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblCollRecM");
     }
 
     /**

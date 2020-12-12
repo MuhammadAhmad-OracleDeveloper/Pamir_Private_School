@@ -130,6 +130,13 @@
     AssociationOtherEnd="model.ERP.EO.FkCollRecDMAssoc.TblCollRecD"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblCollRecM"
+    Association="model.ERP.EO.FkTblCollRecDFkAssoc"
+    AssociationEnd="model.ERP.EO.FkTblCollRecDFkAssoc.TblCollRecM"
+    AssociationOtherEnd="model.ERP.EO.FkTblCollRecDFkAssoc.TblCollRecD"
+    Type="model.ERP.EO.TblCollRecMImpl"
+    IsUpdateable="true"/>
   <Key
     Name="PkCollRecD"
     PrimaryKey="true">
@@ -149,6 +156,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.ERP.EO.TblCollRecD.CollTypeId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_TblCollRecD">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_COLL_REC_M"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_TBL_COLL_REC_D"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblCollRecD.CollRecMId"/>
     </AttrArray>
   </Key>
 </Entity>

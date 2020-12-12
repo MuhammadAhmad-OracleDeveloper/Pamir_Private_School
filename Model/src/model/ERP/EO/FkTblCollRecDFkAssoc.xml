@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkTblCollRecDFkAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblCollRecM"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.EO.TblCollRecM"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblCollRecM"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblCollRecM.PkCollRecM"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblCollRecM.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblCollRecD"
+    Cardinality="-1"
+    Owner="model.ERP.EO.TblCollRecD">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblCollRecD"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblCollRecD.fk_TblCollRecD"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblCollRecD.CollRecMId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

@@ -105,6 +105,13 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_COLL_REC_M"/>
+  <AccessorAttribute
+    Name="TblCollRecD"
+    Association="model.ERP.EO.FkTblCollRecDFkAssoc"
+    AssociationEnd="model.ERP.EO.FkTblCollRecDFkAssoc.TblCollRecD"
+    AssociationOtherEnd="model.ERP.EO.FkTblCollRecDFkAssoc.TblCollRecM"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkCollRecM"
     PrimaryKey="true">

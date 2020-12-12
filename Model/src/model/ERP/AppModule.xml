@@ -1168,6 +1168,9 @@
   <ViewUsage
     Name="TblDailyAssessDView3"
     ViewObjectName="model.ERP.VO.TblDailyAssessDView"/>
+  <ViewUsage
+    Name="TblCollRecDView3"
+    ViewObjectName="model.ERP.VO.TblCollRecDView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -2319,5 +2322,11 @@
     ViewLinkObjectName="model.ERP.VO.FkDailyAssessDMLink"
     SrcViewUsageName="model.ERP.AppModule.TblDailyAssessMView1"
     DstViewUsageName="model.ERP.AppModule.TblDailyAssessDView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblCollRecDFkLink1"
+    ViewLinkObjectName="model.ERP.VO.FkTblCollRecDFkLink"
+    SrcViewUsageName="model.ERP.AppModule.TblCollRecMView1"
+    DstViewUsageName="model.ERP.AppModule.TblCollRecDView3"
     Reversed="false"/>
 </AppModule>

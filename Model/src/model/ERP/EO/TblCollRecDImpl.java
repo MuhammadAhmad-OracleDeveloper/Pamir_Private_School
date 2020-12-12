@@ -34,7 +34,8 @@ public class TblCollRecDImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
-        TblCollType;
+        TblCollType,
+        TblCollRecM;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -57,6 +58,8 @@ public class TblCollRecDImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int COLLRECMID = AttributesEnum.CollRecMId.index();
     public static final int COLLTYPEID = AttributesEnum.CollTypeId.index();
@@ -70,12 +73,21 @@ public class TblCollRecDImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int TBLCOLLTYPE = AttributesEnum.TblCollType.index();
+    public static final int TBLCOLLRECM = AttributesEnum.TblCollRecM.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblCollRecDImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblCollRecD");
+    }
+
 
     /**
      * Gets the attribute value for Id, using the alias name Id.
@@ -256,16 +268,31 @@ public class TblCollRecDImpl extends EntityImpl {
     /**
      * @return the associated entity TblCollTypeImpl.
      */
-    public TblCollTypeImpl getTblCollType() {
-        return (TblCollTypeImpl) getAttributeInternal(TBLCOLLTYPE);
+    public EntityImpl getTblCollType() {
+        return (EntityImpl) getAttributeInternal(TBLCOLLTYPE);
     }
 
     /**
      * Sets <code>value</code> as the associated entity TblCollTypeImpl.
      */
-    public void setTblCollType(TblCollTypeImpl value) {
+    public void setTblCollType(EntityImpl value) {
         setAttributeInternal(TBLCOLLTYPE, value);
     }
+
+    /**
+     * @return the associated entity TblCollRecMImpl.
+     */
+    public TblCollRecMImpl getTblCollRecM() {
+        return (TblCollRecMImpl) getAttributeInternal(TBLCOLLRECM);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity TblCollRecMImpl.
+     */
+    public void setTblCollRecM(TblCollRecMImpl value) {
+        setAttributeInternal(TBLCOLLRECM, value);
+    }
+
 
     /**
      * @param id key constituent
@@ -274,13 +301,6 @@ public class TblCollRecDImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblCollRecD");
     }
 
     /**
