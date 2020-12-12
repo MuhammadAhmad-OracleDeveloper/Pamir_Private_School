@@ -1141,6 +1141,33 @@
   <ViewUsage
     Name="TblRcrDView3"
     ViewObjectName="model.ERP.VO.TblRcrDView"/>
+  <ViewUsage
+    Name="TblCollRecDView1"
+    ViewObjectName="model.ERP.VO.TblCollRecDView"/>
+  <ViewUsage
+    Name="TblCollRecMView1"
+    ViewObjectName="model.ERP.VO.TblCollRecMView"/>
+  <ViewUsage
+    Name="TblCollTypeView1"
+    ViewObjectName="model.ERP.VO.TblCollTypeView"/>
+  <ViewUsage
+    Name="TblDailyAssessDView1"
+    ViewObjectName="model.ERP.VO.TblDailyAssessDView"/>
+  <ViewUsage
+    Name="TblDailyAssessGradesView1"
+    ViewObjectName="model.ERP.VO.TblDailyAssessGradesView"/>
+  <ViewUsage
+    Name="TblDailyAssessMView1"
+    ViewObjectName="model.ERP.VO.TblDailyAssessMView"/>
+  <ViewUsage
+    Name="TblCollRecDView2"
+    ViewObjectName="model.ERP.VO.TblCollRecDView"/>
+  <ViewUsage
+    Name="TblDailyAssessDView2"
+    ViewObjectName="model.ERP.VO.TblDailyAssessDView"/>
+  <ViewUsage
+    Name="TblDailyAssessDView3"
+    ViewObjectName="model.ERP.VO.TblDailyAssessDView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -2274,5 +2301,23 @@
     ViewLinkObjectName="model.ERP.VO.FkRcrDMLink"
     SrcViewUsageName="model.ERP.AppModule.TblRcrMView1"
     DstViewUsageName="model.ERP.AppModule.TblRcrDView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkCollRecDMLink1"
+    ViewLinkObjectName="model.ERP.VO.FkCollRecDMLink"
+    SrcViewUsageName="model.ERP.AppModule.TblCollTypeView1"
+    DstViewUsageName="model.ERP.AppModule.TblCollRecDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkDailyAssessDGradeLink1"
+    ViewLinkObjectName="model.ERP.VO.FkDailyAssessDGradeLink"
+    SrcViewUsageName="model.ERP.AppModule.TblDailyAssessGradesView1"
+    DstViewUsageName="model.ERP.AppModule.TblDailyAssessDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkDailyAssessDMLink1"
+    ViewLinkObjectName="model.ERP.VO.FkDailyAssessDMLink"
+    SrcViewUsageName="model.ERP.AppModule.TblDailyAssessMView1"
+    DstViewUsageName="model.ERP.AppModule.TblDailyAssessDView3"
     Reversed="false"/>
 </AppModule>

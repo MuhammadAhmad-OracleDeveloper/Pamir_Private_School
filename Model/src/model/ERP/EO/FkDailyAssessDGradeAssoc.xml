@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkDailyAssessDGradeAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblDailyAssessGrades"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.EO.TblDailyAssessGrades">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblDailyAssessGrades"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblDailyAssessGrades.PkDailyAssessGrades"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblDailyAssessGrades.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblDailyAssessD"
+    Cardinality="-1"
+    Owner="model.ERP.EO.TblDailyAssessD">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblDailyAssessD"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblDailyAssessD.FkDailyAssessDGrade"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblDailyAssessD.DailyAssessGradesId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>
