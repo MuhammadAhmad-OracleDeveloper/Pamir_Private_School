@@ -1,2 +1,109 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"></ui:composition>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Assessment Type">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Assessment Type">
+                <af:table value="#{bindings.TblDailyAssessGradesView1.collectionModel}" var="row"
+                          rows="#{bindings.TblDailyAssessGradesView1.rangeSize}"
+                          emptyText="#{bindings.TblDailyAssessGradesView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblDailyAssessGradesView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblDailyAssessGradesView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblDailyAssessGradesView1.rangeSize}"
+                          filterModel="#{bindings.TblDailyAssessGradesView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblDailyAssessGradesView1Query.processQuery}" varStatus="vs"
+                          id="t1" scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblDailyAssessGradesView1.hints.Id.name}" filterable="true"
+                             sortable="true" headerText="ID" id="c1" visible="false">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="id4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblDailyAssessGradesView1.hints.Id.label}"
+                                  required="#{bindings.TblDailyAssessGradesView1.hints.Id.mandatory}"
+                                  columns="#{bindings.TblDailyAssessGradesView1.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblDailyAssessGradesView1.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblDailyAssessGradesView1.hints.Id.tooltip}" id="it1" readOnly="true">
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblDailyAssessGradesView1.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblDailyAssessGradesView1.hints.Name.name}" filterable="true"
+                             sortable="true" headerText="Assessment Type"
+                             id="c2" width="300">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Name}"
+       id="it3" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Name.inputValue}"
+                                  label="#{bindings.TblDailyAssessGradesView1.hints.Name.label}"
+                                  required="#{bindings.TblDailyAssessGradesView1.hints.Name.mandatory}"
+                                  columns="#{bindings.TblDailyAssessGradesView1.hints.Name.displayWidth}"
+                                  maximumLength="#{bindings.TblDailyAssessGradesView1.hints.Name.precision}"
+                                  shortDesc="#{bindings.TblDailyAssessGradesView1.hints.Name.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.Name.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblDailyAssessGradesView1.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="Active" id="c3">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ast}"
+       id="it4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblDailyAssessGradesView1.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblDailyAssessGradesView1.hints.Ast.tooltip}" id="soc1">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+                
+                <af:panelGroupLayout id="pgl3"  halign="center" layout="horizontal">
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/sms/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s5"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+       
+        
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>
+
+
