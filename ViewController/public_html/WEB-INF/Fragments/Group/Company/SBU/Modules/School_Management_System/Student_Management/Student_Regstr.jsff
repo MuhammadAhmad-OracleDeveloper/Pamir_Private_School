@@ -43,25 +43,8 @@
                                           queryListener="#{bindings.TblStdRegView1Query.processQuery}" varStatus="vs"
                                           id="t1" scrollPolicy="page" autoHeightRows="0"
                                           partialTriggers="::b3 ::b4 ::b5 ::b11">
-                                    <af:column sortProperty="#{bindings.TblStdRegView1.hints.Id.name}" filterable="true"
-                                               sortable="true" headerText="Student Registration ID" id="c1"
-                                               align="right" width="80" visible="false">
-                                        <f:facet name="filter">
-                                            <af:inputText value="#{vs.filterCriteria.Id}" id="id4"
-                                                          placeholder="Search "></af:inputText>
-                                        </f:facet>
-                                        <af:inputText value="#{row.bindings.Id.inputValue}"
-                                                      label="#{bindings.TblStdRegView1.hints.Id.label}"
-                                                      required="#{bindings.TblStdRegView1.hints.Id.mandatory}"
-                                                      columns="#{bindings.TblStdRegView1.hints.Id.displayWidth}"
-                                                      maximumLength="#{bindings.TblStdRegView1.hints.Id.precision}"
-                                                      shortDesc="#{bindings.TblStdRegView1.hints.Id.tooltip}" id="it1"
-                                                      readOnly="true" contentStyle='text-align: center'>
-                                            <f:validator binding="#{row.bindings.Id.validator}"/>
-                                            <af:convertNumber groupingUsed="false"
-                                                              pattern="#{bindings.TblStdRegView1.hints.Id.format}"/>
-                                        </af:inputText>
-                                    </af:column>
+                                          
+                  
                                     <af:column sortProperty="#{bindings.TblStdRegView1.hints.GradeId.name}"
                                                filterable="true" sortable="true" headerText="Grade" id="c7"
                                                align="left">
@@ -330,6 +313,22 @@
                                             <f:validator binding="#{row.bindings.Ast.validator}"/>
                                         </af:selectOneChoice>
                                     </af:column>
+                                    
+                                    
+                                    
+                                    <af:column sortProperty="#{bindings.TblStdRegView1.hints.Id.name}" 
+                                    filterable="true" sortable="true" align="center"
+                             headerText="Get Report" id="c1">
+                    <af:link shortDesc="#{bindings.TblStdRegView1.hints.Id.tooltip}" id="l1"
+                    icon="#{resource['images:get_report.png']}"
+                             actionListener="#{backingBeanScope.VoucherPrintBean.getStdRegReport}">
+                   <f:attribute name="sendStdRegID" value="#{row.bindings.Id.inputValue}"/>
+                </af:link>
+                  </af:column>
+                                    
+                                    
+                                    
+                                    
                                 </af:table>
                                 <af:panelGroupLayout id="pgl3" layout="horizontal" halign="center">
                                     <af:iterator id="i2" var="index" varStatus="status"

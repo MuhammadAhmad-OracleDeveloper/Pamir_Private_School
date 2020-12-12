@@ -42,18 +42,11 @@
                                           filterVisible="true"
                                           queryListener="#{bindings.TblStaffView1Query.processQuery}" varStatus="vs"
                                           id="t1" scrollPolicy="page" autoHeightRows="0">
-                                    <af:column headerText="#{bindings.TblStaffView1.hints.Id.label}" id="c1">
-                                        <af:inputText value="#{row.bindings.Id.inputValue}" readOnly="true"
-                                                      label="#{bindings.TblStaffView1.hints.Id.label}"
-                                                      required="#{bindings.TblStaffView1.hints.Id.mandatory}"
-                                                      columns="#{bindings.TblStaffView1.hints.Id.displayWidth}"
-                                                      maximumLength="#{bindings.TblStaffView1.hints.Id.precision}"
-                                                      shortDesc="#{bindings.TblStaffView1.hints.Id.tooltip}" id="it15">
-                                            <f:validator binding="#{row.bindings.Id.validator}"/>
-                                            <af:convertNumber groupingUsed="false"
-                                                              pattern="#{bindings.TblStaffView1.hints.Id.format}"/>
-                                        </af:inputText>
-                                    </af:column>
+                                    
+                                    
+                                       
+                                    
+                                    
                                     <af:column sortProperty="#{bindings.TblStaffView1.hints.Dated.name}"
                                                filterable="true" sortable="true"
                                                headerText="Dated" id="c2">
@@ -164,6 +157,17 @@
                                             <f:validator binding="#{row.bindings.Ast.validator}"/>
                                         </af:selectOneChoice>
                                     </af:column>
+                                    
+                                    <af:column sortProperty="#{bindings.TblStaffView1.hints.Id.name}" 
+                                    filterable="true" sortable="true" align="center"
+                             headerText="Get Report" id="c1">
+                    <af:link shortDesc="#{bindings.TblStaffView1.hints.Id.tooltip}" id="l1"
+                    icon="#{resource['images:get_report.png']}"
+                             actionListener="#{backingBeanScope.VoucherPrintBean.getStaffReport}">
+                   <f:attribute name="sendStaffID" value="#{row.bindings.Id.inputValue}"/>
+                </af:link>
+                  </af:column>
+                  
                                 </af:table>
                          <af:panelGroupLayout id="pgl3" halign="center" layout="horizontal">
                             <af:iterator id="i2" var="index" varStatus="status"
