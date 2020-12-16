@@ -6,6 +6,14 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblCollRecMView1" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblCollRecMView1Iterator"/>
+    <searchRegion Binds="TblCollRecMView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblCollRecMView1Query"/>
+    <iterator Binds="TblCollRecDView3" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblCollRecDView3Iterator"/>
+    <searchRegion Binds="TblCollRecDView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblCollRecDView3Query"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -19,5 +27,41 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <tree IterBinding="TblCollRecMView1Iterator" id="TblCollRecMView1">
+      <nodeDefinition DefName="model.ERP.VO.TblCollRecMView" Name="TblCollRecMView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="StdRegId"/>
+          <Item Value="GradeId"/>
+          <Item Value="SectionsId"/>
+          <Item Value="AcadYearId"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblCollRecMView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblCollRecMView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblCollRecMView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblCollRecDView3Iterator" id="TblCollRecDView3">
+      <nodeDefinition DefName="model.ERP.VO.TblCollRecDView" Name="TblCollRecDView30">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="CollTypeId"/>
+          <Item Value="ChqNo"/>
+          <Item Value="ChqDate"/>
+          <Item Value="Bank"/>
+          <Item Value="Amount"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblCollRecDView3Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblCollRecDView3Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblCollRecDView3Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

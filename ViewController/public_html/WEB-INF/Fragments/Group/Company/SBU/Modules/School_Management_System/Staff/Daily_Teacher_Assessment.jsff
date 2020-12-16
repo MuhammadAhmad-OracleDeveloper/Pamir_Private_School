@@ -29,9 +29,160 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                       <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab2" text="Daily Teacher Assessment Master">
+                          <af:table value="#{bindings.TblDailyAssessMView1.collectionModel}" var="row"
+                                    rows="#{bindings.TblDailyAssessMView1.rangeSize}"
+                                    emptyText="#{bindings.TblDailyAssessMView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblDailyAssessMView1.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblDailyAssessMView1.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblDailyAssessMView1.rangeSize}"
+                                    filterModel="#{bindings.TblDailyAssessMView1Query.queryDescriptor}"
+                                    filterVisible="true"
+                                    queryListener="#{bindings.TblDailyAssessMView1Query.processQuery}" varStatus="vs"
+                                    id="t1" scrollPolicy="page" autoHeightRows="0">
+                            <af:column sortProperty="#{bindings.TblDailyAssessMView1.hints.Id.name}" filterable="true"
+                                       sortable="true" headerText="ID"
+                                       id="c1" visible="false" >
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="id4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Id.inputValue}"
+                                            label="#{bindings.TblDailyAssessMView1.hints.Id.label}"
+                                            required="#{bindings.TblDailyAssessMView1.hints.Id.mandatory}"
+                                            columns="#{bindings.TblDailyAssessMView1.hints.Id.displayWidth}"
+                                            maximumLength="#{bindings.TblDailyAssessMView1.hints.Id.precision}"
+                                            shortDesc="#{bindings.TblDailyAssessMView1.hints.Id.tooltip}" id="it1" readOnly="true">
+                                <f:validator binding="#{row.bindings.Id.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblDailyAssessMView1.hints.Id.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblDailyAssessMView1.hints.Dated.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Date" id="c2">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.TblDailyAssessMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                              id="id1" placeholder="Search ">
+                                  <af:convertDateTime pattern="#{bindings.TblDailyAssessMView1.hints.Dated.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                            label="#{bindings.TblDailyAssessMView1.hints.Dated.label}"
+                                            required="#{bindings.TblDailyAssessMView1.hints.Dated.mandatory}"
+                                            columns="#{bindings.TblDailyAssessMView1.hints.Dated.displayWidth}"
+                                            shortDesc="#{bindings.TblDailyAssessMView1.hints.Dated.tooltip}" id="id2">
+                                <f:validator binding="#{row.bindings.Dated.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblDailyAssessMView1.hints.Dated.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblDailyAssessMView1.hints.AcadYearId.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Academic year" id="c3">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.AcadYearId}"
+       id="it5" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.AcadYearId.inputValue}"
+                                                  label="#{row.bindings.AcadYearId.label}"
+                                                  required="#{bindings.TblDailyAssessMView1.hints.AcadYearId.mandatory}"
+                                                  shortDesc="#{bindings.TblDailyAssessMView1.hints.AcadYearId.tooltip}"
+                                                  id="soc1">
+                                <f:selectItems value="#{row.bindings.AcadYearId.items}" id="si1"/>
+                                <f:validator binding="#{row.bindings.AcadYearId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblDailyAssessMView1.hints.GradeId.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Grade" id="c4">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.GradeId}"
+       id="it6" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.GradeId.inputValue}"
+                                                  label="#{row.bindings.GradeId.label}"
+                                                  required="#{bindings.TblDailyAssessMView1.hints.GradeId.mandatory}"
+                                                  shortDesc="#{bindings.TblDailyAssessMView1.hints.GradeId.tooltip}"
+                                                  id="soc2">
+                                <f:selectItems value="#{row.bindings.GradeId.items}" id="si2"/>
+                                <f:validator binding="#{row.bindings.GradeId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblDailyAssessMView1.hints.SectionsId.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Section" id="c5">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.SectionsId}"
+       id="it7" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.SectionsId.inputValue}"
+                                                  label="#{row.bindings.SectionsId.label}"
+                                                  required="#{bindings.TblDailyAssessMView1.hints.SectionsId.mandatory}"
+                                                  shortDesc="#{bindings.TblDailyAssessMView1.hints.SectionsId.tooltip}"
+                                                  id="soc3">
+                                <f:selectItems value="#{row.bindings.SectionsId.items}" id="si3"/>
+                                <f:validator binding="#{row.bindings.SectionsId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblDailyAssessMView1.hints.StaffId.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Staff" id="c6" width="300">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.StaffId}"
+       id="it8" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.StaffId.inputValue}"
+                                                  label="#{row.bindings.StaffId.label}"
+                                                  required="#{bindings.TblDailyAssessMView1.hints.StaffId.mandatory}"
+                                                  shortDesc="#{bindings.TblDailyAssessMView1.hints.StaffId.tooltip}"
+                                                  id="soc4">
+                                <f:selectItems value="#{row.bindings.StaffId.items}" id="si4"/>
+                                <f:validator binding="#{row.bindings.StaffId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblDailyAssessMView1.hints.SubjectId.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Subject" id="c7">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.SubjectId}"
+       id="it9" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.SubjectId.inputValue}"
+                                                  label="#{row.bindings.SubjectId.label}"
+                                                  required="#{bindings.TblDailyAssessMView1.hints.SubjectId.mandatory}"
+                                                  shortDesc="#{bindings.TblDailyAssessMView1.hints.SubjectId.tooltip}"
+                                                  id="soc5">
+                                <f:selectItems value="#{row.bindings.SubjectId.items}" id="si5"/>
+                                <f:validator binding="#{row.bindings.SubjectId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblDailyAssessMView1.hints.Ast.name}" filterable="true"
+                                       sortable="true" headerText="Active"
+                                       id="c8">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ast}"
+       id="it10" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                  label="#{row.bindings.Ast.label}"
+                                                  required="#{bindings.TblDailyAssessMView1.hints.Ast.mandatory}"
+                                                  shortDesc="#{bindings.TblDailyAssessMView1.hints.Ast.tooltip}"
+                                                  id="soc6">
+                                <f:selectItems value="#{row.bindings.Ast.items}" id="si6"/>
+                                <f:validator binding="#{row.bindings.Ast.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                          </af:table>
+                          
                           <af:spacer width="5" height="10" id="s4"/>
-                        
-			<af:panelGroupLayout id="pgl3"  halign="center" layout="horizontal">
+                          <af:panelGroupLayout id="pgl3"  halign="center" layout="horizontal">
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -55,6 +206,128 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
                       <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab3" text="Daily Teacher Assessment Detail">
+                          <af:table value="#{bindings.TblDailyAssessDView3.collectionModel}" var="row"
+                                    rows="#{bindings.TblDailyAssessDView3.rangeSize}"
+                                    emptyText="#{bindings.TblDailyAssessDView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblDailyAssessDView3.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblDailyAssessDView3.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblDailyAssessDView3.rangeSize}"
+                                    filterModel="#{bindings.TblDailyAssessDView3Query.queryDescriptor}"
+                                    filterVisible="true"
+                                    queryListener="#{bindings.TblDailyAssessDView3Query.processQuery}" varStatus="vs"
+                                    id="t2" scrollPolicy="page" autoHeightRows="0">
+                            <af:column sortProperty="#{bindings.TblDailyAssessDView3.hints.Id.name}" filterable="true"
+                                       sortable="true" headerText="ID"
+                                       id="c9" visible="false">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="it11" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Id.inputValue}"
+                                            label="#{bindings.TblDailyAssessDView3.hints.Id.label}"
+                                            required="#{bindings.TblDailyAssessDView3.hints.Id.mandatory}"
+                                            columns="#{bindings.TblDailyAssessDView3.hints.Id.displayWidth}"
+                                            maximumLength="#{bindings.TblDailyAssessDView3.hints.Id.precision}"
+                                            shortDesc="#{bindings.TblDailyAssessDView3.hints.Id.tooltip}" id="it2" readOnly="true">
+                                <f:validator binding="#{row.bindings.Id.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblDailyAssessDView3.hints.Id.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblDailyAssessDView3.hints.DailyAssessGradesId.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Assessment Type"
+                                       id="c10">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.DailyAssessGradesId}"
+       id="it12" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.DailyAssessGradesId.inputValue}"
+                                                  label="#{row.bindings.DailyAssessGradesId.label}"
+                                                  required="#{bindings.TblDailyAssessDView3.hints.DailyAssessGradesId.mandatory}"
+                                                  shortDesc="#{bindings.TblDailyAssessDView3.hints.DailyAssessGradesId.tooltip}"
+                                                  id="soc7">
+                                <f:selectItems value="#{row.bindings.DailyAssessGradesId.items}" id="si7"/>
+                                <f:validator binding="#{row.bindings.DailyAssessGradesId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblDailyAssessDView3.hints.StdRegId.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Student" id="c11" width="300">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.StdRegId}"
+       id="it13" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.StdRegId.inputValue}"
+                                                  label="#{row.bindings.StdRegId.label}"
+                                                  required="#{bindings.TblDailyAssessDView3.hints.StdRegId.mandatory}"
+                                                  shortDesc="#{bindings.TblDailyAssessDView3.hints.StdRegId.tooltip}"
+                                                  id="soc8">
+                                <f:selectItems value="#{row.bindings.StdRegId.items}" id="si8"/>
+                                <f:validator binding="#{row.bindings.StdRegId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblDailyAssessDView3.hints.TeacherRemarks.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Teacher Remarks"
+                                       id="c12" width="300">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.TeacherRemarks}"
+       id="it14" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.TeacherRemarks.inputValue}"
+                                            label="#{bindings.TblDailyAssessDView3.hints.TeacherRemarks.label}"
+                                            required="#{bindings.TblDailyAssessDView3.hints.TeacherRemarks.mandatory}"
+                                            columns="#{bindings.TblDailyAssessDView3.hints.TeacherRemarks.displayWidth}"
+                                            maximumLength="#{bindings.TblDailyAssessDView3.hints.TeacherRemarks.precision}"
+                                            shortDesc="#{bindings.TblDailyAssessDView3.hints.TeacherRemarks.tooltip}"
+                                            id="it3">
+                                <f:validator binding="#{row.bindings.TeacherRemarks.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblDailyAssessDView3.hints.PrincipalRemarks.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Principal Remarks"
+                                       id="c13" width="300">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.PrincipalRemarks}"
+       id="it15" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.PrincipalRemarks.inputValue}"
+                                            label="#{bindings.TblDailyAssessDView3.hints.PrincipalRemarks.label}"
+                                            required="#{bindings.TblDailyAssessDView3.hints.PrincipalRemarks.mandatory}"
+                                            columns="#{bindings.TblDailyAssessDView3.hints.PrincipalRemarks.displayWidth}"
+                                            maximumLength="#{bindings.TblDailyAssessDView3.hints.PrincipalRemarks.precision}"
+                                            shortDesc="#{bindings.TblDailyAssessDView3.hints.PrincipalRemarks.tooltip}"
+                                            id="it4">
+                                <f:validator binding="#{row.bindings.PrincipalRemarks.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblDailyAssessDView3.hints.Ast.name}" filterable="true"
+                                       sortable="true" headerText="Active"
+                                       id="c14">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ast}"
+       id="it16" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                  label="#{row.bindings.Ast.label}"
+                                                  required="#{bindings.TblDailyAssessDView3.hints.Ast.mandatory}"
+                                                  shortDesc="#{bindings.TblDailyAssessDView3.hints.Ast.tooltip}"
+                                                  id="soc9">
+                                <f:selectItems value="#{row.bindings.Ast.items}" id="si9"/>
+                                <f:validator binding="#{row.bindings.Ast.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                          </af:table>
+                          
                           <af:spacer width="5" height="10" id="s3"/>
                          <af:panelGroupLayout id="pgl5"  halign="center" layout="horizontal">
                             <af:iterator id="i1" var="index" varStatus="status"
@@ -62,7 +335,7 @@
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/sms/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s2"/>
                             </af:iterator>
@@ -77,7 +350,6 @@
                   </af:gridRow>
                 </af:panelGridLayout>
               </af:showDetailItem>
-              <af:showDetailItem text="Serach" id="sdi1"/>
             </af:panelTabbed>
           </af:gridCell>
         </af:gridRow>
