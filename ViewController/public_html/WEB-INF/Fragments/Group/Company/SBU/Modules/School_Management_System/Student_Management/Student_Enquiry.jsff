@@ -703,6 +703,29 @@
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
+                  <af:column headerText="#{bindings.TblStdEnqView12.hints.Id.label}" id="c17">
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblStdEnqView12.hints.Id.label}"
+                                  required="#{bindings.TblStdEnqView12.hints.Id.mandatory}"
+                                  columns="#{bindings.TblStdEnqView12.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblStdEnqView12.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblStdEnqView12.hints.Id.tooltip}" id="it41">
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblStdEnqView12.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  
+                  
+                    <af:column sortProperty="#{bindings.TblStdEnqView12.hints.Id.name}" 
+                                    filterable="true" sortable="true" align="center"
+                             headerText="Get Report" id="c19">
+                    <af:link shortDesc="#{bindings.TblStdEnqView12.hints.Id.tooltip}" id="l1"
+                    icon="#{resource['images:get_report.png']}"
+                             actionListener="#{backingBeanScope.VoucherPrintBean.getStdEnqReport}">
+                   <f:attribute name="sendStdEnqID" value="#{row.bindings.Id.inputValue}"/>
+                </af:link>
+                  </af:column>
+                  
                 </af:table>
                 <af:spacer width="10" height="30" id="s4"/>
                 <af:button actionListener="#{bindings.Delete.execute}" text="Delete"

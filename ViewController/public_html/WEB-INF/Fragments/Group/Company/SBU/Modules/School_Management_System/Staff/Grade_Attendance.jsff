@@ -123,6 +123,31 @@
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
+                  
+                  
+                  <af:column headerText="#{bindings.TblGradeAttMasterView1.hints.Id.label}" id="c8">
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblGradeAttMasterView1.hints.Id.label}"
+                                  required="#{bindings.TblGradeAttMasterView1.hints.Id.mandatory}"
+                                  columns="#{bindings.TblGradeAttMasterView1.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblGradeAttMasterView1.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblGradeAttMasterView1.hints.Id.tooltip}" id="it6">
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblGradeAttMasterView1.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  
+                    <af:column sortProperty="#{bindings.TblGradeAttMasterView1.hints.Id.name}" 
+                                    filterable="true" sortable="true" align="center"
+                             headerText="Get Report" id="c9">
+                    <af:link shortDesc="#{bindings.TblGradeAttMasterView1.hints.Id.tooltip}" id="l1"
+                    icon="#{resource['images:get_report.png']}"
+                             actionListener="#{backingBeanScope.VoucherPrintBean.getGradeAttReport}">
+                   <f:attribute name="sendGradeAttID" value="#{row.bindings.Id.inputValue}"/>
+                </af:link>
+                  </af:column>
+                  
                 </af:table>
                 <af:panelGroupLayout id="pgl3" halign="center" layout="horizontal">
                             <af:spacer height="10" id="s4"/>

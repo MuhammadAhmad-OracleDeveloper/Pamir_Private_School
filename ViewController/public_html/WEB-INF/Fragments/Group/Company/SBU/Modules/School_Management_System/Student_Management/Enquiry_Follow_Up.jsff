@@ -182,24 +182,6 @@
                           filterModel="#{bindings.TblEnqFollowUpView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblEnqFollowUpView1Query.processQuery}" varStatus="vs" id="t2"
                           scrollPolicy="page" autoHeightRows="0" >
-                  <af:column sortProperty="#{bindings.TblEnqFollowUpView1.hints.Id.name}" filterable="true"
-                             sortable="true" headerText="Follow Up ID" id="c13" align="right" width="80" visible="false">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.Id}"
-                                   id="it25" placeholder="Search " >
-                                  </af:inputText>
-                            </f:facet>
-                    <af:inputText value="#{row.bindings.Id.inputValue}"
-                                  label="#{bindings.TblEnqFollowUpView1.hints.Id.label}"
-                                  required="#{bindings.TblEnqFollowUpView1.hints.Id.mandatory}"
-                                  columns="#{bindings.TblEnqFollowUpView1.hints.Id.displayWidth}"
-                                  maximumLength="#{bindings.TblEnqFollowUpView1.hints.Id.precision}"
-                                  shortDesc="#{bindings.TblEnqFollowUpView1.hints.Id.tooltip}" id="it7" readOnly="true"
-                                  contentStyle='text-align: center'>
-                      <f:validator binding="#{row.bindings.Id.validator}"/>
-                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblEnqFollowUpView1.hints.Id.format}"/>
-                    </af:inputText>
-                  </af:column>
                   <af:column sortProperty="#{bindings.TblEnqFollowUpView1.hints.Dated.name}" filterable="true"
                              sortable="true" headerText="Follow Up Date" id="c14" align="left">
                              
@@ -383,6 +365,18 @@
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
+                  
+                  
+                    <af:column sortProperty="#{bindings.TblEnqFollowUpView1.hints.Id.name}" 
+                                    filterable="true" sortable="true" align="center"
+                             headerText="Get Report" id="c2">
+                    <af:link shortDesc="#{bindings.TblEnqFollowUpView1.hints.Id.tooltip}" id="l1"
+                    icon="#{resource['images:get_report.png']}"
+                             actionListener="#{backingBeanScope.VoucherPrintBean.getEnquiryFollowUpReport}">
+                   <f:attribute name="sendEnqFollowUpID" value="#{row.bindings.Id.inputValue}"/>
+                </af:link>
+                  </af:column>
+                  
                 </af:table>
 
       <af:panelGroupLayout id="pgl5" halign="center" layout="horizontal">

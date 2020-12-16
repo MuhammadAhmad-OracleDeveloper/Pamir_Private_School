@@ -701,26 +701,6 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
-  <ListBinding
-    Name="LOV_Id"
-    ListVOName="Student_Registration_Without_P_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FirstName"/>
-      <Item Value="LastName"/>
-      <Item Value="EnrollNo"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
   <EntityUsage
     Name="TblStdReg"
     Entity="model.ERP.EO.TblStdReg"/>
@@ -730,15 +710,7 @@
     PrecisionRule="true"
     EntityAttrName="Id"
     EntityUsage="TblStdReg"
-    AliasName="ID"
-    LOVName="LOV_Id">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="ID"/>
   <ViewAttribute
     Name="GroupCompanyId"
     PrecisionRule="true"
