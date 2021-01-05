@@ -238,6 +238,23 @@
                                 <f:validator binding="#{row.bindings.Description.validator}"/>
                               </af:inputText>
                             </af:column>
+                            <af:column headerText="GRN Qty" id="c18" sortable="true" filterable="true">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.GrndQty}"
+       id="it29" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.GrndQty.inputValue}"
+                                            label="#{bindings.TblDnDView2.hints.GrndQty.label}"
+                                            required="#{bindings.TblDnDView2.hints.GrndQty.mandatory}"
+                                            columns="#{bindings.TblDnDView2.hints.GrndQty.displayWidth}"
+                                            maximumLength="#{bindings.TblDnDView2.hints.GrndQty.precision}"
+                                            shortDesc="#{bindings.TblDnDView2.hints.GrndQty.tooltip}" id="it28">
+                                <f:validator binding="#{row.bindings.GrndQty.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblDnDView2.hints.GrndQty.format}"/>
+                              </af:inputText>
+                            </af:column>
                             <af:column sortProperty="#{bindings.TblDnDView2.hints.Qty.name}" filterable="true"
                                        sortable="true" headerText="Qty" id="c15">
                                         <f:facet name="filter">
