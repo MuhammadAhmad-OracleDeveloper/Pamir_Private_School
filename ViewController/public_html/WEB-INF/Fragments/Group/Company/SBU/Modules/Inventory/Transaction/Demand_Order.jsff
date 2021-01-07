@@ -63,7 +63,7 @@
                             <af:selectOneChoice value="#{bindings.CompanySbuId .inputValue}"
                                                 label="Project"
                                                 required="#{bindings.CompanySbuId .hints.mandatory}"
-                                                shortDesc="#{bindings.CompanySbuId .hints.tooltip}" id="soc2"
+                                                shortDesc="#{bindings.CompanySbuId .hints.tooltip}" id="soc2" disabled="true"
                                                 contentStyle="width:150px;">
                               <f:selectItems value="#{bindings.CompanySbuId .items}" id="si2"/>
                               <f:validator binding="#{bindings.CompanySbuId .validator}"/>
@@ -72,7 +72,7 @@
                             <af:selectOneChoice value="#{bindings.DepartmentId.inputValue}"
                                                 label="Department"
                                                 required="#{bindings.DepartmentId.hints.mandatory}"
-                                                shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="soc3"
+                                                shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="soc3" disabled="true"
                                                 contentStyle="width:150px;">
                               <f:selectItems value="#{bindings.DepartmentId.items}" id="si3"/>
                               <f:validator binding="#{bindings.DepartmentId.validator}"/>
@@ -157,7 +157,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblDoDView2.hints.SrNo.name}" filterable="true"
-                                       sortable="true" headerText="Serial No." id="c9">
+                                       sortable="true" headerText="Serial No." id="c9" visible="false">
                                        <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.SrNo}"
        id="it16" placeholder="Search ">
@@ -190,20 +190,20 @@
                                 <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblDoDView2.hints.UomId.name}" filterable="true"
-                                       sortable="true" headerText="Unit of Measurement" id="c11" width="120">
-                                        <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.UomId}"
+                            <af:column headerText="UOM" id="c11" sortable="true" filterable="true" width="60">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Name}"
        id="it18" placeholder="Search ">
       </af:inputText>
 </f:facet>
-                              <af:selectOneChoice value="#{row.bindings.UomId.inputValue}"
-                                                  label="#{row.bindings.UomId.label}"
-                                                  required="#{bindings.TblDoDView2.hints.UomId.mandatory}"
-                                                  shortDesc="#{bindings.TblDoDView2.hints.UomId.tooltip}" id="soc8" >
-                                <f:selectItems value="#{row.bindings.UomId.items}" id="si8"/>
-                                <f:validator binding="#{row.bindings.UomId.validator}"/>
-                              </af:selectOneChoice>
+                              <af:inputText value="#{row.bindings.Name.inputValue}"
+                                            label="#{bindings.TblDoDView2.hints.Name.label}"
+                                            required="#{bindings.TblDoDView2.hints.Name.mandatory}"
+                                            columns="#{bindings.TblDoDView2.hints.Name.displayWidth}"
+                                            maximumLength="#{bindings.TblDoDView2.hints.Name.precision}"
+                                            shortDesc="#{bindings.TblDoDView2.hints.Name.tooltip}" id="it22" readOnly="true">
+                                <f:validator binding="#{row.bindings.Name.validator}"/>
+                              </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblDoDView2.hints.Description.name}" filterable="true"
                                        sortable="true" headerText="Description"
@@ -223,7 +223,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblDoDView2.hints.Qty.name}" filterable="true"
-                                       sortable="true" headerText="Quantity" id="c13" width="150">
+                                       sortable="true" headerText="Qty" id="c13" width="100">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Qty}"
        id="it20" placeholder="Search ">

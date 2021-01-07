@@ -21,6 +21,10 @@
     Name="Active_Name_LOV1"
     ViewObjectName="model.LOV.Active_Name_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Unit_of_Measurement_LOV1"
+    ViewObjectName="model.LOV.Unit_of_Measurement_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ItemL3Id"
     ListVOName="Item_L3_Name_LOV1"
@@ -57,6 +61,24 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_UomId"
+    ListVOName="Unit_of_Measurement_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="UomId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblItemL4"
     Entity="model.ERP.EO.TblItemL4"/>
@@ -90,6 +112,20 @@
     EntityAttrName="Name"
     EntityUsage="TblItemL4"
     AliasName="NAME"/>
+  <ViewAttribute
+    Name="UomId"
+    PrecisionRule="true"
+    EntityAttrName="UomId"
+    EntityUsage="TblItemL4"
+    AliasName="UOM_ID"
+    LOVName="LOV_UomId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Ast"
     IsNotNull="true"

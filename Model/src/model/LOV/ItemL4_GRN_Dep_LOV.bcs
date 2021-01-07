@@ -1,0 +1,12 @@
+//Groovy Scripts for model.LOV.ItemL4_GRN_Dep_LOV
+
+package model.LOV
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="getComsbuID")
+def getComsbuID_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('sessSBUID')
+}
+

@@ -6,13 +6,31 @@
   Name="TblDnDView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblDnD.ID, 
+       TblDnD.DN_M_ID, 
+       TblDnD.SR_NO, 
+       TblDnD.ITEM_L4_ID, 
+       TblDnD.UOM_ID, 
+       TblDnD.DESCRIPTION, 
+       TblDnD.GRND_QTY, 
+       TblDnD.QTY, 
+       TblDnD.RATE, 
+       TblDnD.AMOUNT, 
+       TblDnD.CREATED_DATE, 
+       TblDnD.CREATED_BY, 
+       TblDnD.UPDATED_DATE, 
+       TblDnD.UPDATED_BY, 
+       TblDnM.GRN_M_ID, 
+       TblDnM.ID AS ID1, 
+       TblUom.NAME, 
+       TblUom.ID AS ID2"
+  FromList="TBL_DN_D TblDnD, TBL_DN_M TblDnM, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom"
+  Where="TblDnD.DN_M_ID = TblDnM.ID(+)   
+and TblDnD.ITEM_L4_ID = TblItemL4.ITEM_L4_ID          
+and TblItemL4.UOM_ID = TblUom.ID">
   <ViewAccessor
     Name="ItemL4_Name_LOV1"
     ViewObjectName="model.LOV.ItemL4_Name_LOV"
@@ -21,24 +39,18 @@
     Name="Unit_of_Measurement_LOV1"
     ViewObjectName="model.LOV.Unit_of_Measurement_LOV"
     RowLevelBinds="true"/>
-  <ListBinding
-    Name="LOV_ItemL4Id"
-    ListVOName="ItemL4_Name_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="ItemL4Id"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="ItemL4Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
+  <ViewAccessor
+    Name="ItemL4_GRN_Dep_LOV1"
+    ViewObjectName="model.LOV.ItemL4_GRN_Dep_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getGRNMID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[GrnMId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_UomId"
     ListVOName="Unit_of_Measurement_LOV1"
@@ -57,9 +69,72 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_ItemL4Id"
+    ListVOName="ItemL4_GRN_Dep_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ItemL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Rate"/>
+      <Item Value="UomId"/>
+      <Item Value="GrndQty"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ItemL4Id"/>
+      <Item Value="Rate"/>
+      <Item Value="UomId"/>
+      <Item Value="Qty"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblDnD"
     Entity="model.ERP.EO.TblDnD"/>
+  <EntityUsage
+    Name="TblDnM"
+    Entity="model.ERP.EO.TblDnM"
+    Association="model.ERP.EO.FkDnDMAssoc"
+    AssociationEnd="model.ERP.EO.FkDnDMAssoc.TblDnM"
+    SourceUsage="model.ERP.VO.TblDnDView.TblDnD"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.ERP.EO.TblDnM.Id"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.ERP.EO.TblDnD.DnMId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblItemL4"
+    Entity="model.ERP.EO.TblItemL4"
+    ReadOnly="true"
+    DeleteParticipant="false">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblUom"
+    Entity="model.ERP.EO.TblUom"
+    ReadOnly="true"
+    DeleteParticipant="false">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
@@ -162,4 +237,31 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblDnD"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="GrnMId"
+    PrecisionRule="true"
+    EntityAttrName="GrnMId"
+    EntityUsage="TblDnM"
+    AliasName="GRN_M_ID"/>
+  <ViewAttribute
+    Name="Id1"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblDnM"
+    AliasName="ID1"/>
+  <ViewAttribute
+    Name="Name"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblUom"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="Id2"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblUom"
+    AliasName="ID2"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id"/>
+  </AttrArray>
 </ViewObject>

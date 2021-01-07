@@ -33,6 +33,7 @@ public class TblItemL4Impl extends EntityImpl {
         UpdatedBy,
         CompanySbuId,
         GroupCompanyId,
+        UomId,
         TblItemL3,
         TblPblSuppItems;
         private static AttributesEnum[] vals = null;
@@ -57,6 +58,7 @@ public class TblItemL4Impl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ITEML4ID = AttributesEnum.ItemL4Id.index();
     public static final int ITEML3ID = AttributesEnum.ItemL3Id.index();
     public static final int NAME = AttributesEnum.Name.index();
@@ -67,6 +69,7 @@ public class TblItemL4Impl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int COMPANYSBUID = AttributesEnum.CompanySbuId.index();
     public static final int GROUPCOMPANYID = AttributesEnum.GroupCompanyId.index();
+    public static final int UOMID = AttributesEnum.UomId.index();
     public static final int TBLITEML3 = AttributesEnum.TblItemL3.index();
     public static final int TBLPBLSUPPITEMS = AttributesEnum.TblPblSuppItems.index();
 
@@ -74,6 +77,13 @@ public class TblItemL4Impl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public TblItemL4Impl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblItemL4");
     }
 
     /**
@@ -237,6 +247,22 @@ public class TblItemL4Impl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for UomId, using the alias name UomId.
+     * @return the value of UomId
+     */
+    public BigDecimal getUomId() {
+        return (BigDecimal) getAttributeInternal(UOMID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for UomId.
+     * @param value value to set the UomId
+     */
+    public void setUomId(BigDecimal value) {
+        setAttributeInternal(UOMID, value);
+    }
+
+    /**
      * @return the associated entity TblItemL3Impl.
      */
     public TblItemL3Impl getTblItemL3() {
@@ -257,6 +283,7 @@ public class TblItemL4Impl extends EntityImpl {
         return (RowIterator) getAttributeInternal(TBLPBLSUPPITEMS);
     }
 
+
     /**
      * @param itemL4Id key constituent
 
@@ -264,13 +291,6 @@ public class TblItemL4Impl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal itemL4Id) {
         return new Key(new Object[] { itemL4Id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblItemL4");
     }
 
     /**
