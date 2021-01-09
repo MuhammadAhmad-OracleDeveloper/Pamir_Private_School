@@ -6,10 +6,10 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
-    <iterator Binds="TblOpenBlncView1" RangeSize="8" DataControl="AppModuleDataControl1"
-              id="TblOpenBlncView1Iterator"/>
-    <searchRegion Binds="TblOpenBlncView1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblOpenBlncView1Query"/>
+    <iterator Binds="TblOpenBlncInvView1" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblOpenBlncInvView1Iterator"/>
+    <searchRegion Binds="TblOpenBlncInvView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblOpenBlncInvView1Query"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -23,22 +23,27 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <tree IterBinding="TblOpenBlncView1Iterator" id="TblOpenBlncView1">
-      <nodeDefinition DefName="model.ERP.VO.TblOpenBlncView" Name="TblOpenBlncView10">
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblOpenBlncInvView1Iterator" id="TblOpenBlncInvView1">
+      <nodeDefinition DefName="model.ERP.VO.TblOpenBlncInvView" Name="TblOpenBlncInvView10">
         <AttrNames>
-          <Item Value="OpenBlncId"/>
-          <Item Value="OpenBlncDated"/>
-          <Item Value="OpenBlncGlL4Id"/>
-          <Item Value="OpenBlncDr"/>
-          <Item Value="OpenBlncCr"/>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="CompanySbuId"/>
+          <Item Value="DepartmentId"/>
+          <Item Value="ItemL4Id"/>
+          <Item Value="UomId"/>
+          <Item Value="Qty"/>
+          <Item Value="Rate"/>
+          <Item Value="Amount"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="TblOpenBlncView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+    <action IterBinding="TblOpenBlncInvView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
             Action="createInsertRow"/>
-    <action IterBinding="TblOpenBlncView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
-    <action IterBinding="TblOpenBlncView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
-    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <action IterBinding="TblOpenBlncInvView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblOpenBlncInvView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

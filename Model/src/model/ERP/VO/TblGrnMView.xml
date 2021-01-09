@@ -22,10 +22,6 @@
     ViewObjectName="model.LOV.INV_QC_Master_LOV"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="INV_PO_Master_LOV1"
-    ViewObjectName="model.LOV.INV_PO_Master_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
     Name="Deparment_Name_LOV1"
     ViewObjectName="model.LOV.Deparment_Name_LOV"
     RowLevelBinds="true"/>
@@ -37,6 +33,18 @@
     Name="PBL_Supplier_Name_LOV1"
     ViewObjectName="model.LOV.PBL_Supplier_Name_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="QC_Project_Dep_LOV1"
+    ViewObjectName="model.LOV.QC_Project_Dep_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="comid">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[CompanySbuId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_Vtp"
     ListVOName="Voucher_Type_LOV1"
@@ -52,44 +60,6 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ViewAttr"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_QcMId"
-    ListVOName="INV_QC_Master_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="QcMId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Dated"/>
-      <Item Value="Vno"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_PoMId"
-    ListVOName="INV_PO_Master_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="PoMId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Dated"/>
-      <Item Value="Vno"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -144,6 +114,44 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_StaticQcMId1"
+    ListVOName="INV_QC_Master_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StaticQcMId1"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Id"/>
+      <Item Value="Dated"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_QcMId"
+    ListVOName="QC_Project_Dep_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="QcMId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Id"/>
+      <Item Value="Dated"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -202,15 +210,7 @@
     PrecisionRule="true"
     EntityAttrName="PoMId"
     EntityUsage="TblGrnM"
-    AliasName="PO_M_ID"
-    LOVName="LOV_PoMId">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="PO_M_ID"/>
   <ViewAttribute
     Name="Narration"
     PrecisionRule="true"
@@ -294,7 +294,15 @@
     PrecisionRule="true"
     EntityAttrName="QcMId"
     EntityUsage="TblGrnM"
-    AliasName="QC_MID1"/>
+    AliasName="QC_MID1"
+    LOVName="LOV_StaticQcMId1">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblGrnDView"
     ViewLink="model.ERP.VO.FkGrnDMLink"

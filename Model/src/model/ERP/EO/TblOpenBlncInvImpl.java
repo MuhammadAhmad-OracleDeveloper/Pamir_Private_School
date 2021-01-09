@@ -33,7 +33,9 @@ public class TblOpenBlncInvImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
-        CompanySbuId;
+        CompanySbuId,
+        UomId,
+        DepartmentId;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -56,6 +58,7 @@ public class TblOpenBlncInvImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int DATED = AttributesEnum.Dated.index();
     public static final int ITEML4ID = AttributesEnum.ItemL4Id.index();
@@ -68,11 +71,20 @@ public class TblOpenBlncInvImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int COMPANYSBUID = AttributesEnum.CompanySbuId.index();
+    public static final int UOMID = AttributesEnum.UomId.index();
+    public static final int DEPARTMENTID = AttributesEnum.DepartmentId.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblOpenBlncInvImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblOpenBlncInv");
     }
 
     /**
@@ -268,19 +280,45 @@ public class TblOpenBlncInvImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for UomId, using the alias name UomId.
+     * @return the value of UomId
+     */
+    public BigDecimal getUomId() {
+        return (BigDecimal) getAttributeInternal(UOMID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for UomId.
+     * @param value value to set the UomId
+     */
+    public void setUomId(BigDecimal value) {
+        setAttributeInternal(UOMID, value);
+    }
+
+    /**
+     * Gets the attribute value for DepartmentId, using the alias name DepartmentId.
+     * @return the value of DepartmentId
+     */
+    public BigDecimal getDepartmentId() {
+        return (BigDecimal) getAttributeInternal(DEPARTMENTID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for DepartmentId.
+     * @param value value to set the DepartmentId
+     */
+    public void setDepartmentId(BigDecimal value) {
+        setAttributeInternal(DEPARTMENTID, value);
+    }
+
+
+    /**
      * @param id key constituent
 
      * @return a Key object based on given key constituents.
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblOpenBlncInv");
     }
 
     /**

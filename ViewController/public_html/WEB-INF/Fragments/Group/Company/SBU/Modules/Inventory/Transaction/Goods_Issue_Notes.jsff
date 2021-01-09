@@ -82,7 +82,7 @@
                             <af:selectOneChoice value="#{bindings.FromCompanySbuId.inputValue}"
                                                 label="From Project"
                                                 required="#{bindings.FromCompanySbuId.hints.mandatory}"
-                                                shortDesc="#{bindings.FromCompanySbuId.hints.tooltip}" id="soc3"
+                                                shortDesc="#{bindings.FromCompanySbuId.hints.tooltip}" id="soc3" disabled="true"
                                                 contentStyle="width:150px;">
                               <f:selectItems value="#{bindings.FromCompanySbuId.items}" id="si3"/>
                               <f:validator binding="#{bindings.FromCompanySbuId.validator}"/>
@@ -126,14 +126,7 @@
                               </af:panelGroupLayout>
                             </f:facet>
                           </af:panelFormLayout>
-                          
-                        </af:showDetailItem>
-                      </af:panelTabbed>
-                    </af:gridCell>
-                  </af:gridRow>
-                  <af:gridRow marginTop="5px" height="auto" id="gr4">
-                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
-                     <af:panelGroupLayout id="pgl3" halign="center" layout="horizontal">
+                           <af:panelGroupLayout id="pgl3" halign="center" layout="horizontal">
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -144,6 +137,13 @@
                                 <af:spacer width="5" height="10" id="s3"/>
                             </af:iterator>
                         </af:panelGroupLayout>
+                        </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr4">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                    
                     </af:gridCell>
                   </af:gridRow>
                   <af:gridRow marginTop="5px" height="auto" id="gr5">
@@ -179,7 +179,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblGinDView2.hints.SrNo.name}" filterable="true"
-                                       sortable="true" headerText="Serial No." id="c11">
+                                       sortable="true" headerText="Serial No." id="c11" visible="false">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.SrNo}"
        id="it21" placeholder="Search ">
@@ -197,7 +197,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblGinDView2.hints.ItemL4Id.name}" filterable="true"
-                                       sortable="true" headerText="Item Level 4"
+                                       sortable="true" headerText="Select Item Level 4"
                                        id="c12" width="150">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.ItemL4Id}"
@@ -208,25 +208,40 @@
                                                   label="#{row.bindings.ItemL4Id.label}"
                                                   required="#{bindings.TblGinDView2.hints.ItemL4Id.mandatory}"
                                                   shortDesc="#{bindings.TblGinDView2.hints.ItemL4Id.tooltip}"
-                                                  id="soc11" readOnly="true">
+                                                  id="soc11" >
                                 <f:selectItems value="#{row.bindings.ItemL4Id.items}" id="si11"/>
                                 <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblGinDView2.hints.UomId.name}" filterable="true"
-                                       sortable="true" headerText="Unit of Measurement" id="c13" width="120">
-                                        <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.UomId}"
+                            <af:column headerText="Item Level 4" id="c18" sortable="true" filterable="true" width="150">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.StaticItemL4Id2}"
+       id="it28" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.StaticItemL4Id2.inputValue}"
+                                                  label="#{row.bindings.StaticItemL4Id2.label}"
+                                                  required="#{bindings.TblGinDView2.hints.StaticItemL4Id2.mandatory}"
+                                                  shortDesc="#{bindings.TblGinDView2.hints.StaticItemL4Id2.tooltip}"
+                                                  id="soc13" readOnly="true">
+                                <f:selectItems value="#{row.bindings.StaticItemL4Id2.items}" id="si13"/>
+                                <f:validator binding="#{row.bindings.StaticItemL4Id2.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="UOM" id="c13" sortable="true" filterable="true">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.UOMName}"
        id="it23" placeholder="Search ">
       </af:inputText>
 </f:facet>
-                              <af:selectOneChoice value="#{row.bindings.UomId.inputValue}"
-                                                  label="#{row.bindings.UomId.label}"
-                                                  required="#{bindings.TblGinDView2.hints.UomId.mandatory}"
-                                                  shortDesc="#{bindings.TblGinDView2.hints.UomId.tooltip}" id="soc12" readOnly="true">
-                                <f:selectItems value="#{row.bindings.UomId.items}" id="si12"/>
-                                <f:validator binding="#{row.bindings.UomId.validator}"/>
-                              </af:selectOneChoice>
+                              <af:inputText value="#{row.bindings.UOMName.inputValue}"
+                                            label="#{bindings.TblGinDView2.hints.UOMName.label}"
+                                            required="#{bindings.TblGinDView2.hints.UOMName.mandatory}"
+                                            columns="#{bindings.TblGinDView2.hints.UOMName.displayWidth}"
+                                            maximumLength="#{bindings.TblGinDView2.hints.UOMName.precision}"
+                                            shortDesc="#{bindings.TblGinDView2.hints.UOMName.tooltip}" id="it29" readOnly="true">
+                                <f:validator binding="#{row.bindings.UOMName.validator}"/>
+                              </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblGinDView2.hints.Description.name}" filterable="true"
                                        sortable="true" headerText="Description"
@@ -241,7 +256,7 @@
                                             required="#{bindings.TblGinDView2.hints.Description.mandatory}"
                                             columns="#{bindings.TblGinDView2.hints.Description.displayWidth}"
                                             maximumLength="#{bindings.TblGinDView2.hints.Description.precision}"
-                                            shortDesc="#{bindings.TblGinDView2.hints.Description.tooltip}" id="it16" readOnly="true">
+                                            shortDesc="#{bindings.TblGinDView2.hints.Description.tooltip}" id="it16" >
                                 <f:validator binding="#{row.bindings.Description.validator}"/>
                               </af:inputText>
                             </af:column>
@@ -275,7 +290,7 @@
                                             required="#{bindings.TblGinDView2.hints.Rate.mandatory}"
                                             columns="#{bindings.TblGinDView2.hints.Rate.displayWidth}"
                                             maximumLength="#{bindings.TblGinDView2.hints.Rate.precision}"
-                                            shortDesc="#{bindings.TblGinDView2.hints.Rate.tooltip}" id="it18" >
+                                            shortDesc="#{bindings.TblGinDView2.hints.Rate.tooltip}" id="it18" readOnly="true">
                                 <f:validator binding="#{row.bindings.Rate.validator}"/>
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblGinDView2.hints.Rate.format}"/>
@@ -301,14 +316,7 @@
                               </af:inputText>
                             </af:column>
                           </af:table>
-                          
-                        </af:showDetailItem>
-                      </af:panelTabbed>
-                    </af:gridCell>
-                  </af:gridRow>
-                  <af:gridRow marginTop="5px" height="auto" id="gr6">
-                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
-                       <af:panelGroupLayout id="pgl5" halign="center" layout="horizontal">
+                          <af:panelGroupLayout id="pgl5" halign="center" layout="horizontal">
                             
                             <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
@@ -320,6 +328,13 @@
                                 <af:spacer width="5" height="10" id="s2"/>
                             </af:iterator>
                         </af:panelGroupLayout>
+                        </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr6">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
+                       
                     </af:gridCell>
                   </af:gridRow>
                   <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">

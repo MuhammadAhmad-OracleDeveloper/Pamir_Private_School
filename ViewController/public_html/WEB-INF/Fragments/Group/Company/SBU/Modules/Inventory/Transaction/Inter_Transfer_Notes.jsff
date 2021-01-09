@@ -179,7 +179,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblItnDView2.hints.SrNo.name}" filterable="true"
-                                       sortable="true" headerText="Serial No." id="c11">
+                                       sortable="true" headerText="Serial No." id="c11" visible="false">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.SrNo}"
        id="it21" placeholder="Search ">
@@ -197,7 +197,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblItnDView2.hints.ItemL4Id.name}" filterable="true"
-                                       sortable="true" headerText="Item Level 4"
+                                       sortable="true" headerText="Select Item Level 4"
                                        id="c12" width="150">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.ItemL4Id}"
@@ -208,25 +208,41 @@
                                                   label="#{row.bindings.ItemL4Id.label}"
                                                   required="#{bindings.TblItnDView2.hints.ItemL4Id.mandatory}"
                                                   shortDesc="#{bindings.TblItnDView2.hints.ItemL4Id.tooltip}"
-                                                  id="soc11" readOnly="true">
+                                                  id="soc11" >
                                 <f:selectItems value="#{row.bindings.ItemL4Id.items}" id="si11"/>
                                 <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblItnDView2.hints.UomId.name}" filterable="true"
-                                       sortable="true" headerText="Unit of Measurement" id="c13" width="120">
-                                        <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.UomId}"
+                            <af:column headerText="Item Level 4" id="c18" sortable="true" filterable="true" width="150">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.StaticItemL4Id1}"
+       id="it28" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.StaticItemL4Id1.inputValue}"
+                                                  label="#{row.bindings.StaticItemL4Id1.label}"
+                                                  required="#{bindings.TblItnDView2.hints.StaticItemL4Id1.mandatory}"
+                                                  shortDesc="#{bindings.TblItnDView2.hints.StaticItemL4Id1.tooltip}"
+                                                  id="soc13" readOnly="true">
+                                <f:selectItems value="#{row.bindings.StaticItemL4Id1.items}" id="si13"/>
+                                <f:validator binding="#{row.bindings.StaticItemL4Id1.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="UOM" id="c13"
+                                       sortable="true" filterable="true" width="60">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.UOMName}"
        id="it23" placeholder="Search ">
       </af:inputText>
 </f:facet>
-                              <af:selectOneChoice value="#{row.bindings.UomId.inputValue}"
-                                                  label="#{row.bindings.UomId.label}"
-                                                  required="#{bindings.TblItnDView2.hints.UomId.mandatory}"
-                                                  shortDesc="#{bindings.TblItnDView2.hints.UomId.tooltip}" id="soc12" readOnly="true">
-                                <f:selectItems value="#{row.bindings.UomId.items}" id="si12"/>
-                                <f:validator binding="#{row.bindings.UomId.validator}"/>
-                              </af:selectOneChoice>
+                              <af:inputText value="#{row.bindings.UOMName.inputValue}"
+                                            label="#{bindings.TblItnDView2.hints.UOMName.label}"
+                                            required="#{bindings.TblItnDView2.hints.UOMName.mandatory}"
+                                            columns="#{bindings.TblItnDView2.hints.UOMName.displayWidth}"
+                                            maximumLength="#{bindings.TblItnDView2.hints.UOMName.precision}"
+                                            shortDesc="#{bindings.TblItnDView2.hints.UOMName.tooltip}" id="it29" readOnly="true">
+                                <f:validator binding="#{row.bindings.UOMName.validator}"/>
+                              </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblItnDView2.hints.Description.name}" filterable="true"
                                        sortable="true" headerText="Description"
@@ -241,7 +257,7 @@
                                             required="#{bindings.TblItnDView2.hints.Description.mandatory}"
                                             columns="#{bindings.TblItnDView2.hints.Description.displayWidth}"
                                             maximumLength="#{bindings.TblItnDView2.hints.Description.precision}"
-                                            shortDesc="#{bindings.TblItnDView2.hints.Description.tooltip}" id="it16" readOnly="true">
+                                            shortDesc="#{bindings.TblItnDView2.hints.Description.tooltip}" id="it16" >
                                 <f:validator binding="#{row.bindings.Description.validator}"/>
                               </af:inputText>
                             </af:column>
@@ -275,7 +291,7 @@
                                             required="#{bindings.TblItnDView2.hints.Rate.mandatory}"
                                             columns="#{bindings.TblItnDView2.hints.Rate.displayWidth}"
                                             maximumLength="#{bindings.TblItnDView2.hints.Rate.precision}"
-                                            shortDesc="#{bindings.TblItnDView2.hints.Rate.tooltip}" id="it18" >
+                                            shortDesc="#{bindings.TblItnDView2.hints.Rate.tooltip}" id="it18" readOnly="true" >
                                 <f:validator binding="#{row.bindings.Rate.validator}"/>
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblItnDView2.hints.Rate.format}"/>

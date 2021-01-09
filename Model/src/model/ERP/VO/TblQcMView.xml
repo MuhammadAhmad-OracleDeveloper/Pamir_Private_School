@@ -6,13 +6,30 @@
   Name="TblQcMView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblQcM.ID, 
+       TblQcM.VNO, 
+       TblQcM.VTP, 
+       TblQcM.DATED, 
+       TblQcM.IGP_M_ID, 
+       TblQcM.COMPANY_SBU_ID, 
+       TblQcM.NARRATION, 
+       TblQcM.CREATED_DATE, 
+       TblQcM.CREATED_BY, 
+       TblQcM.UPDATED_DATE, 
+       TblQcM.UPDATED_BY, 
+       TblQcM.IGP_M_ID AS IGP_MID1"
+  FromList="TBL_QC_M TblQcM"
+  Where="TblQcM.COMPANY_SBU_IDD=:getCOMPID">
+  <Variable
+    Name="getCOMPID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"><![CDATA[adf.context.current.sessionScope.get('sessSBUID');]]></TransientExpression>
+  </Variable>
   <ViewAccessor
     Name="Voucher_Type_LOV1"
     ViewObjectName="model.LOV.Voucher_Type_LOV"
@@ -21,6 +38,22 @@
     Name="INV_IGP_Master_LOV1"
     ViewObjectName="model.LOV.INV_IGP_Master_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Company_SBU_Name_LOV1"
+    ViewObjectName="model.LOV.Company_SBU_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Pending_IGP_LOV1"
+    ViewObjectName="model.LOV.Pending_IGP_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="compid">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[CompanySbuId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_Vtp"
     ListVOName="Voucher_Type_LOV1"
@@ -40,8 +73,45 @@
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_IgpMId"
+    Name="LOV_CompanySbuId"
+    ListVOName="Company_SBU_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CompanySbuId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_StaticIgpMId1"
     ListVOName="INV_IGP_Master_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StaticIgpMId1"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Id"/>
+      <Item Value="Dated"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_IgpMId"
+    ListVOName="Pending_IGP_LOV1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
@@ -53,8 +123,9 @@
       <Item Value="Id"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Id"/>
       <Item Value="Dated"/>
-      <Item Value="Vno"/>
+      <Item Value="BalQty"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -109,6 +180,20 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblQcM"
+    AliasName="COMPANY_SBU_ID"
+    LOVName="LOV_CompanySbuId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
     Name="Narration"
     PrecisionRule="true"
     EntityAttrName="Narration"
@@ -138,6 +223,20 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblQcM"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="StaticIgpMId1"
+    PrecisionRule="true"
+    EntityAttrName="IgpMId"
+    EntityUsage="TblQcM"
+    AliasName="IGP_MID1"
+    LOVName="LOV_StaticIgpMId1">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblQcDView"
     ViewLink="model.ERP.VO.FkQcDMLink"

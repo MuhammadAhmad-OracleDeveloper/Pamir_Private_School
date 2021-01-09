@@ -335,6 +335,19 @@
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column headerText="UOM" id="c13" sortable="true" filterable="true">
+                  <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.UomId}"
+                                   id="it3" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.UomId.inputValue}" label="#{row.bindings.UomId.label}"
+                                        required="#{bindings.TblItemL4View3.hints.UomId.mandatory}"
+                                        shortDesc="#{bindings.TblItemL4View3.hints.UomId.tooltip}" id="soc5">
+                      <f:selectItems value="#{row.bindings.UomId.items}" id="si5"/>
+                      <f:validator binding="#{row.bindings.UomId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
                   <af:column headerText="Active" id="c12" sortable="true" filterable="true">
                    <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Ast}"

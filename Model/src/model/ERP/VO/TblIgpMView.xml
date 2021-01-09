@@ -6,13 +6,31 @@
   Name="TblIgpMView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblIgpM.ID, 
+       TblIgpM.VNO, 
+       TblIgpM.VTP, 
+       TblIgpM.DATED, 
+       TblIgpM.COMPANY_SBU_ID, 
+       TblIgpM.PO_M_ID, 
+       TblIgpM.NARRATION, 
+       TblIgpM.CREATED_DATE, 
+       TblIgpM.CREATED_BY, 
+       TblIgpM.UPDATED_DATE, 
+       TblIgpM.UPDATED_BY, 
+       TblIgpM.PO_M_ID AS PO_MID1"
+  FromList="TBL_IGP_M TblIgpM"
+  Where="TblIgpM.COMPANY_SBU_ID=:getCompid">
+  <Variable
+    Name="getCompid"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      CodeSourceName="TblIgpMView"/>
+  </Variable>
   <ViewAccessor
     Name="Voucher_Type_LOV1"
     ViewObjectName="model.LOV.Voucher_Type_LOV"
@@ -20,6 +38,22 @@
   <ViewAccessor
     Name="INV_PO_Master_LOV1"
     ViewObjectName="model.LOV.INV_PO_Master_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Pending_PO_LOV1"
+    ViewObjectName="model.LOV.Pending_PO_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="compid">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[CompanySbuId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="Company_SBU_Name_LOV1"
+    ViewObjectName="model.LOV.Company_SBU_Name_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
@@ -41,7 +75,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_PoMId"
-    ListVOName="INV_PO_Master_LOV1"
+    ListVOName="Pending_PO_LOV1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
@@ -53,8 +87,47 @@
       <Item Value="Id"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Id"/>
       <Item Value="Dated"/>
-      <Item Value="Vno"/>
+      <Item Value="CompanySbuId"/>
+      <Item Value="BalQty"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_StaticPoMId1"
+    ListVOName="INV_PO_Master_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StaticPoMId1"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Id"/>
+      <Item Value="Dated"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CompanySbuId"
+    ListVOName="Company_SBU_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CompanySbuId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -94,6 +167,20 @@
     EntityAttrName="Dated"
     EntityUsage="TblIgpM"
     AliasName="DATED"/>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblIgpM"
+    AliasName="COMPANY_SBU_ID"
+    LOVName="LOV_CompanySbuId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="PoMId"
     PrecisionRule="true"
@@ -138,6 +225,20 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblIgpM"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="StaticPoMId1"
+    PrecisionRule="true"
+    EntityAttrName="PoMId"
+    EntityUsage="TblIgpM"
+    AliasName="PO_MID1"
+    LOVName="LOV_StaticPoMId1">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblIgpDView"
     ViewLink="model.ERP.VO.FkIgpDMLink"

@@ -29,12 +29,12 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                       <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab2" text="Quality Inspection Master">
-                          <af:panelFormLayout id="pfl1" maxColumns="3" rows="6">
+                          <af:panelFormLayout id="pfl1" maxColumns="3" rows="8">
                             <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
                                           required="#{bindings.Id.hints.mandatory}"
                                           columns="#{bindings.Id.hints.displayWidth}"
                                           maximumLength="#{bindings.Id.hints.precision}"
-                                          shortDesc="#{bindings.Id.hints.tooltip}" id="it1" readOnly="true">
+                                          shortDesc="#{bindings.Id.hints.tooltip}" id="it1" disabled="true" >
                               <f:validator binding="#{bindings.Id.validator}"/>
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
                             </af:inputText>
@@ -48,6 +48,16 @@
                               <af:convertDateTime pattern="#{bindings.Dated.format}"/>
                             </af:inputDate>
                             <af:spacer  id="s5"/>
+                            <af:selectOneChoice value="#{bindings.CompanySbuId.inputValue}"
+                                                label="Project"
+                                                required="#{bindings.CompanySbuId.hints.mandatory}"
+                                                shortDesc="#{bindings.CompanySbuId.hints.tooltip}" id="soc6" 
+                                                contentStyle="width:150px;"
+                                                disabled="true">
+                              <f:selectItems value="#{bindings.CompanySbuId.items}" id="si6"/>
+                              <f:validator binding="#{bindings.CompanySbuId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s11"/>
                             <af:selectOneChoice value="#{bindings.IgpMId.inputValue}" label="IGP"
                                                 required="#{bindings.IgpMId.hints.mandatory}"
                                                 shortDesc="#{bindings.IgpMId.hints.tooltip}" id="soc2"
@@ -67,7 +77,16 @@
                               <f:validator binding="#{bindings.Narration.validator}"/>
                             </af:inputText>
                             <af:spacer  id="s6"/>
-                            
+                            <af:selectOneChoice value="#{bindings.StaticIgpMId1.inputValue}"
+                                                label="IGP"
+                                                required="#{bindings.StaticIgpMId1.hints.mandatory}"
+                                                shortDesc="#{bindings.StaticIgpMId1.hints.tooltip}" id="soc7"
+                                                contentStyle="width:150px;"
+                                                disabled="true">
+                              <f:selectItems value="#{bindings.StaticIgpMId1.items}" id="si7"/>
+                              <f:validator binding="#{bindings.StaticIgpMId1.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s12"/>
                              <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                           required="#{bindings.Vno.hints.mandatory}"
                                           columns="17"
@@ -149,7 +168,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblQcDView2.hints.SrNo.name}" filterable="true"
-                             sortable="true" headerText="Serial No." id="c2" align="left">
+                             sortable="true" headerText="Serial No." id="c2" align="left" visible="false">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.SrNo}"
        id="it29" placeholder="Search ">
@@ -183,22 +202,22 @@
                       <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblQcDView2.hints.UomId.name}" filterable="true"
-                             sortable="true" headerText="Unit of Measurment"
-                             id="c4" width="120">
-                              <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.UomId}"
+                            <af:column headerText="UOM" id="c4" sortable="true" filterable="true">
+                            <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.UOMName}"
        id="it31" placeholder="Search ">
       </af:inputText>
 </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.UomId.inputValue}" label="#{row.bindings.UomId.label}"
-                                        required="#{bindings.TblQcDView2.hints.UomId.mandatory}"
-                                        shortDesc="#{bindings.TblQcDView2.hints.UomId.tooltip}" id="soc5" readOnly="true">
-                      <f:selectItems value="#{row.bindings.UomId.items}" id="si5"/>
-                      <f:validator binding="#{row.bindings.UomId.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
-                                    <af:column headerText="Description" id="c5"
+                              <af:inputText value="#{row.bindings.UOMName.inputValue}"
+                                            label="#{bindings.TblQcDView2.hints.UOMName.label}"
+                                            required="#{bindings.TblQcDView2.hints.UOMName.mandatory}"
+                                            columns="#{bindings.TblQcDView2.hints.UOMName.displayWidth}"
+                                            maximumLength="#{bindings.TblQcDView2.hints.UOMName.precision}"
+                                            shortDesc="#{bindings.TblQcDView2.hints.UOMName.tooltip}" id="it8" readOnly="true">
+                                <f:validator binding="#{row.bindings.UOMName.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Description" id="c5"
                              sortable="true" filterable="true" width="500">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Description}"
@@ -214,25 +233,7 @@
                       <f:validator binding="#{row.bindings.Description.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblQcDView2.hints.Qty.name}" filterable="true"
-                             sortable="true" headerText="Quantity" id="c6" align="left">
-                              <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.Qty}"
-       id="it33" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                    <af:inputText value="#{row.bindings.Qty.inputValue}"
-                                  label="#{bindings.TblQcDView2.hints.Qty.label}"
-                                  required="#{bindings.TblQcDView2.hints.Qty.mandatory}"
-                                  columns="#{bindings.TblQcDView2.hints.Qty.displayWidth}"
-                                  maximumLength="#{bindings.TblQcDView2.hints.Qty.precision}"
-                                  shortDesc="#{bindings.TblQcDView2.hints.Qty.tooltip}" id="it18">
-                      <f:validator binding="#{row.bindings.Qty.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblQcDView2.hints.Qty.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column headerText="IGP Qty" id="c9"
+                   <af:column headerText="IGP Qty" id="c9"
                              sortable="true" filterable="true">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.IgpQty}"
@@ -250,6 +251,25 @@
                                         pattern="#{bindings.TblQcDView2.hints.IgpQty.format}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column sortProperty="#{bindings.TblQcDView2.hints.Qty.name}" filterable="true"
+                             sortable="true" headerText="Qty" id="c6" align="left">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Qty}"
+       id="it33" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Qty.inputValue}"
+                                  label="#{bindings.TblQcDView2.hints.Qty.label}"
+                                  required="#{bindings.TblQcDView2.hints.Qty.mandatory}"
+                                  columns="#{bindings.TblQcDView2.hints.Qty.displayWidth}"
+                                  maximumLength="#{bindings.TblQcDView2.hints.Qty.precision}"
+                                  shortDesc="#{bindings.TblQcDView2.hints.Qty.tooltip}" id="it18">
+                      <f:validator binding="#{row.bindings.Qty.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblQcDView2.hints.Qty.format}"/>
+                    </af:inputText>
+                  </af:column>
+                 
                             <af:column sortProperty="#{bindings.TblQcDView2.hints.BalQty.name}" filterable="true"
                                        sortable="true" headerText="Bal Qty" id="c14">
                                         <f:facet name="filter">

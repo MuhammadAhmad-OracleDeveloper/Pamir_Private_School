@@ -28,7 +28,7 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
                       <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab3" text="Purchase Order Master">
-                          <af:panelFormLayout id="pfl1" maxColumns="3" rows="6">
+                          <af:panelFormLayout id="pfl1" maxColumns="3" rows="8">
                                 <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
                                 required="#{bindings.Id.hints.mandatory}" columns="#{bindings.Id.hints.displayWidth}"
                                 maximumLength="#{bindings.Id.hints.precision}" shortDesc="#{bindings.Id.hints.tooltip}"
@@ -44,6 +44,14 @@
                     <af:convertDateTime pattern="#{bindings.Dated.format}"/>
                   </af:inputDate>
                   <af:spacer  id="s6"/>
+                            <af:selectOneChoice value="#{bindings.DoMId.inputValue}" label="DO"
+                                                required="#{bindings.DoMId.hints.mandatory}"
+                                                shortDesc="#{bindings.DoMId.hints.tooltip}" 
+                                                id="soc4" contentStyle="width:135px;">
+                              <f:selectItems value="#{bindings.DoMId.items}" id="si4"/>
+                              <f:validator binding="#{bindings.DoMId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s3"/>
                   <af:inputText value="#{bindings.Carrier.inputValue}" label="Carrier"
                                 required="#{bindings.Carrier.hints.mandatory}"
                                 columns="20"
@@ -63,7 +71,7 @@
                    <af:spacer  id="s4"/>
                   <af:selectOneChoice value="#{bindings.CompanySbuId.inputValue}" label="Project"
                                       required="#{bindings.CompanySbuId.hints.mandatory}"
-                                      shortDesc="#{bindings.CompanySbuId.hints.tooltip}" id="soc6" 
+                                      shortDesc="#{bindings.CompanySbuId.hints.tooltip}" id="soc6" disabled="true"
                                       contentStyle="width:135px;" >
                     <f:selectItems value="#{bindings.CompanySbuId.items}" id="si6"/>
                     <f:validator binding="#{bindings.CompanySbuId.validator}"/>
@@ -85,6 +93,16 @@
                     <f:validator binding="#{bindings.PblSuppId.validator}"/>
                   </af:selectOneChoice>
                   <af:spacer  id="s10"/>
+                  <af:spacer  id="s15"/>
+                            <af:selectOneChoice value="#{bindings.StaticDoMId1.inputValue}"
+                                                label="DO"
+                                                required="#{bindings.StaticDoMId1.hints.mandatory}"
+                                                shortDesc="#{bindings.StaticDoMId1.hints.tooltip}" id="soc5" disabled="true"
+                                                contentStyle="width:135px;">
+                              <f:selectItems value="#{bindings.StaticDoMId1.items}" id="si5"/>
+                              <f:validator binding="#{bindings.StaticDoMId1.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s14"/>
                   <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type" disabled="true"
                                       required="#{bindings.Vtp.hints.mandatory}"
                                       shortDesc="#{bindings.Vtp.hints.tooltip}" id="soc2" contentStyle="width:135px;" >
@@ -133,7 +151,7 @@
                     </af:gridCell>
                   </af:gridRow>
                  
-                  <af:gridRow marginTop="5px" height="auto" id="gr8">
+                  <!--<af:gridRow marginTop="5px" height="auto" id="gr8">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8">
                        <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab2" text="Purchase Order Detail M">
@@ -165,7 +183,7 @@
                                                   pattern="#{bindings.TblPoDDView3.hints.Id.format}"/>
                               </af:inputText>
                             </af:column>
-                            <!--<af:column sortProperty="#{bindings.TblPoDDView3.hints.PoMId.name}" filterable="true"
+                            --><!--<af:column sortProperty="#{bindings.TblPoDDView3.hints.PoMId.name}" filterable="true"
                                        sortable="true" headerText="PO" id="c2" width="200">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.PoMId}"
@@ -179,7 +197,7 @@
                                 <f:selectItems value="#{row.bindings.PoMId.items}" id="si4"/>
                                 <f:validator binding="#{row.bindings.PoMId.validator}"/>
                               </af:selectOneChoice>
-                            </af:column>-->
+                            </af:column>--><!--
                             <af:column sortProperty="#{bindings.TblPoDDView3.hints.DoMId.name}" filterable="true"
                                        sortable="true" headerText="DO" id="c3" width="100">
                                        <f:facet name="filter">
@@ -230,7 +248,7 @@
                         </af:showDetailItem>
             </af:panelTabbed>
                     </af:gridCell>
-                  </af:gridRow>
+                  </af:gridRow>-->
                   
                   <af:gridRow marginTop="5px" height="auto" id="gr10">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc10">
@@ -266,7 +284,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblPoDView2.hints.SrNo.name}" filterable="true"
-                                       sortable="true" headerText="Serial No." id="c6">
+                                       sortable="true" headerText="Serial No." id="c6" visible="false">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.SrNo}"
        id="it19" placeholder="Search ">
@@ -300,20 +318,20 @@
                                 <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblPoDView2.hints.UomId.name}" filterable="true"
-                                       sortable="true" headerText="Unit of Measurement" id="c8" width="120">
-                                        <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.UomId}"
-       id="it21" placeholder="Search ">
+                            <af:column headerText="UOM" id="c1" sortable="true" filterable="true" width="60">
+                            <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Name}"
+       id="it5" placeholder="Search ">
       </af:inputText>
 </f:facet>
-                              <af:selectOneChoice value="#{row.bindings.UomId.inputValue}"
-                                                  label="#{row.bindings.UomId.label}"
-                                                  required="#{bindings.TblPoDView2.hints.UomId.mandatory}"
-                                                  shortDesc="#{bindings.TblPoDView2.hints.UomId.tooltip}" id="soc12" readOnly="true">
-                                <f:selectItems value="#{row.bindings.UomId.items}" id="si12"/>
-                                <f:validator binding="#{row.bindings.UomId.validator}"/>
-                              </af:selectOneChoice>
+                              <af:inputText value="#{row.bindings.Name.inputValue}"
+                                            label="#{bindings.TblPoDView2.hints.Name.label}"
+                                            required="#{bindings.TblPoDView2.hints.Name.mandatory}"
+                                            columns="#{bindings.TblPoDView2.hints.Name.displayWidth}"
+                                            maximumLength="#{bindings.TblPoDView2.hints.Name.precision}"
+                                            shortDesc="#{bindings.TblPoDView2.hints.Name.tooltip}" id="it4" readOnly="true">
+                                <f:validator binding="#{row.bindings.Name.validator}"/>
+                              </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblPoDView2.hints.Description.name}" filterable="true"
                                        sortable="true" headerText="Description"
@@ -328,8 +346,25 @@
                                             required="#{bindings.TblPoDView2.hints.Description.mandatory}"
                                             columns="#{bindings.TblPoDView2.hints.Description.displayWidth}"
                                             maximumLength="#{bindings.TblPoDView2.hints.Description.precision}"
-                                            shortDesc="#{bindings.TblPoDView2.hints.Description.tooltip}" id="it13" readOnly="true">
+                                            shortDesc="#{bindings.TblPoDView2.hints.Description.tooltip}" id="it13" >
                                 <f:validator binding="#{row.bindings.Description.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblPoDView2.hints.DoQty.name}" filterable="true"
+                                       sortable="true" headerText="DO Qty" id="c11">
+                              <f:facet name="filter">
+                                <af:inputText value="#{vs.filterCriteria.DoQty}" id="it24" placeholder="Search "/>
+                              </f:facet>
+                              <af:inputText value="#{row.bindings.DoQty.inputValue}"
+                                            label="#{bindings.TblPoDView2.hints.DoQty.label}"
+                                            required="#{bindings.TblPoDView2.hints.DoQty.mandatory}"
+                                            columns="#{bindings.TblPoDView2.hints.DoQty.displayWidth}"
+                                            maximumLength="#{bindings.TblPoDView2.hints.DoQty.precision}"
+                                            shortDesc="#{bindings.TblPoDView2.hints.DoQty.tooltip}" id="it16"
+                                            readOnly="true">
+                                <f:validator binding="#{row.bindings.DoQty.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblPoDView2.hints.DoQty.format}"/>
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblPoDView2.hints.Qty.name}" filterable="true"
@@ -348,24 +383,6 @@
                                 <f:validator binding="#{row.bindings.Qty.validator}"/>
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblPoDView2.hints.Qty.format}"/>
-                              </af:inputText>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblPoDView2.hints.DoQty.name}" filterable="true"
-                                       sortable="true" headerText="DO Qty" id="c11">
-                                        <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.DoQty}"
-       id="it24" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                              <af:inputText value="#{row.bindings.DoQty.inputValue}"
-                                            label="#{bindings.TblPoDView2.hints.DoQty.label}"
-                                            required="#{bindings.TblPoDView2.hints.DoQty.mandatory}"
-                                            columns="#{bindings.TblPoDView2.hints.DoQty.displayWidth}"
-                                            maximumLength="#{bindings.TblPoDView2.hints.DoQty.precision}"
-                                            shortDesc="#{bindings.TblPoDView2.hints.DoQty.tooltip}" id="it16" readOnly="true">
-                                <f:validator binding="#{row.bindings.DoQty.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblPoDView2.hints.DoQty.format}"/>
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblPoDView2.hints.BalQty.name}" filterable="true"

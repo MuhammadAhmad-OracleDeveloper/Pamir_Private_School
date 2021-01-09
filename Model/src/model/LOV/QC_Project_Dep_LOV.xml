@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="QC_Project_Dep_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblQcM.ID, 
+       TblQcM.VNO, 
+       TblQcM.VTP, 
+       TblQcM.DATED, 
+       TblQcM.COMPANY_SBU_ID"
+  FromList="TBL_QC_M TblQcM"
+  Where="tblqcm.id not in (select QC_M_ID From Tbl_GRN_M Where QC_M_ID is not null) 
+And TblQcM.COMPANY_SBU_ID=:comid"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.QC_Project_Dep_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="comid"
+    Kind="where"
+    Type="java.math.BigDecimal"/>
+  <EntityUsage
+    Name="TblQcM"
+    Entity="model.ERP.EO.TblQcM"/>
+  <ViewAttribute
+    Name="Id"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblQcM"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Vno"
+    PrecisionRule="true"
+    EntityAttrName="Vno"
+    EntityUsage="TblQcM"
+    AliasName="VNO"/>
+  <ViewAttribute
+    Name="Vtp"
+    PrecisionRule="true"
+    EntityAttrName="Vtp"
+    EntityUsage="TblQcM"
+    AliasName="VTP"/>
+  <ViewAttribute
+    Name="Dated"
+    PrecisionRule="true"
+    EntityAttrName="Dated"
+    EntityUsage="TblQcM"
+    AliasName="DATED"/>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblQcM"
+    AliasName="COMPANY_SBU_ID"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

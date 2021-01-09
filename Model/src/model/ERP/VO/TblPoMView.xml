@@ -6,13 +6,33 @@
   Name="TblPoMView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblPoM.ID, 
+       TblPoM.VNO, 
+       TblPoM.VTP, 
+       TblPoM.DATED, 
+       TblPoM.DEPARTMENT_ID, 
+       TblPoM.COMPANY_SBU_ID, 
+       TblPoM.DO_M_ID, 
+       TblPoM.PBL_SUPP_ID, 
+       TblPoM.CARRIER, 
+       TblPoM.NARRATION, 
+       TblPoM.CREATED_DATE, 
+       TblPoM.CREATED_BY, 
+       TblPoM.UPDATED_DATE, 
+       TblPoM.UPDATED_BY, 
+       TblPoM.DO_M_ID AS DO_MID1"
+  FromList="TBL_PO_M TblPoM"
+  Where="TblPoM.COMPANY_SBU_ID = :getcompId">
+  <Variable
+    Name="getcompId"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"><![CDATA[adf.context.current.sessionScope.get('sessSBUID');]]></TransientExpression>
+  </Variable>
   <ViewAccessor
     Name="Voucher_Type_LOV1"
     ViewObjectName="model.LOV.Voucher_Type_LOV"
@@ -29,6 +49,22 @@
     Name="PBL_Supplier_Name_LOV1"
     ViewObjectName="model.LOV.PBL_Supplier_Name_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="INV_DO_Master_LOV1"
+    ViewObjectName="model.LOV.INV_DO_Master_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Pending_DO_LOV1"
+    ViewObjectName="model.LOV.Pending_DO_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getCOMPID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[CompanySbuId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_Vtp"
     ListVOName="Voucher_Type_LOV1"
@@ -101,6 +137,45 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_StaticDoMId1"
+    ListVOName="INV_DO_Master_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StaticDoMId1"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Id"/>
+      <Item Value="Dated"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DoMId"
+    ListVOName="Pending_DO_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DoMId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Id"/>
+      <Item Value="Dated"/>
+      <Item Value="BalQty"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblPoM"
     Entity="model.ERP.EO.TblPoM"/>
@@ -166,6 +241,20 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
+    Name="DoMId"
+    PrecisionRule="true"
+    EntityAttrName="DoMId"
+    EntityUsage="TblPoM"
+    AliasName="DO_M_ID"
+    LOVName="LOV_DoMId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
     Name="PblSuppId"
     PrecisionRule="true"
     EntityAttrName="PblSuppId"
@@ -215,6 +304,20 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblPoM"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="StaticDoMId1"
+    PrecisionRule="true"
+    EntityAttrName="DoMId"
+    EntityUsage="TblPoM"
+    AliasName="DO_MID1"
+    LOVName="LOV_StaticDoMId1">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblIgpMView"
     ViewLink="model.ERP.VO.FkIgpMPoLink"

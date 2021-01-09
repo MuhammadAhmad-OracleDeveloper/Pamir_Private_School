@@ -6,13 +6,33 @@
   Name="TblGinDView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblGinD.ID, 
+       TblGinD.GIN_M_ID, 
+       TblGinD.SR_NO, 
+       TblGinD.ITEM_L4_ID, 
+       TblGinD.UOM_ID, 
+       TblGinD.DESCRIPTION, 
+       TblGinD.QTY, 
+       TblGinD.RATE, 
+       TblGinD.AMOUNT, 
+       TblGinD.CREATED_DATE, 
+       TblGinD.CREATED_BY, 
+       TblGinD.UPDATED_DATE, 
+       TblGinD.UPDATED_BY, 
+       TblItemL4.ITEM_L4_ID AS ITEM_L4ID1, 
+       TblUom.NAME, 
+       TblUom.ID AS ID1, 
+       TblGinM.FROM_COMPANY_SBU_ID, 
+       TblGinM.ID AS ID2, 
+       TblGinM.FROM_DEPARTMENT_ID, 
+       TblGinD.ITEM_L4_ID AS ITEM_L4ID2"
+  FromList="TBL_GIN_D TblGinD, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom, TBL_GIN_M TblGinM"
+  Where="TblGinD.GIN_M_ID = TblGinM.ID(+) 
+AND TblGinD.ITEM_L4_ID = TblItemL4.ITEM_L4_ID             
+and TblItemL4.UOM_ID = TblUom.ID">
   <ViewAccessor
     Name="ItemL4_Name_LOV1"
     ViewObjectName="model.LOV.ItemL4_Name_LOV"
@@ -21,24 +41,23 @@
     Name="Unit_of_Measurement_LOV1"
     ViewObjectName="model.LOV.Unit_of_Measurement_LOV"
     RowLevelBinds="true"/>
-  <ListBinding
-    Name="LOV_ItemL4Id"
-    ListVOName="ItemL4_Name_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="ItemL4Id"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="ItemL4Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
+  <ViewAccessor
+    Name="FIFO_LOV1"
+    ViewObjectName="model.LOV.FIFO_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="get_Comp_ID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[FromCompanySbuId]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="get_dept_ID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[FromDepartmentId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_UomId"
     ListVOName="Unit_of_Measurement_LOV1"
@@ -57,9 +76,88 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_ItemL4Id"
+    ListVOName="FIFO_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ItemL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Qty"/>
+      <Item Value="Rate"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ItemL4Id"/>
+      <Item Value="BalQty"/>
+      <Item Value="Rate"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ItemName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_StaticItemL4Id2"
+    ListVOName="ItemL4_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StaticItemL4Id2"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ItemL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblGinD"
     Entity="model.ERP.EO.TblGinD"/>
+  <EntityUsage
+    Name="TblItemL4"
+    Entity="model.ERP.EO.TblItemL4"
+    ReadOnly="true"
+    DeleteParticipant="false">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblUom"
+    Entity="model.ERP.EO.TblUom"
+    ReadOnly="true"
+    DeleteParticipant="false">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblGinM"
+    Entity="model.ERP.EO.TblGinM"
+    Association="model.ERP.EO.FkGinDMAssoc"
+    AssociationEnd="model.ERP.EO.FkGinDMAssoc.TblGinM"
+    SourceUsage="model.ERP.VO.TblGinDView.TblGinD"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.ERP.EO.TblGinM.Id"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.ERP.EO.TblGinD.GinMId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
@@ -156,4 +254,60 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblGinD"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="ItemL4Id1"
+    PrecisionRule="true"
+    EntityAttrName="ItemL4Id"
+    EntityUsage="TblItemL4"
+    AliasName="ITEM_L4ID1"/>
+  <ViewAttribute
+    Name="UOMName"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblUom"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="Id1"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblUom"
+    AliasName="ID1"/>
+  <ViewAttribute
+    Name="FromCompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="FromCompanySbuId"
+    EntityUsage="TblGinM"
+    AliasName="FROM_COMPANY_SBU_ID"/>
+  <ViewAttribute
+    Name="Id2"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblGinM"
+    AliasName="ID2"/>
+  <ViewAttribute
+    Name="FromDepartmentId"
+    PrecisionRule="true"
+    EntityAttrName="FromDepartmentId"
+    EntityUsage="TblGinM"
+    AliasName="FROM_DEPARTMENT_ID"/>
+  <ViewAttribute
+    Name="StaticItemL4Id2"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ItemL4Id"
+    EntityUsage="TblGinD"
+    AliasName="ITEM_L4ID2"
+    LOVName="LOV_StaticItemL4Id2">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id"/>
+    <Item Value="ItemL4Id1"/>
+    <Item Value="Id1"/>
+  </AttrArray>
 </ViewObject>

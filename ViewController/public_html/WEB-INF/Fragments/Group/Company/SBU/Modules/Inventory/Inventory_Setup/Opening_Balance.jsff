@@ -33,110 +33,172 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1" text="Opening Balance">
-                <af:table value="#{bindings.TblOpenBlncView1.collectionModel}" var="row"
-                          rows="#{bindings.TblOpenBlncView1.rangeSize}"
-                          emptyText="#{bindings.TblOpenBlncView1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                          rowBandingInterval="0"
-                          selectedRowKeys="#{bindings.TblOpenBlncView1.collectionModel.selectedRow}"
-                          selectionListener="#{bindings.TblOpenBlncView1.collectionModel.makeCurrent}"
-                          rowSelection="single" fetchSize="#{bindings.TblOpenBlncView1.rangeSize}"
-                          filterModel="#{bindings.TblOpenBlncView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblOpenBlncView1Query.processQuery}" varStatus="vs" id="t1"
+                <af:table value="#{bindings.TblOpenBlncInvView1.collectionModel}" var="row"
+                            rows="#{bindings.TblOpenBlncInvView1.rangeSize}"
+                            emptyText="#{bindings.TblOpenBlncInvView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                            rowBandingInterval="0"
+                            selectedRowKeys="#{bindings.TblOpenBlncInvView1.collectionModel.selectedRow}"
+                            selectionListener="#{bindings.TblOpenBlncInvView1.collectionModel.makeCurrent}"
+                            rowSelection="single" fetchSize="#{bindings.TblOpenBlncInvView1.rangeSize}"
+                            filterModel="#{bindings.TblOpenBlncInvView1Query.queryDescriptor}" filterVisible="true"
+                            queryListener="#{bindings.TblOpenBlncInvView1Query.processQuery}" varStatus="vs" id="t1"
                           scrollPolicy="page" autoHeightRows="0">
-                  <af:column sortProperty="#{bindings.TblOpenBlncView1.hints.OpenBlncId.name}" filterable="true"
-                             sortable="true" headerText="ID" id="c1" align="right" width="80" visible="false">
-                             <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.OpenBlncId}"
-       id="id4" placeholder="Search ID">
+                    <af:column sortProperty="#{bindings.TblOpenBlncInvView1.hints.Id.name}" filterable="true"
+                               sortable="true" headerText="ID" id="c1" visible="false">
+                               <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="id4" placeholder="Search ">
       </af:inputText>
 </f:facet>
-                    <af:inputText value="#{row.bindings.OpenBlncId.inputValue}"
-                                  label="#{bindings.TblOpenBlncView1.hints.OpenBlncId.label}"
-                                  required="#{bindings.TblOpenBlncView1.hints.OpenBlncId.mandatory}"
-                                  columns="#{bindings.TblOpenBlncView1.hints.OpenBlncId.displayWidth}"
-                                  maximumLength="#{bindings.TblOpenBlncView1.hints.OpenBlncId.precision}"
-                                  shortDesc="#{bindings.TblOpenBlncView1.hints.OpenBlncId.tooltip}" 
-                                  id="it1" readOnly="true">
-                      <f:validator binding="#{row.bindings.OpenBlncId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblOpenBlncView1.hints.OpenBlncId.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblOpenBlncView1.hints.OpenBlncDated.name}" filterable="true"
-                             sortable="true" headerText="Date"
-                             id="c2">
-                    <f:facet name="filter">
-                      <af:inputDate value="#{bindings.TblOpenBlncView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.OpenBlncDated.value}"
-                                    id="id1">
-                        <af:convertDateTime pattern="#{bindings.TblOpenBlncView1.hints.OpenBlncDated.format}"/>
+                      <af:inputText value="#{row.bindings.Id.inputValue}"
+                                    label="#{bindings.TblOpenBlncInvView1.hints.Id.label}"
+                                    required="#{bindings.TblOpenBlncInvView1.hints.Id.mandatory}"
+                                    columns="#{bindings.TblOpenBlncInvView1.hints.Id.displayWidth}"
+                                    maximumLength="#{bindings.TblOpenBlncInvView1.hints.Id.precision}"
+                                    shortDesc="#{bindings.TblOpenBlncInvView1.hints.Id.tooltip}" id="it1" readOnly="true">
+                        <f:validator binding="#{row.bindings.Id.validator}"/>
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.TblOpenBlncInvView1.hints.Id.format}"/>
+                      </af:inputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.TblOpenBlncInvView1.hints.Dated.name}" filterable="true"
+                               sortable="true" headerText="Date" id="c2">
+                      <f:facet name="filter">
+                        <af:inputDate value="#{bindings.TblOpenBlncInvView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                      id="id1" placeholder="Search ">
+                          <af:convertDateTime pattern="#{bindings.TblOpenBlncInvView1.hints.Dated.format}"/>
+                        </af:inputDate>
+                      </f:facet>
+                      <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                    label="#{bindings.TblOpenBlncInvView1.hints.Dated.label}"
+                                    required="#{bindings.TblOpenBlncInvView1.hints.Dated.mandatory}"
+                                    columns="#{bindings.TblOpenBlncInvView1.hints.Dated.displayWidth}"
+                                    shortDesc="#{bindings.TblOpenBlncInvView1.hints.Dated.tooltip}" id="id2">
+                        <f:validator binding="#{row.bindings.Dated.validator}"/>
+                        <af:convertDateTime pattern="#{bindings.TblOpenBlncInvView1.hints.Dated.format}"/>
                       </af:inputDate>
-                    </f:facet>
-                    <af:inputDate value="#{row.bindings.OpenBlncDated.inputValue}"
-                                  label="#{bindings.TblOpenBlncView1.hints.OpenBlncDated.label}"
-                                  required="#{bindings.TblOpenBlncView1.hints.OpenBlncDated.mandatory}"
-                                  columns="#{bindings.TblOpenBlncView1.hints.OpenBlncDated.displayWidth}"
-                                  shortDesc="#{bindings.TblOpenBlncView1.hints.OpenBlncDated.tooltip}" id="id2">
-                      <f:validator binding="#{row.bindings.OpenBlncDated.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.TblOpenBlncView1.hints.OpenBlncDated.format}"/>
-                    </af:inputDate>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblOpenBlncView1.hints.OpenBlncGlL4Id.name}" filterable="true"
-                             sortable="true" headerText="General Legder L4"
-                             id="c3" width="200">
-                              <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.OpenBlncGlL4Id}"
-       id="it4" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                    <af:selectOneChoice value="#{row.bindings.OpenBlncGlL4Id.inputValue}"
-                                        label="#{row.bindings.OpenBlncGlL4Id.label}"
-                                        required="#{bindings.TblOpenBlncView1.hints.OpenBlncGlL4Id.mandatory}"
-                                        shortDesc="#{bindings.TblOpenBlncView1.hints.OpenBlncGlL4Id.tooltip}" id="soc1">
-                      <f:selectItems value="#{row.bindings.OpenBlncGlL4Id.items}" id="si1"/>
-                      <f:validator binding="#{row.bindings.OpenBlncGlL4Id.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblOpenBlncView1.hints.OpenBlncDr.name}" filterable="true"
-                             sortable="true" headerText="Dr" id="c4" width="120" align="left">
-                   <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.OpenBlncDr}"
+                    </af:column>
+                    <af:column sortProperty="#{bindings.TblOpenBlncInvView1.hints.CompanySbuId.name}" filterable="true"
+                               sortable="true" headerText="Project"
+                               id="c3">
+                                <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.CompanySbuId}"
        id="it5" placeholder="Search ">
       </af:inputText>
 </f:facet>
-                    <af:inputText value="#{row.bindings.OpenBlncDr.inputValue}"
-                                  label="#{bindings.TblOpenBlncView1.hints.OpenBlncDr.label}"
-                                  required="#{bindings.TblOpenBlncView1.hints.OpenBlncDr.mandatory}"
-                                  columns="#{bindings.TblOpenBlncView1.hints.OpenBlncDr.displayWidth}"
-                                  maximumLength="#{bindings.TblOpenBlncView1.hints.OpenBlncDr.precision}"
-                                  shortDesc="#{bindings.TblOpenBlncView1.hints.OpenBlncDr.tooltip}" id="it2"
-                                  contentStyle='text-align: right'>
-
-                      <f:validator binding="#{row.bindings.OpenBlncDr.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblOpenBlncView1.hints.OpenBlncDr.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblOpenBlncView1.hints.OpenBlncCr.name}" filterable="true"
-                             sortable="true" headerText="Cr" id="c5" width="120" align="left">
-                    <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.OpenBlncCr}"
+                      <af:selectOneChoice value="#{row.bindings.CompanySbuId.inputValue}"
+                                          label="#{row.bindings.CompanySbuId.label}"
+                                          required="#{bindings.TblOpenBlncInvView1.hints.CompanySbuId.mandatory}"
+                                          shortDesc="#{bindings.TblOpenBlncInvView1.hints.CompanySbuId.tooltip}"
+                                          id="soc1" readOnly="true">
+                        <f:selectItems value="#{row.bindings.CompanySbuId.items}" id="si1"/>
+                        <f:validator binding="#{row.bindings.CompanySbuId.validator}"/>
+                      </af:selectOneChoice>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.TblOpenBlncInvView1.hints.DepartmentId.name}" filterable="true"
+                               sortable="true" headerText="Department"
+                               id="c4">
+                               <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.DepartmentId}"
        id="it6" placeholder="Search ">
       </af:inputText>
 </f:facet>
-                    <af:inputText value="#{row.bindings.OpenBlncCr.inputValue}"
-                                  label="#{bindings.TblOpenBlncView1.hints.OpenBlncCr.label}"
-                                  required="#{bindings.TblOpenBlncView1.hints.OpenBlncCr.mandatory}"
-                                  columns="#{bindings.TblOpenBlncView1.hints.OpenBlncCr.displayWidth}"
-                                  maximumLength="#{bindings.TblOpenBlncView1.hints.OpenBlncCr.precision}"
-                                  shortDesc="#{bindings.TblOpenBlncView1.hints.OpenBlncCr.tooltip}" id="it3"
-                                  contentStyle='text-align: right'>
-                      <f:validator binding="#{row.bindings.OpenBlncCr.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblOpenBlncView1.hints.OpenBlncCr.format}"/>
-                    </af:inputText>
-                  </af:column>
-                </af:table>
-                 <af:panelGroupLayout id="pgl3" halign="center"  layout="horizontal">
+                      <af:selectOneChoice value="#{row.bindings.DepartmentId.inputValue}"
+                                          label="#{row.bindings.DepartmentId.label}"
+                                          required="#{bindings.TblOpenBlncInvView1.hints.DepartmentId.mandatory}"
+                                          shortDesc="#{bindings.TblOpenBlncInvView1.hints.DepartmentId.tooltip}"
+                                          id="soc2">
+                        <f:selectItems value="#{row.bindings.DepartmentId.items}" id="si2"/>
+                        <f:validator binding="#{row.bindings.DepartmentId.validator}"/>
+                      </af:selectOneChoice>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.TblOpenBlncInvView1.hints.ItemL4Id.name}" filterable="true"
+                               sortable="true" headerText="Item Level 4"
+                               id="c5">
+                                <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ItemL4Id}"
+       id="it7" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                      <af:selectOneChoice value="#{row.bindings.ItemL4Id.inputValue}"
+                                          label="#{row.bindings.ItemL4Id.label}"
+                                          required="#{bindings.TblOpenBlncInvView1.hints.ItemL4Id.mandatory}"
+                                          shortDesc="#{bindings.TblOpenBlncInvView1.hints.ItemL4Id.tooltip}" id="soc3">
+                        <f:selectItems value="#{row.bindings.ItemL4Id.items}" id="si3"/>
+                        <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
+                      </af:selectOneChoice>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.TblOpenBlncInvView1.hints.UomId.name}" filterable="true"
+                               sortable="true" headerText="UOM" id="c6">
+                                <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.UomId}"
+       id="it8" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                      <af:selectOneChoice value="#{row.bindings.UomId.inputValue}" label="#{row.bindings.UomId.label}"
+                                          required="#{bindings.TblOpenBlncInvView1.hints.UomId.mandatory}"
+                                          shortDesc="#{bindings.TblOpenBlncInvView1.hints.UomId.tooltip}" id="soc4" readOnly="true">
+                        <f:selectItems value="#{row.bindings.UomId.items}" id="si4"/>
+                        <f:validator binding="#{row.bindings.UomId.validator}"/>
+                      </af:selectOneChoice>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.TblOpenBlncInvView1.hints.Qty.name}" filterable="true"
+                               sortable="true" headerText="Qty" id="c7">
+                                <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Qty}"
+       id="it9" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                      <af:inputText value="#{row.bindings.Qty.inputValue}"
+                                    label="#{bindings.TblOpenBlncInvView1.hints.Qty.label}"
+                                    required="#{bindings.TblOpenBlncInvView1.hints.Qty.mandatory}"
+                                    columns="#{bindings.TblOpenBlncInvView1.hints.Qty.displayWidth}"
+                                    maximumLength="#{bindings.TblOpenBlncInvView1.hints.Qty.precision}"
+                                    shortDesc="#{bindings.TblOpenBlncInvView1.hints.Qty.tooltip}" id="it2">
+                        <f:validator binding="#{row.bindings.Qty.validator}"/>
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.TblOpenBlncInvView1.hints.Qty.format}"/>
+                      </af:inputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.TblOpenBlncInvView1.hints.Rate.name}" filterable="true"
+                               sortable="true" headerText="Rate" id="c8">
+                                <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Rate}"
+       id="it10" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                      <af:inputText value="#{row.bindings.Rate.inputValue}"
+                                    label="#{bindings.TblOpenBlncInvView1.hints.Rate.label}"
+                                    required="#{bindings.TblOpenBlncInvView1.hints.Rate.mandatory}"
+                                    columns="#{bindings.TblOpenBlncInvView1.hints.Rate.displayWidth}"
+                                    maximumLength="#{bindings.TblOpenBlncInvView1.hints.Rate.precision}"
+                                    shortDesc="#{bindings.TblOpenBlncInvView1.hints.Rate.tooltip}" id="it3">
+                        <f:validator binding="#{row.bindings.Rate.validator}"/>
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.TblOpenBlncInvView1.hints.Rate.format}"/>
+                      </af:inputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.TblOpenBlncInvView1.hints.Amount.name}" filterable="true"
+                               sortable="true" headerText="Amount" id="c9">
+                                <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Amount}"
+       id="it11" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                      <af:inputText value="#{row.bindings.Amount.inputValue}"
+                                    label="#{bindings.TblOpenBlncInvView1.hints.Amount.label}"
+                                    required="#{bindings.TblOpenBlncInvView1.hints.Amount.mandatory}"
+                                    columns="#{bindings.TblOpenBlncInvView1.hints.Amount.displayWidth}"
+                                    maximumLength="#{bindings.TblOpenBlncInvView1.hints.Amount.precision}"
+                                    shortDesc="#{bindings.TblOpenBlncInvView1.hints.Amount.tooltip}" id="it4" readOnly="true">
+                        <f:validator binding="#{row.bindings.Amount.validator}"/>
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.TblOpenBlncInvView1.hints.Amount.format}"/>
+                      </af:inputText>
+                    </af:column>
+                  </af:table>
+                
+                <af:panelGroupLayout id="pgl3" halign="center"  layout="horizontal">
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -146,7 +208,8 @@
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s5"/>
                             </af:iterator>
-                        </af:panelGroupLayout>
+                 
+                </af:panelGroupLayout>
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>

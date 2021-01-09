@@ -6,13 +6,15 @@
   Name="ItemL4_Name_LOV"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblItemL4.ITEM_L4_ID, 
+       TblItemL4.NAME, 
+       TblItemL4.UOM_ID, 
+       TblItemL4.AST"
+  FromList="TBL_ITEM_L4 TblItemL4"
+  Where="TblItemL4.AST='Y'">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -37,6 +39,19 @@
     EntityAttrName="Name"
     EntityUsage="TblItemL4"
     AliasName="NAME"/>
+  <ViewAttribute
+    Name="UomId"
+    PrecisionRule="true"
+    EntityAttrName="UomId"
+    EntityUsage="TblItemL4"
+    AliasName="UOM_ID"/>
+  <ViewAttribute
+    Name="Ast"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblItemL4"
+    AliasName="AST"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

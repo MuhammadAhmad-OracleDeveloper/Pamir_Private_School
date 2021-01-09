@@ -276,7 +276,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblPorDetailView2.hints.SrNo.name}" filterable="true"
-                             sortable="true" headerText="Serial No." id="c2">
+                             sortable="true" headerText="Serial No." id="c2" visible="false">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.SrNo}"
        id="it9" placeholder="Search ">
@@ -308,7 +308,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblPorDetailView2.hints.UomId.name}" filterable="true"
-                             sortable="true" headerText="Unit of Measurement" id="c4" width="200">
+                             sortable="true" headerText="UOM" id="c4" width="200">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.UomId}"
        id="it11" placeholder="Search ">
@@ -321,8 +321,22 @@
                       <f:validator binding="#{row.bindings.UomId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
+                  <af:column sortProperty="#{bindings.TblPorDetailView2.hints.Description.name}" filterable="true"
+                             sortable="true" headerText="Description" id="c6" width="500">
+                    <f:facet name="filter">
+                      <af:inputText value="#{vs.filterCriteria.Description}" id="it13" placeholder="Search "/>
+                    </f:facet>
+                    <af:inputText value="#{row.bindings.Description.inputValue}"
+                                  label="#{bindings.TblPorDetailView2.hints.Description.label}"
+                                  required="#{bindings.TblPorDetailView2.hints.Description.mandatory}"
+                                  columns="#{bindings.TblPorDetailView2.hints.Description.displayWidth}"
+                                  maximumLength="#{bindings.TblPorDetailView2.hints.Description.precision}"
+                                  shortDesc="#{bindings.TblPorDetailView2.hints.Description.tooltip}" id="it8">
+                      <f:validator binding="#{row.bindings.Description.validator}"/>
+                    </af:inputText>
+                  </af:column>
                   <af:column sortProperty="#{bindings.TblPorDetailView2.hints.Qty.name}" filterable="true"
-                             sortable="true" headerText="Quantity" id="c5">
+                             sortable="true" headerText="Qty" id="c5">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Qty}"
        id="it12" placeholder="Search ">
@@ -336,22 +350,6 @@
                                   shortDesc="#{bindings.TblPorDetailView2.hints.Qty.tooltip}" id="it7">
                       <f:validator binding="#{row.bindings.Qty.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblPorDetailView2.hints.Qty.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblPorDetailView2.hints.Description.name}" filterable="true"
-                             sortable="true" headerText="Description" id="c6">
-                              <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.Description}"
-       id="it13" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                    <af:inputText value="#{row.bindings.Description.inputValue}"
-                                  label="#{bindings.TblPorDetailView2.hints.Description.label}"
-                                  required="#{bindings.TblPorDetailView2.hints.Description.mandatory}"
-                                  columns="#{bindings.TblPorDetailView2.hints.Description.displayWidth}"
-                                  maximumLength="#{bindings.TblPorDetailView2.hints.Description.precision}"
-                                  shortDesc="#{bindings.TblPorDetailView2.hints.Description.tooltip}" id="it8">
-                      <f:validator binding="#{row.bindings.Description.validator}"/>
                     </af:inputText>
                   </af:column>
                 </af:table>

@@ -46,8 +46,8 @@
     </attributeValues>
     <list IterBinding="TblGrnMView1Iterator" StaticList="false" Uses="LOV_QcMId" id="QcMId" DTSupportsMRU="false"
           SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblGrnMView1Iterator" StaticList="false" Uses="LOV_PoMId" id="PoMId" DTSupportsMRU="false"
-          SelectItemValueMode="ListObject"/>
+    <!--<list IterBinding="TblGrnMView1Iterator" StaticList="false" Uses="LOV_PoMId" id="PoMId" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>-->
     <attributeValues IterBinding="TblGrnMView1Iterator" id="Narration">
       <AttrNames>
         <Item Value="Narration"/>
@@ -99,10 +99,18 @@
           <Item Value="Qty"/>
           <Item Value="Rate"/>
           <Item Value="Amount"/>
+          <Item Value="UOMName"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
     <action IterBinding="TblGrnDView2Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="TblGrnDView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblGrnDView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <list IterBinding="TblGrnMView1Iterator" StaticList="false" Uses="LOV_StaticQcMId1" id="StaticQcMId1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblGrnMView1Iterator" id="PoMId">
+      <AttrNames>
+        <Item Value="PoMId"/>
+      </AttrNames>
+    </attributeValues>
   </bindings></pageDefinition>
