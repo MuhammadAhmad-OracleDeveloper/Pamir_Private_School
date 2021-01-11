@@ -50,7 +50,7 @@
                             <af:selectOneChoice value="#{bindings.CompanySbuId.inputValue}"
                                                 label="Project"
                                                 required="#{bindings.CompanySbuId.hints.mandatory}"
-                                                shortDesc="#{bindings.CompanySbuId.hints.tooltip}" id="soc1"
+                                                shortDesc="#{bindings.CompanySbuId.hints.tooltip}" id="soc1" disabled="true"
                                                 contentStyle="width:150px;">
                               <f:selectItems value="#{bindings.CompanySbuId.items}" id="si1"/>
                               <f:validator binding="#{bindings.CompanySbuId.validator}"/>
@@ -179,7 +179,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblBpvDView2.hints.SrNo.name}" filterable="true"
-                                       sortable="true" headerText="Serial No." id="c12">
+                                       sortable="true" headerText="Serial No." id="c12" visible="false">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.SrNo}"
        id="it20" placeholder="Search ">

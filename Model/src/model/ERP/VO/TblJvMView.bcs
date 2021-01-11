@@ -1,0 +1,12 @@
+//Groovy Scripts for model.ERP.VO.TblJvMView
+
+package model.ERP.VO
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="getCompid")
+def getCompid_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('sessSBUID');
+}
+

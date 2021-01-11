@@ -6,13 +6,31 @@
   Name="TblJvMView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblJvM.ID, 
+       TblJvM.VNO, 
+       TblJvM.VTP, 
+       TblJvM.DATED, 
+       TblJvM.NARRATION, 
+       TblJvM.GROUP_COMPANY_ID, 
+       TblJvM.COMPANY_SBU_ID, 
+       TblJvM.CREATED_DATE, 
+       TblJvM.CREATED_BY, 
+       TblJvM.UPDATED_DATE, 
+       TblJvM.UPDATED_BY"
+  FromList="TBL_JV_M TblJvM"
+  Where="TblJvM.COMPANY_SBU_ID = :getCompid">
+  <Variable
+    Name="getCompid"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblJvMView"/>
+  </Variable>
   <ViewAccessor
     Name="Voucher_Type_LOV1"
     ViewObjectName="model.LOV.Voucher_Type_LOV"

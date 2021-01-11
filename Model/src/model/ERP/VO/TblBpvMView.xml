@@ -6,13 +6,34 @@
   Name="TblBpvMView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblBpvM.ID, 
+       TblBpvM.VNO, 
+       TblBpvM.VTP, 
+       TblBpvM.DATED, 
+       TblBpvM.CHQ_NO, 
+       TblBpvM.CHQ_DATE, 
+       TblBpvM.CLR_DATE, 
+       TblBpvM.NARRATION, 
+       TblBpvM.GROUP_COMPANY_ID, 
+       TblBpvM.COMPANY_SBU_ID, 
+       TblBpvM.CREATED_DATE, 
+       TblBpvM.CREATED_BY, 
+       TblBpvM.UPDATED_DATE, 
+       TblBpvM.UPDATED_BY"
+  FromList="TBL_BPV_M TblBpvM"
+  Where="TblBpvM.COMPANY_SBU_ID = nvl(:getCompId,TblBpvM.COMPANY_SBU_ID)">
+  <Variable
+    Name="getCompId"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblBpvMView"/>
+  </Variable>
   <ViewAccessor
     Name="Voucher_Type_LOV1"
     ViewObjectName="model.LOV.Voucher_Type_LOV"

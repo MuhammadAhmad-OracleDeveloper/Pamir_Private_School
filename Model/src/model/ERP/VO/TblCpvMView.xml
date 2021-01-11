@@ -6,13 +6,31 @@
   Name="TblCpvMView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblCpvM.ID, 
+       TblCpvM.VNO, 
+       TblCpvM.VTP, 
+       TblCpvM.DATED, 
+       TblCpvM.NARRATION, 
+       TblCpvM.GROUP_COMPANY_ID, 
+       TblCpvM.COMPANY_SBU_ID, 
+       TblCpvM.CREATED_DATE, 
+       TblCpvM.CREATED_BY, 
+       TblCpvM.UPDATED_DATE, 
+       TblCpvM.UPDATED_BY"
+  FromList="TBL_CPV_M TblCpvM"
+  Where="TblCpvM.COMPANY_SBU_ID = :getCompid">
+  <Variable
+    Name="getCompid"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblCpvMView"/>
+  </Variable>
   <ViewAccessor
     Name="Voucher_Type_LOV1"
     ViewObjectName="model.LOV.Voucher_Type_LOV"
