@@ -17,6 +17,10 @@
     Name="Bank_Cash_C_LOV1"
     ViewObjectName="model.LOV.Bank_Cash_C_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="INV_PO_Master_LOV1"
+    ViewObjectName="model.LOV.INV_PO_Master_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_BankCashId"
     ListVOName="Bank_Cash_C_LOV1"
@@ -32,6 +36,26 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_PoMId"
+    ListVOName="INV_PO_Master_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PoMId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Vno"/>
+      <Item Value="Dated"/>
+      <Item Value="CompName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -114,4 +138,24 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblPcpD"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="PoMId"
+    PrecisionRule="true"
+    EntityAttrName="PoMId"
+    EntityUsage="TblPcpD"
+    AliasName="PO_M_ID"
+    LOVName="LOV_PoMId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Amount"
+    PrecisionRule="true"
+    EntityAttrName="Amount"
+    EntityUsage="TblPcpD"
+    AliasName="AMOUNT"/>
 </ViewObject>

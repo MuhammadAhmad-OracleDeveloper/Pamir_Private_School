@@ -17,6 +17,10 @@
     Name="Bank_Cash_B_LOV1"
     ViewObjectName="model.LOV.Bank_Cash_B_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Sale_Invoice_Master_LOV1"
+    ViewObjectName="model.LOV.Sale_Invoice_Master_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_BankCashId"
     ListVOName="Bank_Cash_B_LOV1"
@@ -32,6 +36,25 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SaleInvMasterId"
+    ListVOName="Sale_Invoice_Master_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SaleInvMasterId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Id"/>
+      <Item Value="Dated"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -114,4 +137,24 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblRbrD"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="SaleInvMasterId"
+    PrecisionRule="true"
+    EntityAttrName="SaleInvMasterId"
+    EntityUsage="TblRbrD"
+    AliasName="SALE_INV_MASTER_ID"
+    LOVName="LOV_SaleInvMasterId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Amount"
+    PrecisionRule="true"
+    EntityAttrName="Amount"
+    EntityUsage="TblRbrD"
+    AliasName="AMOUNT"/>
 </ViewObject>

@@ -6,13 +6,21 @@
   Name="INV_PO_Master_LOV"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblPoM.ID, 
+       TblPoM.DATED, 
+       TblPoM.VNO, 
+       TblPoM.PBL_SUPP_ID, 
+       TblPoM.COMPANY_SBU_ID, 
+       TblPblSupp.NAME, 
+       TblPblSupp.ID AS ID1, 
+       TblCompanySbu.NAME AS NAME1, 
+       TblCompanySbu.ID AS ID2"
+  FromList="TBL_PO_M TblPoM, TBL_PBL_SUPP TblPblSupp, TBL_COMPANY_SBU TblCompanySbu"
+  Where="TblPoM.PBL_SUPP_ID=TblPblSupp.ID   
+AND TblPoM.COMPANY_SBU_ID=TblCompanySbu.ID">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -22,6 +30,24 @@
   <EntityUsage
     Name="TblPoM"
     Entity="model.ERP.EO.TblPoM"/>
+  <EntityUsage
+    Name="TblPblSupp"
+    Entity="model.ERP.EO.TblPblSupp"
+    ReadOnly="true"
+    DeleteParticipant="false">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblCompanySbu"
+    Entity="model.UserRoles.EO.TblCompanySbu"
+    ReadOnly="true"
+    DeleteParticipant="false">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="Id"
     PrecisionRule="true"
@@ -40,6 +66,43 @@
     EntityAttrName="Vno"
     EntityUsage="TblPoM"
     AliasName="VNO"/>
+  <ViewAttribute
+    Name="PblSuppId"
+    PrecisionRule="true"
+    EntityAttrName="PblSuppId"
+    EntityUsage="TblPoM"
+    AliasName="PBL_SUPP_ID"/>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblPoM"
+    AliasName="COMPANY_SBU_ID"/>
+  <ViewAttribute
+    Name="SuppName"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblPblSupp"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="Id1"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblPblSupp"
+    AliasName="ID1"/>
+  <ViewAttribute
+    Name="CompName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblCompanySbu"
+    AliasName="NAME1"/>
+  <ViewAttribute
+    Name="Id2"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblCompanySbu"
+    AliasName="ID2"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

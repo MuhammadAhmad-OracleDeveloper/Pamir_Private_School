@@ -100,11 +100,27 @@
           <Item Value="Description"/>
           <Item Value="Dr"/>
           <Item Value="Cr"/>
+          <Item Value="SaleInvMasterId"/>
+          <Item Value="Amount"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
     <action IterBinding="TblRbrDView3Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="TblRbrDView3Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblRbrDView3Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <list IterBinding="TblRbrMView1Iterator" StaticList="false" Uses="LOV_BankCashId" id="BankCashId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblRbrMView1Iterator" StaticList="false" Uses="LOV_CompanySbuId" id="CompanySbuId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblRbrMView1Iterator" id="FrDate">
+      <AttrNames>
+        <Item Value="FrDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblRbrMView1Iterator" id="ToDate">
+      <AttrNames>
+        <Item Value="ToDate"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

@@ -6,13 +6,34 @@
   Name="TblRcrMView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblRcrM.ID, 
+       TblRcrM.VNO, 
+       TblRcrM.VTP, 
+       TblRcrM.DATED, 
+       TblRcrM.NARRATION, 
+       TblRcrM.RBL_CUST_ID, 
+       TblRcrM.SALE_INV_M_ID, 
+       TblRcrM.CREATED_DATE, 
+       TblRcrM.CREATED_BY, 
+       TblRcrM.UPDATED_DATE, 
+       TblRcrM.UPDATED_BY, 
+       TblRcrM.BANK_CASH_ID, 
+       TblRcrM.COMPANY_SBU_ID, 
+       TblRcrM.FR_DATE, 
+       TblRcrM.TO_DATE"
+  FromList="TBL_RCR_M TblRcrM"
+  Where="TblRcrM.COMPANY_SBU_ID= nvl(:getcompid,TblRcrM.COMPANY_SBU_ID)">
+  <Variable
+    Name="getcompid"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      CodeSourceName="TblRcrMView"/>
+  </Variable>
   <ViewAccessor
     Name="Voucher_Type_LOV1"
     ViewObjectName="model.LOV.Voucher_Type_LOV"
@@ -24,6 +45,14 @@
   <ViewAccessor
     Name="Sales_INV_Master_LOV1"
     ViewObjectName="model.LOV.Sales_INV_Master_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Bank_Cash_C_LOV1"
+    ViewObjectName="model.LOV.Bank_Cash_C_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Company_SBU_Name_LOV1"
+    ViewObjectName="model.LOV.Company_SBU_Name_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
@@ -77,6 +106,42 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Dated"/>
       <Item Value="Vno"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_BankCashId"
+    ListVOName="Bank_Cash_C_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="BankCashId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CompanySbuId"
+    ListVOName="Company_SBU_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CompanySbuId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -174,6 +239,46 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblRcrM"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="BankCashId"
+    PrecisionRule="true"
+    EntityAttrName="BankCashId"
+    EntityUsage="TblRcrM"
+    AliasName="BANK_CASH_ID"
+    LOVName="LOV_BankCashId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblRcrM"
+    AliasName="COMPANY_SBU_ID"
+    LOVName="LOV_CompanySbuId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FrDate"
+    PrecisionRule="true"
+    EntityAttrName="FrDate"
+    EntityUsage="TblRcrM"
+    AliasName="FR_DATE"/>
+  <ViewAttribute
+    Name="ToDate"
+    PrecisionRule="true"
+    EntityAttrName="ToDate"
+    EntityUsage="TblRcrM"
+    AliasName="TO_DATE"/>
   <ViewLinkAccessor
     Name="TblRcrDView"
     ViewLink="model.ERP.VO.FkRcrDMLink"

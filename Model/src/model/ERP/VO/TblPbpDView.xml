@@ -6,13 +6,26 @@
   Name="TblPbpDView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblPbpD.ID, 
+       TblPbpD.PBP_M_ID, 
+       TblPbpD.SR_NO, 
+       TblPbpD.BANK_CASH_ID, 
+       TblPbpD.DESCRIPTION, 
+       TblPbpD.DR, 
+       TblPbpD.CR, 
+       TblPbpD.CREATED_DATE, 
+       TblPbpD.CREATED_BY, 
+       TblPbpD.UPDATED_DATE, 
+       TblPbpD.UPDATED_BY, 
+       TblPbpD.PO_M_ID, 
+       TblPbpD.AMOUNT, 
+       TblPbpM.PBL_SUPP_ID, 
+       TblPbpM.ID AS ID1"
+  FromList="TBL_PBP_D TblPbpD, TBL_PBP_M TblPbpM"
+  Where="TblPbpD.PBP_M_ID = TblPbpM.ID(+)">
   <ViewAccessor
     Name="INV_PO_Master_LOV1"
     ViewObjectName="model.LOV.INV_PO_Master_LOV"
@@ -31,14 +44,34 @@
       <Item Value="Id"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Id"/>
+      <Item Value="Vno"/>
       <Item Value="Dated"/>
+      <Item Value="CompName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
   <EntityUsage
     Name="TblPbpD"
     Entity="model.ERP.EO.TblPbpD"/>
+  <EntityUsage
+    Name="TblPbpM"
+    Entity="model.ERP.EO.TblPbpM"
+    Association="model.ERP.EO.FkPbpDAssoc"
+    AssociationEnd="model.ERP.EO.FkPbpDAssoc.TblPbpM"
+    SourceUsage="model.ERP.VO.TblPbpDView.TblPbpD"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.ERP.EO.TblPbpM.Id"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.ERP.EO.TblPbpD.PbpMId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
@@ -127,4 +160,19 @@
     EntityAttrName="Amount"
     EntityUsage="TblPbpD"
     AliasName="AMOUNT"/>
+  <ViewAttribute
+    Name="PblSuppId"
+    PrecisionRule="true"
+    EntityAttrName="PblSuppId"
+    EntityUsage="TblPbpM"
+    AliasName="PBL_SUPP_ID"/>
+  <ViewAttribute
+    Name="Id1"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblPbpM"
+    AliasName="ID1"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id"/>
+  </AttrArray>
 </ViewObject>

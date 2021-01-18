@@ -75,7 +75,7 @@
                             </af:inputText>
                             <af:spacer  id="s7"/>
                             <af:selectOneChoice value="#{bindings.CompanySbuId.inputValue}"
-                                                label="Project"
+                                                label="Company"
                                                 required="#{bindings.CompanySbuId.hints.mandatory}"
                                                 shortDesc="#{bindings.CompanySbuId.hints.tooltip}" id="soc8"
                                                 contentStyle="width:150px;">
@@ -211,7 +211,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column headerText="PO" id="c12"
-                                       sortable="true" filterable="true">
+                                       sortable="true" filterable="true" width="200">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.PoMId}"
        id="it16" placeholder="Search ">
