@@ -56,6 +56,12 @@
                     <f:validator binding="#{bindings.Dated.validator}"/>
                     <af:convertDateTime pattern="#{bindings.Dated.format}"/>
                   </af:inputDate>
+                  <af:selectOneChoice value="#{bindings.DepartmentId.inputValue}" label="#{bindings.DepartmentId.label}"
+                                      required="#{bindings.DepartmentId.hints.mandatory}"
+                                      shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="soc7">
+                    <f:selectItems value="#{bindings.DepartmentId.items}" id="si7"/>
+                    <f:validator binding="#{bindings.DepartmentId.validator}"/>
+                  </af:selectOneChoice>
                   <af:spacer  id="s2"/>
                   <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type"
                                       required="#{bindings.Vtp.hints.mandatory}"
@@ -249,24 +255,6 @@
                                   shortDesc="#{bindings.TblProFgDetailView2.hints.Id.tooltip}" id="it4" readOnly="true">
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblProFgDetailView2.hints.Id.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblProFgDetailView2.hints.SrNo.name}" filterable="true"
-                             sortable="true" headerText="Serial No." id="c2">
-                              <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.SrNo}"
-       id="it12" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                    <af:inputText value="#{row.bindings.SrNo.inputValue}"
-                                  label="#{bindings.TblProFgDetailView2.hints.SrNo.label}"
-                                  required="#{bindings.TblProFgDetailView2.hints.SrNo.mandatory}"
-                                  columns="#{bindings.TblProFgDetailView2.hints.SrNo.displayWidth}"
-                                  maximumLength="#{bindings.TblProFgDetailView2.hints.SrNo.precision}"
-                                  shortDesc="#{bindings.TblProFgDetailView2.hints.SrNo.tooltip}" id="it5">
-                      <f:validator binding="#{row.bindings.SrNo.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblProFgDetailView2.hints.SrNo.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblProFgDetailView2.hints.ItemL4Id.name}" filterable="true"

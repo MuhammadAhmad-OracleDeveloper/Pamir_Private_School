@@ -85,6 +85,7 @@
           <Item Value="Qty"/>
           <Item Value="Rate"/>
           <Item Value="Amount"/>
+          <Item Value="BatchQty"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -117,5 +118,9 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <list IterBinding="TblProIssMasterView1Iterator" StaticList="false" Uses="LOV_FrDeptId" id="FrDeptId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblProIssMasterView1Iterator" StaticList="false" Uses="LOV_ToDeptId" id="ToDeptId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

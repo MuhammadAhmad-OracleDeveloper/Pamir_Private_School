@@ -35,6 +35,8 @@ public class TblProIssMasterImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         CompanySbuId,
+        FrDeptId,
+        ToDeptId,
         TblProIssDetail;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -58,6 +60,7 @@ public class TblProIssMasterImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int VNO = AttributesEnum.Vno.index();
     public static final int VTP = AttributesEnum.Vtp.index();
@@ -70,12 +73,21 @@ public class TblProIssMasterImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int COMPANYSBUID = AttributesEnum.CompanySbuId.index();
+    public static final int FRDEPTID = AttributesEnum.FrDeptId.index();
+    public static final int TODEPTID = AttributesEnum.ToDeptId.index();
     public static final int TBLPROISSDETAIL = AttributesEnum.TblProIssDetail.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblProIssMasterImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblProIssMaster");
     }
 
     /**
@@ -271,11 +283,44 @@ public class TblProIssMasterImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for FrDeptId, using the alias name FrDeptId.
+     * @return the value of FrDeptId
+     */
+    public BigDecimal getFrDeptId() {
+        return (BigDecimal) getAttributeInternal(FRDEPTID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FrDeptId.
+     * @param value value to set the FrDeptId
+     */
+    public void setFrDeptId(BigDecimal value) {
+        setAttributeInternal(FRDEPTID, value);
+    }
+
+    /**
+     * Gets the attribute value for ToDeptId, using the alias name ToDeptId.
+     * @return the value of ToDeptId
+     */
+    public BigDecimal getToDeptId() {
+        return (BigDecimal) getAttributeInternal(TODEPTID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ToDeptId.
+     * @param value value to set the ToDeptId
+     */
+    public void setToDeptId(BigDecimal value) {
+        setAttributeInternal(TODEPTID, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getTblProIssDetail() {
         return (RowIterator) getAttributeInternal(TBLPROISSDETAIL);
     }
+
 
     /**
      * @param id key constituent
@@ -284,13 +329,6 @@ public class TblProIssMasterImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblProIssMaster");
     }
 
     /**

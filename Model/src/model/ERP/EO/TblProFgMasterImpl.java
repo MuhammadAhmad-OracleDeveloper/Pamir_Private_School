@@ -35,6 +35,7 @@ public class TblProFgMasterImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         CompanySbuId,
+        DepartmentId,
         TblProFgDetail;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -58,6 +59,7 @@ public class TblProFgMasterImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int VNO = AttributesEnum.Vno.index();
     public static final int VTP = AttributesEnum.Vtp.index();
@@ -70,12 +72,20 @@ public class TblProFgMasterImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int COMPANYSBUID = AttributesEnum.CompanySbuId.index();
+    public static final int DEPARTMENTID = AttributesEnum.DepartmentId.index();
     public static final int TBLPROFGDETAIL = AttributesEnum.TblProFgDetail.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblProFgMasterImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblProFgMaster");
     }
 
     /**
@@ -271,11 +281,28 @@ public class TblProFgMasterImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for DepartmentId, using the alias name DepartmentId.
+     * @return the value of DepartmentId
+     */
+    public BigDecimal getDepartmentId() {
+        return (BigDecimal) getAttributeInternal(DEPARTMENTID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for DepartmentId.
+     * @param value value to set the DepartmentId
+     */
+    public void setDepartmentId(BigDecimal value) {
+        setAttributeInternal(DEPARTMENTID, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getTblProFgDetail() {
         return (RowIterator) getAttributeInternal(TBLPROFGDETAIL);
     }
+
 
     /**
      * @param id key constituent
@@ -284,13 +311,6 @@ public class TblProFgMasterImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblProFgMaster");
     }
 
     /**
