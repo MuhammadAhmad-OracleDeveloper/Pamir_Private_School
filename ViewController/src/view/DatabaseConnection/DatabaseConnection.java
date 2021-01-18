@@ -23,7 +23,7 @@ public class DatabaseConnection {
         /* Database credentials >> username , password , hostname , port , SID  */
         setUNamee("ppss");
         setUpasss("ppss");
-        setUipp("192.168.1.4");
+        setUipp("192.168.2.2");
         setUportADF("1521");
         setUSID("orcl");
         /* END  */
