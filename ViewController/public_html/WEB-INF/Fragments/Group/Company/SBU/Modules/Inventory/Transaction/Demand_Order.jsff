@@ -58,7 +58,7 @@
                               <f:validator binding="#{bindings.Narration.validator}"/>
                             </af:inputText>
                             <af:spacer  id="s37"/>
-                            <af:selectOneChoice value="#{bindings.OrdType.inputValue}" label="#{bindings.OrdType.label}"
+                            <af:selectOneChoice value="#{bindings.OrdType.inputValue}" label="Order Type"
                                                 required="#{bindings.OrdType.hints.mandatory}"
                                                 shortDesc="#{bindings.OrdType.hints.tooltip}" id="soc8">
                               <f:selectItems value="#{bindings.OrdType.items}" id="si8"/>
@@ -66,7 +66,7 @@
                             </af:selectOneChoice>
                             <af:spacer  id="s7"/>
                             <af:selectOneChoice value="#{bindings.CompanySbuId .inputValue}"
-                                                label="Project"
+                                                label="Company SBU"
                                                 required="#{bindings.CompanySbuId .hints.mandatory}"
                                                 shortDesc="#{bindings.CompanySbuId .hints.tooltip}" id="soc2" disabled="true"
                                                 contentStyle="width:150px;">

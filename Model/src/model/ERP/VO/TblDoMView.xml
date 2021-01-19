@@ -6,13 +6,31 @@
   Name="TblDoMView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblDoM.ID, 
+       TblDoM.VNO, 
+       TblDoM.VTP, 
+       TblDoM.DATED, 
+       TblDoM.DEPARTMENT_ID, 
+       TblDoM.COMPANY_SBU_ID, 
+       TblDoM.NARRATION, 
+       TblDoM.CREATED_DATE, 
+       TblDoM.CREATED_BY, 
+       TblDoM.UPDATED_DATE, 
+       TblDoM.UPDATED_BY, 
+       TblDoM.ORD_TYPE"
+  FromList="TBL_DO_M TblDoM"
+  Where="TblDoM.COMPANY_SBU_ID = :getcompId">
+  <Variable
+    Name="getcompId"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      CodeSourceName="TblDoMView"/>
+  </Variable>
   <ViewAccessor
     Name="Voucher_Type_LOV1"
     ViewObjectName="model.LOV.Voucher_Type_LOV"
