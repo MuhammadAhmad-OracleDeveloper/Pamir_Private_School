@@ -25,6 +25,10 @@
     Name="Company_SBU_Name_LOV1"
     ViewObjectName="model.LOV.Company_SBU_Name_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="OrdType_LOV1"
+    ViewObjectName="model.LOV.OrdType_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
     ListVOName="Voucher_Type_LOV1"
@@ -76,6 +80,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_OrdType"
+    ListVOName="OrdType_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="OrdType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DbAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -173,6 +195,20 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblDoM"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="OrdType"
+    PrecisionRule="true"
+    EntityAttrName="OrdType"
+    EntityUsage="TblDoM"
+    AliasName="ORD_TYPE"
+    LOVName="LOV_OrdType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblDoDView"
     ViewLink="model.ERP.VO.FkDoDMLink"

@@ -57,8 +57,13 @@
                                           contentStyle="width:150px;"  rows="10">
                               <f:validator binding="#{bindings.Narration.validator}"/>
                             </af:inputText>
-                            
-                            
+                            <af:spacer  id="s37"/>
+                            <af:selectOneChoice value="#{bindings.OrdType.inputValue}" label="#{bindings.OrdType.label}"
+                                                required="#{bindings.OrdType.hints.mandatory}"
+                                                shortDesc="#{bindings.OrdType.hints.tooltip}" id="soc8">
+                              <f:selectItems value="#{bindings.OrdType.items}" id="si8"/>
+                              <f:validator binding="#{bindings.OrdType.validator}"/>
+                            </af:selectOneChoice>
                             <af:spacer  id="s7"/>
                             <af:selectOneChoice value="#{bindings.CompanySbuId .inputValue}"
                                                 label="Project"

@@ -90,4 +90,6 @@
     <action IterBinding="TblDoDView2Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="TblDoDView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblDoDView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <list IterBinding="TblDoMView1Iterator" StaticList="false" Uses="LOV_OrdType" id="OrdType" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
   </bindings></pageDefinition>
