@@ -6,13 +6,32 @@
   Name="TblMarksGradingView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblMarksGrading.ID, 
+       TblMarksGrading.GROUP_COMPANY_ID, 
+       TblMarksGrading.GRADE_ID, 
+       TblMarksGrading.GRADE_CODE, 
+       TblMarksGrading.GRADE_VALUE, 
+       TblMarksGrading.FR_PERC, 
+       TblMarksGrading.TO_PERC, 
+       TblMarksGrading.AST, 
+       TblMarksGrading.CREATED_DATE, 
+       TblMarksGrading.CREATED_BY, 
+       TblMarksGrading.UPDATED_DATE, 
+       TblMarksGrading.UPDATED_BY, 
+       TblMarksGrading.COMPANY_SBU_ID"
+  FromList="TBL_MARKS_GRADING TblMarksGrading"
+  Where="TblMarksGrading.COMPANY_SBU_ID= nvl(:getcompid,TblMarksGrading.COMPANY_SBU_ID)">
+  <Variable
+    Name="getcompid"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      CodeSourceName="TblMarksGradingView"/>
+  </Variable>
   <ViewAccessor
     Name="Grade_Name_LOV1"
     ViewObjectName="model.LOV.Grade_Name_LOV"
@@ -130,7 +149,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblMarksGrading"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -142,11 +162,18 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblMarksGrading"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
     EntityUsage="TblMarksGrading"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblMarksGrading"
+    AliasName="COMPANY_SBU_ID"/>
 </ViewObject>

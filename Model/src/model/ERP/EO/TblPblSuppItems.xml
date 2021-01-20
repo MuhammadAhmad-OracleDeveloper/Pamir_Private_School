@@ -73,7 +73,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_PBL_SUPP_ITEMS"/>
+    TableName="TBL_PBL_SUPP_ITEMS">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblPblSuppItemsRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblItemL4"
     Association="model.ERP.EO.FkPblSuppItemsItemL4IdAssoc"

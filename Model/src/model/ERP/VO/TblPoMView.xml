@@ -25,14 +25,13 @@
        TblPoM.UPDATED_BY, 
        TblPoM.DO_M_ID AS DO_MID1"
   FromList="TBL_PO_M TblPoM"
-  Where="TblPoM.COMPANY_SBU_ID = nvl(:getcompid,TblPoM.COMPANY_SBU_ID)">
+  Where="TblPoM.COMPANY_SBU_ID = nvl(:getcompId,TblPoM.COMPANY_SBU_ID)">
   <Variable
     Name="getcompId"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression
-      Name="VariableScript"
-      CodeSourceName="TblPoMView"/>
+      Name="VariableScript"><![CDATA[adf.context.current.sessionScope.get('sessSBUID')]]></TransientExpression>
   </Variable>
   <ViewAccessor
     Name="Voucher_Type_LOV1"

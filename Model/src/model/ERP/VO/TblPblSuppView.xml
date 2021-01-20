@@ -6,13 +6,41 @@
   Name="TblPblSuppView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblPblSupp.ID, 
+       TblPblSupp.NAME, 
+       TblPblSupp.TYPE, 
+       TblPblSupp.GL_L4_ID, 
+       TblPblSupp.SUPP_BUSS, 
+       TblPblSupp.CONTACT_PER, 
+       TblPblSupp.PHONE, 
+       TblPblSupp.DESIGNATION, 
+       TblPblSupp.CNIC, 
+       TblPblSupp.CELL, 
+       TblPblSupp.FAX, 
+       TblPblSupp.NTN, 
+       TblPblSupp.STRN, 
+       TblPblSupp.E_MAIL, 
+       TblPblSupp.URL, 
+       TblPblSupp.GROUP_COMPANY_ID, 
+       TblPblSupp.CREATED_DATE, 
+       TblPblSupp.CREATED_BY, 
+       TblPblSupp.UPDATED_DATE, 
+       TblPblSupp.UPDATED_BY, 
+       TblPblSupp.COMPANY_SBU_ID"
+  FromList="TBL_PBL_SUPP TblPblSupp"
+  Where="TblPblSupp.COMPANY_SBU_ID= nvl(:getcompid,TblPblSupp.COMPANY_SBU_ID)">
+  <Variable
+    Name="getcompid"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblPblSuppView"/>
+  </Variable>
   <ViewAccessor
     Name="Gl4_Name_LOV1"
     ViewObjectName="model.LOV.Gl4_Name_LOV"
@@ -197,6 +225,12 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblPblSupp"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblPblSupp"
+    AliasName="COMPANY_SBU_ID"/>
   <ViewLinkAccessor
     Name="TblPblSuppItemsView"
     ViewLink="model.ERP.VO.FkPblSuppItemsSuppIdLink"

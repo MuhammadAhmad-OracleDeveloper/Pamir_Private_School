@@ -72,7 +72,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_OPEN_BLNC"/>
+    TableName="TBL_OPEN_BLNC">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblOpenBlncRow"/>
+  </Attribute>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"

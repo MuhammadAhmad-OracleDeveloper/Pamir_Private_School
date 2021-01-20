@@ -160,7 +160,12 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_PBP_M"/>
+    TableName="TBL_PBP_M">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblPbpMRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblPbpD"
     Association="model.ERP.EO.FkPbpDAssoc"

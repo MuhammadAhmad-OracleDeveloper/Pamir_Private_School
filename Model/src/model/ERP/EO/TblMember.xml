@@ -181,7 +181,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_MEMBER"/>
+    TableName="TBL_MEMBER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblMemberRow"/>
+  </Attribute>
   <Key
     Name="PkMemberId"
     PrimaryKey="true">

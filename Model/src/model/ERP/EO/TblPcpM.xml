@@ -134,7 +134,12 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_PCP_M"/>
+    TableName="TBL_PCP_M">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblPcpMRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblPcpD"
     Association="model.ERP.EO.FkPcpDMAssoc"

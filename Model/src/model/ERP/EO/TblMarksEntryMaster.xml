@@ -80,7 +80,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_MARKS_ENTRY_MASTER"/>
+    TableName="TBL_MARKS_ENTRY_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblMarksEntryMasterRow"/>
+  </Attribute>
   <Attribute
     Name="Ast"
     Precision="1"

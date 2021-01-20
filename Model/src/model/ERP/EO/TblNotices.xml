@@ -218,7 +218,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_NOTICES"/>
+    TableName="TBL_NOTICES">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblNoticesRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblAcadYear"
     Association="model.ERP.EO.FkNoticesAcadYearAssoc"

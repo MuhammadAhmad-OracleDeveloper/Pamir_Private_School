@@ -83,7 +83,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_LOOKUP_MASTER"/>
+    TableName="TBL_LOOKUP_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblLookupMasterRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblLookupDetail"
     Association="model.ERP.EO.FkLookupDetailMasterAssoc"

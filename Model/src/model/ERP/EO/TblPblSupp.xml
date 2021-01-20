@@ -231,7 +231,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_PBL_SUPP"/>
+    TableName="TBL_PBL_SUPP">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblPblSuppRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblGlL4"
     Association="model.ERP.EO.FkPblSuppGlL4IdAssoc"

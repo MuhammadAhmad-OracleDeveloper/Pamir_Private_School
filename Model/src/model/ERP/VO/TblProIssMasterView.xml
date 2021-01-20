@@ -6,13 +6,34 @@
   Name="TblProIssMasterView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblProIssMaster.ID, 
+       TblProIssMaster.VNO, 
+       TblProIssMaster.VTP, 
+       TblProIssMaster.DATED, 
+       TblProIssMaster.POR_MASTER_ID, 
+       TblProIssMaster.NARRATION, 
+       TblProIssMaster.GROUP_COMPANY_ID, 
+       TblProIssMaster.CREATED_DATE, 
+       TblProIssMaster.CREATED_BY, 
+       TblProIssMaster.UPDATED_DATE, 
+       TblProIssMaster.UPDATED_BY, 
+       TblProIssMaster.FR_DEPT_ID, 
+       TblProIssMaster.TO_DEPT_ID, 
+       TblProIssMaster.COMPANY_SBU_ID"
+  FromList="TBL_PRO_ISS_MASTER TblProIssMaster"
+  Where="TblProIssMaster.COMPANY_SBU_ID= nvl(:getcompid,TblProIssMaster.COMPANY_SBU_ID)">
+  <Variable
+    Name="getcompid"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblProIssMasterView"/>
+  </Variable>
   <ViewAccessor
     Name="Voucher_Type_LOV1"
     ViewObjectName="model.LOV.Voucher_Type_LOV"
@@ -212,6 +233,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblProIssMaster"
+    AliasName="COMPANY_SBU_ID"/>
   <ViewLinkAccessor
     Name="TblProIssDetailView"
     ViewLink="model.ERP.VO.FkProIssDetailMasterLink"
