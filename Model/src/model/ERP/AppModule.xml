@@ -1171,6 +1171,27 @@
   <ViewUsage
     Name="TblCollRecDView3"
     ViewObjectName="model.ERP.VO.TblCollRecDView"/>
+  <ViewUsage
+    Name="TblImpCostDDView1"
+    ViewObjectName="model.ERP.VO.TblImpCostDDView"/>
+  <ViewUsage
+    Name="TblImpCostDView1"
+    ViewObjectName="model.ERP.VO.TblImpCostDView"/>
+  <ViewUsage
+    Name="TblImpCostMView1"
+    ViewObjectName="model.ERP.VO.TblImpCostMView"/>
+  <ViewUsage
+    Name="TblIpoDView1"
+    ViewObjectName="model.ERP.VO.TblIpoDView"/>
+  <ViewUsage
+    Name="TblIpoMView1"
+    ViewObjectName="model.ERP.VO.TblIpoMView"/>
+  <ViewUsage
+    Name="TblImpCostDView2"
+    ViewObjectName="model.ERP.VO.TblImpCostDView"/>
+  <ViewUsage
+    Name="TblIpoDView2"
+    ViewObjectName="model.ERP.VO.TblIpoDView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -2328,5 +2349,17 @@
     ViewLinkObjectName="model.ERP.VO.FkTblCollRecDFkLink"
     SrcViewUsageName="model.ERP.AppModule.TblCollRecMView1"
     DstViewUsageName="model.ERP.AppModule.TblCollRecDView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkImpCostDMLink1"
+    ViewLinkObjectName="model.ERP.VO.FkImpCostDMLink"
+    SrcViewUsageName="model.ERP.AppModule.TblImpCostMView1"
+    DstViewUsageName="model.ERP.AppModule.TblImpCostDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkIpoDMLink1"
+    ViewLinkObjectName="model.ERP.VO.FkIpoDMLink"
+    SrcViewUsageName="model.ERP.AppModule.TblIpoMView1"
+    DstViewUsageName="model.ERP.AppModule.TblIpoDView2"
     Reversed="false"/>
 </AppModule>

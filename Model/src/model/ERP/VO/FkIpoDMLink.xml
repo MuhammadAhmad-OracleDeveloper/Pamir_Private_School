@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkIpoDMLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.ERP.EO.FkIpoDMAssoc">
+  <ViewLinkDefEnd
+    Name="TblIpoMView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.VO.TblIpoMView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblIpoMView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblIpoMView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblIpoDView"
+    Cardinality="-1"
+    Owner="model.ERP.VO.TblIpoDView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblIpoDView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblIpoDView.IpoMId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

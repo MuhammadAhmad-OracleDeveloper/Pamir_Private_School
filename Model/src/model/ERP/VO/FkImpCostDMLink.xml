@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkImpCostDMLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.ERP.EO.FkImpCostDMAssoc">
+  <ViewLinkDefEnd
+    Name="TblImpCostMView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.VO.TblImpCostMView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblImpCostMView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblImpCostMView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblImpCostDView"
+    Cardinality="-1"
+    Owner="model.ERP.VO.TblImpCostDView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblImpCostDView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblImpCostDView.ImpCostMId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>
