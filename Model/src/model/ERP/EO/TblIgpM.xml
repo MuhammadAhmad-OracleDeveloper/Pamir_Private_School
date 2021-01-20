@@ -106,7 +106,12 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_IGP_M"/>
+    TableName="TBL_IGP_M">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblIgpMRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblIgpD"
     Association="model.ERP.EO.FkIgpDMAssoc"

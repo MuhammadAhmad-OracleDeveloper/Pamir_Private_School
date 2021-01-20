@@ -66,7 +66,12 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_PO_M"/>
+    TableName="TBL_PO_M">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblPoMRow"/>
+  </Attribute>
   <Attribute
     Name="PblSuppId"
     ColumnName="PBL_SUPP_ID"

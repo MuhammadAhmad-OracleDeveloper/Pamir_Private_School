@@ -95,7 +95,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_ACAD_GROUP"/>
+    TableName="TBL_ACAD_GROUP">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblAcadGroupRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblGrade"
     Association="model.ERP.EO.FkGradeGroupAssoc"

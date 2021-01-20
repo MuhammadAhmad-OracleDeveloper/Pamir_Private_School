@@ -131,7 +131,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_BOQ_MASTER"/>
+    TableName="TBL_BOQ_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblBoqMasterRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblBoqDetail"
     Association="model.ERP.EO.FkBoqDetailMasterAssoc"

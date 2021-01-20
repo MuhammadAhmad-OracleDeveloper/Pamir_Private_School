@@ -1,0 +1,12 @@
+//Groovy Scripts for model.ERP.VO.TblEditFeeCollMView
+
+package model.ERP.VO
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="getcompId")
+def getcompId_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('sessSBUID')
+}
+

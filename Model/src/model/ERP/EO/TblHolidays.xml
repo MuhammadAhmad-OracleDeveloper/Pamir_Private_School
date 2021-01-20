@@ -121,7 +121,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_HOLIDAYS"/>
+    TableName="TBL_HOLIDAYS">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblHolidaysRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblAcadYear"
     Association="model.ERP.EO.FkHolidaysAcadYearAssoc"

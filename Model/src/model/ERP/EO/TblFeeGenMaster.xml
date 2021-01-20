@@ -111,7 +111,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_FEE_GEN_MASTER"/>
+    TableName="TBL_FEE_GEN_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblFeeGenMasterRow"/>
+  </Attribute>
   <Attribute
     Name="VType"
     Precision="1"

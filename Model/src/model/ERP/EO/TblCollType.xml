@@ -38,7 +38,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_COLL_TYPE"/>
+    TableName="TBL_COLL_TYPE">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblCollTypeRow"/>
+  </Attribute>
   <Attribute
     Name="Name"
     Precision="50"

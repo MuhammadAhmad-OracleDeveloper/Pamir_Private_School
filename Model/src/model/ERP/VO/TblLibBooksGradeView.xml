@@ -6,13 +6,29 @@
   Name="TblLibBooksGradeView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblLibBooksGrade.ID, 
+       TblLibBooksGrade.LIB_BOOKS_ID, 
+       TblLibBooksGrade.GRADE_ID, 
+       TblLibBooksGrade.AST, 
+       TblLibBooksGrade.CREATED_DATE, 
+       TblLibBooksGrade.CREATED_BY, 
+       TblLibBooksGrade.UPDATED_DATE, 
+       TblLibBooksGrade.UPDATED_BY, 
+       TblLibBooksGrade.COMPANY_SBU_ID"
+  FromList="TBL_LIB_BOOKS_GRADE TblLibBooksGrade"
+  Where="TblLibBooksGrade.COMPANY_SBU_ID=nvl(:getcompid,TblLibBooksGrade.COMPANY_SBU_ID)">
+  <Variable
+    Name="getcompid"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblLibBooksGradeView"/>
+  </Variable>
   <ViewAccessor
     Name="Active_Name_LOV1"
     ViewObjectName="model.LOV.Active_Name_LOV"
@@ -127,4 +143,10 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblLibBooksGrade"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblLibBooksGrade"
+    AliasName="COMPANY_SBU_ID"/>
 </ViewObject>

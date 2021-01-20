@@ -151,7 +151,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_FEE_TYPE"/>
+    TableName="TBL_FEE_TYPE">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblFeeTypeRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblVat"
     Association="model.ERP.EO.Fk2FeeTypeVatAssoc"

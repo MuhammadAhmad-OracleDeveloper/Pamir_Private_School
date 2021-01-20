@@ -21,14 +21,13 @@
        TblJvM.UPDATED_DATE, 
        TblJvM.UPDATED_BY"
   FromList="TBL_JV_M TblJvM"
-  Where="TblJvM.COMPANY_SBU_ID = :getCompid">
+  Where="TblJvM.COMPANY_SBU_ID = nvl(:getCompid,TblJvM.COMPANY_SBU_ID)">
   <Variable
     Name="getCompid"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="TblJvMView"/>
   </Variable>
   <ViewAccessor

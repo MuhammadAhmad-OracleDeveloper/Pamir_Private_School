@@ -163,7 +163,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_CO_MASTER"/>
+    TableName="TBL_CO_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblCoMasterRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblCoDetail"
     Association="model.ERP.EO.FkCoDetailMasterAssoc"

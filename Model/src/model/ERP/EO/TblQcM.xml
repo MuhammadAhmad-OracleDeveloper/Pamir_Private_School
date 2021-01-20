@@ -106,7 +106,12 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_QC_M"/>
+    TableName="TBL_QC_M">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblQcMRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblQcD"
     Association="model.ERP.EO.FkQcDMAssoc"

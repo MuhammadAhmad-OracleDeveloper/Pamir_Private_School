@@ -10,3 +10,10 @@ def CustOpenBlncDated_ExpressionScript_Expression()
 adf.currentDate
 }
 
+
+@TransientValueExpression(attributeName="CompanySbuId")
+def CompanySbuId_ExpressionScript_Expression()
+{
+adf.context.current.sessionScope.get('sessSBUID')
+}
+

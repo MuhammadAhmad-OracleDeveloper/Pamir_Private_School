@@ -55,7 +55,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_DISC_SETUP_MASTER"/>
+    TableName="TBL_DISC_SETUP_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblDiscSetupMasterRow"/>
+  </Attribute>
   <Attribute
     Name="Ast"
     Precision="1"

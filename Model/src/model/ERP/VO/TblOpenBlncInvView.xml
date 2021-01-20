@@ -24,14 +24,13 @@
        TblOpenBlncInv.UPDATED_DATE, 
        TblOpenBlncInv.UPDATED_BY"
   FromList="TBL_OPEN_BLNC_INV TblOpenBlncInv"
-  Where="TblOpenBlncInv.COMPANY_SBU_ID = :getcompid">
+  Where="TblOpenBlncInv.COMPANY_SBU_ID = nvl(:getcompid,TblOpenBlncInv.COMPANY_SBU_ID)">
   <Variable
     Name="getcompid"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="TblOpenBlncInvView"/>
   </Variable>
   <ViewAccessor

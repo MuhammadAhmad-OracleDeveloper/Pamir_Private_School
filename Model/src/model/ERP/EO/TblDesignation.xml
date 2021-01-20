@@ -96,7 +96,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_DESIGNATION"/>
+    TableName="TBL_DESIGNATION">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblDesignationRow"/>
+  </Attribute>
   <Attribute
     Name="DepartmentId"
     ColumnName="DEPARTMENT_ID"

@@ -6,13 +6,29 @@
   Name="TblItemL1View"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblItemL1.ITEM_L1_ID, 
+       TblItemL1.NAME, 
+       TblItemL1.AST, 
+       TblItemL1.CREATED_DATE, 
+       TblItemL1.CREATED_BY, 
+       TblItemL1.UPDATED_DATE, 
+       TblItemL1.UPDATED_BY, 
+       TblItemL1.GROUP_COMPANY_ID, 
+       TblItemL1.COMPANY_SBU_ID"
+  FromList="TBL_ITEM_L1 TblItemL1"
+  Where="TblItemL1.COMPANY_SBU_ID=nvl(:getcompid,TblItemL1.COMPANY_SBU_ID)">
+  <Variable
+    Name="getcompid"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblItemL1View"/>
+  </Variable>
   <ViewAccessor
     Name="Active_Name_LOV1"
     ViewObjectName="model.LOV.Active_Name_LOV"
@@ -98,6 +114,12 @@
     EntityAttrName="GroupCompanyId"
     EntityUsage="TblItemL1"
     AliasName="GROUP_COMPANY_ID"/>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblItemL1"
+    AliasName="COMPANY_SBU_ID"/>
   <ViewLinkAccessor
     Name="TblItemL2View"
     ViewLink="model.ERP.VO.FkTblItemL2FkLink"

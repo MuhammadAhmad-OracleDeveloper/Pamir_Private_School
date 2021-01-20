@@ -19,10 +19,9 @@
        TblDoM.CREATED_DATE, 
        TblDoM.CREATED_BY, 
        TblDoM.UPDATED_DATE, 
-       TblDoM.UPDATED_BY, 
-       TblDoM.ORD_TYPE"
+       TblDoM.UPDATED_BY"
   FromList="TBL_DO_M TblDoM"
-  Where="TblDoM.COMPANY_SBU_ID = :getcompId">
+  Where="TblDoM.COMPANY_SBU_ID = nvl(:getcompId,TblDoM.COMPANY_SBU_ID)">
   <Variable
     Name="getcompId"
     Kind="where"

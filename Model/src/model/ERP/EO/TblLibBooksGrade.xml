@@ -90,7 +90,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_LIB_BOOKS_GRADE"/>
+    TableName="TBL_LIB_BOOKS_GRADE">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblLibBooksGradeRow"/>
+  </Attribute>
   <Attribute
     Name="GroupCompanyId"
     ColumnName="GROUP_COMPANY_ID"

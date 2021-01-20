@@ -120,7 +120,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_ACAD_YEAR"/>
+    TableName="TBL_ACAD_YEAR">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblAcadYearRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblAgePolicy"
     Association="model.ERP.EO.FkAgePolicyAcadYearAssoc"

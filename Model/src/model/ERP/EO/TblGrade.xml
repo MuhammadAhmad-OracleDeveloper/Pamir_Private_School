@@ -114,7 +114,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_GRADE"/>
+    TableName="TBL_GRADE">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblGradeRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblEvalWeightage"
     Association="model.ERP.EO.FkEvalWeightageGradeAssoc"
@@ -195,8 +200,8 @@
   <AccessorAttribute
     Name="TblTransFeeGenMaster"
     Association="model.ERP.EO.FkTblTransFeeGenMasterGradeFkAssoc"
-    AssociationEnd="model.ERP.EO.FkTblTransFeeGenMasterGradeFkAssoc.TblTransFeeGenMaster"
-    AssociationOtherEnd="model.ERP.EO.FkTblTransFeeGenMasterGradeFkAssoc.TblGrade"
+    AssociationEnd="model.ERP.EO.FkTblTransFeeGenMasterGradeFkAssoc.TblTransFeeGenMaster1"
+    AssociationOtherEnd="model.ERP.EO.FkTblTransFeeGenMasterGradeFkAssoc.TblGrade1"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <AccessorAttribute

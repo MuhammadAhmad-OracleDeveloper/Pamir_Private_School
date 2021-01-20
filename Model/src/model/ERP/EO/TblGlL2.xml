@@ -67,7 +67,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_GL_L2"/>
+    TableName="TBL_GL_L2">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblGlL2Row"/>
+  </Attribute>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"

@@ -85,7 +85,12 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_DN_M"/>
+    TableName="TBL_DN_M">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblDnMRow"/>
+  </Attribute>
   <Attribute
     Name="PblSuppId"
     ColumnName="PBL_SUPP_ID"

@@ -120,7 +120,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_LEAVE_TYPE"/>
+    TableName="TBL_LEAVE_TYPE">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblLeaveTypeRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblLeaveReq"
     Association="model.ERP.EO.FkLeaveReqLeaveTypeAssoc"

@@ -59,7 +59,12 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_ASSESS_MASTER"/>
+    TableName="TBL_ASSESS_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblAssessMasterRow"/>
+  </Attribute>
   <Attribute
     Name="Ast"
     Precision="1"

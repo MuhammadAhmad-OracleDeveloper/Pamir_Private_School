@@ -1,0 +1,12 @@
+//Groovy Scripts for model.ERP.VO.TblGradeView
+
+package model.ERP.VO
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="getcompid")
+def getcompid_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('sessSBUID')
+}
+

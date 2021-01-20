@@ -14,8 +14,19 @@
        TblCustOpenBlnc.RBL_CUST_ID, 
        TblCustOpenBlnc.CUST_OPEN_BLNC_DR, 
        TblCustOpenBlnc.CUST_OPEN_BLNC_CR, 
-       TblCustOpenBlnc.GROUP_COMPANY_ID"
-  FromList="TBL_CUST_OPEN_BLNC TblCustOpenBlnc">
+       TblCustOpenBlnc.GROUP_COMPANY_ID, 
+       TblCustOpenBlnc.COMPANY_SBU_ID"
+  FromList="TBL_CUST_OPEN_BLNC TblCustOpenBlnc"
+  Where="TblCustOpenBlnc.COMPANY_SBU_ID=nvl(:getcompid,TblCustOpenBlnc.COMPANY_SBU_ID)">
+  <Variable
+    Name="getcompid"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblCustOpenBlncView"/>
+  </Variable>
   <ViewAccessor
     Name="Customer_Name_LOV1"
     ViewObjectName="model.LOV.Customer_Name_LOV"
@@ -87,4 +98,10 @@
     EntityAttrName="GroupCompanyId"
     EntityUsage="TblCustOpenBlnc"
     AliasName="GROUP_COMPANY_ID"/>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblCustOpenBlnc"
+    AliasName="COMPANY_SBU_ID"/>
 </ViewObject>

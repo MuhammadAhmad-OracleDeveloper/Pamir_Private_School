@@ -123,7 +123,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_FG_TRN_MASTER"/>
+    TableName="TBL_FG_TRN_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblFgTrnMasterRow"/>
+  </Attribute>
   <Attribute
     Name="DepartmentId"
     ColumnName="DEPARTMENT_ID"

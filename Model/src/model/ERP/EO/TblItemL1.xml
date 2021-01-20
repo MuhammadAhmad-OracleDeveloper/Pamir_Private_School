@@ -95,7 +95,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_ITEM_L1"/>
+    TableName="TBL_ITEM_L1">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblItemL1Row"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblItemL2"
     Association="model.ERP.EO.FkTblItemL2FkAssoc"

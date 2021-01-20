@@ -96,7 +96,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_ITEM_L4"/>
+    TableName="TBL_ITEM_L4">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblItemL4Row"/>
+  </Attribute>
   <Attribute
     Name="GroupCompanyId"
     ColumnName="GROUP_COMPANY_ID"

@@ -66,7 +66,12 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_DO_M"/>
+    TableName="TBL_DO_M">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblDoMRow"/>
+  </Attribute>
   <Attribute
     Name="Narration"
     Precision="300"

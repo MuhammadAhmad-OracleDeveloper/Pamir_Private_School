@@ -9,16 +9,35 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
-  SelectAllAttributes="false">
+  SelectList="TblStdReg.ID, 
+       TblStdReg.REG_DATE, 
+       TblStdReg.REG_NO, 
+       TblStdReg.ENROLL_NO, 
+       TblStdReg.FIRST_NAME, 
+       TblStdReg.LAST_NAME, 
+       TblStdReg.EMIR_ID, 
+       TblStdReg.FATHER_EMIR_ID, 
+       TblStdReg.MOTHER_EMIR_ID, 
+       TblStdReg.ACTIVE_SIB_EMIR_ID, 
+       TblStdReg.ACTIVE_STD_EMIR_ID, 
+       TblStdReg.COMPANY_SBU_ID"
+  FromList="TBL_STD_REG TblStdReg"
+  Where="TblStdReg.COMPANY_SBU_ID=nvl(:getcomid,TblStdReg.COMPANY_SBU_ID)">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
         ResId="model.ERP.VO.StdRegSiblingsDetail_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <Variable
+    Name="getcomid"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="StdRegSiblingsDetail"/>
+  </Variable>
   <EntityUsage
     Name="TblStdReg"
     Entity="model.ERP.EO.TblStdReg"/>
@@ -88,6 +107,12 @@
     EntityAttrName="ActiveStdEmirId"
     EntityUsage="TblStdReg"
     AliasName="ACTIVE_STD_EMIR_ID"/>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblStdReg"
+    AliasName="COMPANY_SBU_ID"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

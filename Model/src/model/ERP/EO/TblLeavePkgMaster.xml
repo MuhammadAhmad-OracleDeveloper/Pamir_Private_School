@@ -106,7 +106,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_LEAVE_PKG_MASTER"/>
+    TableName="TBL_LEAVE_PKG_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblLeavePkgMasterRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblLeavePkgDetail"
     Association="model.ERP.EO.FkLeavePkgDetailMasterAssoc"

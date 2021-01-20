@@ -104,7 +104,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_GRADE_STAFF"/>
+    TableName="TBL_GRADE_STAFF">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblGradeStaffRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblGrade"
     Association="model.ERP.EO.FKTblGradeStaffGradeAssoc"

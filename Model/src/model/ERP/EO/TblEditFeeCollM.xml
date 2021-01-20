@@ -112,7 +112,12 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_EDIT_FEE_COLL_M"/>
+    TableName="TBL_EDIT_FEE_COLL_M">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblEditFeeCollMRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblEditFeeCollD"
     Association="model.ERP.EO.FkEditFeeCollMAssoc"

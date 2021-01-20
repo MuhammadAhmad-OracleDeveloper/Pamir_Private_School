@@ -6,13 +6,30 @@
   Name="TblGradeView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblGrade.ID, 
+       TblGrade.GROUP_COMPANY_ID, 
+       TblGrade.ACAD_GROUP_ID, 
+       TblGrade.GRADE_NAME, 
+       TblGrade.KIT_NAME, 
+       TblGrade.AST, 
+       TblGrade.CREATED_DATE, 
+       TblGrade.CREATED_BY, 
+       TblGrade.UPDATED_DATE, 
+       TblGrade.UPDATED_BY, 
+       TblGrade.COMPANY_SBU_ID"
+  FromList="TBL_GRADE TblGrade"
+  Where="TblGrade.COMPANY_SBU_ID=nvl(:getcompid,TblGrade.COMPANY_SBU_ID)">
+  <Variable
+    Name="getcompid"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      CodeSourceName="TblGradeView"/>
+  </Variable>
   <ViewAccessor
     Name="Active_Name_LOV1"
     ViewObjectName="model.LOV.Active_Name_LOV"
@@ -169,6 +186,12 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblGrade"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblGrade"
+    AliasName="COMPANY_SBU_ID"/>
   <ViewLinkAccessor
     Name="TblEvalWeightageView"
     ViewLink="model.ERP.VO.FkEvalWeightageGradeLink"

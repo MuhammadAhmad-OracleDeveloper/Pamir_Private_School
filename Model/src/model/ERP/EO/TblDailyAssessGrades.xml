@@ -38,7 +38,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_DAILY_ASSESS_GRADES"/>
+    TableName="TBL_DAILY_ASSESS_GRADES">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblDailyAssessGradesRow"/>
+  </Attribute>
   <Attribute
     Name="Name"
     Precision="50"

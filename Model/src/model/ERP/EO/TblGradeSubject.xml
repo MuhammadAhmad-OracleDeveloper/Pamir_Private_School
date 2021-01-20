@@ -83,7 +83,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_GRADE_SUBJECT"/>
+    TableName="TBL_GRADE_SUBJECT">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblGradeSubjectRow"/>
+  </Attribute>
   <Attribute
     Name="Ast"
     Precision="1"

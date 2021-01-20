@@ -22,7 +22,7 @@
        TblQcM.UPDATED_BY, 
        TblQcM.IGP_M_ID AS IGP_MID1"
   FromList="TBL_QC_M TblQcM"
-  Where="TblQcM.COMPANY_SBU_IDD=:getCOMPID">
+  Where="TblQcM.COMPANY_SBU_ID=nvl(:getCOMPID,TblQcM.COMPANY_SBU_ID)">
   <Variable
     Name="getCOMPID"
     Kind="where"

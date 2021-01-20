@@ -153,7 +153,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_EVAL_WEIGHTAGE"/>
+    TableName="TBL_EVAL_WEIGHTAGE">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblEvalWeightageRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblGrade"
     Association="model.ERP.EO.FkEvalWeightageGradeAssoc"

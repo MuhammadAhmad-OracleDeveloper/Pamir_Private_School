@@ -126,7 +126,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_TERMS"/>
+    TableName="TBL_TERMS">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblTermsRow"/>
+  </Attribute>
   <Attribute
     Name="NoDaysOff"
     ColumnName="NO_DAYS_OFF"

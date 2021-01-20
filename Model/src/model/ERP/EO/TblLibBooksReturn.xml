@@ -102,7 +102,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_LIB_BOOKS_RETURN"/>
+    TableName="TBL_LIB_BOOKS_RETURN">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblLibBooksReturnRow"/>
+  </Attribute>
   <Attribute
     Name="GroupCompanyId"
     ColumnName="GROUP_COMPANY_ID"

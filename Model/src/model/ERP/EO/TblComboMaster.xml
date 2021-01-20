@@ -145,7 +145,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_COMBO_MASTER"/>
+    TableName="TBL_COMBO_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblComboMasterRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblComboDetail"
     Association="model.ERP.EO.FkComboDetailMasterAssoc"

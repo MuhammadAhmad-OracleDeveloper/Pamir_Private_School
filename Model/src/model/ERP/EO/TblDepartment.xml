@@ -96,7 +96,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_DEPARTMENT"/>
+    TableName="TBL_DEPARTMENT">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblDepartmentRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblStaffDepartment"
     Association="model.ERP.EO.FkStaffDepartmentDepartmentAssoc"

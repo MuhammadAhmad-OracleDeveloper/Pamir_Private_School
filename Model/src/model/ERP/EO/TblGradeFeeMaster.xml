@@ -97,7 +97,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_GRADE_FEE_MASTER"/>
+    TableName="TBL_GRADE_FEE_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblGradeFeeMasterRow"/>
+  </Attribute>
   <Attribute
     Name="TermsId"
     ColumnName="TERMS_ID"
@@ -151,6 +156,7 @@
       <Attr Name="_isForeign" Value="true"/>
       <Attr Name="_DBObjectName" Value="FK_GRADE_FEE_MASTER_FEE"/>
     </DesignTime>
+    <AttrArray Name="Attributes"/>
   </Key>
   <Key
     Name="FkGradeFeeMasterGrade">

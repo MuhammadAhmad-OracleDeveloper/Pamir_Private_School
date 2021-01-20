@@ -109,7 +109,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_DISC_POLICY"/>
+    TableName="TBL_DISC_POLICY">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblDiscPolicyRow"/>
+  </Attribute>
   <Key
     Name="PkDiscPolicyId"
     PrimaryKey="true">

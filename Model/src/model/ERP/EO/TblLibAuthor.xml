@@ -100,7 +100,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_LIB_AUTHOR"/>
+    TableName="TBL_LIB_AUTHOR">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblLibAuthorRow"/>
+  </Attribute>
   <Attribute
     Name="GroupCompanyId"
     ColumnName="GROUP_COMPANY_ID"

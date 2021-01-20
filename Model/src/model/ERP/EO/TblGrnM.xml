@@ -92,7 +92,12 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_GRN_M"/>
+    TableName="TBL_GRN_M">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblGrnMRow"/>
+  </Attribute>
   <Attribute
     Name="PblSuppId"
     ColumnName="PBL_SUPP_ID"

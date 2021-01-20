@@ -628,7 +628,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_STD_REG"/>
+    TableName="TBL_STD_REG">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblStdRegRow"/>
+  </Attribute>
   <Attribute
     Name="AcadYearId"
     ColumnName="ACAD_YEAR_ID"

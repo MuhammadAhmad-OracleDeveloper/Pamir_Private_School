@@ -6,13 +6,31 @@
   Name="TblGradeFeeMasterView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblGradeFeeMaster.ID, 
+       TblGradeFeeMaster.ACAD_YEAR_ID, 
+       TblGradeFeeMaster.GRADE_ID, 
+       TblGradeFeeMaster.TERMS_ID, 
+       TblGradeFeeMaster.GROUP_COMPANY_ID, 
+       TblGradeFeeMaster.AST, 
+       TblGradeFeeMaster.CREATED_DATE, 
+       TblGradeFeeMaster.CREATED_BY, 
+       TblGradeFeeMaster.UPDATED_DATE, 
+       TblGradeFeeMaster.UPDATED_BY, 
+       TblGradeFeeMaster.COMPANY_SBU_ID"
+  FromList="TBL_GRADE_FEE_MASTER TblGradeFeeMaster"
+  Where="TblGradeFeeMaster.COMPANY_SBU_ID =nvl(:getcompid,TblGradeFeeMaster.COMPANY_SBU_ID)">
+  <Variable
+    Name="getcompid"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblGradeFeeMasterView"/>
+  </Variable>
   <ViewAccessor
     Name="Academic_Year_LOV1"
     ViewObjectName="model.LOV.Academic_Year_LOV"
@@ -199,6 +217,12 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblGradeFeeMaster"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblGradeFeeMaster"
+    AliasName="COMPANY_SBU_ID"/>
   <ViewLinkAccessor
     Name="TblGradeFeeDetailView"
     ViewLink="model.ERP.VO.FkGradeFeeDetailFeeMasterLink"

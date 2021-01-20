@@ -234,7 +234,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_ENQ_FOLLOW_UP"/>
+    TableName="TBL_ENQ_FOLLOW_UP">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblEnqFollowUpRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblStdEnq"
     Association="model.ERP.EO.FkEnqFollowUpEnqAssoc"

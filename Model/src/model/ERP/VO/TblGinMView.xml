@@ -23,7 +23,7 @@
        TblGinM.UPDATED_DATE, 
        TblGinM.UPDATED_BY"
   FromList="TBL_GIN_M TblGinM"
-  Where="TblGinM.FROM_COMPANY_SBU_ID = :getcompId">
+  Where="TblGinM.FROM_COMPANY_SBU_ID = nvl(:getcompId,TblGinM.FROM_COMPANY_SBU_ID)">
   <Variable
     Name="getcompId"
     Kind="where"
