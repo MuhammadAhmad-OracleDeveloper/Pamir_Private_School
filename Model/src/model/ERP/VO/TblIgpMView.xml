@@ -20,7 +20,9 @@
        TblIgpM.CREATED_BY, 
        TblIgpM.UPDATED_DATE, 
        TblIgpM.UPDATED_BY, 
-       TblIgpM.PO_M_ID AS PO_MID1"
+       TblIgpM.PO_M_ID AS PO_MID1, 
+       TblIgpM.ORD_TYPE, 
+       TblIgpM.IPO_M_ID"
   FromList="TBL_IGP_M TblIgpM"
   Where="TblIgpM.COMPANY_SBU_ID=nvl(:getCompid,TblIgpM.COMPANY_SBU_ID)">
   <Variable
@@ -54,6 +56,10 @@
   <ViewAccessor
     Name="Company_SBU_Name_LOV1"
     ViewObjectName="model.LOV.Company_SBU_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="OrdType_LOV1"
+    ViewObjectName="model.LOV.OrdType_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
@@ -128,6 +134,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_OrdType"
+    ListVOName="OrdType_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="OrdType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DbAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -239,6 +263,26 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="OrdType"
+    PrecisionRule="true"
+    EntityAttrName="OrdType"
+    EntityUsage="TblIgpM"
+    AliasName="ORD_TYPE"
+    LOVName="LOV_OrdType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="IpoMId"
+    PrecisionRule="true"
+    EntityAttrName="IpoMId"
+    EntityUsage="TblIgpM"
+    AliasName="IPO_M_ID"/>
   <ViewLinkAccessor
     Name="TblIgpDView"
     ViewLink="model.ERP.VO.FkIgpDMLink"

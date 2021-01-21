@@ -50,6 +50,13 @@
                               <af:convertDateTime pattern="#{bindings.Dated.format}"/>
                             </af:inputDate>
                             <af:spacer  id="s7"/>
+                            <af:selectOneChoice value="#{bindings.OrdType.inputValue}" label="#{bindings.OrdType.label}"
+                                                required="#{bindings.OrdType.hints.mandatory}"
+                                                shortDesc="#{bindings.OrdType.hints.tooltip}" id="soc5">
+                              <f:selectItems value="#{bindings.OrdType.items}" id="si5"/>
+                              <f:validator binding="#{bindings.OrdType.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s72"/>
                             <af:selectOneChoice value="#{bindings.PoMId.inputValue}" label="PO"
                                                 required="#{bindings.PoMId.hints.mandatory}"
                                                 shortDesc="#{bindings.PoMId.hints.tooltip}" id="soc2"
