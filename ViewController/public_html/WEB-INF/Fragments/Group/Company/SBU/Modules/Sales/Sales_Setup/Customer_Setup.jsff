@@ -1,2 +1,440 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"></ui:composition>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
+    <af:dialog id="d1" title="User Guide">
+      here the guide will be shown !!!!!!
+    </af:dialog>
+  </af:popup>
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Customer Setup">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+         <af:button id="b2" text="Help" icon="#{resource['images:info.png']}" iconPosition="top"
+                   inlineStyle="background-color:InfoBackground;">
+          <af:showPopupBehavior popupId="p1"/>
+        </af:button>
+        <af:spacer width="10" height="10" id="s12"/>
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Customer Info">
+                <af:panelFormLayout id="pfl1" maxColumns="3" rows="6">
+                  <af:inputText value="#{bindings.Name.inputValue}" label="Customer"
+                                required="#{bindings.Name.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.Name.hints.precision}"
+                                shortDesc="#{bindings.Name.hints.tooltip}" id="it2">
+                    <f:validator binding="#{bindings.Name.validator}"/>
+                  </af:inputText>
+                  <af:spacer  id="s4"/>
+                  <af:selectOneChoice value="#{bindings.Type.inputValue}" label="Type"
+                                      required="#{bindings.Type.hints.mandatory}"
+                                      shortDesc="#{bindings.Type.hints.tooltip}" id="soc1" contentStyle="width:136px;">
+                    <f:selectItems value="#{bindings.Type.items}" id="si1"/>
+                    <f:validator binding="#{bindings.Type.validator}"/>
+                  </af:selectOneChoice>
+                  <af:spacer  id="s6"/>
+                  <af:selectOneChoice value="#{bindings.GlL4Id.inputValue}" label="GL-Control Account"
+                                      required="#{bindings.GlL4Id.hints.mandatory}"
+                                      shortDesc="#{bindings.GlL4Id.hints.tooltip}" id="soc2"
+                                      contentStyle="width:136px;">
+                    <f:selectItems value="#{bindings.GlL4Id.items}" id="si2"/>
+                    <f:validator binding="#{bindings.GlL4Id.validator}"/>
+                  </af:selectOneChoice>
+                  <af:inputText value="#{bindings.CustBuss.inputValue}" label="Business"
+                                required="#{bindings.CustBuss.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.CustBuss.hints.precision}"
+                                shortDesc="#{bindings.CustBuss.hints.tooltip}" id="it41">
+                    <f:validator binding="#{bindings.CustBuss.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.Designation.inputValue}" label="Designation"
+                                required="#{bindings.Designation.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.Designation.hints.precision}"
+                                shortDesc="#{bindings.Designation.hints.tooltip}" id="it6">
+                    <f:validator binding="#{bindings.Designation.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.ContactPer.inputValue}" label="Contact Person"
+                                required="#{bindings.ContactPer.hints.mandatory}"
+                                columns="20"
+                                maximumLength="#{bindings.ContactPer.hints.precision}"
+                                shortDesc="#{bindings.ContactPer.hints.tooltip}" id="it4" contentStyle='text-align: right'>
+                    <f:validator binding="#{bindings.ContactPer.validator}"/>
+                  </af:inputText>
+                  
+                  <af:inputText value="#{bindings.Phone.inputValue}" label="Phone"
+                                required="#{bindings.Phone.hints.mandatory}"
+                                columns="#{bindings.Phone.hints.displayWidth}"
+                                maximumLength="#{bindings.Phone.hints.precision}"
+                                shortDesc="#{bindings.Phone.hints.tooltip}" id="it5" contentStyle='text-align: right'>
+                    <f:validator binding="#{bindings.Phone.validator}"/>
+                  </af:inputText>
+                  
+                  <af:inputText value="#{bindings.Cnic.inputValue}" label="CNIC"
+                                required="#{bindings.Cnic.hints.mandatory}"
+                                columns="#{bindings.Cnic.hints.displayWidth}"
+                                maximumLength="#{bindings.Cnic.hints.precision}"
+                                shortDesc="#{bindings.Cnic.hints.tooltip}" id="it7" contentStyle='text-align: right'>
+                    <f:validator binding="#{bindings.Cnic.validator}"/>
+                    <f:validateRegex pattern="(^[0-9]{5}-[0-9]{7}-[0-9]$)"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.Cell.inputValue}" label="Cell"
+                                required="#{bindings.Cell.hints.mandatory}"
+                                columns="#{bindings.Cell.hints.displayWidth}"
+                                maximumLength="#{bindings.Cell.hints.precision}"
+                                shortDesc="#{bindings.Cell.hints.tooltip}" id="it8" contentStyle='text-align: right'>
+                    <f:validator binding="#{bindings.Cell.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.Fax.inputValue}" label="Fax"
+                                required="#{bindings.Fax.hints.mandatory}" columns="#{bindings.Fax.hints.displayWidth}"
+                                maximumLength="#{bindings.Fax.hints.precision}"
+                                shortDesc="#{bindings.Fax.hints.tooltip}" id="it9" contentStyle='text-align: right'>
+                    <f:validator binding="#{bindings.Fax.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.Ntn.inputValue}" label="NTN"
+                                required="#{bindings.Ntn.hints.mandatory}" columns="#{bindings.Ntn.hints.displayWidth}"
+                                maximumLength="#{bindings.Ntn.hints.precision}"
+                                shortDesc="#{bindings.Ntn.hints.tooltip}" id="it10" contentStyle='text-align: right'>
+                    <f:validator binding="#{bindings.Ntn.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.Strn.inputValue}" label="STRN"
+                                required="#{bindings.Strn.hints.mandatory}"
+                                columns="#{bindings.Strn.hints.displayWidth}"
+                                maximumLength="#{bindings.Strn.hints.precision}"
+                                shortDesc="#{bindings.Strn.hints.tooltip}" id="it11" contentStyle='text-align: right'>
+                    <f:validator binding="#{bindings.Strn.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.EMail.inputValue}" label="Email"
+                                required="#{bindings.EMail.hints.mandatory}"
+                                columns="#{bindings.EMail.hints.displayWidth}"
+                                maximumLength="#{bindings.EMail.hints.precision}"
+                                shortDesc="#{bindings.EMail.hints.tooltip}" id="it12" >
+                    <f:validator binding="#{bindings.EMail.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.Url.inputValue}" label="URL"
+                                required="#{bindings.Url.hints.mandatory}" columns="#{bindings.Url.hints.displayWidth}"
+                                maximumLength="#{bindings.Url.hints.precision}"
+                                shortDesc="#{bindings.Url.hints.tooltip}" id="it13">
+                    <f:validator binding="#{bindings.Url.validator}"/>
+                  </af:inputText>
+                  <f:facet name="footer">
+                    <af:panelGroupLayout layout="horizontal"  halign="center" id="pgl5">
+                      <af:button actionListener="#{bindings.First.execute}" text="First"
+                                 disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b6"/>
+                      <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                 disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
+                      <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                 disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b4"/>
+                      <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                 disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b5"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                </af:panelFormLayout>
+                 <af:panelGroupLayout id="pgl3" halign="center"  layout="horizontal">
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/sms/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                
+                <af:spacer width="5" height="10" id="s5"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+              </af:showDetailItem>
+              <af:showDetailItem text="Search" id="sdi1">
+                <af:table value="#{bindings.TblPblCustView1.collectionModel}" var="row"
+                          rows="#{bindings.TblPblCustView1.rangeSize}"
+                          emptyText="#{bindings.TblPblCustView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblPblCustView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblPblCustView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblPblCustView1.rangeSize}"
+                          filterModel="#{bindings.TblPblCustView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblPblCustView1Query.processQuery}" varStatus="vs" id="t1"
+                          scrollPolicy="page" autoHeightRows="0" partialTriggers="::b6">
+                  <af:column sortProperty="#{bindings.TblPblCustView1.hints.Id.name}" filterable="true" sortable="true"
+                             headerText="ID" id="c1" align="right" visible="false">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Id}"
+                                   id="id4" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblPblCustView1.hints.Id.label}"
+                                  required="#{bindings.TblPblCustView1.hints.Id.mandatory}"
+                                  columns="#{bindings.TblPblCustView1.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblPblCustView1.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblPblCustView1.hints.Id.tooltip}" id="it14" readOnly="true">
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblPblCustView1.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblPblCustView1.hints.Name.name}" filterable="true"
+                             sortable="true" headerText="Customer" id="c2" width="200">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Name}"
+                                   id="it27" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.Name.inputValue}"
+                                  label="#{bindings.TblPblCustView1.hints.Name.label}"
+                                  required="#{bindings.TblPblCustView1.hints.Name.mandatory}"
+                                  columns="#{bindings.TblPblCustView1.hints.Name.displayWidth}"
+                                  maximumLength="#{bindings.TblPblCustView1.hints.Name.precision}"
+                                  shortDesc="#{bindings.TblPblCustView1.hints.Name.tooltip}" id="it15" readOnly="true">
+                      <f:validator binding="#{row.bindings.Name.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblPblCustView1.hints.Type.name}" filterable="true"
+                             sortable="true" headerText="Type" id="c3">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Type}"
+                                   id="it28" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Type.inputValue}" label="#{row.bindings.Type.label}"
+                                        required="#{bindings.TblPblCustView1.hints.Type.mandatory}"
+                                        shortDesc="#{bindings.TblPblCustView1.hints.Type.tooltip}" id="soc3" readOnly="true">
+                      <f:selectItems value="#{row.bindings.Type.items}" id="si3"/>
+                      <f:validator binding="#{row.bindings.Type.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblPblCustView1.hints.GlL4Id.name}" filterable="true"
+                             sortable="true" headerText="GL-Control Account" id="c4" width="120">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.GlL4Id}"
+                                   id="it29" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.GlL4Id.inputValue}" label="#{row.bindings.GlL4Id.label}"
+                                        required="#{bindings.TblPblCustView1.hints.GlL4Id.mandatory}"
+                                        shortDesc="#{bindings.TblPblCustView1.hints.GlL4Id.tooltip}" id="soc4" readOnly="true">
+                      <f:selectItems value="#{row.bindings.GlL4Id.items}" id="si4"/>
+                      <f:validator binding="#{row.bindings.GlL4Id.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblPblCustView1.hints.CustBuss.name}" filterable="true"
+                             sortable="true" headerText="Business" id="c5">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.CustBuss}"
+                                   id="it30" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.CustBuss.inputValue}"
+                                  label="#{bindings.TblPblCustView1.hints.CustBuss.label}"
+                                  required="#{bindings.TblPblCustView1.hints.CustBuss.mandatory}"
+                                  columns="#{bindings.TblPblCustView1.hints.CustBuss.displayWidth}"
+                                  maximumLength="#{bindings.TblPblCustView1.hints.CustBuss.precision}"
+                                  shortDesc="#{bindings.TblPblCustView1.hints.CustBuss.tooltip}" id="it16" readOnly="true">
+                      <f:validator binding="#{row.bindings.CustBuss.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblPblCustView1.hints.Designation.name}" filterable="true"
+                             sortable="true" headerText="Designation" id="c8">
+                    <f:facet name="filter">
+                      <af:inputText value="#{vs.filterCriteria.Designation}" id="it33" placeholder="Search "/>
+                    </f:facet>
+                    <af:inputText value="#{row.bindings.Designation.inputValue}"
+                                  label="#{bindings.TblPblCustView1.hints.Designation.label}"
+                                  required="#{bindings.TblPblCustView1.hints.Designation.mandatory}"
+                                  columns="#{bindings.TblPblCustView1.hints.Designation.displayWidth}"
+                                  maximumLength="#{bindings.TblPblCustView1.hints.Designation.precision}"
+                                  shortDesc="#{bindings.TblPblCustView1.hints.Designation.tooltip}" id="it19"
+                                  readOnly="true">
+                      <f:validator binding="#{row.bindings.Designation.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblPblCustView1.hints.ContactPer.name}" filterable="true"
+                             sortable="true" headerText="Contact Person" id="c6" align="left">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.ContactPer}"
+                                   id="it31" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.ContactPer.inputValue}"
+                                  label="#{bindings.TblPblCustView1.hints.ContactPer.label}"
+                                  required="#{bindings.TblPblCustView1.hints.ContactPer.mandatory}"
+                                  columns="#{bindings.TblPblCustView1.hints.ContactPer.displayWidth}"
+                                  maximumLength="#{bindings.TblPblCustView1.hints.ContactPer.precision}"
+                                  shortDesc="#{bindings.TblPblCustView1.hints.ContactPer.tooltip}" id="it17"  readOnly="true"
+                                  contentStyle='text-align: right'>
+                      <f:validator binding="#{row.bindings.ContactPer.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblPblCustView1.hints.Phone.name}" filterable="true"
+                             sortable="true" headerText="Phone" id="c7" align="left">
+                              <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Phone}"
+                                   id="it32" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.Phone.inputValue}"
+                                  label="#{bindings.TblPblCustView1.hints.Phone.label}"
+                                  required="#{bindings.TblPblCustView1.hints.Phone.mandatory}"
+                                  columns="#{bindings.TblPblCustView1.hints.Phone.displayWidth}"
+                                  maximumLength="#{bindings.TblPblCustView1.hints.Phone.precision}"
+                                  shortDesc="#{bindings.TblPblCustView1.hints.Phone.tooltip}" id="it18" readOnly="true"
+                                  contentStyle='text-align: right'>
+                      <f:validator binding="#{row.bindings.Phone.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblPblCustView1.hints.Cnic.name}" filterable="true"
+                             sortable="true" headerText="CNIC" id="c9" align="left">
+                              <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Cnic}"
+                                   id="it34" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.Cnic.inputValue}"
+                                  label="#{bindings.TblPblCustView1.hints.Cnic.label}"
+                                  required="#{bindings.TblPblCustView1.hints.Cnic.mandatory}"
+                                  columns="#{bindings.TblPblCustView1.hints.Cnic.displayWidth}"
+                                  maximumLength="#{bindings.TblPblCustView1.hints.Cnic.precision}"
+                                  shortDesc="#{bindings.TblPblCustView1.hints.Cnic.tooltip}" id="it20" readOnly="true"
+                                  contentStyle='text-align: right'>
+                      <f:validator binding="#{row.bindings.Cnic.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblPblCustView1.hints.Cell.name}" filterable="true"
+                             sortable="true" headerText="Cell" id="c10" align="left">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Cell}"
+                                   id="it35" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.Cell.inputValue}"
+                                  label="#{bindings.TblPblCustView1.hints.Cell.label}"
+                                  required="#{bindings.TblPblCustView1.hints.Cell.mandatory}"
+                                  columns="#{bindings.TblPblCustView1.hints.Cell.displayWidth}"
+                                  maximumLength="#{bindings.TblPblCustView1.hints.Cell.precision}"
+                                  shortDesc="#{bindings.TblPblCustView1.hints.Cell.tooltip}" id="it21" readOnly="true"
+                                  contentStyle='text-align: right'>
+                      <f:validator binding="#{row.bindings.Cell.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblPblCustView1.hints.Fax.name}" filterable="true" sortable="true"
+                             headerText="Fax" id="c11" align="left">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Fax}"
+                                   id="it36" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.Fax.inputValue}"
+                                  label="#{bindings.TblPblCustView1.hints.Fax.label}"
+                                  required="#{bindings.TblPblCustView1.hints.Fax.mandatory}"
+                                  columns="#{bindings.TblPblCustView1.hints.Fax.displayWidth}"
+                                  maximumLength="#{bindings.TblPblCustView1.hints.Fax.precision}"
+                                  shortDesc="#{bindings.TblPblCustView1.hints.Fax.tooltip}" id="it22" readOnly="true"
+                                  contentStyle='text-align: right'>
+                      <f:validator binding="#{row.bindings.Fax.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblPblCustView1.hints.Ntn.name}" filterable="true" readOnly="true"
+                             headerText="NTN" id="c12" align="left">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Ntn}"
+                                   id="it37" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.Ntn.inputValue}"
+                                  label="#{bindings.TblPblCustView1.hints.Ntn.label}"
+                                  required="#{bindings.TblPblCustView1.hints.Ntn.mandatory}"
+                                  columns="#{bindings.TblPblCustView1.hints.Ntn.displayWidth}"
+                                  maximumLength="#{bindings.TblPblCustView1.hints.Ntn.precision}"
+                                  shortDesc="#{bindings.TblPblCustView1.hints.Ntn.tooltip}" id="it23" readOnly="true"
+                                  contentStyle='text-align: right'>
+                      <f:validator binding="#{row.bindings.Ntn.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblPblCustView1.hints.Strn.name}" filterable="true"
+                             sortable="true" headerText="STRN" id="c13" align="left">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Strn}"
+                                   id="it38" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.Strn.inputValue}"
+                                  label="#{bindings.TblPblCustView1.hints.Strn.label}"
+                                  required="#{bindings.TblPblCustView1.hints.Strn.mandatory}"
+                                  columns="#{bindings.TblPblCustView1.hints.Strn.displayWidth}"
+                                  maximumLength="#{bindings.TblPblCustView1.hints.Strn.precision}"
+                                  shortDesc="#{bindings.TblPblCustView1.hints.Strn.tooltip}" id="it24" readOnly="true"
+                                  contentStyle='text-align: right'>
+                      <f:validator binding="#{row.bindings.Strn.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblPblCustView1.hints.EMail.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblPblCustView1.hints.EMail.label}" id="c14"
+                             width="200">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.EMail}"
+                                   id="it39" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.EMail.inputValue}"
+                                  label="#{bindings.TblPblCustView1.hints.EMail.label}"
+                                  required="#{bindings.TblPblCustView1.hints.EMail.mandatory}"
+                                  columns="#{bindings.TblPblCustView1.hints.EMail.displayWidth}"
+                                  maximumLength="#{bindings.TblPblCustView1.hints.EMail.precision}"
+                                  shortDesc="#{bindings.TblPblCustView1.hints.EMail.tooltip}" id="it25" readOnly="true">
+                      <f:validator binding="#{row.bindings.EMail.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblPblCustView1.hints.Url.name}" filterable="true" sortable="true"
+                             headerText="URL" id="c15" width="200">
+                             <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.Url}"
+                                   id="it40" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.Url.inputValue}"
+                                  label="#{bindings.TblPblCustView1.hints.Url.label}"
+                                  required="#{bindings.TblPblCustView1.hints.Url.mandatory}"
+                                  columns="#{bindings.TblPblCustView1.hints.Url.displayWidth}"
+                                  maximumLength="#{bindings.TblPblCustView1.hints.Url.precision}"
+                                  shortDesc="#{bindings.TblPblCustView1.hints.Url.tooltip}" id="it26" readOnly="true">
+                      <f:validator binding="#{row.bindings.Url.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+               
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        
+        
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+             <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s2"/>
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+               
+                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+           </af:gridCell>
+        </af:gridRow>
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>
