@@ -49,13 +49,6 @@
     ColumnType="DATE"
     TableName="TBL_IMP_COST_M"/>
   <Attribute
-    Name="IgpMId"
-    ColumnName="IGP_M_ID"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_IMP_COST_M"/>
-  <Attribute
     Name="IcNo"
     ColumnName="IC_NO"
     SQLType="NUMERIC"
@@ -132,6 +125,13 @@
       Name="ExpressionScript"
       CodeSourceName="TblImpCostMRow"/>
   </Attribute>
+  <Attribute
+    Name="QcMId"
+    ColumnName="QC_M_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_IMP_COST_M"/>
   <AccessorAttribute
     Name="TblImpCostD"
     Association="model.ERP.EO.FkImpCostDMAssoc"
@@ -154,17 +154,6 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.ERP.EO.TblImpCostM.Id"/>
-    </AttrArray>
-  </Key>
-  <Key
-    Name="FkImpCostMIgp">
-    <DesignTime>
-      <Attr Name="_referencedKey" Value="PK_IGP_M_ID"/>
-      <Attr Name="_isForeign" Value="true"/>
-      <Attr Name="_DBObjectName" Value="FK_IMP_COST_M_IGP"/>
-    </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblImpCostM.IgpMId"/>
     </AttrArray>
   </Key>
   <Key

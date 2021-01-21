@@ -13,7 +13,6 @@
        TblImpCostM.VNO, 
        TblImpCostM.VTP, 
        TblImpCostM.DATED, 
-       TblImpCostM.IGP_M_ID, 
        TblImpCostM.IC_NO, 
        TblImpCostM.CONV_RATE, 
        TblImpCostM.CURRENCY, 
@@ -22,7 +21,8 @@
        TblImpCostM.CREATED_BY, 
        TblImpCostM.UPDATED_DATE, 
        TblImpCostM.UPDATED_BY, 
-       TblImpCostM.COMPANY_SBU_ID"
+       TblImpCostM.COMPANY_SBU_ID, 
+       TblImpCostM.QC_M_ID"
   FromList="TBL_IMP_COST_M TblImpCostM"
   Where="TblImpCostM.COMPANY_SBU_ID=nvl(:getcompid, TblImpCostM.COMPANY_SBU_ID)">
   <Variable
@@ -36,6 +36,10 @@
   <ViewAccessor
     Name="Voucher_Type_LOV1"
     ViewObjectName="model.LOV.Voucher_Type_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Company_SBU_Name_LOV1"
+    ViewObjectName="model.LOV.Company_SBU_Name_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
@@ -52,6 +56,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CompanySbuId"
+    ListVOName="Company_SBU_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CompanySbuId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -92,12 +114,6 @@
     EntityAttrName="Dated"
     EntityUsage="TblImpCostM"
     AliasName="DATED"/>
-  <ViewAttribute
-    Name="IgpMId"
-    PrecisionRule="true"
-    EntityAttrName="IgpMId"
-    EntityUsage="TblImpCostM"
-    AliasName="IGP_M_ID"/>
   <ViewAttribute
     Name="IcNo"
     PrecisionRule="true"
@@ -151,7 +167,21 @@
     PrecisionRule="true"
     EntityAttrName="CompanySbuId"
     EntityUsage="TblImpCostM"
-    AliasName="COMPANY_SBU_ID"/>
+    AliasName="COMPANY_SBU_ID"
+    LOVName="LOV_CompanySbuId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="QcMId"
+    PrecisionRule="true"
+    EntityAttrName="QcMId"
+    EntityUsage="TblImpCostM"
+    AliasName="QC_M_ID"/>
   <ViewLinkAccessor
     Name="TblImpCostDView"
     ViewLink="model.ERP.VO.FkImpCostDMLink"

@@ -6,16 +6,75 @@
   Name="TblImpCostDView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblImpCostD.ID, 
+       TblImpCostD.IMP_COST_M_ID, 
+       TblImpCostD.SR_NO, 
+       TblImpCostD.ITEM_L4_ID, 
+       TblImpCostD.DESCRIPTION, 
+       TblImpCostD.IGP_QTY, 
+       TblImpCostD.QTY, 
+       TblImpCostD.BAL_QTY, 
+       TblImpCostD.FCY_RATE, 
+       TblImpCostD.FCY_AMOUNT, 
+       TblImpCostD.LANDED_COST, 
+       TblImpCostD.AMOUNT, 
+       TblImpCostD.CREATED_DATE, 
+       TblImpCostD.CREATED_BY, 
+       TblImpCostD.UPDATED_DATE, 
+       TblImpCostD.UPDATED_BY, 
+       TblImpCostD.IGP_M_ID, 
+       TblItemL4.ITEM_L4_ID AS ITEM_L4ID1, 
+       TblUom.NAME, 
+       TblUom.ID AS ID1"
+  FromList="TBL_IMP_COST_D TblImpCostD, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom"
+  Where="TblImpCostD.ITEM_L4_ID = TblItemL4.ITEM_L4_ID          
+and TblItemL4.UOM_ID = TblUom.ID(+)">
+  <ViewAccessor
+    Name="ItemL4_Name_LOV1"
+    ViewObjectName="model.LOV.ItemL4_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ItemL4Id"
+    ListVOName="ItemL4_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ItemL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ItemL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblImpCostD"
     Entity="model.ERP.EO.TblImpCostD"/>
+  <EntityUsage
+    Name="TblItemL4"
+    Entity="model.ERP.EO.TblItemL4"
+    ReadOnly="true"
+    DeleteParticipant="false">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblUom"
+    Entity="model.ERP.EO.TblUom"
+    ReadOnly="true"
+    DeleteParticipant="false">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
@@ -41,7 +100,15 @@
     PrecisionRule="true"
     EntityAttrName="ItemL4Id"
     EntityUsage="TblImpCostD"
-    AliasName="ITEM_L4_ID"/>
+    AliasName="ITEM_L4_ID"
+    LOVName="LOV_ItemL4Id">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Description"
     PrecisionRule="true"
@@ -120,4 +187,22 @@
     EntityAttrName="IgpMId"
     EntityUsage="TblImpCostD"
     AliasName="IGP_M_ID"/>
+  <ViewAttribute
+    Name="ItemL4Id1"
+    PrecisionRule="true"
+    EntityAttrName="ItemL4Id"
+    EntityUsage="TblItemL4"
+    AliasName="ITEM_L4ID1"/>
+  <ViewAttribute
+    Name="Name"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblUom"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="Id1"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblUom"
+    AliasName="ID1"/>
 </ViewObject>
