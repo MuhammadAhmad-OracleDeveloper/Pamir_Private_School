@@ -160,7 +160,12 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_RBR_M"/>
+    TableName="TBL_RBR_M">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblRbrMRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblRbrD"
     Association="model.ERP.EO.FkRbrDAssoc"

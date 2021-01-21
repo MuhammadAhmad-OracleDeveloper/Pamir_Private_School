@@ -230,7 +230,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_RBL_CUST"/>
+    TableName="TBL_RBL_CUST">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblRblCustRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblCustOpenBlnc"
     Association="model.ERP.EO.FkCustOpenBlncPblCustIdAssoc"

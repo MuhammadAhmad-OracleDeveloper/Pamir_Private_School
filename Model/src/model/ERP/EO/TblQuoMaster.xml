@@ -141,7 +141,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_QUO_MASTER"/>
+    TableName="TBL_QUO_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblQuoMasterRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblQuoDetail"
     Association="model.ERP.EO.FkQuoDetailMasterAssoc"

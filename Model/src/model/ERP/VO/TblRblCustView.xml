@@ -9,10 +9,38 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
-  SelectAllAttributes="false">
+  SelectList="TblRblCust.ID, 
+       TblRblCust.NAME, 
+       TblRblCust.TYPE, 
+       TblRblCust.GL_L4_ID, 
+       TblRblCust.CUST_BUSS, 
+       TblRblCust.CONTACT_PER, 
+       TblRblCust.PHONE, 
+       TblRblCust.DESIGNATION, 
+       TblRblCust.CNIC, 
+       TblRblCust.CELL, 
+       TblRblCust.FAX, 
+       TblRblCust.NTN, 
+       TblRblCust.STRN, 
+       TblRblCust.E_MAIL, 
+       TblRblCust.URL, 
+       TblRblCust.GROUP_COMPANY_ID, 
+       TblRblCust.CREATED_DATE, 
+       TblRblCust.CREATED_BY, 
+       TblRblCust.UPDATED_DATE, 
+       TblRblCust.UPDATED_BY, 
+       TblRblCust.COMPANY_SBU_ID"
+  FromList="TBL_RBL_CUST TblRblCust"
+  Where="TblRblCust.COMPANY_SBU_ID=nvl(:getcompid, TblRblCust.COMPANY_SBU_ID)">
+  <Variable
+    Name="getcompid"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblRblCustView"/>
+  </Variable>
   <ViewAccessor
     Name="GL_L4_LOV1"
     ViewObjectName="model.LOV.GL_L4_LOV"
@@ -197,6 +225,12 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblRblCust"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblRblCust"
+    AliasName="COMPANY_SBU_ID"/>
   <ViewLinkAccessor
     Name="TblCustOpenBlncView"
     ViewLink="model.ERP.VO.FkCustOpenBlncPblCustIdLink"

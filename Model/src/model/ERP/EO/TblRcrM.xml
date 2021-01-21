@@ -134,7 +134,12 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_RCR_M"/>
+    TableName="TBL_RCR_M">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblRcrMRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblRcrD"
     Association="model.ERP.EO.FkRcrDMAssoc"
