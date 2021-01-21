@@ -243,6 +243,22 @@
                       <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
+                  <af:column headerText="UOM" id="c7" sortable="true"
+                             filterable="true" width="60">
+                              <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.UOMName}"
+                                   id="it14" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                    <af:inputText value="#{row.bindings.UOMName.inputValue}"
+                                  label="#{bindings.TblRdfDetailView2.hints.UOMName.label}"
+                                  required="#{bindings.TblRdfDetailView2.hints.UOMName.mandatory}"
+                                  columns="#{bindings.TblRdfDetailView2.hints.UOMName.displayWidth}"
+                                  maximumLength="#{bindings.TblRdfDetailView2.hints.UOMName.precision}"
+                                  shortDesc="#{bindings.TblRdfDetailView2.hints.UOMName.tooltip}" id="it8" readOnly="true" >
+                      <f:validator binding="#{row.bindings.UOMName.validator}"/>
+                    </af:inputText>
+                  </af:column>
                   <af:column sortProperty="#{bindings.TblRdfDetailView2.hints.Description.name}" filterable="true"
                              sortable="true" headerText="Description"
                              id="c11" width="200">

@@ -6,13 +6,34 @@
   Name="TblImpCostMView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblImpCostM.ID, 
+       TblImpCostM.VNO, 
+       TblImpCostM.VTP, 
+       TblImpCostM.DATED, 
+       TblImpCostM.IGP_M_ID, 
+       TblImpCostM.IC_NO, 
+       TblImpCostM.CONV_RATE, 
+       TblImpCostM.CURRENCY, 
+       TblImpCostM.NARRATION, 
+       TblImpCostM.CREATED_DATE, 
+       TblImpCostM.CREATED_BY, 
+       TblImpCostM.UPDATED_DATE, 
+       TblImpCostM.UPDATED_BY, 
+       TblImpCostM.COMPANY_SBU_ID"
+  FromList="TBL_IMP_COST_M TblImpCostM"
+  Where="TblImpCostM.COMPANY_SBU_ID=nvl(:getcompid, TblImpCostM.COMPANY_SBU_ID)">
+  <Variable
+    Name="getcompid"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblImpCostMView"/>
+  </Variable>
   <EntityUsage
     Name="TblImpCostM"
     Entity="model.ERP.EO.TblImpCostM"/>
