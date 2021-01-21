@@ -271,10 +271,26 @@
                     <af:selectOneChoice value="#{row.bindings.ItemL4Id.inputValue}"
                                         label="#{row.bindings.ItemL4Id.label}"
                                         required="#{bindings.TblSaleRetDetailView2.hints.ItemL4Id.mandatory}"
-                                        shortDesc="#{bindings.TblSaleRetDetailView2.hints.ItemL4Id.tooltip}" id="soc3">
+                                        shortDesc="#{bindings.TblSaleRetDetailView2.hints.ItemL4Id.tooltip}" id="soc3" readOnly="true">
                       <f:selectItems value="#{row.bindings.ItemL4Id.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
                     </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="UOM" id="c2" sortable="true"
+                             filterable="true" width="60">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.UOMName}"
+       id="it4" placeholder="Search ">
+      </af:inputText>
+</f:facet> 
+                    <af:inputText value="#{row.bindings.UOMName.inputValue}"
+                                  label="#{bindings.TblSaleRetDetailView2.hints.UOMName.label}"
+                                  required="#{bindings.TblSaleRetDetailView2.hints.UOMName.mandatory}"
+                                  columns="#{bindings.TblSaleRetDetailView2.hints.UOMName.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleRetDetailView2.hints.UOMName.precision}"
+                                  shortDesc="#{bindings.TblSaleRetDetailView2.hints.UOMName.tooltip}" id="it3" readOnly="true">
+                      <f:validator binding="#{row.bindings.UOMName.validator}"/>
+                    </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSaleRetDetailView2.hints.Qty.name}" filterable="true"
                              sortable="true" headerText="Qty" id="c5">
@@ -288,7 +304,7 @@
                                   required="#{bindings.TblSaleRetDetailView2.hints.Qty.mandatory}"
                                   columns="#{bindings.TblSaleRetDetailView2.hints.Qty.displayWidth}"
                                   maximumLength="#{bindings.TblSaleRetDetailView2.hints.Qty.precision}"
-                                  shortDesc="#{bindings.TblSaleRetDetailView2.hints.Qty.tooltip}" id="it9">
+                                  shortDesc="#{bindings.TblSaleRetDetailView2.hints.Qty.tooltip}" id="it9" readOnly="true">
                       <f:validator binding="#{row.bindings.Qty.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblSaleRetDetailView2.hints.Qty.format}"/>
@@ -306,7 +322,7 @@
                                   required="#{bindings.TblSaleRetDetailView2.hints.Rate.mandatory}"
                                   columns="#{bindings.TblSaleRetDetailView2.hints.Rate.displayWidth}"
                                   maximumLength="#{bindings.TblSaleRetDetailView2.hints.Rate.precision}"
-                                  shortDesc="#{bindings.TblSaleRetDetailView2.hints.Rate.tooltip}" id="it10">
+                                  shortDesc="#{bindings.TblSaleRetDetailView2.hints.Rate.tooltip}" id="it10" readOnly="true">
                       <f:validator binding="#{row.bindings.Rate.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblSaleRetDetailView2.hints.Rate.format}"/>
@@ -324,7 +340,7 @@
                                   required="#{bindings.TblSaleRetDetailView2.hints.Amount.mandatory}"
                                   columns="#{bindings.TblSaleRetDetailView2.hints.Amount.displayWidth}"
                                   maximumLength="#{bindings.TblSaleRetDetailView2.hints.Amount.precision}"
-                                  shortDesc="#{bindings.TblSaleRetDetailView2.hints.Amount.tooltip}" id="it11">
+                                  shortDesc="#{bindings.TblSaleRetDetailView2.hints.Amount.tooltip}" id="it11" readOnly="true">
                       <f:validator binding="#{row.bindings.Amount.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblSaleRetDetailView2.hints.Amount.format}"/>
@@ -343,7 +359,7 @@
                                   required="#{bindings.TblSaleRetDetailView2.hints.DiscPerc.mandatory}"
                                   columns="#{bindings.TblSaleRetDetailView2.hints.DiscPerc.displayWidth}"
                                   maximumLength="#{bindings.TblSaleRetDetailView2.hints.DiscPerc.precision}"
-                                  shortDesc="#{bindings.TblSaleRetDetailView2.hints.DiscPerc.tooltip}" id="it12">
+                                  shortDesc="#{bindings.TblSaleRetDetailView2.hints.DiscPerc.tooltip}" id="it12" readOnly="true">
                       <f:validator binding="#{row.bindings.DiscPerc.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblSaleRetDetailView2.hints.DiscPerc.format}"/>
@@ -362,7 +378,7 @@
                                   required="#{bindings.TblSaleRetDetailView2.hints.DiscAmount.mandatory}"
                                   columns="#{bindings.TblSaleRetDetailView2.hints.DiscAmount.displayWidth}"
                                   maximumLength="#{bindings.TblSaleRetDetailView2.hints.DiscAmount.precision}"
-                                  shortDesc="#{bindings.TblSaleRetDetailView2.hints.DiscAmount.tooltip}" id="it13">
+                                  shortDesc="#{bindings.TblSaleRetDetailView2.hints.DiscAmount.tooltip}" id="it13" readOnly="true">
                       <f:validator binding="#{row.bindings.DiscAmount.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblSaleRetDetailView2.hints.DiscAmount.format}"/>
@@ -381,7 +397,7 @@
                                   required="#{bindings.TblSaleRetDetailView2.hints.Description.mandatory}"
                                   columns="#{bindings.TblSaleRetDetailView2.hints.Description.displayWidth}"
                                   maximumLength="#{bindings.TblSaleRetDetailView2.hints.Description.precision}"
-                                  shortDesc="#{bindings.TblSaleRetDetailView2.hints.Description.tooltip}" id="it14">
+                                  shortDesc="#{bindings.TblSaleRetDetailView2.hints.Description.tooltip}" id="it14" readOnly="true">
                       <f:validator binding="#{row.bindings.Description.validator}"/>
                     </af:inputText>
                   </af:column>

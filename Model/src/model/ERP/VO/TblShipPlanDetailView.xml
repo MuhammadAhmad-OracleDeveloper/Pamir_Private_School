@@ -6,13 +6,28 @@
   Name="TblShipPlanDetailView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblShipPlanDetail.ID, 
+       TblShipPlanDetail.SHIP_PLAN_MASTER_ID, 
+       TblShipPlanDetail.SR_NO, 
+       TblShipPlanDetail.ITEM_L4_ID, 
+       TblShipPlanDetail.UOM_ID, 
+       TblShipPlanDetail.DESCRIPTION, 
+       TblShipPlanDetail.QTY, 
+       TblShipPlanDetail.SHIP_TYPE, 
+       TblShipPlanDetail.SHIP_DATE, 
+       TblShipPlanDetail.CREATED_DATE, 
+       TblShipPlanDetail.CREATED_BY, 
+       TblShipPlanDetail.UPDATED_DATE, 
+       TblShipPlanDetail.UPDATED_BY, 
+       TblItemL4.ITEM_L4_ID AS ITEM_L4ID1, 
+       TblUom.NAME, 
+       TblUom.ID AS ID1"
+  FromList="TBL_SHIP_PLAN_DETAIL TblShipPlanDetail, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom"
+  Where="TblShipPlanDetail.ITEM_L4_ID = TblItemL4.ITEM_L4_ID         
+and TblItemL4.UOM_ID = TblUom.ID">
   <ViewAccessor
     Name="ItemL4_Name_LOV1"
     ViewObjectName="model.LOV.ItemL4_Name_LOV"
@@ -35,8 +50,12 @@
       <Item Value="ItemL4Id"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="UomId"/>
+    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="ItemL4Id"/>
+      <Item Value="UomId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
@@ -82,6 +101,24 @@
   <EntityUsage
     Name="TblShipPlanDetail"
     Entity="model.ERP.EO.TblShipPlanDetail"/>
+  <EntityUsage
+    Name="TblItemL4"
+    Entity="model.ERP.EO.TblItemL4"
+    ReadOnly="true"
+    DeleteParticipant="false">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblUom"
+    Entity="model.ERP.EO.TblUom"
+    ReadOnly="true"
+    DeleteParticipant="false">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
@@ -186,6 +223,24 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblShipPlanDetail"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="ItemL4Id1"
+    PrecisionRule="true"
+    EntityAttrName="ItemL4Id"
+    EntityUsage="TblItemL4"
+    AliasName="ITEM_L4ID1"/>
+  <ViewAttribute
+    Name="UOMName"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblUom"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="Id1"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblUom"
+    AliasName="ID1"/>
   <ViewLinkAccessor
     Name="TblShipPlanDetailDView"
     ViewLink="model.ERP.VO.FkShipPlanDetailDDetailLink"
