@@ -1192,6 +1192,9 @@
   <ViewUsage
     Name="TblIpoDView2"
     ViewObjectName="model.ERP.VO.TblIpoDView"/>
+  <ViewUsage
+    Name="TblImpCostDDView2"
+    ViewObjectName="model.ERP.VO.TblImpCostDDView"/>
   <ViewLinkUsage
     Name="FkAgePolicyAcadYearLink1"
     ViewLinkObjectName="model.ERP.VO.FkAgePolicyAcadYearLink"
@@ -2361,5 +2364,11 @@
     ViewLinkObjectName="model.ERP.VO.FkIpoDMLink"
     SrcViewUsageName="model.ERP.AppModule.TblIpoMView1"
     DstViewUsageName="model.ERP.AppModule.TblIpoDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKTblImpCostMDDFkLink1"
+    ViewLinkObjectName="model.ERP.VO.FKTblImpCostMDDFkLink"
+    SrcViewUsageName="model.ERP.AppModule.TblImpCostMView1"
+    DstViewUsageName="model.ERP.AppModule.TblImpCostDDView2"
     Reversed="false"/>
 </AppModule>

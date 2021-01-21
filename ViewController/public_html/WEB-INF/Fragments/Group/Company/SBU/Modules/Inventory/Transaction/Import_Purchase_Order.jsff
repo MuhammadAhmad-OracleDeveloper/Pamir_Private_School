@@ -263,34 +263,8 @@
                                 <f:validator binding="#{row.bindings.Name.validator}"/>
                               </af:inputText>
                             </af:column>
-                             <af:column sortProperty="#{bindings.TblIpoDView2.hints.FcyRate.name}" filterable="true"
-                                       sortable="true" headerText="#{bindings.TblIpoDView2.hints.FcyRate.label}"
-                                       id="c29">
-                              <af:inputText value="#{row.bindings.FcyRate.inputValue}"
-                                            label="#{bindings.TblIpoDView2.hints.FcyRate.label}"
-                                            required="#{bindings.TblIpoDView2.hints.FcyRate.mandatory}"
-                                            columns="#{bindings.TblIpoDView2.hints.FcyRate.displayWidth}"
-                                            maximumLength="#{bindings.TblIpoDView2.hints.FcyRate.precision}"
-                                            shortDesc="#{bindings.TblIpoDView2.hints.FcyRate.tooltip}" id="it43">
-                                <f:validator binding="#{row.bindings.FcyRate.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblIpoDView2.hints.FcyRate.format}"/>
-                              </af:inputText>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.TblIpoDView2.hints.FcyAmount.name}" filterable="true"
-                                       sortable="true" headerText="#{bindings.TblIpoDView2.hints.FcyAmount.label}"
-                                       id="c30">
-                              <af:inputText value="#{row.bindings.FcyAmount.inputValue}" readOnly="true"
-                                            label="#{bindings.TblIpoDView2.hints.FcyAmount.label}"
-                                            required="#{bindings.TblIpoDView2.hints.FcyAmount.mandatory}"
-                                            columns="#{bindings.TblIpoDView2.hints.FcyAmount.displayWidth}"
-                                            maximumLength="#{bindings.TblIpoDView2.hints.FcyAmount.precision}"
-                                            shortDesc="#{bindings.TblIpoDView2.hints.FcyAmount.tooltip}" id="it45">
-                                <f:validator binding="#{row.bindings.FcyAmount.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblIpoDView2.hints.FcyAmount.format}"/>
-                              </af:inputText>
-                            </af:column>
+                             
+                            
                             <af:column sortProperty="#{bindings.TblIpoDView2.hints.Description.name}" filterable="true"
                                        sortable="true" headerText="Description"
                                        id="c9" width="500">
@@ -361,6 +335,20 @@
                                                   pattern="#{bindings.TblIpoDView2.hints.BalQty.format}"/>
                               </af:inputText>
                             </af:column>
+                            <af:column sortProperty="#{bindings.TblIpoDView2.hints.FcyRate.name}" filterable="true"
+                                       sortable="true" headerText="#{bindings.TblIpoDView2.hints.FcyRate.label}"
+                                       id="c29">
+                              <af:inputText value="#{row.bindings.FcyRate.inputValue}"
+                                            label="#{bindings.TblIpoDView2.hints.FcyRate.label}"
+                                            required="#{bindings.TblIpoDView2.hints.FcyRate.mandatory}"
+                                            columns="#{bindings.TblIpoDView2.hints.FcyRate.displayWidth}"
+                                            maximumLength="#{bindings.TblIpoDView2.hints.FcyRate.precision}"
+                                            shortDesc="#{bindings.TblIpoDView2.hints.FcyRate.tooltip}" id="it43">
+                                <f:validator binding="#{row.bindings.FcyRate.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblIpoDView2.hints.FcyRate.format}"/>
+                              </af:inputText>
+                            </af:column>
                             <af:column headerText="Rate" id="c13" sortable="true" filterable="true">
                             <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Rate}"
@@ -376,6 +364,20 @@
                                 <f:validator binding="#{row.bindings.Rate.validator}"/>
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblIpoDView2.hints.Rate.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblIpoDView2.hints.FcyAmount.name}" filterable="true"
+                                       sortable="true" headerText="#{bindings.TblIpoDView2.hints.FcyAmount.label}"
+                                       id="c30">
+                              <af:inputText value="#{row.bindings.FcyAmount.inputValue}" readOnly="true"
+                                            label="#{bindings.TblIpoDView2.hints.FcyAmount.label}"
+                                            required="#{bindings.TblIpoDView2.hints.FcyAmount.mandatory}"
+                                            columns="#{bindings.TblIpoDView2.hints.FcyAmount.displayWidth}"
+                                            maximumLength="#{bindings.TblIpoDView2.hints.FcyAmount.precision}"
+                                            shortDesc="#{bindings.TblIpoDView2.hints.FcyAmount.tooltip}" id="it45">
+                                <f:validator binding="#{row.bindings.FcyAmount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblIpoDView2.hints.FcyAmount.format}"/>
                               </af:inputText>
                             </af:column>
                             <af:column headerText="Amount" id="c22" sortable="true"

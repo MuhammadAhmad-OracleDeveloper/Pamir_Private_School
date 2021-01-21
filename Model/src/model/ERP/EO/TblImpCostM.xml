@@ -130,7 +130,6 @@
     TableName="TBL_IMP_COST_M">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="TblImpCostMRow"/>
   </Attribute>
   <AccessorAttribute
@@ -138,6 +137,13 @@
     Association="model.ERP.EO.FkImpCostDMAssoc"
     AssociationEnd="model.ERP.EO.FkImpCostDMAssoc.TblImpCostD"
     AssociationOtherEnd="model.ERP.EO.FkImpCostDMAssoc.TblImpCostM"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblImpCostDD"
+    Association="model.ERP.EO.FKTblImpCostMDDFkAssoc"
+    AssociationEnd="model.ERP.EO.FKTblImpCostMDDFkAssoc.TblImpCostDD"
+    AssociationOtherEnd="model.ERP.EO.FKTblImpCostMDDFkAssoc.TblImpCostM"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <Key
