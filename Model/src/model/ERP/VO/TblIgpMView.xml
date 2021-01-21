@@ -22,7 +22,8 @@
        TblIgpM.UPDATED_BY, 
        TblIgpM.PO_M_ID AS PO_MID1, 
        TblIgpM.ORD_TYPE, 
-       TblIgpM.IPO_M_ID"
+       TblIgpM.IPO_M_ID, 
+       TblIgpM.IPO_M_ID AS IPO_MID1"
   FromList="TBL_IGP_M TblIgpM"
   Where="TblIgpM.COMPANY_SBU_ID=nvl(:getCompid,TblIgpM.COMPANY_SBU_ID)">
   <Variable
@@ -61,6 +62,22 @@
     Name="OrdType_LOV1"
     ViewObjectName="model.LOV.OrdType_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Pending_IPO_LOV1"
+    ViewObjectName="model.LOV.Pending_IPO_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="compid">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[CompanySbuId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="INV_IPO_Master_LOV1"
+    ViewObjectName="model.LOV.INV_IPO_Master_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
     ListVOName="Voucher_Type_LOV1"
@@ -89,8 +106,12 @@
       <Item Value="PoMId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="OrdType"/>
+    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="Id"/>
+      <Item Value="OrdType"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Id"/>
@@ -152,6 +173,51 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_IpoMId"
+    ListVOName="Pending_IPO_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="IpoMId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="OrdType"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+      <Item Value="OrdType"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Id"/>
+      <Item Value="Dated"/>
+      <Item Value="CompanySbuId"/>
+      <Item Value="BalQty"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_StaticIpoMId"
+    ListVOName="INV_IPO_Master_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StaticIpoMId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Id"/>
+      <Item Value="Dated"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -282,7 +348,29 @@
     PrecisionRule="true"
     EntityAttrName="IpoMId"
     EntityUsage="TblIgpM"
-    AliasName="IPO_M_ID"/>
+    AliasName="IPO_M_ID"
+    LOVName="LOV_IpoMId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="StaticIpoMId"
+    PrecisionRule="true"
+    EntityAttrName="IpoMId"
+    EntityUsage="TblIgpM"
+    AliasName="IPO_MID1"
+    LOVName="LOV_StaticIpoMId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblIgpDView"
     ViewLink="model.ERP.VO.FkIgpDMLink"

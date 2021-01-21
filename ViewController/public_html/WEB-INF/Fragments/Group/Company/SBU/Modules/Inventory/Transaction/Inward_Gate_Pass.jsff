@@ -50,13 +50,6 @@
                               <af:convertDateTime pattern="#{bindings.Dated.format}"/>
                             </af:inputDate>
                             <af:spacer  id="s7"/>
-                            <af:selectOneChoice value="#{bindings.OrdType.inputValue}" label="#{bindings.OrdType.label}"
-                                                required="#{bindings.OrdType.hints.mandatory}"
-                                                shortDesc="#{bindings.OrdType.hints.tooltip}" id="soc5">
-                              <f:selectItems value="#{bindings.OrdType.items}" id="si5"/>
-                              <f:validator binding="#{bindings.OrdType.validator}"/>
-                            </af:selectOneChoice>
-                            <af:spacer  id="s72"/>
                             <af:selectOneChoice value="#{bindings.PoMId.inputValue}" label="PO"
                                                 required="#{bindings.PoMId.hints.mandatory}"
                                                 shortDesc="#{bindings.PoMId.hints.tooltip}" id="soc2"
@@ -64,7 +57,20 @@
                               <f:selectItems value="#{bindings.PoMId.items}" id="si2"/>
                               <f:validator binding="#{bindings.PoMId.validator}"/>
                             </af:selectOneChoice>
-                           
+                            <af:spacer  id="s72"/>
+                            <af:selectOneChoice value="#{bindings.IpoMId.inputValue}" label="#{bindings.IpoMId.label}"
+                                                required="#{bindings.IpoMId.hints.mandatory}"
+                                                shortDesc="#{bindings.IpoMId.hints.tooltip}" id="soc9">
+                              <f:selectItems value="#{bindings.IpoMId.items}" id="si9"/>
+                              <f:validator binding="#{bindings.IpoMId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s721"/>
+                            <af:selectOneChoice value="#{bindings.OrdType.inputValue}" label="Order Type"
+                                                required="#{bindings.OrdType.hints.mandatory}" disabled="true"
+                                                shortDesc="#{bindings.OrdType.hints.tooltip}" id="soc5">
+                              <f:selectItems value="#{bindings.OrdType.items}" id="si5"/>
+                              <f:validator binding="#{bindings.OrdType.validator}"/>
+                            </af:selectOneChoice>
                             <af:spacer  id="s6"/>
                              <af:inputText value="#{bindings.Narration.inputValue}"
                                           label="Narration"
@@ -94,6 +100,13 @@
                               <f:validator binding="#{bindings.StaticPoMId1.validator}"/>
                             </af:selectOneChoice>
                             <af:spacer  id="s12"/>
+                            <af:selectOneChoice value="#{bindings.StaticIpoMId.inputValue}"
+                                                label="#{bindings.StaticIpoMId.label}" disabled="true"
+                                                required="#{bindings.StaticIpoMId.hints.mandatory}"
+                                                shortDesc="#{bindings.StaticIpoMId.hints.tooltip}" id="soc10">
+                              <f:selectItems value="#{bindings.StaticIpoMId.items}" id="si10"/>
+                              <f:validator binding="#{bindings.StaticIpoMId.validator}"/>
+                            </af:selectOneChoice>
                             <af:spacer width="10" height="10" id="s13"/>
                             <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                           required="#{bindings.Vno.hints.mandatory}"
