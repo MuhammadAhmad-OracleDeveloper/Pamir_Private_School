@@ -10,3 +10,10 @@ def FromCompanySbuId_ExpressionScript_Expression()
 adf.context.current.sessionScope.get('sessSBUID')
 }
 
+
+@TransientValueExpression(attributeName="ToCompanySbuId")
+def ToCompanySbuId_ExpressionScript_Expression()
+{
+adf.context.current.sessionScope.get('sessSBUID')
+}
+

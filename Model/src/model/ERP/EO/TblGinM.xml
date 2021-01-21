@@ -95,7 +95,12 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_GIN_M"/>
+    TableName="TBL_GIN_M">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblGinMRow"/>
+  </Attribute>
   <Attribute
     Name="CreatedDate"
     ColumnName="CREATED_DATE"

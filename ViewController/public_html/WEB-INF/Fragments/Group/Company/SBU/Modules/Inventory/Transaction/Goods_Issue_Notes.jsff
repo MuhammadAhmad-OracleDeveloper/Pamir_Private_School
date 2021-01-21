@@ -80,14 +80,14 @@
                             
                             <af:spacer  id="s10"/>
                             <af:selectOneChoice value="#{bindings.FromCompanySbuId.inputValue}"
-                                                label="From Project"
+                                                label="Company SBU"
                                                 required="#{bindings.FromCompanySbuId.hints.mandatory}"
                                                 shortDesc="#{bindings.FromCompanySbuId.hints.tooltip}" id="soc3" disabled="true"
                                                 contentStyle="width:150px;">
                               <f:selectItems value="#{bindings.FromCompanySbuId.items}" id="si3"/>
                               <f:validator binding="#{bindings.FromCompanySbuId.validator}"/>
                             </af:selectOneChoice>
-                            <af:spacer  id="s8"/>
+                            <!--<af:spacer  id="s8"/>
                             <af:selectOneChoice value="#{bindings.ToCompanySbuId.inputValue}"
                                                 label="To Project"
                                                 required="#{bindings.ToCompanySbuId.hints.mandatory}"
@@ -95,7 +95,7 @@
                                                 contentStyle="width:150px;">
                               <f:selectItems value="#{bindings.ToCompanySbuId.items}" id="si5"/>
                               <f:validator binding="#{bindings.ToCompanySbuId.validator}"/>
-                            </af:selectOneChoice>
+                            </af:selectOneChoice>-->
                             <af:spacer  id="s4"/>
                              <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                           required="#{bindings.Vno.hints.mandatory}"
