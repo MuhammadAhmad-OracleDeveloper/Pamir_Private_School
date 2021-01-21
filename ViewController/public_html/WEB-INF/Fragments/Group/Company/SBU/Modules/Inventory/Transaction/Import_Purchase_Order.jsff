@@ -61,22 +61,13 @@
                               <f:validator binding="#{bindings.StaticDoMId.validator}"/>
                             </af:selectOneChoice>
                             
-                              <af:inputText value="#{bindings.IcNo.inputValue}" label="#{bindings.IcNo.hints.label}"
+                              <af:inputText value="#{bindings.IcNo.inputValue}" label="LC No."
                                             required="#{bindings.IcNo.hints.mandatory}"
                                             columns="#{bindings.IcNo.hints.displayWidth}"
                                             maximumLength="#{bindings.IcNo.hints.precision}"
                                             shortDesc="#{bindings.IcNo.hints.tooltip}" id="it8">
                                 <f:validator binding="#{bindings.IcNo.validator}"/>
                                 <af:convertNumber groupingUsed="false" pattern="#{bindings.IcNo.format}"/>
-                              </af:inputText>
-                              <af:inputText value="#{bindings.ConvRate.inputValue}"
-                                            label="#{bindings.ConvRate.hints.label}"
-                                            required="#{bindings.ConvRate.hints.mandatory}"
-                                            columns="#{bindings.ConvRate.hints.displayWidth}"
-                                            maximumLength="#{bindings.ConvRate.hints.precision}"
-                                            shortDesc="#{bindings.ConvRate.hints.tooltip}" id="it21">
-                                <f:validator binding="#{bindings.ConvRate.validator}"/>
-                                <af:convertNumber groupingUsed="false" pattern="#{bindings.ConvRate.format}"/>
                               </af:inputText>
                               <af:inputText value="#{bindings.Currency.inputValue}"
                                             label="#{bindings.Currency.hints.label}"
@@ -86,6 +77,16 @@
                                             shortDesc="#{bindings.Currency.hints.tooltip}" id="it30">
                                 <f:validator binding="#{bindings.Currency.validator}"/>
                               </af:inputText>
+                              <af:inputText value="#{bindings.ConvRate.inputValue}"
+                                            label="Conversion Rate"
+                                            required="#{bindings.ConvRate.hints.mandatory}"
+                                            columns="#{bindings.ConvRate.hints.displayWidth}"
+                                            maximumLength="#{bindings.ConvRate.hints.precision}"
+                                            shortDesc="#{bindings.ConvRate.hints.tooltip}" id="it21">
+                                <f:validator binding="#{bindings.ConvRate.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.ConvRate.format}"/>
+                              </af:inputText>
+                              
                             <af:spacer  id="s3"/>
                   <af:inputText value="#{bindings.Narration.inputValue}" label="Narration"
                                 required="#{bindings.Narration.hints.mandatory}"
@@ -104,7 +105,7 @@
                   </af:inputText>
                   
                   <af:spacer  id="s16"/>
-                  <af:selectOneChoice value="#{bindings.CompanySbuId.inputValue}" label="Project"
+                  <af:selectOneChoice value="#{bindings.CompanySbuId.inputValue}" label="Company SBU"
                                       required="#{bindings.CompanySbuId.hints.mandatory}"
                                       shortDesc="#{bindings.CompanySbuId.hints.tooltip}" id="soc6" disabled="true"
                                       contentStyle="width:135px;" >
