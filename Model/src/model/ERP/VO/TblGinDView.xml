@@ -30,9 +30,9 @@
        TblGinM.FROM_DEPARTMENT_ID, 
        TblGinD.ITEM_L4_ID AS ITEM_L4ID2"
   FromList="TBL_GIN_D TblGinD, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom, TBL_GIN_M TblGinM"
-  Where="TblGinD.GIN_M_ID = TblGinM.ID(+) 
-AND TblGinD.ITEM_L4_ID = TblItemL4.ITEM_L4_ID             
-and TblItemL4.UOM_ID = TblUom.ID">
+  Where="TblGinD.GIN_M_ID = TblGinM.ID(+)  
+AND TblGinD.ITEM_L4_ID = TblItemL4.ITEM_L4_ID              
+and TblItemL4.UOM_ID = TblUom.ID(+)">
   <ViewAccessor
     Name="ItemL4_Name_LOV1"
     ViewObjectName="model.LOV.ItemL4_Name_LOV"

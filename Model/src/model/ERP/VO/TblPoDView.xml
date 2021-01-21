@@ -28,8 +28,8 @@
        TblUom.NAME, 
        TblUom.ID AS ID1"
   FromList="TBL_PO_D TblPoD, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom"
-  Where="TblPoD.ITEM_L4_ID = TblItemL4.ITEM_L4_ID      
-and TblItemL4.UOM_ID = TblUom.ID">
+  Where="TblPoD.ITEM_L4_ID = TblItemL4.ITEM_L4_ID         
+and TblItemL4.UOM_ID = TblUom.ID(+)">
   <ViewAccessor
     Name="ItemL4_Name_LOV1"
     ViewObjectName="model.LOV.ItemL4_Name_LOV"

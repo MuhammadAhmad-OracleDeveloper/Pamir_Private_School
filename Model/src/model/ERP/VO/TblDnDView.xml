@@ -28,9 +28,9 @@
        TblUom.NAME, 
        TblUom.ID AS ID2"
   FromList="TBL_DN_D TblDnD, TBL_DN_M TblDnM, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom"
-  Where="TblDnD.DN_M_ID = TblDnM.ID(+)   
-and TblDnD.ITEM_L4_ID = TblItemL4.ITEM_L4_ID          
-and TblItemL4.UOM_ID = TblUom.ID">
+  Where="TblDnD.DN_M_ID = TblDnM.ID(+)    
+and TblDnD.ITEM_L4_ID = TblItemL4.ITEM_L4_ID           
+and TblItemL4.UOM_ID = TblUom.ID(+)">
   <ViewAccessor
     Name="ItemL4_Name_LOV1"
     ViewObjectName="model.LOV.ItemL4_Name_LOV"
