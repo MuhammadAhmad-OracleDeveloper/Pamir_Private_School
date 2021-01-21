@@ -119,7 +119,12 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_IPO_M"/>
+    TableName="TBL_IPO_M">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblIpoMRow"/>
+  </Attribute>
   <Attribute
     Name="DoMId"
     ColumnName="DO_M_ID"
