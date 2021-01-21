@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="Pending_IGP_LOV"
+  Name="Pending_IPO_LOV"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   BindingStyle="OracleName"
@@ -15,20 +15,21 @@
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.LOV.Pending_IGP_LOV_LABEL"/>
+        ResId="model.LOV.Pending_IPO_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <Variable
     Name="compid"
     Kind="where"
     Type="java.math.BigDecimal"/>
-  <SQLQuery><![CDATA[Select       
+  <SQLQuery><![CDATA[Select  
 ord_type, 
-DATED,         
-ID,         
-BAL_QTY      
-From VEW_PENDINGIGP   
-Where VEW_PENDINGIGP.COMPANY_SBU_ID=:compid]]></SQLQuery>
+DATED,        
+ID,        
+Company_Sbu_ID,        
+Bal_Qty        
+From Vew_pendingipo    
+Where Vew_pendingipo.Company_Sbu_ID=:compid]]></SQLQuery>
   <ViewAttribute
     Name="OrdType"
     IsUpdateable="false"
@@ -36,10 +37,10 @@ Where VEW_PENDINGIGP.COMPANY_SBU_ID=:compid]]></SQLQuery>
     PrecisionRule="true"
     Precision="1"
     Type="java.lang.String"
-    ColumnType="VARCHAR2"
+    ColumnType="CHAR"
     AliasName="ORD_TYPE"
     Expression="ORD_TYPE"
-    SQLType="VARCHAR">
+    SQLType="CHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -63,6 +64,16 @@ Where VEW_PENDINGIGP.COMPANY_SBU_ID=:compid]]></SQLQuery>
     ColumnType="NUMBER"
     AliasName="ID"
     Expression="ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="CompanySbuId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="COMPANY_SBU_ID"
+    Expression="COMPANY_SBU_ID"
     SQLType="NUMERIC"/>
   <ViewAttribute
     Name="BalQty"

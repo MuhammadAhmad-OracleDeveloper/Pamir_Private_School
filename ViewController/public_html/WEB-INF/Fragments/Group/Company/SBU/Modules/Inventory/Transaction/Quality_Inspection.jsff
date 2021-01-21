@@ -77,6 +77,13 @@
                               <f:validator binding="#{bindings.Narration.validator}"/>
                             </af:inputText>
                             <af:spacer  id="s6"/>
+                            <af:selectOneChoice value="#{bindings.OrdType.inputValue}" label="#{bindings.OrdType.label}"
+                                                required="#{bindings.OrdType.hints.mandatory}" disabled="true"
+                                                shortDesc="#{bindings.OrdType.hints.tooltip}" id="soc5">
+                              <f:selectItems value="#{bindings.OrdType.items}" id="si5"/>
+                              <f:validator binding="#{bindings.OrdType.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s62"/>
                             <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type"
                                                 required="#{bindings.Vtp.hints.mandatory}"
                                                 shortDesc="#{bindings.Vtp.hints.tooltip}" id="soc1" disabled="true"

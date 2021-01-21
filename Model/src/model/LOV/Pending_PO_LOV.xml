@@ -23,12 +23,28 @@
     Kind="where"
     Type="java.math.BigDecimal"/>
   <SQLQuery><![CDATA[Select      
-DATED,     
-ID,     
-Company_Sbu_ID,     
-Bal_Qty     
-From Vew_pendingpo 
+ord_type,  
+DATED,      
+ID,      
+Company_Sbu_ID,      
+Bal_Qty      
+From Vew_pendingpo  
 Where Vew_pendingpo.Company_Sbu_ID=:compid]]></SQLQuery>
+  <ViewAttribute
+    Name="OrdType"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="ORD_TYPE"
+    Expression="ORD_TYPE"
+    SQLType="CHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
   <ViewAttribute
     Name="Dated"
     IsUpdateable="false"

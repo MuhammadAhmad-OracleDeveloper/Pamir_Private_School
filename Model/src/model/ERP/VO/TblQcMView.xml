@@ -20,7 +20,8 @@
        TblQcM.CREATED_BY, 
        TblQcM.UPDATED_DATE, 
        TblQcM.UPDATED_BY, 
-       TblQcM.IGP_M_ID AS IGP_MID1"
+       TblQcM.IGP_M_ID AS IGP_MID1, 
+       TblQcM.ORD_TYPE"
   FromList="TBL_QC_M TblQcM"
   Where="TblQcM.COMPANY_SBU_ID=nvl(:getCOMPID,TblQcM.COMPANY_SBU_ID)">
   <Variable
@@ -54,6 +55,10 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="OrdType_LOV1"
+    ViewObjectName="model.LOV.OrdType_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
     ListVOName="Voucher_Type_LOV1"
@@ -119,13 +124,35 @@
       <Item Value="IgpMId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="OrdType"/>
+    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="Id"/>
+      <Item Value="OrdType"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Id"/>
       <Item Value="Dated"/>
       <Item Value="BalQty"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_OrdType"
+    ListVOName="OrdType_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="OrdType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DbAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -230,6 +257,20 @@
     EntityUsage="TblQcM"
     AliasName="IGP_MID1"
     LOVName="LOV_StaticIgpMId1">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="OrdType"
+    PrecisionRule="true"
+    EntityAttrName="OrdType"
+    EntityUsage="TblQcM"
+    AliasName="ORD_TYPE"
+    LOVName="LOV_OrdType">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
