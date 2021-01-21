@@ -77,14 +77,12 @@
                               <f:validator binding="#{bindings.Narration.validator}"/>
                             </af:inputText>
                             <af:spacer  id="s6"/>
-                            <af:selectOneChoice value="#{bindings.StaticIgpMId1.inputValue}"
-                                                label="IGP"
-                                                required="#{bindings.StaticIgpMId1.hints.mandatory}"
-                                                shortDesc="#{bindings.StaticIgpMId1.hints.tooltip}" id="soc7"
-                                                contentStyle="width:150px;"
-                                                disabled="true">
-                              <f:selectItems value="#{bindings.StaticIgpMId1.items}" id="si7"/>
-                              <f:validator binding="#{bindings.StaticIgpMId1.validator}"/>
+                            <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type"
+                                                required="#{bindings.Vtp.hints.mandatory}"
+                                                shortDesc="#{bindings.Vtp.hints.tooltip}" id="soc1" disabled="true"
+                                                contentStyle="width:150px;">
+                              <f:selectItems value="#{bindings.Vtp.items}" id="si1"/>
+                              <f:validator binding="#{bindings.Vtp.validator}"/>
                             </af:selectOneChoice>
                             <af:spacer  id="s12"/>
                              <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
@@ -96,14 +94,15 @@
                               <f:validator binding="#{bindings.Vno.validator}"/>
                             </af:inputText>
                             <af:spacer  id="s4"/>
-                            <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type"
-                                                required="#{bindings.Vtp.hints.mandatory}"
-                                                shortDesc="#{bindings.Vtp.hints.tooltip}" id="soc1" disabled="true"
-                                                contentStyle="width:150px;">
-                              <f:selectItems value="#{bindings.Vtp.items}" id="si1"/>
-                              <f:validator binding="#{bindings.Vtp.validator}"/>
+                            <af:selectOneChoice value="#{bindings.StaticIgpMId1.inputValue}"
+                                                label="IGP"
+                                                required="#{bindings.StaticIgpMId1.hints.mandatory}"
+                                                shortDesc="#{bindings.StaticIgpMId1.hints.tooltip}" id="soc7"
+                                                contentStyle="width:150px;"
+                                                disabled="true">
+                              <f:selectItems value="#{bindings.StaticIgpMId1.items}" id="si7"/>
+                              <f:validator binding="#{bindings.StaticIgpMId1.validator}"/>
                             </af:selectOneChoice>
-                            
                             <f:facet name="footer">
                               <af:panelGroupLayout layout="horizontal" halign="center" id="pgl6">
                                 <af:button actionListener="#{bindings.First.execute}" text="First"
