@@ -12,8 +12,8 @@
        TblItemL4.UOM_ID, 
        TblItemL4.AST"
   FromList="TBL_ITEM_L1 TblItemL1, TBL_ITEM_L2 TblItemL2, TBL_ITEM_L3 TblItemL3, TBL_ITEM_L4 TblItemL4"
-  Where="((TblItemL1.ITEM_L1_ID = TblItemL2.ITEM_L1_ID) AND (TblItemL2.ITEM_L2_ID = TblItemL3.ITEM_L2_ID)) AND (TblItemL3.ITEM_L3_ID = TblItemL4.ITEM_L3_ID) 
-AND (TblItemL1.ITEM_L1_ID=1 or TblItemL1.ITEM_L1_ID=2)  
+  Where="((TblItemL1.ITEM_L1_ID = TblItemL2.ITEM_L1_ID) AND (TblItemL2.ITEM_L2_ID = TblItemL3.ITEM_L2_ID)) AND (TblItemL3.ITEM_L3_ID = TblItemL4.ITEM_L3_ID)  
+   
 AND TblItemL4.AST='Y'"
   BindingStyle="OracleName"
   CustomQuery="false"

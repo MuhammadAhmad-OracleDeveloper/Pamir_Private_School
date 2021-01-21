@@ -57,13 +57,6 @@
                                           contentStyle="width:150px;"  rows="10">
                               <f:validator binding="#{bindings.Narration.validator}"/>
                             </af:inputText>
-                            <af:spacer  id="s37"/>
-                            <af:selectOneChoice value="#{bindings.OrdType.inputValue}" label="Order Type"
-                                                required="#{bindings.OrdType.hints.mandatory}"
-                                                shortDesc="#{bindings.OrdType.hints.tooltip}" id="soc8">
-                              <f:selectItems value="#{bindings.OrdType.items}" id="si8"/>
-                              <f:validator binding="#{bindings.OrdType.validator}"/>
-                            </af:selectOneChoice>
                             <af:spacer  id="s7"/>
                             <af:selectOneChoice value="#{bindings.CompanySbuId .inputValue}"
                                                 label="Company SBU"
@@ -77,7 +70,7 @@
                             <af:selectOneChoice value="#{bindings.DepartmentId.inputValue}"
                                                 label="Department"
                                                 required="#{bindings.DepartmentId.hints.mandatory}"
-                                                shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="soc3" disabled="true"
+                                                shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="soc3"
                                                 contentStyle="width:150px;">
                               <f:selectItems value="#{bindings.DepartmentId.items}" id="si3"/>
                               <f:validator binding="#{bindings.DepartmentId.validator}"/>
@@ -98,6 +91,12 @@
                                                 contentStyle="width:150px;" disabled="true">
                               <f:selectItems value="#{bindings.Vtp.items}" id="si1"/>
                               <f:validator binding="#{bindings.Vtp.validator}"/>
+                            </af:selectOneChoice>
+                            <af:selectOneChoice value="#{bindings.OrdType.inputValue}" label="#{bindings.OrdType.label}"
+                                                required="#{bindings.OrdType.hints.mandatory}"
+                                                shortDesc="#{bindings.OrdType.hints.tooltip}" id="soc8">
+                              <f:selectItems value="#{bindings.OrdType.items}" id="si8"/>
+                              <f:validator binding="#{bindings.OrdType.validator}"/>
                             </af:selectOneChoice>
                             <f:facet name="footer">
                               <af:panelGroupLayout layout="horizontal" halign="center" id="pgl6">
@@ -142,7 +141,7 @@
                                     rowSelection="single" fetchSize="#{bindings.TblDoDView2.rangeSize}"
                                     filterModel="#{bindings.TblDoDView2Query.queryDescriptor}" filterVisible="true"
                                     queryListener="#{bindings.TblDoDView2Query.processQuery}" varStatus="vs" id="t2"
-                                    scrollPolicy="page" autoHeightRows="0" >
+                                    scrollPolicy="page" autoHeightRows="0">
                             <af:column sortProperty="#{bindings.TblDoDView2.hints.Id.name}" filterable="true"
                                        sortable="true" headerText="ID" id="c8" visible="false">
                                        <f:facet name="filter">
