@@ -6,6 +6,12 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblIpoMView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblIpoMView1Iterator"/>
+    <iterator Binds="TblIpoDView2" RangeSize="25" DataControl="AppModuleDataControl1" id="TblIpoDView2Iterator"/>
+    <searchRegion Binds="TblIpoDView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblIpoDView2Query"/>
+    <searchRegion Binds="TblIpoMView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblIpoMView1Query"/>
   </executables>
    <bindings>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
@@ -21,4 +27,107 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="TblIpoMView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIpoMView1Iterator" id="Vno">
+      <AttrNames>
+        <Item Value="Vno"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblIpoMView1Iterator" StaticList="false" Uses="LOV_Vtp" id="Vtp" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblIpoMView1Iterator" id="IcNo">
+      <AttrNames>
+        <Item Value="IcNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIpoMView1Iterator" id="ConvRate">
+      <AttrNames>
+        <Item Value="ConvRate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIpoMView1Iterator" id="Currency">
+      <AttrNames>
+        <Item Value="Currency"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIpoMView1Iterator" id="Dated">
+      <AttrNames>
+        <Item Value="Dated"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblIpoMView1Iterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblIpoMView1Iterator" StaticList="false" Uses="LOV_PblSuppId" id="PblSuppId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblIpoMView1Iterator" id="Carrier">
+      <AttrNames>
+        <Item Value="Carrier"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIpoMView1Iterator" id="Narration">
+      <AttrNames>
+        <Item Value="Narration"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblIpoMView1Iterator" StaticList="false" Uses="LOV_CompanySbuId" id="CompanySbuId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblIpoMView1Iterator" StaticList="false" Uses="LOV_DoMId" id="DoMId" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblIpoMView1Iterator" StaticList="false" Uses="LOV_StaticDoMId" id="StaticDoMId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action IterBinding="TblIpoMView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblIpoMView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblIpoMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblIpoMView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="TblIpoDView2Iterator" id="TblIpoDView2">
+      <nodeDefinition DefName="model.ERP.VO.TblIpoDView" Name="TblIpoDView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="IpoMId"/>
+          <Item Value="SrNo"/>
+          <Item Value="ItemL4Id"/>
+          <Item Value="Description"/>
+          <Item Value="DoQty"/>
+          <Item Value="Qty"/>
+          <Item Value="BalQty"/>
+          <Item Value="Rate"/>
+          <Item Value="Amount"/>
+          <Item Value="FcyRate"/>
+          <Item Value="FcyAmount"/>
+          <Item Value="DoMId"/>
+          <Item Value="ItemL4Id1"/>
+          <Item Value="Name"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblIpoMView1Iterator" id="TblIpoMView1">
+      <nodeDefinition DefName="model.ERP.VO.TblIpoMView" Name="TblIpoMView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Vno"/>
+          <Item Value="Vtp"/>
+          <Item Value="IcNo"/>
+          <Item Value="ConvRate"/>
+          <Item Value="Currency"/>
+          <Item Value="Dated"/>
+          <Item Value="DepartmentId"/>
+          <Item Value="PblSuppId"/>
+          <Item Value="Carrier"/>
+          <Item Value="Narration"/>
+          <Item Value="CompanySbuId"/>
+          <Item Value="DoMId"/>
+          <Item Value="StaticDoMId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblIpoMView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblIpoMView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblIpoMView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="TblIpoDView2Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblIpoDView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblIpoDView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
   </bindings></pageDefinition>

@@ -25,9 +25,13 @@
        TblItnD.ITEM_L4_ID AS ITEM_L4ID1, 
        TblItemL4.ITEM_L4_ID AS ITEM_L4_ID1, 
        TblUom.NAME, 
-       TblUom.ID AS ID1"
-  FromList="TBL_ITN_D TblItnD, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom"
-  Where="TblItnD.ITEM_L4_ID = TblItemL4.ITEM_L4_ID              
+       TblUom.ID AS ID1, 
+       TblItnM.FROM_DEPARTMENT_ID, 
+       TblItnM.FROM_COMPANY_SBU_ID, 
+       TblItnM.ID AS ID2"
+  FromList="TBL_ITN_D TblItnD, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom, TBL_ITN_M TblItnM"
+  Where="TblItnD.ITN_M_ID = TblItnM.ID(+) 
+and TblItnD.ITEM_L4_ID = TblItemL4.ITEM_L4_ID               
 and TblItemL4.UOM_ID = TblUom.ID(+)">
   <ViewAccessor
     Name="ItemL4_Name_LOV1"
@@ -40,7 +44,20 @@ and TblItemL4.UOM_ID = TblUom.ID(+)">
   <ViewAccessor
     Name="FIFO_LOV1"
     ViewObjectName="model.LOV.FIFO_LOV"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="get_Comp_ID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[FromCompanySbuId]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="get_dept_ID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[FromDepartmentId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_UomId"
     ListVOName="Unit_of_Measurement_LOV1"
@@ -74,7 +91,7 @@ and TblItemL4.UOM_ID = TblUom.ID(+)">
       <Item Value="Rate"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
+      <Item Value="ItemL4Id"/>
       <Item Value="BalQty"/>
       <Item Value="Rate"/>
     </AttrArray>
@@ -120,6 +137,25 @@ and TblItemL4.UOM_ID = TblUom.ID(+)">
     DeleteParticipant="false">
     <DesignTime>
       <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblItnM"
+    Entity="model.ERP.EO.TblItnM"
+    Association="model.ERP.EO.FkItnDMAssoc"
+    AssociationEnd="model.ERP.EO.FkItnDMAssoc.TblItnM"
+    SourceUsage="model.ERP.VO.TblItnDView.TblItnD"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.ERP.EO.TblItnM.Id"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.ERP.EO.TblItnD.ItnMId"/>
+      </AttrArray>
     </DesignTime>
   </EntityUsage>
   <ViewAttribute
@@ -251,4 +287,27 @@ and TblItemL4.UOM_ID = TblUom.ID(+)">
     EntityAttrName="Id"
     EntityUsage="TblUom"
     AliasName="ID1"/>
+  <ViewAttribute
+    Name="FromDepartmentId"
+    PrecisionRule="true"
+    EntityAttrName="FromDepartmentId"
+    EntityUsage="TblItnM"
+    AliasName="FROM_DEPARTMENT_ID"/>
+  <ViewAttribute
+    Name="FromCompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="FromCompanySbuId"
+    EntityUsage="TblItnM"
+    AliasName="FROM_COMPANY_SBU_ID"/>
+  <ViewAttribute
+    Name="Id2"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblItnM"
+    AliasName="ID2"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id"/>
+    <Item Value="ItemL4Id1"/>
+    <Item Value="Id1"/>
+  </AttrArray>
 </ViewObject>
