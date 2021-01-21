@@ -193,7 +193,7 @@
                                     rowSelection="single" fetchSize="#{bindings.TblIpoDView2.rangeSize}"
                                     filterModel="#{bindings.TblIpoDView2Query.queryDescriptor}" filterVisible="true"
                                     queryListener="#{bindings.TblIpoDView2Query.processQuery}" varStatus="vs" id="t3"
-                                    scrollPolicy="page" autoHeightRows="0" partialTriggers="::b9 ::b11 ::b12">
+                                    scrollPolicy="page" autoHeightRows="0">
                             <af:column sortProperty="#{bindings.TblIpoDView2.hints.Id.name}" filterable="true"
                                        sortable="true" headerText="ID" id="c5" visible="false">
                                        <f:facet name="filter">
@@ -280,7 +280,7 @@
                             <af:column sortProperty="#{bindings.TblIpoDView2.hints.FcyAmount.name}" filterable="true"
                                        sortable="true" headerText="#{bindings.TblIpoDView2.hints.FcyAmount.label}"
                                        id="c30">
-                              <af:inputText value="#{row.bindings.FcyAmount.inputValue}"
+                              <af:inputText value="#{row.bindings.FcyAmount.inputValue}" readOnly="true"
                                             label="#{bindings.TblIpoDView2.hints.FcyAmount.label}"
                                             required="#{bindings.TblIpoDView2.hints.FcyAmount.mandatory}"
                                             columns="#{bindings.TblIpoDView2.hints.FcyAmount.displayWidth}"
@@ -367,7 +367,7 @@
        id="it28" placeholder="Search ">
       </af:inputText>
 </f:facet>
-                              <af:inputText value="#{row.bindings.Rate.inputValue}"
+                              <af:inputText value="#{row.bindings.Rate.inputValue}" readOnly="true"
                                             label="#{bindings.TblIpoDView2.hints.Rate.label}"
                                             required="#{bindings.TblIpoDView2.hints.Rate.mandatory}"
                                             columns="#{bindings.TblIpoDView2.hints.Rate.displayWidth}"
@@ -405,7 +405,7 @@
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                           icon="/sms/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}2"/>
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s13"/>
                             </af:iterator>
@@ -428,7 +428,7 @@
                           fetchSize="#{bindings.TblIpoMView1.rangeSize}"
                           filterModel="#{bindings.TblIpoMView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblIpoMView1Query.processQuery}" varStatus="vs" id="t1"
-                          scrollPolicy="page" autoHeightRows="0" partialTriggers="::b6 ::b7 ::b8">
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblIpoMView1.hints.Id.name}" filterable="true"
                              sortable="true" headerText="ID"
                              id="c17" align="right" visible="false">
