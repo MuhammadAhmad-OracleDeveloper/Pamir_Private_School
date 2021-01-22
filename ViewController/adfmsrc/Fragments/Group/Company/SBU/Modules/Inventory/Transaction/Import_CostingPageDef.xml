@@ -6,16 +6,18 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
-    <iterator Binds="TblImpCostMView1" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblImpCostMView1" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblImpCostMView1Iterator"/>
-    <iterator Binds="TblImpCostDDView2" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblImpCostDDView2" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblImpCostDDView2Iterator"/>
     <searchRegion Binds="TblImpCostDDView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblImpCostDDView2Query"/>
-    <iterator Binds="TblImpCostDView2" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="TblImpCostDView2" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblImpCostDView2Iterator"/>
     <searchRegion Binds="TblImpCostDView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblImpCostDView2Query"/>
+    <searchRegion Binds="TblImpCostMView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblImpCostMView1Query"/>
   </executables>
   <bindings>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
@@ -68,11 +70,6 @@
         <Item Value="Narration"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblImpCostMView1Iterator" id="QcMId">
-      <AttrNames>
-        <Item Value="QcMId"/>
-      </AttrNames>
-    </attributeValues>
     <action IterBinding="TblImpCostMView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
     <action IterBinding="TblImpCostMView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
     <action IterBinding="TblImpCostMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
@@ -121,4 +118,20 @@
     <action IterBinding="TblImpCostDView2Iterator" id="Delete2" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <list IterBinding="TblImpCostMView1Iterator" StaticList="false" Uses="LOV_QcMId" id="QcMId1" DTSupportsMRU="true"
           SelectItemValueMode="ListObject"/>
+    <tree IterBinding="TblImpCostMView1Iterator" id="TblImpCostMView1">
+      <nodeDefinition DefName="model.ERP.VO.TblImpCostMView" Name="TblImpCostMView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Vno"/>
+          <Item Value="Vtp"/>
+          <Item Value="Dated"/>
+          <Item Value="QcMId"/>
+          <Item Value="IcNo"/>
+          <Item Value="ConvRate"/>
+          <Item Value="Currency"/>
+          <Item Value="Narration"/>
+          <Item Value="CompanySbuId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings></pageDefinition>
