@@ -41,6 +41,18 @@
     Name="Company_SBU_Name_LOV1"
     ViewObjectName="model.LOV.Company_SBU_Name_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Pending_QC_LOV1"
+    ViewObjectName="model.LOV.Pending_QC_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="compid">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[CompanySbuId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_Vtp"
     ListVOName="Voucher_Type_LOV1"
@@ -74,6 +86,27 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_QcMId"
+    ListVOName="Pending_QC_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="QcMId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Id"/>
+      <Item Value="Dated"/>
+      <Item Value="BalQty"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -181,7 +214,15 @@
     PrecisionRule="true"
     EntityAttrName="QcMId"
     EntityUsage="TblImpCostM"
-    AliasName="QC_M_ID"/>
+    AliasName="QC_M_ID"
+    LOVName="LOV_QcMId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblImpCostDView"
     ViewLink="model.ERP.VO.FkImpCostDMLink"

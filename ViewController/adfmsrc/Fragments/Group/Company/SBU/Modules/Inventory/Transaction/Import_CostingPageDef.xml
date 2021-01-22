@@ -68,8 +68,6 @@
         <Item Value="Narration"/>
       </AttrNames>
     </attributeValues>
-    <list IterBinding="TblImpCostMView1Iterator" StaticList="false" Uses="LOV_CompanySbuId" id="CompanySbuId"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="TblImpCostMView1Iterator" id="QcMId">
       <AttrNames>
         <Item Value="QcMId"/>
@@ -98,14 +96,13 @@
           <Item Value="SrNo"/>
           <Item Value="ItemL4Id"/>
           <Item Value="Description"/>
-          <Item Value="IgpQty"/>
+          <Item Value="QCQty"/>
           <Item Value="Qty"/>
           <Item Value="BalQty"/>
           <Item Value="FcyRate"/>
           <Item Value="FcyAmount"/>
           <Item Value="LandedCost"/>
           <Item Value="Amount"/>
-          <Item Value="IgpMId"/>
           <Item Value="Name"/>
         </AttrNames>
       </nodeDefinition>
@@ -122,4 +119,6 @@
             Action="createInsertRow"/>
     <action IterBinding="TblImpCostDView2Iterator" id="Execute2" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblImpCostDView2Iterator" id="Delete2" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <list IterBinding="TblImpCostMView1Iterator" StaticList="false" Uses="LOV_QcMId" id="QcMId1" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
   </bindings></pageDefinition>

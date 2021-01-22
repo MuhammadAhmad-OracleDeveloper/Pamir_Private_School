@@ -14,7 +14,7 @@
        TblImpCostD.SR_NO, 
        TblImpCostD.ITEM_L4_ID, 
        TblImpCostD.DESCRIPTION, 
-       TblImpCostD.IGP_QTY, 
+       TblImpCostD.QC_QTY, 
        TblImpCostD.QTY, 
        TblImpCostD.BAL_QTY, 
        TblImpCostD.FCY_RATE, 
@@ -25,7 +25,6 @@
        TblImpCostD.CREATED_BY, 
        TblImpCostD.UPDATED_DATE, 
        TblImpCostD.UPDATED_BY, 
-       TblImpCostD.IGP_M_ID, 
        TblItemL4.ITEM_L4_ID AS ITEM_L4ID1, 
        TblUom.NAME, 
        TblUom.ID AS ID1"
@@ -116,11 +115,11 @@ and TblItemL4.UOM_ID = TblUom.ID(+)">
     EntityUsage="TblImpCostD"
     AliasName="DESCRIPTION"/>
   <ViewAttribute
-    Name="IgpQty"
+    Name="QCQty"
     PrecisionRule="true"
-    EntityAttrName="IgpQty"
+    EntityAttrName="QCQty"
     EntityUsage="TblImpCostD"
-    AliasName="IGP_QTY"/>
+    AliasName="QC_QTY"/>
   <ViewAttribute
     Name="Qty"
     PrecisionRule="true"
@@ -181,12 +180,6 @@ and TblItemL4.UOM_ID = TblUom.ID(+)">
     EntityAttrName="UpdatedBy"
     EntityUsage="TblImpCostD"
     AliasName="UPDATED_BY"/>
-  <ViewAttribute
-    Name="IgpMId"
-    PrecisionRule="true"
-    EntityAttrName="IgpMId"
-    EntityUsage="TblImpCostD"
-    AliasName="IGP_M_ID"/>
   <ViewAttribute
     Name="ItemL4Id1"
     PrecisionRule="true"
