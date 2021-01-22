@@ -6,9 +6,9 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
-    <iterator Binds="TblPblCustView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblPblCustView1Iterator"/>
-    <searchRegion Binds="TblPblCustView1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblPblCustView1Query"/>
+    <iterator Binds="TblRblCustView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblRblCustView1Iterator"/>
+    <searchRegion Binds="TblRblCustView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblRblCustView1Query"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -22,86 +22,86 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <attributeValues IterBinding="TblPblCustView1Iterator" id="Id">
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="Id">
       <AttrNames>
         <Item Value="Id"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblPblCustView1Iterator" id="Name">
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="Name">
       <AttrNames>
         <Item Value="Name"/>
       </AttrNames>
     </attributeValues>
-    <list IterBinding="TblPblCustView1Iterator" StaticList="false" Uses="LOV_Type" id="Type" DTSupportsMRU="false"
+    <list IterBinding="TblRblCustView1Iterator" StaticList="false" Uses="LOV_Type" id="Type" DTSupportsMRU="false"
           SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblPblCustView1Iterator" StaticList="false" Uses="LOV_GlL4Id" id="GlL4Id" DTSupportsMRU="false"
+    <list IterBinding="TblRblCustView1Iterator" StaticList="false" Uses="LOV_GlL4Id" id="GlL4Id" DTSupportsMRU="false"
           SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="TblPblCustView1Iterator" id="CustBuss">
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="CustBuss">
       <AttrNames>
         <Item Value="CustBuss"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblPblCustView1Iterator" id="ContactPer">
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="ContactPer">
       <AttrNames>
         <Item Value="ContactPer"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblPblCustView1Iterator" id="Phone">
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="Phone">
       <AttrNames>
         <Item Value="Phone"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblPblCustView1Iterator" id="Designation">
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="Designation">
       <AttrNames>
         <Item Value="Designation"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblPblCustView1Iterator" id="Cnic">
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="Cnic">
       <AttrNames>
         <Item Value="Cnic"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblPblCustView1Iterator" id="Cell">
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="Cell">
       <AttrNames>
         <Item Value="Cell"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblPblCustView1Iterator" id="Fax">
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="Fax">
       <AttrNames>
         <Item Value="Fax"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblPblCustView1Iterator" id="Ntn">
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="Ntn">
       <AttrNames>
         <Item Value="Ntn"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblPblCustView1Iterator" id="Strn">
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="Strn">
       <AttrNames>
         <Item Value="Strn"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblPblCustView1Iterator" id="EMail">
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="EMail">
       <AttrNames>
         <Item Value="EMail"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblPblCustView1Iterator" id="Url">
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="Url">
       <AttrNames>
         <Item Value="Url"/>
       </AttrNames>
     </attributeValues>
-    <action IterBinding="TblPblCustView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
-    <action IterBinding="TblPblCustView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
-    <action IterBinding="TblPblCustView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
-    <action IterBinding="TblPblCustView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
-    <action IterBinding="TblPblCustView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+    <action IterBinding="TblRblCustView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblRblCustView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblRblCustView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblRblCustView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblRblCustView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
             Action="createInsertRow"/>
-    <action IterBinding="TblPblCustView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
-    <action IterBinding="TblPblCustView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="TblRblCustView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblRblCustView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
-    <tree IterBinding="TblPblCustView1Iterator" id="TblPblCustView1">
+    <tree IterBinding="TblRblCustView1Iterator" id="TblRblCustView1">
       <nodeDefinition DefName="model.ERP.VO.TblRblCustView" Name="TblPblCustView10">
         <AttrNames>
           <Item Value="Id"/>

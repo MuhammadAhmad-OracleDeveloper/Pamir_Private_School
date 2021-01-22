@@ -21,24 +21,23 @@
     Name="Unit_of_Measurement_LOV1"
     ViewObjectName="model.LOV.Unit_of_Measurement_LOV"
     RowLevelBinds="true"/>
-  <ListBinding
-    Name="LOV_ItemL4Id"
-    ListVOName="ItemL4_Name_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="ItemL4Id"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="ItemL4Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
+  <ViewAccessor
+    Name="FIFO_LOV1"
+    ViewObjectName="model.LOV.FIFO_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="get_Comp_ID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[CompanySbuId]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="get_dept_ID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[DepartmentId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_UomId"
     ListVOName="Unit_of_Measurement_LOV1"
@@ -57,9 +56,50 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_ItemL4Id"
+    ListVOName="FIFO_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ItemL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Rate"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ItemL4Id"/>
+      <Item Value="Rate"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ItemName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblComboDetail"
     Entity="model.ERP.EO.TblComboDetail"/>
+  <EntityUsage
+    Name="TblComboMaster"
+    Entity="model.ERP.EO.TblComboMaster"
+    Association="model.ERP.EO.FkComboDetailMasterAssoc"
+    AssociationEnd="model.ERP.EO.FkComboDetailMasterAssoc.TblComboMaster"
+    SourceUsage="model.ERP.VO.TblComboDetailView.TblComboDetail"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.ERP.EO.TblComboMaster.Id"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.ERP.EO.TblComboDetail.ComboMasterId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
@@ -156,4 +196,25 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblComboDetail"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblComboMaster"
+    AliasName="COMPANY_SBU_ID"/>
+  <ViewAttribute
+    Name="Id1"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblComboMaster"
+    AliasName="ID1"/>
+  <ViewAttribute
+    Name="DepartmentId"
+    PrecisionRule="true"
+    EntityAttrName="DepartmentId"
+    EntityUsage="TblComboMaster"
+    AliasName="DEPARTMENT_ID"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id"/>
+  </AttrArray>
 </ViewObject>

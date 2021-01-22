@@ -88,14 +88,6 @@
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.Qty.format}"/>
                   </af:inputText>
                   <af:spacer  id="s11"/>
-                  <af:inputText value="#{bindings.Amount.inputValue}" label="Amount"
-                                required="#{bindings.Amount.hints.mandatory}"
-                                columns="20"
-                                maximumLength="#{bindings.Amount.hints.precision}"
-                                shortDesc="#{bindings.Amount.hints.tooltip}" id="it4">
-                    <f:validator binding="#{bindings.Amount.validator}"/>
-                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Amount.format}"/>
-                  </af:inputText>
                   <af:spacer  id="s13"/>
                   <af:inputText value="#{bindings.Narration.inputValue}" label="Narration"
                                 required="#{bindings.Narration.hints.mandatory}"
@@ -326,24 +318,6 @@
                                   shortDesc="#{bindings.TblComboDetailView2.hints.Id.tooltip}" id="it18" readOnly="true">
                       <f:validator binding="#{row.bindings.Id.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblComboDetailView2.hints.Id.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblComboDetailView2.hints.SrNo.name}" filterable="true"
-                             sortable="true" headerText="Sr.No." id="c11">
-                             <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.SrNo}"
-       id="it25" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                    <af:inputText value="#{row.bindings.SrNo.inputValue}"
-                                  label="#{bindings.TblComboDetailView2.hints.SrNo.label}"
-                                  required="#{bindings.TblComboDetailView2.hints.SrNo.mandatory}"
-                                  columns="#{bindings.TblComboDetailView2.hints.SrNo.displayWidth}"
-                                  maximumLength="#{bindings.TblComboDetailView2.hints.SrNo.precision}"
-                                  shortDesc="#{bindings.TblComboDetailView2.hints.SrNo.tooltip}" id="it19">
-                      <f:validator binding="#{row.bindings.SrNo.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblComboDetailView2.hints.SrNo.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblComboDetailView2.hints.ItemL4Id.name}" filterable="true"

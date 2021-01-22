@@ -304,7 +304,7 @@
                                   required="#{bindings.TblSaleRetDetailView2.hints.Qty.mandatory}"
                                   columns="#{bindings.TblSaleRetDetailView2.hints.Qty.displayWidth}"
                                   maximumLength="#{bindings.TblSaleRetDetailView2.hints.Qty.precision}"
-                                  shortDesc="#{bindings.TblSaleRetDetailView2.hints.Qty.tooltip}" id="it9" readOnly="true">
+                                  shortDesc="#{bindings.TblSaleRetDetailView2.hints.Qty.tooltip}" id="it9">
                       <f:validator binding="#{row.bindings.Qty.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblSaleRetDetailView2.hints.Qty.format}"/>
@@ -397,7 +397,7 @@
                                   required="#{bindings.TblSaleRetDetailView2.hints.Description.mandatory}"
                                   columns="#{bindings.TblSaleRetDetailView2.hints.Description.displayWidth}"
                                   maximumLength="#{bindings.TblSaleRetDetailView2.hints.Description.precision}"
-                                  shortDesc="#{bindings.TblSaleRetDetailView2.hints.Description.tooltip}" id="it14" readOnly="true">
+                                  shortDesc="#{bindings.TblSaleRetDetailView2.hints.Description.tooltip}" id="it14">
                       <f:validator binding="#{row.bindings.Description.validator}"/>
                     </af:inputText>
                   </af:column>

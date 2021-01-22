@@ -20,21 +20,27 @@
     </SchemaBasedProperties>
   </Properties>
   <EntityUsage
-    Name="TblPblCust"
+    Name="TblRblCust"
     Entity="model.ERP.EO.TblRblCust"/>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Id"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblRblCust"
     AliasName="ID"/>
   <ViewAttribute
     Name="Name"
     PrecisionRule="true"
     EntityAttrName="Name"
-    EntityUsage="TblPblCust"
+    EntityUsage="TblRblCust"
     AliasName="NAME"/>
+  <ViewAttribute
+    Name="ContactPer"
+    PrecisionRule="true"
+    EntityAttrName="ContactPer"
+    EntityUsage="TblRblCust"
+    AliasName="CONTACT_PER"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
