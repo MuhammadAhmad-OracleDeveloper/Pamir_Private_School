@@ -61,7 +61,7 @@
                   <af:inputText value="#{bindings.Qty.inputValue}" label="Quantity"
                                 required="#{bindings.Qty.hints.mandatory}" columns="20"
                                 maximumLength="#{bindings.Qty.hints.precision}"
-                                shortDesc="#{bindings.Qty.hints.tooltip}" id="it3">
+                                shortDesc="#{bindings.Qty.hints.tooltip}" id="it3" contentStyle="width:138px;">
                     <f:validator binding="#{bindings.Qty.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.Qty.format}"/>
                   </af:inputText>
@@ -70,7 +70,8 @@
                                 required="#{bindings.Narration.hints.mandatory}"
                                 columns="20"
                                 maximumLength="#{bindings.Narration.hints.precision}"
-                                shortDesc="#{bindings.Narration.hints.tooltip}" id="it4" rows="10">
+                                shortDesc="#{bindings.Narration.hints.tooltip}" id="it4" rows="10"
+                                contentStyle="width:138px;">
                     <f:validator binding="#{bindings.Narration.validator}"/>
                   </af:inputText>
                   <af:spacer  id="s2"/>
@@ -78,7 +79,7 @@
                                 required="#{bindings.Vno.hints.mandatory}" columns="20"
                                 maximumLength="#{bindings.Vno.hints.precision}"
                                 shortDesc="#{bindings.Vno.hints.tooltip}" 
-                                id="it2" contentStyle='text-align: right' disabled="true">
+                                id="it2" contentStyle='width:138px;' disabled="true">
                     <f:validator binding="#{bindings.Vno.validator}"/>
                   </af:inputText>
                   <af:spacer  id="s6"/>
