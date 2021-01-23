@@ -296,19 +296,21 @@
                       <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblProFgDetailView2.hints.UomId.name}" filterable="true"
-                             sortable="true" headerText="Unit of Measurement" id="c4" width="200">
+                  <af:column headerText="UOM" id="c4" sortable="true"
+                             filterable="true" width="60">
                               <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.UomId}"
+      <af:inputText value="#{vs.filterCriteria.UOMName}"
        id="it14" placeholder="Search ">
       </af:inputText>
 </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.UomId.inputValue}" label="#{row.bindings.UomId.label}"
-                                        required="#{bindings.TblProFgDetailView2.hints.UomId.mandatory}"
-                                        shortDesc="#{bindings.TblProFgDetailView2.hints.UomId.tooltip}" id="soc4">
-                      <f:selectItems value="#{row.bindings.UomId.items}" id="si4"/>
-                      <f:validator binding="#{row.bindings.UomId.validator}"/>
-                    </af:selectOneChoice>
+                    <af:inputText value="#{row.bindings.UOMName.inputValue}"
+                                  label="#{bindings.TblProFgDetailView2.hints.UOMName.label}"
+                                  required="#{bindings.TblProFgDetailView2.hints.UOMName.mandatory}"
+                                  columns="#{bindings.TblProFgDetailView2.hints.UOMName.displayWidth}"
+                                  maximumLength="#{bindings.TblProFgDetailView2.hints.UOMName.precision}"
+                                  shortDesc="#{bindings.TblProFgDetailView2.hints.UOMName.tooltip}" id="it12" readOnly="true">
+                      <f:validator binding="#{row.bindings.UOMName.validator}"/>
+                    </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblProFgDetailView2.hints.Description.name}" filterable="true"
                              sortable="true" headerText="Description"

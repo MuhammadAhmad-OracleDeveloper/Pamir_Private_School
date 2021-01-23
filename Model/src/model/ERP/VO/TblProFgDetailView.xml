@@ -6,13 +6,27 @@
   Name="TblProFgDetailView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblProFgDetail.ID, 
+       TblProFgDetail.PRO_FG_MASTER_ID, 
+       TblProFgDetail.SR_NO, 
+       TblProFgDetail.ITEM_L4_ID, 
+       TblProFgDetail.UOM_ID, 
+       TblProFgDetail.DESCRIPTION, 
+       TblProFgDetail.POR_QTY, 
+       TblProFgDetail.QTY, 
+       TblProFgDetail.CREATED_DATE, 
+       TblProFgDetail.CREATED_BY, 
+       TblProFgDetail.UPDATED_DATE, 
+       TblProFgDetail.UPDATED_BY, 
+       TblItemL4.ITEM_L4_ID AS ITEM_L4ID1, 
+       TblUom.NAME, 
+       TblUom.ID AS ID1"
+  FromList="TBL_PRO_FG_DETAIL TblProFgDetail, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom"
+  Where="TblProFgDetail.ITEM_L4_ID = TblItemL4.ITEM_L4_ID             
+and TblItemL4.UOM_ID = TblUom.ID">
   <ViewAccessor
     Name="ItemL4_Name_LOV1"
     ViewObjectName="model.LOV.ItemL4_Name_LOV"
@@ -31,8 +45,12 @@
       <Item Value="ItemL4Id"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="UomId"/>
+    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="ItemL4Id"/>
+      <Item Value="UomId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
@@ -60,6 +78,24 @@
   <EntityUsage
     Name="TblProFgDetail"
     Entity="model.ERP.EO.TblProFgDetail"/>
+  <EntityUsage
+    Name="TblItemL4"
+    Entity="model.ERP.EO.TblItemL4"
+    ReadOnly="true"
+    DeleteParticipant="false">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblUom"
+    Entity="model.ERP.EO.TblUom"
+    ReadOnly="true"
+    DeleteParticipant="false">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
@@ -150,4 +186,22 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblProFgDetail"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="ItemL4Id1"
+    PrecisionRule="true"
+    EntityAttrName="ItemL4Id"
+    EntityUsage="TblItemL4"
+    AliasName="ITEM_L4ID1"/>
+  <ViewAttribute
+    Name="UOMName"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblUom"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="Id1"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblUom"
+    AliasName="ID1"/>
 </ViewObject>

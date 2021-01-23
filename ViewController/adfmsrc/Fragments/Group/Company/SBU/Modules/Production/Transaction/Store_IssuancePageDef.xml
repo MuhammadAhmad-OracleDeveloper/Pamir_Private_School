@@ -6,6 +6,8 @@
     <variableIterator id="variables"/>
     <iterator Binds="TblProIssMasterView1" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblProIssMasterView1Iterator"/>
+    <searchRegion Binds="TblProIssMasterView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblProIssMasterView1Query"/>
     <iterator Binds="TblProIssDetailView2" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblProIssDetailView2Iterator"/>
     <searchRegion Binds="TblProIssDetailView2Iterator" Criteria=""
@@ -14,8 +16,6 @@
               id="TblProIssDetailDView3Iterator"/>
     <searchRegion Binds="TblProIssDetailDView3Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblProIssDetailDView3Query"/>
-    <searchRegion Binds="TblProIssMasterView1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblProIssMasterView1Query"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
   </executables>
@@ -65,6 +65,7 @@
           <Item Value="UomId"/>
           <Item Value="Description"/>
           <Item Value="Qty"/>
+          <Item Value="UOMName"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -86,6 +87,7 @@
           <Item Value="Rate"/>
           <Item Value="Amount"/>
           <Item Value="BatchQty"/>
+          <Item Value="UOMName"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
