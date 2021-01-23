@@ -59,7 +59,7 @@
                             </af:inputText>
                             <af:spacer  id="s7"/>
                             <af:selectOneChoice value="#{bindings.CompanySbuId .inputValue}"
-                                                label="Company SBU"
+                                                label="Company"
                                                 required="#{bindings.CompanySbuId .hints.mandatory}"
                                                 shortDesc="#{bindings.CompanySbuId .hints.tooltip}" id="soc2" disabled="true"
                                                 contentStyle="width:150px;">
@@ -92,7 +92,8 @@
                               <f:selectItems value="#{bindings.Vtp.items}" id="si1"/>
                               <f:validator binding="#{bindings.Vtp.validator}"/>
                             </af:selectOneChoice>
-                            <af:selectOneChoice value="#{bindings.OrdType.inputValue}" label="#{bindings.OrdType.label}"
+                            <af:spacer  id="s13"/>
+                            <af:selectOneChoice value="#{bindings.OrdType.inputValue}" label="Order Type"
                                                 required="#{bindings.OrdType.hints.mandatory}"
                                                 shortDesc="#{bindings.OrdType.hints.tooltip}" id="soc8">
                               <f:selectItems value="#{bindings.OrdType.items}" id="si8"/>
@@ -268,7 +269,7 @@
                   </af:gridRow>
                 </af:panelGridLayout>
               </af:showDetailItem>
-              <af:showDetailItem text="Serach" id="sdi1">
+              <af:showDetailItem text="Search" id="sdi1">
                 <af:table value="#{bindings.TblDoMView1.collectionModel}" var="row"
                           rows="#{bindings.TblDoMView1.rangeSize}"
                           emptyText="#{bindings.TblDoMView1.viewable ? 'No data to display.' : 'Access Denied.'}"

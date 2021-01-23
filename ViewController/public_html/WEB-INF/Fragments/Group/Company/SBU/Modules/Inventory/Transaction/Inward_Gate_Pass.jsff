@@ -29,7 +29,7 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                       <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab2" text="Inward Gate Pass Master">
-                          <af:panelFormLayout id="pfl1" maxColumns="3" rows="6">
+                          <af:panelFormLayout id="pfl1" maxColumns="3" rows="10">
                             <af:inputText value="#{bindings.Id.inputValue}" label="#{bindings.Id.hints.label}" visible="false"
                                           required="#{bindings.Id.hints.mandatory}"
                                           columns="#{bindings.Id.hints.displayWidth}"
@@ -49,6 +49,14 @@
                               <f:validator binding="#{bindings.Dated.validator}"/>
                               <af:convertDateTime pattern="#{bindings.Dated.format}"/>
                             </af:inputDate>
+                             <af:spacer  id="s721"/>
+                            <af:selectOneChoice value="#{bindings.OrdType.inputValue}" label="Order Type"
+                                                required="#{bindings.OrdType.hints.mandatory}" disabled="true"
+                                                shortDesc="#{bindings.OrdType.hints.tooltip}" id="soc5"
+                                                contentStyle="width:150px;">
+                              <f:selectItems value="#{bindings.OrdType.items}" id="si5"/>
+                              <f:validator binding="#{bindings.OrdType.validator}"/>
+                            </af:selectOneChoice>
                             <af:spacer  id="s7"/>
                             <af:selectOneChoice value="#{bindings.PoMId.inputValue}" label="PO"
                                                 required="#{bindings.PoMId.hints.mandatory}"
@@ -58,19 +66,14 @@
                               <f:validator binding="#{bindings.PoMId.validator}"/>
                             </af:selectOneChoice>
                             <af:spacer  id="s72"/>
-                            <af:selectOneChoice value="#{bindings.IpoMId.inputValue}" label="#{bindings.IpoMId.label}"
+                            <af:selectOneChoice value="#{bindings.IpoMId.inputValue}" label="IPO"
                                                 required="#{bindings.IpoMId.hints.mandatory}"
-                                                shortDesc="#{bindings.IpoMId.hints.tooltip}" id="soc9">
+                                                shortDesc="#{bindings.IpoMId.hints.tooltip}" id="soc9"
+                                                contentStyle="width:150px;">
                               <f:selectItems value="#{bindings.IpoMId.items}" id="si9"/>
                               <f:validator binding="#{bindings.IpoMId.validator}"/>
                             </af:selectOneChoice>
-                            <af:spacer  id="s721"/>
-                            <af:selectOneChoice value="#{bindings.OrdType.inputValue}" label="Order Type"
-                                                required="#{bindings.OrdType.hints.mandatory}" disabled="true"
-                                                shortDesc="#{bindings.OrdType.hints.tooltip}" id="soc5">
-                              <f:selectItems value="#{bindings.OrdType.items}" id="si5"/>
-                              <f:validator binding="#{bindings.OrdType.validator}"/>
-                            </af:selectOneChoice>
+                           
                             <af:spacer  id="s6"/>
                              <af:inputText value="#{bindings.Narration.inputValue}"
                                           label="Narration"
@@ -83,7 +86,7 @@
                             </af:inputText>
                             <af:spacer  id="s8"/>
                             <af:selectOneChoice value="#{bindings.CompanySbuId.inputValue}"
-                                                label="Project"
+                                                label="Company"
                                                 required="#{bindings.CompanySbuId.hints.mandatory}"
                                                 shortDesc="#{bindings.CompanySbuId.hints.tooltip}" id="soc6"
                                                 contentStyle="width:150px;" disabled="true">
@@ -101,13 +104,17 @@
                             </af:selectOneChoice>
                             <af:spacer  id="s12"/>
                             <af:selectOneChoice value="#{bindings.StaticIpoMId.inputValue}"
-                                                label="#{bindings.StaticIpoMId.label}" disabled="true"
+                                                label="IPO" disabled="true"
                                                 required="#{bindings.StaticIpoMId.hints.mandatory}"
-                                                shortDesc="#{bindings.StaticIpoMId.hints.tooltip}" id="soc10">
+                                                shortDesc="#{bindings.StaticIpoMId.hints.tooltip}" id="soc10"
+                                                contentStyle="width:150px;">
                               <f:selectItems value="#{bindings.StaticIpoMId.items}" id="si10"/>
                               <f:validator binding="#{bindings.StaticIpoMId.validator}"/>
                             </af:selectOneChoice>
-                            <af:spacer width="10" height="10" id="s13"/>
+                            <af:spacer  id="s13"/>
+                             <af:spacer  id="s14"/>
+                              <af:spacer  id="s15"/>
+                               <af:spacer  id="s16"/>
                             <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                           required="#{bindings.Vno.hints.mandatory}"
                                           columns="17"
@@ -332,7 +339,7 @@
                   </af:gridRow>
                 </af:panelGridLayout>
               </af:showDetailItem>
-              <af:showDetailItem text="Serach" id="sdi1">
+              <af:showDetailItem text="Search" id="sdi1">
                 <af:table value="#{bindings.TblIgpMView1.collectionModel}" var="row"
                           rows="#{bindings.TblIgpMView1.rangeSize}"
                           emptyText="#{bindings.TblIgpMView1.viewable ? 'No data to display.' : 'Access Denied.'}"

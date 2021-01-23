@@ -73,7 +73,7 @@
                               <f:validator binding="#{bindings.Narration.validator}"/>
                             </af:inputText>
                   <af:spacer  id="s6"/>
-                  <af:selectOneChoice value="#{bindings.CompanySbuId.inputValue}" label="Project"
+                  <af:selectOneChoice value="#{bindings.CompanySbuId.inputValue}" label="Company"
                                       required="#{bindings.CompanySbuId.hints.mandatory}"
                                       shortDesc="#{bindings.CompanySbuId.hints.tooltip}" id="soc6" disabled="true"
                                       contentStyle="width:150px;" >
@@ -340,7 +340,7 @@
                   </af:gridRow>
                 </af:panelGridLayout>
               </af:showDetailItem>
-              <af:showDetailItem text="Serach" id="sdi1" >
+              <af:showDetailItem text="Search" id="sdi1" >
                 <af:table value="#{bindings.TblGrnMView1.collectionModel}" var="row"
                           rows="#{bindings.TblGrnMView1.rangeSize}"
                           emptyText="#{bindings.TblGrnMView1.viewable ? 'No data to display.' : 'Access Denied.'}"

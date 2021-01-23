@@ -80,7 +80,7 @@
                             
                             <af:spacer  id="s10"/>
                             <af:selectOneChoice value="#{bindings.FromCompanySbuId.inputValue}"
-                                                label="From Project"
+                                                label="From Company"
                                                 required="#{bindings.FromCompanySbuId.hints.mandatory}"
                                                 shortDesc="#{bindings.FromCompanySbuId.hints.tooltip}" id="soc3"
                                                 contentStyle="width:150px;">
@@ -89,7 +89,7 @@
                             </af:selectOneChoice>
                             <af:spacer  id="s8"/>
                             <af:selectOneChoice value="#{bindings.ToCompanySbuId.inputValue}"
-                                                label="To Project"
+                                                label="To Company"
                                                 required="#{bindings.ToCompanySbuId.hints.mandatory}"
                                                 shortDesc="#{bindings.ToCompanySbuId.hints.tooltip}" id="soc5"
                                                 contentStyle="width:150px;">
@@ -343,7 +343,7 @@
                   </af:gridRow>
                 </af:panelGridLayout>
               </af:showDetailItem>
-              <af:showDetailItem text="Serach" id="sdi1">
+              <af:showDetailItem text="Search" id="sdi1">
                 <af:table value="#{bindings.TblItnMView1.collectionModel}" var="row"
                           rows="#{bindings.TblItnMView1.rangeSize}"
                           emptyText="#{bindings.TblItnMView1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -448,7 +448,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblItnMView1.hints.FromCompanySbuId.name}" filterable="true"
-                             sortable="true" headerText="From Project" id="c7" width="150">
+                             sortable="true" headerText="From Company" id="c7" width="150">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.FromCompanySbuId}"
        id="it11" placeholder="Search ">
@@ -463,7 +463,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblItnMView1.hints.ToCompanySbuId.name}" filterable="true"
-                             sortable="true" headerText="To Project" id="c8" width="150">
+                             sortable="true" headerText="To Company" id="c8" width="150">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.ToCompanySbuId}"
        id="it12" placeholder="Search ">

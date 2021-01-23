@@ -78,7 +78,7 @@
                   </af:inputText>
                   
                   <af:spacer  id="s16"/>
-                  <af:selectOneChoice value="#{bindings.CompanySbuId.inputValue}" label="Project"
+                  <af:selectOneChoice value="#{bindings.CompanySbuId.inputValue}" label="Comapny"
                                       required="#{bindings.CompanySbuId.hints.mandatory}"
                                       shortDesc="#{bindings.CompanySbuId.hints.tooltip}" id="soc6" disabled="true"
                                       contentStyle="width:135px;" >
@@ -103,6 +103,16 @@
                   </af:selectOneChoice>
                   <af:spacer  id="s10"/>
                             <af:spacer  id="s14"/>
+                             
+                  <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No." disabled="true"
+                                required="#{bindings.Vno.hints.mandatory}" columns="17"
+                                maximumLength="#{bindings.Vno.hints.precision}"
+                                shortDesc="#{bindings.Vno.hints.tooltip}" id="it2" contentStyle='width:138px;' >
+
+                    <f:validator binding="#{bindings.Vno.validator}"/>
+                  </af:inputText>
+                  
+                  <af:spacer  id="s12"/>
                   <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type" disabled="true"
                                       required="#{bindings.Vtp.hints.mandatory}"
                                       shortDesc="#{bindings.Vtp.hints.tooltip}" id="soc2" contentStyle="width:135px;" >
@@ -110,14 +120,7 @@
                     <f:selectItems value="#{bindings.Vtp.items}" id="si2"/>
                     <f:validator binding="#{bindings.Vtp.validator}"/>
                   </af:selectOneChoice>
-                  <af:spacer  id="s12"/>
-                  <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No." disabled="true"
-                                required="#{bindings.Vno.hints.mandatory}" columns="17"
-                                maximumLength="#{bindings.Vno.hints.precision}"
-                                shortDesc="#{bindings.Vno.hints.tooltip}" id="it2" contentStyle='text-align: right' >
-
-                    <f:validator binding="#{bindings.Vno.validator}"/>
-                  </af:inputText>
+                 
                   
                   
                             <f:facet name="footer">
@@ -541,7 +544,7 @@
                       <af:convertDateTime pattern="#{bindings.TblPoMView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column headerText="Project" id="c15" sortable="true" filterable="true">
+                  <af:column headerText="Company" id="c15" sortable="true" filterable="true">
                    <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.CompanySbuId}"
        id="it58" placeholder="Search ">
