@@ -95,7 +95,8 @@
                             <af:spacer  id="s13"/>
                             <af:selectOneChoice value="#{bindings.OrdType.inputValue}" label="Order Type"
                                                 required="#{bindings.OrdType.hints.mandatory}"
-                                                shortDesc="#{bindings.OrdType.hints.tooltip}" id="soc8">
+                                                shortDesc="#{bindings.OrdType.hints.tooltip}" id="soc8"
+                                                contentStyle="width:150px;">
                               <f:selectItems value="#{bindings.OrdType.items}" id="si8"/>
                               <f:validator binding="#{bindings.OrdType.validator}"/>
                             </af:selectOneChoice>
@@ -342,7 +343,7 @@
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblDoMView1.hints.CompanySbuId .name}" filterable="true"
-                             sortable="true" headerText="Project" id="c5" width="200">
+                             sortable="true" headerText="Company" id="c5" width="200">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.CompanySbuId }"
        id="it9" placeholder="Search ">
