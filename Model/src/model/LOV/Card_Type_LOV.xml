@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="Payment_Type_LOV"
+  Name="Card_Type_LOV"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   BindingStyle="OracleName"
@@ -15,7 +15,7 @@
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.LOV.Payment_Type_LOV_LABEL"/>
+        ResId="model.LOV.Card_Type_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <ViewAttribute
@@ -25,21 +25,19 @@
     IsPersistent="false"
     PrecisionRule="true"
     Type="java.lang.String"
-    ColumnType="$none$"
-    SQLType="VARCHAR"/>
+    ColumnType="$none$"/>
   <ViewAttribute
     Name="DBAttr"
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Type="java.lang.String"
-    ColumnType="$none$"
-    SQLType="VARCHAR"/>
+    ColumnType="$none$"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="DBAttr"/>
   </AttrArray>
   <StaticList
-    Rows="3"
+    Rows="2"
     Columns="2"/>
   <ResourceBundle>
     <PropertiesBundle

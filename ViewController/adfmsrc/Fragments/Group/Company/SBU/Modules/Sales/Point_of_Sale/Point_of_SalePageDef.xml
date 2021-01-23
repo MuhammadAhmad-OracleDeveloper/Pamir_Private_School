@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Point_of_SalePageDef"
+                Package="Fragments.Group.Company.SBU.Modules.Sales.Point_of_Sale">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblPosMView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblPosMView1Iterator"/>
+    <iterator Binds="TblPosDView2" RangeSize="25" DataControl="AppModuleDataControl1" id="TblPosDView2Iterator"/>
+    <searchRegion Binds="TblPosDView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblPosDView2Query"/>
+  </executables>
+  <bindings>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TblPosMView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPosMView1Iterator" id="Vno">
+      <AttrNames>
+        <Item Value="Vno"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblPosMView1Iterator" StaticList="false" Uses="LOV_Vtp" id="Vtp" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblPosMView1Iterator" id="Dated">
+      <AttrNames>
+        <Item Value="Dated"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblPosMView1Iterator" StaticList="false" Uses="LOV_MemberId" id="MemberId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblPosMView1Iterator" StaticList="false" Uses="LOV_ModeOfPayment" id="ModeOfPayment"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblPosMView1Iterator" StaticList="false" Uses="LOV_CardType" id="CardType"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblPosMView1Iterator" id="ChqNumber">
+      <AttrNames>
+        <Item Value="ChqNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPosMView1Iterator" id="ChqDate">
+      <AttrNames>
+        <Item Value="ChqDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPosMView1Iterator" id="GrossAmnt">
+      <AttrNames>
+        <Item Value="GrossAmnt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPosMView1Iterator" id="DiscPerc">
+      <AttrNames>
+        <Item Value="DiscPerc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPosMView1Iterator" id="DiscAmount">
+      <AttrNames>
+        <Item Value="DiscAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPosMView1Iterator" id="NetAmt">
+      <AttrNames>
+        <Item Value="NetAmt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPosMView1Iterator" id="Vat">
+      <AttrNames>
+        <Item Value="Vat"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPosMView1Iterator" id="FinalAmount">
+      <AttrNames>
+        <Item Value="FinalAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPosMView1Iterator" id="RecvdAmount">
+      <AttrNames>
+        <Item Value="RecvdAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPosMView1Iterator" id="BlncAmount">
+      <AttrNames>
+        <Item Value="BlncAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblPosMView1Iterator" StaticList="false" Uses="LOV_CompanySbuId" id="CompanySbuId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action IterBinding="TblPosMView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblPosMView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblPosMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblPosMView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="TblPosDView2Iterator" id="TblPosDView2">
+      <nodeDefinition DefName="model.ERP.VO.TblPosDView" Name="TblPosDView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="ItemL4Id"/>
+          <Item Value="BarCode"/>
+          <Item Value="Qty"/>
+          <Item Value="Rate"/>
+          <Item Value="Vat"/>
+          <Item Value="Amount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblPosMView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblPosMView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblPosMView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="TblPosDView2Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblPosDView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblPosDView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>
