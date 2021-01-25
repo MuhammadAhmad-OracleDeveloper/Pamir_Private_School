@@ -135,7 +135,7 @@
                     </af:inputText>
                   </af:column>
                 </af:table>
-                <af:panelGroupLayout id="pgl3" layout="horizontal">
+                <af:panelGroupLayout id="pgl3" halign="center" layout="horizontal">
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"

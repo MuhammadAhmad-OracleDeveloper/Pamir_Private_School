@@ -126,14 +126,7 @@
                               </af:panelGroupLayout>
                             </f:facet>
                           </af:panelFormLayout>
-                          
-                        </af:showDetailItem>
-                      </af:panelTabbed>
-                    </af:gridCell>
-                  </af:gridRow>
-                  <af:gridRow marginTop="5px" height="auto" id="gr4">
-                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
-                     <af:panelGroupLayout id="pgl3" halign="center" layout="horizontal">
+                          <af:panelGroupLayout id="pgl3" halign="center" layout="horizontal">
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
@@ -144,6 +137,13 @@
                                 <af:spacer width="5" height="10" id="s3"/>
                             </af:iterator>
                         </af:panelGroupLayout>
+                        </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr4">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                     
                     </af:gridCell>
                   </af:gridRow>
                   <af:gridRow marginTop="5px" height="auto" id="gr5">
@@ -267,14 +267,7 @@
                               </af:inputText>
                             </af:column>
                           </af:table>
-                          
-                        </af:showDetailItem>
-                      </af:panelTabbed>
-                    </af:gridCell>
-                  </af:gridRow>
-                  <af:gridRow marginTop="5px" height="auto" id="gr6">
-                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
-                       <af:panelGroupLayout id="pgl5" halign="center" layout="horizontal">
+                          <af:panelGroupLayout id="pgl5" halign="center" layout="horizontal">
                             
                             <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
@@ -286,6 +279,13 @@
                                 <af:spacer width="5" height="10" id="s2"/>
                             </af:iterator>
                         </af:panelGroupLayout>
+                        </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr6">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
+                       
                     </af:gridCell>
                   </af:gridRow>
                   <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">
