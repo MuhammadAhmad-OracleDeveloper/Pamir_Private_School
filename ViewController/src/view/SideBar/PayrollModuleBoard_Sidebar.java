@@ -42,4 +42,15 @@ public class PayrollModuleBoard_Sidebar implements Serializable {
         link.append(action);
         setDynamicTaskFlowId(link.toString());
     }
+
+    public void PayrollTransactionFragmentCall(ActionEvent actionEvent) {
+        // Add event code here...
+        String action = (String)actionEvent.getComponent().getAttributes().get("link");
+        StringBuilder link = new StringBuilder();
+        link.append("/WEB-INF/TaskFlows/Group/Company/SBU/Modules/Payroll/Transaction/");
+        link.append(action);
+        link.append(".xml#");
+        link.append(action);
+        setDynamicTaskFlowId(link.toString());
+    }
 }
