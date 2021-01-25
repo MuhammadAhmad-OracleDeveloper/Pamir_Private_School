@@ -117,7 +117,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_RDF_MASTER"/>
+    TableName="TBL_RDF_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblRdfMasterRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblRdfDetail"
     Association="model.ERP.EO.FkRdfDetailMasterAssoc"
