@@ -115,7 +115,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_WEEK"/>
+    TableName="TBL_WEEK">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblWeekRow"/>
+  </Attribute>
   <Attribute
     Name="TermsId"
     ColumnName="TERMS_ID"

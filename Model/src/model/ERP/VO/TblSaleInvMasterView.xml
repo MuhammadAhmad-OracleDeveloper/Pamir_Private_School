@@ -6,13 +6,35 @@
   Name="TblSaleInvMasterView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblSaleInvMaster.ID, 
+       TblSaleInvMaster.VNO, 
+       TblSaleInvMaster.VTP, 
+       TblSaleInvMaster.SHIP_PLAN_MASTER_ID, 
+       TblSaleInvMaster.DATED, 
+       TblSaleInvMaster.NET_AMT, 
+       TblSaleInvMaster.NARRATION, 
+       TblSaleInvMaster.GROUP_COMPANY_ID, 
+       TblSaleInvMaster.DISC_PERC, 
+       TblSaleInvMaster.DISC_AMOUNT, 
+       TblSaleInvMaster.CREATED_DATE, 
+       TblSaleInvMaster.CREATED_BY, 
+       TblSaleInvMaster.UPDATED_DATE, 
+       TblSaleInvMaster.UPDATED_BY, 
+       TblSaleInvMaster.COMPANY_SBU_ID"
+  FromList="TBL_SALE_INV_MASTER TblSaleInvMaster"
+  Where="TblSaleInvMaster.COMPANY_SBU_ID= nvl(:getcompid,TblSaleInvMaster.COMPANY_SBU_ID)">
+  <Variable
+    Name="getcompid"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblSaleInvMasterView"/>
+  </Variable>
   <ViewAccessor
     Name="Voucher_Type_LOV1"
     ViewObjectName="model.LOV.Voucher_Type_LOV"
@@ -162,6 +184,12 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblSaleInvMaster"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblSaleInvMaster"
+    AliasName="COMPANY_SBU_ID"/>
   <ViewLinkAccessor
     Name="TblSaleInvDetailView"
     ViewLink="model.ERP.VO.FkSaleInvDetailMasterLink"

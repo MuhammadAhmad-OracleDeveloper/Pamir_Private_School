@@ -124,7 +124,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_SHIP_PLAN_MASTER"/>
+    TableName="TBL_SHIP_PLAN_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblShipPlanMasterRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblShipPlanDetail"
     Association="model.ERP.EO.FkShipPlanDetailMasterAssoc"

@@ -95,7 +95,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_UOM"/>
+    TableName="TBL_UOM">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblUomRow"/>
+  </Attribute>
   <Key
     Name="PkUomId"
     PrimaryKey="true">

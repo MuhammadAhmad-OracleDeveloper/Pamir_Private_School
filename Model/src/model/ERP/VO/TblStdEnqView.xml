@@ -33,9 +33,20 @@
        TblStdEnq.UPDATED_DATE, 
        TblStdEnq.UPDATED_BY, 
        TblStdEnq.LOOKUP_REF_BY, 
-       TblStdEnq.SECTIONS_ID"
+       TblStdEnq.SECTIONS_ID, 
+       TblStdEnq.COMPANY_SBU_ID"
   FromList="TBL_STD_ENQ TblStdEnq"
-  OrderBy="TblStdEnq.ID asc">
+  OrderBy="TblStdEnq.ID asc"
+  Where="TblStdEnq.COMPANY_SBU_ID= nvl(:getcompid,TblStdEnq.COMPANY_SBU_ID)">
+  <Variable
+    Name="getcompid"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblStdEnqView"/>
+  </Variable>
   <ViewAccessor
     Name="Academic_Year_LOV1"
     ViewObjectName="model.LOV.Academic_Year_LOV"
@@ -470,6 +481,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblStdEnq"
+    AliasName="COMPANY_SBU_ID"/>
   <ViewLinkAccessor
     Name="TblEnqFollowUpView"
     ViewLink="model.ERP.VO.FkEnqFollowUpEnqLink"

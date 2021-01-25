@@ -116,7 +116,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_SECTION_TIMETABLE_MASTER"/>
+    TableName="TBL_SECTION_TIMETABLE_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblSectionTimetableMasterRow"/>
+  </Attribute>
   <Attribute
     Name="TermsId"
     ColumnName="TERMS_ID"

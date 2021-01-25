@@ -6,13 +6,31 @@
   Name="TblSectionStaffView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblSectionStaff.ID, 
+       TblSectionStaff.TYPE, 
+       TblSectionStaff.STAFF_SUBJECT_ID, 
+       TblSectionStaff.GROUP_COMPANY_ID, 
+       TblSectionStaff.SECTION_ID, 
+       TblSectionStaff.AST, 
+       TblSectionStaff.CREATED_DATE, 
+       TblSectionStaff.CREATED_BY, 
+       TblSectionStaff.UPDATED_DATE, 
+       TblSectionStaff.UPDATED_BY, 
+       TblSectionStaff.STAFF_ID, 
+       TblSectionStaff.COMPANY_SBU_ID"
+  FromList="TBL_SECTION_STAFF TblSectionStaff"
+  Where="TblSectionStaff.COMPANY_SBU_ID= nvl(:getcompid,TblSectionStaff.COMPANY_SBU_ID)">
+  <Variable
+    Name="getcompid"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      CodeSourceName="TblSectionStaffView"/>
+  </Variable>
   <ViewAccessor
     Name="Active_Name_LOV1"
     ViewObjectName="model.LOV.Active_Name_LOV"
@@ -214,4 +232,10 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblSectionStaff"
+    AliasName="COMPANY_SBU_ID"/>
 </ViewObject>

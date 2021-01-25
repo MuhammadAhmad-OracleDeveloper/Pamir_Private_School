@@ -6,13 +6,29 @@
   Name="TblRouteStopsView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblRouteStops.ID, 
+       TblRouteStops.ROUTE_ID, 
+       TblRouteStops.LOOKUP_SCHOOL_BUS_STOP, 
+       TblRouteStops.AST, 
+       TblRouteStops.CREATED_DATE, 
+       TblRouteStops.CREATED_BY, 
+       TblRouteStops.UPDATED_DATE, 
+       TblRouteStops.UPDATED_BY, 
+       TblRouteStops.COMPANY_SBU_ID"
+  FromList="TBL_ROUTE_STOPS TblRouteStops"
+  Where="TblRouteStops.COMPANY_SBU_ID= nvl(:getcompid,TblRouteStops.COMPANY_SBU_ID)">
+  <Variable
+    Name="getcompid"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblRouteStopsView"/>
+  </Variable>
   <ViewAccessor
     Name="Active_Name_LOV1"
     ViewObjectName="model.LOV.Active_Name_LOV"
@@ -106,7 +122,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblRouteStops"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -118,11 +135,18 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblRouteStops"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
     EntityUsage="TblRouteStops"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblRouteStops"
+    AliasName="COMPANY_SBU_ID"/>
 </ViewObject>

@@ -109,7 +109,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_SALARY_ELEMENT"/>
+    TableName="TBL_SALARY_ELEMENT">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblSalaryElementRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblStaffSalElem"
     Association="model.ERP.EO.FkStaffSalElemSalElemAssoc"

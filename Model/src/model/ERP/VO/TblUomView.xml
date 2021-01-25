@@ -6,13 +6,29 @@
   Name="TblUomView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblUom.ID, 
+       TblUom.NAME, 
+       TblUom.GROUP_COMPANY_ID, 
+       TblUom.AST, 
+       TblUom.CREATED_DATE, 
+       TblUom.CREATED_BY, 
+       TblUom.UPDATED_DATE, 
+       TblUom.UPDATED_BY, 
+       TblUom.COMPANY_SBU_ID"
+  FromList="TBL_UOM TblUom"
+  Where="TblUom.COMPANY_SBU_ID= nvl(:getcompid,TblUom.COMPANY_SBU_ID)">
+  <Variable
+    Name="getcompid"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblUomView"/>
+  </Variable>
   <ViewAccessor
     Name="Active_Name_LOV1"
     ViewObjectName="model.LOV.Active_Name_LOV"
@@ -97,4 +113,10 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblUom"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblUom"
+    AliasName="COMPANY_SBU_ID"/>
 </ViewObject>

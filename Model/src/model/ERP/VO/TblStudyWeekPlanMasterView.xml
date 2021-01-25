@@ -22,11 +22,21 @@
        TblStudyWeekPlanMaster.UPDATED_DATE, 
        TblStudyWeekPlanMaster.UPDATED_BY, 
        TblStudyWeekPlanMaster.GRADE_ID, 
-       TblStudyWeekPlanMaster.SECTIONS_ID"
+       TblStudyWeekPlanMaster.SECTIONS_ID, 
+       TblStudyWeekPlanMaster.COMPANY_SBU_ID"
   FromList="TBL_STUDY_WEEK_PLAN_MASTER TblStudyWeekPlanMaster"
-  Where="TblStudyWeekPlanMaster.STAFF_ID = nvl(:getSessStaffID,TblStudyWeekPlanMaster.STAFF_ID)">
+  Where="TblStudyWeekPlanMaster.STAFF_ID = nvl(:getSessStaffID,TblStudyWeekPlanMaster.STAFF_ID) 
+TblStudyWeekPlanMaster.COMPANY_SBU_ID= nvl(:getcompid,TblStudyWeekPlanMaster.COMPANY_SBU_ID)">
   <Variable
     Name="getSessStaffID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      CodeSourceName="TblStudyWeekPlanMasterView"/>
+  </Variable>
+  <Variable
+    Name="getcompid"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression
@@ -337,6 +347,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblStudyWeekPlanMaster"
+    AliasName="COMPANY_SBU_ID"/>
   <ViewLinkAccessor
     Name="TblStudyWeekPlanDetailView"
     ViewLink="model.ERP.VO.FkStudyWeekPlanDetailMasterLink"

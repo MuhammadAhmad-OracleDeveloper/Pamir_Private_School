@@ -27,13 +27,23 @@
        TblStudyMaterialM.UPDATED_BY, 
        TblStudyMaterialM.COMPANY_SBU_ID"
   FromList="TBL_STUDY_MATERIAL_M TblStudyMaterialM"
-  Where="TblStudyMaterialM.STAFF_ID = nvl(:getSessStaffID,TblStudyMaterialM.STAFF_ID)">
+  Where="TblStudyMaterialM.STAFF_ID = nvl(:getSessStaffID,TblStudyMaterialM.STAFF_ID) 
+AND TblStudyMaterialM.COMPANY_SBU_ID= nvl(:getcompid,TblStudyMaterialM.COMPANY_SBU_ID)">
   <Variable
     Name="getSessStaffID"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
+      CodeSourceName="TblStudyMaterialMView"/>
+  </Variable>
+  <Variable
+    Name="getcompid"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
       CodeSourceName="TblStudyMaterialMView"/>
   </Variable>
   <ViewAccessor

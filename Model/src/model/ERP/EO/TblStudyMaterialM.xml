@@ -164,7 +164,12 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_STUDY_MATERIAL_M"/>
+    TableName="TBL_STUDY_MATERIAL_M">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblStudyMaterialMRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblStudyMaterialDD"
     Association="model.ERP.EO.FkStudyMaterialDDMAssoc"

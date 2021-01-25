@@ -102,7 +102,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_VAT"/>
+    TableName="TBL_VAT">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblVatRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblFeeType"
     Association="model.ERP.EO.Fk2FeeTypeVatAssoc"

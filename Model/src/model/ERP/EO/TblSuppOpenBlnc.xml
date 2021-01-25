@@ -67,7 +67,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_SUPP_OPEN_BLNC"/>
+    TableName="TBL_SUPP_OPEN_BLNC">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblSuppOpenBlncRow"/>
+  </Attribute>
   <Key
     Name="PkSuppOpenBlncId"
     PrimaryKey="true">

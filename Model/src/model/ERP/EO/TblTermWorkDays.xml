@@ -90,7 +90,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_TERM_WORK_DAYS"/>
+    TableName="TBL_TERM_WORK_DAYS">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblTermWorkDaysRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblAcadYear"
     Association="model.ERP.EO.FkTermWorkDaysAcadYearAssoc"

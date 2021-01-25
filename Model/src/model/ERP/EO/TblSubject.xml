@@ -81,7 +81,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_SUBJECT"/>
+    TableName="TBL_SUBJECT">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblSubjectRow"/>
+  </Attribute>
   <Attribute
     Name="Ast"
     Precision="1"

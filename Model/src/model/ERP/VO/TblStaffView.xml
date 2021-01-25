@@ -40,15 +40,26 @@
        TblStaff.LICENSE_NO, 
        TblStaff.LOOKUP_DETAIL_CNTRY, 
        TblStaff.LOOKUP_DETAIL_CITY, 
-       TblStaff.LOOKUP_DETAIL_AREA"
+       TblStaff.LOOKUP_DETAIL_AREA, 
+       TblStaff.COMPANY_SBU_ID"
   FromList="TBL_STAFF TblStaff"
-  Where="TblStaff.ID = nvl(:getSessStaffID,TblStaff.ID)">
+  Where="TblStaff.ID = nvl(:getSessStaffID,TblStaff.ID) 
+AND TblStaff.COMPANY_SBU_ID= nvl(:getcompid,TblStaff.COMPANY_SBU_ID)">
   <Variable
     Name="getSessStaffID"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
+      CodeSourceName="TblStaffView"/>
+  </Variable>
+  <Variable
+    Name="getcompid"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
       CodeSourceName="TblStaffView"/>
   </Variable>
   <ViewAccessor
@@ -579,6 +590,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblStaff"
+    AliasName="COMPANY_SBU_ID"/>
   <ViewLinkAccessor
     Name="TblStaffBenefitView"
     ViewLink="model.ERP.VO.FkStaffBenefitStaffLink"

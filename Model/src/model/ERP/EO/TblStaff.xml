@@ -326,7 +326,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_STAFF"/>
+    TableName="TBL_STAFF">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblStaffRow"/>
+  </Attribute>
   <Attribute
     Name="LookupDetailArea"
     ColumnName="LOOKUP_DETAIL_AREA"

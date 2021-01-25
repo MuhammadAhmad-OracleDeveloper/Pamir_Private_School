@@ -24,15 +24,26 @@
        TblStdAppl.STD_REG_ID, 
        TblStdAppl.TO_DATE, 
        TblStdAppl.UPDATED_BY, 
-       TblStdAppl.UPDATED_DATE"
+       TblStdAppl.UPDATED_DATE, 
+       TblStdAppl.COMPANY_SBU_ID"
   FromList="TBL_STD_APPL TblStdAppl"
-  Where="TblStdAppl.APPL_STATUS = 'mgr'">
+  Where="TblStdAppl.APPL_STATUS = 'mgr' 
+AND  TblStdAppl.COMPANY_SBU_ID= nvl(:getcompid,TblStdAppl.COMPANY_SBU_ID)">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
         ResId="model.ERP.VO.TblStdApplPrncpl_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <Variable
+    Name="getcompid"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblStdApplPrncpl"/>
+  </Variable>
   <ViewAccessor
     Name="Student_Appl_Appr_Prncpl_Status1"
     ViewObjectName="model.LOV.Student_Appl_Appr_Prncpl_Status"
@@ -101,7 +112,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblStdAppl"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="Dated"
     PrecisionRule="true"
@@ -161,7 +173,14 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblStdAppl"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblStdAppl"
+    AliasName="COMPANY_SBU_ID"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

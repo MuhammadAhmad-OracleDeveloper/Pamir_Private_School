@@ -1,0 +1,12 @@
+//Groovy Scripts for model.ERP.EO.TblSubject
+
+package model.ERP.EO
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="CompanySbuId")
+def CompanySbuId_ExpressionScript_Expression()
+{
+adf.context.current.sessionScope.get('sessSBUID')
+}
+

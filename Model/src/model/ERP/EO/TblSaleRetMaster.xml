@@ -138,7 +138,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_SALE_RET_MASTER"/>
+    TableName="TBL_SALE_RET_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblSaleRetMasterRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblSaleRetDetail"
     Association="model.ERP.EO.FkSaleRetDetailMasterAssoc"

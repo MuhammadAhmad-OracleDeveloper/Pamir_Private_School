@@ -6,13 +6,30 @@
   Name="TblSalaryElementView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblSalaryElement.ID, 
+       TblSalaryElement.GROUP_COMPANY_ID, 
+       TblSalaryElement.ELEMENT_TYPE, 
+       TblSalaryElement.NAME, 
+       TblSalaryElement.AST, 
+       TblSalaryElement.CREATED_DATE, 
+       TblSalaryElement.CREATED_BY, 
+       TblSalaryElement.UPDATED_DATE, 
+       TblSalaryElement.UPDATED_BY, 
+       TblSalaryElement.COMPANY_SBU_ID"
+  FromList="TBL_SALARY_ELEMENT TblSalaryElement"
+  Where="TblSalaryElement.COMPANY_SBU_ID= nvl(:getcompid,TblSalaryElement.COMPANY_SBU_ID)">
+  <Variable
+    Name="getcompid"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblSalaryElementView"/>
+  </Variable>
   <ViewAccessor
     Name="Active_Name_LOV1"
     ViewObjectName="model.LOV.Active_Name_LOV"
@@ -112,7 +129,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblSalaryElement"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -124,13 +142,20 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblSalaryElement"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
     EntityUsage="TblSalaryElement"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblSalaryElement"
+    AliasName="COMPANY_SBU_ID"/>
   <ViewLinkAccessor
     Name="TblStaffSalElemView"
     ViewLink="model.ERP.VO.FkStaffSalElemSalElemLink"

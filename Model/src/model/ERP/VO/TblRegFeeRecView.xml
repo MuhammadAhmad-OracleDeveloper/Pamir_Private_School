@@ -6,13 +6,32 @@
   Name="TblRegFeeRecView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblRegFeeRec.ID, 
+       TblRegFeeRec.DATED, 
+       TblRegFeeRec.STD_REG_ID, 
+       TblRegFeeRec.AST, 
+       TblRegFeeRec.CREATED_DATE, 
+       TblRegFeeRec.CREATED_BY, 
+       TblRegFeeRec.UPDATED_DATE, 
+       TblRegFeeRec.UPDATED_BY, 
+       TblRegFeeRec.ACAD_YEAR_ID, 
+       TblRegFeeRec.GRADE_ID, 
+       TblRegFeeRec.SECTIONS_ID, 
+       TblRegFeeRec.COMPANY_SBU_ID"
+  FromList="TBL_REG_FEE_REC TblRegFeeRec"
+  Where="TblRegFeeRec.COMPANY_SBU_ID= nvl(:getcompid,TblRegFeeRec.COMPANY_SBU_ID)">
+  <Variable
+    Name="getcompid"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblRegFeeRecView"/>
+  </Variable>
   <ViewAccessor
     Name="Active_Name_LOV1"
     ViewObjectName="model.LOV.Active_Name_LOV"
@@ -237,6 +256,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblRegFeeRec"
+    AliasName="COMPANY_SBU_ID"/>
   <ViewLinkAccessor
     Name="TblRegFeeRecDView"
     ViewLink="model.ERP.VO.FkTblRegFeeRecDFkLink"

@@ -196,7 +196,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_SCHOOL_TIME"/>
+    TableName="TBL_SCHOOL_TIME">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblSchoolTimeRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblGrade"
     Association="model.ERP.EO.FkSchoolTimeGradeAssoc"

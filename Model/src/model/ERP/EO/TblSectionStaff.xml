@@ -111,7 +111,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_SECTION_STAFF"/>
+    TableName="TBL_SECTION_STAFF">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblSectionStaffRow"/>
+  </Attribute>
   <Attribute
     Name="StaffId"
     ColumnName="STAFF_ID"

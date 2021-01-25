@@ -255,7 +255,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_STD_ENQ"/>
+    TableName="TBL_STD_ENQ">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblStdEnqRow"/>
+  </Attribute>
   <Attribute
     Name="LookupRefBy"
     ColumnName="LOOKUP_REF_BY"

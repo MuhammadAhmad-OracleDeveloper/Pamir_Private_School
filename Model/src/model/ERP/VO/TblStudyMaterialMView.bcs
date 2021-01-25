@@ -10,3 +10,10 @@ def getSessStaffID_VariableScript_Variable()
 adf.context.current.sessionScope.get('sessPortalStfId')
 }
 
+
+@VariableExpression(path="getcompid")
+def getcompid_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('sessSBUID')
+}
+

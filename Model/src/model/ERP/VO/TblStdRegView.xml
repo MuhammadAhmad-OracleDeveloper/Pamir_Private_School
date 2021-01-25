@@ -6,13 +6,113 @@
   Name="TblStdRegView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblStdReg.ID, 
+       TblStdReg.GROUP_COMPANY_ID, 
+       TblStdReg.ENROLL_NO, 
+       TblStdReg.REG_NO, 
+       TblStdReg.REG_DATE, 
+       TblStdReg.ESIS_NO, 
+       TblStdReg.STD_ENQ_ID, 
+       TblStdReg.BIRTH_PLACE, 
+       TblStdReg.LOOKUP_BIRTH_COUNTRY, 
+       TblStdReg.LOOKUP_NATIONALITY, 
+       TblStdReg.LOOKUP_RELIGION, 
+       TblStdReg.LOOKUP_BLOOD_GROUP, 
+       TblStdReg.LOOKUP_MOTHER_TOUNGE, 
+       TblStdReg.JOIN_DATE, 
+       TblStdReg.GRADE_ID, 
+       TblStdReg.SECTIONS_ID, 
+       TblStdReg.IMAGE, 
+       TblStdReg.SPECIAL_NEED, 
+       TblStdReg.PASS_EXP_DATE, 
+       TblStdReg.VISA_EXP_DATE, 
+       TblStdReg.EMID_EXP_DATE, 
+       TblStdReg.JOIN_PERC, 
+       TblStdReg.MARKS_OBT_PERC, 
+       TblStdReg.TRANS_REQ, 
+       TblStdReg.SPECIAL_DESC, 
+       TblStdReg.LOOKUP_SECOND_LANG, 
+       TblStdReg.LOOKUP_THIRD_LANG, 
+       TblStdReg.ESIS_REF, 
+       TblStdReg.LOOKUP_REF_BY, 
+       TblStdReg.REF_DESC, 
+       TblStdReg.FATHER_NAME, 
+       TblStdReg.FATHER_OCCUP, 
+       TblStdReg.FATHER_MOBILE, 
+       TblStdReg.FATHER_EMAIL, 
+       TblStdReg.FATHER_HOME_TEL, 
+       TblStdReg.FATHER_OFF_TEL, 
+       TblStdReg.MOTHER_NAME, 
+       TblStdReg.MOTHER_OCCUP, 
+       TblStdReg.MOTHER_MOBILE, 
+       TblStdReg.MOTHER_EMAIL, 
+       TblStdReg.MOTHER_OFF_TEL, 
+       TblStdReg.PAR_MON_INCOME, 
+       TblStdReg.FATHER_INC_ANN, 
+       TblStdReg.MOTHER_INC_ANN, 
+       TblStdReg.PER_ADDRESS, 
+       TblStdReg.MGT_DISC_TYPE, 
+       TblStdReg.MGT_DISC_VALUE, 
+       TblStdReg.FOUND_MEM_DISC_PERC, 
+       TblStdReg.SIB_DISC_TYPE, 
+       TblStdReg.SIB_DISC_VALUE, 
+       TblStdReg.SCHOLAR_DISC_AMT, 
+       TblStdReg.STAFF_DISC_TYPE, 
+       TblStdReg.STAFF_DISC_VALUE, 
+       TblStdReg.AST, 
+       TblStdReg.CREATED_DATE, 
+       TblStdReg.CREATED_BY, 
+       TblStdReg.UPDATED_DATE, 
+       TblStdReg.UPDATED_BY, 
+       TblStdReg.REF_DOC_NO, 
+       TblStdReg.SCHOLAR_DISC_PERC, 
+       TblStdReg.ACAD_YEAR_ID, 
+       TblStdReg.ADDRESS, 
+       TblStdReg.CONT_EMAIL, 
+       TblStdReg.CONT_NUMBER, 
+       TblStdReg.CONT_PERSON, 
+       TblStdReg.CONT_RELATION, 
+       TblStdReg.DOB, 
+       TblStdReg.ELIG_STATUS, 
+       TblStdReg.EMIR_AREA, 
+       TblStdReg.EMIR_ID, 
+       TblStdReg.FATHER_EMIR_ID, 
+       TblStdReg.FATHER_PASS_NO, 
+       TblStdReg.FIRST_NAME, 
+       TblStdReg.LAST_NAME, 
+       TblStdReg.GENDER, 
+       TblStdReg.LOOKUP_ELEC_GROUP, 
+       TblStdReg.MOTHER_EMIR_ID, 
+       TblStdReg.MOTHER_PASS_NO, 
+       TblStdReg.REG_FEE, 
+       TblStdReg.TOT_AGE, 
+       TblStdReg.ADMISSION_TYPE, 
+       TblStdReg.SIB_CONTROL_BY, 
+       TblStdReg.GUARD_EMIR_ID, 
+       TblStdReg.GUARD_NAME, 
+       TblStdReg.SIB_DISC_BASES, 
+       TblStdReg.FATHER_MARITAL_STATUS, 
+       TblStdReg.MOTHER_MARITAL_STATUS, 
+       TblStdReg.GUARD_MARITAL_STATUS, 
+       TblStdReg.LOOKUP_DETAIL_CITY, 
+       TblStdReg.ACTIVE_SIB_EMIR_ID, 
+       TblStdReg.ACTIVE_STD_EMIR_ID, 
+       TblStdReg.REG_TYPE, 
+       TblStdReg.COMPANY_SBU_ID"
+  FromList="TBL_STD_REG TblStdReg"
+  Where="TblStdReg.COMPANY_SBU_ID= nvl(:getcompid,TblStdReg.COMPANY_SBU_ID)">
+  <Variable
+    Name="getcompid"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblStdRegView"/>
+  </Variable>
   <ViewAccessor
     Name="Lookup_Country_Name_LOV1"
     ViewObjectName="model.LOV.Lookup_Country_Name_LOV"
@@ -1499,6 +1599,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="CompanySbuId"
+    PrecisionRule="true"
+    EntityAttrName="CompanySbuId"
+    EntityUsage="TblStdReg"
+    AliasName="COMPANY_SBU_ID"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>

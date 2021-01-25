@@ -138,7 +138,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="TBL_SALE_INV_MASTER"/>
+    TableName="TBL_SALE_INV_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblSaleInvMasterRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblSaleInvDetail"
     Association="model.ERP.EO.FkSaleInvDetailMasterAssoc"
