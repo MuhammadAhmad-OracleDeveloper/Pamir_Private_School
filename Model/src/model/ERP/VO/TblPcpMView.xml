@@ -32,13 +32,8 @@
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="TblPcpMView"/>
   </Variable>
-  <ViewAccessor
-    Name="Voucher_Type_LOV1"
-    ViewObjectName="model.LOV.Voucher_Type_LOV"
-    RowLevelBinds="true"/>
   <ViewAccessor
     Name="PBL_Supplier_Name_LOV1"
     ViewObjectName="model.LOV.PBL_Supplier_Name_LOV"
@@ -55,24 +50,10 @@
     Name="Bank_Cash_C_LOV1"
     ViewObjectName="model.LOV.Bank_Cash_C_LOV"
     RowLevelBinds="true"/>
-  <ListBinding
-    Name="LOV_Vtp"
-    ListVOName="Voucher_Type_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Vtp"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="DBAttr"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="ViewAttr"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
+  <ViewAccessor
+    Name="Gl_Trans_Vtp_LOV1"
+    ViewObjectName="model.LOV.Gl_Trans_Vtp_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_PblSuppId"
     ListVOName="PBL_Supplier_Name_LOV1"
@@ -143,6 +124,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Vtp"
+    ListVOName="Gl_Trans_Vtp_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Vtp"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>

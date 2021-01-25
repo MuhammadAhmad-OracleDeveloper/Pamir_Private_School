@@ -80,22 +80,22 @@
                       <af:convertDateTime pattern="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncDated.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblCustOpenBlncView1.hints.PblCustId.name}" filterable="true"
-                             sortable="true" headerText="Customer"
-                             id="c3" width="200">
-                             <f:facet name="filter">
-                                  <af:inputText value="#{vs.filterCriteria.PblCustId}"
+                  <af:column headerText="Customer" id="c3"
+                             sortable="true" filterable="true">
+                              <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.RblCustId}"
                                    id="it4" placeholder="Search ">
                                   </af:inputText>
                             </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.PblCustId.inputValue}"
-                                        label="#{row.bindings.PblCustId.label}"
-                                        required="#{bindings.TblCustOpenBlncView1.hints.PblCustId.mandatory}"
-                                        shortDesc="#{bindings.TblCustOpenBlncView1.hints.PblCustId.tooltip}" id="soc1">
-                      <f:selectItems value="#{row.bindings.PblCustId.items}" id="si1"/>
-                      <f:validator binding="#{row.bindings.PblCustId.validator}"/>
+                    <af:selectOneChoice value="#{row.bindings.RblCustId.inputValue}"
+                                        label="#{row.bindings.RblCustId.label}"
+                                        required="#{bindings.TblCustOpenBlncView1.hints.RblCustId.mandatory}"
+                                        shortDesc="#{bindings.TblCustOpenBlncView1.hints.RblCustId.tooltip}" id="soc1">
+                      <f:selectItems value="#{row.bindings.RblCustId.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.RblCustId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
+                 
                   <af:column sortProperty="#{bindings.TblCustOpenBlncView1.hints.CustOpenBlncDr.name}" filterable="true"
                              sortable="true" headerText="Dr"
                              id="c4" align="left">
