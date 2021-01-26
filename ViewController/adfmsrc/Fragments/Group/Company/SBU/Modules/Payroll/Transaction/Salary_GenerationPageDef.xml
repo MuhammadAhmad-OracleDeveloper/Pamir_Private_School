@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Salary_GenerationPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.Payroll.Transaction">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblSalaryMView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblSalaryMView1Iterator"/>
+    <iterator Binds="TblSalaryDView3" RangeSize="25" DataControl="AppModuleDataControl1" id="TblSalaryDView3Iterator"/>
+    <searchRegion Binds="TblSalaryDView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblSalaryDView3Query"/>
+    <searchRegion Binds="TblSalaryMView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblSalaryMView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TblSalaryMView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSalaryMView1Iterator" id="Vno">
+      <AttrNames>
+        <Item Value="Vno"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblSalaryMView1Iterator" StaticList="false" Uses="LOV_Vtp" id="Vtp" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblSalaryMView1Iterator" id="Dated">
+      <AttrNames>
+        <Item Value="Dated"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSalaryMView1Iterator" id="Narration">
+      <AttrNames>
+        <Item Value="Narration"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblSalaryMView1Iterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblSalaryMView1Iterator" StaticList="false" Uses="LOV_CompanySbuId" id="CompanySbuId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblSalaryMView1Iterator" id="SalMonth">
+      <AttrNames>
+        <Item Value="SalMonth"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSalaryMView1Iterator" id="SalYear">
+      <AttrNames>
+        <Item Value="SalYear"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblSalaryMView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblSalaryMView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblSalaryMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblSalaryMView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblSalaryMView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblSalaryMView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblSalaryMView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblSalaryDView3Iterator" id="TblSalaryDView3">
+      <nodeDefinition DefName="model.ERP.VO.TblSalaryDView" Name="TblSalaryDView30">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="EmpId"/>
+          <Item Value="Description"/>
+          <Item Value="BasicSal"/>
+          <Item Value="WorkDays"/>
+          <Item Value="PresentDays"/>
+          <Item Value="AbsentDays"/>
+          <Item Value="LeaveDays"/>
+          <Item Value="NetSal"/>
+          <Item Value="NetPayable"/>
+          <Item Value="OtHours"/>
+          <Item Value="OtAmount"/>
+          <Item Value="ShortHours"/>
+          <Item Value="ShortAmount"/>
+          <Item Value="OtherAll"/>
+          <Item Value="AdvanceAmount"/>
+          <Item Value="LoanAmount"/>
+          <Item Value="TaxAmount"/>
+          <Item Value="NetDed"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblSalaryDView3Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblSalaryDView3Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblSalaryDView3Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblSalaryMView1Iterator" id="TblSalaryMView1">
+      <nodeDefinition DefName="model.ERP.VO.TblSalaryMView" Name="TblSalaryMView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Vno"/>
+          <Item Value="Vtp"/>
+          <Item Value="Dated"/>
+          <Item Value="Narration"/>
+          <Item Value="DepartmentId"/>
+          <Item Value="CompanySbuId"/>
+          <Item Value="SalMonth"/>
+          <Item Value="SalYear"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

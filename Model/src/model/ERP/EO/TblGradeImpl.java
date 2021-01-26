@@ -46,9 +46,9 @@ public class TblGradeImpl extends EntityImpl {
         TblStdRegSib,
         TblAcadGroup,
         TblGradeStaff,
-        TblTransFeeGenMaster,
         TblTransFeeGenMaster1;
-        private static AttributesEnum[] vals = null;
+        static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         public int index() {
@@ -94,7 +94,6 @@ public class TblGradeImpl extends EntityImpl {
     public static final int TBLSTDREGSIB = AttributesEnum.TblStdRegSib.index();
     public static final int TBLACADGROUP = AttributesEnum.TblAcadGroup.index();
     public static final int TBLGRADESTAFF = AttributesEnum.TblGradeStaff.index();
-    public static final int TBLTRANSFEEGENMASTER = AttributesEnum.TblTransFeeGenMaster.index();
     public static final int TBLTRANSFEEGENMASTER1 = AttributesEnum.TblTransFeeGenMaster1.index();
 
     /**
@@ -363,6 +362,7 @@ public class TblGradeImpl extends EntityImpl {
         return (RowIterator) getAttributeInternal(TBLTRANSFEEGENMASTER1);
     }
 
+
     /**
      * @param id key constituent
 
@@ -371,13 +371,13 @@ public class TblGradeImpl extends EntityImpl {
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
     }
-
-    /**
-     * @return the associated entity oracle.jbo.RowIterator.
-     */
-    public RowIterator getTblTransFeeGenMaster() {
-        return (RowIterator) getAttributeInternal(TBLTRANSFEEGENMASTER);
-    }
+//
+//    /**
+//     * @return the associated entity oracle.jbo.RowIterator.
+//     */
+//    public RowIterator getTblTransFeeGenMaster() {
+//        return (RowIterator) getAttributeInternal(TBLTRANSFEEGENMASTER);
+//    }
 
 
     /**

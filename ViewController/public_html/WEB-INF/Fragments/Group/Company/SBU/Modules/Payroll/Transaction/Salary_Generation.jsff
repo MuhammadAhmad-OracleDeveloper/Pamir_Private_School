@@ -1,2 +1,716 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"></ui:composition>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Salary Generation">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Salary Generation">
+                <af:panelGridLayout id="pgl2">
+                  <af:gridRow marginTop="5px" height="auto" id="gr3">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+                      <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+                        <af:showDetailItem id="tab2" text="Salary Generation Master">
+                          
+                        <af:panelFormLayout id="pfl1" maxColumns="3" rows="8">
+                            <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
+                                          required="#{bindings.Id.hints.mandatory}"
+                                          columns="#{bindings.Id.hints.displayWidth}"
+                                          maximumLength="#{bindings.Id.hints.precision}"
+                                          shortDesc="#{bindings.Id.hints.tooltip}" id="it1" disabled="true">
+                              <f:validator binding="#{bindings.Id.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
+                            </af:inputText>
+                            <af:inputDate value="#{bindings.Dated.inputValue}" label="Date"
+                                          required="#{bindings.Dated.hints.mandatory}"
+                                          columns="#{bindings.Dated.hints.displayWidth}"
+                                          shortDesc="#{bindings.Dated.hints.tooltip}" id="id1"
+                                          contentStyle="width:150px;">
+                              <f:validator binding="#{bindings.Dated.validator}"/>
+                              <af:convertDateTime pattern="#{bindings.Dated.format}"/>
+                            </af:inputDate>
+                            <af:spacer  id="s6"/>
+                            <af:selectOneChoice value="#{bindings.CompanySbuId.inputValue}"
+                                                label="Company"
+                                                required="#{bindings.CompanySbuId.hints.mandatory}"
+                                                shortDesc="#{bindings.CompanySbuId.hints.tooltip}" id="soc1" readOnly="${sessionScope.sessPrID != ''}"
+                                                contentStyle="width:150px;">
+                              <f:selectItems value="#{bindings.CompanySbuId.items}" id="si1"/>
+                              <f:validator binding="#{bindings.CompanySbuId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s7"/>
+                            <af:selectOneChoice value="#{bindings.DepartmentId.inputValue}"
+                                                label="Department"
+                                                required="#{bindings.DepartmentId.hints.mandatory}"
+                                                shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="soc2"
+                                                contentStyle="width:150px;">
+                              <f:selectItems value="#{bindings.DepartmentId.items}" id="si2"/>
+                              <f:validator binding="#{bindings.DepartmentId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s8"/>
+                            <af:inputText value="#{bindings.Narration.inputValue}"
+                                          label="Narration"
+                                          required="#{bindings.Narration.hints.mandatory}"
+                                          columns="#{bindings.Narration.hints.displayWidth}"
+                                          maximumLength="#{bindings.Narration.hints.precision}"
+                                          shortDesc="#{bindings.Narration.hints.tooltip}" id="it2"
+                                          contentStyle="width:150px;" rows="10">
+                              <f:validator binding="#{bindings.Narration.validator}"/>
+                            </af:inputText>
+                            <af:spacer  id="s10"/>
+                            <af:inputText value="#{bindings.SalMonth.inputValue}"
+                                          label="Salary Month"
+                                          required="#{bindings.SalMonth.hints.mandatory}"
+                                          columns="#{bindings.SalMonth.hints.displayWidth}"
+                                          maximumLength="#{bindings.SalMonth.hints.precision}"
+                                          shortDesc="#{bindings.SalMonth.hints.tooltip}" id="it3"
+                                          contentStyle="width:150px;">
+                              <f:validator binding="#{bindings.SalMonth.validator}"/>
+                            </af:inputText>
+                            <af:spacer  id="s11"/>
+                            <af:inputText value="#{bindings.SalYear.inputValue}" label="Salary Year"
+                                          required="#{bindings.SalYear.hints.mandatory}"
+                                          columns="#{bindings.SalYear.hints.displayWidth}"
+                                          maximumLength="#{bindings.SalYear.hints.precision}"
+                                          shortDesc="#{bindings.SalYear.hints.tooltip}" id="it4"
+                                          contentStyle="width:150px;">
+                              <f:validator binding="#{bindings.SalYear.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.SalYear.format}"/>
+                            </af:inputText>
+                            <af:spacer  id="s12"/>
+                            <af:spacer  id="s14"/>
+                            <af:spacer  id="s15"/>
+                            <af:spacer  id="s16"/>
+                            <af:spacer  id="s17"/>
+                            <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
+                                          required="#{bindings.Vno.hints.mandatory}"
+                                          columns="#{bindings.Vno.hints.displayWidth}"
+                                          maximumLength="#{bindings.Vno.hints.precision}"
+                                          shortDesc="#{bindings.Vno.hints.tooltip}" id="it5" disabled="true"
+                                          contentStyle="width:150px;">
+                              <f:validator binding="#{bindings.Vno.validator}"/>
+                            </af:inputText>
+                            <af:spacer  id="s13"/>
+                            <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type"
+                                                required="#{bindings.Vtp.hints.mandatory}"
+                                                shortDesc="#{bindings.Vtp.hints.tooltip}" id="soc3" disabled="true"
+                                                contentStyle="width:150px;">
+                              <f:selectItems value="#{bindings.Vtp.items}" id="si3"/>
+                              <f:validator binding="#{bindings.Vtp.validator}"/>
+                            </af:selectOneChoice>
+                            <f:facet name="footer">
+                              <af:panelGroupLayout layout="horizontal" halign="center" id="pgl6">
+                                <af:button actionListener="#{bindings.First.execute}" text="First"
+                                           disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b2"/>
+                                <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                           disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
+                                <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                           disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b4"/>
+                                <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                           disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b5"/>
+                              </af:panelGroupLayout>
+                            </f:facet>
+                          </af:panelFormLayout>
+                          <af:spacer width="5" height="10" id="s4"/>
+                          <af:panelGroupLayout id="pgl3" halign="center" layout="horizontal">
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/LIHS/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                        </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr4">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                     
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr5">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+                      <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
+                        <af:showDetailItem id="tab3" text="Salary Generation Detail">
+                          <af:table value="#{bindings.TblSalaryDView3.collectionModel}" var="row"
+                                    rows="#{bindings.TblSalaryDView3.rangeSize}"
+                                    emptyText="#{bindings.TblSalaryDView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblSalaryDView3.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblSalaryDView3.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblSalaryDView3.rangeSize}"
+                                    filterModel="#{bindings.TblSalaryDView3Query.queryDescriptor}" filterVisible="true"
+                                    queryListener="#{bindings.TblSalaryDView3Query.processQuery}" varStatus="vs"
+                                    id="t1" scrollPolicy="page" autoHeightRows="0">
+                            <af:column sortProperty="#{bindings.TblSalaryDView3.hints.Id.name}" filterable="true"
+                                       sortable="true" headerText="ID" id="c1" visible="false" >
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="id4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Id.inputValue}"
+                                            label="#{bindings.TblSalaryDView3.hints.Id.label}"
+                                            required="#{bindings.TblSalaryDView3.hints.Id.mandatory}"
+                                            columns="#{bindings.TblSalaryDView3.hints.Id.displayWidth}"
+                                            maximumLength="#{bindings.TblSalaryDView3.hints.Id.precision}"
+                                            shortDesc="#{bindings.TblSalaryDView3.hints.Id.tooltip}" id="it6" readOnly="true" >
+                                <f:validator binding="#{row.bindings.Id.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView3.hints.Id.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblSalaryDView3.hints.EmpId.name}" filterable="true"
+                                       sortable="true" headerText="Employee"
+                                       id="c2" width="200">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.EmpId}"
+       id="it29" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.EmpId.inputValue}"
+                                                  label="#{row.bindings.EmpId.label}"
+                                                  required="#{bindings.TblSalaryDView3.hints.EmpId.mandatory}"
+                                                  shortDesc="#{bindings.TblSalaryDView3.hints.EmpId.tooltip}" id="soc4">
+                                <f:selectItems value="#{row.bindings.EmpId.items}" id="si4"/>
+                                <f:validator binding="#{row.bindings.EmpId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblSalaryDView3.hints.Description.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Description" id="c3" width="250">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Description}"
+       id="it30" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Description.inputValue}"
+                                            label="#{bindings.TblSalaryDView3.hints.Description.label}"
+                                            required="#{bindings.TblSalaryDView3.hints.Description.mandatory}"
+                                            columns="#{bindings.TblSalaryDView3.hints.Description.displayWidth}"
+                                            maximumLength="#{bindings.TblSalaryDView3.hints.Description.precision}"
+                                            shortDesc="#{bindings.TblSalaryDView3.hints.Description.tooltip}" id="it7">
+                                <f:validator binding="#{row.bindings.Description.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblSalaryDView3.hints.WorkDays.name}" filterable="true"
+                                       sortable="true" headerText="Work Days"
+                                       id="c4">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.WorkDays}"
+       id="it31" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.WorkDays.inputValue}"
+                                            label="#{bindings.TblSalaryDView3.hints.WorkDays.label}"
+                                            required="#{bindings.TblSalaryDView3.hints.WorkDays.mandatory}"
+                                            columns="#{bindings.TblSalaryDView3.hints.WorkDays.displayWidth}"
+                                            maximumLength="#{bindings.TblSalaryDView3.hints.WorkDays.precision}"
+                                            shortDesc="#{bindings.TblSalaryDView3.hints.WorkDays.tooltip}" id="it8">
+                                <f:validator binding="#{row.bindings.WorkDays.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView3.hints.WorkDays.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblSalaryDView3.hints.PresentDays.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Present Days" id="c5">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.PresentDays}"
+       id="it32" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.PresentDays.inputValue}"
+                                            label="#{bindings.TblSalaryDView3.hints.PresentDays.label}"
+                                            required="#{bindings.TblSalaryDView3.hints.PresentDays.mandatory}"
+                                            columns="#{bindings.TblSalaryDView3.hints.PresentDays.displayWidth}"
+                                            maximumLength="#{bindings.TblSalaryDView3.hints.PresentDays.precision}"
+                                            shortDesc="#{bindings.TblSalaryDView3.hints.PresentDays.tooltip}" id="it9">
+                                <f:validator binding="#{row.bindings.PresentDays.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView3.hints.PresentDays.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblSalaryDView3.hints.AbsentDays.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Absent Days" id="c6">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.AbsentDays}"
+       id="it33" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.AbsentDays.inputValue}"
+                                            label="#{bindings.TblSalaryDView3.hints.AbsentDays.label}"
+                                            required="#{bindings.TblSalaryDView3.hints.AbsentDays.mandatory}"
+                                            columns="#{bindings.TblSalaryDView3.hints.AbsentDays.displayWidth}"
+                                            maximumLength="#{bindings.TblSalaryDView3.hints.AbsentDays.precision}"
+                                            shortDesc="#{bindings.TblSalaryDView3.hints.AbsentDays.tooltip}" id="it10">
+                                <f:validator binding="#{row.bindings.AbsentDays.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView3.hints.AbsentDays.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblSalaryDView3.hints.LeaveDays.name}" filterable="true"
+                                       sortable="true" headerText="Leave Days"
+                                       id="c7">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.LeaveDays}"
+       id="it34" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.LeaveDays.inputValue}"
+                                            label="#{bindings.TblSalaryDView3.hints.LeaveDays.label}"
+                                            required="#{bindings.TblSalaryDView3.hints.LeaveDays.mandatory}"
+                                            columns="#{bindings.TblSalaryDView3.hints.LeaveDays.displayWidth}"
+                                            maximumLength="#{bindings.TblSalaryDView3.hints.LeaveDays.precision}"
+                                            shortDesc="#{bindings.TblSalaryDView3.hints.LeaveDays.tooltip}" id="it11">
+                                <f:validator binding="#{row.bindings.LeaveDays.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView3.hints.LeaveDays.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblSalaryDView3.hints.OtHours.name}" filterable="true"
+                                       sortable="true" headerText="Ot Hours"
+                                       id="c8">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.OtHours}"
+       id="it35" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.OtHours.inputValue}"
+                                            label="#{bindings.TblSalaryDView3.hints.OtHours.label}"
+                                            required="#{bindings.TblSalaryDView3.hints.OtHours.mandatory}"
+                                            columns="#{bindings.TblSalaryDView3.hints.OtHours.displayWidth}"
+                                            maximumLength="#{bindings.TblSalaryDView3.hints.OtHours.precision}"
+                                            shortDesc="#{bindings.TblSalaryDView3.hints.OtHours.tooltip}" id="it12">
+                                <f:validator binding="#{row.bindings.OtHours.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView3.hints.OtHours.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblSalaryDView3.hints.ShortHours.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Short Hours" id="c9">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ShortHours}"
+       id="it36" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.ShortHours.inputValue}"
+                                            label="#{bindings.TblSalaryDView3.hints.ShortHours.label}"
+                                            required="#{bindings.TblSalaryDView3.hints.ShortHours.mandatory}"
+                                            columns="#{bindings.TblSalaryDView3.hints.ShortHours.displayWidth}"
+                                            maximumLength="#{bindings.TblSalaryDView3.hints.ShortHours.precision}"
+                                            shortDesc="#{bindings.TblSalaryDView3.hints.ShortHours.tooltip}" id="it13">
+                                <f:validator binding="#{row.bindings.ShortHours.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView3.hints.ShortHours.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblSalaryDView3.hints.BasicSal.name}" filterable="true"
+                                       sortable="true" headerText="Basic Salary"
+                                       id="c10">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.BasicSal}"
+       id="it37" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.BasicSal.inputValue}"
+                                            label="#{bindings.TblSalaryDView3.hints.BasicSal.label}"
+                                            required="#{bindings.TblSalaryDView3.hints.BasicSal.mandatory}"
+                                            columns="#{bindings.TblSalaryDView3.hints.BasicSal.displayWidth}"
+                                            maximumLength="#{bindings.TblSalaryDView3.hints.BasicSal.precision}"
+                                            shortDesc="#{bindings.TblSalaryDView3.hints.BasicSal.tooltip}" id="it14">
+                                <f:validator binding="#{row.bindings.BasicSal.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView3.hints.BasicSal.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblSalaryDView3.hints.NetSal.name}" filterable="true"
+                                       sortable="true" headerText="Net Salary"
+                                       id="c11">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.NetSal}"
+       id="it38" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.NetSal.inputValue}"
+                                            label="#{bindings.TblSalaryDView3.hints.NetSal.label}"
+                                            required="#{bindings.TblSalaryDView3.hints.NetSal.mandatory}"
+                                            columns="#{bindings.TblSalaryDView3.hints.NetSal.displayWidth}"
+                                            maximumLength="#{bindings.TblSalaryDView3.hints.NetSal.precision}"
+                                            shortDesc="#{bindings.TblSalaryDView3.hints.NetSal.tooltip}" id="it15">
+                                <f:validator binding="#{row.bindings.NetSal.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView3.hints.NetSal.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblSalaryDView3.hints.NetPayable.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Net Payable" id="c12">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.NetPayable}"
+       id="it39" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.NetPayable.inputValue}"
+                                            label="#{bindings.TblSalaryDView3.hints.NetPayable.label}"
+                                            required="#{bindings.TblSalaryDView3.hints.NetPayable.mandatory}"
+                                            columns="#{bindings.TblSalaryDView3.hints.NetPayable.displayWidth}"
+                                            maximumLength="#{bindings.TblSalaryDView3.hints.NetPayable.precision}"
+                                            shortDesc="#{bindings.TblSalaryDView3.hints.NetPayable.tooltip}" id="it16">
+                                <f:validator binding="#{row.bindings.NetPayable.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView3.hints.NetPayable.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblSalaryDView3.hints.OtAmount.name}" filterable="true"
+                                       sortable="true" headerText="OT Amount"
+                                       id="c13">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.OtAmount}"
+       id="it40" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.OtAmount.inputValue}"
+                                            label="#{bindings.TblSalaryDView3.hints.OtAmount.label}"
+                                            required="#{bindings.TblSalaryDView3.hints.OtAmount.mandatory}"
+                                            columns="#{bindings.TblSalaryDView3.hints.OtAmount.displayWidth}"
+                                            maximumLength="#{bindings.TblSalaryDView3.hints.OtAmount.precision}"
+                                            shortDesc="#{bindings.TblSalaryDView3.hints.OtAmount.tooltip}" id="it17">
+                                <f:validator binding="#{row.bindings.OtAmount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView3.hints.OtAmount.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblSalaryDView3.hints.ShortAmount.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Short Amount" id="c14">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ShortAmount}"
+       id="it41" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.ShortAmount.inputValue}"
+                                            label="#{bindings.TblSalaryDView3.hints.ShortAmount.label}"
+                                            required="#{bindings.TblSalaryDView3.hints.ShortAmount.mandatory}"
+                                            columns="#{bindings.TblSalaryDView3.hints.ShortAmount.displayWidth}"
+                                            maximumLength="#{bindings.TblSalaryDView3.hints.ShortAmount.precision}"
+                                            shortDesc="#{bindings.TblSalaryDView3.hints.ShortAmount.tooltip}" id="it18">
+                                <f:validator binding="#{row.bindings.ShortAmount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView3.hints.ShortAmount.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            
+                            <af:column sortProperty="#{bindings.TblSalaryDView3.hints.AdvanceAmount.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Advance Amount" id="c16">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.AdvanceAmount}"
+       id="it42" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.AdvanceAmount.inputValue}"
+                                            label="#{bindings.TblSalaryDView3.hints.AdvanceAmount.label}"
+                                            required="#{bindings.TblSalaryDView3.hints.AdvanceAmount.mandatory}"
+                                            columns="#{bindings.TblSalaryDView3.hints.AdvanceAmount.displayWidth}"
+                                            maximumLength="#{bindings.TblSalaryDView3.hints.AdvanceAmount.precision}"
+                                            shortDesc="#{bindings.TblSalaryDView3.hints.AdvanceAmount.tooltip}"
+                                            id="it20">
+                                <f:validator binding="#{row.bindings.AdvanceAmount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView3.hints.AdvanceAmount.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblSalaryDView3.hints.LoanAmount.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Loan Amount" id="c17">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.LoanAmount}"
+       id="it43" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.LoanAmount.inputValue}"
+                                            label="#{bindings.TblSalaryDView3.hints.LoanAmount.label}"
+                                            required="#{bindings.TblSalaryDView3.hints.LoanAmount.mandatory}"
+                                            columns="#{bindings.TblSalaryDView3.hints.LoanAmount.displayWidth}"
+                                            maximumLength="#{bindings.TblSalaryDView3.hints.LoanAmount.precision}"
+                                            shortDesc="#{bindings.TblSalaryDView3.hints.LoanAmount.tooltip}" id="it21">
+                                <f:validator binding="#{row.bindings.LoanAmount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView3.hints.LoanAmount.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblSalaryDView3.hints.TaxAmount.name}" filterable="true"
+                                       sortable="true" headerText="Tax Amount"
+                                       id="c18">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.TaxAmount}"
+       id="it44" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.TaxAmount.inputValue}"
+                                            label="#{bindings.TblSalaryDView3.hints.TaxAmount.label}"
+                                            required="#{bindings.TblSalaryDView3.hints.TaxAmount.mandatory}"
+                                            columns="#{bindings.TblSalaryDView3.hints.TaxAmount.displayWidth}"
+                                            maximumLength="#{bindings.TblSalaryDView3.hints.TaxAmount.precision}"
+                                            shortDesc="#{bindings.TblSalaryDView3.hints.TaxAmount.tooltip}" id="it22">
+                                <f:validator binding="#{row.bindings.TaxAmount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView3.hints.TaxAmount.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblSalaryDView3.hints.NetDed.name}" filterable="true"
+                                       sortable="true" headerText="Net Ded"
+                                       id="c19">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.NetDed}"
+       id="it45" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.NetDed.inputValue}"
+                                            label="#{bindings.TblSalaryDView3.hints.NetDed.label}"
+                                            required="#{bindings.TblSalaryDView3.hints.NetDed.mandatory}"
+                                            columns="#{bindings.TblSalaryDView3.hints.NetDed.displayWidth}"
+                                            maximumLength="#{bindings.TblSalaryDView3.hints.NetDed.precision}"
+                                            shortDesc="#{bindings.TblSalaryDView3.hints.NetDed.tooltip}" id="it23">
+                                <f:validator binding="#{row.bindings.NetDed.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView3.hints.NetDed.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblSalaryDView3.hints.OtherAll.name}" filterable="true"
+                                       sortable="true" headerText="Other All"
+                                       id="c15">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.OtherAll}"
+       id="it46" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.OtherAll.inputValue}"
+                                            label="#{bindings.TblSalaryDView3.hints.OtherAll.label}"
+                                            required="#{bindings.TblSalaryDView3.hints.OtherAll.mandatory}"
+                                            columns="#{bindings.TblSalaryDView3.hints.OtherAll.displayWidth}"
+                                            maximumLength="#{bindings.TblSalaryDView3.hints.OtherAll.precision}"
+                                            shortDesc="#{bindings.TblSalaryDView3.hints.OtherAll.tooltip}" id="it19">
+                                <f:validator binding="#{row.bindings.OtherAll.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView3.hints.OtherAll.format}"/>
+                              </af:inputText>
+                            </af:column>
+                          </af:table>
+                          
+                          <af:spacer width="5" height="10" id="s5"/>
+                          <af:panelGroupLayout id="pgl5" halign="center" layout="horizontal">
+                            
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/LIHS/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s2"/>
+                            </af:iterator>
+                            
+                        </af:panelGroupLayout>
+                         </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                  
+                  <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7"/>
+                  </af:gridRow>
+                </af:panelGridLayout>
+              </af:showDetailItem>
+              <af:showDetailItem text="Serach" id="sdi1">
+                <af:table value="#{bindings.TblSalaryMView1.collectionModel}" var="row"
+                          rows="#{bindings.TblSalaryMView1.rangeSize}"
+                          emptyText="#{bindings.TblSalaryMView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblSalaryMView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblSalaryMView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblSalaryMView1.rangeSize}"
+                          filterModel="#{bindings.TblSalaryMView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblSalaryMView1Query.processQuery}" varStatus="vs" id="t2"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblSalaryMView1.hints.Id.name}" filterable="true" sortable="true"
+                             headerText="#{bindings.TblSalaryMView1.hints.Id.label}" id="c20" visible="false">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="it48" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblSalaryMView1.hints.Id.label}"
+                                  required="#{bindings.TblSalaryMView1.hints.Id.mandatory}"
+                                  columns="#{bindings.TblSalaryMView1.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblSalaryMView1.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblSalaryMView1.hints.Id.tooltip}" id="it24" readOnly="true">
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblSalaryMView1.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSalaryMView1.hints.Vno.name}" filterable="true" sortable="true"
+                             headerText="Voucher No." id="c21">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Vno}"
+       id="it47" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Vno.inputValue}"
+                                  label="#{bindings.TblSalaryMView1.hints.Vno.label}"
+                                  required="#{bindings.TblSalaryMView1.hints.Vno.mandatory}"
+                                  columns="#{bindings.TblSalaryMView1.hints.Vno.displayWidth}"
+                                  maximumLength="#{bindings.TblSalaryMView1.hints.Vno.precision}"
+                                  shortDesc="#{bindings.TblSalaryMView1.hints.Vno.tooltip}" id="it25" readOnly="true">
+                      <f:validator binding="#{row.bindings.Vno.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSalaryMView1.hints.Vtp.name}" filterable="true" sortable="true"
+                             headerText="Voucher Type" id="c22">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Vtp}"
+       id="it49" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Vtp.inputValue}" label="#{row.bindings.Vtp.label}"
+                                        required="#{bindings.TblSalaryMView1.hints.Vtp.mandatory}"
+                                        shortDesc="#{bindings.TblSalaryMView1.hints.Vtp.tooltip}" id="soc5" readOnly="true">
+                      <f:selectItems value="#{row.bindings.Vtp.items}" id="si5"/>
+                      <f:validator binding="#{row.bindings.Vtp.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSalaryMView1.hints.Dated.name}" filterable="true"
+                             sortable="true" headerText="Date" id="c23">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblSalaryMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                    id="id2" placeholder="Search ">
+                        <af:convertDateTime pattern="#{bindings.TblSalaryMView1.hints.Dated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                  label="#{bindings.TblSalaryMView1.hints.Dated.label}"
+                                  required="#{bindings.TblSalaryMView1.hints.Dated.mandatory}"
+                                  columns="#{bindings.TblSalaryMView1.hints.Dated.displayWidth}"
+                                  shortDesc="#{bindings.TblSalaryMView1.hints.Dated.tooltip}" id="id3" readOnly="true">
+                      <f:validator binding="#{row.bindings.Dated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblSalaryMView1.hints.Dated.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSalaryMView1.hints.CompanySbuId.name}" filterable="true"
+                             sortable="true" headerText="Company" id="c24" width="150">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.CompanySbuId}"
+       id="it50" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.CompanySbuId.inputValue}"
+                                        label="#{row.bindings.CompanySbuId.label}"
+                                        required="#{bindings.TblSalaryMView1.hints.CompanySbuId.mandatory}"
+                                        shortDesc="#{bindings.TblSalaryMView1.hints.CompanySbuId.tooltip}" id="soc6" readOnly="true">
+                      <f:selectItems value="#{row.bindings.CompanySbuId.items}" id="si6"/>
+                      <f:validator binding="#{row.bindings.CompanySbuId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSalaryMView1.hints.DepartmentId.name}" filterable="true"
+                             sortable="true" headerText="Department" id="c25" width="150">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.DepartmentId}"
+       id="it51" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.DepartmentId.inputValue}"
+                                        label="#{row.bindings.DepartmentId.label}"
+                                        required="#{bindings.TblSalaryMView1.hints.DepartmentId.mandatory}"
+                                        shortDesc="#{bindings.TblSalaryMView1.hints.DepartmentId.tooltip}" id="soc7" readOnly="true">
+                      <f:selectItems value="#{row.bindings.DepartmentId.items}" id="si7"/>
+                      <f:validator binding="#{row.bindings.DepartmentId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSalaryMView1.hints.SalMonth.name}" filterable="true"
+                             sortable="true" headerText="Salary Month" id="c26">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.SalMonth}"
+       id="it52" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.SalMonth.inputValue}"
+                                  label="#{bindings.TblSalaryMView1.hints.SalMonth.label}"
+                                  required="#{bindings.TblSalaryMView1.hints.SalMonth.mandatory}"
+                                  columns="#{bindings.TblSalaryMView1.hints.SalMonth.displayWidth}"
+                                  maximumLength="#{bindings.TblSalaryMView1.hints.SalMonth.precision}"
+                                  shortDesc="#{bindings.TblSalaryMView1.hints.SalMonth.tooltip}" id="it26" readOnly="true">
+                      <f:validator binding="#{row.bindings.SalMonth.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSalaryMView1.hints.SalYear.name}" filterable="true"
+                             sortable="true" headerText="Salary Year" id="c27">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.SalYear}"
+       id="it53" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.SalYear.inputValue}"
+                                  label="#{bindings.TblSalaryMView1.hints.SalYear.label}"
+                                  required="#{bindings.TblSalaryMView1.hints.SalYear.mandatory}"
+                                  columns="#{bindings.TblSalaryMView1.hints.SalYear.displayWidth}"
+                                  maximumLength="#{bindings.TblSalaryMView1.hints.SalYear.precision}"
+                                  shortDesc="#{bindings.TblSalaryMView1.hints.SalYear.tooltip}" id="it27" readOnly="true">
+                      <f:validator binding="#{row.bindings.SalYear.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblSalaryMView1.hints.SalYear.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSalaryMView1.hints.Narration.name}" filterable="true"
+                             sortable="true" headerText="Narration" id="c28" width="300">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Narration}"
+       id="it54" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Narration.inputValue}"
+                                  label="#{bindings.TblSalaryMView1.hints.Narration.label}"
+                                  required="#{bindings.TblSalaryMView1.hints.Narration.mandatory}"
+                                  columns="#{bindings.TblSalaryMView1.hints.Narration.displayWidth}"
+                                  maximumLength="#{bindings.TblSalaryMView1.hints.Narration.precision}"
+                                  shortDesc="#{bindings.TblSalaryMView1.hints.Narration.tooltip}" id="it28" readOnly="true">
+                      <f:validator binding="#{row.bindings.Narration.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>
+
+
