@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="PromotionPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.Payroll.Transaction">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblPromotionView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblPromotionView1Iterator"/>
+    <searchRegion Binds="TblPromotionView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblPromotionView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TblPromotionView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPromotionView1Iterator" id="Vno">
+      <AttrNames>
+        <Item Value="Vno"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblPromotionView1Iterator" StaticList="false" Uses="LOV_Vtp" id="Vtp" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblPromotionView1Iterator" id="Dated">
+      <AttrNames>
+        <Item Value="Dated"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPromotionView1Iterator" id="Narration">
+      <AttrNames>
+        <Item Value="Narration"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblPromotionView1Iterator" StaticList="false" Uses="LOV_FrGradeId" id="FrGradeId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblPromotionView1Iterator" StaticList="false" Uses="LOV_FrDesignationId" id="FrDesignationId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblPromotionView1Iterator" StaticList="false" Uses="LOV_EmpId" id="EmpId" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblPromotionView1Iterator" StaticList="false" Uses="LOV_ToGradeId" id="ToGradeId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblPromotionView1Iterator" StaticList="false" Uses="LOV_ToDesignationId" id="ToDesignationId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblPromotionView1Iterator" id="ToSalary">
+      <AttrNames>
+        <Item Value="ToSalary"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblPromotionView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblPromotionView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblPromotionView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblPromotionView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblPromotionView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblPromotionView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblPromotionView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblPromotionView1Iterator" id="TblPromotionView1">
+      <nodeDefinition DefName="model.ERP.VO.TblPromotionView" Name="TblPromotionView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Vno"/>
+          <Item Value="Vtp"/>
+          <Item Value="Dated"/>
+          <Item Value="Narration"/>
+          <Item Value="FrGradeId"/>
+          <Item Value="FrDesignationId"/>
+          <Item Value="EmpId"/>
+          <Item Value="ToGradeId"/>
+          <Item Value="ToDesignationId"/>
+          <Item Value="ToSalary"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

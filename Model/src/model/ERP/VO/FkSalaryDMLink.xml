@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkSalaryDMLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.ERP.EO.FkSalaryDMAssoc">
+  <ViewLinkDefEnd
+    Name="TblSalaryMView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.VO.TblSalaryMView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblSalaryMView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblSalaryMView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblSalaryDView"
+    Cardinality="-1"
+    Owner="model.ERP.VO.TblSalaryDView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblSalaryDView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblSalaryDView.SalaryMId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

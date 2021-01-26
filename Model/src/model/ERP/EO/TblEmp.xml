@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblEmp"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_EMP"
+  AliasName="TblEmp"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Id"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EMP"
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
+  <Attribute
+    Name="Vno"
+    ColumnName="VNO"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EMP"/>
+  <Attribute
+    Name="Vtp"
+    Precision="3"
+    ColumnName="VTP"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_EMP"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Dated"
+    IsNotNull="true"
+    ColumnName="DATED"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_EMP"/>
+  <Attribute
+    Name="Narration"
+    Precision="300"
+    ColumnName="NARRATION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_EMP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DepartmentId"
+    ColumnName="DEPARTMENT_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EMP"/>
+  <Attribute
+    Name="CompanySbuId"
+    ColumnName="COMPANY_SBU_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EMP"/>
+  <Attribute
+    Name="Name"
+    Precision="300"
+    ColumnName="NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_EMP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FatName"
+    Precision="300"
+    ColumnName="FAT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_EMP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DesignationId"
+    ColumnName="DESIGNATION_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EMP"/>
+  <Attribute
+    Name="GradeId"
+    ColumnName="GRADE_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EMP"/>
+  <Attribute
+    Name="Salary"
+    ColumnName="SALARY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EMP"/>
+  <Attribute
+    Name="JoinDate"
+    ColumnName="JOIN_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_EMP"/>
+  <Attribute
+    Name="Dob"
+    ColumnName="DOB"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_EMP"/>
+  <Attribute
+    Name="Cnic"
+    Precision="30"
+    ColumnName="CNIC"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_EMP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Gender"
+    Precision="1"
+    ColumnName="GENDER"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_EMP"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="HomeAddress"
+    Precision="300"
+    ColumnName="HOME_ADDRESS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_EMP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Mobile"
+    Precision="15"
+    ColumnName="MOBILE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_EMP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Tel"
+    Precision="15"
+    ColumnName="TEL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_EMP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Email"
+    Precision="50"
+    ColumnName="EMAIL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_EMP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Ref"
+    Precision="300"
+    ColumnName="REF"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_EMP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_EMP"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EMP"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_EMP"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EMP"/>
+  <AccessorAttribute
+    Name="TblEmpAll"
+    Association="model.ERP.EO.FkEmpAllEmpAssoc"
+    AssociationEnd="model.ERP.EO.FkEmpAllEmpAssoc.TblEmpAll"
+    AssociationOtherEnd="model.ERP.EO.FkEmpAllEmpAssoc.TblEmp"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblEmpExp"
+    Association="model.ERP.EO.FkEmpExpMAssoc"
+    AssociationEnd="model.ERP.EO.FkEmpExpMAssoc.TblEmpExp"
+    AssociationOtherEnd="model.ERP.EO.FkEmpExpMAssoc.TblEmp"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblEmpKin"
+    Association="model.ERP.EO.FkEmpKinEmpAssoc"
+    AssociationEnd="model.ERP.EO.FkEmpKinEmpAssoc.TblEmpKin"
+    AssociationOtherEnd="model.ERP.EO.FkEmpKinEmpAssoc.TblEmp"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblEmpQua"
+    Association="model.ERP.EO.FkEmpQuaAssoc"
+    AssociationEnd="model.ERP.EO.FkEmpQuaAssoc.TblEmpQua"
+    AssociationOtherEnd="model.ERP.EO.FkEmpQuaAssoc.TblEmp"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblAdvLoan"
+    Association="model.ERP.EO.FkAdvLoanEmpAssoc"
+    AssociationEnd="model.ERP.EO.FkAdvLoanEmpAssoc.TblAdvLoan"
+    AssociationOtherEnd="model.ERP.EO.FkAdvLoanEmpAssoc.TblEmp"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblAttD"
+    Association="model.ERP.EO.TblAttDFk1Assoc"
+    AssociationEnd="model.ERP.EO.TblAttDFk1Assoc.TblAttD"
+    AssociationOtherEnd="model.ERP.EO.TblAttDFk1Assoc.TblEmp"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblPromotion"
+    Association="model.ERP.EO.FkPromotionEmpAssoc"
+    AssociationEnd="model.ERP.EO.FkPromotionEmpAssoc.TblPromotion"
+    AssociationOtherEnd="model.ERP.EO.FkPromotionEmpAssoc.TblEmp"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblTransfer"
+    Association="model.ERP.EO.FkTransferEmpAssoc"
+    AssociationEnd="model.ERP.EO.FkTransferEmpAssoc.TblTransfer"
+    AssociationOtherEnd="model.ERP.EO.FkTransferEmpAssoc.TblEmp"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblSalaryD"
+    Association="model.ERP.EO.FkSalaryDEmpAssoc"
+    AssociationEnd="model.ERP.EO.FkSalaryDEmpAssoc.TblSalaryD"
+    AssociationOtherEnd="model.ERP.EO.FkSalaryDEmpAssoc.TblEmp"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="PkEmpId"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_EMP_ID"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblEmp.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkEmpCompany">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_COMPANY_SBU"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_EMP_COMPANY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblEmp.CompanySbuId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkEmpDepartment">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_DEPARTMENT"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_EMP_DEPARTMENT"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblEmp.DepartmentId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkEmpDesig">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_DESIGNATION"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_EMP_DESIG"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblEmp.DesignationId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkEmpGrade">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_GRADE"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_EMP_GRADE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblEmp.GradeId"/>
+    </AttrArray>
+  </Key>
+</Entity>

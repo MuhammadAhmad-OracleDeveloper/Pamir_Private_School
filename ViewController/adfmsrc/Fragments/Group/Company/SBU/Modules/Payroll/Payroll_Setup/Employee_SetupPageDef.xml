@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Employee_SetupPageDef"
+                Package="Fragments.Group.Company.SBU.Modules.Payroll.Payroll_Setup">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblEmpView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblEmpView1Iterator"/>
+    <searchRegion Binds="TblEmpView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblEmpView1Query"/>
+    <iterator Binds="TblEmpExpView2" RangeSize="25" DataControl="AppModuleDataControl1" id="TblEmpExpView2Iterator"/>
+    <searchRegion Binds="TblEmpExpView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblEmpExpView2Query"/>
+    <iterator Binds="TblEmpQuaView2" RangeSize="25" DataControl="AppModuleDataControl1" id="TblEmpQuaView2Iterator"/>
+    <searchRegion Binds="TblEmpQuaView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblEmpQuaView2Query"/>
+    <iterator Binds="TblEmpKinView2" RangeSize="25" DataControl="AppModuleDataControl1" id="TblEmpKinView2Iterator"/>
+    <searchRegion Binds="TblEmpKinView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblEmpKinView2Query"/>
+    <iterator Binds="TblEmpAllView2" RangeSize="25" DataControl="AppModuleDataControl1" id="TblEmpAllView2Iterator"/>
+    <searchRegion Binds="TblEmpAllView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblEmpAllView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRoles.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblEmpView1Iterator" id="TblEmpView1">
+      <nodeDefinition DefName="model.ERP.VO.TblEmpView" Name="TblEmpView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Vno"/>
+          <Item Value="Vtp"/>
+          <Item Value="Dated"/>
+          <Item Value="DepartmentId"/>
+          <Item Value="CompanySbuId"/>
+          <Item Value="Name"/>
+          <Item Value="FatName"/>
+          <Item Value="GradeId"/>
+          <Item Value="Cnic"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblEmpView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblEmpView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblEmpView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <attributeValues IterBinding="TblEmpView1Iterator" id="Narration">
+      <AttrNames>
+        <Item Value="Narration"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblEmpView1Iterator" StaticList="false" Uses="LOV_DesignationId" id="DesignationId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblEmpView1Iterator" id="Salary">
+      <AttrNames>
+        <Item Value="Salary"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEmpView1Iterator" id="JoinDate">
+      <AttrNames>
+        <Item Value="JoinDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEmpView1Iterator" id="Dob">
+      <AttrNames>
+        <Item Value="Dob"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEmpView1Iterator" id="Gender">
+      <AttrNames>
+        <Item Value="Gender"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEmpView1Iterator" id="HomeAddress">
+      <AttrNames>
+        <Item Value="HomeAddress"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEmpView1Iterator" id="Mobile">
+      <AttrNames>
+        <Item Value="Mobile"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEmpView1Iterator" id="Tel">
+      <AttrNames>
+        <Item Value="Tel"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEmpView1Iterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEmpView1Iterator" id="Ref">
+      <AttrNames>
+        <Item Value="Ref"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblEmpView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblEmpView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblEmpView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblEmpView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="TblEmpExpView2Iterator" id="TblEmpExpView2">
+      <nodeDefinition DefName="model.ERP.VO.TblEmpExpView" Name="TblEmpExpView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="CoName"/>
+          <Item Value="Designation"/>
+          <Item Value="StDate"/>
+          <Item Value="EnDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblEmpExpView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblEmpExpView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblEmpExpView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblEmpQuaView2Iterator" id="TblEmpQuaView2">
+      <nodeDefinition DefName="model.ERP.VO.TblEmpQuaView" Name="TblEmpQuaView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Institute"/>
+          <Item Value="Degree"/>
+          <Item Value="StDate"/>
+          <Item Value="EnDate"/>
+          <Item Value="GradePerc"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblEmpQuaView2Iterator" id="CreateInsert2" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblEmpQuaView2Iterator" id="Execute2" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblEmpQuaView2Iterator" id="Delete2" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblEmpKinView2Iterator" id="TblEmpKinView2">
+      <nodeDefinition DefName="model.ERP.VO.TblEmpKinView" Name="TblEmpKinView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Mob"/>
+          <Item Value="EmpRel"/>
+          <Item Value="Address"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblEmpKinView2Iterator" id="CreateInsert3" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblEmpKinView2Iterator" id="Execute3" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblEmpKinView2Iterator" id="Delete3" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblEmpAllView2Iterator" id="TblEmpAllView2">
+      <nodeDefinition DefName="model.ERP.VO.TblEmpAllView" Name="TblEmpAllView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="AllowanceId"/>
+          <Item Value="QtyAmt"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblEmpAllView2Iterator" id="CreateInsert4" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblEmpAllView2Iterator" id="Execute4" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblEmpAllView2Iterator" id="Delete4" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>
