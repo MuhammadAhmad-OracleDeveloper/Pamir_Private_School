@@ -5,7 +5,7 @@
         <af:form id="f1">
            
             <af:panelGridLayout id="pgl1"
-                                inlineStyle="background-image: url(../Resources/pameer_slider.jpg); background-size:cover ;max-height: none !important; max-width: none;">
+                                inlineStyle="background-image: url(../Resources/3.jpg); background-size:cover ;max-height: none !important; max-width: none;">
                 <af:gridRow marginTop="5px" height="auto" id="gr1">
                     <af:gridCell marginStart="5px" width="50%" id="gc1"/>
                     <af:gridCell marginStart="5px" width="50%" id="gc2">
@@ -30,7 +30,7 @@
                         <!--<af:image id="i1" inlineStyle="width:80px;height: 80px;"
                                           source="#{resource['images:login.png']}"/>-->
                         <af:outputLabel value="Sign In" id="ol1"
-                                        inlineStyle="font-weight: bold;font-size: xx-large;font-family: cursive; height: 80px;"/>
+                                        inlineStyle="font-weight: bold;font-size: xx-large;font-family: cursive; height: 80px;color:#a67f48;"/>
                     </af:gridCell>
                     <!--<af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc6"/>-->
                 </af:gridRow>
@@ -43,13 +43,15 @@
                     <!--<af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc12"/>-->
                 </af:gridRow>
                 <af:gridRow marginTop="0px" height="auto" id="gr5">
-                    <af:gridCell marginStart="5px" width="50%" id="gc13">
+                    <af:gridCell marginStart="5px" width="50%" id="gc13" halign="end" valign="middle">
                         <af:panelGroupLayout id="pgl2" layout="vertical">
-                            <af:outputLabel value="S.M.S" id="ol4"
-                                            inlineStyle="font-weight: bold;font-size: 80px;font-family: cursive; color: White;"/>
+                            <af:outputLabel value="Ir-Soft" id="ol4"
+                                            inlineStyle="font-weight: bold;font-size: 80px;font-family: cursive; text-shadow: 0px 5px 3px #a67f48;
+                                            color: #a67f48;-webkit-text-stroke: 0.5px white;-webkit-text-fill-color: #a67f48;"/>
                             <af:spacer width="100" height="25" id="s6"/>
-                            <af:outputLabel value="School Management System" id="ol5"
-                                            inlineStyle="font-weight: bold;font-size: x-large;font-family: cursive; color: White;"/>
+                            <af:outputLabel value="Enterprise Resource Planing(E.R.P)" id="ol5"
+                                            inlineStyle="font-weight: bold;font-size: xx-large;font-family: cursive; text-shadow: 0px 5px 3px #a67f48;
+                                            color: #a67f48;-webkit-text-stroke: 0.5px white;-webkit-text-fill-color: #a67f48;"/>
                         </af:panelGroupLayout>
                     </af:gridCell>
                     <af:gridCell marginStart="5px" width="50%" id="gc14" valign="middle" halign="center"
@@ -58,7 +60,7 @@
                         <af:panelGroupLayout id="pgl3" layout="horizontal">
                             <af:image shortDesc="user_image" source="#{resource['images:useer_loogin.png']}" id="i2"/>
                             <af:outputLabel value="Username" id="ol3"
-                                            inlineStyle="font-weight: bold;font-size: large;"/>
+                                            inlineStyle="font-weight: bold;font-size: large;color:#a67f48;"/>
                         </af:panelGroupLayout>
                         <af:spacer width="100" height="5" id="s3"/>
                         <af:panelGroupLayout id="pgl4" layout="horizontal">
@@ -71,7 +73,7 @@
                             <af:image shortDesc="password_image" source="#{resource['images:password_login.png']}"
                                       id="i3"/>
                             <af:outputLabel value="Password" id="ol2"
-                                            inlineStyle="font-weight: bold;font-size: large;"/>
+                                            inlineStyle="font-weight: bold;font-size: large;color:#a67f48;"/>
                         </af:panelGroupLayout>
                          <af:spacer width="100" height="5" id="s9"/>
                         <af:panelGroupLayout id="pgl5" layout="horizontal">
@@ -96,7 +98,7 @@
                     <af:gridCell marginStart="5px" width="44%" id="gc20" halign="center" valign="middle"
                                  inlineStyle=" padding-left: 69px; padding-right: 72px" styleClass="login_background">
                         <af:link id="l1"
-                                 icon="#{resource['images:link_login_button.jpg']}"
+                                 icon="#{resource['images:Login1.gif']}"
                                  action="#{LoginsBean.login_action}"/>
                     </af:gridCell>
                     <!--<af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc21"/>-->
